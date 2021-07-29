@@ -46,7 +46,7 @@
   
   
   
-    <title>pymor.algorithms.ei &#8212; pyMOR v2021.1rc0+467.g52a3df73 Manual</title>
+    <title>pymor.algorithms.ei &#8212; pyMOR v2021.1rc0+479.g314477aa Manual</title>
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -91,11 +91,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+467.g52a3df73 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+479.g314477aa Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+467.g52a3df73 Manual logo">
+                   alt="pyMOR v2021.1rc0+479.g314477aa Manual logo">
           
         </a>
       </div>
@@ -161,7 +161,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+467.g52a3df73 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+479.g314477aa Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -176,13 +176,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+467.g52a3df73 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+479.g314477aa Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+467.g52a3df73 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+479.g314477aa Manual">Documentation</a>
   </label>
   
 
@@ -632,32 +632,35 @@ a single function call.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei.interpolate_operators" title="pymor.algorithms.ei.interpolate_operators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_operators</span></code></a></p></td>
 <td><p>Empirical operator interpolation using the EI-Greedy/DEIM algorithm.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._interpolate_operators_build_evaluations" title="pymor.algorithms.ei._interpolate_operators_build_evaluations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_interpolate_operators_build_evaluations</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei.interpolate_function" title="pymor.algorithms.ei.interpolate_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_function</span></code></a></p></td>
+<td><p>Parameter separable approximation of a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> using Empiricial Interpolation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._interpolate_operators_build_evaluations" title="pymor.algorithms.ei._interpolate_operators_build_evaluations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_interpolate_operators_build_evaluations</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy" title="pymor.algorithms.ei._parallel_ei_greedy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy" title="pymor.algorithms.ei._parallel_ei_greedy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_get_empty" title="pymor.algorithms.ei._parallel_ei_greedy_get_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_get_empty</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_get_empty" title="pymor.algorithms.ei._parallel_ei_greedy_get_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_get_empty</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_initialize" title="pymor.algorithms.ei._parallel_ei_greedy_initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_initialize</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_initialize" title="pymor.algorithms.ei._parallel_ei_greedy_initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_initialize</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_get_vector" title="pymor.algorithms.ei._parallel_ei_greedy_get_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_get_vector</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_get_vector" title="pymor.algorithms.ei._parallel_ei_greedy_get_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_get_vector</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_update" title="pymor.algorithms.ei._parallel_ei_greedy_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_update</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._parallel_ei_greedy_update" title="pymor.algorithms.ei._parallel_ei_greedy_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_parallel_ei_greedy_update</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.ei._identity" title="pymor.algorithms.ei._identity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_identity</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.ei._identity" title="pymor.algorithms.ei._identity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_identity</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py function">
 <dt id="pymor.algorithms.ei.ei_greedy">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.ei.</span></code><code class="sig-name descname"><span class="pre">ei_greedy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_interpolation_dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">dummy_pool</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/test_hypothesis_improvements/src/pymor/algorithms/ei.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.ei.ei_greedy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.ei.</span></code><code class="sig-name descname"><span class="pre">ei_greedy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_interpolation_dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodal_basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">dummy_pool</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/test_hypothesis_improvements/src/pymor/algorithms/ei.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.ei.ei_greedy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate data for empirical interpolation using EI-Greedy algorithm.</p>
 <p>Given a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> <code class="docutils literal notranslate"><span class="pre">U</span></code>, this method generates a collateral basis and
 interpolation DOFs for empirical interpolation of the vectors contained in <code class="docutils literal notranslate"><span class="pre">U</span></code>.
@@ -671,7 +674,7 @@ loop iteration the worst approximated vector in <code class="docutils literal no
 <dt>U</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to interpolate.</p>
 </dd>
 <dt>error_norm</dt><dd><p>Norm w.r.t. which to calculate the interpolation error. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean norm
-is used.</p>
+is used. If <code class="docutils literal notranslate"><span class="pre">'sup'</span></code>, the sup-norm of the dofs is used.</p>
 </dd>
 <dt>atol</dt><dd><p>Stop the greedy search if the largest approximation error is below this threshold.</p>
 </dd>
@@ -679,6 +682,10 @@ is used.</p>
 </dd>
 <dt>max_interpolation_dofs</dt><dd><p>Stop the greedy search if the number of interpolation DOF (= dimension of the collateral
 basis) reaches this value.</p>
+</dd>
+<dt>nodal_basis</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, a nodal interpolation basis is constructed. Note that nodal bases are
+not hierarchical. Their construction involves the inversion of the associated
+interpolation matrix, which might lead to decreased numerical accuracy.</p>
 </dd>
 <dt>copy</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">U</span></code> will be modified during executing of the algorithm.</p>
 </dd>
@@ -704,6 +711,14 @@ greedy search.</p>
 <dd class="field-even"><p>Sequence of maximum absolute values of interoplation
 matrix coefficients in the upper triangle (should
 be near zero).</p>
+</dd>
+<dt class="field-odd">coefficients</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of coefficients such that <code class="docutils literal notranslate"><span class="pre">collateral_basis</span></code>
+is given by <code class="docutils literal notranslate"><span class="pre">U.lincomb(coefficients)</span></code>.</p>
+</dd>
+<dt class="field-even">interpolation_matrix</dt>
+<dd class="field-even"><p>The interpolation matrix, i.e., the evaluation of
+<code class="docutils literal notranslate"><span class="pre">collateral_basis</span></code> at <code class="docutils literal notranslate"><span class="pre">interpolation_dofs</span></code>.</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -827,12 +842,59 @@ Has no effect if <code class="docutils literal notranslate"><span class="pre">al
 </div>
 </dd></dl>
 <dl class="py function">
+<dt id="pymor.algorithms.ei.interpolate_function">
+<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.ei.</span></code><code class="sig-name descname"><span class="pre">interpolate_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_interpolation_dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/test_hypothesis_improvements/src/pymor/algorithms/ei.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.ei.interpolate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parameter separable approximation of a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> using Empiricial Interpolation.</p>
+<p>This method computes a parameter separated <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.LincombFunction" title="pymor.analyticalproblems.functions.LincombFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LincombFunction</span></code></a> approximating
+the input <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> using Empirical Interpolation :cite`BMNP04`.
+The actual EI Greedy algorithm is contained in <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>. This function
+acts as a convenience wrapper, which computes the training data and
+constructs an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction" title="pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalInterpolatedFunction</span></code></a>
+from the data returned by <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If possible, choose <code class="docutils literal notranslate"><span class="pre">evaluation_points</span></code> identical to the coordinates at which
+the interpolated function is going to be evaluated. Otherwise <code class="docutils literal notranslate"><span class="pre">function</span></code> will
+have to be re-evaluated at all new evaluation points for all <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>
+given by <code class="docutils literal notranslate"><span class="pre">parameter_sample</span></code>.</p>
+</div>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>function</dt><dd><p>The function to interpolate.</p>
+</dd>
+<dt>parameter_sample</dt><dd><p>A list of <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> for which <code class="docutils literal notranslate"><span class="pre">function</span></code> is evaluated to generate the
+training data.</p>
+</dd>
+<dt>evaluation_points</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of coordinates at which <code class="docutils literal notranslate"><span class="pre">function</span></code> should be evaluated to
+generate the training data.</p>
+</dd>
+<dt>atol</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>.</p>
+</dd>
+<dt>rtol</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>.</p>
+</dd>
+<dt>max_interpolation_dofs</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<dl class="simple">
+<dt>ei_function</dt><dd><p>The <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction" title="pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalInterpolatedFunction</span></code></a> giving
+the parameter separable approximation of <code class="docutils literal notranslate"><span class="pre">function</span></code>.</p>
+</dd>
+<dt>data</dt><dd><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> of additional data as returned by <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="py function">
 <dt id="pymor.algorithms.ei._interpolate_operators_build_evaluations">
 <code class="sig-prename descclassname"><span class="pre">pymor.algorithms.ei.</span></code><code class="sig-name descname"><span class="pre">_interpolate_operators_build_evaluations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/test_hypothesis_improvements/src/pymor/algorithms/ei.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.ei._interpolate_operators_build_evaluations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
 <dt id="pymor.algorithms.ei._parallel_ei_greedy">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.ei.</span></code><code class="sig-name descname"><span class="pre">_parallel_ei_greedy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_interpolation_dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/test_hypothesis_improvements/src/pymor/algorithms/ei.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.ei._parallel_ei_greedy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.ei.</span></code><code class="sig-name descname"><span class="pre">_parallel_ei_greedy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_interpolation_dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodal_basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/test_hypothesis_improvements/src/pymor/algorithms/ei.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.ei._parallel_ei_greedy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
 <dt id="pymor.algorithms.ei._parallel_ei_greedy_get_empty">
