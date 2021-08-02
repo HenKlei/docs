@@ -144,6 +144,11 @@ Classes
 
       
 
+   .. py:attribute:: MAX_DOMAIN_WIDTH
+      :annotation: = 1000000000000.0
+
+      
+
    .. py:method:: size(self, codim)
       :abstractmethod:
 
@@ -345,6 +350,10 @@ Classes
 
 
    .. py:method:: _bounding_box(self)
+
+
+   .. py:method:: _check_domain(cls, domain)
+      :classmethod:
 
 
 
