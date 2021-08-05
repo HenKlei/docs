@@ -54,7 +54,7 @@ Attributes
    pymor.discretizers.builtin.gui.jupyter._extension_loaded
 
 
-.. function:: defaults(*args)
+.. py:function:: defaults(*args)
 
    Function decorator for marking function arguments as user-configurable defaults.
 
@@ -81,7 +81,7 @@ Attributes
            
 
 
-.. function:: visualize_patch(grid, U, bounding_box=None, codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, columns=2)
+.. py:function:: visualize_patch(grid, U, bounding_box=None, codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, columns=2)
 
    Visualize scalar data associated to a two-dimensional |Grid| as a patch plot.
 
@@ -116,25 +116,25 @@ Attributes
            
 
 
-.. data:: config
+.. py:data:: config
    
 
    
 
-.. data:: _extension_loaded
+.. py:data:: _extension_loaded
    :annotation: = False
 
    
 
-.. function:: get_visualizer(backend='py3js')
+.. py:function:: get_visualizer(backend='py3js')
 
 
-.. function:: progress_bar(sequence, every=None, size=None, name='Parameters')
+.. py:function:: progress_bar(sequence, every=None, size=None, name='Parameters')
 
 
-.. function:: load_ipython_extension(ipython)
+.. py:function:: load_ipython_extension(ipython)
 
 
-.. function:: unload_ipython_extension(ipython)
+.. py:function:: unload_ipython_extension(ipython)
 
 

@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: pod(A, product=None, modes=None, rtol=1e-07, atol=0.0, l2_err=0.0, method='method_of_snapshots', orth_tol=1e-10)
+.. py:function:: pod(A, product=None, modes=None, rtol=1e-07, atol=0.0, l2_err=0.0, method='method_of_snapshots', orth_tol=1e-10)
 
    Proper orthogonal decomposition of `A`.
 

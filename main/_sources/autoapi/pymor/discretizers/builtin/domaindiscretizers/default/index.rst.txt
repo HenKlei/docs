@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: discretize_domain_default(domain_description, diameter=1 / 100, grid_type=None)
+.. py:function:: discretize_domain_default(domain_description, diameter=1 / 100, grid_type=None)
 
    Mesh a |DomainDescription| using an appropriate default implementation.
 

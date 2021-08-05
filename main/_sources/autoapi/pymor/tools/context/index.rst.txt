@@ -25,16 +25,16 @@ Attributes
    pymor.tools.context.no_context
 
 
-.. class:: NoContext
+.. py:class:: NoContext
 
-   .. method:: __enter__(self)
-
-
-   .. method:: __exit__(self, exc_type, exc_val, exc_tb)
+   .. py:method:: __enter__(self)
 
 
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
 
-.. data:: no_context
+
+
+.. py:data:: no_context
    
 
    

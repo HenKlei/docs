@@ -33,32 +33,32 @@ Attributes
    pymor.tools.formatrepr._format_handlers
 
 
-.. function:: register_format_handler(cls, handler)
+.. py:function:: register_format_handler(cls, handler)
 
 
-.. function:: _format_generic(obj, max_width, verbosity, override={})
+.. py:function:: _format_generic(obj, max_width, verbosity, override={})
 
 
-.. function:: _format_list_tuple(val, max_width, verbosity)
+.. py:function:: _format_list_tuple(val, max_width, verbosity)
 
 
-.. function:: _format_dict(val, max_width, verbosity)
+.. py:function:: _format_dict(val, max_width, verbosity)
 
 
-.. function:: _format_array(val, max_width, verbosity)
+.. py:function:: _format_array(val, max_width, verbosity)
 
 
-.. data:: _format_handlers
+.. py:data:: _format_handlers
    
 
    
 
-.. function:: _recurse(obj, max_width, verbosity)
+.. py:function:: _recurse(obj, max_width, verbosity)
 
 
-.. function:: format_repr(obj, max_width=120, verbosity=1)
+.. py:function:: format_repr(obj, max_width=120, verbosity=1)
 
 
-.. function:: indent_value(val, indent)
+.. py:function:: indent_value(val, indent)
 
 

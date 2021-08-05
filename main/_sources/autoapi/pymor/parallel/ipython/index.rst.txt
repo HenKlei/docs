@@ -31,8 +31,7 @@ Functions
 
 
 
-.. class:: new_ipcluster_pool(profile=None, cluster_id=None, num_engines=None, ipython_dir=None, min_wait=1, timeout=60)
-
+.. py:class:: new_ipcluster_pool(profile=None, cluster_id=None, num_engines=None, ipython_dir=None, min_wait=1, timeout=60)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -62,15 +61,14 @@ Functions
            become available.
            
 
-   .. method:: __enter__(self)
+   .. py:method:: __enter__(self)
 
 
-   .. method:: __exit__(self, exc_type, exc_val, exc_tb)
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
 
 
 
-.. class:: IPythonPool(num_engines=None, **kwargs)
-
+.. py:class:: IPythonPool(num_engines=None, **kwargs)
 
    Bases: :py:obj:`pymor.parallel.basic.WorkerPoolBase`
 
@@ -85,37 +83,36 @@ Functions
            Keyword arguments used to instantiate the IPython cluster client.
            
 
-   .. attribute:: _updated_defaults
+   .. py:attribute:: _updated_defaults
       :annotation: = 0
 
       
 
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
 
       The number of workers in the pool.
 
 
-   .. method:: _push_object(self, obj)
+   .. py:method:: _push_object(self, obj)
 
 
-   .. method:: _apply(self, function, *args, **kwargs)
+   .. py:method:: _apply(self, function, *args, **kwargs)
 
 
-   .. method:: _apply_only(self, function, worker, *args, **kwargs)
+   .. py:method:: _apply_only(self, function, worker, *args, **kwargs)
 
 
-   .. method:: _map(self, function, chunks, **kwargs)
+   .. py:method:: _map(self, function, chunks, **kwargs)
 
 
-   .. method:: _remove_object(self, remote_id)
+   .. py:method:: _remove_object(self, remote_id)
 
 
-   .. method:: _update_defaults(self)
+   .. py:method:: _update_defaults(self)
 
 
 
-.. class:: RemoteId
-
+.. py:class:: RemoteId
 
    Bases: :py:obj:`int`
 
@@ -135,15 +132,15 @@ Functions
    4
 
 
-.. function:: _worker_call_function(function, loop, args, kwargs)
+.. py:function:: _worker_call_function(function, loop, args, kwargs)
 
 
-.. function:: _setup_worker(worker_id)
+.. py:function:: _setup_worker(worker_id)
 
 
-.. function:: _push_object(remote_id, obj)
+.. py:function:: _push_object(remote_id, obj)
 
 
-.. function:: _remove_object(remote_id)
+.. py:function:: _remove_object(remote_id)
 
 

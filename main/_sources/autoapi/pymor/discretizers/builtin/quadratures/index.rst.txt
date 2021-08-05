@@ -17,39 +17,39 @@ Classes
 
 
 
-.. class:: GaussQuadratures
+.. py:class:: GaussQuadratures
 
    Gauss quadrature on the interval [0, 1]
 
-   .. attribute:: orders
+   .. py:attribute:: orders
       
 
       
 
-   .. attribute:: order_map
+   .. py:attribute:: order_map
       
 
       
 
-   .. attribute:: points
+   .. py:attribute:: points
       
 
       
 
-   .. attribute:: weights
+   .. py:attribute:: weights
       
 
       
 
-   .. method:: maxpoints(cls)
+   .. py:method:: maxpoints(cls)
       :classmethod:
 
 
-   .. method:: _determine_order(cls, order=None, npoints=None)
+   .. py:method:: _determine_order(cls, order=None, npoints=None)
       :classmethod:
 
 
-   .. method:: quadrature(cls, order=None, npoints=None)
+   .. py:method:: quadrature(cls, order=None, npoints=None)
       :classmethod:
 
       Return Gauss points with corresponding weights.
@@ -70,7 +70,7 @@ Classes
               
 
 
-   .. method:: iter_quadrature(cls, order=None, npoints=None)
+   .. py:method:: iter_quadrature(cls, order=None, npoints=None)
       :classmethod:
 
       Iterate over a quadrature tuple-wise.

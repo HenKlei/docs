@@ -36,7 +36,7 @@ Functions
 
 
 
-.. class:: rule
+.. py:class:: rule
 
    Decorator to make a method a rule in a given |RuleTable|.
 
@@ -53,49 +53,48 @@ Functions
       Method to call in case the rule matches.
       
 
-   .. attribute:: condition_description
+   .. py:attribute:: condition_description
       
 
       
 
-   .. attribute:: condition_type
+   .. py:attribute:: condition_type
       
 
       
 
-   .. method:: __call__(self, action)
+   .. py:method:: __call__(self, action)
 
 
-   .. method:: _matches(self, obj)
+   .. py:method:: _matches(self, obj)
       :abstractmethod:
 
       Returns True if given object matches the condition.
 
 
-   .. method:: matches(self, obj)
+   .. py:method:: matches(self, obj)
 
       Returns True if given object matches the condition.
 
 
-   .. method:: _ipython_display_(self)
+   .. py:method:: _ipython_display_(self)
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
-   .. method:: action_description(self)
+   .. py:method:: action_description(self)
       :property:
 
 
-   .. method:: source(self)
+   .. py:method:: source(self)
       :property:
 
 
 
-.. class:: match_class_base(*classes)
-
+.. py:class:: match_class_base(*classes)
 
    Bases: :py:obj:`rule`
 
@@ -115,80 +114,75 @@ Functions
       
 
 
-.. class:: match_class(*classes)
-
+.. py:class:: match_class(*classes)
 
    Bases: :py:obj:`match_class_base`
 
    |rule| that matches when obj is instance of one of the given classes.
 
-   .. attribute:: condition_type
+   .. py:attribute:: condition_type
       :annotation: = CLASS
 
       
 
-   .. method:: _matches(self, obj)
+   .. py:method:: _matches(self, obj)
 
       Returns True if given object matches the condition.
 
 
 
-.. class:: match_class_all(*classes)
-
+.. py:class:: match_class_all(*classes)
 
    Bases: :py:obj:`match_class_base`
 
    |rule| that matches when each item of obj is instance of one of the given classes.
 
-   .. attribute:: condition_type
+   .. py:attribute:: condition_type
       :annotation: = ALLCLASSES
 
       
 
-   .. method:: _matches(self, obj)
+   .. py:method:: _matches(self, obj)
 
       Returns True if given object matches the condition.
 
 
 
-.. class:: match_class_any(*classes)
-
+.. py:class:: match_class_any(*classes)
 
    Bases: :py:obj:`match_class_base`
 
    |rule| that matches when any item of obj is instance of one of the given classes.
 
-   .. attribute:: condition_type
+   .. py:attribute:: condition_type
       :annotation: = ANYCLASS
 
       
 
-   .. method:: _matches(self, obj)
+   .. py:method:: _matches(self, obj)
 
       Returns True if given object matches the condition.
 
 
 
-.. class:: match_always(action)
-
+.. py:class:: match_always(action)
 
    Bases: :py:obj:`rule`
 
    |rule| that always matches.
 
-   .. attribute:: condition_type
+   .. py:attribute:: condition_type
       :annotation: = ALWAYS
 
       
 
-   .. method:: _matches(self, obj)
+   .. py:method:: _matches(self, obj)
 
       Returns True if given object matches the condition.
 
 
 
-.. class:: match_generic(condition, condition_description=None)
-
+.. py:class:: match_generic(condition, condition_description=None)
 
    Bases: :py:obj:`rule`
 
@@ -204,40 +198,38 @@ Functions
            `condition`.
            
 
-   .. attribute:: condition_type
+   .. py:attribute:: condition_type
       :annotation: = GENERIC
 
       
 
-   .. method:: _matches(self, obj)
+   .. py:method:: _matches(self, obj)
 
       Returns True if given object matches the condition.
 
 
 
-.. class:: RuleTableMeta(cls, name, bases, namespace)
-
+.. py:class:: RuleTableMeta(cls, name, bases, namespace)
 
    Bases: :py:obj:`pymor.core.base.UberMeta`
 
    Meta class for |RuleTable|.
 
-   .. attribute:: __str__
+   .. py:attribute:: __str__
       
 
       
 
-   .. method:: __repr__(cls)
+   .. py:method:: __repr__(cls)
 
       Return repr(self).
 
 
-   .. method:: __getitem__(cls, idx)
+   .. py:method:: __getitem__(cls, idx)
 
 
 
-.. class:: RuleTable(use_caching=False)
-
+.. py:class:: RuleTable(use_caching=False)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -263,13 +255,13 @@ Functions
       `list` of all defined |rules|.
       
 
-   .. method:: insert_rule(cls, index, rule_)
+   .. py:method:: insert_rule(cls, index, rule_)
 
 
-   .. method:: append_rule(cls, rule_)
+   .. py:method:: append_rule(cls, rule_)
 
 
-   .. method:: breakpoint_for_obj(cls, obj)
+   .. py:method:: breakpoint_for_obj(cls, obj)
       :classmethod:
 
       Add a conditional breakpoint for given object.
@@ -284,7 +276,7 @@ Functions
               
 
 
-   .. method:: breakpoint_for_name(cls, name)
+   .. py:method:: breakpoint_for_name(cls, name)
       :classmethod:
 
       Add a conditional breakpoint for objects of given name.
@@ -300,7 +292,7 @@ Functions
               
 
 
-   .. method:: apply(self, obj)
+   .. py:method:: apply(self, obj)
 
       Sequentially apply rules to given object.
 
@@ -333,7 +325,7 @@ Functions
               
 
 
-   .. method:: apply_children(self, obj, children=None)
+   .. py:method:: apply_children(self, obj, children=None)
 
       Apply rules to all children of the given object.
 
@@ -356,7 +348,7 @@ Functions
               
 
 
-   .. method:: replace_children(self, obj, children=None)
+   .. py:method:: replace_children(self, obj, children=None)
 
       Replace children of object according to rule table.
 
@@ -365,7 +357,7 @@ Functions
       result of the corresponding :meth:`apply` call.
 
 
-   .. method:: get_children(cls, obj)
+   .. py:method:: get_children(cls, obj)
       :classmethod:
 
       Determine children of given object.
@@ -378,18 +370,18 @@ Functions
           3. `a` is an `iterable` and each of its elements is either an |Operator| or `None`.
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
 
-.. function:: print_children(obj)
+.. py:function:: print_children(obj)
 
 
-.. function:: format_rules(rules)
+.. py:function:: format_rules(rules)
 
 
-.. function:: print_rules(rules)
+.. py:function:: print_rules(rules)
 
 

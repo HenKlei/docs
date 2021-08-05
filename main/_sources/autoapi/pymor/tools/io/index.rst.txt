@@ -4,8 +4,26 @@
 .. py:module:: pymor.tools.io
 
 
-Module Contents
----------------
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   matrices <matrices/index.rst>
+   vtk <vtk/index.rst>
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.io.Deprecated
+
 
 
 Functions
@@ -14,55 +32,25 @@ Functions
 .. autoapisummary::
   :nosignatures:
 
-   pymor.tools.io._loadmat
-   pymor.tools.io._savemat
-   pymor.tools.io._mmread
-   pymor.tools.io._mmwrite
-   pymor.tools.io._load
-   pymor.tools.io._save
-   pymor.tools.io._savez
-   pymor.tools.io._loadtxt
-   pymor.tools.io._savetxt
-   pymor.tools.io._get_file_extension
    pymor.tools.io.load_matrix
    pymor.tools.io.save_matrix
+   pymor.tools.io.read_vtkfile
    pymor.tools.io.SafeTemporaryFileName
+   pymor.tools.io.safe_temporary_filename
    pymor.tools.io.change_to_directory
    pymor.tools.io.file_owned_by_current_user
 
 
 
-.. function:: _loadmat(path, key=None)
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.io.config
 
 
-.. function:: _savemat(path, matrix, key=None)
-
-
-.. function:: _mmread(path, key=None)
-
-
-.. function:: _mmwrite(path, matrix, key=None)
-
-
-.. function:: _load(path, key=None)
-
-
-.. function:: _save(path, matrix, key=None)
-
-
-.. function:: _savez(path, matrix, key=None)
-
-
-.. function:: _loadtxt(path, key=None)
-
-
-.. function:: _savetxt(path, matrix, key=None)
-
-
-.. function:: _get_file_extension(path)
-
-
-.. function:: load_matrix(path, key=None)
+.. py:function:: load_matrix(path, key=None)
 
    Load matrix from file.
 
@@ -85,7 +73,7 @@ Functions
            
 
 
-.. function:: save_matrix(path, matrix, key=None)
+.. py:function:: save_matrix(path, matrix, key=None)
 
    Save matrix to file.
 
@@ -105,7 +93,40 @@ Functions
            
 
 
-.. function:: SafeTemporaryFileName(name=None, parent_dir=None)
+.. py:data:: config
+   
+
+   
+
+.. py:class:: Deprecated(alt='no alternative given')
+
+   Decorator for marking functions as deprecated.
+
+   It will result in a warning being emitted when the function is used.
+
+   .. py:method:: __call__(self, func)
+
+
+   .. py:method:: __get__(self, obj, ownerClass=None)
+
+      Return a wrapper that binds self as a method of obj (!)
+
+
+
+.. py:exception:: IOLibsMissing(msg=None)
+
+   Bases: :py:obj:`ImportError`
+
+   Import can't find module, or can't find name in module.
+
+
+.. py:function:: read_vtkfile(*args, **kwargs)
+
+
+.. py:function:: SafeTemporaryFileName(name=None, parent_dir=None)
+
+
+.. py:function:: safe_temporary_filename(name=None, parent_dir=None)
 
    Cross~platform safe equivalent of re-opening a NamedTemporaryFile.
 
@@ -121,11 +142,11 @@ Functions
            
 
 
-.. function:: change_to_directory(name)
+.. py:function:: change_to_directory(name)
 
    Change current working directory to `name` for the scope of the context.
 
 
-.. function:: file_owned_by_current_user(filename)
+.. py:function:: file_owned_by_current_user(filename)
 
 

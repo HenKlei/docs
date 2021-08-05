@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: NeuralNetworkReductor(fom, training_set, validation_set=None, validation_ratio=0.1, basis_size=None, rtol=0.0, atol=0.0, l2_err=0.0, pod_params=None, ann_mse='like_basis')
-
+.. py:class:: NeuralNetworkReductor(fom, training_set, validation_set=None, validation_ratio=0.1, basis_size=None, rtol=0.0, atol=0.0, l2_err=0.0, pod_params=None, ann_mse='like_basis')
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -66,7 +65,7 @@ Classes
            error tolerance is found.
            
 
-   .. method:: reduce(self, hidden_layers='[(N+P)*3, (N+P)*3]', activation_function=torch.tanh, optimizer=optim.LBFGS, epochs=1000, batch_size=20, learning_rate=1.0, restarts=10, seed=0)
+   .. py:method:: reduce(self, hidden_layers='[(N+P)*3, (N+P)*3]', activation_function=torch.tanh, optimizer=optim.LBFGS, epochs=1000, batch_size=20, learning_rate=1.0, restarts=10, seed=0)
 
       Reduce by training artificial neural networks.
 
@@ -103,27 +102,27 @@ Classes
               
 
 
-   .. method:: _compute_layer_sizes(self, hidden_layers)
+   .. py:method:: _compute_layer_sizes(self, hidden_layers)
 
       Compute the number of neurons in the layers of the neural network.
 
 
-   .. method:: _build_rom(self)
+   .. py:method:: _build_rom(self)
 
       Construct the reduced order model.
 
 
-   .. method:: build_basis(self)
+   .. py:method:: build_basis(self)
 
       Compute a reduced basis using proper orthogonal decomposition.
 
 
-   .. method:: _compute_sample(self, mu, u, reduced_basis)
+   .. py:method:: _compute_sample(self, mu, u, reduced_basis)
 
       Transform parameter and corresponding solution to |NumPy arrays|.
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 

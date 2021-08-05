@@ -29,7 +29,7 @@ Functions
 
 
 
-.. function:: weak_greedy(surrogate, training_set, atol=None, rtol=None, max_extensions=None, pool=None)
+.. py:function:: weak_greedy(surrogate, training_set, atol=None, rtol=None, max_extensions=None, pool=None)
 
    Weak greedy basis generation algorithm :cite:`BCDDPW11`.
 
@@ -73,13 +73,13 @@ Functions
            
 
 
-.. class:: WeakGreedySurrogate
+.. py:class:: WeakGreedySurrogate
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
    Surrogate for the approximation error in :func:`weak_greedy`.
 
-   .. method:: evaluate(self, mus, return_all_values=False)
+   .. py:method:: evaluate(self, mus, return_all_values=False)
       :abstractmethod:
 
       Evaluate the surrogate for given parameters.
@@ -100,12 +100,12 @@ Functions
               
 
 
-   .. method:: extend(self, mu)
+   .. py:method:: extend(self, mu)
       :abstractmethod:
 
 
 
-.. function:: rb_greedy(fom, reductor, training_set, use_error_estimator=True, error_norm=None, atol=None, rtol=None, max_extensions=None, extension_params=None, pool=None)
+.. py:function:: rb_greedy(fom, reductor, training_set, use_error_estimator=True, error_norm=None, atol=None, rtol=None, max_extensions=None, extension_params=None, pool=None)
 
    Weak Greedy basis generation using the RB approximation error as surrogate.
 
@@ -163,8 +163,7 @@ Functions
            
 
 
-.. class:: RBSurrogate(fom, reductor, use_error_estimator, error_norm, extension_params, pool)
-
+.. py:class:: RBSurrogate(fom, reductor, use_error_estimator, error_norm, extension_params, pool)
 
    Bases: :py:obj:`WeakGreedySurrogate`
 
@@ -172,7 +171,7 @@ Functions
 
    Not intended to be used directly.
 
-   .. method:: evaluate(self, mus, return_all_values=False)
+   .. py:method:: evaluate(self, mus, return_all_values=False)
 
       Evaluate the surrogate for given parameters.
 
@@ -192,10 +191,10 @@ Functions
               
 
 
-   .. method:: extend(self, mu)
+   .. py:method:: extend(self, mu)
 
 
 
-.. function:: _rb_surrogate_evaluate(rom=None, fom=None, reductor=None, mus=None, error_norm=None, return_all_values=False)
+.. py:function:: _rb_surrogate_evaluate(rom=None, fom=None, reductor=None, mus=None, error_norm=None, return_all_values=False)
 
 

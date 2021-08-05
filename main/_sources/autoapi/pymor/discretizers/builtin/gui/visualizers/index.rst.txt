@@ -18,8 +18,7 @@ Classes
 
 
 
-.. class:: PatchVisualizer(grid, codim=2, bounding_box=None, backend='jupyter_or_gl', block=False)
-
+.. py:class:: PatchVisualizer(grid, codim=2, bounding_box=None, backend='jupyter_or_gl', block=False)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -42,7 +41,7 @@ Classes
            If `True`, block execution until the plot window is closed.
            
 
-   .. method:: visualize(self, U, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, block=None, filename=None, columns=2)
+   .. py:method:: visualize(self, U, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, block=None, filename=None, columns=2)
 
       Visualize the provided data.
 
@@ -75,8 +74,7 @@ Classes
 
 
 
-.. class:: OnedVisualizer(grid, codim=1, block=False, backend='jupyter_or_matplotlib')
-
+.. py:class:: OnedVisualizer(grid, codim=1, block=False, backend='jupyter_or_matplotlib')
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -97,7 +95,7 @@ Classes
            Plot backend to use ('jupyter_or_matplotlib', 'jupyter', 'matplotlib').
            
 
-   .. method:: visualize(self, U, title=None, legend=None, separate_plots=True, separate_axes=False, block=None, filename=None, columns=2)
+   .. py:method:: visualize(self, U, title=None, legend=None, separate_plots=True, separate_axes=False, block=None, filename=None, columns=2)
 
       Visualize the provided data.
 

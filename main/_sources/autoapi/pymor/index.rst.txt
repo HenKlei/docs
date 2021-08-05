@@ -64,19 +64,19 @@ Attributes
    pymor.filename
 
 
-.. function:: _init_mpi()
+.. py:function:: _init_mpi()
 
    provides a way to manually set the thread init mode for MPI if necessary.
    Needs to happen as early as possible, otherwise mpi4py might auto-init somewhere else.
 
 
 
-.. data:: config
+.. py:data:: config
    
 
    
 
-.. function:: load_defaults_from_file(filename='./pymor_defaults.py')
+.. py:function:: load_defaults_from_file(filename='./pymor_defaults.py')
 
    Loads |default| values defined in configuration file.
 
@@ -92,22 +92,22 @@ Attributes
            
 
 
-.. data:: revstring
+.. py:data:: revstring
    
 
    
 
-.. data:: __version__
+.. py:data:: __version__
    
 
    
 
-.. data:: filename
+.. py:data:: filename
    
 
    
 
-.. function:: set_log_levels(levels=None)
+.. py:function:: set_log_levels(levels=None)
 
    Set log levels for pyMOR's logging facility.
 
@@ -120,7 +120,7 @@ Attributes
            
 
 
-.. function:: set_log_format(max_hierarchy_level=1, indent_blocks=True, block_timings=False)
+.. py:function:: set_log_format(max_hierarchy_level=1, indent_blocks=True, block_timings=False)
 
    Set log levels for pyMOR's logging facility.
 
@@ -139,6 +139,6 @@ Attributes
            
 
 
-.. function:: quit_event_loop()
+.. py:function:: quit_event_loop()
 
 

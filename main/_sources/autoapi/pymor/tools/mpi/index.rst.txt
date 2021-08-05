@@ -105,37 +105,37 @@ Attributes
    pymor.tools.mpi.filename
 
 
-.. data:: comm
+.. py:data:: comm
    
 
    
 
-.. data:: rank0
+.. py:data:: rank0
    
 
    
 
-.. data:: parallel
+.. py:data:: parallel
    
 
    
 
-.. data:: _managed_objects
+.. py:data:: _managed_objects
    
 
    
 
-.. data:: _object_counter
+.. py:data:: _object_counter
    :annotation: = 0
 
    
 
-.. data:: _event_loop_running
+.. py:data:: _event_loop_running
    :annotation: = False
 
    
 
-.. function:: event_loop_settings(auto_launch=True)
+.. py:function:: event_loop_settings(auto_launch=True)
 
    Settings for pyMOR's MPI event loop.
 
@@ -147,10 +147,10 @@ Attributes
            
 
 
-.. function:: launch_event_loop()
+.. py:function:: launch_event_loop()
 
 
-.. function:: event_loop()
+.. py:function:: event_loop()
 
    Launches an MPI-based event loop.
 
@@ -159,7 +159,7 @@ Attributes
    by calling :func:`quit` to exit the loop.
 
 
-.. function:: call(method, *args, **kwargs)
+.. py:function:: call(method, *args, **kwargs)
 
    Execute method on all MPI ranks.
 
@@ -183,7 +183,7 @@ Attributes
            
 
 
-.. function:: quit()
+.. py:function:: quit()
 
    Exit the event loop on all MPI ranks.
 
@@ -191,28 +191,28 @@ Attributes
    MPI ranks.
 
 
-.. function:: mpi_info()
+.. py:function:: mpi_info()
 
    Print some information on the MPI setup.
 
    Intended to be used in conjunction with :func:`call`.
 
 
-.. function:: run_code(code)
+.. py:function:: run_code(code)
 
    Execute the code string `code`.
 
    Intended to be used in conjunction with :func:`call`.
 
 
-.. function:: import_module(path)
+.. py:function:: import_module(path)
 
    Import the module named by `path`.
 
    Intended to be used in conjunction with :func:`call`.
 
 
-.. function:: function_call(f, *args, **kwargs)
+.. py:function:: function_call(f, *args, **kwargs)
 
    Execute the function `f` with given arguments.
 
@@ -221,7 +221,7 @@ Attributes
    mapped to the object they refer to.
 
 
-.. function:: function_call_manage(f, *args, **kwargs)
+.. py:function:: function_call_manage(f, *args, **kwargs)
 
    Execute the function `f` and manage the return value.
 
@@ -232,7 +232,7 @@ Attributes
    mapped to the object they refer to.
 
 
-.. function:: method_call(obj_id, name_, *args, **kwargs)
+.. py:function:: method_call(obj_id, name_, *args, **kwargs)
 
    Execute a method with given arguments.
 
@@ -254,7 +254,7 @@ Attributes
            
 
 
-.. function:: method_call_manage(obj_id, name_, *args, **kwargs)
+.. py:function:: method_call_manage(obj_id, name_, *args, **kwargs)
 
    Execute a method with given arguments and manage the return value.
 
@@ -278,30 +278,29 @@ Attributes
            
 
 
-.. class:: ObjectId
-
+.. py:class:: ObjectId
 
    Bases: :py:obj:`int`
 
    A handle to an MPI distributed object.
 
 
-.. function:: manage_object(obj)
+.. py:function:: manage_object(obj)
 
    Keep track of `obj` and return an :class:`ObjectId` handle.
 
 
-.. function:: get_object(obj_id)
+.. py:function:: get_object(obj_id)
 
    Return the object referred to by `obj_id`.
 
 
-.. function:: remove_object(obj_id)
+.. py:function:: remove_object(obj_id)
 
    Remove the object referred to by `obj_id` from the registry.
 
 
-.. data:: filename
+.. py:data:: filename
    
 
    

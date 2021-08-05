@@ -26,8 +26,7 @@ Functions
 
 
 
-.. class:: Timer(section, log=getLogger(__name__))
-
+.. py:class:: Timer(section, log=getLogger(__name__))
 
    Class for finding code runtime.
 
@@ -56,22 +55,22 @@ Functions
        timer.stop()
        print(timer.dt)
 
-   .. method:: start(self)
+   .. py:method:: start(self)
 
 
-   .. method:: stop(self)
+   .. py:method:: stop(self)
 
 
-   .. method:: __enter__(self)
+   .. py:method:: __enter__(self)
 
 
-   .. method:: __exit__(self, type_, value, traceback)
+   .. py:method:: __exit__(self, type_, value, traceback)
 
 
-   .. method:: __call__(self, func)
+   .. py:method:: __call__(self, func)
 
 
 
-.. function:: busywait(amount)
+.. py:function:: busywait(amount)
 
 

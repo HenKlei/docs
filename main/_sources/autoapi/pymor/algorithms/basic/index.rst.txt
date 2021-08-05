@@ -26,7 +26,7 @@ Functions
 
 
 
-.. function:: almost_equal(U, V, product=None, sup_norm=False, rtol=1e-14, atol=1e-14)
+.. py:function:: almost_equal(U, V, product=None, sup_norm=False, rtol=1e-14, atol=1e-14)
 
    Compare U and V for almost equality.
 
@@ -58,12 +58,12 @@ Functions
            
 
 
-.. function:: relative_error(U, V, product=None)
+.. py:function:: relative_error(U, V, product=None)
 
    Compute error between U and V relative to norm of U.
 
 
-.. function:: project_array(U, basis, product=None, orthonormal=True)
+.. py:function:: project_array(U, basis, product=None, orthonormal=True)
 
    Orthogonal projection of |VectorArray| onto subspace.
 
@@ -86,7 +86,7 @@ Functions
            
 
 
-.. function:: contains_zero_vector(vector_array, rtol=None, atol=None)
+.. py:function:: contains_zero_vector(vector_array, rtol=None, atol=None)
 
    Return `True` iff any vector in the array float_compares to 0s of the same dim.
 

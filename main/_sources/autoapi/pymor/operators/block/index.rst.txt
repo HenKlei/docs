@@ -24,8 +24,7 @@ Classes
 
 
 
-.. class:: BlockOperatorBase(blocks)
-
+.. py:class:: BlockOperatorBase(blocks)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -81,12 +80,12 @@ Classes
       for all V, mu.
       
 
-   .. method:: _operators(self)
+   .. py:method:: _operators(self)
 
       Iterator over operators.
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -103,7 +102,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -129,7 +128,7 @@ Classes
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -152,7 +151,7 @@ Classes
               
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -178,7 +177,7 @@ Classes
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -204,7 +203,7 @@ Classes
               
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the operator's derivative with respect to a given parameter.
 
@@ -222,8 +221,7 @@ Classes
 
 
 
-.. class:: BlockOperator(blocks)
-
+.. py:class:: BlockOperator(blocks)
 
    Bases: :py:obj:`BlockOperatorBase`
 
@@ -238,71 +236,66 @@ Classes
            Two-dimensional array-like where each entry is an |Operator| or `None`.
            
 
-   .. attribute:: blocked_source
+   .. py:attribute:: blocked_source
       :annotation: = True
 
       
 
-   .. attribute:: blocked_range
+   .. py:attribute:: blocked_range
       :annotation: = True
 
       
 
 
-.. class:: BlockRowOperator(blocks)
-
+.. py:class:: BlockRowOperator(blocks)
 
    Bases: :py:obj:`BlockOperatorBase`
 
    A row vector of arbitrary |Operators|.
 
-   .. attribute:: blocked_source
+   .. py:attribute:: blocked_source
       :annotation: = True
 
       
 
-   .. attribute:: blocked_range
+   .. py:attribute:: blocked_range
       :annotation: = False
 
       
 
 
-.. class:: BlockColumnOperator(blocks)
-
+.. py:class:: BlockColumnOperator(blocks)
 
    Bases: :py:obj:`BlockOperatorBase`
 
    A column vector of arbitrary |Operators|.
 
-   .. attribute:: blocked_source
+   .. py:attribute:: blocked_source
       :annotation: = False
 
       
 
-   .. attribute:: blocked_range
+   .. py:attribute:: blocked_range
       :annotation: = True
 
       
 
 
-.. class:: BlockProjectionOperator(block_space, component)
-
+.. py:class:: BlockProjectionOperator(block_space, component)
 
    Bases: :py:obj:`BlockRowOperator`
 
    A row vector of arbitrary |Operators|.
 
 
-.. class:: BlockEmbeddingOperator(block_space, component)
-
+.. py:class:: BlockEmbeddingOperator(block_space, component)
 
    Bases: :py:obj:`BlockColumnOperator`
 
    A column vector of arbitrary |Operators|.
 
 
-.. class:: BlockDiagonalOperator(blocks)
-
+.. py:class:: BlockDiagonalOperator(blocks)
 
    Bases: :py:obj:`BlockOperator`
 
@@ -311,7 +304,7 @@ Classes
    This is a specialization of :class:`BlockOperator` for the
    block diagonal case.
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -328,7 +321,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -354,7 +347,7 @@ Classes
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -392,7 +385,7 @@ Classes
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -430,7 +423,7 @@ Classes
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -454,8 +447,7 @@ Classes
 
 
 
-.. class:: SecondOrderModelOperator(alpha, beta, A, B)
-
+.. py:class:: SecondOrderModelOperator(alpha, beta, A, B)
 
    Bases: :py:obj:`BlockOperator`
 
@@ -506,7 +498,7 @@ Classes
            |Operator|.
            
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -523,7 +515,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -549,7 +541,7 @@ Classes
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -587,7 +579,7 @@ Classes
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -625,7 +617,7 @@ Classes
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 

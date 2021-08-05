@@ -23,8 +23,7 @@ Classes
 
 
 
-.. class:: GenericSOBTpvReductor(fom, mu=None)
-
+.. py:class:: GenericSOBTpvReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -40,19 +39,19 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
       :abstractmethod:
 
       Return Gramians.
 
 
-   .. method:: _projection_matrices_and_singular_values(self, r, gramians)
+   .. py:method:: _projection_matrices_and_singular_values(self, r, gramians)
       :abstractmethod:
 
       Return projection matrices and singular values.
 
 
-   .. method:: reduce(self, r, projection='bfsr')
+   .. py:method:: reduce(self, r, projection='bfsr')
 
       Reduce using GenericSOBTpv.
 
@@ -77,14 +76,13 @@ Classes
               
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. class:: SOBTpReductor(fom, mu=None)
-
+.. py:class:: SOBTpReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericSOBTpvReductor`
 
@@ -100,19 +98,18 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return Gramians.
 
 
-   .. method:: _projection_matrices_and_singular_values(self, r, gramians)
+   .. py:method:: _projection_matrices_and_singular_values(self, r, gramians)
 
       Return projection matrices and singular values.
 
 
 
-.. class:: SOBTvReductor(fom, mu=None)
-
+.. py:class:: SOBTvReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericSOBTpvReductor`
 
@@ -128,19 +125,18 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return Gramians.
 
 
-   .. method:: _projection_matrices_and_singular_values(self, r, gramians)
+   .. py:method:: _projection_matrices_and_singular_values(self, r, gramians)
 
       Return projection matrices and singular values.
 
 
 
-.. class:: SOBTpvReductor(fom, mu=None)
-
+.. py:class:: SOBTpvReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericSOBTpvReductor`
 
@@ -156,19 +152,18 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return Gramians.
 
 
-   .. method:: _projection_matrices_and_singular_values(self, r, gramians)
+   .. py:method:: _projection_matrices_and_singular_values(self, r, gramians)
 
       Return projection matrices and singular values.
 
 
 
-.. class:: SOBTvpReductor(fom, mu=None)
-
+.. py:class:: SOBTvpReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericSOBTpvReductor`
 
@@ -184,19 +179,18 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return Gramians.
 
 
-   .. method:: _projection_matrices_and_singular_values(self, r, gramians)
+   .. py:method:: _projection_matrices_and_singular_values(self, r, gramians)
 
       Return projection matrices and singular values.
 
 
 
-.. class:: SOBTfvReductor(fom, mu=None)
-
+.. py:class:: SOBTfvReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -212,7 +206,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, r, projection='bfsr')
+   .. py:method:: reduce(self, r, projection='bfsr')
 
       Reduce using SOBTfv.
 
@@ -237,14 +231,13 @@ Classes
               
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. class:: SOBTReductor(fom, mu=None)
-
+.. py:class:: SOBTReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -260,7 +253,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, r, projection='bfsr')
+   .. py:method:: reduce(self, r, projection='bfsr')
 
       Reduce using SOBT.
 
@@ -285,7 +278,7 @@ Classes
               
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 

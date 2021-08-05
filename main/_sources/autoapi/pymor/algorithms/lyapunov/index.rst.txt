@@ -33,27 +33,27 @@ Attributes
    pymor.algorithms.lyapunov._DEFAULT_LYAP_DENSE_SOLVER_BACKEND
 
 
-.. data:: _DEFAULT_LYAP_LRCF_SPARSE_SOLVER_BACKEND
+.. py:data:: _DEFAULT_LYAP_LRCF_SPARSE_SOLVER_BACKEND
    
 
    
 
-.. data:: _DEFAULT_LYAP_LRCF_DENSE_SOLVER_BACKEND
+.. py:data:: _DEFAULT_LYAP_LRCF_DENSE_SOLVER_BACKEND
    
 
    
 
-.. data:: _DEFAULT_LYAP_DENSE_SOLVER_BACKEND
+.. py:data:: _DEFAULT_LYAP_DENSE_SOLVER_BACKEND
    
 
    
 
-.. function:: mat_eqn_sparse_min_size(value=1000)
+.. py:function:: mat_eqn_sparse_min_size(value=1000)
 
    Returns minimal size for which a sparse solver will be used by default.
 
 
-.. function:: solve_lyap_lrcf(A, E, B, trans=False, options=None, default_sparse_solver_backend=_DEFAULT_LYAP_LRCF_SPARSE_SOLVER_BACKEND, default_dense_solver_backend=_DEFAULT_LYAP_LRCF_DENSE_SOLVER_BACKEND)
+.. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None, default_sparse_solver_backend=_DEFAULT_LYAP_LRCF_SPARSE_SOLVER_BACKEND, default_dense_solver_backend=_DEFAULT_LYAP_LRCF_DENSE_SOLVER_BACKEND)
 
    Compute an approximate low-rank solution of a Lyapunov equation.
 
@@ -134,10 +134,10 @@ Attributes
            
 
 
-.. function:: _solve_lyap_lrcf_check_args(A, E, B, trans)
+.. py:function:: _solve_lyap_lrcf_check_args(A, E, B, trans)
 
 
-.. function:: solve_lyap_dense(A, E, B, trans=False, options=None, default_solver_backend=_DEFAULT_LYAP_DENSE_SOLVER_BACKEND)
+.. py:function:: solve_lyap_dense(A, E, B, trans=False, options=None, default_solver_backend=_DEFAULT_LYAP_DENSE_SOLVER_BACKEND)
 
    Compute the solution of a Lyapunov equation.
 
@@ -204,10 +204,10 @@ Attributes
            
 
 
-.. function:: _solve_lyap_dense_check_args(A, E, B, trans)
+.. py:function:: _solve_lyap_dense_check_args(A, E, B, trans)
 
 
-.. function:: _chol(A)
+.. py:function:: _chol(A)
 
    Cholesky decomposition.
 

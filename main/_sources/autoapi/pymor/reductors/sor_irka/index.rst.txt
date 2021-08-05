@@ -22,8 +22,7 @@ Classes
 
 
 
-.. class:: SORIRKAReductor(fom, mu=None)
-
+.. py:class:: SORIRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.reductors.h2.GenericIRKAReductor`
 
@@ -37,7 +36,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False, irka_options=None)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False, irka_options=None)
 
       Reduce using SOR-IRKA.
 

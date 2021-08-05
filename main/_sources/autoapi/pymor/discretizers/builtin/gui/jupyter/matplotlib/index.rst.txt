@@ -27,11 +27,10 @@ Functions
 
 
 
-.. class:: MPLPlotBase(U, grid, codim, legend, bounding_box=None, separate_colorbars=False, columns=2, separate_plots=False, separate_axes=False)
+.. py:class:: MPLPlotBase(U, grid, codim, legend, bounding_box=None, separate_colorbars=False, columns=2, separate_plots=False, separate_axes=False)
 
 
-
-.. function:: visualize_patch(grid, U, bounding_box=None, codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, columns=2)
+.. py:function:: visualize_patch(grid, U, bounding_box=None, codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, columns=2)
 
    Visualize scalar data associated to a two-dimensional |Grid| as a patch plot.
 
@@ -66,7 +65,7 @@ Functions
            
 
 
-.. function:: visualize_matplotlib_1d(grid, U, codim=1, title=None, legend=None, separate_plots=True, separate_axes=False, columns=2)
+.. py:function:: visualize_matplotlib_1d(grid, U, codim=1, title=None, legend=None, separate_plots=True, separate_axes=False, columns=2)
 
    Visualize scalar data associated to a one-dimensional |Grid| as a plot.
 

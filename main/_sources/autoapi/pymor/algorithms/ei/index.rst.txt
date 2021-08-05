@@ -41,7 +41,7 @@ Functions
 
 
 
-.. function:: ei_greedy(U, error_norm=None, atol=None, rtol=None, max_interpolation_dofs=None, nodal_basis=False, copy=True, pool=dummy_pool)
+.. py:function:: ei_greedy(U, error_norm=None, atol=None, rtol=None, max_interpolation_dofs=None, nodal_basis=False, copy=True, pool=dummy_pool)
 
    Generate data for empirical interpolation using EI-Greedy algorithm.
 
@@ -97,7 +97,7 @@ Functions
            
 
 
-.. function:: deim(U, modes=None, pod=True, atol=None, rtol=None, product=None, pod_options={})
+.. py:function:: deim(U, modes=None, pod=True, atol=None, rtol=None, product=None, pod_options={})
 
    Generate data for empirical interpolation using DEIM algorithm.
 
@@ -139,7 +139,7 @@ Functions
            
 
 
-.. function:: interpolate_operators(fom, operator_names, parameter_sample, error_norm=None, product=None, atol=None, rtol=None, max_interpolation_dofs=None, pod_options={}, alg='ei_greedy', pool=dummy_pool)
+.. py:function:: interpolate_operators(fom, operator_names, parameter_sample, error_norm=None, product=None, atol=None, rtol=None, max_interpolation_dofs=None, pod_options={}, alg='ei_greedy', pool=dummy_pool)
 
    Empirical operator interpolation using the EI-Greedy/DEIM algorithm.
 
@@ -199,7 +199,7 @@ Functions
            
 
 
-.. function:: interpolate_function(function, parameter_sample, evaluation_points, atol=None, rtol=None, max_interpolation_dofs=None)
+.. py:function:: interpolate_function(function, parameter_sample, evaluation_points, atol=None, rtol=None, max_interpolation_dofs=None)
 
    Parameter separable approximation of a |Function| using Empiricial Interpolation.
 
@@ -244,24 +244,24 @@ Functions
            
 
 
-.. function:: _interpolate_operators_build_evaluations(mu, fom=None, operators=None, evaluations=None)
+.. py:function:: _interpolate_operators_build_evaluations(mu, fom=None, operators=None, evaluations=None)
 
 
-.. function:: _parallel_ei_greedy(U, pool, error_norm=None, atol=None, rtol=None, max_interpolation_dofs=None, nodal_basis=False, copy=True)
+.. py:function:: _parallel_ei_greedy(U, pool, error_norm=None, atol=None, rtol=None, max_interpolation_dofs=None, nodal_basis=False, copy=True)
 
 
-.. function:: _parallel_ei_greedy_get_empty(U=None)
+.. py:function:: _parallel_ei_greedy_get_empty(U=None)
 
 
-.. function:: _parallel_ei_greedy_initialize(U=None, error_norm=None, copy=None, data=None)
+.. py:function:: _parallel_ei_greedy_initialize(U=None, error_norm=None, copy=None, data=None)
 
 
-.. function:: _parallel_ei_greedy_get_vector(data=None)
+.. py:function:: _parallel_ei_greedy_get_vector(data=None)
 
 
-.. function:: _parallel_ei_greedy_update(new_vec=None, new_dof=None, data=None)
+.. py:function:: _parallel_ei_greedy_update(new_vec=None, new_dof=None, data=None)
 
 
-.. function:: _identity(x)
+.. py:function:: _identity(x)
 
 

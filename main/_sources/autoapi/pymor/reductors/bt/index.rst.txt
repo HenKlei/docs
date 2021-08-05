@@ -20,8 +20,7 @@ Classes
 
 
 
-.. class:: GenericBTReductor(fom, mu=None)
-
+.. py:class:: GenericBTReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -35,24 +34,24 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
       :abstractmethod:
 
       Return low-rank Cholesky factors of Gramians.
 
 
-   .. method:: _sv_U_V(self)
+   .. py:method:: _sv_U_V(self)
 
       Return singular values and vectors.
 
 
-   .. method:: error_bounds(self)
+   .. py:method:: error_bounds(self)
       :abstractmethod:
 
       Returns error bounds for all possible reduced orders.
 
 
-   .. method:: reduce(self, r=None, tol=None, projection='bfsr')
+   .. py:method:: reduce(self, r=None, tol=None, projection='bfsr')
 
       Generic Balanced Truncation.
 
@@ -79,14 +78,13 @@ Classes
               
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. class:: BTReductor(fom, mu=None)
-
+.. py:class:: BTReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericBTReductor`
 
@@ -102,19 +100,18 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
 
 
-   .. method:: error_bounds(self)
+   .. py:method:: error_bounds(self)
 
       Returns error bounds for all possible reduced orders.
 
 
 
-.. class:: LQGBTReductor(fom, mu=None, solver_options=None)
-
+.. py:class:: LQGBTReductor(fom, mu=None, solver_options=None)
 
    Bases: :py:obj:`GenericBTReductor`
 
@@ -132,19 +129,18 @@ Classes
            The solver options to use to solve the Riccati equations.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
 
 
-   .. method:: error_bounds(self)
+   .. py:method:: error_bounds(self)
 
       Returns error bounds for all possible reduced orders.
 
 
 
-.. class:: BRBTReductor(fom, gamma=1, mu=None, solver_options=None)
-
+.. py:class:: BRBTReductor(fom, gamma=1, mu=None, solver_options=None)
 
    Bases: :py:obj:`GenericBTReductor`
 
@@ -164,12 +160,12 @@ Classes
            The solver options to use to solve the positive Riccati equations.
            
 
-   .. method:: _gramians(self)
+   .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
 
 
-   .. method:: error_bounds(self)
+   .. py:method:: error_bounds(self)
 
       Returns error bounds for all possible reduced orders.
 

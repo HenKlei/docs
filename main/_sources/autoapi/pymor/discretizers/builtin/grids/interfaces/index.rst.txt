@@ -20,8 +20,7 @@ Classes
 
 
 
-.. class:: ReferenceElement
-
+.. py:class:: ReferenceElement
 
    Bases: :py:obj:`pymor.core.cache.CacheableObject`
 
@@ -40,18 +39,18 @@ Classes
       The volume of the reference element
       
 
-   .. attribute:: cache_region
+   .. py:attribute:: cache_region
       :annotation: = memory
 
       
 
-   .. method:: size(self, codim)
+   .. py:method:: size(self, codim)
       :abstractmethod:
 
       Number of subentities of codimension `codim`.
 
 
-   .. method:: subentities(self, codim, subentity_codim)
+   .. py:method:: subentities(self, codim, subentity_codim)
       :abstractmethod:
 
       `subentities(c,sc)[i,j]` is, with respect to the indexing inside the
@@ -59,7 +58,7 @@ Classes
       subentity of the `i`-th codim-`codim` subentity of the reference element.
 
 
-   .. method:: subentity_embedding(self, subentity_codim)
+   .. py:method:: subentity_embedding(self, subentity_codim)
       :abstractmethod:
 
       Returns a tuple `(A, B)` which defines the embedding of the codim-`subentity_codim`
@@ -71,44 +70,44 @@ Classes
       the superentity with smallest index.
 
 
-   .. method:: _subentity_embedding(self, subentity_codim)
+   .. py:method:: _subentity_embedding(self, subentity_codim)
 
 
-   .. method:: sub_reference_element(self, codim)
+   .. py:method:: sub_reference_element(self, codim)
       :abstractmethod:
 
       Returns the reference element of the codim-`codim` subentities.
 
 
-   .. method:: _sub_reference_element(self, codim)
+   .. py:method:: _sub_reference_element(self, codim)
 
 
-   .. method:: __call__(self, codim)
+   .. py:method:: __call__(self, codim)
 
       Returns the reference element of the codim-`codim` subentities.
 
 
-   .. method:: unit_outer_normals(self)
+   .. py:method:: unit_outer_normals(self)
       :abstractmethod:
 
       `retval[e]` is the unit outer-normal vector to the codim-1 subentity
       with index `e`.
 
 
-   .. method:: center(self)
+   .. py:method:: center(self)
       :abstractmethod:
 
       Coordinates of the barycenter.
 
 
-   .. method:: mapped_diameter(self, A)
+   .. py:method:: mapped_diameter(self, A)
       :abstractmethod:
 
       The diameter of the reference element after transforming it with the
       matrix `A` (vectorized).
 
 
-   .. method:: quadrature(self, order=None, npoints=None, quadrature_type='default')
+   .. py:method:: quadrature(self, order=None, npoints=None, quadrature_type='default')
       :abstractmethod:
 
       Returns tuple `(P, W)` where `P` is an array of quadrature points with
@@ -117,7 +116,7 @@ Classes
       The quadrature is of order `order` or has `npoints` integration points.
 
 
-   .. method:: quadrature_info(self)
+   .. py:method:: quadrature_info(self)
       :abstractmethod:
 
       Returns a tuple of dicts `(O, N)` where `O[quadrature_type]` is a list
@@ -125,12 +124,11 @@ Classes
       is a list of the corresponding numbers of integration points.
 
 
-   .. method:: quadrature_types(self)
+   .. py:method:: quadrature_types(self)
 
 
 
-.. class:: Grid
-
+.. py:class:: Grid
 
    Bases: :py:obj:`pymor.core.cache.CacheableObject`
 
@@ -141,23 +139,23 @@ Classes
    and the embeddings given by :meth:`~Grid.embeddings`. In addition, only :meth:`~Grid.size` and
    :meth:`~Grid.reference_element` have to be implemented.
 
-   .. attribute:: cache_region
+   .. py:attribute:: cache_region
       :annotation: = memory
 
       
 
-   .. attribute:: MAX_DOMAIN_WIDTH
+   .. py:attribute:: MAX_DOMAIN_WIDTH
       :annotation: = 1000000000000.0
 
       
 
-   .. method:: size(self, codim)
+   .. py:method:: size(self, codim)
       :abstractmethod:
 
       The number of entities of codimension `codim`.
 
 
-   .. method:: subentities(self, codim, subentity_codim)
+   .. py:method:: subentities(self, codim, subentity_codim)
       :abstractmethod:
 
       `retval[e,s]` is the global index of the `s`-th codim-`subentity_codim` subentity of the
@@ -180,10 +178,10 @@ Classes
       `embeddings(codim)`
 
 
-   .. method:: _subentities(self, codim, subentity_codim)
+   .. py:method:: _subentities(self, codim, subentity_codim)
 
 
-   .. method:: superentities(self, codim, superentity_codim)
+   .. py:method:: superentities(self, codim, superentity_codim)
 
       `retval[e,s]` is the global index of the `s`-th codim-`superentity_codim` superentity of
       the codim-`codim` entity with global index `e`.
@@ -194,22 +192,22 @@ Classes
       `subentities(superentity_codim, codim)`.
 
 
-   .. method:: _superentities(self, codim, superentity_codim)
+   .. py:method:: _superentities(self, codim, superentity_codim)
 
 
-   .. method:: superentity_indices(self, codim, superentity_codim)
+   .. py:method:: superentity_indices(self, codim, superentity_codim)
 
       `retval[e,s]` is the local index of the codim-`codim` entity `e` in the
       codim-`superentity_codim` superentity `superentities(codim, superentity_codim)[e,s].`
 
 
-   .. method:: _superentity_indices(self, codim, superentity_codim)
+   .. py:method:: _superentity_indices(self, codim, superentity_codim)
 
 
-   .. method:: _superentities_with_indices(self, codim, superentity_codim)
+   .. py:method:: _superentities_with_indices(self, codim, superentity_codim)
 
 
-   .. method:: neighbours(self, codim, neighbour_codim, intersection_codim=None)
+   .. py:method:: neighbours(self, codim, neighbour_codim, intersection_codim=None)
 
       `retval[e,n]` is the global index of the `n`-th codim-`neighbour_codim` entitiy of the
       codim-`codim` entity `e` that shares with `e` a subentity of codimension
@@ -223,10 +221,10 @@ Classes
       `superentities(intersection_codim, neihbour_codim)`.
 
 
-   .. method:: _neighbours(self, codim, neighbour_codim, intersection_codim)
+   .. py:method:: _neighbours(self, codim, neighbour_codim, intersection_codim)
 
 
-   .. method:: boundary_mask(self, codim)
+   .. py:method:: boundary_mask(self, codim)
 
       `retval[e]` is true iff the codim-`codim` entity with global index `e` is a boundary
       entity.
@@ -236,10 +234,10 @@ Classes
       sub/super-entity.
 
 
-   .. method:: _boundary_mask(self, codim)
+   .. py:method:: _boundary_mask(self, codim)
 
 
-   .. method:: boundaries(self, codim)
+   .. py:method:: boundaries(self, codim)
 
       Returns the global indices of all codim-`codim` boundary entities.
 
@@ -248,16 +246,16 @@ Classes
       sub/super-entity.
 
 
-   .. method:: _boundaries(self, codim)
+   .. py:method:: _boundaries(self, codim)
 
 
-   .. method:: reference_element(self, codim)
+   .. py:method:: reference_element(self, codim)
       :abstractmethod:
 
       The |ReferenceElement| of the codim-`codim` entities.
 
 
-   .. method:: embeddings(self, codim)
+   .. py:method:: embeddings(self, codim)
       :abstractmethod:
 
       Returns tuple `(A, B)` where `A[e]` and `B[e]` are the linear part and the translation
@@ -268,69 +266,69 @@ Classes
       subentity_embedding of `e` into `e_0` determined by the reference element.
 
 
-   .. method:: _embeddings(self, codim)
+   .. py:method:: _embeddings(self, codim)
 
 
-   .. method:: jacobian_inverse_transposed(self, codim)
+   .. py:method:: jacobian_inverse_transposed(self, codim)
 
       `retval[e]` is the transposed (pseudo-)inverse of
       the Jacobian of `embeddings(codim)[e]`.
 
 
-   .. method:: _jacobian_inverse_transposed(self, codim)
+   .. py:method:: _jacobian_inverse_transposed(self, codim)
 
 
-   .. method:: integration_elements(self, codim)
+   .. py:method:: integration_elements(self, codim)
 
       `retval[e]` is given as `sqrt(det(A^T*A))`, where `A = embeddings(codim)[0][e]`.
 
 
-   .. method:: _integration_elements(self, codim)
+   .. py:method:: _integration_elements(self, codim)
 
 
-   .. method:: volumes(self, codim)
+   .. py:method:: volumes(self, codim)
 
       `retval[e]` is the (dim-`codim`)-dimensional volume of the codim-`codim` entity with
       global index `e`.
 
 
-   .. method:: _volumes(self, codim)
+   .. py:method:: _volumes(self, codim)
 
 
-   .. method:: volumes_inverse(self, codim)
+   .. py:method:: volumes_inverse(self, codim)
 
       `retval[e] = 1 / volumes(codim)[e]`.
 
 
-   .. method:: _volumes_inverse(self, codim)
+   .. py:method:: _volumes_inverse(self, codim)
 
 
-   .. method:: unit_outer_normals(self)
+   .. py:method:: unit_outer_normals(self)
 
       `retval[e,i]` is the unit outer normal to the i-th codim-1 subentity of the codim-0
       entitiy with global index `e`.
 
 
-   .. method:: _unit_outer_normals(self)
+   .. py:method:: _unit_outer_normals(self)
 
 
-   .. method:: centers(self, codim)
+   .. py:method:: centers(self, codim)
 
       `retval[e]` is the barycenter of the codim-`codim` entity with global index `e`.
 
 
-   .. method:: _centers(self, codim)
+   .. py:method:: _centers(self, codim)
 
 
-   .. method:: diameters(self, codim)
+   .. py:method:: diameters(self, codim)
 
       `retval[e]` is the diameter of the codim-`codim` entity with global index `e`.
 
 
-   .. method:: _diameters(self, codim)
+   .. py:method:: _diameters(self, codim)
 
 
-   .. method:: quadrature_points(self, codim, order=None, npoints=None, quadrature_type='default')
+   .. py:method:: quadrature_points(self, codim, order=None, npoints=None, quadrature_type='default')
 
       `retval[e]` is an array of quadrature points in global coordinates for the codim-`codim`
       entity with global index `e`.
@@ -343,30 +341,29 @@ Classes
           integration_elements(codim)[e].  # NOQA
 
 
-   .. method:: _quadrature_points(self, codim, order, npoints, quadrature_type)
+   .. py:method:: _quadrature_points(self, codim, order, npoints, quadrature_type)
 
 
-   .. method:: bounding_box(self)
+   .. py:method:: bounding_box(self)
 
       Returns a `(2, dim)`-shaped array containing lower/upper bounding box coordinates.
 
 
-   .. method:: _bounding_box(self)
+   .. py:method:: _bounding_box(self)
 
 
-   .. method:: _check_domain(cls, domain)
+   .. py:method:: _check_domain(cls, domain)
       :classmethod:
 
 
 
-.. class:: GridWithOrthogonalCenters
-
+.. py:class:: GridWithOrthogonalCenters
 
    Bases: :py:obj:`Grid`
 
    |Grid| with an additional `orthogonal_centers` method.
 
-   .. method:: orthogonal_centers(self)
+   .. py:method:: orthogonal_centers(self)
       :abstractmethod:
 
       `retval[e]` is a point inside the codim-0 entity with global index `e` such that the line
@@ -377,8 +374,7 @@ Classes
 
 
 
-.. class:: BoundaryInfo
-
+.. py:class:: BoundaryInfo
 
    Bases: :py:obj:`pymor.core.cache.CacheableObject`
 
@@ -392,66 +388,66 @@ Classes
       set of all boundary types the grid has.
       
 
-   .. attribute:: cache_region
+   .. py:attribute:: cache_region
       :annotation: = memory
 
       
 
-   .. method:: mask(self, boundary_type, codim)
+   .. py:method:: mask(self, boundary_type, codim)
 
       retval[i] is `True` if the codim-`codim` entity of global index `i` is associated to the
       boundary type `boundary_type`.
 
 
-   .. method:: unique_boundary_type_mask(self, codim)
+   .. py:method:: unique_boundary_type_mask(self, codim)
 
       retval[i] is `True` if the codim-`codim` entity of global index `i` is associated to one
       and only one boundary type.
 
 
-   .. method:: no_boundary_type_mask(self, codim)
+   .. py:method:: no_boundary_type_mask(self, codim)
 
       retval[i] is `True` if the codim-`codim` entity of global index `i` is associated to no
       boundary type.
 
 
-   .. method:: check_boundary_types(self, assert_unique_type=(1, ), assert_some_type=())
+   .. py:method:: check_boundary_types(self, assert_unique_type=(1, ), assert_some_type=())
 
 
-   .. method:: has_dirichlet(self)
+   .. py:method:: has_dirichlet(self)
       :property:
 
 
-   .. method:: has_neumann(self)
+   .. py:method:: has_neumann(self)
       :property:
 
 
-   .. method:: has_robin(self)
+   .. py:method:: has_robin(self)
       :property:
 
 
-   .. method:: dirichlet_mask(self, codim)
+   .. py:method:: dirichlet_mask(self, codim)
 
 
-   .. method:: neumann_mask(self, codim)
+   .. py:method:: neumann_mask(self, codim)
 
 
-   .. method:: robin_mask(self, codim)
+   .. py:method:: robin_mask(self, codim)
 
 
-   .. method:: _boundaries(self, boundary_type, codim)
+   .. py:method:: _boundaries(self, boundary_type, codim)
 
 
-   .. method:: boundaries(self, boundary_type, codim)
+   .. py:method:: boundaries(self, boundary_type, codim)
 
 
-   .. method:: dirichlet_boundaries(self, codim)
+   .. py:method:: dirichlet_boundaries(self, codim)
 
 
-   .. method:: neumann_boundaries(self, codim)
+   .. py:method:: neumann_boundaries(self, codim)
 
 
-   .. method:: robin_boundaries(self, codim)
+   .. py:method:: robin_boundaries(self, codim)
 
 
 

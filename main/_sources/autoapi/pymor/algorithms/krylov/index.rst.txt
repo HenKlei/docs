@@ -24,7 +24,7 @@ Functions
 
 
 
-.. function:: rational_arnoldi(A, E, b, sigma, trans=False)
+.. py:function:: rational_arnoldi(A, E, b, sigma, trans=False)
 
    Rational Arnoldi algorithm.
 
@@ -90,7 +90,7 @@ Functions
            
 
 
-.. function:: tangential_rational_krylov(A, E, B, b, sigma, trans=False, orth=True)
+.. py:function:: tangential_rational_krylov(A, E, B, b, sigma, trans=False, orth=True)
 
    Tangential Rational Krylov subspace.
 

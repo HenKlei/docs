@@ -29,11 +29,10 @@ Functions
 
 
 
-.. function:: _normalize(u, vmin=None, vmax=None)
+.. py:function:: _normalize(u, vmin=None, vmax=None)
 
 
-.. class:: Renderer(U, grid, render_size, color_map, title, bounding_box=([0, 0], [1, 1]), codim=2, vmin=None, vmax=None)
-
+.. py:class:: Renderer(U, grid, render_size, color_map, title, bounding_box=([0, 0], [1, 1]), codim=2, vmin=None, vmax=None)
 
    Bases: :py:obj:`ipywidgets.widgets.VBox`
 
@@ -50,28 +49,27 @@ Functions
    >>> slider = widgets.IntSlider()
    >>> widgets.VBox([title_widget, slider])
 
-   .. method:: _get_mesh(self, i, u)
+   .. py:method:: _get_mesh(self, i, u)
 
 
-   .. method:: _async_load_data(self, data)
+   .. py:method:: _async_load_data(self, data)
       :async:
 
 
-   .. method:: _load_data(self, data)
+   .. py:method:: _load_data(self, data)
 
 
-   .. method:: goto(self, idx)
+   .. py:method:: goto(self, idx)
 
 
-   .. method:: freeze_camera(self, freeze=True)
+   .. py:method:: freeze_camera(self, freeze=True)
 
 
-   .. method:: _setup_scene(self, bounding_box, render_size)
+   .. py:method:: _setup_scene(self, bounding_box, render_size)
 
 
 
-.. class:: ColorBarRenderer(render_size, color_map, vmin=None, vmax=None)
-
+.. py:class:: ColorBarRenderer(render_size, color_map, vmin=None, vmax=None)
 
    Bases: :py:obj:`ipywidgets.widgets.HBox`
 
@@ -88,18 +86,17 @@ Functions
    >>> slider = widgets.IntSlider()
    >>> widgets.HBox([title_widget, slider])
 
-   .. method:: freeze_camera(self, freeze=True)
+   .. py:method:: freeze_camera(self, freeze=True)
 
 
-   .. method:: goto(self, idx)
+   .. py:method:: goto(self, idx)
 
 
-   .. method:: _gen_sprite(self)
+   .. py:method:: _gen_sprite(self)
 
 
 
-.. class:: ThreeJSPlot(grid, color_map, title, bounding_box, codim, U, vmins, vmaxs, separate_colorbars, size)
-
+.. py:class:: ThreeJSPlot(grid, color_map, title, bounding_box, codim, U, vmins, vmaxs, separate_colorbars, size)
 
    Bases: :py:obj:`ipywidgets.widgets.VBox`
 
@@ -116,12 +113,12 @@ Functions
    >>> slider = widgets.IntSlider()
    >>> widgets.VBox([title_widget, slider])
 
-   .. method:: finish_loading(self)
+   .. py:method:: finish_loading(self)
       :async:
 
 
 
-.. function:: visualize_py3js(grid, U, bounding_box=([0, 0], [1, 1]), codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, columns=2, color_map=get_cmap('viridis'))
+.. py:function:: visualize_py3js(grid, U, bounding_box=([0, 0], [1, 1]), codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, columns=2, color_map=get_cmap('viridis'))
 
    Generate a pythreejs Plot and associated controls for scalar data associated to a
    two-dimensional |Grid|.

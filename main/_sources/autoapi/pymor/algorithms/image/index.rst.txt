@@ -28,7 +28,7 @@ Functions
 
 
 
-.. function:: estimate_image(operators=(), vectors=(), domain=None, extends=False, orthonormalize=True, product=None, riesz_representatives=False)
+.. py:function:: estimate_image(operators=(), vectors=(), domain=None, extends=False, orthonormalize=True, product=None, riesz_representatives=False)
 
    Estimate the image of given |Operators| for all mu.
 
@@ -82,7 +82,7 @@ Functions
            
 
 
-.. function:: estimate_image_hierarchical(operators=(), vectors=(), domain=None, extends=None, orthonormalize=True, product=None, riesz_representatives=False)
+.. py:function:: estimate_image_hierarchical(operators=(), vectors=(), domain=None, extends=None, orthonormalize=True, product=None, riesz_representatives=False)
 
    Estimate the image of given |Operators| for all mu.
 
@@ -137,43 +137,41 @@ Functions
            
 
 
-.. class:: CollectOperatorRangeRules(source, image, extends)
-
-
-   Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
-
-   |RuleTable| for the :func:`estimate_image` algorithm.
-
-   .. method:: action_apply_operator(self, op)
-
-
-   .. method:: action_recurse(self, op)
-
-
-   .. method:: action_EmpiricalInterpolatedOperator(self, op)
-
-
-   .. method:: action_ConcatenationOperator(self, op)
-
-
-
-.. class:: CollectVectorRangeRules(image)
-
+.. py:class:: CollectOperatorRangeRules(source, image, extends)
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
 
    |RuleTable| for the :func:`estimate_image` algorithm.
 
-   .. method:: action_VectorArray(self, obj)
+   .. py:method:: action_apply_operator(self, op)
 
 
-   .. method:: action_as_range_array(self, op)
+   .. py:method:: action_recurse(self, op)
 
 
-   .. method:: action_recurse(self, op)
+   .. py:method:: action_EmpiricalInterpolatedOperator(self, op)
 
 
-   .. method:: action_ConcatenationOperator(self, op)
+   .. py:method:: action_ConcatenationOperator(self, op)
+
+
+
+.. py:class:: CollectVectorRangeRules(image)
+
+   Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
+
+   |RuleTable| for the :func:`estimate_image` algorithm.
+
+   .. py:method:: action_VectorArray(self, obj)
+
+
+   .. py:method:: action_as_range_array(self, op)
+
+
+   .. py:method:: action_recurse(self, op)
+
+
+   .. py:method:: action_ConcatenationOperator(self, op)
 
 
 

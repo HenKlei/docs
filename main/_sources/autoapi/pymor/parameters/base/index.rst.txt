@@ -32,8 +32,7 @@ Classes
 
 
 
-.. class:: Parameters(*args, **kwargs)
-
+.. py:class:: Parameters(*args, **kwargs)
 
    Bases: :py:obj:`pymor.tools.frozendict.SortedFrozenDict`
 
@@ -43,10 +42,10 @@ Classes
    name of a parameter. The corresponding value is a non-negative `int`
    specifying the dimension (number of scalar components) of the parameter.
 
-   .. method:: _post_init(self)
+   .. py:method:: _post_init(self)
 
 
-   .. method:: of(cls, *args)
+   .. py:method:: of(cls, *args)
       :classmethod:
 
       Computes the total set of |Parameters| a collection of objects depends on.
@@ -63,13 +62,13 @@ Classes
               
 
 
-   .. method:: dim(self)
+   .. py:method:: dim(self)
       :property:
 
       The sum of the dimensions of all parameters.
 
 
-   .. method:: parse(self, mu)
+   .. py:method:: parse(self, mu)
 
       Takes a user input `mu` and interprets it as set of |parameter values|
       according to the given |Parameters|.
@@ -100,7 +99,7 @@ Classes
               
 
 
-   .. method:: space(self, *ranges)
+   .. py:method:: space(self, *ranges)
 
       Create a |ParameterSpace| with given ranges.
 
@@ -111,7 +110,7 @@ Classes
       See |ParameterSpace| for allowed range arguments.
 
 
-   .. method:: assert_compatible(self, mu)
+   .. py:method:: assert_compatible(self, mu)
 
       Assert that |parameter values| are compatible with the given |Parameters|.
 
@@ -123,7 +122,7 @@ Classes
       Otherwise, an `AssertionError` will be raised.
 
 
-   .. method:: is_compatible(self, mu)
+   .. py:method:: is_compatible(self, mu)
 
       Check if |parameter values| are compatible with the given |Parameters|.
 
@@ -133,16 +132,16 @@ Classes
           mu[parameter].size == self[parameter]
 
 
-   .. method:: why_incompatible(self, mu)
+   .. py:method:: why_incompatible(self, mu)
 
 
-   .. method:: __or__(self, other)
+   .. py:method:: __or__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __le__(self, mu)
+   .. py:method:: __le__(self, mu)
 
       Check if |parameter values| are compatible with the given |Parameters|.
 
@@ -152,24 +151,23 @@ Classes
           mu[parameter].size == self[parameter]
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
-   .. method:: __hash__(self)
+   .. py:method:: __hash__(self)
 
       Return hash(self).
 
 
 
-.. class:: Mu(*args, **kwargs)
-
+.. py:class:: Mu(*args, **kwargs)
 
    Bases: :py:obj:`pymor.tools.frozendict.SortedFrozenDict`
 
@@ -186,10 +184,10 @@ Classes
       The |Parameters| to which the mapping assigns values.
       
 
-   .. method:: with_(self, **kwargs)
+   .. py:method:: with_(self, **kwargs)
 
 
-   .. method:: allclose(self, mu)
+   .. py:method:: allclose(self, mu)
 
       Compare two dicts of |parameter values| using
       :meth:`~pymor.tools.floatcmp.float_cmp_all`.
@@ -206,34 +204,33 @@ Classes
               
 
 
-   .. method:: to_numpy(self)
+   .. py:method:: to_numpy(self)
 
       All parameter values as a NumPy array, ordered alphabetically.
 
 
-   .. method:: copy(self)
+   .. py:method:: copy(self)
 
       D.copy() -> a shallow copy of D
 
 
-   .. method:: __eq__(self, mu)
+   .. py:method:: __eq__(self, mu)
 
       Return self==value.
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
 
-.. class:: ParametricObject
-
+.. py:class:: ParametricObject
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -279,27 +276,26 @@ Classes
       is not empty.
       
 
-   .. attribute:: _parameters
+   .. py:attribute:: _parameters
       
 
       
 
-   .. attribute:: _parameters_own
+   .. py:attribute:: _parameters_own
       
 
       
 
-   .. attribute:: _parameters_internal
+   .. py:attribute:: _parameters_internal
       
 
       
 
-   .. method:: __check_parameter_consistency(self)
+   .. py:method:: __check_parameter_consistency(self)
 
 
 
-.. class:: ParameterSpace(parameters, *ranges)
-
+.. py:class:: ParameterSpace(parameters, *ranges)
 
    Bases: :py:obj:`ParametricObject`
 
@@ -323,7 +319,7 @@ Classes
              bounds individually for each parameter of the space.
            
 
-   .. method:: sample_uniformly(self, counts)
+   .. py:method:: sample_uniformly(self, counts)
 
       Uniformly sample |parameter values| from the space.
 
@@ -340,7 +336,7 @@ Classes
               
 
 
-   .. method:: sample_randomly(self, count=None, random_state=None, seed=None)
+   .. py:method:: sample_randomly(self, count=None, random_state=None, seed=None)
 
       Randomly sample |parameter values| from the space.
 
@@ -364,7 +360,7 @@ Classes
               
 
 
-   .. method:: contains(self, mu)
+   .. py:method:: contains(self, mu)
 
 
 

@@ -50,11 +50,10 @@ Functions
 
 
 
-.. function:: FVVectorSpace(grid, id='STATE')
+.. py:function:: FVVectorSpace(grid, id='STATE')
 
 
-.. class:: NumericalConvectiveFlux
-
+.. py:class:: NumericalConvectiveFlux
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -83,17 +82,16 @@ Functions
         `evaluate_stage2` returns a |NumPy array| of the flux evaluations
         for each edge.
 
-   .. method:: evaluate_stage1(self, U, mu=None)
+   .. py:method:: evaluate_stage1(self, U, mu=None)
       :abstractmethod:
 
 
-   .. method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
+   .. py:method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
       :abstractmethod:
 
 
 
-.. class:: LaxFriedrichsFlux(flux, lxf_lambda=1.0)
-
+.. py:class:: LaxFriedrichsFlux(flux, lxf_lambda=1.0)
 
    Bases: :py:obj:`NumericalConvectiveFlux`
 
@@ -112,15 +110,14 @@ Functions
            The stabilization parameter `λ`.
            
 
-   .. method:: evaluate_stage1(self, U, mu=None)
+   .. py:method:: evaluate_stage1(self, U, mu=None)
 
 
-   .. method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
+   .. py:method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
 
 
 
-.. class:: SimplifiedEngquistOsherFlux(flux, flux_derivative)
-
+.. py:class:: SimplifiedEngquistOsherFlux(flux, flux_derivative)
 
    Bases: :py:obj:`NumericalConvectiveFlux`
 
@@ -138,15 +135,14 @@ Functions
            |Function| defining the analytical flux derivative `f'`.
            
 
-   .. method:: evaluate_stage1(self, U, mu=None)
+   .. py:method:: evaluate_stage1(self, U, mu=None)
 
 
-   .. method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
+   .. py:method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
 
 
 
-.. class:: EngquistOsherFlux(flux, flux_derivative, gausspoints=5, intervals=1)
-
+.. py:class:: EngquistOsherFlux(flux, flux_derivative, gausspoints=5, intervals=1)
 
    Bases: :py:obj:`NumericalConvectiveFlux`
 
@@ -178,18 +174,17 @@ Functions
            Number of subintervals to be used for integration.
            
 
-   .. method:: evaluate_stage1(self, U, mu=None)
+   .. py:method:: evaluate_stage1(self, U, mu=None)
 
 
-   .. method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
+   .. py:method:: evaluate_stage2(self, stage1_data, unit_outer_normals, volumes, mu=None)
 
 
 
-.. function:: jacobian_options(delta=1e-07)
+.. py:function:: jacobian_options(delta=1e-07)
 
 
-.. class:: NonlinearAdvectionOperator(grid, boundary_info, numerical_flux, dirichlet_data=None, solver_options=None, space_id='STATE', name=None)
-
+.. py:class:: NonlinearAdvectionOperator(grid, boundary_info, numerical_flux, dirichlet_data=None, solver_options=None, space_id='STATE', name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -216,15 +211,15 @@ Functions
            The name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = False
 
       
 
-   .. method:: with_numerical_flux(self, **kwargs)
+   .. py:method:: with_numerical_flux(self, **kwargs)
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -261,10 +256,10 @@ Functions
               
 
 
-   .. method:: _fetch_grid_data(self)
+   .. py:method:: _fetch_grid_data(self)
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -281,7 +276,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -300,24 +295,23 @@ Functions
 
 
 
-.. function:: nonlinear_advection_lax_friedrichs_operator(grid, boundary_info, flux, lxf_lambda=1.0, dirichlet_data=None, solver_options=None, name=None)
+.. py:function:: nonlinear_advection_lax_friedrichs_operator(grid, boundary_info, flux, lxf_lambda=1.0, dirichlet_data=None, solver_options=None, name=None)
 
    Instantiate a :class:`NonlinearAdvectionOperator` using :class:`LaxFriedrichsFlux`.
 
 
-.. function:: nonlinear_advection_simplified_engquist_osher_operator(grid, boundary_info, flux, flux_derivative, dirichlet_data=None, solver_options=None, name=None)
+.. py:function:: nonlinear_advection_simplified_engquist_osher_operator(grid, boundary_info, flux, flux_derivative, dirichlet_data=None, solver_options=None, name=None)
 
    Instantiate a :class:`NonlinearAdvectionOperator` using
    :class:`SimplifiedEngquistOsherFlux`.
 
 
-.. function:: nonlinear_advection_engquist_osher_operator(grid, boundary_info, flux, flux_derivative, gausspoints=5, intervals=1, dirichlet_data=None, solver_options=None, name=None)
+.. py:function:: nonlinear_advection_engquist_osher_operator(grid, boundary_info, flux, flux_derivative, gausspoints=5, intervals=1, dirichlet_data=None, solver_options=None, name=None)
 
    Instantiate a :class:`NonlinearAdvectionOperator` using :class:`EngquistOsherFlux`.
 
 
-.. class:: LinearAdvectionLaxFriedrichsOperator(grid, boundary_info, velocity_field, lxf_lambda=1.0, solver_options=None, name=None)
-
+.. py:class:: LinearAdvectionLaxFriedrichsOperator(grid, boundary_info, velocity_field, lxf_lambda=1.0, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -345,12 +339,11 @@ Functions
            The name of the operator.
            
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. class:: L2Product(grid, solver_options=None, name=None)
-
+.. py:class:: L2Product(grid, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -366,17 +359,16 @@ Functions
            The name of the product.
            
 
-   .. attribute:: sparse
+   .. py:attribute:: sparse
       :annotation: = True
 
       
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. class:: ReactionOperator(grid, reaction_coefficient, solver_options=None, name=None)
-
+.. py:class:: ReactionOperator(grid, reaction_coefficient, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -398,17 +390,16 @@ Functions
            The name of the operator.
            
 
-   .. attribute:: sparse
+   .. py:attribute:: sparse
       :annotation: = True
 
       
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. class:: NonlinearReactionOperator(grid, reaction_function, reaction_function_derivative=None, space_id='STATE', name=None)
-
+.. py:class:: NonlinearReactionOperator(grid, reaction_function, reaction_function_derivative=None, space_id='STATE', name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -464,7 +455,7 @@ Functions
       for all V, mu.
       
 
-   .. method:: apply(self, U, ind=None, mu=None)
+   .. py:method:: apply(self, U, ind=None, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -481,7 +472,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -500,8 +491,7 @@ Functions
 
 
 
-.. class:: L2Functional(grid, function=None, boundary_info=None, dirichlet_data=None, diffusion_function=None, diffusion_constant=None, neumann_data=None, order=1, name=None)
-
+.. py:class:: L2Functional(grid, function=None, boundary_info=None, dirichlet_data=None, diffusion_function=None, diffusion_constant=None, neumann_data=None, order=1, name=None)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -537,25 +527,24 @@ Functions
            The name of the functional.
            
 
-   .. attribute:: source
+   .. py:attribute:: source
       
 
       
 
-   .. attribute:: sparse
+   .. py:attribute:: sparse
       :annotation: = False
 
       
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. function:: L2ProductFunctional(*args, **kwargs)
+.. py:function:: L2ProductFunctional(*args, **kwargs)
 
 
-.. class:: BoundaryL2Functional(grid, function, boundary_type=None, boundary_info=None, name=None)
-
+.. py:class:: BoundaryL2Functional(grid, function, boundary_type=None, boundary_info=None, name=None)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -577,22 +566,21 @@ Functions
            The name of the functional.
            
 
-   .. attribute:: sparse
+   .. py:attribute:: sparse
       :annotation: = False
 
       
 
-   .. attribute:: source
+   .. py:attribute:: source
       
 
       
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. class:: DiffusionOperator(grid, boundary_info, diffusion_function=None, diffusion_constant=None, solver_options=None, name=None)
-
+.. py:class:: DiffusionOperator(grid, boundary_info, diffusion_function=None, diffusion_constant=None, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -618,17 +606,16 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: sparse
+   .. py:attribute:: sparse
       :annotation: = True
 
       
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. class:: InterpolationOperator(grid, function, order=0)
-
+.. py:class:: InterpolationOperator(grid, function, order=0)
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
@@ -644,21 +631,21 @@ Functions
            The quadrature order to compute the element-wise averages
            
 
-   .. attribute:: source
+   .. py:attribute:: source
       
 
       
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
 
-.. function:: discretize_stationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, preassemble=True)
+.. py:function:: discretize_stationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, preassemble=True)
 
    Discretizes a |StationaryProblem| using the finite volume method.
 
@@ -711,7 +698,7 @@ Functions
            
 
 
-.. function:: discretize_instationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
+.. py:function:: discretize_instationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
 
    Discretizes an |InstationaryProblem| with a |StationaryProblem| as stationary part
    using the finite volume method.
