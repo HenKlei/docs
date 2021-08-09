@@ -302,8 +302,7 @@ Functions
 
 .. py:function:: nonlinear_advection_simplified_engquist_osher_operator(grid, boundary_info, flux, flux_derivative, dirichlet_data=None, solver_options=None, name=None)
 
-   Instantiate a :class:`NonlinearAdvectionOperator` using
-   :class:`SimplifiedEngquistOsherFlux`.
+   Create a :class:`NonlinearAdvectionOperator` using :class:`SimplifiedEngquistOsherFlux`.
 
 
 .. py:function:: nonlinear_advection_engquist_osher_operator(grid, boundary_info, flux, flux_derivative, gausspoints=5, intervals=1, dirichlet_data=None, solver_options=None, name=None)
@@ -548,7 +547,7 @@ Functions
 
    Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
 
-   Finite volume functional representing the inner product with an L2-|Function| on the boundary.
+   FV functional representing the inner product with an L2-|Function| on the boundary.
 
    .. admonition:: Parameters
 
@@ -700,8 +699,7 @@ Functions
 
 .. py:function:: discretize_instationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
 
-   Discretizes an |InstationaryProblem| with a |StationaryProblem| as stationary part
-   using the finite volume method.
+   FV Discretization of an |InstationaryProblem| with a |StationaryProblem| as stationary part
 
    .. admonition:: Parameters
 
