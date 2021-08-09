@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: NeuralNetworkModel(neural_network, parameters={}, output_functional=None, products=None, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: NeuralNetworkModel(neural_network, parameters={}, output_functional=None, products=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -61,7 +60,7 @@ Classes
            Name of the model.
            
 
-   .. method:: _compute_solution(self, mu=None, **kwargs)
+   .. py:method:: _compute_solution(self, mu=None, **kwargs)
 
       Compute the model's solution for |parameter values| `mu`.
 

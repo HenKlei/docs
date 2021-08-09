@@ -46,8 +46,7 @@ Functions
 
 
 
-.. class:: TimeStepper
-
+.. py:class:: TimeStepper
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -61,7 +60,7 @@ Functions
    Time-steppers used by |InstationaryModel| have to fulfill
    this interface.
 
-   .. method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
+   .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
       :abstractmethod:
 
       Apply time-stepper to the equation ::
@@ -97,8 +96,7 @@ Functions
 
 
 
-.. class:: ImplicitEulerTimeStepper(nt, solver_options='operator')
-
+.. py:class:: ImplicitEulerTimeStepper(nt, solver_options='operator')
 
    Bases: :py:obj:`TimeStepper`
 
@@ -119,7 +117,7 @@ Functions
            M (resp. A) are used.
            
 
-   .. method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
+   .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
 
       Apply time-stepper to the equation ::
 
@@ -154,8 +152,7 @@ Functions
 
 
 
-.. class:: ExplicitEulerTimeStepper(nt)
-
+.. py:class:: ExplicitEulerTimeStepper(nt)
 
    Bases: :py:obj:`TimeStepper`
 
@@ -171,7 +168,7 @@ Functions
            The number of time-steps the time-stepper will perform.
            
 
-   .. method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
+   .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
 
       Apply time-stepper to the equation ::
 
@@ -206,9 +203,9 @@ Functions
 
 
 
-.. function:: implicit_euler(A, F, M, U0, t0, t1, nt, mu=None, num_values=None, solver_options='operator')
+.. py:function:: implicit_euler(A, F, M, U0, t0, t1, nt, mu=None, num_values=None, solver_options='operator')
 
 
-.. function:: explicit_euler(A, F, U0, t0, t1, nt, mu=None, num_values=None)
+.. py:function:: explicit_euler(A, F, U0, t0, t1, nt, mu=None, num_values=None)
 
 

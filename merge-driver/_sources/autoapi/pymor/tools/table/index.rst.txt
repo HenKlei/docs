@@ -18,6 +18,6 @@ Functions
 
 
 
-.. function:: format_table(rows, width='AUTO', title=None)
+.. py:function:: format_table(rows, width='AUTO', title=None)
 
 

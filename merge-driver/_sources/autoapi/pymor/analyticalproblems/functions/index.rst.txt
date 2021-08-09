@@ -26,8 +26,7 @@ Classes
 
 
 
-.. class:: Function
-
+.. py:class:: Function
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -62,49 +61,48 @@ Classes
       The shape of the function values.
       
 
-   .. attribute:: __rmul__
+   .. py:attribute:: __rmul__
       
 
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
       :abstractmethod:
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
-   .. method:: __call__(self, x, mu=None)
+   .. py:method:: __call__(self, x, mu=None)
 
       Shorthand for :meth:`~Function.evaluate`.
 
 
-   .. method:: _add_sub(self, other, sign)
+   .. py:method:: _add_sub(self, other, sign)
 
 
-   .. method:: _radd_sub(self, other, sign)
+   .. py:method:: _radd_sub(self, other, sign)
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __radd__(self, other)
+   .. py:method:: __radd__(self, other)
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __rsub__(self, other)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
 
-.. class:: ConstantFunction(value=np.array(1.0), dim_domain=1, name=None)
-
+.. py:class:: ConstantFunction(value=np.array(1.0), dim_domain=1, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -124,19 +122,18 @@ Classes
            The name of the function.
            
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: GenericFunction(mapping, dim_domain=1, shape_range=(), parameters={}, name=None)
-
+.. py:class:: GenericFunction(mapping, dim_domain=1, shape_range=(), parameters={}, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -167,19 +164,18 @@ Classes
            The name of the function.
            
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: ExpressionFunction(expression, dim_domain=1, shape_range=(), parameters={}, values=None, name=None)
-
+.. py:class:: ExpressionFunction(expression, dim_domain=1, shape_range=(), parameters={}, values=None, name=None)
 
    Bases: :py:obj:`GenericFunction`
 
@@ -211,19 +207,18 @@ Classes
            The name of the function.
            
 
-   .. attribute:: functions
+   .. py:attribute:: functions
       
 
       
 
-   .. method:: __reduce__(self)
+   .. py:method:: __reduce__(self)
 
       Helper for pickle.
 
 
 
-.. class:: LincombFunction(functions, coefficients, name=None)
-
+.. py:class:: LincombFunction(functions, coefficients, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -248,19 +243,18 @@ Classes
 
       
 
-   .. method:: evaluate_coefficients(self, mu)
+   .. py:method:: evaluate_coefficients(self, mu)
 
       Compute the linear coefficients for given |parameter values| `mu`.
 
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: ProductFunction(functions, name=None)
-
+.. py:class:: ProductFunction(functions, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -277,14 +271,13 @@ Classes
 
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: BitmapFunction(filename, bounding_box=None, range=None)
-
+.. py:class:: BitmapFunction(filename, bounding_box=None, range=None)
 
    Bases: :py:obj:`Function`
 
@@ -300,24 +293,23 @@ Classes
            A pixel of value p is mapped to `(p / 255.) * range[1] + range[0]`.
            
 
-   .. attribute:: dim_domain
+   .. py:attribute:: dim_domain
       :annotation: = 2
 
       
 
-   .. attribute:: shape_range
+   .. py:attribute:: shape_range
       :annotation: = []
 
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: EmpiricalInterpolatedFunction(function, interpolation_points, interpolation_matrix, triangular, snapshot_mus, snapshot_coefficients, evaluation_points=None, basis_evaluations=None, name=None)
-
+.. py:class:: EmpiricalInterpolatedFunction(function, interpolation_points, interpolation_matrix, triangular, snapshot_mus, snapshot_coefficients, evaluation_points=None, basis_evaluations=None, name=None)
 
    Bases: :py:obj:`LincombFunction`
 
@@ -362,15 +354,14 @@ Classes
            :func:`~pymor.algorithms.ei.ei_greedy`.
            
 
-   .. method:: _update_coefficients(self, mu)
+   .. py:method:: _update_coefficients(self, mu)
 
 
-   .. method:: _update_evaluation_points(self, x)
+   .. py:method:: _update_evaluation_points(self, x)
 
 
 
-.. class:: EmpiricalInterpolatedFunctionFunctional(interpolated_function, index)
-
+.. py:class:: EmpiricalInterpolatedFunctionFunctional(interpolated_function, index)
 
    Bases: :py:obj:`pymor.parameters.functionals.ParameterFunctional`
 
@@ -379,14 +370,13 @@ Classes
    A parameter functional is simply a function mapping |Parameters| to
    a number.
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
 
-.. class:: EmpiricalInterpolatedFunctionBasisFunction(interpolated_function, index)
-
+.. py:class:: EmpiricalInterpolatedFunctionBasisFunction(interpolated_function, index)
 
    Bases: :py:obj:`Function`
 
@@ -421,7 +411,7 @@ Classes
       The shape of the function values.
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 

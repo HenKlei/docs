@@ -27,7 +27,7 @@ Functions
 
 
 
-.. class:: VectorArray
+.. py:class:: VectorArray
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -81,17 +81,17 @@ Functions
       The |VectorSpace| the array belongs to.
       
 
-   .. attribute:: __radd__
+   .. py:attribute:: __radd__
       
 
       
 
-   .. attribute:: __rmul__
+   .. py:attribute:: __rmul__
       
 
       
 
-   .. method:: zeros(self, count=1, reserve=0)
+   .. py:method:: zeros(self, count=1, reserve=0)
 
       Create a |VectorArray| of null vectors of the same |VectorSpace|.
 
@@ -110,7 +110,7 @@ Functions
               
 
 
-   .. method:: ones(self, count=1, reserve=0)
+   .. py:method:: ones(self, count=1, reserve=0)
 
       Create a |VectorArray| of vectors of the same |VectorSpace| with all DOFs set to one.
 
@@ -129,7 +129,7 @@ Functions
               
 
 
-   .. method:: full(self, value, count=1, reserve=0)
+   .. py:method:: full(self, value, count=1, reserve=0)
 
       Create a |VectorArray| of vectors with all DOFs set to the same value.
 
@@ -150,7 +150,7 @@ Functions
               
 
 
-   .. method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
+   .. py:method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
 
       Create a |VectorArray| of vectors with random entries.
 
@@ -193,7 +193,7 @@ Functions
               
 
 
-   .. method:: empty(self, reserve=0)
+   .. py:method:: empty(self, reserve=0)
 
       Create an empty |VectorArray| of the same |VectorSpace|.
 
@@ -210,25 +210,25 @@ Functions
               
 
 
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
       :abstractmethod:
 
       The number of vectors in the array.
 
 
-   .. method:: __getitem__(self, ind)
+   .. py:method:: __getitem__(self, ind)
       :abstractmethod:
 
       Return a |VectorArray| view onto a subset of the vectors in the array.
 
 
-   .. method:: __delitem__(self, ind)
+   .. py:method:: __delitem__(self, ind)
       :abstractmethod:
 
       Remove vectors from the array.
 
 
-   .. method:: to_numpy(self, ensure_copy=False)
+   .. py:method:: to_numpy(self, ensure_copy=False)
       :abstractmethod:
 
       Return (len(self), self.dim) NumPy Array with the data stored in the array.
@@ -241,7 +241,7 @@ Functions
               
 
 
-   .. method:: append(self, other, remove_from_other=False)
+   .. py:method:: append(self, other, remove_from_other=False)
       :abstractmethod:
 
       Append vectors to the array.
@@ -257,7 +257,7 @@ Functions
               
 
 
-   .. method:: copy(self, deep=False)
+   .. py:method:: copy(self, deep=False)
       :abstractmethod:
 
       Returns a copy of the array.
@@ -282,10 +282,10 @@ Functions
               
 
 
-   .. method:: __deepcopy__(self, memo)
+   .. py:method:: __deepcopy__(self, memo)
 
 
-   .. method:: scal(self, alpha)
+   .. py:method:: scal(self, alpha)
       :abstractmethod:
 
       BLAS SCAL operation (in-place scalar multiplication).
@@ -306,7 +306,7 @@ Functions
               
 
 
-   .. method:: axpy(self, alpha, x)
+   .. py:method:: axpy(self, alpha, x)
       :abstractmethod:
 
       BLAS AXPY operation.
@@ -331,7 +331,7 @@ Functions
               
 
 
-   .. method:: inner(self, other, product=None)
+   .. py:method:: inner(self, other, product=None)
 
       Returns the inner products between |VectorArray| elements.
 
@@ -382,7 +382,7 @@ Functions
               
 
 
-   .. method:: pairwise_inner(self, other, product=None)
+   .. py:method:: pairwise_inner(self, other, product=None)
 
       Returns the pairwise inner products between |VectorArray| elements.
 
@@ -435,7 +435,7 @@ Functions
               
 
 
-   .. method:: lincomb(self, coefficients)
+   .. py:method:: lincomb(self, coefficients)
       :abstractmethod:
 
       Returns linear combinations of the vectors contained in the array.
@@ -460,7 +460,7 @@ Functions
               
 
 
-   .. method:: norm(self, product=None, tol=None, raise_complex=None)
+   .. py:method:: norm(self, product=None, tol=None, raise_complex=None)
 
       Norm with respect to a given inner product.
 
@@ -496,7 +496,7 @@ Functions
               
 
 
-   .. method:: norm2(self, product=None, tol=1e-10, raise_complex=True)
+   .. py:method:: norm2(self, product=None, tol=1e-10, raise_complex=True)
 
       Squared norm with respect to a given inner product.
 
@@ -532,19 +532,19 @@ Functions
               
 
 
-   .. method:: _norm(self)
+   .. py:method:: _norm(self)
       :abstractmethod:
 
       Implementation of :meth:`norm` for the case that no `product` is given.
 
 
-   .. method:: _norm2(self)
+   .. py:method:: _norm2(self)
       :abstractmethod:
 
       Implementation of :meth:`norm2` for the case that no `product` is given.
 
 
-   .. method:: sup_norm(self)
+   .. py:method:: sup_norm(self)
 
       The l-infinity-norms of the vectors contained in the array.
 
@@ -555,7 +555,7 @@ Functions
               
 
 
-   .. method:: dofs(self, dof_indices)
+   .. py:method:: dofs(self, dof_indices)
       :abstractmethod:
 
       Extract DOFs of the vectors contained in the array.
@@ -572,7 +572,7 @@ Functions
               
 
 
-   .. method:: amax(self)
+   .. py:method:: amax(self)
       :abstractmethod:
 
       The maximum absolute value of the DOFs contained in the array.
@@ -588,50 +588,50 @@ Functions
               
 
 
-   .. method:: gramian(self, product=None)
+   .. py:method:: gramian(self, product=None)
 
       Shorthand for `self.inner(self, product)`.
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __iadd__(self, other)
+   .. py:method:: __iadd__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __isub__(self, other)
+   .. py:method:: __isub__(self, other)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __imul__(self, other)
+   .. py:method:: __imul__(self, other)
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
-   .. method:: real(self)
+   .. py:method:: real(self)
       :property:
 
       Real part.
 
 
-   .. method:: imag(self)
+   .. py:method:: imag(self)
       :property:
 
       Imaginary part.
 
 
-   .. method:: conj(self)
+   .. py:method:: conj(self)
 
       Complex conjugation.
 
 
-   .. method:: check_ind(self, ind)
+   .. py:method:: check_ind(self, ind)
 
       Check if index is admissible.
 
@@ -639,7 +639,7 @@ Functions
       of the class documentation.
 
 
-   .. method:: check_ind_unique(self, ind)
+   .. py:method:: check_ind_unique(self, ind)
 
       Check if index is admissible and unique.
 
@@ -647,29 +647,28 @@ Functions
       the sense of the class documentation.
 
 
-   .. method:: len_ind(self, ind)
+   .. py:method:: len_ind(self, ind)
 
       Return the number of given indices.
 
 
-   .. method:: len_ind_unique(self, ind)
+   .. py:method:: len_ind_unique(self, ind)
 
       Return the number of specified unique indices.
 
 
-   .. method:: normalize_ind(self, ind)
+   .. py:method:: normalize_ind(self, ind)
 
       Normalize given indices such that they are independent of the array length.
 
 
-   .. method:: sub_index(self, ind, ind_ind)
+   .. py:method:: sub_index(self, ind, ind_ind)
 
       Return indices corresponding to the view `self[ind][ind_ind]`
 
 
 
-.. class:: VectorSpace
-
+.. py:class:: VectorSpace
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -716,7 +715,7 @@ Functions
       `isinstance(space, NumpyVectorSpace) and space.dim == 1 and space.id is None`.
       
 
-   .. method:: make_array(*args, **kwargs)
+   .. py:method:: make_array(*args, **kwargs)
       :abstractmethod:
 
       Create a |VectorArray| from raw data.
@@ -730,7 +729,7 @@ Functions
       solver backend.
 
 
-   .. method:: zeros(self, count=1, reserve=0)
+   .. py:method:: zeros(self, count=1, reserve=0)
       :abstractmethod:
 
       Create a |VectorArray| of null vectors
@@ -748,7 +747,7 @@ Functions
               
 
 
-   .. method:: ones(self, count=1, reserve=0)
+   .. py:method:: ones(self, count=1, reserve=0)
 
       Create a |VectorArray| of vectors with all DOFs set to one.
 
@@ -767,7 +766,7 @@ Functions
               
 
 
-   .. method:: full(self, value, count=1, reserve=0)
+   .. py:method:: full(self, value, count=1, reserve=0)
 
       Create a |VectorArray| of vectors with all DOFs set to the same value.
 
@@ -786,7 +785,7 @@ Functions
               
 
 
-   .. method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
+   .. py:method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
 
       Create a |VectorArray| of vectors with random entries.
 
@@ -826,7 +825,7 @@ Functions
               
 
 
-   .. method:: empty(self, reserve=0)
+   .. py:method:: empty(self, reserve=0)
 
       Create an empty |VectorArray|
 
@@ -843,7 +842,7 @@ Functions
               
 
 
-   .. method:: from_numpy(self, data, ensure_copy=False)
+   .. py:method:: from_numpy(self, data, ensure_copy=False)
       :abstractmethod:
 
       Create a |VectorArray| from a |NumPy array|
@@ -866,25 +865,25 @@ Functions
               
 
 
-   .. method:: __eq__(self, other)
+   .. py:method:: __eq__(self, other)
 
       Return self==value.
 
 
-   .. method:: __ne__(self, other)
+   .. py:method:: __ne__(self, other)
 
       Return self!=value.
 
 
-   .. method:: __contains__(self, other)
+   .. py:method:: __contains__(self, other)
 
 
-   .. method:: __hash__(self)
+   .. py:method:: __hash__(self)
 
       Return hash(self).
 
 
 
-.. function:: _create_random_values(shape, distribution, random_state, **kwargs)
+.. py:function:: _create_random_values(shape, distribution, random_state, **kwargs)
 
 

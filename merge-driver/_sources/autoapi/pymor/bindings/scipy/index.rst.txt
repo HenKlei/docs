@@ -28,7 +28,7 @@ Functions
 
 
 
-.. function:: solver_options(bicgstab_tol=1e-15, bicgstab_maxiter=None, spilu_drop_tol=0.0001, spilu_fill_factor=10, spilu_drop_rule=None, spilu_permc_spec='COLAMD', spsolve_permc_spec='COLAMD', spsolve_keep_factorization=True, lgmres_tol=1e-05, lgmres_maxiter=1000, lgmres_inner_m=39, lgmres_outer_k=3, least_squares_lsmr_damp=0.0, least_squares_lsmr_atol=1e-06, least_squares_lsmr_btol=1e-06, least_squares_lsmr_conlim=100000000.0, least_squares_lsmr_maxiter=None, least_squares_lsmr_show=False, least_squares_lsqr_damp=0.0, least_squares_lsqr_atol=1e-06, least_squares_lsqr_btol=1e-06, least_squares_lsqr_conlim=100000000.0, least_squares_lsqr_iter_lim=None, least_squares_lsqr_show=False)
+.. py:function:: solver_options(bicgstab_tol=1e-15, bicgstab_maxiter=None, spilu_drop_tol=0.0001, spilu_fill_factor=10, spilu_drop_rule=None, spilu_permc_spec='COLAMD', spsolve_permc_spec='COLAMD', spsolve_keep_factorization=True, lgmres_tol=1e-05, lgmres_maxiter=1000, lgmres_inner_m=39, lgmres_outer_k=3, least_squares_lsmr_damp=0.0, least_squares_lsmr_atol=1e-06, least_squares_lsmr_btol=1e-06, least_squares_lsmr_conlim=100000000.0, least_squares_lsmr_maxiter=None, least_squares_lsmr_show=False, least_squares_lsqr_damp=0.0, least_squares_lsqr_atol=1e-06, least_squares_lsqr_btol=1e-06, least_squares_lsqr_conlim=100000000.0, least_squares_lsqr_iter_lim=None, least_squares_lsqr_show=False)
 
    Returns available solvers with default |solver_options| for the SciPy backend.
 
@@ -89,7 +89,7 @@ Functions
            
 
 
-.. function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='scipy_spsolve', default_least_squares_solver='scipy_least_squares_lsmr')
+.. py:function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='scipy_spsolve', default_least_squares_solver='scipy_least_squares_lsmr')
 
    Solve linear equation system.
 
@@ -124,10 +124,10 @@ Functions
            
 
 
-.. function:: matrix_astype_nocopy(matrix, dtype)
+.. py:function:: matrix_astype_nocopy(matrix, dtype)
 
 
-.. function:: lyap_lrcf_solver_options()
+.. py:function:: lyap_lrcf_solver_options()
 
    Return available Lyapunov solvers with default options for the SciPy backend.
 
@@ -137,7 +137,7 @@ Functions
            
 
 
-.. function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
+.. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Lyapunov equation.
 
@@ -177,7 +177,7 @@ Functions
            
 
 
-.. function:: lyap_dense_solver_options()
+.. py:function:: lyap_dense_solver_options()
 
    Return available dense Lyapunov solvers with default options for the SciPy backend.
 
@@ -187,7 +187,7 @@ Functions
            
 
 
-.. function:: solve_lyap_dense(A, E, B, trans=False, options=None)
+.. py:function:: solve_lyap_dense(A, E, B, trans=False, options=None)
 
    Compute the solution of a Lyapunov equation.
 
@@ -223,7 +223,7 @@ Functions
            
 
 
-.. function:: ricc_lrcf_solver_options()
+.. py:function:: ricc_lrcf_solver_options()
 
    Return available Riccati solvers with default options for the SciPy backend.
 
@@ -233,7 +233,7 @@ Functions
            
 
 
-.. function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+.. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Riccati equation.
 
@@ -273,7 +273,7 @@ Functions
            
 
 
-.. function:: pos_ricc_lrcf_solver_options()
+.. py:function:: pos_ricc_lrcf_solver_options()
 
    Return available positive Riccati solvers with default options for the SciPy backend.
 
@@ -283,7 +283,7 @@ Functions
            
 
 
-.. function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+.. py:function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a positive Riccati equation.
 

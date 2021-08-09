@@ -19,7 +19,7 @@ Functions
 
 
 
-.. function:: burgers_problem(v=1.0, circle=True, initial_data_type='sin', parameter_range=(1.0, 2.0))
+.. py:function:: burgers_problem(v=1.0, circle=True, initial_data_type='sin', parameter_range=(1.0, 2.0))
 
    One-dimensional Burgers-type problem.
 
@@ -44,7 +44,7 @@ Functions
            
 
 
-.. function:: burgers_problem_2d(vx=1.0, vy=1.0, torus=True, initial_data_type='sin', parameter_range=(1.0, 2.0))
+.. py:function:: burgers_problem_2d(vx=1.0, vy=1.0, torus=True, initial_data_type='sin', parameter_range=(1.0, 2.0))
 
    Two-dimensional Burgers-type problem.
 

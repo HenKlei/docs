@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: solve_sylv_schur(A, Ar, E=None, Er=None, B=None, Br=None, C=None, Cr=None)
+.. py:function:: solve_sylv_schur(A, Ar, E=None, Er=None, B=None, Br=None, C=None, Cr=None)
 
    Solve Sylvester equation by Schur decomposition.
 

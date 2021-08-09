@@ -26,8 +26,7 @@ Classes
 
 
 
-.. class:: GenericIRKAReductor(fom, mu=None)
-
+.. py:class:: GenericIRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -41,49 +40,48 @@ Classes
            |Parameter values|.
            
 
-   .. method:: _clear_lists(self)
+   .. py:method:: _clear_lists(self)
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
-   .. method:: _check_rom0_params(self, rom0_params)
+   .. py:method:: _check_rom0_params(self, rom0_params)
 
 
-   .. method:: _check_common_args(tol, maxit, num_prev, conv_crit)
+   .. py:method:: _check_common_args(tol, maxit, num_prev, conv_crit)
       :staticmethod:
 
 
-   .. method:: _order_to_sigma_b_c(self, r)
+   .. py:method:: _order_to_sigma_b_c(self, r)
 
 
-   .. method:: _rom_to_sigma_b_c(rom, force_sigma_in_rhp)
+   .. py:method:: _rom_to_sigma_b_c(rom, force_sigma_in_rhp)
       :staticmethod:
 
 
-   .. method:: _rom0_params_to_sigma_b_c(self, rom0_params, force_sigma_in_rhp)
+   .. py:method:: _rom0_params_to_sigma_b_c(self, rom0_params, force_sigma_in_rhp)
 
 
-   .. method:: _rom0_params_to_rom(self, rom0_params)
+   .. py:method:: _rom0_params_to_rom(self, rom0_params)
 
 
-   .. method:: _store_sigma_b_c(self, sigma, b, c)
+   .. py:method:: _store_sigma_b_c(self, sigma, b, c)
 
 
-   .. method:: _update_conv_data(self, sigma, rom, conv_crit)
+   .. py:method:: _update_conv_data(self, sigma, rom, conv_crit)
 
 
-   .. method:: _compute_conv_crit(self, rom, conv_crit, it)
+   .. py:method:: _compute_conv_crit(self, rom, conv_crit, it)
 
 
-   .. method:: _compute_error(self, rom, it, compute_errors)
+   .. py:method:: _compute_error(self, rom, it, compute_errors)
 
 
 
-.. class:: IRKAReductor(fom, mu=None)
-
+.. py:class:: IRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -97,7 +95,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using IRKA.
 
@@ -162,8 +160,7 @@ Classes
 
 
 
-.. class:: OneSidedIRKAReductor(fom, version, mu=None)
-
+.. py:class:: OneSidedIRKAReductor(fom, version, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -182,7 +179,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using one-sided IRKA.
 
@@ -242,12 +239,11 @@ Classes
               
 
 
-   .. method:: _set_V_reductor(self, sigma, b, c, projection)
+   .. py:method:: _set_V_reductor(self, sigma, b, c, projection)
 
 
 
-.. class:: TSIAReductor(fom, mu=None)
-
+.. py:class:: TSIAReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -261,7 +257,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, projection='orth', conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using TSIA.
 
@@ -326,12 +322,11 @@ Classes
               
 
 
-   .. method:: _set_V_W_reductor(self, rom, projection)
+   .. py:method:: _set_V_W_reductor(self, rom, projection)
 
 
 
-.. class:: TFIRKAReductor(fom, mu=None)
-
+.. py:class:: TFIRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -347,7 +342,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, conv_crit='sigma', compute_errors=False)
 
       Reduce using TF-IRKA.
 
@@ -400,7 +395,7 @@ Classes
               
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 

@@ -32,8 +32,7 @@ Classes
 
 
 
-.. class:: NumpyGenericOperator(mapping, adjoint_mapping=None, dim_source=1, dim_range=1, linear=False, parameters={}, source_id=None, range_id=None, solver_options=None, name=None)
-
+.. py:class:: NumpyGenericOperator(mapping, adjoint_mapping=None, dim_source=1, dim_range=1, linear=False, parameters={}, source_id=None, range_id=None, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -71,7 +70,7 @@ Classes
            Name of the operator.
            
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -88,7 +87,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -115,8 +114,7 @@ Classes
 
 
 
-.. class:: NumpyMatrixBasedOperator
-
+.. py:class:: NumpyMatrixBasedOperator
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -128,20 +126,20 @@ Classes
       operator assembles into a dense matrix, `None` if unknown.
       
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
       :abstractmethod:
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -164,7 +162,7 @@ Classes
               
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -181,7 +179,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -207,7 +205,7 @@ Classes
               
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -233,7 +231,7 @@ Classes
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -259,7 +257,7 @@ Classes
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -297,7 +295,7 @@ Classes
               
 
 
-   .. method:: export_matrix(self, filename, matrix_name=None, output_format='matlab', mu=None)
+   .. py:method:: export_matrix(self, filename, matrix_name=None, output_format='matlab', mu=None)
 
       Save the matrix of the operator to a file.
 
@@ -317,8 +315,7 @@ Classes
 
 
 
-.. class:: NumpyMatrixOperator(matrix, source_id=None, range_id=None, solver_options=None, name=None)
-
+.. py:class:: NumpyMatrixOperator(matrix, source_id=None, range_id=None, solver_options=None, name=None)
 
    Bases: :py:obj:`NumpyMatrixBasedOperator`
 
@@ -338,18 +335,18 @@ Classes
            Name of the operator.
            
 
-   .. method:: from_file(cls, path, key=None, source_id=None, range_id=None, solver_options=None, name=None)
+   .. py:method:: from_file(cls, path, key=None, source_id=None, range_id=None, solver_options=None, name=None)
       :classmethod:
 
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: _assemble(self, mu=None)
+   .. py:method:: _assemble(self, mu=None)
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -372,7 +369,7 @@ Classes
               
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -398,7 +395,7 @@ Classes
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -424,7 +421,7 @@ Classes
               
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -441,7 +438,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -467,7 +464,7 @@ Classes
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False, check_finite=True, default_sparse_solver_backend='scipy')
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False, check_finite=True, default_sparse_solver_backend='scipy')
 
       Apply the inverse operator.
 
@@ -509,7 +506,7 @@ Classes
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -547,7 +544,7 @@ Classes
               
 
 
-   .. method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
       Try to assemble a linear combination of the given operators.
 
@@ -582,10 +579,10 @@ Classes
               
 
 
-   .. method:: __getstate__(self)
+   .. py:method:: __getstate__(self)
 
 
-   .. method:: _format_repr(self, max_width, verbosity)
+   .. py:method:: _format_repr(self, max_width, verbosity)
 
 
 

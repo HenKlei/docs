@@ -22,8 +22,7 @@ Classes
 
 
 
-.. class:: ResidualReductor(RB, operator, rhs=None, product=None, riesz_representatives=False)
-
+.. py:class:: ResidualReductor(RB, operator, rhs=None, product=None, riesz_representatives=False)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -73,23 +72,22 @@ Classes
            If `True` compute the Riesz representative of the residual.
            
 
-   .. method:: reduce(self)
+   .. py:method:: reduce(self)
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional residual vector from reduced vector `u`.
 
 
 
-.. class:: ResidualOperator(operator, rhs, name=None)
-
+.. py:class:: ResidualOperator(operator, rhs, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
    Instantiated by :class:`ResidualReductor`.
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -106,12 +104,11 @@ Classes
               
 
 
-   .. method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
+   .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
 
 
-.. class:: NonProjectedResidualOperator(operator, rhs, riesz_representatives, product)
-
+.. py:class:: NonProjectedResidualOperator(operator, rhs, riesz_representatives, product)
 
    Bases: :py:obj:`ResidualOperator`
 
@@ -119,7 +116,7 @@ Classes
 
    Not to be used directly.
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -136,12 +133,11 @@ Classes
               
 
 
-   .. method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
+   .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
 
 
-.. class:: ImplicitEulerResidualReductor(RB, operator, mass, dt, rhs=None, product=None)
-
+.. py:class:: ImplicitEulerResidualReductor(RB, operator, mass, dt, rhs=None, product=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -188,23 +184,22 @@ Classes
            Inner product |Operator| w.r.t. which to compute the Riesz representatives.
            
 
-   .. method:: reduce(self)
+   .. py:method:: reduce(self)
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional residual vector from reduced vector `u`.
 
 
 
-.. class:: ImplicitEulerResidualOperator(operator, mass, rhs, dt, name=None)
-
+.. py:class:: ImplicitEulerResidualOperator(operator, mass, rhs, dt, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
    Instantiated by :class:`ImplicitEulerResidualReductor`.
 
-   .. method:: apply(self, U, U_old, mu=None)
+   .. py:method:: apply(self, U, U_old, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -221,12 +216,11 @@ Classes
               
 
 
-   .. method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
+   .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
 
 
-.. class:: NonProjectedImplicitEulerResidualOperator(operator, mass, rhs, dt, product)
-
+.. py:class:: NonProjectedImplicitEulerResidualOperator(operator, mass, rhs, dt, product)
 
    Bases: :py:obj:`ImplicitEulerResidualOperator`
 
@@ -234,7 +228,7 @@ Classes
 
    Not to be used directly.
 
-   .. method:: apply(self, U, U_old, mu=None)
+   .. py:method:: apply(self, U, U_old, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -251,7 +245,7 @@ Classes
               
 
 
-   .. method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
+   .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
 
 

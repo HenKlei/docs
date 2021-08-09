@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: load_gmsh(filename)
+.. py:function:: load_gmsh(filename)
 
    Parse a Gmsh file and create a corresponding :class:`GmshGrid` and :class:`GmshBoundaryInfo`.
 

@@ -107,13 +107,13 @@ Attributes
    pymor.core.cache.NoneType
 
 
-.. function:: cleanup_non_persistent_regions()
+.. py:function:: cleanup_non_persistent_regions()
 
 
-.. function:: _safe_filename(old_name)
+.. py:function:: _safe_filename(old_name)
 
 
-.. class:: CacheRegion
+.. py:class:: CacheRegion
 
    Base class for all pyMOR cache regions.
 
@@ -123,7 +123,7 @@ Attributes
       program runs.
       
 
-   .. method:: get(self, key)
+   .. py:method:: get(self, key)
       :abstractmethod:
 
       Return cache entry for given key.
@@ -142,7 +142,7 @@ Attributes
               
 
 
-   .. method:: set(self, key, value)
+   .. py:method:: set(self, key, value)
       :abstractmethod:
 
       Set cache entry for `key` to given `value`.
@@ -152,15 +152,14 @@ Attributes
       due to concurrency).
 
 
-   .. method:: clear(self)
+   .. py:method:: clear(self)
       :abstractmethod:
 
       Clear the entire cache region.
 
 
 
-.. class:: MemoryRegion(max_keys)
-
+.. py:class:: MemoryRegion(max_keys)
 
    Bases: :py:obj:`CacheRegion`
 
@@ -172,12 +171,12 @@ Attributes
       program runs.
       
 
-   .. attribute:: NO_VALUE
+   .. py:attribute:: NO_VALUE
       
 
       
 
-   .. method:: get(self, key)
+   .. py:method:: get(self, key)
 
       Return cache entry for given key.
 
@@ -195,7 +194,7 @@ Attributes
               
 
 
-   .. method:: set(self, key, value)
+   .. py:method:: set(self, key, value)
 
       Set cache entry for `key` to given `value`.
 
@@ -204,14 +203,13 @@ Attributes
       due to concurrency).
 
 
-   .. method:: clear(self)
+   .. py:method:: clear(self)
 
       Clear the entire cache region.
 
 
 
-.. class:: DiskRegion(path, max_size, persistent)
-
+.. py:class:: DiskRegion(path, max_size, persistent)
 
    Bases: :py:obj:`CacheRegion`
 
@@ -223,7 +221,7 @@ Attributes
       program runs.
       
 
-   .. method:: get(self, key)
+   .. py:method:: get(self, key)
 
       Return cache entry for given key.
 
@@ -241,7 +239,7 @@ Attributes
               
 
 
-   .. method:: set(self, key, value)
+   .. py:method:: set(self, key, value)
 
       Set cache entry for `key` to given `value`.
 
@@ -250,42 +248,41 @@ Attributes
       due to concurrency).
 
 
-   .. method:: clear(self)
+   .. py:method:: clear(self)
 
       Clear the entire cache region.
 
 
 
-.. function:: default_regions(disk_path=os.path.join(tempfile.gettempdir(), 'pymor.cache.' + getpass.getuser()), disk_max_size=1024**3, persistent_path=os.path.join(tempfile.gettempdir(), 'pymor.persistent.cache.' + getpass.getuser()), persistent_max_size=1024**3, memory_max_keys=1000)
+.. py:function:: default_regions(disk_path=os.path.join(tempfile.gettempdir(), 'pymor.cache.' + getpass.getuser()), disk_max_size=1024**3, persistent_path=os.path.join(tempfile.gettempdir(), 'pymor.persistent.cache.' + getpass.getuser()), persistent_max_size=1024**3, memory_max_keys=1000)
 
 
-.. data:: cache_regions
+.. py:data:: cache_regions
    
 
    
 
-.. data:: _caching_disabled
+.. py:data:: _caching_disabled
    
 
    
 
-.. function:: enable_caching()
+.. py:function:: enable_caching()
 
    Globally enable caching.
 
 
-.. function:: disable_caching()
+.. py:function:: disable_caching()
 
    Globally disable caching.
 
 
-.. function:: clear_caches()
+.. py:function:: clear_caches()
 
    Clear all cache regions.
 
 
-.. class:: CacheableObject
-
+.. py:class:: CacheableObject
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -302,12 +299,12 @@ Attributes
       Identifier for the object instance on which a cached method is called.
       
 
-   .. method:: disable_caching(self)
+   .. py:method:: disable_caching(self)
 
       Disable caching for this instance.
 
 
-   .. method:: enable_caching(self, region, cache_id=None)
+   .. py:method:: enable_caching(self, region, cache_id=None)
 
       Enable caching for this instance.
 
@@ -331,7 +328,7 @@ Attributes
               
 
 
-   .. method:: cached_method_call(self, method, *args, **kwargs)
+   .. py:method:: cached_method_call(self, method, *args, **kwargs)
 
       Call a given `method` and cache the return value.
 
@@ -354,20 +351,20 @@ Attributes
               
 
 
-   .. method:: _cached_method_call(self, method, pass_self, argnames, defaults, args, kwargs)
+   .. py:method:: _cached_method_call(self, method, pass_self, argnames, defaults, args, kwargs)
 
 
 
-.. function:: cached(function)
+.. py:function:: cached(function)
 
    Decorator to make a method of `CacheableObject` actually cached.
 
 
-.. data:: NoneType
+.. py:data:: NoneType
    
 
    
 
-.. function:: build_cache_key(obj)
+.. py:function:: build_cache_key(obj)
 
 

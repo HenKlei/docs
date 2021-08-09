@@ -80,36 +80,35 @@ Functions
 
 
 
-.. class:: DefaultContainer
-
+.. py:class:: DefaultContainer
 
    Internal singleton class holding all default values defined in pyMOR.
 
    Not to be used directly.
 
-   .. method:: _add_defaults_for_function(self, func, args)
+   .. py:method:: _add_defaults_for_function(self, func, args)
 
 
-   .. method:: _update_function_signature(self, func)
+   .. py:method:: _update_function_signature(self, func)
 
 
-   .. method:: update(self, defaults, type='user')
+   .. py:method:: update(self, defaults, type='user')
 
 
-   .. method:: get(self, key)
+   .. py:method:: get(self, key)
 
 
-   .. method:: __getitem__(self, key)
+   .. py:method:: __getitem__(self, key)
 
 
-   .. method:: keys(self)
+   .. py:method:: keys(self)
 
 
-   .. method:: import_all(self)
+   .. py:method:: import_all(self)
 
 
 
-.. function:: defaults(*args)
+.. py:function:: defaults(*args)
 
    Function decorator for marking function arguments as user-configurable defaults.
 
@@ -136,10 +135,10 @@ Functions
            
 
 
-.. function:: _import_all(package_name='pymor')
+.. py:function:: _import_all(package_name='pymor')
 
 
-.. function:: print_defaults(import_all=True, shorten_paths=2)
+.. py:function:: print_defaults(import_all=True, shorten_paths=2)
 
    Print all |default| values set in pyMOR.
 
@@ -158,7 +157,7 @@ Functions
            
 
 
-.. function:: write_defaults_to_file(filename='./pymor_defaults.py', packages=('pymor', ))
+.. py:function:: write_defaults_to_file(filename='./pymor_defaults.py', packages=('pymor', ))
 
    Write the currently set |default| values to a configuration file.
 
@@ -179,7 +178,7 @@ Functions
            
 
 
-.. function:: load_defaults_from_file(filename='./pymor_defaults.py')
+.. py:function:: load_defaults_from_file(filename='./pymor_defaults.py')
 
    Loads |default| values defined in configuration file.
 
@@ -195,10 +194,10 @@ Functions
            
 
 
-.. function:: _set_defaults(defaults)
+.. py:function:: _set_defaults(defaults)
 
 
-.. function:: set_defaults(defaults)
+.. py:function:: set_defaults(defaults)
 
    Set |default| values.
 
@@ -215,7 +214,7 @@ Functions
            
 
 
-.. function:: get_defaults(user=True, file=True, code=True)
+.. py:function:: get_defaults(user=True, file=True, code=True)
 
    Get |default| values.
 
@@ -233,7 +232,7 @@ Functions
            
 
 
-.. function:: defaults_changes()
+.. py:function:: defaults_changes()
 
    Returns the number of changes made to to pyMOR's global |defaults|.
 

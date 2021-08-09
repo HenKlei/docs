@@ -19,7 +19,7 @@ Functions
 
 
 
-.. function:: gram_schmidt(A, product=None, return_R=False, atol=1e-13, rtol=1e-13, offset=0, reiterate=True, reiteration_threshold=0.9, check=True, check_tol=0.001, copy=True)
+.. py:function:: gram_schmidt(A, product=None, return_R=False, atol=1e-13, rtol=1e-13, offset=0, reiterate=True, reiteration_threshold=0.9, check=True, check_tol=0.001, copy=True)
 
    Orthonormalize a |VectorArray| using the modified Gram-Schmidt algorithm.
 
@@ -62,7 +62,7 @@ Functions
            
 
 
-.. function:: gram_schmidt_biorth(V, W, product=None, reiterate=True, reiteration_threshold=0.1, check=True, check_tol=0.001, copy=True)
+.. py:function:: gram_schmidt_biorth(V, W, product=None, reiterate=True, reiteration_threshold=0.1, check=True, check_tol=0.001, copy=True)
 
    Biorthonormalize a pair of |VectorArrays| using the biorthonormal Gram-Schmidt process.
 

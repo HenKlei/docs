@@ -30,17 +30,17 @@ Attributes
    pymor.algorithms.riccati._DEFAULT_POS_RICC_LRCF_DENSE_SOLVER_BACKEND
 
 
-.. data:: _DEFAULT_RICC_LRCF_SPARSE_SOLVER_BACKEND
+.. py:data:: _DEFAULT_RICC_LRCF_SPARSE_SOLVER_BACKEND
    
 
    
 
-.. data:: _DEFAULT_RICC_LRCF_DENSE_SOLVER_BACKEND
+.. py:data:: _DEFAULT_RICC_LRCF_DENSE_SOLVER_BACKEND
    
 
    
 
-.. function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None, default_sparse_solver_backend=_DEFAULT_RICC_LRCF_SPARSE_SOLVER_BACKEND, default_dense_solver_backend=_DEFAULT_RICC_LRCF_DENSE_SOLVER_BACKEND)
+.. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None, default_sparse_solver_backend=_DEFAULT_RICC_LRCF_SPARSE_SOLVER_BACKEND, default_dense_solver_backend=_DEFAULT_RICC_LRCF_DENSE_SOLVER_BACKEND)
 
    Compute an approximate low-rank solution of a Riccati equation.
 
@@ -128,12 +128,12 @@ Attributes
            
 
 
-.. data:: _DEFAULT_POS_RICC_LRCF_DENSE_SOLVER_BACKEND
+.. py:data:: _DEFAULT_POS_RICC_LRCF_DENSE_SOLVER_BACKEND
    
 
    
 
-.. function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None, default_dense_solver_backend=_DEFAULT_RICC_LRCF_DENSE_SOLVER_BACKEND)
+.. py:function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None, default_dense_solver_backend=_DEFAULT_RICC_LRCF_DENSE_SOLVER_BACKEND)
 
    Compute an approximate low-rank solution of a positive Riccati equation.
 
@@ -198,6 +198,6 @@ Attributes
            
 
 
-.. function:: _solve_ricc_check_args(A, E, B, C, R, trans)
+.. py:function:: _solve_ricc_check_args(A, E, B, C, R, trans)
 
 

@@ -21,7 +21,7 @@ Functions
 
 
 
-.. function:: eigs(A, E=None, k=3, which='LM', b=None, l=None, maxiter=1000, tol=1e-13, imag_tol=1e-12, complex_pair_tol=1e-12, seed=0)
+.. py:function:: eigs(A, E=None, k=3, which='LM', b=None, l=None, maxiter=1000, tol=1e-13, imag_tol=1e-12, complex_pair_tol=1e-12, seed=0)
 
    Approximate a few eigenvalues of a linear |Operator|.
 
@@ -82,17 +82,17 @@ Functions
            
 
 
-.. function:: _arnoldi(A, E, l, b)
+.. py:function:: _arnoldi(A, E, l, b)
 
    Compute an Arnoldi factorization.
 
 
-.. function:: _extend_arnoldi(A, E, V, H, f, p)
+.. py:function:: _extend_arnoldi(A, E, V, H, f, p)
 
    Extend an existing Arnoldi factorization.
 
 
-.. function:: _qr_iteration(H, shifts)
+.. py:function:: _qr_iteration(H, shifts)
 
    Perform the QR iteration.
 

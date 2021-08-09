@@ -21,7 +21,7 @@ Functions
 
 
 
-.. function:: lyap_lrcf_solver_options(lradi_tol=1e-10, lradi_maxiter=500, lradi_shifts='projection_shifts', projection_shifts_init_maxiter=20, projection_shifts_init_seed=None, projection_shifts_subspace_columns=6)
+.. py:function:: lyap_lrcf_solver_options(lradi_tol=1e-10, lradi_maxiter=500, lradi_shifts='projection_shifts', projection_shifts_init_maxiter=20, projection_shifts_init_seed=None, projection_shifts_subspace_columns=6)
 
    Return available Lyapunov solvers with default options.
 
@@ -46,7 +46,7 @@ Functions
            
 
 
-.. function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
+.. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Lyapunov equation.
 
@@ -79,7 +79,7 @@ Functions
            
 
 
-.. function:: projection_shifts_init(A, E, B, shift_options)
+.. py:function:: projection_shifts_init(A, E, B, shift_options)
 
    Find starting projection shifts.
 
@@ -106,7 +106,7 @@ Functions
            
 
 
-.. function:: projection_shifts(A, E, V, Z, prev_shifts, shift_options)
+.. py:function:: projection_shifts(A, E, V, Z, prev_shifts, shift_options)
 
    Find further projection shifts.
 
