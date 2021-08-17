@@ -19,8 +19,7 @@ Classes
 
 
 
-.. class:: ListVectorArrayOperatorBase
-
+.. py:class:: ListVectorArrayOperatorBase
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -76,26 +75,26 @@ Classes
       for all V, mu.
       
 
-   .. method:: _prepare_apply(self, U, mu, kind, least_squares=False)
+   .. py:method:: _prepare_apply(self, U, mu, kind, least_squares=False)
 
 
-   .. method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
+   .. py:method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
+   .. py:method:: _apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _apply_inverse_adjoint_one_vector(self, u, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _apply_inverse_adjoint_one_vector(self, u, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -112,7 +111,7 @@ Classes
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -150,7 +149,7 @@ Classes
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -176,7 +175,7 @@ Classes
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -215,8 +214,7 @@ Classes
 
 
 
-.. class:: LinearComplexifiedListVectorArrayOperatorBase
-
+.. py:class:: LinearComplexifiedListVectorArrayOperatorBase
 
    Bases: :py:obj:`ListVectorArrayOperatorBase`
 
@@ -272,37 +270,36 @@ Classes
       for all V, mu.
       
 
-   .. method:: _real_apply_one_vector(self, u, mu=None, prepare_data=None)
+   .. py:method:: _real_apply_one_vector(self, u, mu=None, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _real_apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _real_apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _real_apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
+   .. py:method:: _real_apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _real_apply_inverse_adjoint_one_vector(self, u, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _real_apply_inverse_adjoint_one_vector(self, u, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
       :abstractmethod:
 
 
-   .. method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
+   .. py:method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
 
 
-   .. method:: _apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
 
 
-   .. method:: _apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
+   .. py:method:: _apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
 
 
-   .. method:: _apply_inverse_adjoint_one_vector(self, u, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _apply_inverse_adjoint_one_vector(self, u, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
 
 
 
-.. class:: NumpyListVectorArrayMatrixOperator(matrix, source_id=None, range_id=None, solver_options=None, name=None)
-
+.. py:class:: NumpyListVectorArrayMatrixOperator(matrix, source_id=None, range_id=None, solver_options=None, name=None)
 
    Bases: :py:obj:`ListVectorArrayOperatorBase`, :py:obj:`pymor.operators.numpy.NumpyMatrixOperator`
 
@@ -325,13 +322,13 @@ Classes
            Name of the operator.
            
 
-   .. method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
+   .. py:method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
 
 
-   .. method:: _apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+   .. py:method:: _apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -357,7 +354,7 @@ Classes
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -395,7 +392,7 @@ Classes
               
 
 
-   .. method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
       Try to assemble a linear combination of the given operators.
 

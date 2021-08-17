@@ -38,8 +38,7 @@ Attributes
    pymor.models.mpi._OperatorToWrap
 
 
-.. class:: MPIModel(obj_id, *args, **kwargs)
-
+.. py:class:: MPIModel(obj_id, *args, **kwargs)
 
    Wrapper class mixin for MPI distributed |Models|.
 
@@ -54,18 +53,17 @@ Attributes
    Note that this class is not intended to be instantiated directly.
    Instead, you should use :func:`mpi_wrap_model`.
 
-   .. method:: _compute_solution(self, mu=None, **kwargs)
+   .. py:method:: _compute_solution(self, mu=None, **kwargs)
 
 
-   .. method:: visualize(self, U, **kwargs)
+   .. py:method:: visualize(self, U, **kwargs)
 
 
-   .. method:: __del__(self)
+   .. py:method:: __del__(self)
 
 
 
-.. class:: MPIVisualizer(m_obj_id)
-
+.. py:class:: MPIVisualizer(m_obj_id)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -89,14 +87,14 @@ Attributes
    after initialization, you have to ensure that this state is not affected
    by possible changes of the global :mod:`~pymor.core.defaults`.
 
-   .. method:: visualize(self, U, **kwargs)
+   .. py:method:: visualize(self, U, **kwargs)
 
 
 
-.. function:: _MPIVisualizer_visualize(m, U, **kwargs)
+.. py:function:: _MPIVisualizer_visualize(m, U, **kwargs)
 
 
-.. function:: mpi_wrap_model(local_models, mpi_spaces=('STATE', ), use_with=True, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace, base_type=None)
+.. py:function:: mpi_wrap_model(local_models, mpi_spaces=('STATE', ), use_with=True, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace, base_type=None)
 
    Wrap MPI distributed local |Models| to a global |Model| on rank 0.
 
@@ -146,14 +144,14 @@ Attributes
            
 
 
-.. data:: _OperatorToWrap
+.. py:data:: _OperatorToWrap
    
 
    
 
-.. function:: _mpi_wrap_model_manage_operators(obj_id, mpi_spaces, use_with, base_type)
+.. py:function:: _mpi_wrap_model_manage_operators(obj_id, mpi_spaces, use_with, base_type)
 
 
-.. function:: _map_children(f, obj)
+.. py:function:: _map_children(f, obj)
 
 

@@ -47,60 +47,59 @@ Attributes
    pymor.discretizers.builtin.gui.qt._qt_windows
 
 
-.. function:: background_visualization_method(method='ipython_if_possible')
+.. py:function:: background_visualization_method(method='ipython_if_possible')
 
 
-.. function:: _launch_qt_app(main_window_factory, block)
+.. py:function:: _launch_qt_app(main_window_factory, block)
 
    Wrapper to display plot in a separate process.
 
 
-.. class:: PlotMainWindow(U, plot, length=1, title=None)
-
+.. py:class:: PlotMainWindow(U, plot, length=1, title=None)
 
    Bases: :py:obj:`qtpy.QtWidgets.QWidget`
 
    Base class for plot main windows.
 
-   .. method:: slider_changed(self, ind)
+   .. py:method:: slider_changed(self, ind)
 
 
-   .. method:: speed_changed(self, val)
+   .. py:method:: speed_changed(self, val)
 
 
-   .. method:: update_solution(self)
+   .. py:method:: update_solution(self)
 
 
-   .. method:: toggle_play(self, checked)
+   .. py:method:: toggle_play(self, checked)
 
 
-   .. method:: rewind(self)
+   .. py:method:: rewind(self)
 
 
-   .. method:: to_end(self)
+   .. py:method:: to_end(self)
 
 
-   .. method:: step_forward(self)
+   .. py:method:: step_forward(self)
 
 
-   .. method:: step_backward(self)
+   .. py:method:: step_backward(self)
 
 
-   .. method:: closeEvent(self, event)
+   .. py:method:: closeEvent(self, event)
 
 
 
-.. data:: _qt_app
+.. py:data:: _qt_app
    
 
    
 
-.. data:: _qt_windows
+.. py:data:: _qt_windows
    
 
    
 
-.. function:: visualize_patch(grid, U, bounding_box=([0, 0], [1, 1]), codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, backend='gl', block=False, columns=2)
+.. py:function:: visualize_patch(grid, U, bounding_box=([0, 0], [1, 1]), codim=2, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, backend='gl', block=False, columns=2)
 
    Visualize scalar data associated to a two-dimensional |Grid| as a patch plot.
 
@@ -139,7 +138,7 @@ Attributes
            
 
 
-.. function:: visualize_matplotlib_1d(grid, U, codim=1, title=None, legend=None, separate_plots=False, block=False)
+.. py:function:: visualize_matplotlib_1d(grid, U, codim=1, title=None, legend=None, separate_plots=False, block=False)
 
    Visualize scalar data associated to a one-dimensional |Grid| as a plot.
 

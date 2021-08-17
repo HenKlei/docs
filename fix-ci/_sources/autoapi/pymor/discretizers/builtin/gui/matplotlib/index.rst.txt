@@ -29,70 +29,66 @@ Classes
 
 
 
-.. class:: MatplotlibAxesBase(figure, sync_timer, grid, U=None, vmin=None, vmax=None, codim=2, separate_axes=False, columns=2, aspect_ratio=1)
+.. py:class:: MatplotlibAxesBase(figure, sync_timer, grid, U=None, vmin=None, vmax=None, codim=2, separate_axes=False, columns=2, aspect_ratio=1)
 
-
-   .. method:: _plot_init(self)
+   .. py:method:: _plot_init(self)
       :abstractmethod:
 
       Setup MPL figure display with empty data.
 
 
-   .. method:: set(self, U)
+   .. py:method:: set(self, U)
       :abstractmethod:
 
       Load new data into existing plot objects.
 
 
-   .. method:: animate(self, u)
+   .. py:method:: animate(self, u)
       :abstractmethod:
 
       Load new data into existing plot objects.
 
 
 
-.. class:: MatplotlibPatchAxes(figure, grid, bounding_box=None, U=None, vmin=None, vmax=None, codim=2, columns=2, colorbar=True, sync_timer=None)
-
+.. py:class:: MatplotlibPatchAxes(figure, grid, bounding_box=None, U=None, vmin=None, vmax=None, codim=2, columns=2, colorbar=True, sync_timer=None)
 
    Bases: :py:obj:`MatplotlibAxesBase`
 
-   .. method:: _plot_init(self)
+   .. py:method:: _plot_init(self)
 
       Setup MPL figure display with empty data.
 
 
-   .. method:: set(self, U, vmin=None, vmax=None)
+   .. py:method:: set(self, U, vmin=None, vmax=None)
 
       Load new data into existing plot objects.
 
 
 
-.. class:: Matplotlib1DAxes(U, figure, grid, vmin=None, vmax=None, codim=1, separate_axes=False, sync_timer=None, columns=2)
-
+.. py:class:: Matplotlib1DAxes(U, figure, grid, vmin=None, vmax=None, codim=1, separate_axes=False, sync_timer=None, columns=2)
 
    Bases: :py:obj:`MatplotlibAxesBase`
 
-   .. method:: _plot_init(self)
+   .. py:method:: _plot_init(self)
 
       Setup MPL figure display with empty data.
 
 
-   .. method:: _set(self, u, i)
+   .. py:method:: _set(self, u, i)
 
 
-   .. method:: animate(self, u)
-
-      Load new data into existing plot objects.
-
-
-   .. method:: set(self, U, vmin=None, vmax=None)
+   .. py:method:: animate(self, u)
 
       Load new data into existing plot objects.
 
 
+   .. py:method:: set(self, U, vmin=None, vmax=None)
 
-.. class:: Matplotlib1DWidget(U, parent, grid, count, vmin=None, vmax=None, legend=None, codim=1, separate_plots=False, dpi=100)
+      Load new data into existing plot objects.
 
+
+
+.. py:class:: Matplotlib1DWidget(U, parent, grid, count, vmin=None, vmax=None, legend=None, codim=1, separate_plots=False, dpi=100)
 
    Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
 
@@ -104,7 +100,7 @@ Classes
       A high-level figure instance.
       
 
-   .. method:: set(self, U, ind)
+   .. py:method:: set(self, U, ind)
 
 
 

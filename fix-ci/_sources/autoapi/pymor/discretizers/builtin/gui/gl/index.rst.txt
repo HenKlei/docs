@@ -29,7 +29,7 @@ Functions
 
 
 
-.. function:: compile_shader(source, vertex=True)
+.. py:function:: compile_shader(source, vertex=True)
 
    Compile a vertex shader from source.
 

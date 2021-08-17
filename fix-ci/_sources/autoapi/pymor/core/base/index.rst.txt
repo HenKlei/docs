@@ -83,45 +83,43 @@ Attributes
    pymor.core.base.abstractstaticmethod
 
 
-.. data:: DONT_COPY_DOCSTRINGS
+.. py:data:: DONT_COPY_DOCSTRINGS
    
 
    
 
-.. data:: NoneType
+.. py:data:: NoneType
    
 
    
 
-.. class:: UID
-
+.. py:class:: UID
 
    Provides unique, quickly computed ids by combining a session UUID4 with a counter.
 
-   .. attribute:: __slots__
+   .. py:attribute:: __slots__
       :annotation: = ['uid']
 
       
 
-   .. attribute:: prefix
+   .. py:attribute:: prefix
       
 
       
 
-   .. attribute:: counter
+   .. py:attribute:: counter
       :annotation: = [0]
 
       
 
-   .. method:: __getstate__(self)
+   .. py:method:: __getstate__(self)
 
 
-   .. method:: __setstate__(self, v)
+   .. py:method:: __setstate__(self, v)
 
 
 
-.. class:: UberMeta(cls, name, bases, namespace)
-
+.. py:class:: UberMeta(cls, name, bases, namespace)
 
    Bases: :py:obj:`abc.ABCMeta`
 
@@ -138,7 +136,7 @@ Attributes
    even via super()).
 
 
-.. class:: BasicObject
+.. py:class:: BasicObject
 
    Base class for most classes in pyMOR.
 
@@ -162,78 +160,75 @@ Attributes
       :class:`UID` and is unique for all pyMOR objects ever created.
       
 
-   .. attribute:: _uid
+   .. py:attribute:: _uid
       
 
       
 
-   .. method:: disable_logging(self, doit=True)
+   .. py:method:: disable_logging(self, doit=True)
 
       Disable logging output for this instance.
 
 
-   .. method:: enable_logging(self, doit=True)
+   .. py:method:: enable_logging(self, doit=True)
 
       Enable logging output for this instance.
 
 
-   .. method:: _format_repr(self, max_width, verbosity, override={})
+   .. py:method:: _format_repr(self, max_width, verbosity, override={})
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
 
-.. data:: abstractmethod
+.. py:data:: abstractmethod
    
 
    
 
-.. data:: abstractproperty
+.. py:data:: abstractproperty
    
 
    
 
-.. data:: abstractclassmethod
+.. py:data:: abstractclassmethod
    
 
    
 
-.. data:: abstractstaticmethod
+.. py:data:: abstractstaticmethod
    
 
    
 
-.. class:: classinstancemethod(cls_meth)
+.. py:class:: classinstancemethod(cls_meth)
+
+   .. py:method:: __get__(self, instance, cls)
 
 
-   .. method:: __get__(self, instance, cls)
-
-
-   .. method:: instancemethod(self, inst_meth)
+   .. py:method:: instancemethod(self, inst_meth)
 
 
 
-.. class:: ImmutableMeta(cls, name, bases, namespace)
-
+.. py:class:: ImmutableMeta(cls, name, bases, namespace)
 
    Bases: :py:obj:`UberMeta`
 
    Metaclass for :class:`ImmutableObject`.
 
-   .. attribute:: __call__
+   .. py:attribute:: __call__
       
 
       
 
-   .. method:: _call(self, *args, **kwargs)
+   .. py:method:: _call(self, *args, **kwargs)
 
 
 
-.. class:: ImmutableObject
-
+.. py:class:: ImmutableObject
 
    Bases: :py:obj:`BasicObject`
 
@@ -257,18 +252,18 @@ Attributes
    after initialization, you have to ensure that this state is not affected
    by possible changes of the global :mod:`~pymor.core.defaults`.
 
-   .. attribute:: _locked
+   .. py:attribute:: _locked
       :annotation: = False
 
       
 
-   .. method:: __setattr__(self, key, value)
+   .. py:method:: __setattr__(self, key, value)
 
       Depending on _locked state I delegate the setattr call to object or
       raise an Exception.
 
 
-   .. method:: with_(self, new_type=None, **kwargs)
+   .. py:method:: with_(self, new_type=None, **kwargs)
 
       Returns a copy with changed attributes.
 
@@ -291,10 +286,10 @@ Attributes
               
 
 
-   .. method:: __copy__(self)
+   .. py:method:: __copy__(self)
 
 
-   .. method:: __deepcopy__(self, memo)
+   .. py:method:: __deepcopy__(self, memo)
 
 
 

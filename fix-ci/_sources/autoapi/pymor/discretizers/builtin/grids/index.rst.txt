@@ -14,6 +14,7 @@ Submodules
    constructions <constructions/index.rst>
    gmsh <gmsh/index.rst>
    interfaces <interfaces/index.rst>
+   io <io/index.rst>
    oned <oned/index.rst>
    rect <rect/index.rst>
    referenceelements <referenceelements/index.rst>

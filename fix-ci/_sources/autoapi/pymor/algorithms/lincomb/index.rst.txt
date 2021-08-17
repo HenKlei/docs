@@ -26,7 +26,7 @@ Functions
 
 
 
-.. function:: assemble_lincomb(operators, coefficients, solver_options=None, name=None)
+.. py:function:: assemble_lincomb(operators, coefficients, solver_options=None, name=None)
 
    Try to assemble a linear combination of the given operators.
 
@@ -60,8 +60,7 @@ Functions
            
 
 
-.. class:: AssembleLincombRules(coefficients, solver_options, name)
-
+.. py:class:: AssembleLincombRules(coefficients, solver_options, name)
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
 
@@ -87,40 +86,40 @@ Functions
       `list` of all defined |rules|.
       
 
-   .. method:: action_zero_coeff(self, ops)
+   .. py:method:: action_zero_coeff(self, ops)
 
 
-   .. method:: action_ZeroOperator(self, ops)
+   .. py:method:: action_ZeroOperator(self, ops)
 
 
-   .. method:: action_IdentityOperator(self, ops)
+   .. py:method:: action_IdentityOperator(self, ops)
 
 
-   .. method:: action_BlockSpaceIdentityOperator(self, ops)
+   .. py:method:: action_BlockSpaceIdentityOperator(self, ops)
 
 
-   .. method:: action_VectorArrayOperator(self, ops)
+   .. py:method:: action_VectorArrayOperator(self, ops)
 
 
-   .. method:: action_SecondOrderModelOperator(self, ops)
+   .. py:method:: action_SecondOrderModelOperator(self, ops)
 
 
-   .. method:: action_BlockDiagonalOperator(self, ops)
+   .. py:method:: action_BlockDiagonalOperator(self, ops)
 
 
-   .. method:: action_BlockOperatorBase(self, ops)
+   .. py:method:: action_BlockOperatorBase(self, ops)
 
 
-   .. method:: action_merge_low_rank_operators(self, ops)
+   .. py:method:: action_merge_low_rank_operators(self, ops)
 
 
-   .. method:: action_merge_into_low_rank_updated_operator(self, ops)
+   .. py:method:: action_merge_into_low_rank_updated_operator(self, ops)
 
 
-   .. method:: action_call_assemble_lincomb_method(self, ops)
+   .. py:method:: action_call_assemble_lincomb_method(self, ops)
 
 
-   .. method:: action_return_lincomb(self, ops)
+   .. py:method:: action_return_lincomb(self, ops)
 
 
 

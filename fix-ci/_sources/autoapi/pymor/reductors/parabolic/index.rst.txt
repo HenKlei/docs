@@ -18,8 +18,7 @@ Classes
 
 
 
-.. class:: ParabolicRBReductor(fom, RB=None, product=None, coercivity_estimator=None, check_orthonormality=None, check_tol=None)
-
+.. py:class:: ParabolicRBReductor(fom, RB=None, product=None, coercivity_estimator=None, check_orthonormality=None, check_tol=None)
 
    Bases: :py:obj:`pymor.reductors.basic.InstationaryRBReductor`
 
@@ -63,15 +62,14 @@ Classes
            for the coercivity constant of `fom.operator` w.r.t. `product`.
            
 
-   .. method:: assemble_error_estimator(self)
+   .. py:method:: assemble_error_estimator(self)
 
 
-   .. method:: assemble_error_estimator_for_subbasis(self, dims)
+   .. py:method:: assemble_error_estimator_for_subbasis(self, dims)
 
 
 
-.. class:: ParabolicRBEstimator(residual, residual_range_dims, initial_residual, initial_residual_range_dims, coercivity_estimator)
-
+.. py:class:: ParabolicRBEstimator(residual, residual_range_dims, initial_residual, initial_residual_range_dims, coercivity_estimator)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -79,10 +77,10 @@ Classes
 
    Not to be used directly.
 
-   .. method:: estimate_error(self, U, mu, m, return_error_sequence=False)
+   .. py:method:: estimate_error(self, U, mu, m, return_error_sequence=False)
 
 
-   .. method:: restricted_to_subbasis(self, dim, m)
+   .. py:method:: restricted_to_subbasis(self, dim, m)
 
 
 

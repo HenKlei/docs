@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: InstationaryProblem(stationary_part, initial_data, T=1.0, parameter_ranges=None, name=None)
-
+.. py:class:: InstationaryProblem(stationary_part, initial_data, T=1.0, parameter_ranges=None, name=None)
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -55,10 +54,10 @@ Classes
 
       
 
-   .. method:: with_stationary_part(self, **kwargs)
+   .. py:method:: with_stationary_part(self, **kwargs)
 
 
-   .. method:: parameter_space(self)
+   .. py:method:: parameter_space(self)
       :property:
 
 

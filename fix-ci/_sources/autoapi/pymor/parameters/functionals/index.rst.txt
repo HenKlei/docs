@@ -27,8 +27,7 @@ Classes
 
 
 
-.. class:: ParameterFunctional
-
+.. py:class:: ParameterFunctional
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -37,18 +36,18 @@ Classes
    A parameter functional is simply a function mapping |Parameters| to
    a number.
 
-   .. attribute:: __rmul__
+   .. py:attribute:: __rmul__
       
 
       
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
       :abstractmethod:
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the functionals's derivative with respect to a given parameter.
 
@@ -65,36 +64,35 @@ Classes
               
 
 
-   .. method:: __call__(self, mu=None)
+   .. py:method:: __call__(self, mu=None)
 
 
-   .. method:: _add_sub(self, other, sign)
+   .. py:method:: _add_sub(self, other, sign)
 
 
-   .. method:: _radd_sub(self, other, sign)
+   .. py:method:: _radd_sub(self, other, sign)
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __radd__(self, other)
+   .. py:method:: __radd__(self, other)
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __rsub__(self, other)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
 
-.. class:: ProjectionParameterFunctional(parameter, size=1, index=None, name=None)
-
+.. py:class:: ProjectionParameterFunctional(parameter, size=1, index=None, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -117,12 +115,12 @@ Classes
            Name of the functional.
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the functionals's derivative with respect to a given parameter.
 
@@ -140,8 +138,7 @@ Classes
 
 
 
-.. class:: GenericParameterFunctional(mapping, parameters, name=None, derivative_mappings=None, second_derivative_mappings=None)
-
+.. py:class:: GenericParameterFunctional(mapping, parameters, name=None, derivative_mappings=None, second_derivative_mappings=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -169,12 +166,12 @@ Classes
            `second_derivative_mappings[parameter_i][index_i][parameter_j][index_j](mu)`
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the functionals's derivative with respect to a given parameter.
 
@@ -192,8 +189,7 @@ Classes
 
 
 
-.. class:: ExpressionParameterFunctional(expression, parameters, name=None, derivative_expressions=None, second_derivative_expressions=None)
-
+.. py:class:: ExpressionParameterFunctional(expression, parameters, name=None, derivative_expressions=None, second_derivative_expressions=None)
 
    Bases: :py:obj:`GenericParameterFunctional`
 
@@ -223,19 +219,18 @@ Classes
            derivatives of each parameter component i and j.
            
 
-   .. attribute:: functions
+   .. py:attribute:: functions
       
 
       
 
-   .. method:: __reduce__(self)
+   .. py:method:: __reduce__(self)
 
       Helper for pickle.
 
 
 
-.. class:: ProductParameterFunctional(factors, name=None)
-
+.. py:class:: ProductParameterFunctional(factors, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -249,12 +244,12 @@ Classes
            Name of the functional.
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the functionals's derivative with respect to a given parameter.
 
@@ -272,8 +267,7 @@ Classes
 
 
 
-.. class:: ConjugateParameterFunctional(functional, name=None)
-
+.. py:class:: ConjugateParameterFunctional(functional, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -291,14 +285,13 @@ Classes
            Name of the functional.
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
 
-.. class:: ConstantParameterFunctional(constant_value, name=None)
-
+.. py:class:: ConstantParameterFunctional(constant_value, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -312,12 +305,12 @@ Classes
            Name of the functional.
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the functionals's derivative with respect to a given parameter.
 
@@ -335,8 +328,7 @@ Classes
 
 
 
-.. class:: LincombParameterFunctional(functionals, coefficients, name=None)
-
+.. py:class:: LincombParameterFunctional(functionals, coefficients, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -359,12 +351,12 @@ Classes
 
       
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the functionals's derivative with respect to a given parameter.
 
@@ -382,8 +374,7 @@ Classes
 
 
 
-.. class:: MinThetaParameterFunctional(thetas, mu_bar, alpha_mu_bar=1.0, name=None)
-
+.. py:class:: MinThetaParameterFunctional(thetas, mu_bar, alpha_mu_bar=1.0, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -425,14 +416,13 @@ Classes
            Name of the functional.
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
 
-.. class:: BaseMaxThetaParameterFunctional(thetas_prime, thetas, mu_bar, gamma_mu_bar=1.0, name=None)
-
+.. py:class:: BaseMaxThetaParameterFunctional(thetas_prime, thetas, mu_bar, gamma_mu_bar=1.0, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
 
@@ -499,12 +489,12 @@ Classes
            Name of the functional.
            
 
-   .. method:: evaluate(self, mu=None)
+   .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
 
 
-   .. method:: d_mu(self, component, index=())
+   .. py:method:: d_mu(self, component, index=())
       :abstractmethod:
 
       Return the functionals's derivative with respect to a given parameter.
@@ -523,8 +513,7 @@ Classes
 
 
 
-.. class:: MaxThetaParameterFunctional(thetas, mu_bar, gamma_mu_bar=1.0, name=None)
-
+.. py:class:: MaxThetaParameterFunctional(thetas, mu_bar, gamma_mu_bar=1.0, name=None)
 
    Bases: :py:obj:`BaseMaxThetaParameterFunctional`
 

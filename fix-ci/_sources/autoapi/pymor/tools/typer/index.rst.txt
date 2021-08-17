@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: Choices(choices)
+.. py:function:: Choices(choices)
 
    Multipe-choice options for typer.
 

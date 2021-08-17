@@ -51,8 +51,7 @@ Functions
 
 
 
-.. class:: LincombOperator(operators, coefficients, solver_options=None, name=None)
-
+.. py:class:: LincombOperator(operators, coefficients, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -74,11 +73,11 @@ Functions
            Name of the operator.
            
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: evaluate_coefficients(self, mu)
+   .. py:method:: evaluate_coefficients(self, mu)
 
       Compute the linear coefficients for given |parameter values|.
 
@@ -93,7 +92,7 @@ Functions
               
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -110,7 +109,7 @@ Functions
               
 
 
-   .. method:: apply2(self, V, U, mu=None)
+   .. py:method:: apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U.
 
@@ -139,7 +138,7 @@ Functions
               
 
 
-   .. method:: pairwise_apply2(self, V, U, mu=None)
+   .. py:method:: pairwise_apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U in pairs.
 
@@ -169,7 +168,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -195,7 +194,7 @@ Functions
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -218,7 +217,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -236,7 +235,7 @@ Functions
               
 
 
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the operator's derivative with respect to a given parameter.
 
@@ -253,7 +252,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -291,7 +290,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -329,10 +328,10 @@ Functions
               
 
 
-   .. method:: _as_array(self, source, mu)
+   .. py:method:: _as_array(self, source, mu)
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -358,7 +357,7 @@ Functions
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -385,8 +384,7 @@ Functions
 
 
 
-.. class:: ConcatenationOperator(operators, solver_options=None, name=None)
-
+.. py:class:: ConcatenationOperator(operators, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -404,11 +402,11 @@ Functions
            Name of the operator.
            
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -425,7 +423,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -451,7 +449,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -469,7 +467,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -506,17 +504,16 @@ Functions
               
 
 
-   .. method:: __matmul__(self, other)
+   .. py:method:: __matmul__(self, other)
 
       Concatenation of two operators.
 
 
-   .. method:: __rmatmul__(self, other)
+   .. py:method:: __rmatmul__(self, other)
 
 
 
-.. class:: ProjectedOperator(operator, range_basis, source_basis, product=None, solver_options=None)
-
+.. py:class:: ProjectedOperator(operator, range_basis, source_basis, product=None, solver_options=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -546,16 +543,16 @@ Functions
            The |solver_options| for the projected operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = False
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -572,7 +569,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -590,7 +587,7 @@ Functions
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -613,7 +610,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -640,8 +637,7 @@ Functions
 
 
 
-.. class:: LowRankOperator(left, core, right, inverted=False, solver_options=None, name=None)
-
+.. py:class:: LowRankOperator(left, core, right, inverted=False, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -667,16 +663,16 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -693,7 +689,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -720,8 +716,7 @@ Functions
 
 
 
-.. class:: LowRankUpdatedOperator(operator, lr_operator, coeff, lr_coeff, solver_options=None, name=None)
-
+.. py:class:: LowRankUpdatedOperator(operator, lr_operator, coeff, lr_coeff, solver_options=None, name=None)
 
    Bases: :py:obj:`LincombOperator`
 
@@ -761,7 +756,7 @@ Functions
            Name of the operator.
            
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -799,7 +794,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -838,8 +833,7 @@ Functions
 
 
 
-.. class:: ComponentProjectionOperator(components, source, name=None)
-
+.. py:class:: ComponentProjectionOperator(components, source, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -857,12 +851,12 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -879,7 +873,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -917,8 +911,7 @@ Functions
 
 
 
-.. class:: IdentityOperator(space, name=None)
-
+.. py:class:: IdentityOperator(space, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -936,16 +929,16 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -962,7 +955,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -988,7 +981,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -1026,7 +1019,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -1064,7 +1057,7 @@ Functions
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -1087,7 +1080,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -1125,8 +1118,7 @@ Functions
 
 
 
-.. class:: ConstantOperator(value, source, name=None)
-
+.. py:class:: ConstantOperator(value, source, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -1143,12 +1135,12 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = False
 
       
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -1165,7 +1157,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -1183,7 +1175,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -1220,7 +1212,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -1259,8 +1251,7 @@ Functions
 
 
 
-.. class:: ZeroOperator(range, source, name=None)
-
+.. py:class:: ZeroOperator(range, source, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -1276,16 +1267,16 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -1302,7 +1293,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -1328,7 +1319,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -1366,7 +1357,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -1404,7 +1395,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -1442,8 +1433,7 @@ Functions
 
 
 
-.. class:: VectorArrayOperator(array, adjoint=False, space_id=None, name=None)
-
+.. py:class:: VectorArrayOperator(array, adjoint=False, space_id=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -1470,16 +1460,16 @@ Functions
            The name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -1496,7 +1486,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -1534,7 +1524,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -1560,7 +1550,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -1598,7 +1588,7 @@ Functions
               
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -1624,7 +1614,7 @@ Functions
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -1650,7 +1640,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -1688,8 +1678,7 @@ Functions
 
 
 
-.. class:: VectorOperator(vector, name=None)
-
+.. py:class:: VectorOperator(vector, name=None)
 
    Bases: :py:obj:`VectorArrayOperator`
 
@@ -1713,19 +1702,18 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. attribute:: source
+   .. py:attribute:: source
       
 
       
 
 
-.. class:: VectorFunctional(vector, product=None, name=None)
-
+.. py:class:: VectorFunctional(vector, product=None, name=None)
 
    Bases: :py:obj:`VectorArrayOperator`
 
@@ -1757,19 +1745,18 @@ Functions
            Name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. attribute:: range
+   .. py:attribute:: range
       
 
       
 
 
-.. class:: ProxyOperator(operator, name=None)
-
+.. py:class:: ProxyOperator(operator, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -1785,11 +1772,11 @@ Functions
            Name of the wrapping operator.
            
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -1806,7 +1793,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -1832,7 +1819,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -1870,7 +1857,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -1908,7 +1895,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -1926,7 +1913,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -1964,8 +1951,7 @@ Functions
 
 
 
-.. class:: FixedParameterOperator(operator, mu=None, name=None)
-
+.. py:class:: FixedParameterOperator(operator, mu=None, name=None)
 
    Bases: :py:obj:`ProxyOperator`
 
@@ -1981,7 +1967,7 @@ Functions
            (and related methods) of `operator`.
            
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -1998,7 +1984,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -2024,7 +2010,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -2062,7 +2048,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -2100,7 +2086,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -2119,22 +2105,20 @@ Functions
 
 
 
-.. class:: LinearOperator(operator, name=None)
-
+.. py:class:: LinearOperator(operator, name=None)
 
    Bases: :py:obj:`ProxyOperator`
 
    Mark the wrapped |Operator| to be linear.
 
 
-.. class:: AffineOperator(operator, name=None)
-
+.. py:class:: AffineOperator(operator, name=None)
 
    Bases: :py:obj:`ProxyOperator`
 
    Decompose an affine |Operator| into affine_shift and linear_part.
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -2153,8 +2137,7 @@ Functions
 
 
 
-.. class:: InverseOperator(operator, name=None)
-
+.. py:class:: InverseOperator(operator, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -2168,11 +2151,11 @@ Functions
            If not `None`, name of the operator.
            
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -2189,7 +2172,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -2215,7 +2198,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -2253,7 +2236,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -2292,8 +2275,7 @@ Functions
 
 
 
-.. class:: InverseAdjointOperator(operator, name=None)
-
+.. py:class:: InverseAdjointOperator(operator, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -2307,16 +2289,16 @@ Functions
            If not `None`, name of the operator.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -2333,7 +2315,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -2359,7 +2341,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -2397,7 +2379,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -2436,8 +2418,7 @@ Functions
 
 
 
-.. class:: AdjointOperator(operator, source_product=None, range_product=None, name=None, with_apply_inverse=True, solver_options=None)
-
+.. py:class:: AdjointOperator(operator, source_product=None, range_product=None, name=None, with_apply_inverse=True, solver_options=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -2480,16 +2461,16 @@ Functions
            the `apply_inverse` default implementation.
            
 
-   .. attribute:: linear
+   .. py:attribute:: linear
       :annotation: = True
 
       
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -2506,7 +2487,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -2532,7 +2513,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -2570,7 +2551,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -2609,8 +2590,7 @@ Functions
 
 
 
-.. class:: SelectionOperator(operators, parameter_functional, boundaries, name=None)
-
+.. py:class:: SelectionOperator(operators, parameter_functional, boundaries, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -2637,14 +2617,14 @@ Functions
            Name of the operator.
            
 
-   .. method:: H(self)
+   .. py:method:: H(self)
       :property:
 
 
-   .. method:: _get_operator_number(self, mu)
+   .. py:method:: _get_operator_number(self, mu)
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -2667,7 +2647,7 @@ Functions
               
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -2684,7 +2664,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -2710,7 +2690,7 @@ Functions
               
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -2736,7 +2716,7 @@ Functions
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -2763,7 +2743,7 @@ Functions
 
 
 
-.. function:: induced_norm(product, raise_negative=True, tol=1e-10, name=None)
+.. py:function:: induced_norm(product, raise_negative=True, tol=1e-10, name=None)
 
    Obtain induced norm of an inner product.
 
@@ -2799,14 +2779,13 @@ Functions
            
 
 
-.. class:: InducedNorm(product, raise_negative, tol, name)
-
+.. py:class:: InducedNorm(product, raise_negative, tol, name)
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
    Instantiated by :func:`induced_norm`. Do not use directly.
 
-   .. method:: __call__(self, U, mu=None)
+   .. py:method:: __call__(self, U, mu=None)
 
 
 

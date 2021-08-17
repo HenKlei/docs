@@ -26,8 +26,7 @@ Attributes
    pymor.discretizers.builtin.gui.jupyter.logging.redirect_logging
 
 
-.. class:: LogViewer(out, accordion=None)
-
+.. py:class:: LogViewer(out, accordion=None)
 
    Bases: :py:obj:`logging.Handler`
 
@@ -38,12 +37,12 @@ Attributes
    records as desired. By default, no formatter is specified; in this case,
    the 'raw' message as determined by record.message is logged.
 
-   .. attribute:: out
+   .. py:attribute:: out
       
 
       
 
-   .. method:: emit(self, record)
+   .. py:method:: emit(self, record)
 
       Do whatever it takes to actually log the specified logging record.
 
@@ -51,11 +50,11 @@ Attributes
       raises a NotImplementedError.
 
 
-   .. method:: empty(self)
+   .. py:method:: empty(self)
       :property:
 
 
-   .. method:: close(self)
+   .. py:method:: close(self)
 
       Tidy up any resources used by the handler.
 
@@ -65,29 +64,28 @@ Attributes
       methods.
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
 
-.. class:: LoggingRedirector
+.. py:class:: LoggingRedirector
+
+   .. py:method:: __enter__(self)
 
 
-   .. method:: __enter__(self)
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
 
 
-   .. method:: __exit__(self, exc_type, exc_val, exc_tb)
+   .. py:method:: start(self)
 
 
-   .. method:: start(self)
-
-
-   .. method:: stop(self)
+   .. py:method:: stop(self)
 
 
 
-.. data:: redirect_logging
+.. py:data:: redirect_logging
    
 
    

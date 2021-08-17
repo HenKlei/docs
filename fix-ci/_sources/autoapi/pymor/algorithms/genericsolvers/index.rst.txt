@@ -29,7 +29,7 @@ Functions
 
 
 
-.. function:: solver_options(lgmres_tol=1e-05, lgmres_maxiter=1000, lgmres_inner_m=39, lgmres_outer_k=3, least_squares_lsmr_damp=0.0, least_squares_lsmr_atol=1e-06, least_squares_lsmr_btol=1e-06, least_squares_lsmr_conlim=100000000.0, least_squares_lsmr_maxiter=None, least_squares_lsmr_show=False, least_squares_lsqr_damp=0.0, least_squares_lsqr_atol=1e-06, least_squares_lsqr_btol=1e-06, least_squares_lsqr_conlim=100000000.0, least_squares_lsqr_iter_lim=None, least_squares_lsqr_show=False)
+.. py:function:: solver_options(lgmres_tol=1e-05, lgmres_maxiter=1000, lgmres_inner_m=39, lgmres_outer_k=3, least_squares_lsmr_damp=0.0, least_squares_lsmr_atol=1e-06, least_squares_lsmr_btol=1e-06, least_squares_lsmr_conlim=100000000.0, least_squares_lsmr_maxiter=None, least_squares_lsmr_show=False, least_squares_lsqr_damp=0.0, least_squares_lsqr_atol=1e-06, least_squares_lsqr_btol=1e-06, least_squares_lsqr_conlim=100000000.0, least_squares_lsqr_iter_lim=None, least_squares_lsqr_show=False)
 
    Returns available solvers with default |solver_options|.
 
@@ -74,7 +74,7 @@ Functions
            
 
 
-.. function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='generic_lgmres', default_least_squares_solver='generic_least_squares_lsmr')
+.. py:function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='generic_lgmres', default_least_squares_solver='generic_least_squares_lsmr')
 
    Solve linear equation system.
 
@@ -109,18 +109,18 @@ Functions
            
 
 
-.. function:: _parse_options(options, default_options, default_solver, default_least_squares_solver, least_squares)
+.. py:function:: _parse_options(options, default_options, default_solver, default_least_squares_solver, least_squares)
 
 
-.. function:: lgmres(A, b, x0=None, tol=1e-05, maxiter=1000, M=None, callback=None, inner_m=30, outer_k=3, outer_v=None, store_outer_Av=True)
+.. py:function:: lgmres(A, b, x0=None, tol=1e-05, maxiter=1000, M=None, callback=None, inner_m=30, outer_k=3, outer_v=None, store_outer_Av=True)
 
 
-.. function:: _sym_ortho(a, b)
+.. py:function:: _sym_ortho(a, b)
 
 
-.. function:: lsqr(A, b, damp=0.0, atol=1e-08, btol=1e-08, conlim=100000000.0, iter_lim=None, show=False)
+.. py:function:: lsqr(A, b, damp=0.0, atol=1e-08, btol=1e-08, conlim=100000000.0, iter_lim=None, show=False)
 
 
-.. function:: lsmr(A, b, damp=0.0, atol=1e-06, btol=1e-06, conlim=100000000.0, maxiter=None, show=False)
+.. py:function:: lsmr(A, b, damp=0.0, atol=1e-06, btol=1e-06, conlim=100000000.0, maxiter=None, show=False)
 
 

@@ -32,8 +32,7 @@ Functions
 
 
 
-.. class:: MPIOperator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
-
+.. py:class:: MPIOperator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -85,7 +84,7 @@ Functions
            and :class:`~pymor.vectorarrays.mpi.MPIVectorSpaceNoComm`.
            
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -102,7 +101,7 @@ Functions
               
 
 
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -128,7 +127,7 @@ Functions
               
 
 
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -154,7 +153,7 @@ Functions
               
 
 
-   .. method:: apply2(self, V, U, mu=None)
+   .. py:method:: apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U.
 
@@ -183,7 +182,7 @@ Functions
               
 
 
-   .. method:: pairwise_apply2(self, V, U, mu=None)
+   .. py:method:: pairwise_apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U in pairs.
 
@@ -213,7 +212,7 @@ Functions
               
 
 
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -239,7 +238,7 @@ Functions
               
 
 
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -277,7 +276,7 @@ Functions
               
 
 
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -315,7 +314,7 @@ Functions
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -333,7 +332,7 @@ Functions
               
 
 
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -356,7 +355,7 @@ Functions
               
 
 
-   .. method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
       Try to assemble a linear combination of the given operators.
 
@@ -391,7 +390,7 @@ Functions
               
 
 
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -428,23 +427,23 @@ Functions
               
 
 
-   .. method:: __del__(self)
+   .. py:method:: __del__(self)
 
 
 
-.. function:: _MPIOperator_get_local_spaces(self, source, pickle_local_spaces)
+.. py:function:: _MPIOperator_get_local_spaces(self, source, pickle_local_spaces)
 
 
-.. function:: _MPIOperator_assemble_lincomb(operators, coefficients, identity_shift, name)
+.. py:function:: _MPIOperator_assemble_lincomb(operators, coefficients, identity_shift, name)
 
 
-.. function:: _MPIOperator_restriced(self, dofs)
+.. py:function:: _MPIOperator_restriced(self, dofs)
 
 
-.. function:: _MPIOperator_assemble(self, mu)
+.. py:function:: _MPIOperator_assemble(self, mu)
 
 
-.. function:: mpi_wrap_operator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
+.. py:function:: mpi_wrap_operator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
 
    Wrap MPI distributed local |Operators| to a global |Operator| on rank 0.
 
@@ -465,9 +464,9 @@ Functions
            
 
 
-.. function:: _mpi_wrap_operator_LincombOperator_manage_operators(obj_id)
+.. py:function:: _mpi_wrap_operator_LincombOperator_manage_operators(obj_id)
 
 
-.. function:: _mpi_wrap_operator_VectorArrayOperator_manage_array(obj_id, pickle_local_spaces)
+.. py:function:: _mpi_wrap_operator_VectorArrayOperator_manage_array(obj_id, pickle_local_spaces)
 
 

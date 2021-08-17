@@ -26,11 +26,11 @@ Attributes
    pymor.discretizers.builtin.relations.DTYPE
 
 
-.. data:: DTYPE
+.. py:data:: DTYPE
    
 
    
 
-.. function:: inverse_relation(SE, size_rhs=None, with_indices=False)
+.. py:function:: inverse_relation(SE, size_rhs=None, with_indices=False)
 
 

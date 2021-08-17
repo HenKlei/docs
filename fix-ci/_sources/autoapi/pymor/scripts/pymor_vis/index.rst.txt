@@ -19,9 +19,9 @@ Functions
 
 
 
-.. function:: main(filename: str, delete: bool = typer.Option(False, help='Delete file when done.'))
+.. py:function:: main(filename: str, delete: bool = typer.Option(False, help='Delete file when done.'))
 
 
-.. function:: run()
+.. py:function:: run()
 
 

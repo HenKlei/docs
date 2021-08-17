@@ -21,7 +21,7 @@ Functions
 
 
 
-.. function:: ricc_lrcf_solver_options(lrradi_tol=1e-10, lrradi_maxiter=500, lrradi_shifts='hamiltonian_shifts', hamiltonian_shifts_init_maxiter=20, hamiltonian_shifts_init_seed=None, hamiltonian_shifts_subspace_columns=6)
+.. py:function:: ricc_lrcf_solver_options(lrradi_tol=1e-10, lrradi_maxiter=500, lrradi_shifts='hamiltonian_shifts', hamiltonian_shifts_init_maxiter=20, hamiltonian_shifts_init_seed=None, hamiltonian_shifts_subspace_columns=6)
 
    Returns available Riccati equation solvers with default solver options.
 
@@ -46,7 +46,7 @@ Functions
            
 
 
-.. function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+.. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Riccati equation.
 
@@ -82,7 +82,7 @@ Functions
            
 
 
-.. function:: hamiltonian_shifts_init(A, E, B, C, shift_options)
+.. py:function:: hamiltonian_shifts_init(A, E, B, C, shift_options)
 
    Compute initial shift parameters for low-rank RADI iteration.
 
@@ -112,7 +112,7 @@ Functions
            
 
 
-.. function:: hamiltonian_shifts(A, E, B, R, K, Z, shift_options)
+.. py:function:: hamiltonian_shifts(A, E, B, R, K, Z, shift_options)
 
    Compute further shift parameters for low-rank RADI iteration.
 

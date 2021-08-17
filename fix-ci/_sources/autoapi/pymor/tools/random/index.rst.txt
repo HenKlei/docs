@@ -27,7 +27,7 @@ Attributes
    pymor.tools.random._default_random_state
 
 
-.. function:: get_random_state(random_state=None, seed=None)
+.. py:function:: get_random_state(random_state=None, seed=None)
 
    Returns a |NumPy| :class:`~numpy.random.RandomState`.
 
@@ -45,7 +45,7 @@ Attributes
            
 
 
-.. function:: default_random_state(seed=42)
+.. py:function:: default_random_state(seed=42)
 
    Returns the default |NumPy| :class:`~numpy.random.RandomState`.
 
@@ -60,7 +60,7 @@ Attributes
            
 
 
-.. data:: _default_random_state
+.. py:data:: _default_random_state
    
 
    

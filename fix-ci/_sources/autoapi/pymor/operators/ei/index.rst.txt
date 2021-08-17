@@ -18,8 +18,7 @@ Classes
 
 
 
-.. class:: EmpiricalInterpolatedOperator(operator, interpolation_dofs, collateral_basis, triangular, solver_options=None, name=None)
-
+.. py:class:: EmpiricalInterpolatedOperator(operator, interpolation_dofs, collateral_basis, triangular, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -65,11 +64,11 @@ Classes
            Name of the operator.
            
 
-   .. method:: operator(self)
+   .. py:method:: operator(self)
       :property:
 
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -86,7 +85,7 @@ Classes
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -104,18 +103,17 @@ Classes
               
 
 
-   .. method:: __getstate__(self)
+   .. py:method:: __getstate__(self)
 
 
 
-.. class:: ProjectedEmpiciralInterpolatedOperator(restricted_operator, interpolation_matrix, source_basis_dofs, projected_collateral_basis, triangular, solver_options=None, name=None)
-
+.. py:class:: ProjectedEmpiciralInterpolatedOperator(restricted_operator, interpolation_matrix, source_basis_dofs, projected_collateral_basis, triangular, solver_options=None, name=None)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
    A projected |EmpiricalInterpolatedOperator|.
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -132,7 +130,7 @@ Classes
               
 
 
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -150,7 +148,7 @@ Classes
               
 
 
-   .. method:: with_cb_dim(self, dim)
+   .. py:method:: with_cb_dim(self, dim)
 
 
 

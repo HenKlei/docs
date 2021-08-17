@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: MTReductor(fom, mu=None)
-
+.. py:class:: MTReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -34,7 +33,7 @@ Classes
            |Parameter values|.
            
 
-   .. method:: reduce(self, r=None, decomposition='samdp', projection='orth', symmetric=False, which='NR', method_options=None, allow_complex_rom=False)
+   .. py:method:: reduce(self, r=None, decomposition='samdp', projection='orth', symmetric=False, which='NR', method_options=None, allow_complex_rom=False)
 
       Modal Truncation.
 
@@ -81,7 +80,7 @@ Classes
               
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 

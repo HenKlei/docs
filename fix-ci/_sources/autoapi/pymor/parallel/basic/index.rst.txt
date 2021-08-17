@@ -34,17 +34,16 @@ Functions
 
 
 
-.. class:: WorkerPoolDefaultImplementations
+.. py:class:: WorkerPoolDefaultImplementations
 
-   .. method:: scatter_array(self, U, copy=True)
-
-
-   .. method:: scatter_list(self, l)
+   .. py:method:: scatter_array(self, U, copy=True)
 
 
+   .. py:method:: scatter_list(self, l)
 
-.. class:: WorkerPoolBase
 
+
+.. py:class:: WorkerPoolBase
 
    Bases: :py:obj:`WorkerPoolDefaultImplementations`, :py:obj:`pymor.parallel.interface.WorkerPool`
 
@@ -64,7 +63,7 @@ Functions
 
    All operations are performed synchronously.
 
-   .. method:: push(self, obj)
+   .. py:method:: push(self, obj)
 
       Push a copy of `obj` to  all workers of the pool.
 
@@ -91,10 +90,10 @@ Functions
               
 
 
-   .. method:: _map_kwargs(self, kwargs)
+   .. py:method:: _map_kwargs(self, kwargs)
 
 
-   .. method:: apply(self, function, *args, **kwargs)
+   .. py:method:: apply(self, function, *args, **kwargs)
 
       Apply function in parallel on each worker.
 
@@ -123,7 +122,7 @@ Functions
               
 
 
-   .. method:: apply_only(self, function, worker, *args, **kwargs)
+   .. py:method:: apply_only(self, function, worker, *args, **kwargs)
 
       Apply function on a single worker.
 
@@ -154,7 +153,7 @@ Functions
               
 
 
-   .. method:: map(self, function, *args, **kwargs)
+   .. py:method:: map(self, function, *args, **kwargs)
 
       Parallel version of the builtin :func:`map` function.
 
@@ -184,12 +183,11 @@ Functions
               
 
 
-   .. method:: _split_into_chunks(self, count, *args)
+   .. py:method:: _split_into_chunks(self, count, *args)
 
 
 
-.. class:: GenericRemoteObject(pool, remote_id, uid=None)
-
+.. py:class:: GenericRemoteObject(pool, remote_id, uid=None)
 
    Bases: :py:obj:`pymor.parallel.interface.RemoteObject`
 
@@ -209,15 +207,15 @@ Functions
       `True`, after :meth:`remove` has been called.
       
 
-   .. method:: _remove(self)
+   .. py:method:: _remove(self)
 
       Actual implementation of 'remove'.
 
 
 
-.. function:: _append_array_slice(s, U=None)
+.. py:function:: _append_array_slice(s, U=None)
 
 
-.. function:: _append_list_slice(s, l=None)
+.. py:function:: _append_list_slice(s, l=None)
 
 
