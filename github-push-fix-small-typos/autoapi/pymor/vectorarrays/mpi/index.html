@@ -46,7 +46,7 @@
   
   
   
-    <title>pymor.vectorarrays.mpi &#8212; pyMOR v2021.1rc0+552.g987a36e4 Manual</title>
+    <title>pymor.vectorarrays.mpi &#8212; pyMOR v2021.1rc0+553.g00cb9857 Manual</title>
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -91,11 +91,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+552.g987a36e4 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+553.g00cb9857 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+552.g987a36e4 Manual logo">
+                   alt="pyMOR v2021.1rc0+553.g00cb9857 Manual logo">
           
         </a>
       </div>
@@ -161,7 +161,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+552.g987a36e4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+553.g00cb9857 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.vectorarrays</span></code></a></li>
@@ -176,13 +176,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+552.g987a36e4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+553.g00cb9857 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+552.g987a36e4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+553.g00cb9857 Manual">Documentation</a>
   </label>
   
 
@@ -693,7 +693,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray.d
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.apply2" title="pymor.operators.interface.Operator.apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -744,7 +744,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray.d
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.pairwise_apply2" title="pymor.operators.interface.Operator.pairwise_apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">pairwise_apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1029,7 +1029,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNo
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.apply2" title="pymor.operators.interface.Operator.apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1080,7 +1080,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNo
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.pairwise_apply2" title="pymor.operators.interface.Operator.pairwise_apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">pairwise_apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1202,7 +1202,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAu
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.apply2" title="pymor.operators.interface.Operator.apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1253,7 +1253,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAu
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.pairwise_apply2" title="pymor.operators.interface.Operator.pairwise_apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">pairwise_apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>

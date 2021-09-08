@@ -46,7 +46,7 @@
   
   
   
-    <title>pymor.discretizers.builtin.grids.interfaces &#8212; pyMOR v2021.1rc0+552.g987a36e4 Manual</title>
+    <title>pymor.discretizers.builtin.grids.interfaces &#8212; pyMOR v2021.1rc0+553.g00cb9857 Manual</title>
     <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../../_static/material.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/togglebutton.css" />
@@ -91,11 +91,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+552.g987a36e4 Manual"
+        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+553.g00cb9857 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+552.g987a36e4 Manual logo">
+                   alt="pyMOR v2021.1rc0+553.g00cb9857 Manual logo">
           
         </a>
       </div>
@@ -161,7 +161,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+552.g987a36e4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+553.g00cb9857 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers</span></code></a></li>
@@ -178,13 +178,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+552.g987a36e4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+553.g00cb9857 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../../../index.html"
-       title="pyMOR v2021.1rc0+552.g987a36e4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+553.g00cb9857 Manual">Documentation</a>
   </label>
   
 
@@ -603,7 +603,7 @@ codim-<code class="docutils literal notranslate"><span class="pre">superentity_c
 <dl class="py method">
 <dt id="pymor.discretizers.builtin.grids.interfaces.Grid.neighbours">
 <code class="sig-name descname"><span class="pre">neighbours</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbour_codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intersection_codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_fix_small_typos/src/pymor/discretizers/builtin/grids/interfaces.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.interfaces.Grid.neighbours" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">retval[e,n]</span></code> is the global index of the <code class="docutils literal notranslate"><span class="pre">n</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">neighbour_codim</span></code> entitiy of the
+<dd><p><code class="docutils literal notranslate"><span class="pre">retval[e,n]</span></code> is the global index of the <code class="docutils literal notranslate"><span class="pre">n</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">neighbour_codim</span></code> entity of the
 codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> entity <code class="docutils literal notranslate"><span class="pre">e</span></code> that shares with <code class="docutils literal notranslate"><span class="pre">e</span></code> a subentity of codimension
 <code class="docutils literal notranslate"><span class="pre">intersection_codim</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">intersection_codim</span> <span class="pre">==</span> <span class="pre">None</span></code>, it is set to <code class="docutils literal notranslate"><span class="pre">codim</span> <span class="pre">+</span> <span class="pre">1</span></code> if <code class="docutils literal notranslate"><span class="pre">codim</span> <span class="pre">==</span> <span class="pre">neighbour_codim</span></code> and
@@ -701,7 +701,7 @@ global index <code class="docutils literal notranslate"><span class="pre">e</spa
 <dt id="pymor.discretizers.builtin.grids.interfaces.Grid.unit_outer_normals">
 <code class="sig-name descname"><span class="pre">unit_outer_normals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_fix_small_typos/src/pymor/discretizers/builtin/grids/interfaces.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.interfaces.Grid.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">retval[e,i]</span></code> is the unit outer normal to the i-th codim-1 subentity of the codim-0
-entitiy with global index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
+entity with global index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 </dd></dl>
 <dl class="py method">
 <dt id="pymor.discretizers.builtin.grids.interfaces.Grid._unit_outer_normals">

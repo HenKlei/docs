@@ -1061,7 +1061,7 @@ Functions
               
       .. admonition:: Returns
 
-          som
+          some
               The |SecondOrderModel| with operators M, E, K, B, Cp, Cv, and D.
               
 
