@@ -1,0 +1,114 @@
+:mod:`pymor.algorithms.bernoulli`
+=================================
+
+.. py:module:: pymor.algorithms.bernoulli
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.algorithms.bernoulli.solve_bernoulli
+   pymor.algorithms.bernoulli.bernoulli_stabilize
+
+
+
+.. py:function:: solve_bernoulli(A, E, B, trans=False, maxiter=100, after_maxiter=3, tol=1e-08)
+
+   Compute a solution factor of a Bernoulli equation.
+
+   Returns a matrix :math:`Y` with identical dimensions to the matrix :math:`A` such that
+   :math:`X = Y Y^H` is an approximate solution of a (generalized) algebraic Bernoulli equation:
+
+   - if trans is `True`
+
+     .. math::
+         A^H X E + E^H X A
+         - E^H X B B^H X E = 0.
+
+   - if trans is `False`
+
+     .. math::
+         A X E^H + E X A^H
+         - E X B^H B X E^H = 0.
+
+   This function is based on :cite:`BBQ07`.
+
+   .. admonition:: Parameters
+
+       A
+           The matrix A as a 2D |NumPy array|.
+       E
+           The matrix E as a 2D |NumPy array| or `None`.
+       B
+           The matrix B as a 2D |NumPy array|.
+       trans
+           Whether to solve transposed or standard Bernoulli equation.
+       maxiter
+           The maximum amount of iterations.
+       after_maxiter
+           The number of iterations which are to be performed after tolerance is reached.
+           This will improve the quality of the solution in cases where the iterates which are used
+           by the stopping criterion stagnate prematurely.
+       tol
+           Tolerance for stopping criterion based on relative change of iterates.
+           
+   .. admonition:: Returns
+
+       Y
+           The solution factor as a |NumPy array|.
+           
+
+
+.. py:function:: bernoulli_stabilize(A, E, B, ast_spectrum, trans=False)
+
+   Compute Bernoulli stabilizing feedback.
+
+   Returns a matrix :math:`K` that stabilizes the spectrum of the matrix pair
+   :math:`(A, E)`:
+
+   - if trans is `True` the spectrum of
+
+     .. math::
+         (A - B K, E)
+
+     contains the eigenvalues of :math:`(A, E)` where anti-stable eigenvalues have
+     been mirrored on the imaginary axis.
+
+   - if trans is `False` the spectrum of
+
+     .. math::
+         (A - K B, E)
+
+     contains the eigenvalues of :math:`(A, E)` where anti-stable eigenvalues have
+     been mirrored on the imaginary axis.
+
+   See e.g. :cite:`BBQ07`.
+
+   .. admonition:: Parameters
+
+       A
+           The |Operator| A.
+       E
+           The |Operator| E.
+       B
+           The operator B as a |VectorArray|.
+       ast_spectrum
+           Tuple `(lev, ew, rev)` where `ew` contains the anti-stable eigenvalues
+           and `lev` and `rev` are |VectorArrays| representing the eigenvectors.
+       trans
+           Indicates which stabilization to perform.
+           
+   .. admonition:: Returns
+
+       K
+           The stabilizing feedback as a |VectorArray|.
+           
+
+
