@@ -1,0 +1,84 @@
+:mod:`pymor.bindings.fenics`
+============================
+
+.. py:module:: pymor.bindings.fenics
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.bindings.fenics.FenicsVector
+
+
+
+
+.. py:class:: FenicsVector(impl)
+
+   Bases: :py:obj:`pymor.vectorarrays.list.CopyOnWriteVector`
+
+   Wraps a FEniCS vector to make it usable with ListVectorArray.
+
+   .. py:attribute:: __radd__
+      
+
+      
+
+   .. py:method:: from_instance(cls, instance)
+      :classmethod:
+
+
+   .. py:method:: _copy_data(self)
+
+
+   .. py:method:: to_numpy(self, ensure_copy=False)
+
+
+   .. py:method:: _scal(self, alpha)
+
+
+   .. py:method:: _axpy(self, alpha, x)
+
+
+   .. py:method:: inner(self, other)
+
+
+   .. py:method:: norm(self)
+
+
+   .. py:method:: norm2(self)
+
+
+   .. py:method:: sup_norm(self)
+
+
+   .. py:method:: dofs(self, dof_indices)
+
+
+   .. py:method:: amax(self)
+      :abstractmethod:
+
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __iadd__(self, other)
+
+
+   .. py:method:: __sub__(self, other)
+
+
+   .. py:method:: __isub__(self, other)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+
