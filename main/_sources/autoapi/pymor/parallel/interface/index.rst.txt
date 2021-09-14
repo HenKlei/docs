@@ -71,7 +71,6 @@ Classes
           A |RemoteObject| referring to the pushed data.
               
 
-
    .. py:method:: scatter_array(self, U, copy=True)
       :abstractmethod:
 
@@ -93,7 +92,6 @@ Classes
           A |RemoteObject| referring to the scattered data.
               
 
-
    .. py:method:: scatter_list(self, l)
       :abstractmethod:
 
@@ -112,7 +110,6 @@ Classes
 
           A |RemoteObject| referring to the scattered data.
               
-
 
    .. py:method:: apply(self, function, *args, **kwargs)
       :abstractmethod:
@@ -142,7 +139,6 @@ Classes
           List of return values of the function executions, ordered by
           worker number (from `0` to `len(pool) - 1`).
               
-
 
    .. py:method:: apply_only(self, function, worker, *args, **kwargs)
       :abstractmethod:
@@ -175,7 +171,6 @@ Classes
           Return value of the function execution.
               
 
-
    .. py:method:: map(self, function, *args, **kwargs)
       :abstractmethod:
 
@@ -205,7 +200,6 @@ Classes
           List of return values of the function executions, ordered by
           the sequence of positional arguments.
               
-
 
 
 .. py:class:: RemoteObject

@@ -73,7 +73,6 @@ Functions
        A dict of available solvers with default |solver_options|.
            
 
-
 .. py:function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='generic_lgmres', default_least_squares_solver='generic_least_squares_lsmr')
 
    Solve linear equation system.
@@ -107,7 +106,6 @@ Functions
 
        |VectorArray| of the solution vectors.
            
-
 
 .. py:function:: _parse_options(options, default_options, default_solver, default_least_squares_solver, least_squares)
 

@@ -61,7 +61,6 @@ Classes
            `None` or a |Parameterfunctional| returning a lower bound :math:`C_a(\mu)`
            for the coercivity constant of `fom.operator` w.r.t. `product`.
            
-
    .. py:method:: assemble_error_estimator(self)
 
 

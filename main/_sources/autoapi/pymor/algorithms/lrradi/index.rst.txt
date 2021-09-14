@@ -45,7 +45,6 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
 .. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Riccati equation.
@@ -81,7 +80,6 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: hamiltonian_shifts_init(A, E, B, C, shift_options)
 
    Compute initial shift parameters for low-rank RADI iteration.
@@ -110,7 +108,6 @@ Functions
        shifts
            A |NumPy array| containing a set of stable shift parameters.
            
-
 
 .. py:function:: hamiltonian_shifts(A, E, B, R, K, Z, shift_options)
 
@@ -144,5 +141,4 @@ Functions
        shifts
            A |NumPy array| containing a set of stable shift parameters.
            
-
 

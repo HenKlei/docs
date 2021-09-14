@@ -101,7 +101,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
@@ -127,7 +126,6 @@ Classes
           |VectorArray| of the adjoint operator evaluations.
               
 
-
    .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
@@ -149,7 +147,6 @@ Classes
 
           Parameter-independent, assembled |Operator|.
               
-
 
    .. py:method:: as_range_array(self, mu=None)
 
@@ -176,7 +173,6 @@ Classes
               The |VectorArray| defined above.
               
 
-
    .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
@@ -202,7 +198,6 @@ Classes
               The |VectorArray| defined above.
               
 
-
    .. py:method:: d_mu(self, parameter, index=0)
 
       Return the operator's derivative with respect to a given parameter.
@@ -220,7 +215,6 @@ Classes
               
 
 
-
 .. py:class:: BlockOperator(blocks)
 
    Bases: :py:obj:`BlockOperatorBase`
@@ -235,7 +229,6 @@ Classes
        blocks
            Two-dimensional array-like where each entry is an |Operator| or `None`.
            
-
    .. py:attribute:: blocked_source
       :annotation: = True
 
@@ -320,7 +313,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
@@ -345,7 +337,6 @@ Classes
 
           |VectorArray| of the adjoint operator evaluations.
               
-
 
    .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
@@ -384,7 +375,6 @@ Classes
               The operator could not be inverted.
               
 
-
    .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
@@ -422,7 +412,6 @@ Classes
               The operator could not be inverted.
               
 
-
    .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
@@ -444,7 +433,6 @@ Classes
 
           Parameter-independent, assembled |Operator|.
               
-
 
 
 .. py:class:: SecondOrderModelOperator(alpha, beta, A, B)
@@ -497,7 +485,6 @@ Classes
        B
            |Operator|.
            
-
    .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
@@ -513,7 +500,6 @@ Classes
 
           |VectorArray| of the operator evaluations.
               
-
 
    .. py:method:: apply_adjoint(self, V, mu=None)
 
@@ -539,7 +525,6 @@ Classes
 
           |VectorArray| of the adjoint operator evaluations.
               
-
 
    .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
@@ -578,7 +563,6 @@ Classes
               The operator could not be inverted.
               
 
-
    .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
@@ -616,7 +600,6 @@ Classes
               The operator could not be inverted.
               
 
-
    .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
@@ -638,6 +621,5 @@ Classes
 
           Parameter-independent, assembled |Operator|.
               
-
 
 

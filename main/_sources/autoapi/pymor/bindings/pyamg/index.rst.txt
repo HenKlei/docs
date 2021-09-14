@@ -88,4 +88,3 @@ Functions
        A dict of available solvers with default |solver_options|.
            
 
-

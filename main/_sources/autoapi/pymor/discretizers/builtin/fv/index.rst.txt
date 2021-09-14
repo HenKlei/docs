@@ -109,7 +109,6 @@ Functions
        lxf_lambda
            The stabilization parameter `λ`.
            
-
    .. py:method:: evaluate_stage1(self, U, mu=None)
 
 
@@ -134,7 +133,6 @@ Functions
        flux_derivative
            |Function| defining the analytical flux derivative `f'`.
            
-
    .. py:method:: evaluate_stage1(self, U, mu=None)
 
 
@@ -173,7 +171,6 @@ Functions
        intervals
            Number of subintervals to be used for integration.
            
-
    .. py:method:: evaluate_stage1(self, U, mu=None)
 
 
@@ -210,7 +207,6 @@ Functions
        name
            The name of the operator.
            
-
    .. py:attribute:: linear
       :annotation: = False
 
@@ -255,7 +251,6 @@ Functions
               defined above.
               
 
-
    .. py:method:: _fetch_grid_data(self)
 
 
@@ -275,7 +270,6 @@ Functions
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
@@ -292,7 +286,6 @@ Functions
 
           Linear |Operator| representing the Jacobian.
               
-
 
 
 .. py:function:: nonlinear_advection_lax_friedrichs_operator(grid, boundary_info, flux, lxf_lambda=1.0, dirichlet_data=None, solver_options=None, name=None)
@@ -337,7 +330,6 @@ Functions
        name
            The name of the operator.
            
-
    .. py:method:: _assemble(self, mu=None)
 
 
@@ -357,7 +349,6 @@ Functions
        name
            The name of the product.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -388,7 +379,6 @@ Functions
        name
            The name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -470,7 +460,6 @@ Functions
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
@@ -487,7 +476,6 @@ Functions
 
           Linear |Operator| representing the Jacobian.
               
-
 
 
 .. py:class:: L2Functional(grid, function=None, boundary_info=None, dirichlet_data=None, diffusion_function=None, diffusion_constant=None, neumann_data=None, order=1, name=None)
@@ -525,7 +513,6 @@ Functions
        name
            The name of the functional.
            
-
    .. py:attribute:: source
       
 
@@ -564,7 +551,6 @@ Functions
        name
            The name of the functional.
            
-
    .. py:attribute:: sparse
       :annotation: = False
 
@@ -604,7 +590,6 @@ Functions
        name
            Name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -629,7 +614,6 @@ Functions
        order
            The quadrature order to compute the element-wise averages
            
-
    .. py:attribute:: source
       
 
@@ -696,7 +680,6 @@ Functions
                                 before preassembling operators.
            
 
-
 .. py:function:: discretize_instationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
 
    FV Discretization of an |InstationaryProblem| with a |StationaryProblem| as stationary part
@@ -758,5 +741,4 @@ Functions
                :unassembled_m:  In case `preassemble` is `True`, the generated |Model|
                                 before preassembling operators.
            
-
 

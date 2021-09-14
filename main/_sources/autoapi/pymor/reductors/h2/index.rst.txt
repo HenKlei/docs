@@ -40,7 +40,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: _clear_lists(self)
 
 
@@ -95,7 +94,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using IRKA.
@@ -160,7 +158,6 @@ Classes
               
 
 
-
 .. py:class:: OneSidedIRKAReductor(fom, version, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
@@ -179,7 +176,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using one-sided IRKA.
@@ -239,7 +235,6 @@ Classes
               Reduced |LTIModel| model.
               
 
-
    .. py:method:: _set_V_reductor(self, sigma, b, c, projection)
 
 
@@ -257,7 +252,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using TSIA.
@@ -322,7 +316,6 @@ Classes
               Reduced |LTIModel|.
               
 
-
    .. py:method:: _set_V_W_reductor(self, rom, projection)
 
 
@@ -342,7 +335,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, conv_crit='sigma', compute_errors=False)
 
       Reduce using TF-IRKA.
@@ -395,7 +387,6 @@ Classes
               Reduced |LTIModel| model.
               
 
-
    .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
@@ -415,7 +406,6 @@ Classes
        mu
            |Parameter|.
            
-
    .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, conv_crit='sigma', projection='orth')
 
       Reduce using gap-IRKA.
@@ -469,7 +459,6 @@ Classes
           rom
               Reduced |LTIModel| model.
               
-
 
    .. py:method:: _rom0_params_to_sigma_b_c(self, rom0_params)
 

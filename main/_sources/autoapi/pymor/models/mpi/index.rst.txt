@@ -143,7 +143,6 @@ Attributes
            See :class:`~pymor.operators.mpi.MPIOperator`.
            
 
-
 .. py:data:: _OperatorToWrap
    
 

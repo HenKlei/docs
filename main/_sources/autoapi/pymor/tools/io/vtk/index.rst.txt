@@ -49,7 +49,6 @@ Functions
        None if no VTKFile element found, else the type attribute of the VTKFile element
            
 
-
 .. py:function:: read_vtkfile(filename, metadata_key='timestep')
 
    Try to read a given file into a Sequence of meshio.Mesh instances
@@ -65,7 +64,6 @@ Functions
            a singular vtk/vtu/vtp input file (None is returned as metadata),
            or however many members are in the collection file (pvd).
            
-
 
 .. py:function:: write_vtk_collection(filename_base, meshes, metadata=None)
 
@@ -85,5 +83,4 @@ Functions
 
        full filename of saved file
            
-
 

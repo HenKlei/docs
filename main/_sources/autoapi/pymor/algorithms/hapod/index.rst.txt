@@ -112,7 +112,6 @@ Functions
            The total number of input snapshot vectors.
            
 
-
 .. py:function:: inc_hapod(steps, snapshots, eps, omega, product=None, executor=None)
 
    Incremental Hierarchical Approximate POD.
@@ -147,7 +146,6 @@ Functions
        snap_count
            The total number of input snapshot vectors.
            
-
 
 .. py:function:: dist_hapod(num_slices, snapshots, eps, omega, arity=None, product=None, executor=None, eval_snapshots_in_executor=False)
 
@@ -189,7 +187,6 @@ Functions
            The total number of input snapshot vectors.
            
 
-
 .. py:function:: inc_vectorarray_hapod(steps, U, eps, omega, product=None)
 
    Incremental Hierarchical Approximate POD.
@@ -219,7 +216,6 @@ Functions
        snap_count
            The total number of input snapshot vectors.
            
-
 
 .. py:function:: dist_vectorarray_hapod(num_slices, U, eps, omega, arity=None, product=None, executor=None)
 
@@ -257,7 +253,6 @@ Functions
        snap_count
            The total number of input snapshot vectors.
            
-
 
 .. py:function:: std_local_eps(tree, eps, omega, pod_on_leafs=True)
 

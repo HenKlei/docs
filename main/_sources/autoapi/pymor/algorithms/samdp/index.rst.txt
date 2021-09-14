@@ -88,7 +88,6 @@ Functions
            A |VectorArray| containing the left eigenvectors of the computed poles.
            
 
-
 .. py:function:: _twosided_rqi(A, E, x, y, theta, init_res, imagtol, rqitol, maxiter)
 
    Refine an initial guess for an eigentriplet of the matrix pair (A, E).
@@ -126,7 +125,6 @@ Functions
            Residual of the computed triplet.
            
 
-
 .. py:function:: _select_max_eig(H, G, X, V, B, C, which)
 
    Compute poles sorted from largest to smallest residual.
@@ -159,5 +157,4 @@ Functions
        residue
            A 1D |NumPy array| containing the norms of the residues.
            
-
 

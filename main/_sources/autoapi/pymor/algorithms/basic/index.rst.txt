@@ -57,7 +57,6 @@ Functions
            The absolute tolerance.
            
 
-
 .. py:function:: relative_error(U, V, product=None)
 
    Compute error between U and V relative to norm of U.
@@ -85,7 +84,6 @@ Functions
        The projected |VectorArray|.
            
 
-
 .. py:function:: contains_zero_vector(vector_array, rtol=None, atol=None)
 
    Return `True` iff any vector in the array float_compares to 0s of the same dim.
@@ -99,5 +97,4 @@ Functions
        atol
            absolute tolerance for float_cmp
            
-
 

@@ -285,7 +285,6 @@ Attributes
           Copy of `self` with changed attributes.
               
 
-
    .. py:method:: __copy__(self)
 
 

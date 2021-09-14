@@ -63,7 +63,6 @@ Classes
        name
            Name of the operator.
            
-
    .. py:method:: operator(self)
       :property:
 
@@ -84,7 +83,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
@@ -101,7 +99,6 @@ Classes
 
           Linear |Operator| representing the Jacobian.
               
-
 
    .. py:method:: __getstate__(self)
 
@@ -129,7 +126,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
@@ -146,7 +142,6 @@ Classes
 
           Linear |Operator| representing the Jacobian.
               
-
 
    .. py:method:: with_cb_dim(self, dim)
 

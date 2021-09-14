@@ -146,7 +146,6 @@ Attributes
            all MPI ranks (except 0) when pyMOR is imported.
            
 
-
 .. py:function:: launch_event_loop()
 
 
@@ -181,7 +180,6 @@ Attributes
 
        The return value of `method` on rank 0.
            
-
 
 .. py:function:: quit()
 
@@ -253,7 +251,6 @@ Attributes
            Keyword arguments for the method.
            
 
-
 .. py:function:: method_call_manage(obj_id, name_, *args, **kwargs)
 
    Execute a method with given arguments and manage the return value.
@@ -276,7 +273,6 @@ Attributes
        kwargs
            Keyword arguments for the method.
            
-
 
 .. py:class:: ObjectId
 

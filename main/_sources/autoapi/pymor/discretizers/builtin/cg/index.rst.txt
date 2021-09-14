@@ -86,7 +86,6 @@ Attributes
        name
            The name of the functional.
            
-
    .. py:attribute:: sparse
       :annotation: = False
 
@@ -125,7 +124,6 @@ Attributes
        name
            The name of the functional.
            
-
    .. py:attribute:: sparse
       :annotation: = False
 
@@ -157,7 +155,6 @@ Attributes
        name
            The name of the functional.
            
-
    .. py:attribute:: sparse
       :annotation: = False
 
@@ -192,7 +189,6 @@ Attributes
        name
            The name of the functional.
            
-
    .. py:attribute:: sparse
       :annotation: = False
 
@@ -237,7 +233,6 @@ Attributes
        name
            The name of the product.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -277,7 +272,6 @@ Attributes
        name
            The name of the product.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -323,7 +317,6 @@ Attributes
        name
            Name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -369,7 +362,6 @@ Attributes
        name
            Name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -414,7 +406,6 @@ Attributes
        name
            Name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -459,7 +450,6 @@ Attributes
        name
            Name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -499,7 +489,6 @@ Attributes
        name
            Name of the operator.
            
-
    .. py:attribute:: sparse
       :annotation: = True
 
@@ -522,7 +511,6 @@ Attributes
        function
            The |Function| to interpolate.
            
-
    .. py:attribute:: source
       
 
@@ -583,7 +571,6 @@ Attributes
                                 before preassembling operators.
            
 
-
 .. py:function:: discretize_instationary_cg(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
 
    Discretizes an |InstationaryProblem| with a |StationaryProblem| as stationary part
@@ -632,5 +619,4 @@ Attributes
                :unassembled_m:  In case `preassemble` is `True`, the generated |Model|
                                 before preassembling operators.
            
-
 

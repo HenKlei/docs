@@ -65,7 +65,6 @@ Functions
            The solution factor as a |NumPy array|.
            
 
-
 .. py:function:: bernoulli_stabilize(A, E, B, ast_spectrum, trans=False)
 
    Compute Bernoulli stabilizing feedback.
@@ -110,5 +109,4 @@ Functions
        K
            The stabilizing feedback as a |VectorArray|.
            
-
 

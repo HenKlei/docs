@@ -110,7 +110,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
@@ -148,7 +147,6 @@ Classes
               The operator could not be inverted.
               
 
-
    .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
@@ -173,7 +171,6 @@ Classes
 
           |VectorArray| of the adjoint operator evaluations.
               
-
 
    .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
@@ -211,7 +208,6 @@ Classes
           InversionError
               The operator could not be inverted.
               
-
 
 
 .. py:class:: LinearComplexifiedListVectorArrayOperatorBase
@@ -321,7 +317,6 @@ Classes
        name
            Name of the operator.
            
-
    .. py:method:: _apply_one_vector(self, u, mu=None, prepare_data=None)
 
 
@@ -352,7 +347,6 @@ Classes
 
           |VectorArray| of the adjoint operator evaluations.
               
-
 
    .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
@@ -391,7 +385,6 @@ Classes
               The operator could not be inverted.
               
 
-
    .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
       Try to assemble a linear combination of the given operators.
@@ -425,6 +418,5 @@ Classes
 
           The assembled |Operator| if assembly is possible, otherwise `None`.
               
-
 
 

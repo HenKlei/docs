@@ -55,7 +55,6 @@ Functions
            If `check_orthonormality` is `True`, the numerical tolerance with which the checks
            are performed.
            
-
    .. py:method:: reduce(self, dims=None)
 
 
@@ -115,7 +114,6 @@ Functions
        check_tol
            See :class:`ProjectionBasedReductor`.
            
-
    .. py:method:: project_operators(self)
 
 
@@ -152,7 +150,6 @@ Functions
        check_tol
            See :class:`ProjectionBasedReductor`.
            
-
    .. py:method:: project_operators(self)
 
 
@@ -181,7 +178,6 @@ Functions
            If `True`, no `E` matrix will be assembled for the reduced |Model|.
            Set to `True` if `W` and `V` are biorthonormal w.r.t. `fom.E`.
            
-
    .. py:method:: project_operators(self)
 
 
@@ -219,7 +215,6 @@ Functions
            If `True`, no `E` matrix will be assembled for the reduced |Model|.
            Set to `True` if `W` and `V` are biorthonormal w.r.t. `fom.E`.
            
-
    .. py:method:: project_operators(self)
 
 
@@ -257,7 +252,6 @@ Functions
            If `True`, no `E` matrix will be assembled for the reduced |Model|.
            Set to `True` if `W` and `V` are biorthonormal w.r.t. `fom.E`.
            
-
    .. py:method:: project_operators(self)
 
 

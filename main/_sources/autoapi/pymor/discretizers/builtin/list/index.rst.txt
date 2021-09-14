@@ -44,7 +44,6 @@ Functions
        The converted |Operator| or |Model|.
            
 
-
 .. py:class:: ConvertToNumpyListVectorArrayRules
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`

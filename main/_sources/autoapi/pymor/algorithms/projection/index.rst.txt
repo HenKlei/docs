@@ -73,7 +73,6 @@ Functions
        The projected |Operator| `op_proj`.
            
 
-
 .. py:class:: ProjectRules(range_basis, source_basis)
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
@@ -143,7 +142,6 @@ Functions
 
        The projected |Operator|.
            
-
 
 .. py:class:: ProjectToSubbasisRules(dim_range, dim_source)
 

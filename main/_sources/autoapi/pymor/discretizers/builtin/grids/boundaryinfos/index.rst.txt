@@ -53,7 +53,6 @@ Classes
               to a boundary of the given boundary type (the indicator functions must be vectorized).
               
 
-
    .. py:method:: mask(self, boundary_type, codim)
 
       retval[i] is `True` if the codim-`codim` entity of global index `i` is associated to the

@@ -96,7 +96,6 @@ Functions
                                        `collateral_basis` at `interpolation_dofs`.
            
 
-
 .. py:function:: deim(U, modes=None, pod=True, atol=None, rtol=None, product=None, pod_options={})
 
    Generate data for empirical interpolation using DEIM algorithm.
@@ -137,7 +136,6 @@ Functions
            
                :svals: POD singular values.
            
-
 
 .. py:function:: interpolate_operators(fom, operator_names, parameter_sample, error_norm=None, product=None, atol=None, rtol=None, max_interpolation_dofs=None, pod_options={}, alg='ei_greedy', pool=dummy_pool)
 
@@ -198,7 +196,6 @@ Functions
            :func:`ei_greedy`/:func:`deim`.
            
 
-
 .. py:function:: interpolate_function(function, parameter_sample, evaluation_points, atol=None, rtol=None, max_interpolation_dofs=None)
 
    Parameter separable approximation of a |Function| using Empiricial Interpolation.
@@ -242,7 +239,6 @@ Functions
        data
            `dict` of additional data as returned by :func:`ei_greedy`.
            
-
 
 .. py:function:: _interpolate_operators_build_evaluations(mu, fom=None, operators=None, evaluations=None)
 

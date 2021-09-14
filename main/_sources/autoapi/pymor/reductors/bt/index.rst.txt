@@ -34,7 +34,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: _gramians(self)
       :abstractmethod:
 
@@ -78,7 +77,6 @@ Classes
               Reduced-order model.
               
 
-
    .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
@@ -100,7 +98,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
@@ -135,7 +132,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
@@ -164,7 +160,6 @@ Classes
        solver_options
            The solver options to use to solve the Riccati equations.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
@@ -195,7 +190,6 @@ Classes
        solver_options
            The solver options to use to solve the positive Riccati equations.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.

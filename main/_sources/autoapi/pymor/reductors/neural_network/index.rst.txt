@@ -74,7 +74,6 @@ Classes
            Training is interrupted if a neural network that undercuts the
            error tolerance is found.
            
-
    .. py:method:: reduce(self, hidden_layers='[(N+P)*3, (N+P)*3]', activation_function=torch.tanh, optimizer=optim.LBFGS, epochs=1000, batch_size=20, learning_rate=1.0, restarts=10, seed=0)
 
       Reduce by training artificial neural networks.
@@ -111,7 +110,6 @@ Classes
           rom
               Reduced-order |NeuralNetworkModel|.
               
-
 
    .. py:method:: compute_training_data(self)
 

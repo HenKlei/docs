@@ -46,7 +46,6 @@ Functions
            The absolute tolerance.
            
 
-
 .. py:function:: float_cmp_all(x, y, rtol=None, atol=None)
 
    Compare x and y for almost equality.
@@ -75,7 +74,6 @@ Functions
            absolute tolerance for float_cmp
            
 
-
 .. py:function:: almost_less(x, y, rtol=1e-14, atol=1e-14)
 
    Component-wise check if x <= y up to a given tolerance.
@@ -93,5 +91,4 @@ Functions
        atol
            The absolute tolerance.
            
-
 

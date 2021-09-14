@@ -95,7 +95,6 @@ Functions
               
 
 
-
 .. py:class:: ImplicitEulerTimeStepper(nt, solver_options='operator')
 
    Bases: :py:obj:`TimeStepper`
@@ -116,7 +115,6 @@ Functions
            recognized, in which case the solver_options of
            M (resp. A) are used.
            
-
    .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
 
       Apply time-stepper to the equation ::
@@ -149,7 +147,6 @@ Functions
 
           |VectorArray| containing the solution trajectory.
               
-
 
 
 .. py:class:: ExplicitEulerTimeStepper(nt)
@@ -167,7 +164,6 @@ Functions
        nt
            The number of time-steps the time-stepper will perform.
            
-
    .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, num_values=None)
 
       Apply time-stepper to the equation ::
@@ -200,7 +196,6 @@ Functions
 
           |VectorArray| containing the solution trajectory.
               
-
 
 
 .. py:function:: implicit_euler(A, F, M, U0, t0, t1, nt, mu=None, num_values=None, solver_options='operator')

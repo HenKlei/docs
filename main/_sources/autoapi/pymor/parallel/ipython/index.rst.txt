@@ -60,7 +60,6 @@ Functions
            Wait at most this many seconds for all Ipython cluster engines to
            become available.
            
-
    .. py:method:: __enter__(self)
 
 
@@ -82,7 +81,6 @@ Functions
        kwargs
            Keyword arguments used to instantiate the IPython cluster client.
            
-
    .. py:attribute:: _updated_defaults
       :annotation: = 0
 

@@ -90,7 +90,6 @@ Functions
        A dict of available solvers with default |solver_options|.
            
 
-
 .. py:function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='scipy_spsolve', default_least_squares_solver='scipy_least_squares_lsmr')
 
    Solve linear equation system.
@@ -125,7 +124,6 @@ Functions
        |VectorArray| of the solution vectors.
            
 
-
 .. py:function:: matrix_astype_nocopy(matrix, dtype)
 
 
@@ -137,7 +135,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
@@ -178,7 +175,6 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: lyap_dense_solver_options()
 
    Return available dense Lyapunov solvers with default options for the SciPy backend.
@@ -187,7 +183,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_lyap_dense(A, E, B, trans=False, options=None)
 
@@ -224,7 +219,6 @@ Functions
            Lyapunov equation solution as a |NumPy array|.
            
 
-
 .. py:function:: ricc_lrcf_solver_options()
 
    Return available Riccati solvers with default options for the SciPy backend.
@@ -233,7 +227,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
@@ -274,7 +267,6 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: ricc_dense_solver_options()
 
    Return available Riccati solvers with default options for the SciPy backend.
@@ -283,7 +275,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_ricc_dense(A, E, B, C, R=None, trans=False, options=None)
 
@@ -320,7 +311,6 @@ Functions
            Riccati equation solution as a |NumPy array|.
            
 
-
 .. py:function:: pos_ricc_lrcf_solver_options()
 
    Return available positive Riccati solvers with default options for the SciPy backend.
@@ -329,7 +319,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
@@ -370,5 +359,4 @@ Functions
            Low-rank Cholesky factor of the positive Riccati equation
            solution, |VectorArray| from `A.source`.
            
-
 

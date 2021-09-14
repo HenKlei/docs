@@ -45,7 +45,6 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
 .. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Lyapunov equation.
@@ -78,7 +77,6 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: projection_shifts_init(A, E, B, shift_options)
 
    Find starting projection shifts.
@@ -104,7 +102,6 @@ Functions
        shifts
            A |NumPy array| containing a set of stable shift parameters.
            
-
 
 .. py:function:: projection_shifts(A, E, V, Z, prev_shifts, shift_options)
 
@@ -134,5 +131,4 @@ Functions
        shifts
            A |NumPy array| containing a set of stable shift parameters.
            
-
 

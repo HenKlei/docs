@@ -35,7 +35,6 @@ Functions
            terminal.
            
 
-
 .. py:function:: print_source(obj)
 
    Print source code of an object.
@@ -45,5 +44,4 @@ Functions
        obj
            The object of which to print the source code.
            
-
 

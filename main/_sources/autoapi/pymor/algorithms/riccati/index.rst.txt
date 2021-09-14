@@ -135,7 +135,6 @@ Attributes
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: solve_ricc_dense(A, E, B, C, R=None, trans=False, options=None, default_solver_backend=_DEFAULT_RICC_DENSE_SOLVER_BACKEND)
 
    Compute the solution of a Riccati equation.
@@ -199,7 +198,6 @@ Attributes
        X
            Riccati equation solution as a |NumPy array|.
            
-
 
 .. py:function:: _solve_ricc_dense_check_args(A, E, B, C, R, trans)
 
@@ -272,7 +270,6 @@ Attributes
            Low-rank Cholesky factor of the positive Riccati equation
            solution, |VectorArray| from `A.source`.
            
-
 
 .. py:function:: _solve_ricc_check_args(A, E, B, C, R, trans)
 

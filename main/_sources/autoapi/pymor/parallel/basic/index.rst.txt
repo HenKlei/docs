@@ -89,7 +89,6 @@ Functions
           A |RemoteObject| referring to the pushed data.
               
 
-
    .. py:method:: _map_kwargs(self, kwargs)
 
 
@@ -121,7 +120,6 @@ Functions
           worker number (from `0` to `len(pool) - 1`).
               
 
-
    .. py:method:: apply_only(self, function, worker, *args, **kwargs)
 
       Apply function on a single worker.
@@ -152,7 +150,6 @@ Functions
           Return value of the function execution.
               
 
-
    .. py:method:: map(self, function, *args, **kwargs)
 
       Parallel version of the builtin :func:`map` function.
@@ -181,7 +178,6 @@ Functions
           List of return values of the function executions, ordered by
           the sequence of positional arguments.
               
-
 
    .. py:method:: _split_into_chunks(self, count, *args)
 

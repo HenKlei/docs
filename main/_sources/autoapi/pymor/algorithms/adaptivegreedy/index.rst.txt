@@ -90,7 +90,6 @@ Functions
            :time:                   Duration of the algorithm.
            
 
-
 .. py:function:: rb_adaptive_greedy(fom, reductor, parameter_space, use_error_estimator=True, error_norm=None, target_error=None, max_extensions=None, validation_mus=0, rho=1.1, gamma=0.2, theta=0.0, extension_params=None, visualize=False, visualize_vertex_size=80, pool=None)
 
    Reduced basis greedy basis generation with adaptively refined training set.
@@ -148,7 +147,6 @@ Functions
            :training_set_sizes:     The final size of the training set in each extension step.
            :time:                   Duration of the algorithm.
            
-
 
 .. py:class:: AdaptiveSampleSet(parameter_space)
 

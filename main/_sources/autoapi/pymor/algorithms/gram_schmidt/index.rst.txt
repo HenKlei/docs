@@ -61,7 +61,6 @@ Functions
            The upper-triangular/trapezoidal matrix (if `compute_R` is `True`).
            
 
-
 .. py:function:: gram_schmidt_biorth(V, W, product=None, reiterate=True, reiteration_threshold=0.1, check=True, check_tol=0.001, copy=True)
 
    Biorthonormalize a pair of |VectorArrays| using the biorthonormal Gram-Schmidt process.
@@ -93,5 +92,4 @@ Functions
 
        The biorthonormalized |VectorArrays|.
            
-
 

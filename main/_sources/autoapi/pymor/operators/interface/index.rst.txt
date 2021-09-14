@@ -99,7 +99,6 @@ Functions
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U.
@@ -127,7 +126,6 @@ Functions
           A |NumPy array| with shape `(len(V), len(U))` containing the 2-form
           evaluations.
               
-
 
    .. py:method:: pairwise_apply2(self, V, U, mu=None)
 
@@ -158,7 +156,6 @@ Functions
           the 2-form evaluations.
               
 
-
    .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
@@ -183,7 +180,6 @@ Functions
 
           |VectorArray| of the adjoint operator evaluations.
               
-
 
    .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
@@ -222,7 +218,6 @@ Functions
               The operator could not be inverted.
               
 
-
    .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
@@ -260,7 +255,6 @@ Functions
               The operator could not be inverted.
               
 
-
    .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
@@ -278,7 +272,6 @@ Functions
           Linear |Operator| representing the Jacobian.
               
 
-
    .. py:method:: d_mu(self, parameter, index=0)
 
       Return the operator's derivative with respect to a given parameter.
@@ -294,7 +287,6 @@ Functions
 
           New |Operator| representing the partial derivative.
               
-
 
    .. py:method:: as_range_array(self, mu=None)
 
@@ -321,7 +313,6 @@ Functions
               The |VectorArray| defined above.
               
 
-
    .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
@@ -347,7 +338,6 @@ Functions
               The |VectorArray| defined above.
               
 
-
    .. py:method:: as_vector(self, mu=None)
 
       Return a vector representation of a linear functional or vector operator.
@@ -367,7 +357,6 @@ Functions
           V
               |VectorArray| of length 1 containing the vector representation.
               
-
 
    .. py:method:: assemble(self, mu=None)
 
@@ -390,7 +379,6 @@ Functions
 
           Parameter-independent, assembled |Operator|.
               
-
 
    .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
@@ -425,7 +413,6 @@ Functions
 
           The assembled |Operator| if assembly is possible, otherwise `None`.
               
-
 
    .. py:method:: restricted(self, dofs)
       :abstractmethod:
@@ -463,7 +450,6 @@ Functions
               One-dimensional |NumPy array| of source degrees of freedom as
               defined above.
               
-
 
    .. py:method:: _add_sub(self, other, sign)
 

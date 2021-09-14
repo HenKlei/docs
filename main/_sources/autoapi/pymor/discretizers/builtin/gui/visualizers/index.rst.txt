@@ -40,7 +40,6 @@ Classes
        block
            If `True`, block execution until the plot window is closed.
            
-
    .. py:method:: visualize(self, U, title=None, legend=None, separate_colorbars=False, rescale_colorbars=False, block=None, filename=None, columns=2)
 
       Visualize the provided data.
@@ -73,7 +72,6 @@ Classes
               
 
 
-
 .. py:class:: OnedVisualizer(grid, codim=1, block=False, backend='jupyter_or_matplotlib')
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
@@ -94,7 +92,6 @@ Classes
        backend
            Plot backend to use ('jupyter_or_matplotlib', 'jupyter', 'matplotlib').
            
-
    .. py:method:: visualize(self, U, title=None, legend=None, separate_plots=True, separate_axes=False, block=None, filename=None, columns=2)
 
       Visualize the provided data.
@@ -115,6 +112,5 @@ Classes
               If `True`, block execution until the plot window is closed. If `None`, use the
               default provided during instantiation.
               
-
 
 

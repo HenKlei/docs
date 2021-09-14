@@ -133,7 +133,6 @@ Attributes
           A copy of the |VectorArray|.
               
 
-
    .. py:method:: append(self, other, remove_from_other=False)
 
       Append vectors to the array.
@@ -147,7 +146,6 @@ Attributes
               For list-like implementations this can be used to prevent
               unnecessary copies of the involved vectors.
               
-
 
    .. py:method:: scal(self, alpha)
 
@@ -167,7 +165,6 @@ Attributes
               The scalar coefficient or one-dimensional |NumPy array| of coefficients
               with which the vectors in `self` are multiplied.
               
-
 
    .. py:method:: axpy(self, alpha, x)
 
@@ -191,7 +188,6 @@ Attributes
           x
               A |VectorArray| containing the x-summands.
               
-
 
    .. py:method:: inner(self, other, product=None)
 
@@ -242,7 +238,6 @@ Attributes
               
               result[i, j] = ( self[i], other[j] ).
               
-
 
    .. py:method:: pairwise_inner(self, other, product=None)
 
@@ -296,7 +291,6 @@ Attributes
               
               
 
-
    .. py:method:: lincomb(self, coefficients)
 
       Returns linear combinations of the vectors contained in the array.
@@ -319,7 +313,6 @@ Attributes
               
               result[0] = ∑ self[j] * coefficients[j].
               
-
 
    .. py:method:: _norm(self)
 
@@ -346,7 +339,6 @@ Attributes
           DOF of the `i`-th vector of the array.
               
 
-
    .. py:method:: amax(self)
 
       The maximum absolute value of the DOFs contained in the array.
@@ -360,7 +352,6 @@ Attributes
               |NumPy array| containing for each vector the maximum absolute value of its
               DOFs.
               
-
 
    .. py:method:: __del__(self)
 
@@ -397,7 +388,6 @@ Attributes
            Alternatively, the length of `local_spaces` may be 1, in which
            case the same |VectorSpace| is assumed for all ranks.
            
-
    .. py:attribute:: array_type
       
 
@@ -418,7 +408,6 @@ Attributes
           The newly created : class:`MPIVectorArray`.
               
 
-
    .. py:method:: zeros(self, count=1, reserve=0)
 
       Create a |VectorArray| of null vectors
@@ -434,7 +423,6 @@ Attributes
 
           A |VectorArray| containing `count` vectors with each component zero.
               
-
 
    .. py:method:: dim(self)
       :property:
@@ -578,7 +566,6 @@ Attributes
               result[i, j] = ( self[i], other[j] ).
               
 
-
    .. py:method:: pairwise_inner(self, other, product=None)
 
       Returns the pairwise inner products between |VectorArray| elements.
@@ -631,7 +618,6 @@ Attributes
               
               
 
-
    .. py:method:: _norm(self)
       :abstractmethod:
 
@@ -660,7 +646,6 @@ Attributes
           DOF of the `i`-th vector of the array.
               
 
-
    .. py:method:: amax(self)
       :abstractmethod:
 
@@ -675,7 +660,6 @@ Attributes
               |NumPy array| containing for each vector the maximum absolute value of its
               DOFs.
               
-
 
 
 .. py:class:: MPIVectorSpaceNoComm(local_spaces)
@@ -761,7 +745,6 @@ Attributes
               result[i, j] = ( self[i], other[j] ).
               
 
-
    .. py:method:: pairwise_inner(self, other, product=None)
 
       Returns the pairwise inner products between |VectorArray| elements.
@@ -814,7 +797,6 @@ Attributes
               
               
 
-
    .. py:method:: _norm(self)
 
       Implementation of :meth:`norm` for the case that no `product` is given.
@@ -840,7 +822,6 @@ Attributes
           DOF of the `i`-th vector of the array.
               
 
-
    .. py:method:: amax(self)
 
       The maximum absolute value of the DOFs contained in the array.
@@ -854,7 +835,6 @@ Attributes
               |NumPy array| containing for each vector the maximum absolute value of its
               DOFs.
               
-
 
 
 .. py:class:: MPIVectorSpaceAutoComm(local_spaces)

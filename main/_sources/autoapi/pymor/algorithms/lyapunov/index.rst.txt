@@ -133,7 +133,6 @@ Attributes
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: _solve_lyap_lrcf_check_args(A, E, B, trans)
 
 
@@ -203,7 +202,6 @@ Attributes
            Lyapunov equation solution as a |NumPy array|.
            
 
-
 .. py:function:: _solve_lyap_dense_check_args(A, E, B, trans)
 
 
@@ -224,5 +222,4 @@ Attributes
        L
            Cholesky factor of A (in the sense that L * L^T approximates A).
            
-
 

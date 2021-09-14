@@ -134,7 +134,6 @@ Functions
            a keyword argument (with a default value).
            
 
-
 .. py:function:: _import_all(package_name='pymor')
 
 
@@ -156,7 +155,6 @@ Functions
            The last two path components will always be printed.
            
 
-
 .. py:function:: write_defaults_to_file(filename='./pymor_defaults.py', packages=('pymor', ))
 
    Write the currently set |default| values to a configuration file.
@@ -177,7 +175,6 @@ Functions
            creating the configuration file.
            
 
-
 .. py:function:: load_defaults_from_file(filename='./pymor_defaults.py')
 
    Loads |default| values defined in configuration file.
@@ -192,7 +189,6 @@ Functions
        filename
            Path of the configuration file.
            
-
 
 .. py:function:: _set_defaults(defaults)
 
@@ -213,7 +209,6 @@ Functions
            values (see :func:`defaults`).
            
 
-
 .. py:function:: get_defaults(user=True, file=True, code=True)
 
    Get |default| values.
@@ -230,7 +225,6 @@ Functions
        code
            If `True`, returned dict contains unmodified default values.
            
-
 
 .. py:function:: defaults_changes()
 

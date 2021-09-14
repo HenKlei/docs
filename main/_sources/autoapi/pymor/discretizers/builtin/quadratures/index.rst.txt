@@ -69,7 +69,6 @@ Classes
               Integration weights.
               
 
-
    .. py:method:: iter_quadrature(cls, order=None, npoints=None)
       :classmethod:
 
@@ -82,6 +81,5 @@ Classes
           npoints
               Number of integration points.
               
-
 
 

@@ -77,7 +77,6 @@ Functions
               Not all provided indices correspond to entities contained in the subgrid.
               
 
-
    .. py:method:: size(self, codim)
 
       The number of entities of codimension `codim`.
@@ -140,5 +139,4 @@ Functions
 
        |BoundaryInfo| associated with sub_grid.
            
-
 

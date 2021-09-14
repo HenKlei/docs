@@ -81,7 +81,6 @@ Functions
            If loading fails.
            
 
-
 .. py:function:: save_matrix(path, matrix, key=None)
 
    Save matrix to file.
@@ -100,5 +99,4 @@ Functions
        IOError
            If saving fails.
            
-
 

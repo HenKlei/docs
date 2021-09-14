@@ -44,7 +44,6 @@ Attributes
        object.
            
 
-
 .. py:function:: default_random_state(seed=42)
 
    Returns the default |NumPy| :class:`~numpy.random.RandomState`.
@@ -58,7 +57,6 @@ Attributes
 
        The default `RandomState` object.
            
-
 
 .. py:data:: _default_random_state
    

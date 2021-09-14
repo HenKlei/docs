@@ -32,7 +32,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, r=None, decomposition='samdp', projection='orth', symmetric=False, which='NR', method_options=None, allow_complex_rom=False)
 
       Modal Truncation.
@@ -78,7 +77,6 @@ Classes
           rom
               Reduced-order model.
               
-
 
    .. py:method:: reconstruct(self, u)
 

@@ -42,4 +42,3 @@ Functions
            grid to the indices of the corresponding entities in the original grid.
            
 
-

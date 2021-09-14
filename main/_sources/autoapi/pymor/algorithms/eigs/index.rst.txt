@@ -89,7 +89,6 @@ Functions
            A |VectorArray| which contains the computed eigenvectors.
            
 
-
 .. py:function:: _arnoldi(A, l, b, complex_evp)
 
    Compute an Arnoldi factorization.

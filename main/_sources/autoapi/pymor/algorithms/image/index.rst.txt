@@ -81,7 +81,6 @@ Functions
            Is raised when for a given |Operator| no image estimate is possible.
            
 
-
 .. py:function:: estimate_image_hierarchical(operators=(), vectors=(), domain=None, extends=None, orthonormalize=True, product=None, riesz_representatives=False)
 
    Estimate the image of given |Operators| for all mu.
@@ -135,7 +134,6 @@ Functions
        ImageCollectionError
            Is raised when for a given |Operator| no image estimate is possible.
            
-
 
 .. py:class:: CollectOperatorRangeRules(source, image, extends)
 

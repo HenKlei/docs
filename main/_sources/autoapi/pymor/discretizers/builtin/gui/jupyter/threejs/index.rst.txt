@@ -49,6 +49,7 @@ Functions
    >>> slider = widgets.IntSlider()
    >>> widgets.VBox([title_widget, slider])
 
+
    .. py:method:: _get_mesh(self, i, u)
 
 
@@ -86,6 +87,7 @@ Functions
    >>> slider = widgets.IntSlider()
    >>> widgets.HBox([title_widget, slider])
 
+
    .. py:method:: freeze_camera(self, freeze=True)
 
 
@@ -112,6 +114,7 @@ Functions
    >>> title_widget = widgets.HTML('<em>Vertical Box Example</em>')
    >>> slider = widgets.IntSlider()
    >>> widgets.VBox([title_widget, slider])
+
 
    .. py:method:: finish_loading(self)
       :async:
@@ -154,5 +157,4 @@ Functions
        color_map
            a Matplotlib Colormap object
            
-
 

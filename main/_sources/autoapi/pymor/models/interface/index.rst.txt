@@ -77,7 +77,6 @@ Classes
           must contain the key `'solution'`.
               
 
-
    .. py:method:: _compute_output(self, solution, mu=None, **kwargs)
 
       Compute the model's output for |parameter values| `mu`.
@@ -110,7 +109,6 @@ Classes
           must contain the key `'output'`.
               
 
-
    .. py:method:: _compute_solution_d_mu_single_direction(self, parameter, index, solution, mu=None, **kwargs)
       :abstractmethod:
 
@@ -132,7 +130,6 @@ Classes
           The sensitivity of the solution as a |VectorArray|.
               
 
-
    .. py:method:: _compute_solution_d_mu(self, solution, mu=None, **kwargs)
 
       Compute all partial derivative of the solution w.r.t. a parameter index
@@ -148,7 +145,6 @@ Classes
 
           A dict of all partial sensitivities of the solution.
               
-
 
    .. py:method:: _compute_output_d_mu(self, solution, mu=None, return_array=False, **kwargs)
 
@@ -168,7 +164,6 @@ Classes
 
           The gradient as a |NumPy array| or a dict of |NumPy arrays|.
               
-
 
    .. py:method:: _compute_solution_error_estimate(self, solution, mu=None, **kwargs)
 
@@ -202,7 +197,6 @@ Classes
           `'solution_error_estimate'`.
               
 
-
    .. py:method:: _compute_output_error_estimate(self, solution, mu=None, **kwargs)
 
       Compute an error estimate for the computed model output.
@@ -234,7 +228,6 @@ Classes
           The computed error estimate or a dict which at least must contain the key
           `'solution_error_estimate'`.
               
-
 
    .. py:method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, *, mu=None, **kwargs)
 
@@ -285,7 +278,6 @@ Classes
           A dict with the computed values.
               
 
-
    .. py:method:: solve(self, mu=None, return_error_estimate=False, **kwargs)
 
       Solve the discrete problem for the |parameter values| `mu`.
@@ -314,7 +306,6 @@ Classes
           the estimate is returned as second value.
               
 
-
    .. py:method:: output(self, mu=None, return_error_estimate=False, **kwargs)
 
       Return the model output for given |parameter values| `mu`.
@@ -341,7 +332,6 @@ Classes
           second value.
               
 
-
    .. py:method:: solve_d_mu(self, parameter, index, mu=None, **kwargs)
 
       Solve for the partial derivative of the solution w.r.t. a parameter index
@@ -360,7 +350,6 @@ Classes
           The sensitivity of the solution as a |VectorArray|.
               
 
-
    .. py:method:: output_d_mu(self, mu=None, return_array=False, **kwargs)
 
       Compute the gradient w.r.t. the parameter of the output functional.
@@ -377,7 +366,6 @@ Classes
 
           The gradient as a |NumPy array| or a dict of |NumPy arrays|.
               
-
 
    .. py:method:: estimate_error(self, mu=None, **kwargs)
 
@@ -405,7 +393,6 @@ Classes
           The estimated error.
               
 
-
    .. py:method:: estimate_output_error(self, mu=None, **kwargs)
 
       Estimate the error for the computed output.
@@ -432,7 +419,6 @@ Classes
           The estimated error.
               
 
-
    .. py:method:: visualize(self, U, **kwargs)
 
       Visualize a |VectorArray| U of the model's :attr:`solution_space`.
@@ -446,6 +432,5 @@ Classes
               Additional keyword arguments to customize the visualization.
               See the docstring of `self.visualizer.visualize`.
               
-
 
 

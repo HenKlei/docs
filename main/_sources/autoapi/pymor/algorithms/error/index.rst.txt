@@ -160,7 +160,6 @@ Functions
                                        (Only present when `plot` is `True`.)
            
 
-
 .. py:function:: _compute_errors(mu, fom, reductor, error_estimator, error_norms, condition, custom, basis_sizes)
 
 
