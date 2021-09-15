@@ -21,7 +21,7 @@ Functions
 
 
 
-.. py:function:: eigs(A, E=None, k=3, which='LM', b=None, l=None, maxiter=1000, tol=1e-13, imag_tol=1e-12, complex_pair_tol=1e-12, seed=0)
+.. py:function:: eigs(A, E=None, k=3, sigma=None, which='LM', b=None, l=None, maxiter=1000, tol=1e-13, imag_tol=1e-12, complex_pair_tol=1e-12, complex_evp=False, left_evp=False, seed=0)
 
    Approximate a few eigenvalues of a linear |Operator|.
 
@@ -43,11 +43,14 @@ Functions
    .. admonition:: Parameters
 
        A
-           The real linear |Operator| for which the eigenvalues are to be computed.
+           The linear |Operator| for which the eigenvalues are to be computed.
        E
-           The real linear |Operator| which defines the generalized eigenvalue problem.
+           The linear |Operator| which defines the generalized eigenvalue problem.
        k
            The number of eigenvalues and eigenvectors which are to be computed.
+       sigma
+           If not `None` transforms the eigenvalue problem such that the k eigenvalues
+           closest to sigma are computed.
        which
            A string specifying which `k` eigenvalues and eigenvectors to compute:
            
@@ -69,6 +72,11 @@ Functions
            Relative imaginary parts below this tolerance are set to 0.
        complex_pair_tol
            Tolerance for detecting pairs of complex conjugate eigenvalues.
+       complex_evp
+           Wether to consider an eigenvalue problem with complex operators. When operators
+           are real setting this argument to `False` will increase stability and performance.
+       left_evp
+           If set to `True` compute left eigenvectors else compute right eigenvectors.
        seed
            Random seed which is used for computing the initial vector for the Arnoldi
            iteration.
@@ -81,18 +89,17 @@ Functions
            A |VectorArray| which contains the computed eigenvectors.
            
 
-
-.. py:function:: _arnoldi(A, E, l, b)
+.. py:function:: _arnoldi(A, l, b, complex_evp)
 
    Compute an Arnoldi factorization.
 
 
-.. py:function:: _extend_arnoldi(A, E, V, H, f, p)
+.. py:function:: _extend_arnoldi(A, V, H, f, p)
 
    Extend an existing Arnoldi factorization.
 
 
-.. py:function:: _qr_iteration(H, shifts)
+.. py:function:: _qr_iteration(H, shifts, complex_evp=False)
 
    Perform the QR iteration.
 

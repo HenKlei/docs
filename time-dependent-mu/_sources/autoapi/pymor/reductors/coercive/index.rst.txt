@@ -48,7 +48,6 @@ Classes
            guaranteed to be an upper bound for the error when an appropriate coercivity
            estimate is specified.
            
-
    .. py:method:: assemble_error_estimator(self)
 
 
@@ -101,7 +100,6 @@ Classes
            guaranteed to be an upper bound for the error when an appropriate coercivity
            estimate is specified.
            
-
    .. py:method:: assemble_error_estimator(self)
 
 

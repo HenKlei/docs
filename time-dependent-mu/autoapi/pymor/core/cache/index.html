@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,18 +47,18 @@
   
   
   
-    <title>pymor.core.cache &#8212; pyMOR v2021.1rc0+558.g5f0df1fb Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
+    <title>pymor.core.cache &#8212; pyMOR v2021.1rc0+592.g20883ee8 Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
@@ -91,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+558.g5f0df1fb Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+592.g20883ee8 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+558.g5f0df1fb Manual logo">
+                   alt="pyMOR v2021.1rc0+592.g20883ee8 Manual logo">
           
         </a>
       </div>
@@ -161,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+558.g5f0df1fb Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+592.g20883ee8 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core</span></code></a></li>
@@ -176,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+558.g5f0df1fb Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+592.g20883ee8 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+558.g5f0df1fb Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+592.g20883ee8 Manual">Documentation</a>
   </label>
   
 
@@ -450,7 +451,7 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.core.cache">
 <span id="pymor-core-cache"></span><h1 id="autoapi-pymor-core-cache-index--page-root"><a class="reference internal" href="#autoapi-pymor-core-cache-index--page-root" title="pymor.core.cache"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core.cache</span></code></a><a class="headerlink" href="#autoapi-pymor-core-cache-index--page-root" title="Permalink to this headline">¶</a></h1>
 <p>This module provides the caching facilities of pyMOR.</p>
 <p>Any class that wishes to provide cached method calls should derive from
@@ -506,9 +507,9 @@ possible to set the environment variable <code class="docutils literal notransla
 any call to <a class="reference internal" href="#pymor.core.cache.enable_caching" title="pymor.core.cache.enable_caching"><code class="xref py py-func docutils literal notranslate"><span class="pre">enable_caching</span></code></a>.</p>
 <p>A cache region can be emptied using <a class="reference internal" href="#pymor.core.cache.CacheRegion.clear" title="pymor.core.cache.CacheRegion.clear"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CacheRegion.clear</span></code></a>. The function
 <a class="reference internal" href="#pymor.core.cache.clear_caches" title="pymor.core.cache.clear_caches"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_caches</span></code></a> clears each cache region registered in <code class="docutils literal notranslate"><span class="pre">cache_regions</span></code>.</p>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -530,8 +531,8 @@ any call to <a class="reference internal" href="#pymor.core.cache.enable_caching
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -565,8 +566,8 @@ any call to <a class="reference internal" href="#pymor.core.cache.enable_caching
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="attributes">
 <h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -586,26 +587,26 @@ any call to <a class="reference internal" href="#pymor.core.cache.enable_caching
 </tbody>
 </table>
 <dl class="py function">
-<dt id="pymor.core.cache.cleanup_non_persistent_regions">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">cleanup_non_persistent_regions</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.cleanup_non_persistent_regions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.cleanup_non_persistent_regions">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">cleanup_non_persistent_regions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.cleanup_non_persistent_regions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache._safe_filename">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">_safe_filename</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache._safe_filename" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache._safe_filename">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">_safe_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache._safe_filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py class">
-<dt id="pymor.core.cache.CacheRegion">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">CacheRegion</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheRegion">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">CacheRegion</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for all pyMOR cache regions.</p>
 <dl class="py attribute">
-<dt id="pymor.core.cache.CacheRegion.persistent">
-<code class="sig-name descname"><span class="pre">persistent</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.persistent" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheRegion.persistent">
+<span class="sig-name descname"><span class="pre">persistent</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.persistent" title="Permalink to this definition">¶</a></dt>
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, cache entries are kept between multiple
 program runs.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheRegion.get">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheRegion.get">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return cache entry for given key.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -625,37 +626,37 @@ program runs.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheRegion.set">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheRegion.set">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set cache entry for <code class="docutils literal notranslate"><span class="pre">key</span></code> to given <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
 <p>This method is usually called only once for
 any given <code class="docutils literal notranslate"><span class="pre">key</span></code> (with the exemption of issues
 due to concurrency).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheRegion.clear">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheRegion.clear">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheRegion.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the entire cache region.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.core.cache.MemoryRegion">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">MemoryRegion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_keys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.MemoryRegion">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">MemoryRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_keys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.core.cache.CacheRegion" title="pymor.core.cache.CacheRegion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CacheRegion</span></code></a></p>
 <p>Base class for all pyMOR cache regions.</p>
 <dl class="py attribute">
-<dt id="pymor.core.cache.MemoryRegion.persistent">
-<code class="sig-name descname"><span class="pre">persistent</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.persistent" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.MemoryRegion.persistent">
+<span class="sig-name descname"><span class="pre">persistent</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.persistent" title="Permalink to this definition">¶</a></dt>
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, cache entries are kept between multiple
 program runs.</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="pymor.core.cache.MemoryRegion.NO_VALUE">
-<code class="sig-name descname"><span class="pre">NO_VALUE</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.NO_VALUE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.MemoryRegion.NO_VALUE">
+<span class="sig-name descname"><span class="pre">NO_VALUE</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.NO_VALUE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.MemoryRegion.get">
-<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.MemoryRegion.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return cache entry for given key.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -675,33 +676,33 @@ program runs.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.MemoryRegion.set">
-<code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.MemoryRegion.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set cache entry for <code class="docutils literal notranslate"><span class="pre">key</span></code> to given <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
 <p>This method is usually called only once for
 any given <code class="docutils literal notranslate"><span class="pre">key</span></code> (with the exemption of issues
 due to concurrency).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.MemoryRegion.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.MemoryRegion.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.MemoryRegion.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the entire cache region.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.core.cache.DiskRegion">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">DiskRegion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.DiskRegion">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">DiskRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.core.cache.CacheRegion" title="pymor.core.cache.CacheRegion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CacheRegion</span></code></a></p>
 <p>Base class for all pyMOR cache regions.</p>
 <dl class="py attribute">
-<dt id="pymor.core.cache.DiskRegion.persistent">
-<code class="sig-name descname"><span class="pre">persistent</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.persistent" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.DiskRegion.persistent">
+<span class="sig-name descname"><span class="pre">persistent</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.persistent" title="Permalink to this definition">¶</a></dt>
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, cache entries are kept between multiple
 program runs.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.DiskRegion.get">
-<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.DiskRegion.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return cache entry for given key.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -721,71 +722,71 @@ program runs.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.DiskRegion.set">
-<code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.DiskRegion.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set cache entry for <code class="docutils literal notranslate"><span class="pre">key</span></code> to given <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
 <p>This method is usually called only once for
 any given <code class="docutils literal notranslate"><span class="pre">key</span></code> (with the exemption of issues
 due to concurrency).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.DiskRegion.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.DiskRegion.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.DiskRegion.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the entire cache region.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache.default_regions">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">default_regions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">os.path.join(tempfile.gettempdir(),</span> <span class="pre">'pymor.cache.'</span> <span class="pre">+</span> <span class="pre">getpass.getuser())</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disk_max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span> <span class="pre">**</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">os.path.join(tempfile.gettempdir(),</span> <span class="pre">'pymor.persistent.cache.'</span> <span class="pre">+</span> <span class="pre">getpass.getuser())</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent_max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span> <span class="pre">**</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_max_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.default_regions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.default_regions">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">default_regions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">os.path.join(tempfile.gettempdir(),</span> <span class="pre">'pymor.cache.'</span> <span class="pre">+</span> <span class="pre">getpass.getuser())</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disk_max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span> <span class="pre">**</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">os.path.join(tempfile.gettempdir(),</span> <span class="pre">'pymor.persistent.cache.'</span> <span class="pre">+</span> <span class="pre">getpass.getuser())</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistent_max_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span> <span class="pre">**</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_max_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.default_regions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.core.cache.cache_regions">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">cache_regions</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.cache_regions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.cache_regions">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">cache_regions</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.cache_regions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.core.cache._caching_disabled">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">_caching_disabled</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache._caching_disabled" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache._caching_disabled">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">_caching_disabled</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache._caching_disabled" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache.enable_caching">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">enable_caching</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.enable_caching" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.enable_caching">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">enable_caching</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.enable_caching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Globally enable caching.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache.disable_caching">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">disable_caching</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.disable_caching" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.disable_caching">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">disable_caching</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.disable_caching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Globally disable caching.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache.clear_caches">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">clear_caches</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.clear_caches" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.clear_caches">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">clear_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.clear_caches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear all cache regions.</p>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.core.cache.CacheableObject">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">CacheableObject</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">CacheableObject</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base/index.html#pymor.core.base.ImmutableObject" title="pymor.core.base.ImmutableObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.ImmutableObject</span></code></a></p>
 <p>Base class for anything that wants to use our built-in caching.</p>
 <dl class="py attribute">
-<dt id="pymor.core.cache.CacheableObject.cache_region">
-<code class="sig-name descname"><span class="pre">cache_region</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.cache_region" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject.cache_region">
+<span class="sig-name descname"><span class="pre">cache_region</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.cache_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the <a class="reference internal" href="#pymor.core.cache.CacheRegion" title="pymor.core.cache.CacheRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">CacheRegion</span></code></a> to use. Must correspond to a key in
 the <a class="reference internal" href="#pymor.core.cache.cache_regions" title="pymor.core.cache.cache_regions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cache_regions</span></code></a> dict. If <code class="docutils literal notranslate"><span class="pre">None</span></code> or <code class="docutils literal notranslate"><span class="pre">'none'</span></code>, caching
 is disabled.</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="pymor.core.cache.CacheableObject.cache_id">
-<code class="sig-name descname"><span class="pre">cache_id</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.cache_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject.cache_id">
+<span class="sig-name descname"><span class="pre">cache_id</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.cache_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Identifier for the object instance on which a cached method is called.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheableObject.disable_caching">
-<code class="sig-name descname"><span class="pre">disable_caching</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.disable_caching" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject.disable_caching">
+<span class="sig-name descname"><span class="pre">disable_caching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.disable_caching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disable caching for this instance.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheableObject.enable_caching">
-<code class="sig-name descname"><span class="pre">enable_caching</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.enable_caching" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject.enable_caching">
+<span class="sig-name descname"><span class="pre">enable_caching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.enable_caching" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable caching for this instance.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -810,8 +811,8 @@ is used instead.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheableObject.cached_method_call">
-<code class="sig-name descname"><span class="pre">cached_method_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.cached_method_call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject.cached_method_call">
+<span class="sig-name descname"><span class="pre">cached_method_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject.cached_method_call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call a given <code class="docutils literal notranslate"><span class="pre">method</span></code> and cache the return value.</p>
 <p>This method can be used as an alternative to the <a class="reference internal" href="#pymor.core.cache.cached" title="pymor.core.cache.cached"><code class="xref py py-func docutils literal notranslate"><span class="pre">cached</span></code></a>
 decorator.</p>
@@ -833,26 +834,26 @@ of <code class="docutils literal notranslate"><span class="pre">self</span></cod
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.core.cache.CacheableObject._cached_method_call">
-<code class="sig-name descname"><span class="pre">_cached_method_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pass_self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject._cached_method_call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.CacheableObject._cached_method_call">
+<span class="sig-name descname"><span class="pre">_cached_method_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pass_self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.CacheableObject._cached_method_call" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache.cached">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">cached</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.cached" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.cached">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">cached</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.cached" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator to make a method of <code class="docutils literal notranslate"><span class="pre">CacheableObject</span></code> actually cached.</p>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.core.cache.NoneType">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">NoneType</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.NoneType" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.NoneType">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">NoneType</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.NoneType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.core.cache.build_cache_key">
-<code class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></code><code class="sig-name descname"><span class="pre">build_cache_key</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.build_cache_key" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.core.cache.build_cache_key">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.cache.</span></span><span class="sig-name descname"><span class="pre">build_cache_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/core/cache.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.cache.build_cache_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -904,7 +905,7 @@ of <code class="docutils literal notranslate"><span class="pre">self</span></cod
               Sep 15, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

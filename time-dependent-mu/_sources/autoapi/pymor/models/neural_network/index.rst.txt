@@ -69,7 +69,6 @@ Classes
        name
            Name of the model.
            
-
    .. py:method:: _compute_solution(self, mu=None, **kwargs)
 
       Compute the model's solution for |parameter values| `mu`.
@@ -90,6 +89,5 @@ Classes
           |VectorArray| with the computed solution or a dict which at least
           must contain the key `'solution'`.
               
-
 
 

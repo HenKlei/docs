@@ -57,7 +57,6 @@ Classes
            If `True`, the bottom and top boundaries are identified, i.e. the bottom-most
            codim-0 entities become neighbors of the top-most codim-0 entities.
            
-
    .. py:attribute:: dim
       :annotation: = 2
 
@@ -145,6 +144,5 @@ Classes
           kwargs
               See :func:`~pymor.discretizers.builtin.gui.visualizers.PatchVisualizer.visualize`
               
-
 
 

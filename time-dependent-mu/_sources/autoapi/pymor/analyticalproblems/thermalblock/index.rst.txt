@@ -49,4 +49,3 @@ Functions
            to lie in the interval [μ_min, μ_max].
            
 
-

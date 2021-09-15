@@ -14,6 +14,7 @@ Classes
 
    pymor.reductors.bt.GenericBTReductor
    pymor.reductors.bt.BTReductor
+   pymor.reductors.bt.FDBTReductor
    pymor.reductors.bt.LQGBTReductor
    pymor.reductors.bt.BRBTReductor
 
@@ -33,7 +34,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: _gramians(self)
       :abstractmethod:
 
@@ -77,7 +77,6 @@ Classes
               Reduced-order model.
               
 
-
    .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
@@ -99,7 +98,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
@@ -108,6 +106,40 @@ Classes
    .. py:method:: error_bounds(self)
 
       Returns error bounds for all possible reduced orders.
+
+
+
+.. py:class:: FDBTReductor(fom, ast_pole_data=None, mu=None, solver_options=None)
+
+   Bases: :py:obj:`GenericBTReductor`
+
+   Balanced Truncation reductor using frequency domain representation of Gramians.
+
+   See :cite:`ZSW99`.
+
+   .. admonition:: Parameters
+
+       fom
+           The full-order |LTIModel| to reduce.
+       ast_pole_data
+           Can be:
+           
+           - dictionary of parameters for :func:`~pymor.algorithms.eigs.eigs`,
+           - list of anti-stable eigenvalues (scalars),
+           - tuple `(lev, ew, rev)` where `ew` contains the anti-stable eigenvalues
+             and `lev` and `rev` are |VectorArrays| representing the eigenvectors.
+           - `None` if anti-stable eigenvalues should be computed via dense methods.
+       mu
+           |Parameter values|.
+           
+   .. py:method:: _gramians(self)
+
+      Return low-rank Cholesky factors of Gramians.
+
+
+   .. py:method:: error_bounds(self)
+
+      L-infinity error bounds for reduced order models.
 
 
 
@@ -128,7 +160,6 @@ Classes
        solver_options
            The solver options to use to solve the Riccati equations.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.
@@ -159,7 +190,6 @@ Classes
        solver_options
            The solver options to use to solve the positive Riccati equations.
            
-
    .. py:method:: _gramians(self)
 
       Return low-rank Cholesky factors of Gramians.

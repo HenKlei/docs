@@ -99,4 +99,3 @@ Functions
            Raised if the Newton algorithm failed to converge.
            
 
-

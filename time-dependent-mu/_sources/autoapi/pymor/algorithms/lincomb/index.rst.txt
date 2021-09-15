@@ -59,7 +59,6 @@ Functions
        The assembled |Operator|.
            
 
-
 .. py:class:: AssembleLincombRules(coefficients, solver_options, name)
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`

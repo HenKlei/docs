@@ -73,7 +73,7 @@ Functions
            If `pickle_local_spaces` is `False`, a unique identifier
            is computed for each local source/range |VectorSpace|, which is then
            transferred to rank 0 instead of the true |VectorSpace|. This
-           allows the useage of :class:`~pymor.vectorarrays.mpi.MPIVectorArray`
+           allows the usage of :class:`~pymor.vectorarrays.mpi.MPIVectorArray`
            even when the local |VectorSpaces| are not picklable.
        space_type
            This class will be used to wrap the local |VectorArrays|
@@ -83,7 +83,6 @@ Functions
            other options are :class:`~pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm`
            and :class:`~pymor.vectorarrays.mpi.MPIVectorSpaceNoComm`.
            
-
    .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
@@ -99,7 +98,6 @@ Functions
 
           |VectorArray| of the operator evaluations.
               
-
 
    .. py:method:: as_range_array(self, mu=None)
 
@@ -126,7 +124,6 @@ Functions
               The |VectorArray| defined above.
               
 
-
    .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
@@ -152,7 +149,6 @@ Functions
               The |VectorArray| defined above.
               
 
-
    .. py:method:: apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U.
@@ -171,7 +167,7 @@ Functions
           V
               |VectorArray| of the left arguments V.
           U
-              |VectorArray| of the right right arguments U.
+              |VectorArray| of the right arguments U.
           mu
               The |parameter values| for which to evaluate the operator.
               
@@ -180,7 +176,6 @@ Functions
           A |NumPy array| with shape `(len(V), len(U))` containing the 2-form
           evaluations.
               
-
 
    .. py:method:: pairwise_apply2(self, V, U, mu=None)
 
@@ -192,7 +187,7 @@ Functions
 
           op.apply2(V, U)[i] = V[i]^T*M*U[i].
 
-      In the case of complex numbers, note that `pairwirse_apply2` is anti-linear in the
+      In the case of complex numbers, note that `pairwise_apply2` is anti-linear in the
       first variable by definition of `pairwise_inner`.
 
 
@@ -201,7 +196,7 @@ Functions
           V
               |VectorArray| of the left arguments V.
           U
-              |VectorArray| of the right right arguments U.
+              |VectorArray| of the right arguments U.
           mu
               The |parameter values| for which to evaluate the operator.
               
@@ -210,7 +205,6 @@ Functions
           A |NumPy array| with shape `(len(V),) == (len(U),)` containing
           the 2-form evaluations.
               
-
 
    .. py:method:: apply_adjoint(self, V, mu=None)
 
@@ -236,7 +230,6 @@ Functions
 
           |VectorArray| of the adjoint operator evaluations.
               
-
 
    .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
@@ -275,7 +268,6 @@ Functions
               The operator could not be inverted.
               
 
-
    .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
@@ -313,7 +305,6 @@ Functions
               The operator could not be inverted.
               
 
-
    .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
@@ -330,7 +321,6 @@ Functions
 
           Linear |Operator| representing the Jacobian.
               
-
 
    .. py:method:: assemble(self, mu=None)
 
@@ -353,7 +343,6 @@ Functions
 
           Parameter-independent, assembled |Operator|.
               
-
 
    .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
@@ -388,7 +377,6 @@ Functions
 
           The assembled |Operator| if assembly is possible, otherwise `None`.
               
-
 
    .. py:method:: restricted(self, dofs)
 
@@ -426,7 +414,6 @@ Functions
               defined above.
               
 
-
    .. py:method:: __del__(self)
 
 
@@ -462,7 +449,6 @@ Functions
 
        The wrapped |Operator|.
            
-
 
 .. py:function:: _mpi_wrap_operator_LincombOperator_manage_operators(obj_id)
 

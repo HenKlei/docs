@@ -23,6 +23,8 @@ Functions
    pymor.bindings.scipy.solve_lyap_dense
    pymor.bindings.scipy.ricc_lrcf_solver_options
    pymor.bindings.scipy.solve_ricc_lrcf
+   pymor.bindings.scipy.ricc_dense_solver_options
+   pymor.bindings.scipy.solve_ricc_dense
    pymor.bindings.scipy.pos_ricc_lrcf_solver_options
    pymor.bindings.scipy.solve_pos_ricc_lrcf
 
@@ -88,7 +90,6 @@ Functions
        A dict of available solvers with default |solver_options|.
            
 
-
 .. py:function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='scipy_spsolve', default_least_squares_solver='scipy_least_squares_lsmr')
 
    Solve linear equation system.
@@ -123,7 +124,6 @@ Functions
        |VectorArray| of the solution vectors.
            
 
-
 .. py:function:: matrix_astype_nocopy(matrix, dtype)
 
 
@@ -135,7 +135,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
@@ -176,7 +175,6 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
 .. py:function:: lyap_dense_solver_options()
 
    Return available dense Lyapunov solvers with default options for the SciPy backend.
@@ -185,7 +183,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_lyap_dense(A, E, B, trans=False, options=None)
 
@@ -204,11 +201,11 @@ Functions
    .. admonition:: Parameters
 
        A
-           The operator A as a 2D |NumPy array|.
+           The matrix A as a 2D |NumPy array|.
        E
-           The operator E as a 2D |NumPy array| or `None`.
+           The matrix E as a 2D |NumPy array| or `None`.
        B
-           The operator B as a 2D |NumPy array|.
+           The matrix B as a 2D |NumPy array|.
        trans
            Whether the first operator in the Lyapunov equation is
            transposed.
@@ -222,7 +219,6 @@ Functions
            Lyapunov equation solution as a |NumPy array|.
            
 
-
 .. py:function:: ricc_lrcf_solver_options()
 
    Return available Riccati solvers with default options for the SciPy backend.
@@ -231,7 +227,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
@@ -258,7 +253,7 @@ Functions
        C
            The operator C as a |VectorArray| from `A.source`.
        R
-           The operator R as a 2D |NumPy array| or `None`.
+           The matrix R as a 2D |NumPy array| or `None`.
        trans
            Whether the first |Operator| in the Riccati equation is
            transposed.
@@ -272,6 +267,49 @@ Functions
            |VectorArray| from `A.source`.
            
 
+.. py:function:: ricc_dense_solver_options()
+
+   Return available Riccati solvers with default options for the SciPy backend.
+
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: solve_ricc_dense(A, E, B, C, R=None, trans=False, options=None)
+
+   Compute the solution of a Riccati equation.
+
+   See :func:`pymor.algorithms.riccati.solve_ricc_dense` for a general
+   description.
+
+   This function uses `scipy.linalg.solve_continuous_are`, which
+   is a dense solver.
+
+   .. admonition:: Parameters
+
+       A
+           The matrix A as a 2D |NumPy array|.
+       E
+           The matrix E as a 2D |NumPy array| or `None`.
+       B
+           The matrix B as a 2D |NumPy array|.
+       C
+           The matrix C as a 2D |NumPy array|.
+       R
+           The matrix R as a 2D |NumPy array| or `None`.
+       trans
+           Whether the first operator in the Riccati equation is
+           transposed.
+       options
+           The solver options to use (see
+           :func:`ricc_dense_solver_options`).
+           
+   .. admonition:: Returns
+
+       X
+           Riccati equation solution as a |NumPy array|.
+           
 
 .. py:function:: pos_ricc_lrcf_solver_options()
 
@@ -281,7 +319,6 @@ Functions
 
        A dict of available solvers with default solver options.
            
-
 
 .. py:function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
@@ -308,7 +345,7 @@ Functions
        C
            The operator C as a |VectorArray| from `A.source`.
        R
-           The operator R as a 2D |NumPy array| or `None`.
+           The matrix R as a 2D |NumPy array| or `None`.
        trans
            Whether the first |Operator| in the positive Riccati equation is
            transposed.
@@ -322,5 +359,4 @@ Functions
            Low-rank Cholesky factor of the positive Riccati equation
            solution, |VectorArray| from `A.source`.
            
-
 

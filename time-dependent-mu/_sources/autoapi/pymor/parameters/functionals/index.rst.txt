@@ -63,7 +63,6 @@ Classes
           New |ParameterFunctional| representing the partial derivative.
               
 
-
    .. py:method:: __call__(self, mu=None)
 
 
@@ -114,7 +113,6 @@ Classes
        name
            Name of the functional.
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -135,7 +133,6 @@ Classes
 
           New |ParameterFunctional| representing the partial derivative.
               
-
 
 
 .. py:class:: GenericParameterFunctional(mapping, parameters, name=None, derivative_mappings=None, second_derivative_mappings=None)
@@ -165,7 +162,6 @@ Classes
            with the signature
            `second_derivative_mappings[parameter_i][index_i][parameter_j][index_j](mu)`
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -186,7 +182,6 @@ Classes
 
           New |ParameterFunctional| representing the partial derivative.
               
-
 
 
 .. py:class:: ExpressionParameterFunctional(expression, parameters, name=None, derivative_expressions=None, second_derivative_expressions=None)
@@ -218,7 +213,6 @@ Classes
            A dict containing a list of dicts of Python expressions for all second order partial
            derivatives of each parameter component i and j.
            
-
    .. py:attribute:: functions
       
 
@@ -243,7 +237,6 @@ Classes
        name
            Name of the functional.
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -264,7 +257,6 @@ Classes
 
           New |ParameterFunctional| representing the partial derivative.
               
-
 
 
 .. py:class:: ConjugateParameterFunctional(functional, name=None)
@@ -284,7 +276,6 @@ Classes
        name
            Name of the functional.
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -304,7 +295,6 @@ Classes
        name
            Name of the functional.
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -325,7 +315,6 @@ Classes
 
           New |ParameterFunctional| representing the partial derivative.
               
-
 
 
 .. py:class:: LincombParameterFunctional(functionals, coefficients, name=None)
@@ -373,7 +362,6 @@ Classes
               
 
 
-
 .. py:class:: MinThetaParameterFunctional(thetas, mu_bar, alpha_mu_bar=1.0, name=None)
 
    Bases: :py:obj:`ParameterFunctional`
@@ -415,7 +403,6 @@ Classes
        name
            Name of the functional.
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -488,7 +475,6 @@ Classes
        name
            Name of the functional.
            
-
    .. py:method:: evaluate(self, mu=None)
 
       Evaluate the functional for given |parameter values| `mu`.
@@ -510,7 +496,6 @@ Classes
 
           New |ParameterFunctional| representing the partial derivative.
               
-
 
 
 .. py:class:: MaxThetaParameterFunctional(thetas, mu_bar, gamma_mu_bar=1.0, name=None)
@@ -547,5 +532,4 @@ Classes
        name
            Name of the functional.
            
-
 

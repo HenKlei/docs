@@ -61,7 +61,6 @@ Functions
            |VectorArray| which contains the basis, whose span approximates the range of A.
            
 
-
 .. py:function:: rrf(A, source_product=None, range_product=None, q=2, l=8, iscomplex=False)
 
    Randomized range approximation of `A`.
@@ -91,5 +90,4 @@ Functions
        Q
            |VectorArray| which contains the basis, whose span approximates the range of A.
            
-
 

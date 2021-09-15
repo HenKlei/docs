@@ -28,6 +28,7 @@ Functions
    |  retval[i1,...,ik,m,n] = numpy.linalg.inv(A[i1,...,ik,:,:]).
 
 
+
 .. py:function:: inv_transposed_two_by_two(A)
 
    Efficiently compute the tranposed inverses of a |Numpy array| of 2x2-matrices
@@ -35,5 +36,6 @@ Functions
    This implements ::
 
    |  retval[i1,...,ik,m,n] = numpy.linalg.inv(A[i1,...,ik,:,:]).
+
 
 

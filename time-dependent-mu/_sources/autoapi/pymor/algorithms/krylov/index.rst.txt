@@ -89,7 +89,6 @@ Functions
            Orthonormal basis for the Krylov subspace |VectorArray|.
            
 
-
 .. py:function:: tangential_rational_krylov(A, E, B, b, sigma, trans=False, orth=True)
 
    Tangential Rational Krylov subspace.
@@ -142,5 +141,4 @@ Functions
        V
            Optionally orthonormal basis for the Krylov subspace |VectorArray|.
            
-
 

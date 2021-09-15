@@ -71,7 +71,6 @@ Classes
        riesz_representatives
            If `True` compute the Riesz representative of the residual.
            
-
    .. py:method:: reduce(self)
 
 
@@ -103,7 +102,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
 
@@ -131,7 +129,6 @@ Classes
 
           |VectorArray| of the operator evaluations.
               
-
 
    .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
@@ -183,7 +180,6 @@ Classes
        product
            Inner product |Operator| w.r.t. which to compute the Riesz representatives.
            
-
    .. py:method:: reduce(self)
 
 
@@ -215,7 +211,6 @@ Classes
           |VectorArray| of the operator evaluations.
               
 
-
    .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 
 
@@ -243,7 +238,6 @@ Classes
 
           |VectorArray| of the operator evaluations.
               
-
 
    .. py:method:: projected_to_subbasis(self, dim_range=None, dim_source=None, name=None)
 

@@ -35,7 +35,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False, irka_options=None)
 
       Reduce using SOR-IRKA.
@@ -99,6 +98,5 @@ Classes
           rom
               Reduced-order |SecondOrderModel|.
               
-
 
 

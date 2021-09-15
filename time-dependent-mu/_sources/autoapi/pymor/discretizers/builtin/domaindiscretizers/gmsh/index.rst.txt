@@ -55,4 +55,3 @@ Functions
            The generated :class:`~pymor.discretizers.builtin.grids.gmsh.GmshBoundaryInfo`.
            
 
-

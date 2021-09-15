@@ -103,7 +103,6 @@ Functions
                                 before preassembling operators.
            
 
-
 .. py:function:: discretize_instationary_cg(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
 
    Discretizes an |InstationaryProblem| with a |StationaryProblem| as stationary part
@@ -152,7 +151,6 @@ Functions
                :unassembled_m:  In case `preassemble` is `True`, the generated |Model|
                                 before preassembling operators.
            
-
 
 .. py:function:: discretize_stationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, preassemble=True)
 
@@ -205,7 +203,6 @@ Functions
                :unassembled_m:  In case `preassemble` is `True`, the generated |Model|
                                 before preassembling operators.
            
-
 
 .. py:function:: discretize_instationary_fv(analytical_problem, diameter=None, domain_discretizer=None, grid_type=None, num_flux='lax_friedrichs', lxf_lambda=1.0, eo_gausspoints=5, eo_intervals=1, grid=None, boundary_info=None, num_values=None, time_stepper=None, nt=None, preassemble=True)
 
@@ -269,7 +266,6 @@ Functions
                                 before preassembling operators.
            
 
-
 .. py:function:: load_gmsh(filename)
 
    Parse a Gmsh file and create a corresponding :class:`GmshGrid` and :class:`GmshBoundaryInfo`.
@@ -287,7 +283,6 @@ Functions
            The generated :class:`GmshBoundaryInfo`.
            
 
-
 .. py:class:: OnedGrid(domain=(0, 1), num_intervals=4, identify_left_right=False)
 
    Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.GridWithOrthogonalCenters`
@@ -301,7 +296,6 @@ Functions
        num_intervals
            The number of codim-0 entities.
            
-
    .. py:attribute:: dim
       :annotation: = 1
 
@@ -391,7 +385,6 @@ Functions
               
 
 
-
 .. py:class:: RectGrid(num_intervals=(2, 2), domain=([0, 0], [1, 1]), identify_left_right=False, identify_bottom_top=False)
 
    Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.GridWithOrthogonalCenters`
@@ -428,7 +421,6 @@ Functions
            If `True`, the bottom and top boundaries are identified, i.e. the bottom-most
            codim-0 entities become neighbors of the top-most codim-0 entities.
            
-
    .. py:attribute:: dim
       :annotation: = 2
 
@@ -544,7 +536,6 @@ Functions
               
 
 
-
 .. py:class:: TriaGrid(num_intervals=(2, 2), domain=([0, 0], [1, 1]), identify_left_right=False, identify_bottom_top=False)
 
    Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.GridWithOrthogonalCenters`
@@ -585,7 +576,6 @@ Functions
            If `True`, the bottom and top boundaries are identified, i.e. the bottom-most
            codim-0 entities become neighbors of the top-most codim-0 entities.
            
-
    .. py:attribute:: dim
       :annotation: = 2
 
@@ -673,6 +663,5 @@ Functions
           kwargs
               See :func:`~pymor.discretizers.builtin.gui.visualizers.PatchVisualizer.visualize`
               
-
 
 

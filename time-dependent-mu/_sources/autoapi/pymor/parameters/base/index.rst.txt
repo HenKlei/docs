@@ -66,7 +66,6 @@ Classes
               traversed recursively.
               
 
-
    .. py:method:: dim(self)
       :property:
 
@@ -104,7 +103,6 @@ Classes
               Is raised if `mu` cannot be interpreted as |parameter values| for the
               given |Parameters|.
               
-
 
    .. py:method:: space(self, *ranges)
 
@@ -223,7 +221,6 @@ Classes
           components of the parameter values are almost equal, else `False`.
               
 
-
    .. py:method:: to_numpy(self)
 
       All parameter values as a NumPy array, ordered alphabetically.
@@ -338,7 +335,6 @@ Classes
            - or a dict of those tuples, specifying upper and lower
              bounds individually for each parameter of the space.
            
-
    .. py:method:: sample_uniformly(self, counts)
 
       Uniformly sample |parameter values| from the space.
@@ -354,7 +350,6 @@ Classes
 
           List of |parameter value| dicts.
               
-
 
    .. py:method:: sample_randomly(self, count=None, random_state=None, seed=None)
 
@@ -378,7 +373,6 @@ Classes
 
           The sampled |parameter values|.
               
-
 
    .. py:method:: contains(self, mu)
 

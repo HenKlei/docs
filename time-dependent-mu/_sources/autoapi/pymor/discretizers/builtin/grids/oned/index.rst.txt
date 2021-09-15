@@ -30,7 +30,6 @@ Classes
        num_intervals
            The number of codim-0 entities.
            
-
    .. py:attribute:: dim
       :annotation: = 1
 
@@ -118,6 +117,5 @@ Classes
           kwargs
               See :func:`~pymor.discretizers.builtin.gui.visualizers.OnedVisualizer.visualize`
               
-
 
 

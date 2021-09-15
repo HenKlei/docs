@@ -58,7 +58,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:attribute:: _PGReductor
       
 
@@ -113,7 +112,6 @@ Classes
               Reduced-order model.
               
 
-
    .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
@@ -133,7 +131,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:attribute:: _PGReductor
       
 
@@ -187,7 +184,6 @@ Classes
               
 
 
-
 .. py:class:: SOBHIReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericBHIReductor`
@@ -201,7 +197,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:attribute:: _PGReductor
       
 
@@ -236,7 +231,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:attribute:: _PGReductor
       
 
@@ -273,7 +267,6 @@ Classes
        mu
            |Parameter values|.
            
-
    .. py:method:: reduce(self, sigma, b, c)
 
       Realization-independent tangential Hermite interpolation.
@@ -296,7 +289,6 @@ Classes
               The reduced-order |LTIModel| interpolating the transfer
               function of `fom`.
               
-
 
    .. py:method:: reconstruct(self, u)
 

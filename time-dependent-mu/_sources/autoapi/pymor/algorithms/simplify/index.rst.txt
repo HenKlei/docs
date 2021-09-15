@@ -60,7 +60,6 @@ Functions
        The transformed object.
            
 
-
 .. py:class:: ExpandRules
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`

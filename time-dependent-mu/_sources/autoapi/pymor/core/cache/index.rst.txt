@@ -141,7 +141,6 @@ Attributes
               in case the `key` is not present in the cache region.
               
 
-
    .. py:method:: set(self, key, value)
       :abstractmethod:
 
@@ -193,7 +192,6 @@ Attributes
               in case the `key` is not present in the cache region.
               
 
-
    .. py:method:: set(self, key, value)
 
       Set cache entry for `key` to given `value`.
@@ -237,7 +235,6 @@ Attributes
           `(False, None)`
               in case the `key` is not present in the cache region.
               
-
 
    .. py:method:: set(self, key, value)
 
@@ -327,7 +324,6 @@ Attributes
               is used instead.
               
 
-
    .. py:method:: cached_method_call(self, method, *args, **kwargs)
 
       Call a given `method` and cache the return value.
@@ -349,7 +345,6 @@ Attributes
 
           The (possibly cached) return value of `method(*args, **kwargs)`.
               
-
 
    .. py:method:: _cached_method_call(self, method, pass_self, argnames, defaults, args, kwargs)
 

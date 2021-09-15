@@ -66,4 +66,3 @@ Functions
            One-dimensional |NumPy array| of singular values.
            
 
-

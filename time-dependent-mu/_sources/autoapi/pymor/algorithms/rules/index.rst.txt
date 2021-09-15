@@ -197,7 +197,6 @@ Functions
            Optional string describing the condition implemented by
            `condition`.
            
-
    .. py:attribute:: condition_type
       :annotation: = GENERIC
 
@@ -275,7 +274,6 @@ Functions
               Object for which to add the conditional breakpoint.
               
 
-
    .. py:method:: breakpoint_for_name(cls, name)
       :classmethod:
 
@@ -290,7 +288,6 @@ Functions
               :attr:`~pymor.core.base.BasicObject.name` of the object for which
               to add the conditional breakpoint.
               
-
 
    .. py:method:: apply(self, obj)
 
@@ -324,7 +321,6 @@ Functions
               No |rule| could be applied to the given object.
               
 
-
    .. py:method:: apply_children(self, obj, children=None)
 
       Apply rules to all children of the given object.
@@ -346,7 +342,6 @@ Functions
 
           Result of : meth:`apply` for all given children.
               
-
 
    .. py:method:: replace_children(self, obj, children=None)
 

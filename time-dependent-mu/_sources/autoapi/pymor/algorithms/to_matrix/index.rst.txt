@@ -48,7 +48,6 @@ Functions
            The matrix equivalent to `op`.
            
 
-
 .. py:class:: ToMatrixRules(format, mu)
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`

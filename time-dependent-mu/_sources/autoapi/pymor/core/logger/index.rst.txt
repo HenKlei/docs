@@ -197,7 +197,6 @@ Attributes
            written to.
            
 
-
 .. py:class:: DummyLogger
 
    .. py:attribute:: __slots__
@@ -289,7 +288,6 @@ Attributes
            (see :meth:`~logging.Logger.setLevel`).
            
 
-
 .. py:function:: set_log_format(max_hierarchy_level=1, indent_blocks=True, block_timings=False)
 
    Set log levels for pyMOR's logging facility.
@@ -307,7 +305,6 @@ Attributes
            If `True`, measure the duration of a code block started with
            `with logger.block(...)`.
            
-
 
 .. py:class:: LogIndenter(logger, doit)
 
@@ -336,5 +333,4 @@ Attributes
        level_mapping
            a dict of logger name -> level name
            
-
 
