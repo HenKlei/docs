@@ -24,6 +24,7 @@ Functions
 
    pymor.core.config._can_import
    pymor.core.config._get_fenics_version
+   pymor.core.config._get_dunegdt_version
    pymor.core.config.is_windows_platform
    pymor.core.config.is_macos_platform
    pymor.core.config._get_matplotib_version
@@ -48,6 +49,9 @@ Attributes
 
 
 .. py:function:: _get_fenics_version()
+
+
+.. py:function:: _get_dunegdt_version()
 
 
 .. py:function:: is_windows_platform()
