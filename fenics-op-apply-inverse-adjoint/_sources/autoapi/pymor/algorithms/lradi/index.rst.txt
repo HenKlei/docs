@@ -21,7 +21,7 @@ Functions
 
 
 
-.. function:: lyap_lrcf_solver_options(lradi_tol=1e-10, lradi_maxiter=500, lradi_shifts='projection_shifts', projection_shifts_init_maxiter=20, projection_shifts_init_seed=None)
+.. py:function:: lyap_lrcf_solver_options(lradi_tol=1e-10, lradi_maxiter=500, lradi_shifts='projection_shifts', projection_shifts_init_maxiter=20, projection_shifts_init_seed=None, projection_shifts_subspace_columns=6)
 
    Return available Lyapunov solvers with default options.
 
@@ -37,14 +37,15 @@ Functions
            See :func:`projection_shifts_init`.
        projection_shifts_init_seed
            See :func:`projection_shifts_init`.
+       projection_shifts_subspace_columns
+           See :func:`projection_shifts`.
            
    .. admonition:: Returns
 
        A dict of available solvers with default solver options.
            
 
-
-.. function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
+.. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Lyapunov equation.
 
@@ -76,12 +77,13 @@ Functions
            |VectorArray| from `A.source`.
            
 
+.. py:function:: projection_shifts_init(A, E, B, shift_options)
 
-.. function:: projection_shifts_init(A, E, B, shift_options)
+   Find starting projection shifts.
 
-   Find starting shift parameters for low-rank ADI iteration using
-   Galerkin projection on spaces spanned by LR-ADI iterates.
-
+   Uses Galerkin projection on the space spanned by the right-hand side if
+   it produces stable shifts.
+   Otherwise, uses a randomly generated subspace.
    See :cite:`PK16`, pp. 92-95.
 
    .. admonition:: Parameters
@@ -101,12 +103,11 @@ Functions
            A |NumPy array| containing a set of stable shift parameters.
            
 
+.. py:function:: projection_shifts(A, E, V, Z, prev_shifts, shift_options)
 
-.. function:: projection_shifts(A, E, V, prev_shifts)
+   Find further projection shifts.
 
-   Find further shift parameters for low-rank ADI iteration using
-   Galerkin projection on spaces spanned by LR-ADI iterates.
-
+   Uses Galerkin projection on spaces spanned by LR-ADI iterates.
    See :cite:`PK16`, pp. 92-95.
 
    .. admonition:: Parameters
@@ -117,14 +118,17 @@ Functions
            The |Operator| E from the corresponding Lyapunov equation.
        V
            A |VectorArray| representing the currently computed iterate.
+       Z
+           A |VectorArray| representing the current approximate solution.
        prev_shifts
            A |NumPy array| containing the set of all previously used shift
            parameters.
+       shift_options
+           The shift options to use (see :func:`lyap_lrcf_solver_options`).
            
    .. admonition:: Returns
 
        shifts
            A |NumPy array| containing a set of stable shift parameters.
            
-
 

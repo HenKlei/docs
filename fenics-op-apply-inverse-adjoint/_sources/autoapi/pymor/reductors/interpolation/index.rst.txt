@@ -21,8 +21,7 @@ Classes
 
 
 
-.. class:: GenericBHIReductor(fom, mu=None)
-
+.. py:class:: GenericBHIReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -59,33 +58,32 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. attribute:: _PGReductor
+   .. py:attribute:: _PGReductor
       
 
       
 
-   .. method:: _B_apply(self, s, V)
+   .. py:method:: _B_apply(self, s, V)
       :abstractmethod:
 
 
-   .. method:: _C_apply_adjoint(self, s, V)
+   .. py:method:: _C_apply_adjoint(self, s, V)
       :abstractmethod:
 
 
-   .. method:: _K_apply_inverse(self, s, V)
+   .. py:method:: _K_apply_inverse(self, s, V)
       :abstractmethod:
 
 
-   .. method:: _K_apply_inverse_adjoint(self, s, V)
+   .. py:method:: _K_apply_inverse_adjoint(self, s, V)
       :abstractmethod:
 
 
-   .. method:: _fom_assemble(self)
+   .. py:method:: _fom_assemble(self)
       :abstractmethod:
 
 
-   .. method:: reduce(self, sigma, b, c, projection='orth')
+   .. py:method:: reduce(self, sigma, b, c, projection='orth')
 
       Bitangential Hermite interpolation.
 
@@ -114,15 +112,13 @@ Classes
               Reduced-order model.
               
 
-
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. class:: LTIBHIReductor(fom, mu=None)
-
+.. py:class:: LTIBHIReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericBHIReductor`
 
@@ -135,28 +131,27 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. attribute:: _PGReductor
+   .. py:attribute:: _PGReductor
       
 
       
 
-   .. method:: _B_apply(self, s, V)
+   .. py:method:: _B_apply(self, s, V)
 
 
-   .. method:: _C_apply_adjoint(self, s, V)
+   .. py:method:: _C_apply_adjoint(self, s, V)
 
 
-   .. method:: _K_apply_inverse(self, s, V)
+   .. py:method:: _K_apply_inverse(self, s, V)
 
 
-   .. method:: _K_apply_inverse_adjoint(self, s, V)
+   .. py:method:: _K_apply_inverse_adjoint(self, s, V)
 
 
-   .. method:: _fom_assemble(self)
+   .. py:method:: _fom_assemble(self)
 
 
-   .. method:: reduce(self, sigma, b, c, projection='orth')
+   .. py:method:: reduce(self, sigma, b, c, projection='orth')
 
       Bitangential Hermite interpolation.
 
@@ -189,9 +184,7 @@ Classes
               
 
 
-
-.. class:: SOBHIReductor(fom, mu=None)
-
+.. py:class:: SOBHIReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericBHIReductor`
 
@@ -204,30 +197,28 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. attribute:: _PGReductor
+   .. py:attribute:: _PGReductor
       
 
       
 
-   .. method:: _B_apply(self, s, V)
+   .. py:method:: _B_apply(self, s, V)
 
 
-   .. method:: _C_apply_adjoint(self, s, V)
+   .. py:method:: _C_apply_adjoint(self, s, V)
 
 
-   .. method:: _K_apply_inverse(self, s, V)
+   .. py:method:: _K_apply_inverse(self, s, V)
 
 
-   .. method:: _K_apply_inverse_adjoint(self, s, V)
+   .. py:method:: _K_apply_inverse_adjoint(self, s, V)
 
 
-   .. method:: _fom_assemble(self)
+   .. py:method:: _fom_assemble(self)
 
 
 
-.. class:: DelayBHIReductor(fom, mu=None)
-
+.. py:class:: DelayBHIReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericBHIReductor`
 
@@ -240,30 +231,28 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. attribute:: _PGReductor
+   .. py:attribute:: _PGReductor
       
 
       
 
-   .. method:: _B_apply(self, s, V)
+   .. py:method:: _B_apply(self, s, V)
 
 
-   .. method:: _C_apply_adjoint(self, s, V)
+   .. py:method:: _C_apply_adjoint(self, s, V)
 
 
-   .. method:: _K_apply_inverse(self, s, V)
+   .. py:method:: _K_apply_inverse(self, s, V)
 
 
-   .. method:: _K_apply_inverse_adjoint(self, s, V)
+   .. py:method:: _K_apply_inverse_adjoint(self, s, V)
 
 
-   .. method:: _fom_assemble(self)
+   .. py:method:: _fom_assemble(self)
 
 
 
-.. class:: TFBHIReductor(fom, mu=None)
-
+.. py:class:: TFBHIReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -278,8 +267,7 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. method:: reduce(self, sigma, b, c)
+   .. py:method:: reduce(self, sigma, b, c)
 
       Realization-independent tangential Hermite interpolation.
 
@@ -302,8 +290,7 @@ Classes
               function of `fom`.
               
 
-
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 

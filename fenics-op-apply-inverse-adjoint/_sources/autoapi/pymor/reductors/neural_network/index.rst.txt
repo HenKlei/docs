@@ -3,6 +3,16 @@
 
 .. py:module:: pymor.reductors.neural_network
 
+.. autoapi-nested-parse::
+
+   Remark on the documentation:
+
+   Due to an issue in autoapi, the classes `NeuralNetworkStatefreeOutputReductor`,
+   `NeuralNetworkInstationaryReductor`, `NeuralNetworkInstationaryStatefreeOutputReductor`,
+   `EarlyStoppingScheduler` and `CustomDataset` do not appear in the documentation,
+   see https://github.com/pymor/pymor/issues/1343.
+
+
 
 Module Contents
 ---------------
@@ -17,8 +27,7 @@ Classes
 
 
 
-.. class:: NeuralNetworkReductor(fom, training_set, validation_set=None, validation_ratio=0.1, basis_size=None, rtol=0.0, atol=0.0, l2_err=0.0, pod_params=None, ann_mse='like_basis')
-
+.. py:class:: NeuralNetworkReductor(fom, training_set, validation_set=None, validation_ratio=0.1, basis_size=None, rtol=0.0, atol=0.0, l2_err=0.0, pod_params=None, ann_mse='like_basis')
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -65,8 +74,7 @@ Classes
            Training is interrupted if a neural network that undercuts the
            error tolerance is found.
            
-
-   .. method:: reduce(self, hidden_layers='[(N+P)*3, (N+P)*3]', activation_function=torch.tanh, optimizer=optim.LBFGS, epochs=1000, batch_size=20, learning_rate=1.0, restarts=10, seed=0)
+   .. py:method:: reduce(self, hidden_layers='[(N+P)*3, (N+P)*3]', activation_function=torch.tanh, optimizer=optim.LBFGS, epochs=1000, batch_size=20, learning_rate=1.0, restarts=10, seed=0)
 
       Reduce by training artificial neural networks.
 
@@ -75,7 +83,8 @@ Classes
           hidden_layers
               Number of neurons in the hidden layers. Can either be fixed or
               a Python expression string depending on the reduced basis size
-              `N` and the total dimension of the |Parameters| `P`.
+              respectively output dimension `N` and the total dimension of
+              the |Parameters| `P`.
           activation_function
               Activation function to use between the hidden layers.
           optimizer
@@ -102,28 +111,37 @@ Classes
               Reduced-order |NeuralNetworkModel|.
               
 
-
-   .. method:: _compute_layer_sizes(self, hidden_layers)
-
-      Compute the number of neurons in the layers of the neural network.
-
-
-   .. method:: _build_rom(self)
-
-      Construct the reduced order model.
-
-
-   .. method:: build_basis(self)
+   .. py:method:: compute_training_data(self)
 
       Compute a reduced basis using proper orthogonal decomposition.
 
 
-   .. method:: _compute_sample(self, mu, u, reduced_basis)
+   .. py:method:: _compute_sample(self, mu, u=None)
 
       Transform parameter and corresponding solution to |NumPy arrays|.
 
 
-   .. method:: reconstruct(self, u)
+   .. py:method:: _compute_layer_sizes(self, hidden_layers)
+
+      Compute the number of neurons in the layers of the neural network.
+
+
+   .. py:method:: _compute_target_loss(self)
+
+      Compute target loss depending on value of `ann_mse`.
+
+
+   .. py:method:: _check_tolerances(self)
+
+      Check if trained neural network is sufficient to guarantee certain error bounds.
+
+
+   .. py:method:: _build_rom(self)
+
+      Construct the reduced order model.
+
+
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 

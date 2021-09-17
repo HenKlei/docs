@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: StationaryProblem(domain, rhs=None, diffusion=None, advection=None, nonlinear_advection=None, nonlinear_advection_derivative=None, reaction=None, nonlinear_reaction=None, nonlinear_reaction_derivative=None, dirichlet_data=None, neumann_data=None, robin_data=None, outputs=None, parameter_ranges=None, name=None)
-
+.. py:class:: StationaryProblem(domain, rhs=None, diffusion=None, advection=None, nonlinear_advection=None, nonlinear_advection_derivative=None, reaction=None, nonlinear_reaction=None, nonlinear_reaction_derivative=None, dirichlet_data=None, neumann_data=None, robin_data=None, outputs=None, parameter_ranges=None, name=None)
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -102,7 +101,7 @@ Classes
 
       
 
-   .. method:: parameter_space(self)
+   .. py:method:: parameter_space(self)
       :property:
 
 

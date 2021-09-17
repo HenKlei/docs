@@ -15,9 +15,13 @@ Functions
   :nosignatures:
 
    pymor.analyticalproblems.text.text_problem
+   pymor.analyticalproblems.text._get_font
 
 
 
-.. function:: text_problem(text='pyMOR', font_name=None)
+.. py:function:: text_problem(text='pyMOR', font_name=None)
+
+
+.. py:function:: _get_font(font_name)
 
 

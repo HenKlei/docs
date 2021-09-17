@@ -26,7 +26,7 @@ Classes
 
 
 
-.. class:: Vector
+.. py:class:: Vector
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -36,80 +36,80 @@ Classes
    vector `list` managed by |ListVectorArray|. All interface methods
    have a direct counterpart in the |VectorArray| interface.
 
-   .. attribute:: __radd__
+   .. py:attribute:: __radd__
       
 
       
 
-   .. method:: copy(self, deep=False)
+   .. py:method:: copy(self, deep=False)
       :abstractmethod:
 
 
-   .. method:: scal(self, alpha)
+   .. py:method:: scal(self, alpha)
       :abstractmethod:
 
 
-   .. method:: axpy(self, alpha, x)
+   .. py:method:: axpy(self, alpha, x)
       :abstractmethod:
 
 
-   .. method:: inner(self, other)
+   .. py:method:: inner(self, other)
       :abstractmethod:
 
 
-   .. method:: norm(self)
+   .. py:method:: norm(self)
       :abstractmethod:
 
 
-   .. method:: norm2(self)
+   .. py:method:: norm2(self)
       :abstractmethod:
 
 
-   .. method:: sup_norm(self)
+   .. py:method:: sup_norm(self)
 
 
-   .. method:: dofs(self, dof_indices)
+   .. py:method:: dofs(self, dof_indices)
       :abstractmethod:
 
 
-   .. method:: amax(self)
+   .. py:method:: amax(self)
       :abstractmethod:
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __iadd__(self, other)
+   .. py:method:: __iadd__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __isub__(self, other)
+   .. py:method:: __isub__(self, other)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __imul__(self, other)
+   .. py:method:: __imul__(self, other)
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
-   .. method:: real(self)
+   .. py:method:: real(self)
       :property:
 
 
-   .. method:: imag(self)
+   .. py:method:: imag(self)
       :property:
 
 
-   .. method:: conj(self)
+   .. py:method:: conj(self)
 
 
 
-.. class:: CopyOnWriteVector
+.. py:class:: CopyOnWriteVector
 
    Bases: :py:obj:`Vector`
 
@@ -119,40 +119,39 @@ Classes
    vector `list` managed by |ListVectorArray|. All interface methods
    have a direct counterpart in the |VectorArray| interface.
 
-   .. method:: from_instance(cls, instance)
+   .. py:method:: from_instance(cls, instance)
       :classmethod:
 
 
-   .. method:: _copy_data(self)
+   .. py:method:: _copy_data(self)
       :abstractmethod:
 
 
-   .. method:: _scal(self, alpha)
+   .. py:method:: _scal(self, alpha)
       :abstractmethod:
 
 
-   .. method:: _axpy(self, alpha, x)
+   .. py:method:: _axpy(self, alpha, x)
       :abstractmethod:
 
 
-   .. method:: copy(self, deep=False)
+   .. py:method:: copy(self, deep=False)
 
 
-   .. method:: scal(self, alpha)
+   .. py:method:: scal(self, alpha)
 
 
-   .. method:: axpy(self, alpha, x)
+   .. py:method:: axpy(self, alpha, x)
 
 
-   .. method:: __del__(self)
+   .. py:method:: __del__(self)
 
 
-   .. method:: _copy_data_if_needed(self)
+   .. py:method:: _copy_data_if_needed(self)
 
 
 
-.. class:: ComplexifiedVector(real_part, imag_part)
-
+.. py:class:: ComplexifiedVector(real_part, imag_part)
 
    Bases: :py:obj:`Vector`
 
@@ -162,104 +161,102 @@ Classes
    vector `list` managed by |ListVectorArray|. All interface methods
    have a direct counterpart in the |VectorArray| interface.
 
-   .. method:: copy(self, deep=False)
+   .. py:method:: copy(self, deep=False)
 
 
-   .. method:: scal(self, alpha)
+   .. py:method:: scal(self, alpha)
 
 
-   .. method:: axpy(self, alpha, x)
+   .. py:method:: axpy(self, alpha, x)
 
 
-   .. method:: inner(self, other)
+   .. py:method:: inner(self, other)
 
 
-   .. method:: norm(self)
+   .. py:method:: norm(self)
 
 
-   .. method:: norm2(self)
+   .. py:method:: norm2(self)
 
 
-   .. method:: sup_norm(self)
+   .. py:method:: sup_norm(self)
 
 
-   .. method:: dofs(self, dof_indices)
+   .. py:method:: dofs(self, dof_indices)
 
 
-   .. method:: amax(self)
+   .. py:method:: amax(self)
 
 
-   .. method:: to_numpy(self, ensure_copy=False)
+   .. py:method:: to_numpy(self, ensure_copy=False)
 
 
-   .. method:: real(self)
+   .. py:method:: real(self)
       :property:
 
 
-   .. method:: imag(self)
+   .. py:method:: imag(self)
       :property:
 
 
-   .. method:: conj(self)
+   .. py:method:: conj(self)
 
 
 
-.. class:: NumpyVector(array)
-
+.. py:class:: NumpyVector(array)
 
    Bases: :py:obj:`CopyOnWriteVector`
 
    Vector stored in a NumPy 1D-array.
 
-   .. method:: from_instance(cls, instance)
+   .. py:method:: from_instance(cls, instance)
       :classmethod:
 
 
-   .. method:: to_numpy(self, ensure_copy=False)
+   .. py:method:: to_numpy(self, ensure_copy=False)
 
 
-   .. method:: dim(self)
+   .. py:method:: dim(self)
       :property:
 
 
-   .. method:: _copy_data(self)
+   .. py:method:: _copy_data(self)
 
 
-   .. method:: _scal(self, alpha)
+   .. py:method:: _scal(self, alpha)
 
 
-   .. method:: _axpy(self, alpha, x)
+   .. py:method:: _axpy(self, alpha, x)
 
 
-   .. method:: inner(self, other)
+   .. py:method:: inner(self, other)
 
 
-   .. method:: norm(self)
+   .. py:method:: norm(self)
 
 
-   .. method:: norm2(self)
+   .. py:method:: norm2(self)
 
 
-   .. method:: dofs(self, dof_indices)
+   .. py:method:: dofs(self, dof_indices)
 
 
-   .. method:: amax(self)
+   .. py:method:: amax(self)
 
 
-   .. method:: real(self)
+   .. py:method:: real(self)
       :property:
 
 
-   .. method:: imag(self)
+   .. py:method:: imag(self)
       :property:
 
 
-   .. method:: conj(self)
+   .. py:method:: conj(self)
 
 
 
-.. class:: ListVectorArray(vectors, space)
-
+.. py:class:: ListVectorArray(vectors, space)
 
    Bases: :py:obj:`pymor.vectorarrays.interface.VectorArray`
 
@@ -277,12 +274,12 @@ Classes
    or :class:`~pymor.bindings.fenics.FenicsVector`,
    :class:`~pymor.bindings.fenics.FenicsVectorSpace`.
 
-   .. attribute:: _NONE
+   .. py:attribute:: _NONE
       :annotation: = []
 
       
 
-   .. method:: to_numpy(self, ensure_copy=False)
+   .. py:method:: to_numpy(self, ensure_copy=False)
 
       Return (len(self), self.dim) NumPy Array with the data stored in the array.
 
@@ -293,29 +290,28 @@ Classes
               |VectorArray|. If `True` always a copy of the array data is made.
               
 
-
-   .. method:: _data(self)
+   .. py:method:: _data(self)
       :property:
 
       Return list of NumPy Array views on vector data for hacking / interactive use.
 
 
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
 
       The number of vectors in the array.
 
 
-   .. method:: __getitem__(self, ind)
+   .. py:method:: __getitem__(self, ind)
 
       Return a |VectorArray| view onto a subset of the vectors in the array.
 
 
-   .. method:: __delitem__(self, ind)
+   .. py:method:: __delitem__(self, ind)
 
       Remove vectors from the array.
 
 
-   .. method:: append(self, other, remove_from_other=False)
+   .. py:method:: append(self, other, remove_from_other=False)
 
       Append vectors to the array.
 
@@ -329,8 +325,7 @@ Classes
               unnecessary copies of the involved vectors.
               
 
-
-   .. method:: copy(self, deep=False)
+   .. py:method:: copy(self, deep=False)
 
       Returns a copy of the array.
 
@@ -353,8 +348,7 @@ Classes
           A copy of the |VectorArray|.
               
 
-
-   .. method:: scal(self, alpha)
+   .. py:method:: scal(self, alpha)
 
       BLAS SCAL operation (in-place scalar multiplication).
 
@@ -373,8 +367,7 @@ Classes
               with which the vectors in `self` are multiplied.
               
 
-
-   .. method:: axpy(self, alpha, x)
+   .. py:method:: axpy(self, alpha, x)
 
       BLAS AXPY operation.
 
@@ -397,8 +390,7 @@ Classes
               A |VectorArray| containing the x-summands.
               
 
-
-   .. method:: inner(self, other, product=None)
+   .. py:method:: inner(self, other, product=None)
 
       Returns the inner products between |VectorArray| elements.
 
@@ -416,7 +408,7 @@ Classes
 
       If a `product` |Operator| is specified, this |Operator| is
       used to compute the inner products using
-      :meth:`~pymor.operators.inerface.Operator.apply2`, i.e.
+      :meth:`~pymor.operators.interface.Operator.apply2`, i.e.
       `U.inner(V, product)` is equivalent to::
 
           product.apply2(U, V)
@@ -448,8 +440,7 @@ Classes
               result[i, j] = ( self[i], other[j] ).
               
 
-
-   .. method:: pairwise_inner(self, other, product=None)
+   .. py:method:: pairwise_inner(self, other, product=None)
 
       Returns the pairwise inner products between |VectorArray| elements.
 
@@ -467,7 +458,7 @@ Classes
 
       If a `product` |Operator| is specified, this |Operator| is
       used to compute the inner products using
-      :meth:`~pymor.operators.inerface.Operator.pairwise_apply2`, i.e.
+      :meth:`~pymor.operators.interface.Operator.pairwise_apply2`, i.e.
       `U.inner(V, product)` is equivalent to::
 
           product.pairwise_apply2(U, V)
@@ -501,13 +492,12 @@ Classes
               
               
 
-
-   .. method:: gramian(self, product=None)
+   .. py:method:: gramian(self, product=None)
 
       Shorthand for `self.inner(self, product)`.
 
 
-   .. method:: lincomb(self, coefficients)
+   .. py:method:: lincomb(self, coefficients)
 
       Returns linear combinations of the vectors contained in the array.
 
@@ -530,18 +520,17 @@ Classes
               result[0] = ∑ self[j] * coefficients[j].
               
 
-
-   .. method:: _norm(self)
+   .. py:method:: _norm(self)
 
       Implementation of :meth:`norm` for the case that no `product` is given.
 
 
-   .. method:: _norm2(self)
+   .. py:method:: _norm2(self)
 
       Implementation of :meth:`norm2` for the case that no `product` is given.
 
 
-   .. method:: sup_norm(self)
+   .. py:method:: sup_norm(self)
 
       The l-infinity-norms of the vectors contained in the array.
 
@@ -551,8 +540,7 @@ Classes
           of `self[i]`.
               
 
-
-   .. method:: dofs(self, dof_indices)
+   .. py:method:: dofs(self, dof_indices)
 
       Extract DOFs of the vectors contained in the array.
 
@@ -567,8 +555,7 @@ Classes
           DOF of the `i`-th vector of the array.
               
 
-
-   .. method:: amax(self)
+   .. py:method:: amax(self)
 
       The maximum absolute value of the DOFs contained in the array.
 
@@ -582,74 +569,72 @@ Classes
               DOFs.
               
 
-
-   .. method:: real(self)
+   .. py:method:: real(self)
       :property:
 
       Real part.
 
 
-   .. method:: imag(self)
+   .. py:method:: imag(self)
       :property:
 
       Imaginary part.
 
 
-   .. method:: conj(self)
+   .. py:method:: conj(self)
 
       Complex conjugation.
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
 
-.. class:: ListVectorSpace
-
+.. py:class:: ListVectorSpace
 
    Bases: :py:obj:`pymor.vectorarrays.interface.VectorSpace`
 
    |VectorSpace| of |ListVectorArrays|.
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       
 
       
 
-   .. method:: zero_vector(self)
+   .. py:method:: zero_vector(self)
       :abstractmethod:
 
 
-   .. method:: ones_vector(self)
+   .. py:method:: ones_vector(self)
 
 
-   .. method:: full_vector(self, value)
+   .. py:method:: full_vector(self, value)
 
 
-   .. method:: random_vector(self, distribution, random_state, **kwargs)
+   .. py:method:: random_vector(self, distribution, random_state, **kwargs)
 
 
-   .. method:: make_vector(self, obj)
+   .. py:method:: make_vector(self, obj)
       :abstractmethod:
 
 
-   .. method:: vector_from_numpy(self, data, ensure_copy=False)
+   .. py:method:: vector_from_numpy(self, data, ensure_copy=False)
       :abstractmethod:
 
 
-   .. method:: space_from_vector_obj(cls, vec, id)
+   .. py:method:: space_from_vector_obj(cls, vec, id)
       :classmethod:
       :abstractmethod:
 
 
-   .. method:: space_from_dim(cls, dim, id)
+   .. py:method:: space_from_dim(cls, dim, id)
       :classmethod:
       :abstractmethod:
 
 
-   .. method:: zeros(self, count=1, reserve=0)
+   .. py:method:: zeros(self, count=1, reserve=0)
 
       Create a |VectorArray| of null vectors
 
@@ -665,8 +650,7 @@ Classes
           A |VectorArray| containing `count` vectors with each component zero.
               
 
-
-   .. method:: ones(self, count=1, reserve=0)
+   .. py:method:: ones(self, count=1, reserve=0)
 
       Create a |VectorArray| of vectors with all DOFs set to one.
 
@@ -684,8 +668,7 @@ Classes
           A |VectorArray| containing `count` vectors with each DOF set to one.
               
 
-
-   .. method:: full(self, value, count=1, reserve=0)
+   .. py:method:: full(self, value, count=1, reserve=0)
 
       Create a |VectorArray| of vectors with all DOFs set to the same value.
 
@@ -703,8 +686,7 @@ Classes
           A |VectorArray| containing `count` vectors with each DOF set to `value`.
               
 
-
-   .. method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
+   .. py:method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
 
       Create a |VectorArray| of vectors with random entries.
 
@@ -743,8 +725,7 @@ Classes
               Hint for the backend to which length the array will grow.
               
 
-
-   .. method:: make_array(cls, obj, id=None)
+   .. py:method:: make_array(cls, obj, id=None)
 
       Create a |VectorArray| from raw data.
 
@@ -757,7 +738,7 @@ Classes
       solver backend.
 
 
-   .. method:: from_numpy(cls, data, id=None, ensure_copy=False)
+   .. py:method:: from_numpy(cls, data, id=None, ensure_copy=False)
 
       Create a |VectorArray| from a |NumPy array|
 
@@ -779,91 +760,87 @@ Classes
               
 
 
-
-.. class:: ComplexifiedListVectorSpace
-
+.. py:class:: ComplexifiedListVectorSpace
 
    Bases: :py:obj:`ListVectorSpace`
 
    |VectorSpace| of |ListVectorArrays|.
 
-   .. attribute:: complexified_vector_type
+   .. py:attribute:: complexified_vector_type
       
 
       
 
-   .. method:: real_zero_vector(self)
+   .. py:method:: real_zero_vector(self)
       :abstractmethod:
 
 
-   .. method:: zero_vector(self)
+   .. py:method:: zero_vector(self)
 
 
-   .. method:: real_full_vector(self, value)
+   .. py:method:: real_full_vector(self, value)
 
 
-   .. method:: full_vector(self, value)
+   .. py:method:: full_vector(self, value)
 
 
-   .. method:: real_random_vector(self, distribution, random_state, **kwargs)
+   .. py:method:: real_random_vector(self, distribution, random_state, **kwargs)
 
 
-   .. method:: random_vector(self, distribution, random_state, **kwargs)
+   .. py:method:: random_vector(self, distribution, random_state, **kwargs)
 
 
-   .. method:: real_make_vector(self, obj)
+   .. py:method:: real_make_vector(self, obj)
       :abstractmethod:
 
 
-   .. method:: make_vector(self, obj)
+   .. py:method:: make_vector(self, obj)
 
 
-   .. method:: real_vector_from_numpy(self, data, ensure_copy=False)
+   .. py:method:: real_vector_from_numpy(self, data, ensure_copy=False)
       :abstractmethod:
 
 
-   .. method:: vector_from_numpy(self, data, ensure_copy=False)
+   .. py:method:: vector_from_numpy(self, data, ensure_copy=False)
 
 
 
-.. class:: NumpyListVectorSpace(dim, id=None)
-
+.. py:class:: NumpyListVectorSpace(dim, id=None)
 
    Bases: :py:obj:`ListVectorSpace`
 
    |VectorSpace| of |ListVectorArrays|.
 
-   .. method:: __eq__(self, other)
+   .. py:method:: __eq__(self, other)
 
       Return self==value.
 
 
-   .. method:: space_from_vector_obj(cls, vec, id)
+   .. py:method:: space_from_vector_obj(cls, vec, id)
       :classmethod:
 
 
-   .. method:: space_from_dim(cls, dim, id)
+   .. py:method:: space_from_dim(cls, dim, id)
       :classmethod:
 
 
-   .. method:: zero_vector(self)
+   .. py:method:: zero_vector(self)
 
 
-   .. method:: ones_vector(self)
+   .. py:method:: ones_vector(self)
 
 
-   .. method:: full_vector(self, value)
+   .. py:method:: full_vector(self, value)
 
 
-   .. method:: make_vector(self, obj)
+   .. py:method:: make_vector(self, obj)
 
 
-   .. method:: vector_from_numpy(self, data, ensure_copy=False)
+   .. py:method:: vector_from_numpy(self, data, ensure_copy=False)
 
 
 
-.. class:: ListVectorArrayView(base, ind)
-
+.. py:class:: ListVectorArrayView(base, ind)
 
    Bases: :py:obj:`ListVectorArray`
 
@@ -881,26 +858,26 @@ Classes
    or :class:`~pymor.bindings.fenics.FenicsVector`,
    :class:`~pymor.bindings.fenics.FenicsVectorSpace`.
 
-   .. attribute:: is_view
+   .. py:attribute:: is_view
       :annotation: = True
 
       
 
-   .. method:: space(self)
+   .. py:method:: space(self)
       :property:
 
 
-   .. method:: __getitem__(self, ind)
+   .. py:method:: __getitem__(self, ind)
 
       Return a |VectorArray| view onto a subset of the vectors in the array.
 
 
-   .. method:: __delitem__(self, ind)
+   .. py:method:: __delitem__(self, ind)
 
       Remove vectors from the array.
 
 
-   .. method:: append(self, other, remove_from_other=False)
+   .. py:method:: append(self, other, remove_from_other=False)
 
       Append vectors to the array.
 
@@ -914,8 +891,7 @@ Classes
               unnecessary copies of the involved vectors.
               
 
-
-   .. method:: scal(self, alpha)
+   .. py:method:: scal(self, alpha)
 
       BLAS SCAL operation (in-place scalar multiplication).
 
@@ -934,8 +910,7 @@ Classes
               with which the vectors in `self` are multiplied.
               
 
-
-   .. method:: axpy(self, alpha, x)
+   .. py:method:: axpy(self, alpha, x)
 
       BLAS AXPY operation.
 
@@ -959,17 +934,15 @@ Classes
               
 
 
+.. py:class:: ListVectorArrayNumpyView(array)
 
-.. class:: ListVectorArrayNumpyView(array)
-
-
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
 
 
-   .. method:: __getitem__(self, i)
+   .. py:method:: __getitem__(self, i)
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 

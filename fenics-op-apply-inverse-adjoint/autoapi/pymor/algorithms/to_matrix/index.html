@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.algorithms.to_matrix &#8212; pyMOR v2021.1rc0+414.g1a131046 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.algorithms.to_matrix &#8212; pyMOR v2021.1rc0+602.g2f75b9c0 Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
@@ -96,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+414.g1a131046 Manual logo">
+                   alt="pyMOR v2021.1rc0+602.g2f75b9c0 Manual logo">
           
         </a>
       </div>
@@ -119,7 +115,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+414.g1a131046 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+602.g2f75b9c0 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -181,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+414.g1a131046 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual">Documentation</a>
   </label>
   
 
@@ -280,6 +276,13 @@
     
     
       <a href="../basic/index.html" class="md-nav__link">basic</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../bernoulli/index.html" class="md-nav__link">bernoulli</a>
       
     
     </li>
@@ -609,11 +612,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.algorithms.to_matrix">
 <span id="pymor-algorithms-to-matrix"></span><h1 id="autoapi-pymor-algorithms-to-matrix-index--page-root"><a class="reference internal" href="#autoapi-pymor-algorithms-to-matrix-index--page-root" title="pymor.algorithms.to_matrix"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms.to_matrix</span></code></a><a class="headerlink" href="#autoapi-pymor-algorithms-to-matrix-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -626,8 +629,8 @@
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -641,8 +644,8 @@
 </tbody>
 </table>
 <dl class="py function">
-<dt id="pymor.algorithms.to_matrix.to_matrix">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.to_matrix.</span></code><code class="sig-name descname"><span class="pre">to_matrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.to_matrix" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.to_matrix">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.to_matrix.</span></span><span class="sig-name descname"><span class="pre">to_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.to_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> to a matrix.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -650,7 +653,7 @@
 <dt>op</dt><dd><p>The <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> to convert.</p>
 </dd>
 <dt>format</dt><dd><p>Format of the resulting matrix: <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> if ‘dense’,
-otherwise the appropriate <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix" title="(in SciPy v1.7.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">spmatrix</span></code></a>.
+otherwise the appropriate <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/reference/generated/scipy.sparse.spmatrix.html#scipy.sparse.spmatrix" title="(in SciPy v1.7.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">spmatrix</span></code></a>.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a choice between dense and sparse format is
 automatically made.</p>
 </dd>
@@ -667,8 +670,8 @@ automatically made.</p>
 </div>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.algorithms.to_matrix.</span></code><code class="sig-name descname"><span class="pre">ToMatrixRules</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.to_matrix.</span></span><span class="sig-name descname"><span class="pre">ToMatrixRules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../rules/index.html#pymor.algorithms.rules.RuleTable" title="pymor.algorithms.rules.RuleTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.algorithms.rules.RuleTable</span></code></a></p>
 <p>Define algorithm by a table of match conditions and corresponding actions.</p>
 <p><a class="reference internal" href="../rules/index.html#pymor.algorithms.rules.RuleTable" title="pymor.algorithms.rules.RuleTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuleTable</span></code></a> manages a table of <a class="reference internal" href="../rules/index.html#pymor.algorithms.rules.rule" title="pymor.algorithms.rules.rule"><code class="xref py py-class docutils literal notranslate"><span class="pre">rules</span></code></a>, stored in the <code class="docutils literal notranslate"><span class="pre">rules</span></code>
@@ -687,58 +690,58 @@ which the defined <a class="reference internal" href="../rules/index.html#pymor.
 </dl>
 </div>
 <dl class="py attribute">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.rules">
-<code class="sig-name descname"><span class="pre">rules</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.rules" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.rules">
+<span class="sig-name descname"><span class="pre">rules</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.rules" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">list</span></code> of all defined <a class="reference internal" href="../rules/index.html#pymor.algorithms.rules.rule" title="pymor.algorithms.rules.rule"><code class="xref py py-class docutils literal notranslate"><span class="pre">rules</span></code></a>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_NumpyMatrixOperator">
-<code class="sig-name descname"><span class="pre">action_NumpyMatrixOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_NumpyMatrixOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_NumpyMatrixOperator">
+<span class="sig-name descname"><span class="pre">action_NumpyMatrixOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_NumpyMatrixOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_BlockOperator">
-<code class="sig-name descname"><span class="pre">action_BlockOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_BlockOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_BlockOperator">
+<span class="sig-name descname"><span class="pre">action_BlockOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_BlockOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_AdjointOperator">
-<code class="sig-name descname"><span class="pre">action_AdjointOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_AdjointOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_AdjointOperator">
+<span class="sig-name descname"><span class="pre">action_AdjointOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_AdjointOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_ComponentProjectionOperator">
-<code class="sig-name descname"><span class="pre">action_ComponentProjectionOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_ComponentProjectionOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_ComponentProjectionOperator">
+<span class="sig-name descname"><span class="pre">action_ComponentProjectionOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_ComponentProjectionOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_ConcatenationOperator">
-<code class="sig-name descname"><span class="pre">action_ConcatenationOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_ConcatenationOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_ConcatenationOperator">
+<span class="sig-name descname"><span class="pre">action_ConcatenationOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_ConcatenationOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_IdentityOperator">
-<code class="sig-name descname"><span class="pre">action_IdentityOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_IdentityOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_IdentityOperator">
+<span class="sig-name descname"><span class="pre">action_IdentityOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_IdentityOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_LincombOperator">
-<code class="sig-name descname"><span class="pre">action_LincombOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_LincombOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_LincombOperator">
+<span class="sig-name descname"><span class="pre">action_LincombOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_LincombOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankOperator">
-<code class="sig-name descname"><span class="pre">action_LowRankOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankOperator">
+<span class="sig-name descname"><span class="pre">action_LowRankOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankUpdatedOperator">
-<code class="sig-name descname"><span class="pre">action_LowRankUpdatedOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankUpdatedOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankUpdatedOperator">
+<span class="sig-name descname"><span class="pre">action_LowRankUpdatedOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_LowRankUpdatedOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_VectorArrayOperator">
-<code class="sig-name descname"><span class="pre">action_VectorArrayOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_VectorArrayOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_VectorArrayOperator">
+<span class="sig-name descname"><span class="pre">action_VectorArrayOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_VectorArrayOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.to_matrix.ToMatrixRules.action_ZeroOperator">
-<code class="sig-name descname"><span class="pre">action_ZeroOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_ZeroOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.to_matrix.ToMatrixRules.action_ZeroOperator">
+<span class="sig-name descname"><span class="pre">action_ZeroOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/to_matrix.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.to_matrix.ToMatrixRules.action_ZeroOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -787,10 +790,10 @@ which the defined <a class="reference internal" href="../rules/index.html#pymor.
               
           </div>
             Last updated on
-              Jul 26, 2021.
+              Sep 17, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

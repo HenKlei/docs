@@ -27,7 +27,7 @@ Attributes
    pymor.parallel.default._pool
 
 
-.. function:: new_parallel_pool(ipython_num_engines=None, ipython_profile=None, allow_mpi=True)
+.. py:function:: new_parallel_pool(ipython_num_engines=None, ipython_profile=None, allow_mpi=True)
 
    Creates a new default |WorkerPool|.
 
@@ -43,11 +43,11 @@ Attributes
    is returned.
 
 
-.. data:: _pool
+.. py:data:: _pool
    
 
    
 
-.. function:: _cleanup()
+.. py:function:: _cleanup()
 
 

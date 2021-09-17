@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: armijo(f, starting_point, direction, grad=None, initial_value=None, alpha_init=1.0, tau=0.5, beta=0.0001, maxiter=10)
+.. py:function:: armijo(f, starting_point, direction, grad=None, initial_value=None, alpha_init=1.0, tau=0.5, beta=0.0001, maxiter=10)
 
    Armijo line search algorithm.
 
@@ -52,5 +52,4 @@ Functions
        alpha
            Step size computed according to the Armijo condition.
            
-
 

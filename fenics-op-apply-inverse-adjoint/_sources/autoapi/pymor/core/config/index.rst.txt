@@ -44,38 +44,38 @@ Attributes
    pymor.core.config.config
 
 
-.. function:: _can_import(module)
+.. py:function:: _can_import(module)
 
 
-.. function:: _get_fenics_version()
+.. py:function:: _get_fenics_version()
 
 
-.. function:: is_windows_platform()
+.. py:function:: is_windows_platform()
 
 
-.. function:: is_macos_platform()
+.. py:function:: is_macos_platform()
 
 
-.. function:: _get_matplotib_version()
+.. py:function:: _get_matplotib_version()
 
 
-.. function:: _get_ipython_version()
+.. py:function:: _get_ipython_version()
 
 
-.. function:: _get_slycot_version()
+.. py:function:: _get_slycot_version()
 
 
-.. function:: _get_qt_version()
+.. py:function:: _get_qt_version()
 
 
-.. function:: is_jupyter()
+.. py:function:: is_jupyter()
 
    Check if we believe to be running in a Jupyter Notebook or Lab.
 
    This method is not foolproof and might fail with any given Jupyter release.
 
 
-.. function:: is_nbconvert()
+.. py:function:: is_nbconvert()
 
    Check if a notebook is executed with `nbconvert`.
 
@@ -83,33 +83,32 @@ Attributes
    is executed with `nbconvert` to disable async loading.
 
 
-.. data:: _PACKAGES
+.. py:data:: _PACKAGES
    
 
    
 
-.. class:: Config
+.. py:class:: Config
 
-
-   .. method:: version(self)
+   .. py:method:: version(self)
       :property:
 
 
-   .. method:: __getattr__(self, name)
+   .. py:method:: __getattr__(self, name)
 
 
-   .. method:: __dir__(self, old=False)
+   .. py:method:: __dir__(self, old=False)
 
       Default dir() implementation.
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
 
-.. data:: config
+.. py:data:: config
    
 
    

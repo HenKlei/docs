@@ -26,7 +26,7 @@ Functions
 
 
 
-.. function:: preassemble(obj)
+.. py:function:: preassemble(obj)
 
    Preassemble non-parametric operators.
 
@@ -35,8 +35,7 @@ Functions
    replaces children of `obj`.
 
 
-.. class:: PreAssembleRules
-
+.. py:class:: PreAssembleRules
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
 
@@ -62,19 +61,19 @@ Functions
       `list` of all defined |rules|.
       
 
-   .. method:: action_recurse(self, op)
+   .. py:method:: action_recurse(self, op)
 
 
-   .. method:: action_recurse_and_assemble(self, op)
+   .. py:method:: action_recurse_and_assemble(self, op)
 
 
-   .. method:: action_AdjointOperator(self, op)
+   .. py:method:: action_AdjointOperator(self, op)
 
 
-   .. method:: action_assemble(self, op)
+   .. py:method:: action_assemble(self, op)
 
 
-   .. method:: action_identity(self, op)
+   .. py:method:: action_identity(self, op)
 
 
 

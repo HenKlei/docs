@@ -26,8 +26,7 @@ Functions
 
 
 
-.. class:: Operator
-
+.. py:class:: Operator
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -83,7 +82,7 @@ Functions
       for all V, mu.
       
 
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
       :abstractmethod:
 
       Apply the operator to a |VectorArray|.
@@ -100,8 +99,7 @@ Functions
           |VectorArray| of the operator evaluations.
               
 
-
-   .. method:: apply2(self, V, U, mu=None)
+   .. py:method:: apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U.
 
@@ -119,7 +117,7 @@ Functions
           V
               |VectorArray| of the left arguments V.
           U
-              |VectorArray| of the right right arguments U.
+              |VectorArray| of the right arguments U.
           mu
               The |parameter values| for which to evaluate the operator.
               
@@ -129,8 +127,7 @@ Functions
           evaluations.
               
 
-
-   .. method:: pairwise_apply2(self, V, U, mu=None)
+   .. py:method:: pairwise_apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U in pairs.
 
@@ -140,7 +137,7 @@ Functions
 
           op.apply2(V, U)[i] = V[i]^T*M*U[i].
 
-      In the case of complex numbers, note that `pairwirse_apply2` is anti-linear in the
+      In the case of complex numbers, note that `pairwise_apply2` is anti-linear in the
       first variable by definition of `pairwise_inner`.
 
 
@@ -149,7 +146,7 @@ Functions
           V
               |VectorArray| of the left arguments V.
           U
-              |VectorArray| of the right right arguments U.
+              |VectorArray| of the right arguments U.
           mu
               The |parameter values| for which to evaluate the operator.
               
@@ -159,8 +156,7 @@ Functions
           the 2-form evaluations.
               
 
-
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -185,8 +181,7 @@ Functions
           |VectorArray| of the adjoint operator evaluations.
               
 
-
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -223,8 +218,7 @@ Functions
               The operator could not be inverted.
               
 
-
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -261,8 +255,7 @@ Functions
               The operator could not be inverted.
               
 
-
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -279,8 +272,7 @@ Functions
           Linear |Operator| representing the Jacobian.
               
 
-
-   .. method:: d_mu(self, parameter, index=0)
+   .. py:method:: d_mu(self, parameter, index=0)
 
       Return the operator's derivative with respect to a given parameter.
 
@@ -296,8 +288,7 @@ Functions
           New |Operator| representing the partial derivative.
               
 
-
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -322,8 +313,7 @@ Functions
               The |VectorArray| defined above.
               
 
-
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -348,8 +338,7 @@ Functions
               The |VectorArray| defined above.
               
 
-
-   .. method:: as_vector(self, mu=None)
+   .. py:method:: as_vector(self, mu=None)
 
       Return a vector representation of a linear functional or vector operator.
 
@@ -369,8 +358,7 @@ Functions
               |VectorArray| of length 1 containing the vector representation.
               
 
-
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -392,8 +380,7 @@ Functions
           Parameter-independent, assembled |Operator|.
               
 
-
-   .. method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
       Try to assemble a linear combination of the given operators.
 
@@ -427,8 +414,7 @@ Functions
           The assembled |Operator| if assembly is possible, otherwise `None`.
               
 
-
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
       :abstractmethod:
 
       Restrict the operator range to a given set of degrees of freedom.
@@ -465,45 +451,44 @@ Functions
               defined above.
               
 
-
-   .. method:: _add_sub(self, other, sign)
-
-
-   .. method:: _radd_sub(self, other, sign)
+   .. py:method:: _add_sub(self, other, sign)
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: _radd_sub(self, other, sign)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __radd__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __radd__(self, other)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __rsub__(self, other)
 
 
-   .. method:: __rmul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __matmul__(self, other)
+   .. py:method:: __rmul__(self, other)
+
+
+   .. py:method:: __matmul__(self, other)
 
       Concatenation of two operators.
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
 
-.. function:: as_array_max_length(value=100)
+.. py:function:: as_array_max_length(value=100)
 
 

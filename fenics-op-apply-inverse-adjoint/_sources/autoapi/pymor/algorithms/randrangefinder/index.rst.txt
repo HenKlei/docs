@@ -19,7 +19,7 @@ Functions
 
 
 
-.. function:: adaptive_rrf(A, source_product=None, range_product=None, tol=0.0001, failure_tolerance=1e-15, num_testvecs=20, lambda_min=None, iscomplex=False)
+.. py:function:: adaptive_rrf(A, source_product=None, range_product=None, tol=0.0001, failure_tolerance=1e-15, num_testvecs=20, lambda_min=None, iscomplex=False)
 
    Adaptive randomized range approximation of `A`.
 
@@ -61,8 +61,7 @@ Functions
            |VectorArray| which contains the basis, whose span approximates the range of A.
            
 
-
-.. function:: rrf(A, source_product=None, range_product=None, q=2, l=8, iscomplex=False)
+.. py:function:: rrf(A, source_product=None, range_product=None, q=2, l=8, iscomplex=False)
 
    Randomized range approximation of `A`.
 
@@ -91,5 +90,4 @@ Functions
        Q
            |VectorArray| which contains the basis, whose span approximates the range of A.
            
-
 

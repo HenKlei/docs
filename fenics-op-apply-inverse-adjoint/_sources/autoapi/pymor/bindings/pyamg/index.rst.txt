@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: solver_options(tol=1e-05, maxiter=400, verb=False, rs_strength=('classical', {'theta': 0.25}), rs_CF='RS', rs_presmoother=('gauss_seidel', {'sweep': 'symmetric'}), rs_postsmoother=('gauss_seidel', {'sweep': 'symmetric'}), rs_max_levels=10, rs_max_coarse=500, rs_coarse_solver='pinv2', rs_cycle='V', rs_accel=None, rs_tol=1e-05, rs_maxiter=100, sa_symmetry='hermitian', sa_strength='symmetric', sa_aggregate='standard', sa_smooth=('jacobi', {'omega': 4.0 / 3.0}), sa_presmoother=('block_gauss_seidel', {'sweep': 'symmetric'}), sa_postsmoother=('block_gauss_seidel', {'sweep': 'symmetric'}), sa_improve_candidates=(('block_gauss_seidel', {'sweep': 'symmetric', 'iterations': 4}), None), sa_max_levels=10, sa_max_coarse=500, sa_diagonal_dominance=False, sa_coarse_solver='pinv2', sa_cycle='V', sa_accel=None, sa_tol=1e-05, sa_maxiter=100)
+.. py:function:: solver_options(tol=1e-05, maxiter=400, verb=False, rs_strength=('classical', {'theta': 0.25}), rs_CF='RS', rs_presmoother=('gauss_seidel', {'sweep': 'symmetric'}), rs_postsmoother=('gauss_seidel', {'sweep': 'symmetric'}), rs_max_levels=10, rs_max_coarse=500, rs_coarse_solver='pinv2', rs_cycle='V', rs_accel=None, rs_tol=1e-05, rs_maxiter=100, sa_symmetry='hermitian', sa_strength='symmetric', sa_aggregate='standard', sa_smooth=('jacobi', {'omega': 4.0 / 3.0}), sa_presmoother=('block_gauss_seidel', {'sweep': 'symmetric'}), sa_postsmoother=('block_gauss_seidel', {'sweep': 'symmetric'}), sa_improve_candidates=(('block_gauss_seidel', {'sweep': 'symmetric', 'iterations': 4}), None), sa_max_levels=10, sa_max_coarse=500, sa_diagonal_dominance=False, sa_coarse_solver='pinv2', sa_cycle='V', sa_accel=None, sa_tol=1e-05, sa_maxiter=100)
 
    Returns available solvers with default |solver_options| for the PyAMG backend.
 
@@ -87,5 +87,4 @@ Functions
 
        A dict of available solvers with default |solver_options|.
            
-
 

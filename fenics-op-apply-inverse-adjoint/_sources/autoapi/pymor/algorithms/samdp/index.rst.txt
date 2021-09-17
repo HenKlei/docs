@@ -20,7 +20,7 @@ Functions
 
 
 
-.. function:: samdp(A, E, B, C, nwanted, init_shifts=None, which='NR', tol=1e-10, imagtol=1e-06, conjtol=1e-08, dorqitol=0.0001, rqitol=1e-10, maxrestart=100, krestart=20, rqi_maxiter=10, seed=0)
+.. py:function:: samdp(A, E, B, C, nwanted, init_shifts=None, which='NR', tol=1e-10, imagtol=1e-06, conjtol=1e-08, dorqitol=0.0001, rqitol=1e-10, maxrestart=100, krestart=20, rqi_maxiter=10, seed=0)
 
    Compute the dominant pole triplets and residues of the transfer function of an LTI system.
 
@@ -88,8 +88,7 @@ Functions
            A |VectorArray| containing the left eigenvectors of the computed poles.
            
 
-
-.. function:: _twosided_rqi(A, E, x, y, theta, init_res, imagtol, rqitol, maxiter)
+.. py:function:: _twosided_rqi(A, E, x, y, theta, init_res, imagtol, rqitol, maxiter)
 
    Refine an initial guess for an eigentriplet of the matrix pair (A, E).
 
@@ -126,8 +125,7 @@ Functions
            Residual of the computed triplet.
            
 
-
-.. function:: _select_max_eig(H, G, X, V, B, C, which)
+.. py:function:: _select_max_eig(H, G, X, V, B, C, which)
 
    Compute poles sorted from largest to smallest residual.
 
@@ -159,5 +157,4 @@ Functions
        residue
            A 1D |NumPy array| containing the norms of the residues.
            
-
 

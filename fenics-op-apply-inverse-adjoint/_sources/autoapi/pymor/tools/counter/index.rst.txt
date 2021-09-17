@@ -17,10 +17,9 @@ Classes
 
 
 
-.. class:: Counter(start=0)
+.. py:class:: Counter(start=0)
 
-
-   .. method:: inc(self)
+   .. py:method:: inc(self)
 
 
 

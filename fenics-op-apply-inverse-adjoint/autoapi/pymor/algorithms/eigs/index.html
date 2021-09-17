@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,27 +47,22 @@
   
   
   
-    <title>pymor.algorithms.eigs &#8212; pyMOR v2021.1rc0+414.g1a131046 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.algorithms.eigs &#8212; pyMOR v2021.1rc0+602.g2f75b9c0 Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -98,11 +94,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+414.g1a131046 Manual logo">
+                   alt="pyMOR v2021.1rc0+602.g2f75b9c0 Manual logo">
           
         </a>
       </div>
@@ -121,7 +117,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -168,7 +164,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+414.g1a131046 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+602.g2f75b9c0 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -183,13 +179,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+414.g1a131046 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual">Documentation</a>
   </label>
   
 
@@ -282,6 +278,13 @@
     
     
       <a href="../basic/index.html" class="md-nav__link">basic</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../bernoulli/index.html" class="md-nav__link">bernoulli</a>
       
     
     </li>
@@ -611,11 +614,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.algorithms.eigs">
 <span id="pymor-algorithms-eigs"></span><h1 id="autoapi-pymor-algorithms-eigs-index--page-root"><a class="reference internal" href="#autoapi-pymor-algorithms-eigs-index--page-root" title="pymor.algorithms.eigs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms.eigs</span></code></a><a class="headerlink" href="#autoapi-pymor-algorithms-eigs-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -638,8 +641,8 @@
 </tbody>
 </table>
 <dl class="py function">
-<dt id="pymor.algorithms.eigs.eigs">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></code><code class="sig-name descname"><span class="pre">eigs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'LM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_pair_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs.eigs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.eigs.eigs">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></span><span class="sig-name descname"><span class="pre">eigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'LM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_pair_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_evp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_evp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs.eigs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximate a few eigenvalues of a linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
 <p>Computes <code class="docutils literal notranslate"><span class="pre">k</span></code> eigenvalues <code class="docutils literal notranslate"><span class="pre">w</span></code> with corresponding eigenvectors <code class="docutils literal notranslate"><span class="pre">v</span></code> which solve
 the eigenvalue problem</p>
@@ -649,15 +652,18 @@ the eigenvalue problem</p>
 <div class="math notranslate nohighlight">
 \[A v_i = w_i E v_i\]</div>
 <p>if <code class="docutils literal notranslate"><span class="pre">E</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<p>The implementation is based on Algorithm 4.2 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id27">Leh95</a>]</span>.</p>
+<p>The implementation is based on Algorithm 4.2 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id30" title="Richard Bruno Lehoucq. Analysis and implementation of an implicitly restarted Arnoldi iteration. PhD thesis, Rice University, Houston, USA, 1995. URL: https://scholarship.rice.edu/handle/1911/16844.">Leh95</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>A</dt><dd><p>The real linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> for which the eigenvalues are to be computed.</p>
+<dt>A</dt><dd><p>The linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> for which the eigenvalues are to be computed.</p>
 </dd>
-<dt>E</dt><dd><p>The real linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which defines the generalized eigenvalue problem.</p>
+<dt>E</dt><dd><p>The linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which defines the generalized eigenvalue problem.</p>
 </dd>
 <dt>k</dt><dd><p>The number of eigenvalues and eigenvectors which are to be computed.</p>
+</dd>
+<dt>sigma</dt><dd><p>If not <code class="docutils literal notranslate"><span class="pre">None</span></code> transforms the eigenvalue problem such that the k eigenvalues
+closest to sigma are computed.</p>
 </dd>
 <dt>which</dt><dd><p>A string specifying which <code class="docutils literal notranslate"><span class="pre">k</span></code> eigenvalues and eigenvectors to compute:</p>
 <ul class="simple">
@@ -681,6 +687,11 @@ the eigenvalue problem</p>
 </dd>
 <dt>complex_pair_tol</dt><dd><p>Tolerance for detecting pairs of complex conjugate eigenvalues.</p>
 </dd>
+<dt>complex_evp</dt><dd><p>Wether to consider an eigenvalue problem with complex operators. When operators
+are real setting this argument to <code class="docutils literal notranslate"><span class="pre">False</span></code> will increase stability and performance.</p>
+</dd>
+<dt>left_evp</dt><dd><p>If set to <code class="docutils literal notranslate"><span class="pre">True</span></code> compute left eigenvectors else compute right eigenvectors.</p>
+</dd>
 <dt>seed</dt><dd><p>Random seed which is used for computing the initial vector for the Arnoldi
 iteration.</p>
 </dd>
@@ -697,23 +708,23 @@ iteration.</p>
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.eigs._arnoldi">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></code><code class="sig-name descname"><span class="pre">_arnoldi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs._arnoldi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.eigs._arnoldi">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></span><span class="sig-name descname"><span class="pre">_arnoldi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_evp</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs._arnoldi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute an Arnoldi factorization.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.eigs._extend_arnoldi">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></code><code class="sig-name descname"><span class="pre">_extend_arnoldi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs._extend_arnoldi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.eigs._extend_arnoldi">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></span><span class="sig-name descname"><span class="pre">_extend_arnoldi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs._extend_arnoldi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extend an existing Arnoldi factorization.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.eigs._qr_iteration">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></code><code class="sig-name descname"><span class="pre">_qr_iteration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs._qr_iteration" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.eigs._qr_iteration">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.eigs.</span></span><span class="sig-name descname"><span class="pre">_qr_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_evp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/algorithms/eigs.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.eigs._qr_iteration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform the QR iteration.</p>
 </dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -762,10 +773,10 @@ iteration.</p>
               
           </div>
             Last updated on
-              Jul 26, 2021.
+              Sep 17, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

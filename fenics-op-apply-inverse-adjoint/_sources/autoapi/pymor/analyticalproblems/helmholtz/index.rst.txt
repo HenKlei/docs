@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: helmholtz_problem(domain=RectDomain(), rhs=None, parameter_range=(0.0, 100.0), dirichlet_data=None, neumann_data=None)
+.. py:function:: helmholtz_problem(domain=RectDomain(), rhs=None, parameter_range=(0.0, 100.0), dirichlet_data=None, neumann_data=None)
 
    Helmholtz equation problem.
 
@@ -41,5 +41,4 @@ Functions
        neumann_data
            |Function| providing the Neumann boundary values.
            
-
 

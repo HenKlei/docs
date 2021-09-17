@@ -26,7 +26,7 @@ Functions
 
 
 
-.. function:: to_matrix(op, format=None, mu=None)
+.. py:function:: to_matrix(op, format=None, mu=None)
 
    Convert a linear |Operator| to a matrix.
 
@@ -48,9 +48,7 @@ Functions
            The matrix equivalent to `op`.
            
 
-
-.. class:: ToMatrixRules(format, mu)
-
+.. py:class:: ToMatrixRules(format, mu)
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
 
@@ -76,37 +74,37 @@ Functions
       `list` of all defined |rules|.
       
 
-   .. method:: action_NumpyMatrixOperator(self, op)
+   .. py:method:: action_NumpyMatrixOperator(self, op)
 
 
-   .. method:: action_BlockOperator(self, op)
+   .. py:method:: action_BlockOperator(self, op)
 
 
-   .. method:: action_AdjointOperator(self, op)
+   .. py:method:: action_AdjointOperator(self, op)
 
 
-   .. method:: action_ComponentProjectionOperator(self, op)
+   .. py:method:: action_ComponentProjectionOperator(self, op)
 
 
-   .. method:: action_ConcatenationOperator(self, op)
+   .. py:method:: action_ConcatenationOperator(self, op)
 
 
-   .. method:: action_IdentityOperator(self, op)
+   .. py:method:: action_IdentityOperator(self, op)
 
 
-   .. method:: action_LincombOperator(self, op)
+   .. py:method:: action_LincombOperator(self, op)
 
 
-   .. method:: action_LowRankOperator(self, op)
+   .. py:method:: action_LowRankOperator(self, op)
 
 
-   .. method:: action_LowRankUpdatedOperator(self, op)
+   .. py:method:: action_LowRankUpdatedOperator(self, op)
 
 
-   .. method:: action_VectorArrayOperator(self, op)
+   .. py:method:: action_VectorArrayOperator(self, op)
 
 
-   .. method:: action_ZeroOperator(self, op)
+   .. py:method:: action_ZeroOperator(self, op)
 
 
 

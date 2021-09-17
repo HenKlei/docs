@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: Model(products=None, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: Model(products=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.core.cache.CacheableObject`, :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -48,15 +47,15 @@ Classes
       Dict of inner product operators associated with the model.
       
 
-   .. attribute:: _compute_allowed_kwargs
+   .. py:attribute:: _compute_allowed_kwargs
       
 
       
 
-   .. method:: _compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, mu=None, **kwargs)
+   .. py:method:: _compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, mu=None, **kwargs)
 
 
-   .. method:: _compute_solution(self, mu=None, **kwargs)
+   .. py:method:: _compute_solution(self, mu=None, **kwargs)
       :abstractmethod:
 
       Compute the model's solution for |parameter values| `mu`.
@@ -78,8 +77,7 @@ Classes
           must contain the key `'solution'`.
               
 
-
-   .. method:: _compute_output(self, solution, mu=None, **kwargs)
+   .. py:method:: _compute_output(self, solution, mu=None, **kwargs)
 
       Compute the model's output for |parameter values| `mu`.
 
@@ -111,8 +109,7 @@ Classes
           must contain the key `'output'`.
               
 
-
-   .. method:: _compute_solution_d_mu_single_direction(self, parameter, index, solution, mu=None, **kwargs)
+   .. py:method:: _compute_solution_d_mu_single_direction(self, parameter, index, solution, mu=None, **kwargs)
       :abstractmethod:
 
       Compute the partial derivative of the solution w.r.t. a parameter index
@@ -133,8 +130,7 @@ Classes
           The sensitivity of the solution as a |VectorArray|.
               
 
-
-   .. method:: _compute_solution_d_mu(self, solution, mu=None, **kwargs)
+   .. py:method:: _compute_solution_d_mu(self, solution, mu=None, **kwargs)
 
       Compute all partial derivative of the solution w.r.t. a parameter index
 
@@ -150,8 +146,7 @@ Classes
           A dict of all partial sensitivities of the solution.
               
 
-
-   .. method:: _compute_output_d_mu(self, solution, mu=None, return_array=False, **kwargs)
+   .. py:method:: _compute_output_d_mu(self, solution, mu=None, return_array=False, **kwargs)
 
       Compute the gradient w.r.t. the parameter of the output functional
 
@@ -170,8 +165,7 @@ Classes
           The gradient as a |NumPy array| or a dict of |NumPy arrays|.
               
 
-
-   .. method:: _compute_solution_error_estimate(self, solution, mu=None, **kwargs)
+   .. py:method:: _compute_solution_error_estimate(self, solution, mu=None, **kwargs)
 
       Compute an error estimate for the computed internal state.
 
@@ -203,8 +197,7 @@ Classes
           `'solution_error_estimate'`.
               
 
-
-   .. method:: _compute_output_error_estimate(self, solution, mu=None, **kwargs)
+   .. py:method:: _compute_output_error_estimate(self, solution, mu=None, **kwargs)
 
       Compute an error estimate for the computed model output.
 
@@ -236,8 +229,7 @@ Classes
           `'solution_error_estimate'`.
               
 
-
-   .. method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, *, mu=None, **kwargs)
+   .. py:method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, *, mu=None, **kwargs)
 
       Compute the solution of the model and associated quantities.
 
@@ -286,8 +278,7 @@ Classes
           A dict with the computed values.
               
 
-
-   .. method:: solve(self, mu=None, return_error_estimate=False, **kwargs)
+   .. py:method:: solve(self, mu=None, return_error_estimate=False, **kwargs)
 
       Solve the discrete problem for the |parameter values| `mu`.
 
@@ -315,8 +306,7 @@ Classes
           the estimate is returned as second value.
               
 
-
-   .. method:: output(self, mu=None, return_error_estimate=False, **kwargs)
+   .. py:method:: output(self, mu=None, return_error_estimate=False, **kwargs)
 
       Return the model output for given |parameter values| `mu`.
 
@@ -342,8 +332,7 @@ Classes
           second value.
               
 
-
-   .. method:: solve_d_mu(self, parameter, index, mu=None, **kwargs)
+   .. py:method:: solve_d_mu(self, parameter, index, mu=None, **kwargs)
 
       Solve for the partial derivative of the solution w.r.t. a parameter index
 
@@ -361,8 +350,7 @@ Classes
           The sensitivity of the solution as a |VectorArray|.
               
 
-
-   .. method:: output_d_mu(self, mu=None, return_array=False, **kwargs)
+   .. py:method:: output_d_mu(self, mu=None, return_array=False, **kwargs)
 
       Compute the gradient w.r.t. the parameter of the output functional.
 
@@ -379,8 +367,7 @@ Classes
           The gradient as a |NumPy array| or a dict of |NumPy arrays|.
               
 
-
-   .. method:: estimate_error(self, mu=None, **kwargs)
+   .. py:method:: estimate_error(self, mu=None, **kwargs)
 
       Estimate the error for the computed internal state.
 
@@ -406,8 +393,7 @@ Classes
           The estimated error.
               
 
-
-   .. method:: estimate_output_error(self, mu=None, **kwargs)
+   .. py:method:: estimate_output_error(self, mu=None, **kwargs)
 
       Estimate the error for the computed output.
 
@@ -433,8 +419,7 @@ Classes
           The estimated error.
               
 
-
-   .. method:: visualize(self, U, **kwargs)
+   .. py:method:: visualize(self, U, **kwargs)
 
       Visualize a |VectorArray| U of the model's :attr:`solution_space`.
 
@@ -447,6 +432,5 @@ Classes
               Additional keyword arguments to customize the visualization.
               See the docstring of `self.visualizer.visualize`.
               
-
 
 

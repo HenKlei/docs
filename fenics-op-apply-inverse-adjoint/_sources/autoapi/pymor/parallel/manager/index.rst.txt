@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: RemoteObjectManager
-
+.. py:class:: RemoteObjectManager
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -28,21 +27,21 @@ Classes
    :meth:`managed <manage>` by this object will be
    :meth:`removed <pymor.parallel.interface.RemoteObject.remove>`.
 
-   .. method:: __enter__(self)
+   .. py:method:: __enter__(self)
 
 
-   .. method:: __exit__(self, exc_type, exc_val, exc_tb)
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
 
 
-   .. method:: __del__(self)
+   .. py:method:: __del__(self)
 
 
-   .. method:: remove_objects(self)
+   .. py:method:: remove_objects(self)
 
       Call :meth:`~pymor.parallel.interface.RemoteObject.remove` for all managed objects.
 
 
-   .. method:: manage(self, remote_object)
+   .. py:method:: manage(self, remote_object)
 
       Add a |RemoteObject| to the list of managed objects.
 
@@ -55,6 +54,5 @@ Classes
 
           `remote_object`
               
-
 
 

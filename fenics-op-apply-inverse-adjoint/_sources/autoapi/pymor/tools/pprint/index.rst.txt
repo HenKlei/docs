@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: format_array(array, compact_print=False)
+.. py:function:: format_array(array, compact_print=False)
 
    Creates a formatted string representation of a |NumPy array|.
 
@@ -33,5 +33,4 @@ Functions
 
        The string representation.
            
-
 

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.vectorarrays.mpi &#8212; pyMOR v2021.1rc0+414.g1a131046 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.vectorarrays.mpi &#8212; pyMOR v2021.1rc0+602.g2f75b9c0 Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
@@ -96,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+414.g1a131046 Manual logo">
+                   alt="pyMOR v2021.1rc0+602.g2f75b9c0 Manual logo">
           
         </a>
       </div>
@@ -119,7 +115,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+414.g1a131046 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+602.g2f75b9c0 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.vectorarrays</span></code></a></li>
@@ -181,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+414.g1a131046 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual">Documentation</a>
   </label>
   
 
@@ -448,7 +444,7 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.vectorarrays.mpi">
 <span id="pymor-vectorarrays-mpi"></span><h1 id="autoapi-pymor-vectorarrays-mpi-index--page-root"><a class="reference internal" href="#autoapi-pymor-vectorarrays-mpi-index--page-root" title="pymor.vectorarrays.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.vectorarrays.mpi</span></code></a><a class="headerlink" href="#autoapi-pymor-vectorarrays-mpi-index--page-root" title="Permalink to this headline">¶</a></h1>
 <p>Wrapper classes for building MPI distributed <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>.</p>
 <p>This module contains several wrapper classes which allow to
@@ -457,9 +453,9 @@ transform single rank <a class="reference internal" href="../interface/index.htm
 <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>.</p>
 <p>The implementations are based on the event loop provided
 by <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.tools.mpi" title="pymor.tools.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.tools.mpi</span></code></a>.</p>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -490,8 +486,8 @@ by <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.t
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -546,8 +542,8 @@ by <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.t
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="attributes">
 <h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -564,8 +560,8 @@ by <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.t
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIVectorArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIVectorArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.interface.VectorArray</span></code></a></p>
 <p>MPI distributed <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
 <p>Given a local <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> on each MPI rank, this wrapper class
@@ -584,23 +580,23 @@ interface methods are provided by <a class="reference internal" href="#pymor.vec
 Please be aware of the peculiarities of destructors in Python!</p>
 <p>The associated <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> is <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorSpace" title="pymor.vectorarrays.mpi.MPIVectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorSpace</span></code></a>.</p>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.__len__">
-<code class="sig-name descname"><span class="pre">__len__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__len__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__len__" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of vectors in the array.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.__getitem__">
-<code class="sig-name descname"><span class="pre">__getitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> view onto a subset of the vectors in the array.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.__delitem__">
-<code class="sig-name descname"><span class="pre">__delitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__delitem__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.__delitem__">
+<span class="sig-name descname"><span class="pre">__delitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__delitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove vectors from the array.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.copy">
-<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.copy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of the array.</p>
 <p>All <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> implementations in pyMOR have copy-on-write semantics:
 if not specified otherwise by setting <code class="docutils literal notranslate"><span class="pre">deep</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the returned
@@ -622,8 +618,8 @@ some vectors in the array are copied.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.append">
-<code class="sig-name descname"><span class="pre">append</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_from_other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.append" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_from_other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append vectors to the array.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -638,8 +634,8 @@ unnecessary copies of the involved vectors.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.scal">
-<code class="sig-name descname"><span class="pre">scal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.scal" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.scal">
+<span class="sig-name descname"><span class="pre">scal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.scal" title="Permalink to this definition">¶</a></dt>
 <dd><p>BLAS SCAL operation (in-place scalar multiplication).</p>
 <p>This method calculates</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">*</span><span class="bp">self</span>
@@ -658,8 +654,8 @@ with which the vectors in <code class="docutils literal notranslate"><span class
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.axpy">
-<code class="sig-name descname"><span class="pre">axpy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.axpy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.axpy">
+<span class="sig-name descname"><span class="pre">axpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.axpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>BLAS AXPY operation.</p>
 <p>This method forms the sum</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span>
@@ -682,8 +678,8 @@ the vectors in <code class="docutils literal notranslate"><span class="pre">x</s
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.inner">
-<code class="sig-name descname"><span class="pre">inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.inner">
+<span class="sig-name descname"><span class="pre">inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.inner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the inner products between <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> elements.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">product</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean inner product between
 the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray.dofs" title="pymor.vectorarrays.mpi.MPIVectorArray.dofs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dofs</span></code></a> of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are returned, i.e.</p>
@@ -698,7 +694,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray.d
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.apply2" title="pymor.operators.interface.Operator.apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -733,8 +729,8 @@ bilinear form.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.pairwise_inner">
-<code class="sig-name descname"><span class="pre">pairwise_inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.pairwise_inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.pairwise_inner">
+<span class="sig-name descname"><span class="pre">pairwise_inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.pairwise_inner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the pairwise inner products between <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> elements.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">product</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean inner product between
 the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray.dofs" title="pymor.vectorarrays.mpi.MPIVectorArray.dofs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dofs</span></code></a> of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are returned, i.e.</p>
@@ -749,7 +745,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray.d
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.pairwise_apply2" title="pymor.operators.interface.Operator.pairwise_apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">pairwise_apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -784,8 +780,8 @@ bilinear form.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.lincomb">
-<code class="sig-name descname"><span class="pre">lincomb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.lincomb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.lincomb">
+<span class="sig-name descname"><span class="pre">lincomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.lincomb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns linear combinations of the vectors contained in the array.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -810,18 +806,18 @@ coefficients. <code class="docutils literal notranslate"><span class="pre">coeff
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray._norm">
-<code class="sig-name descname"><span class="pre">_norm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray._norm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray._norm">
+<span class="sig-name descname"><span class="pre">_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray._norm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">norm</span></code> for the case that no <code class="docutils literal notranslate"><span class="pre">product</span></code> is given.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray._norm2">
-<code class="sig-name descname"><span class="pre">_norm2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray._norm2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray._norm2">
+<span class="sig-name descname"><span class="pre">_norm2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray._norm2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">norm2</span></code> for the case that no <code class="docutils literal notranslate"><span class="pre">product</span></code> is given.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.dofs">
-<code class="sig-name descname"><span class="pre">dofs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.dofs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.dofs">
+<span class="sig-name descname"><span class="pre">dofs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.dofs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract DOFs of the vectors contained in the array.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -837,8 +833,8 @@ DOF of the <code class="docutils literal notranslate"><span class="pre">i</span>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.amax">
-<code class="sig-name descname"><span class="pre">amax</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.amax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.amax">
+<span class="sig-name descname"><span class="pre">amax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.amax" title="Permalink to this definition">¶</a></dt>
 <dd><p>The maximum absolute value of the DOFs contained in the array.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
@@ -853,28 +849,28 @@ DOFs.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.__del__">
-<code class="sig-name descname"><span class="pre">__del__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__del__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.__del__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.real">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">real</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.real" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.real">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.real" title="Permalink to this definition">¶</a></dt>
 <dd><p>Real part.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.imag">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">imag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.imag" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.imag">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">imag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.imag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imaginary part.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArray.conj">
-<code class="sig-name descname"><span class="pre">conj</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.conj" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArray.conj">
+<span class="sig-name descname"><span class="pre">conj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArray.conj" title="Permalink to this definition">¶</a></dt>
 <dd><p>Complex conjugation.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIVectorSpace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIVectorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.interface.VectorSpace</span></code></a></p>
 <p><a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> of <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArrays</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -888,12 +884,12 @@ case the same <a class="reference internal" href="../interface/index.html#pymor.
 </dl>
 </div>
 <dl class="py attribute">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace.array_type">
-<code class="sig-name descname"><span class="pre">array_type</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.array_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace.array_type">
+<span class="sig-name descname"><span class="pre">array_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.array_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace.make_array">
-<code class="sig-name descname"><span class="pre">make_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.make_array" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace.make_array">
+<span class="sig-name descname"><span class="pre">make_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.make_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create array from rank-local <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> instances.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -909,8 +905,8 @@ instances of <code class="docutils literal notranslate"><span class="pre">cls</s
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace.zeros">
-<code class="sig-name descname"><span class="pre">zeros</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.zeros" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace.zeros">
+<span class="sig-name descname"><span class="pre">zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.zeros" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of null vectors</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -927,23 +923,23 @@ instances of <code class="docutils literal notranslate"><span class="pre">cls</s
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace.dim">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dim</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace.dim">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.dim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace.__eq__">
-<code class="sig-name descname"><span class="pre">__eq__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.__eq__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.__eq__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self==value.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpace.__repr__">
-<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.__repr__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpace.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpace.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return repr(self).</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.RegisteredLocalSpace">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">RegisteredLocalSpace</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.RegisteredLocalSpace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.RegisteredLocalSpace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">RegisteredLocalSpace</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.RegisteredLocalSpace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p>
 <p>int([x]) -&gt; integer
 int(x, base=10) -&gt; integer</p>
@@ -952,60 +948,60 @@ are given.  If x is a number, return x.__int__().  For floating point
 numbers, this truncates towards zero.</p>
 <p>If x is not a number or if base is given, then x must be a string,
 bytes, or bytearray instance representing an integer literal in the
-given base.  The literal can be preceded by ‘+’ or ‘-‘ and be surrounded
+given base.  The literal can be preceded by ‘+’ or ‘-’ and be surrounded
 by whitespace.  The base defaults to 10.  Valid bases are 0 and 2-36.
 Base 0 means to interpret the base from the string as an integer literal.
 &gt;&gt;&gt; int(‘0b100’, base=0)
 4</p>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.RegisteredLocalSpace.__repr__">
-<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.RegisteredLocalSpace.__repr__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.RegisteredLocalSpace.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.RegisteredLocalSpace.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return repr(self).</p>
 </dd></dl>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.vectorarrays.mpi._local_space_registry">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_local_space_registry</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._local_space_registry" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._local_space_registry">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_local_space_registry</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._local_space_registry" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.vectorarrays.mpi._local_space_to_id">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_local_space_to_id</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._local_space_to_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._local_space_to_id">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_local_space_to_id</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._local_space_to_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._register_local_space">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_register_local_space</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._register_local_space" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._register_local_space">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_register_local_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._register_local_space" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._get_local_space">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_get_local_space</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._get_local_space" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._get_local_space">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_get_local_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._get_local_space" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorSpace_zeros">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorSpace_zeros</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpace_zeros" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorSpace_zeros">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorSpace_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpace_zeros" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorSpace_dim">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorSpace_dim</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpace_dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorSpace_dim">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorSpace_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpace_dim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorSpace_check_local_spaces">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorSpace_check_local_spaces</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpace_check_local_spaces" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorSpace_check_local_spaces">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorSpace_check_local_spaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpace_check_local_spaces" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArray_axpy">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArray_axpy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArray_axpy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArray_axpy">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArray_axpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArray_axpy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArray_real">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArray_real</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArray_real" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArray_real">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArray_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArray_real" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArray_imag">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArray_imag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArray_imag" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArray_imag">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArray_imag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArray_imag" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIVectorArrayNoComm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIVectorArrayNoComm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MPIVectorArray</span></code></a></p>
 <p>MPI distributed <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
 <p>This is a subclass of <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArray</span></code></a> which
@@ -1018,8 +1014,8 @@ on the wrapped arrays would lead to wrong results and
 (for instance in the presence of shared DOFs).</p>
 <p>The associated <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> is <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm" title="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorSpaceNoComm</span></code></a>.</p>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.inner">
-<code class="sig-name descname"><span class="pre">inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.inner">
+<span class="sig-name descname"><span class="pre">inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.inner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the inner products between <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> elements.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">product</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean inner product between
 the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs" title="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dofs</span></code></a> of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are returned, i.e.</p>
@@ -1034,7 +1030,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNo
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.apply2" title="pymor.operators.interface.Operator.apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1069,8 +1065,8 @@ bilinear form.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.pairwise_inner">
-<code class="sig-name descname"><span class="pre">pairwise_inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.pairwise_inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.pairwise_inner">
+<span class="sig-name descname"><span class="pre">pairwise_inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.pairwise_inner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the pairwise inner products between <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> elements.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">product</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean inner product between
 the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs" title="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dofs</span></code></a> of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are returned, i.e.</p>
@@ -1085,7 +1081,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNo
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.pairwise_apply2" title="pymor.operators.interface.Operator.pairwise_apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">pairwise_apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1120,18 +1116,18 @@ bilinear form.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_norm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">norm</span></code> for the case that no <code class="docutils literal notranslate"><span class="pre">product</span></code> is given.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm2">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_norm2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm2">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_norm2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm._norm2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">norm2</span></code> for the case that no <code class="docutils literal notranslate"><span class="pre">product</span></code> is given.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">dofs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">dofs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.dofs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract DOFs of the vectors contained in the array.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -1147,8 +1143,8 @@ DOF of the <code class="docutils literal notranslate"><span class="pre">i</span>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.amax">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">amax</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.amax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayNoComm.amax">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">amax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm.amax" title="Permalink to this definition">¶</a></dt>
 <dd><p>The maximum absolute value of the DOFs contained in the array.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
@@ -1164,22 +1160,22 @@ DOFs.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIVectorSpaceNoComm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIVectorSpaceNoComm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorSpace" title="pymor.vectorarrays.mpi.MPIVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MPIVectorSpace</span></code></a></p>
 <p><a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> for <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayNoComm" title="pymor.vectorarrays.mpi.MPIVectorArrayNoComm"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArrayNoComm</span></code></a>.</p>
 <dl class="py attribute">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.array_type">
-<code class="sig-name descname"><span class="pre">array_type</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.array_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.array_type">
+<span class="sig-name descname"><span class="pre">array_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.array_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.dim">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dim</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.dim">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceNoComm.dim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIVectorArrayAutoComm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIVectorArrayAutoComm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MPIVectorArray</span></code></a></p>
 <p>MPI distributed <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
 <p>This is a subclass of <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArray</span></code></a> which
@@ -1191,8 +1187,8 @@ these default implementations might lead to wrong results
 (for instance in the presence of shared DOFs).</p>
 <p>The associated <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> is <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm" title="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorSpaceAutoComm</span></code></a>.</p>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.inner">
-<code class="sig-name descname"><span class="pre">inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.inner">
+<span class="sig-name descname"><span class="pre">inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.inner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the inner products between <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> elements.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">product</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean inner product between
 the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs" title="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dofs</span></code></a> of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are returned, i.e.</p>
@@ -1207,7 +1203,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAu
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.apply2" title="pymor.operators.interface.Operator.apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1242,8 +1238,8 @@ bilinear form.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.pairwise_inner">
-<code class="sig-name descname"><span class="pre">pairwise_inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.pairwise_inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.pairwise_inner">
+<span class="sig-name descname"><span class="pre">pairwise_inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.pairwise_inner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the pairwise inner products between <a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> elements.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">product</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the Euclidean inner product between
 the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs" title="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dofs</span></code></a> of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are returned, i.e.</p>
@@ -1258,7 +1254,7 @@ the <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAu
 small number of DOF indices.)</p>
 <p>If a <code class="docutils literal notranslate"><span class="pre">product</span></code> <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is specified, this <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is
 used to compute the inner products using
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code>, i.e.
+<a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.pairwise_apply2" title="pymor.operators.interface.Operator.pairwise_apply2"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pairwise_apply2</span></code></a>, i.e.
 <code class="docutils literal notranslate"><span class="pre">U.inner(V,</span> <span class="pre">product)</span></code> is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="n">pairwise_apply2</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 </pre></div>
@@ -1293,18 +1289,18 @@ bilinear form.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm">
-<code class="sig-name descname"><span class="pre">_norm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm">
+<span class="sig-name descname"><span class="pre">_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">norm</span></code> for the case that no <code class="docutils literal notranslate"><span class="pre">product</span></code> is given.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm2">
-<code class="sig-name descname"><span class="pre">_norm2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm2">
+<span class="sig-name descname"><span class="pre">_norm2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm._norm2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">norm2</span></code> for the case that no <code class="docutils literal notranslate"><span class="pre">product</span></code> is given.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs">
-<code class="sig-name descname"><span class="pre">dofs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs">
+<span class="sig-name descname"><span class="pre">dofs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.dofs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract DOFs of the vectors contained in the array.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -1320,8 +1316,8 @@ DOF of the <code class="docutils literal notranslate"><span class="pre">i</span>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.amax">
-<code class="sig-name descname"><span class="pre">amax</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.amax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.amax">
+<span class="sig-name descname"><span class="pre">amax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm.amax" title="Permalink to this definition">¶</a></dt>
 <dd><p>The maximum absolute value of the DOFs contained in the array.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
@@ -1337,54 +1333,54 @@ DOFs.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIVectorSpaceAutoComm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIVectorSpaceAutoComm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorSpace" title="pymor.vectorarrays.mpi.MPIVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MPIVectorSpace</span></code></a></p>
 <p><a class="reference internal" href="../interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> for <a class="reference internal" href="#pymor.vectorarrays.mpi.MPIVectorArrayAutoComm" title="pymor.vectorarrays.mpi.MPIVectorArrayAutoComm"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArrayAutoComm</span></code></a>.</p>
 <dl class="py attribute">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.array_type">
-<code class="sig-name descname"><span class="pre">array_type</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.array_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.array_type">
+<span class="sig-name descname"><span class="pre">array_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.array_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.dim">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dim</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.dim">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm.dim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm._get_dims">
-<code class="sig-name descname"><span class="pre">_get_dims</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm._get_dims" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm._get_dims">
+<span class="sig-name descname"><span class="pre">_get_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm._get_dims" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorSpaceAutoComm_dim">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorSpaceAutoComm_dim</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpaceAutoComm_dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorSpaceAutoComm_dim">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorSpaceAutoComm_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorSpaceAutoComm_dim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_inner">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_inner">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_inner" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_pairwise_inner">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_pairwise_inner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_pairwise_inner" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_pairwise_inner">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_pairwise_inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_pairwise_inner" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_norm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm2">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_norm2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm2">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_norm2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_norm2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_dofs">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_dofs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_dofs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_dofs">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_dofs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_dofs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_amax">
-<code class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_amax</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_amax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_amax">
+<span class="sig-prename descclassname"><span class="pre">pymor.vectorarrays.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIVectorArrayAutoComm_amax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/vectorarrays/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.vectorarrays.mpi._MPIVectorArrayAutoComm_amax" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -1433,10 +1429,10 @@ DOFs.</p>
               
           </div>
             Last updated on
-              Jul 26, 2021.
+              Sep 17, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,27 +47,22 @@
   
   
   
-    <title>pymor.reductors.interpolation &#8212; pyMOR v2021.1rc0+414.g1a131046 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.reductors.interpolation &#8212; pyMOR v2021.1rc0+602.g2f75b9c0 Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -98,11 +94,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+414.g1a131046 Manual logo">
+                   alt="pyMOR v2021.1rc0+602.g2f75b9c0 Manual logo">
           
         </a>
       </div>
@@ -121,7 +117,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -168,7 +164,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+414.g1a131046 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+602.g2f75b9c0 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors</span></code></a></li>
@@ -183,13 +179,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+414.g1a131046 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+414.g1a131046 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+602.g2f75b9c0 Manual">Documentation</a>
   </label>
   
 
@@ -485,11 +481,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.reductors.interpolation">
 <span id="pymor-reductors-interpolation"></span><h1 id="autoapi-pymor-reductors-interpolation-index--page-root"><a class="reference internal" href="#autoapi-pymor-reductors-interpolation-index--page-root" title="pymor.reductors.interpolation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors.interpolation</span></code></a><a class="headerlink" href="#autoapi-pymor-reductors-interpolation-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -515,15 +511,15 @@
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></code><code class="sig-name descname"><span class="pre">GenericBHIReductor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></span><span class="sig-name descname"><span class="pre">GenericBHIReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
 <p>Generic bitangential Hermite interpolation reductor.</p>
 <p>This is a generic reductor for reducing any linear
 <a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a> with the transfer
 function which can be written in the generalized coprime
 factorization <span class="math notranslate nohighlight">\(H(s) = \mathcal{C}(s) \mathcal{K}(s)^{-1}
-\mathcal{B}(s)\)</span> as in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id5">BG09</a>]</span>. The interpolation here is limited to
+\mathcal{B}(s)\)</span> as in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id8" title="C. A. Beattie and S. Gugercin. Interpolatory projection methods for structure-preserving model reduction. Systems Control Lett., 58(3):225–232, 2009. doi:10.1016/j.sysconle.2008.10.016.">BG09</a>]</span>. The interpolation here is limited to
 only up to the first derivative. Interpolation points are assumed to
 be pairwise distinct.</p>
 <p>In particular, given interpolation points <span class="math notranslate nohighlight">\(\sigma_i\)</span>, right
@@ -549,32 +545,32 @@ c_i^T H'(\sigma_i) b_i &amp; = c_i^T \hat{H}'(\sigma_i) b_i,\end{split}\]</div>
 </dl>
 </div>
 <dl class="py attribute">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor._PGReductor">
-<code class="sig-name descname"><span class="pre">_PGReductor</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._PGReductor">
+<span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor._B_apply">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_B_apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._B_apply">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_C_apply_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_K_apply_inverse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor._fom_assemble">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">_fom_assemble</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._fom_assemble">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor.reduce">
-<code class="sig-name descname"><span class="pre">reduce</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orth'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor.reduce" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor.reduce">
+<span class="sig-name descname"><span class="pre">reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orth'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bitangential Hermite interpolation.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -607,14 +603,14 @@ respect to the E product</p></li>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.GenericBHIReductor.reconstruct">
-<code class="sig-name descname"><span class="pre">reconstruct</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor.reconstruct">
+<span class="sig-name descname"><span class="pre">reconstruct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct high-dimensional vector from reduced vector <code class="docutils literal notranslate"><span class="pre">u</span></code>.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></code><code class="sig-name descname"><span class="pre">LTIBHIReductor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></span><span class="sig-name descname"><span class="pre">LTIBHIReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.interpolation.GenericBHIReductor" title="pymor.reductors.interpolation.GenericBHIReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBHIReductor</span></code></a></p>
 <p>Bitangential Hermite interpolation for <a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModels</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -627,32 +623,32 @@ respect to the E product</p></li>
 </dl>
 </div>
 <dl class="py attribute">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor._PGReductor">
-<code class="sig-name descname"><span class="pre">_PGReductor</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._PGReductor">
+<span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor._B_apply">
-<code class="sig-name descname"><span class="pre">_B_apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._B_apply">
+<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor._C_apply_adjoint">
-<code class="sig-name descname"><span class="pre">_C_apply_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._C_apply_adjoint">
+<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse">
-<code class="sig-name descname"><span class="pre">_K_apply_inverse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse">
+<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse_adjoint">
-<code class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse_adjoint">
+<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor._fom_assemble">
-<code class="sig-name descname"><span class="pre">_fom_assemble</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._fom_assemble">
+<span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.LTIBHIReductor.reduce">
-<code class="sig-name descname"><span class="pre">reduce</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orth'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor.reduce" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor.reduce">
+<span class="sig-name descname"><span class="pre">reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orth'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bitangential Hermite interpolation.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -689,8 +685,8 @@ systems).</p></li>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.reductors.interpolation.SOBHIReductor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></code><code class="sig-name descname"><span class="pre">SOBHIReductor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></span><span class="sig-name descname"><span class="pre">SOBHIReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.interpolation.GenericBHIReductor" title="pymor.reductors.interpolation.GenericBHIReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBHIReductor</span></code></a></p>
 <p>Bitangential Hermite interpolation for <a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.SecondOrderModel" title="pymor.models.iosys.SecondOrderModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SecondOrderModels</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -703,33 +699,33 @@ systems).</p></li>
 </dl>
 </div>
 <dl class="py attribute">
-<dt id="pymor.reductors.interpolation.SOBHIReductor._PGReductor">
-<code class="sig-name descname"><span class="pre">_PGReductor</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._PGReductor">
+<span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.SOBHIReductor._B_apply">
-<code class="sig-name descname"><span class="pre">_B_apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._B_apply">
+<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.SOBHIReductor._C_apply_adjoint">
-<code class="sig-name descname"><span class="pre">_C_apply_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._C_apply_adjoint">
+<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse">
-<code class="sig-name descname"><span class="pre">_K_apply_inverse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse">
+<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse_adjoint">
-<code class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse_adjoint">
+<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.SOBHIReductor._fom_assemble">
-<code class="sig-name descname"><span class="pre">_fom_assemble</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._fom_assemble">
+<span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></code><code class="sig-name descname"><span class="pre">DelayBHIReductor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></span><span class="sig-name descname"><span class="pre">DelayBHIReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.interpolation.GenericBHIReductor" title="pymor.reductors.interpolation.GenericBHIReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBHIReductor</span></code></a></p>
 <p>Bitangential Hermite interpolation for <a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.LinearDelayModel" title="pymor.models.iosys.LinearDelayModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearDelayModels</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -742,36 +738,36 @@ systems).</p></li>
 </dl>
 </div>
 <dl class="py attribute">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor._PGReductor">
-<code class="sig-name descname"><span class="pre">_PGReductor</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._PGReductor">
+<span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor._B_apply">
-<code class="sig-name descname"><span class="pre">_B_apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._B_apply">
+<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor._C_apply_adjoint">
-<code class="sig-name descname"><span class="pre">_C_apply_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._C_apply_adjoint">
+<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse">
-<code class="sig-name descname"><span class="pre">_K_apply_inverse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse">
+<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse_adjoint">
-<code class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse_adjoint">
+<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.DelayBHIReductor._fom_assemble">
-<code class="sig-name descname"><span class="pre">_fom_assemble</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._fom_assemble">
+<span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.reductors.interpolation.TFBHIReductor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></code><code class="sig-name descname"><span class="pre">TFBHIReductor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.TFBHIReductor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.TFBHIReductor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></span><span class="sig-name descname"><span class="pre">TFBHIReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.TFBHIReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
 <p>Loewner bitangential Hermite interpolation reductor.</p>
-<p>See <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id6">BG12</a>]</span>.</p>
+<p>See <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id9" title="C. A. Beattie and S. Gugercin. Realization-independent $\mathcal H_2$-approximation. In 51st IEEE Conference on Decision and Control (CDC), 4953–4958. 2012. doi:10.1109/CDC.2012.6426344.">BG12</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -782,8 +778,8 @@ systems).</p></li>
 </dl>
 </div>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.TFBHIReductor.reduce">
-<code class="sig-name descname"><span class="pre">reduce</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.TFBHIReductor.reduce" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.TFBHIReductor.reduce">
+<span class="sig-name descname"><span class="pre">reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.TFBHIReductor.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Realization-independent tangential Hermite interpolation.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -809,14 +805,14 @@ function of <code class="docutils literal notranslate"><span class="pre">fom</sp
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.reductors.interpolation.TFBHIReductor.reconstruct">
-<code class="sig-name descname"><span class="pre">reconstruct</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.TFBHIReductor.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.reductors.interpolation.TFBHIReductor.reconstruct">
+<span class="sig-name descname"><span class="pre">reconstruct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/fenics-op-apply-inverse-adjoint/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.TFBHIReductor.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct high-dimensional vector from reduced vector <code class="docutils literal notranslate"><span class="pre">u</span></code>.</p>
 </dd></dl>
 </dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -865,10 +861,10 @@ function of <code class="docutils literal notranslate"><span class="pre">fom</sp
               
           </div>
             Last updated on
-              Jul 26, 2021.
+              Sep 17, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

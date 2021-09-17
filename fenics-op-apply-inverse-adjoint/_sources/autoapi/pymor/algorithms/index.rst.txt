@@ -12,6 +12,7 @@ Submodules
 
    adaptivegreedy <adaptivegreedy/index.rst>
    basic <basic/index.rst>
+   bernoulli <bernoulli/index.rst>
    ei <ei/index.rst>
    eigs <eigs/index.rst>
    error <error/index.rst>
