@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.parameters.base &#8212; pyMOR v2021.1rc0+592.g20883ee8 Manual</title>
+    <title>pymor.parameters.base &#8212; pyMOR v2021.1rc0+600.gdf52405b Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+592.g20883ee8 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+600.gdf52405b Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+592.g20883ee8 Manual logo">
+                   alt="pyMOR v2021.1rc0+600.gdf52405b Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+592.g20883ee8 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+600.gdf52405b Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.parameters</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+592.g20883ee8 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+600.gdf52405b Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+592.g20883ee8 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+600.gdf52405b Manual">Documentation</a>
   </label>
   
 
@@ -566,13 +566,8 @@ i.e.</p>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Parameters.__le__">
-<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Parameters.__le__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if <a class="reference internal" href="#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> are compatible with the given <a class="reference internal" href="#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p>
-<p>Each of the parameter must be contained in  <code class="docutils literal notranslate"><span class="pre">mu</span></code> and the dimensions have to match,
-i.e.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="bp">self</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span>
-</pre></div>
-</div>
+<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Parameters.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self&lt;=value.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Parameters.__str__">
@@ -615,11 +610,28 @@ the arrays are made immutable.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Mu.is_time_dependent">
 <span class="sig-name descname"><span class="pre">is_time_dependent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.is_time_dependent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Check whether the values for a given parameter depend on time.</p>
+<p>This is the case when the value for <code class="docutils literal notranslate"><span class="pre">self[param]</span></code> was given by a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>
+instead of a constant array.</p>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Mu.get_time_dependent_value">
 <span class="sig-name descname"><span class="pre">get_time_dependent_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.get_time_dependent_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return time-dependent <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> for given parameter.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>param</dt><dd><p>The parameter for which to return the time-dependent values.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">param</span></code> depends on time, this corresponding <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> (and not its
+evaluation at the current time) is returned. If <code class="docutils literal notranslate"><span class="pre">param</span></code> is not given
+by a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ConstantFunction" title="pymor.analyticalproblems.functions.ConstantFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConstantFunction</span></code></a> is returned.</p>
+</div>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Mu.with_">
 <span class="sig-name descname"><span class="pre">with_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/time_dependent_mu/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.with_" title="Permalink to this definition">¶</a></dt>
@@ -854,7 +866,7 @@ random state is used.</p>
               
           </div>
             Last updated on
-              Sep 15, 2021.
+              Sep 17, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
