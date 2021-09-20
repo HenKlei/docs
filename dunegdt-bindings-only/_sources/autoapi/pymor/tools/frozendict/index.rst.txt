@@ -1,0 +1,56 @@
+:mod:`pymor.tools.frozendict`
+=============================
+
+.. py:module:: pymor.tools.frozendict
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.frozendict.FrozenDict
+   pymor.tools.frozendict.SortedFrozenDict
+
+
+
+
+.. py:class:: FrozenDict(*args, **kwargs)
+
+   Bases: :py:obj:`dict`
+
+   An immutable dictionary.
+
+   .. py:method:: _blocked_attribute(self)
+      :property:
+
+
+   .. py:method:: _post_init(self)
+
+
+   .. py:method:: __repr__(self)
+
+      Return repr(self).
+
+
+   .. py:method:: __reduce__(self)
+
+      Helper for pickle.
+
+
+
+.. py:class:: SortedFrozenDict(*args, **kwargs)
+
+   Bases: :py:obj:`FrozenDict`
+
+   A sorted immutable dictionary.
+
+   .. py:method:: __repr__(self)
+
+      Return repr(self).
+
+
+
