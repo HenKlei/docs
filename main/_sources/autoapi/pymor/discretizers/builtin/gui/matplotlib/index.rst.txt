@@ -65,7 +65,7 @@ Classes
 
 
 
-.. py:class:: Matplotlib1DAxes(U, figure, grid, vmin=None, vmax=None, codim=1, separate_axes=False, sync_timer=None, columns=2)
+.. py:class:: Matplotlib1DAxes(U, figure, grid, vmin=None, vmax=None, codim=1, separate_axes=False, sync_timer=None, columns=2, bounding_box=None)
 
    Bases: :py:obj:`MatplotlibAxesBase`
 
