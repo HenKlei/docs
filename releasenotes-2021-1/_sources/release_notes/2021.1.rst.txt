@@ -3,8 +3,8 @@ pyMOR 2021.1 (September 30, 2021)
 ---------------------------------
 We are proud to announce the release of pyMOR 2021.1! This release includes
 several new reductors for LTI systems. In particular, methods for reducing and
-analysing unstable systems have been added. ANNs can now be used in order to
-directly approximate output qunatities. Furthermore, it is now possible to
+analyzing unstable systems have been added. ANNs can now be used in order to
+directly approximate output quantities. Furthermore, it is now possible to
 work with time-dependent parameters in pyMOR.
 
 Over ??? single commits have entered this release. For a full list of changes
@@ -25,19 +25,26 @@ to unstable LTI systems out of the box. In
 `[#1149] <https://github.com/pymor/pymor/pull/1149>`_ two reductors and several
 methods for working with and analyzing unstable |LTIModels| have been added.
 The :class:`~pymor.reductors.bt.FDBTReductor` allows for applying the balanced
-truncation technique to unstable systems by performing a Bernoulli stabiliztion
+truncation technique to unstable systems by performing a Bernoulli stabilization
 before the using the classical BT method. The :class:`~pymor.reductors.h2.GapIRKAReductor`
 aims to compute a reduced-order model such that the approximation error with
 respect to the :math:`\mathcal{H}_2`-Gap norm is small. Additionally,
 a variety of numerical linear algebra methods have been a part of
 `[#1149] <https://github.com/pymor/pymor/pull/1149>`_: Riccati equation solvers
 for small and dense matrices, Bernoulli matrix equation solver, new options for
-for pyMORs eigensolver such as shift-and-invert mode and :math:`\mathcal{L}_2`-norm
+for pyMOR's eigensolver such as shift-and-invert mode and :math:`\mathcal{L}_2`-norm
 computation for |LTIModels|. The new methods and reductors are showcased in
 :doc:`../tutorial_unstable_lti_systems`.
 
 Modal truncation
 ~~~~~~~~~~~~~~~~
+Based on the previously added :meth:`~pymor.algorithms.samdp.samdp` method for
+computing dominant poles of an LTI system,
+a modal truncation reductor :class:`~pymor.reductors.mt.MTReductor` was added in
+`[#1151] <https://github.com/pymor/pymor/pull/1151>`_.
+It constructs a reduced-order model from dominant poles of the full-order model,
+with different possible dominance measures.
+The reductor also implements a dense method for small to medium problems.
 
 Time-dependent parameter values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,8 +65,13 @@ Empirical Interpolation improvements
 Add outputs to FV discretizers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Methods for exporting matrices of LTI models
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Methods for exporting matrices of system models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The system classes :class:`~pymor.models.iosys.LTIModel` and
+:class:`~pymor.models.iosys.SecondOrderModel` have had various `from_*` methods
+for constructing models from matrices.
+In `[#1309] <https://github.com/pymor/pymor/pull/1309>`_,
+the corresponding `to_*` methods were added for exporting matrices from a model.
 
 
 Backward incompatible changes

@@ -47,7 +47,7 @@
   
   
   
-    <title>pyMOR 2021.1 (September 30, 2021) &#8212; pyMOR v2021.1rc0+605.ge33f3281 Manual</title>
+    <title>pyMOR 2021.1 (September 30, 2021) &#8212; pyMOR v2021.1rc0+608.gfb3e134c Manual</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="pyMOR v2021.1rc0+605.ge33f3281 Manual"
+        <a href="../index.html" title="pyMOR v2021.1rc0+608.gfb3e134c Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+605.ge33f3281 Manual logo">
+                   alt="pyMOR v2021.1rc0+608.gfb3e134c Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+605.ge33f3281 Manual</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+608.gfb3e134c Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -174,13 +174,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="pyMOR v2021.1rc0+605.ge33f3281 Manual" class="md-nav__button md-logo">
+    <a href="../index.html" title="pyMOR v2021.1rc0+608.gfb3e134c Manual" class="md-nav__button md-logo">
       
         <img src="../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="pyMOR v2021.1rc0+605.ge33f3281 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+608.gfb3e134c Manual">Documentation</a>
   </label>
   
 
@@ -275,8 +275,8 @@
 <h1 id="release-notes-2021-1--page-root">pyMOR 2021.1 (September 30, 2021)<a class="headerlink" href="#release-notes-2021-1--page-root" title="Permalink to this headline">¶</a></h1>
 <p>We are proud to announce the release of pyMOR 2021.1! This release includes
 several new reductors for LTI systems. In particular, methods for reducing and
-analysing unstable systems have been added. ANNs can now be used in order to
-directly approximate output qunatities. Furthermore, it is now possible to
+analyzing unstable systems have been added. ANNs can now be used in order to
+directly approximate output quantities. Furthermore, it is now possible to
 work with time-dependent parameters in pyMOR.</p>
 <p>Over ??? single commits have entered this release. For a full list of changes
 see <a class="reference external" href="https://github.com/pymor/pymor/compare/2020.2.x...2021.1.x">here</a>.</p>
@@ -292,19 +292,26 @@ to unstable LTI systems out of the box. In
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1149">[#1149]</a> two reductors and several
 methods for working with and analyzing unstable <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModels</span></code></a> have been added.
 The <a class="reference internal" href="../autoapi/pymor/reductors/bt/index.html#pymor.reductors.bt.FDBTReductor" title="pymor.reductors.bt.FDBTReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">FDBTReductor</span></code></a> allows for applying the balanced
-truncation technique to unstable systems by performing a Bernoulli stabiliztion
+truncation technique to unstable systems by performing a Bernoulli stabilization
 before the using the classical BT method. The <a class="reference internal" href="../autoapi/pymor/reductors/h2/index.html#pymor.reductors.h2.GapIRKAReductor" title="pymor.reductors.h2.GapIRKAReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">GapIRKAReductor</span></code></a>
 aims to compute a reduced-order model such that the approximation error with
 respect to the <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span>-Gap norm is small. Additionally,
 a variety of numerical linear algebra methods have been a part of
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1149">[#1149]</a>: Riccati equation solvers
 for small and dense matrices, Bernoulli matrix equation solver, new options for
-for pyMORs eigensolver such as shift-and-invert mode and <span class="math notranslate nohighlight">\(\mathcal{L}_2\)</span>-norm
+for pyMOR’s eigensolver such as shift-and-invert mode and <span class="math notranslate nohighlight">\(\mathcal{L}_2\)</span>-norm
 computation for <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModels</span></code></a>. The new methods and reductors are showcased in
 <a class="reference internal" href="../tutorial_unstable_lti_systems.html"><span class="doc">Tutorial: Model order reduction for unstable LTI systems</span></a>.</p>
 </section>
 <section id="modal-truncation">
 <h3 id="modal-truncation">Modal truncation<a class="headerlink" href="#modal-truncation" title="Permalink to this headline">¶</a></h3>
+<p>Based on the previously added <a class="reference internal" href="../autoapi/pymor/algorithms/samdp/index.html#pymor.algorithms.samdp.samdp" title="pymor.algorithms.samdp.samdp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">samdp</span></code></a> method for
+computing dominant poles of an LTI system,
+a modal truncation reductor <a class="reference internal" href="../autoapi/pymor/reductors/mt/index.html#pymor.reductors.mt.MTReductor" title="pymor.reductors.mt.MTReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">MTReductor</span></code></a> was added in
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1151">[#1151]</a>.
+It constructs a reduced-order model from dominant poles of the full-order model,
+with different possible dominance measures.
+The reductor also implements a dense method for small to medium problems.</p>
 </section>
 <section id="time-dependent-parameter-values">
 <h3 id="time-dependent-parameter-values">Time-dependent parameter values<a class="headerlink" href="#time-dependent-parameter-values" title="Permalink to this headline">¶</a></h3>
@@ -324,8 +331,13 @@ computation for <a class="reference internal" href="../autoapi/pymor/models/iosy
 <section id="add-outputs-to-fv-discretizers">
 <h3 id="add-outputs-to-fv-discretizers">Add outputs to FV discretizers<a class="headerlink" href="#add-outputs-to-fv-discretizers" title="Permalink to this headline">¶</a></h3>
 </section>
-<section id="methods-for-exporting-matrices-of-lti-models">
-<h3 id="methods-for-exporting-matrices-of-lti-models">Methods for exporting matrices of LTI models<a class="headerlink" href="#methods-for-exporting-matrices-of-lti-models" title="Permalink to this headline">¶</a></h3>
+<section id="methods-for-exporting-matrices-of-system-models">
+<h3 id="methods-for-exporting-matrices-of-system-models">Methods for exporting matrices of system models<a class="headerlink" href="#methods-for-exporting-matrices-of-system-models" title="Permalink to this headline">¶</a></h3>
+<p>The system classes <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> and
+<a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.SecondOrderModel" title="pymor.models.iosys.SecondOrderModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SecondOrderModel</span></code></a> have had various <code class="docutils literal notranslate"><span class="pre">from_*</span></code> methods
+for constructing models from matrices.
+In <a class="reference external" href="https://github.com/pymor/pymor/pull/1309">[#1309]</a>,
+the corresponding <code class="docutils literal notranslate"><span class="pre">to_*</span></code> methods were added for exporting matrices from a model.</p>
 </section>
 </section>
 <section id="backward-incompatible-changes">
