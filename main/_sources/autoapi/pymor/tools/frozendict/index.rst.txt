@@ -24,6 +24,11 @@ Classes
 
    An immutable dictionary.
 
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
    .. py:method:: _blocked_attribute(self)
       :property:
 
@@ -47,6 +52,11 @@ Classes
    Bases: :py:obj:`FrozenDict`
 
    A sorted immutable dictionary.
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
 
    .. py:method:: __repr__(self)
 

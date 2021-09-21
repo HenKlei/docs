@@ -42,6 +42,11 @@ Classes
    name of a parameter. The corresponding value is a non-negative `int`
    specifying the dimension (number of scalar components) of the parameter.
 
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
    .. py:method:: _post_init(self)
 
 
@@ -79,7 +84,12 @@ Classes
           Parameters(b=2, a=1).parse([1,2,3])
 
       will assign to parameter `a` the value `[1]` and to parameter `b` the
-      values `[2, 3]`.
+      values `[2, 3]`. Further, each parameter value can be given as a
+      vector-valued |Function| with `dim_domain == 1` to specify time-dependent
+      values. A `str` is converted to an appropriate |ExpressionFunction|.
+      Note that |ExpressionFunctions| are functions of the variable `x`, so you
+      have to write `x` instead of `t` for the time parameter in the string
+      expression.
 
       .. admonition:: Parameters
 
@@ -139,14 +149,9 @@ Classes
    .. py:method:: __sub__(self, other)
 
 
-   .. py:method:: __le__(self, mu)
+   .. py:method:: __le__(self, params)
 
-      Check if |parameter values| are compatible with the given |Parameters|.
-
-      Each of the parameter must be contained in  `mu` and the dimensions have to match,
-      i.e. ::
-
-          mu[parameter].size == self[parameter]
+      Return self<=value.
 
 
    .. py:method:: __str__(self)
@@ -167,20 +172,51 @@ Classes
 
 .. py:class:: Mu(*args, **kwargs)
 
-   Bases: :py:obj:`pymor.tools.frozendict.SortedFrozenDict`
+   Bases: :py:obj:`pymor.tools.frozendict.FrozenDict`
 
    Immutable mapping of |Parameter| names to parameter values.
 
    .. admonition:: Parameters
 
        Anything that dict accepts for the construction of a dictionary.
-       Values are automatically converted to immutable one-dimensional |NumPy arrays|,
-       unless the Python interpreter runs with the `-O` flag.
+       Values are automatically converted to one-dimensional |NumPy arrays|,
+       except for |Functions| which are interpreted as time-dependent parameter
+       values. Unless the Python interpreter runs with the `-O` flag,
+       the arrays are made immutable.
            
    .. attribute:: parameters
 
       The |Parameters| to which the mapping assigns values.
       
+
+   .. py:attribute:: __slots__
+      :annotation: = _raw_values
+
+      
+
+   .. py:method:: is_time_dependent(self, param)
+
+      Check whether the values for a given parameter depend on time.
+
+      This is the case when the value for `self[param]` was given by a |Function|
+      instead of a constant array.
+
+
+   .. py:method:: get_time_dependent_value(self, param)
+
+      Return time-dependent |Function| for given parameter.
+
+      .. admonition:: Parameters
+
+          param
+              The parameter for which to return the time-dependent values.
+              
+      .. admonition:: Returns
+
+          If `param` depends on time, this corresponding |Function| (and not its
+          evaluation at the current time) is returned. If `param` is not given
+          by a |Function|, a |ConstantFunction| is returned.
+              
 
    .. py:method:: with_(self, **kwargs)
 
