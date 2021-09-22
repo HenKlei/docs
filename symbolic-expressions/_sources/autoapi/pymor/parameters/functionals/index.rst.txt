@@ -213,11 +213,6 @@ Classes
            A dict containing a list of dicts of Python expressions for all second order partial
            derivatives of each parameter component i and j.
            
-   .. py:attribute:: functions
-      
-
-      
-
    .. py:method:: __reduce__(self)
 
       Helper for pickle.
