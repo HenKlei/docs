@@ -551,7 +551,7 @@ Attributes
 
 
 
-.. py:class:: UnaryFunctionCall(arg)
+.. py:class:: UnaryFunctionCall(*arg)
 
    Bases: :py:obj:`Expression`
 
@@ -611,7 +611,7 @@ Attributes
 
 
 
-.. py:class:: UnaryReductionCall(arg)
+.. py:class:: UnaryReductionCall(*arg)
 
    Bases: :py:obj:`Expression`
 
@@ -1192,7 +1192,7 @@ Attributes
       
 
 
-.. py:class:: sin(arg)
+.. py:class:: sin(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1244,7 +1244,7 @@ Attributes
       
 
 
-.. py:class:: cos(arg)
+.. py:class:: cos(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1296,7 +1296,7 @@ Attributes
       
 
 
-.. py:class:: tan(arg)
+.. py:class:: tan(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1348,7 +1348,7 @@ Attributes
       
 
 
-.. py:class:: arcsin(arg)
+.. py:class:: arcsin(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1400,7 +1400,7 @@ Attributes
       
 
 
-.. py:class:: arccos(arg)
+.. py:class:: arccos(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1452,7 +1452,7 @@ Attributes
       
 
 
-.. py:class:: arctan(arg)
+.. py:class:: arctan(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1504,7 +1504,7 @@ Attributes
       
 
 
-.. py:class:: sinh(arg)
+.. py:class:: sinh(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1556,7 +1556,7 @@ Attributes
       
 
 
-.. py:class:: cosh(arg)
+.. py:class:: cosh(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1608,7 +1608,7 @@ Attributes
       
 
 
-.. py:class:: tanh(arg)
+.. py:class:: tanh(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1660,7 +1660,7 @@ Attributes
       
 
 
-.. py:class:: arcsinh(arg)
+.. py:class:: arcsinh(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1712,7 +1712,7 @@ Attributes
       
 
 
-.. py:class:: arccosh(arg)
+.. py:class:: arccosh(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1764,7 +1764,7 @@ Attributes
       
 
 
-.. py:class:: arctanh(arg)
+.. py:class:: arctanh(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1816,7 +1816,7 @@ Attributes
       
 
 
-.. py:class:: exp(arg)
+.. py:class:: exp(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1868,7 +1868,7 @@ Attributes
       
 
 
-.. py:class:: exp2(arg)
+.. py:class:: exp2(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1920,7 +1920,7 @@ Attributes
       
 
 
-.. py:class:: log(arg)
+.. py:class:: log(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -1972,7 +1972,7 @@ Attributes
       
 
 
-.. py:class:: log2(arg)
+.. py:class:: log2(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -2024,7 +2024,7 @@ Attributes
       
 
 
-.. py:class:: log10(arg)
+.. py:class:: log10(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -2076,7 +2076,7 @@ Attributes
       
 
 
-.. py:class:: sqrt(arg)
+.. py:class:: sqrt(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -2128,7 +2128,7 @@ Attributes
       
 
 
-.. py:class:: abs(arg)
+.. py:class:: abs(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -2180,7 +2180,7 @@ Attributes
       
 
 
-.. py:class:: sign(arg)
+.. py:class:: sign(*arg)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -2284,7 +2284,7 @@ Attributes
       
 
 
-.. py:class:: norm(arg)
+.. py:class:: norm(*arg)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -2336,7 +2336,7 @@ Attributes
       
 
 
-.. py:class:: min(arg)
+.. py:class:: min(*arg)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -2388,7 +2388,7 @@ Attributes
       
 
 
-.. py:class:: max(arg)
+.. py:class:: max(*arg)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -2440,7 +2440,7 @@ Attributes
       
 
 
-.. py:class:: sum(arg)
+.. py:class:: sum(*arg)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -2492,7 +2492,7 @@ Attributes
       
 
 
-.. py:class:: prod(arg)
+.. py:class:: prod(*arg)
 
    Bases: :py:obj:`UnaryReductionCall`
 
