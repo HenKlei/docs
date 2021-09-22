@@ -173,7 +173,7 @@ Classes
 
 
 
-.. py:class:: ExpressionFunction(expression, dim_domain=1, parameters={}, values={}, name=None)
+.. py:class:: ExpressionFunction(expression, dim_domain=1, parameters={}, values={}, variable='x', name=None)
 
    Bases: :py:obj:`GenericFunction`
 
@@ -190,8 +190,7 @@ Classes
    .. admonition:: Parameters
 
        expression
-           A Python expression of one variable `x` and a parameter `mu` given as
-           a string.
+           A Python expression of one variable and the `parameters`, given as a `str`.
        dim_domain
            The dimension of the domain.
        shape_range
@@ -201,6 +200,8 @@ Classes
        values
            Dictionary of additional constants that can be used in `expression`
            with their corresponding value.
+       variable
+           Name of the input variable in the given expression.
        name
            The name of the function.
            
