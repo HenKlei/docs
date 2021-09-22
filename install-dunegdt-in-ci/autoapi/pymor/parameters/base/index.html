@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.parameters.base &#8212; pyMOR v2021.1rc0+599.g3aa3fdc3 Manual</title>
+    <title>pymor.parameters.base &#8212; pyMOR v2021.1rc0+649.g3831f9f9 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+599.g3aa3fdc3 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+649.g3831f9f9 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+599.g3aa3fdc3 Manual logo">
+                   alt="pyMOR v2021.1rc0+649.g3831f9f9 Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+599.g3aa3fdc3 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+649.g3831f9f9 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.parameters</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+599.g3aa3fdc3 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+649.g3831f9f9 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+599.g3aa3fdc3 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+649.g3831f9f9 Manual">Documentation</a>
   </label>
   
 
@@ -457,6 +457,10 @@ To sample <a class="reference internal" href="#pymor.parameters.base.Mu" title="
 <p>Each key of a <a class="reference internal" href="#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> dict is a string specifying the
 name of a parameter. The corresponding value is a non-negative <code class="docutils literal notranslate"><span class="pre">int</span></code>
 specifying the dimension (number of scalar components) of the parameter.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.parameters.base.Parameters.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Parameters.__slots__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Parameters._post_init">
 <span class="sig-name descname"><span class="pre">_post_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Parameters._post_init" title="Permalink to this definition">¶</a></dt>
@@ -494,7 +498,12 @@ will be concatenated by alphabetical ordering. E.g.:</p>
 </pre></div>
 </div>
 <p>will assign to parameter <code class="docutils literal notranslate"><span class="pre">a</span></code> the value <code class="docutils literal notranslate"><span class="pre">[1]</span></code> and to parameter <code class="docutils literal notranslate"><span class="pre">b</span></code> the
-values <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3]</span></code>.</p>
+values <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3]</span></code>. Further, each parameter value can be given as a
+vector-valued <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> to specify time-dependent
+values. A <code class="docutils literal notranslate"><span class="pre">str</span></code> is converted to an appropriate <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a>.
+Note that <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunctions</span></code></a> are functions of the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, so you
+have to write <code class="docutils literal notranslate"><span class="pre">x</span></code> instead of <code class="docutils literal notranslate"><span class="pre">t</span></code> for the time parameter in the string
+expression.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -560,13 +569,8 @@ i.e.</p>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Parameters.__le__">
-<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Parameters.__le__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if <a class="reference internal" href="#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> are compatible with the given <a class="reference internal" href="#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p>
-<p>Each of the parameter must be contained in  <code class="docutils literal notranslate"><span class="pre">mu</span></code> and the dimensions have to match,
-i.e.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="bp">self</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span>
-</pre></div>
-</div>
+<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Parameters.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self&lt;=value.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Parameters.__str__">
@@ -587,18 +591,49 @@ i.e.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.parameters.base.Mu">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.parameters.base.</span></span><span class="sig-name descname"><span class="pre">Mu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../../tools/frozendict/index.html#pymor.tools.frozendict.SortedFrozenDict" title="pymor.tools.frozendict.SortedFrozenDict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.tools.frozendict.SortedFrozenDict</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../../tools/frozendict/index.html#pymor.tools.frozendict.FrozenDict" title="pymor.tools.frozendict.FrozenDict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.tools.frozendict.FrozenDict</span></code></a></p>
 <p>Immutable mapping of <a class="reference internal" href="#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> names to parameter values.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <p>Anything that dict accepts for the construction of a dictionary.
-Values are automatically converted to immutable one-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>,
-unless the Python interpreter runs with the <code class="docutils literal notranslate"><span class="pre">-O</span></code> flag.</p>
+Values are automatically converted to one-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>,
+except for <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Functions</span></code></a> which are interpreted as time-dependent parameter
+values. Unless the Python interpreter runs with the <code class="docutils literal notranslate"><span class="pre">-O</span></code> flag,
+the arrays are made immutable.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.parameters.base.Mu.parameters">
 <span class="sig-name descname"><span class="pre">parameters</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> to which the mapping assigns values.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.parameters.base.Mu.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">_raw_values</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.__slots__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.parameters.base.Mu.is_time_dependent">
+<span class="sig-name descname"><span class="pre">is_time_dependent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.is_time_dependent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the values for a given parameter depend on time.</p>
+<p>This is the case when the value for <code class="docutils literal notranslate"><span class="pre">self[param]</span></code> was given by a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>
+instead of a constant array.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.parameters.base.Mu.get_time_dependent_value">
+<span class="sig-name descname"><span class="pre">get_time_dependent_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/install-dunegdt-in-ci/src/pymor/parameters/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parameters.base.Mu.get_time_dependent_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return time-dependent <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> for given parameter.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>param</dt><dd><p>The parameter for which to return the time-dependent values.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">param</span></code> depends on time, this corresponding <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> (and not its
+evaluation at the current time) is returned. If <code class="docutils literal notranslate"><span class="pre">param</span></code> is not given
+by a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ConstantFunction" title="pymor.analyticalproblems.functions.ConstantFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConstantFunction</span></code></a> is returned.</p>
+</div>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.parameters.base.Mu.with_">

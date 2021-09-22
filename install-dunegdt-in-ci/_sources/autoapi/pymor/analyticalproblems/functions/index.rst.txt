@@ -214,6 +214,11 @@ Classes
       Helper for pickle.
 
 
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
 
 .. py:class:: LincombFunction(functions, coefficients, name=None)
 

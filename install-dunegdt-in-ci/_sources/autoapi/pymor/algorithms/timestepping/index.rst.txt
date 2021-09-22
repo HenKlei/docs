@@ -43,6 +43,7 @@ Functions
 
    pymor.algorithms.timestepping.implicit_euler
    pymor.algorithms.timestepping.explicit_euler
+   pymor.algorithms.timestepping._depends_on_time
 
 
 
@@ -202,5 +203,8 @@ Functions
 
 
 .. py:function:: explicit_euler(A, F, U0, t0, t1, nt, mu=None, num_values=None)
+
+
+.. py:function:: _depends_on_time(obj, mu)
 
 
