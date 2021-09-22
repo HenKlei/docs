@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.analyticalproblems.expressions &#8212; pyMOR v2021.1rc0+639.g130a9ac2 Manual</title>
+    <title>pymor.analyticalproblems.expressions &#8212; pyMOR v2021.1rc0+642.g08afbc5d Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+639.g130a9ac2 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+642.g08afbc5d Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+639.g130a9ac2 Manual logo">
+                   alt="pyMOR v2021.1rc0+642.g08afbc5d Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+639.g130a9ac2 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+642.g08afbc5d Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.analyticalproblems</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+639.g130a9ac2 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+642.g08afbc5d Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+639.g130a9ac2 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+642.g08afbc5d Manual">Documentation</a>
   </label>
   
 
@@ -489,133 +489,136 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Parameter" title="pymor.analyticalproblems.expressions.Parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameter</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.BinaryOp" title="pymor.analyticalproblems.expressions.BinaryOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryOp</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Array" title="pymor.analyticalproblems.expressions.Array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Array</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Neg" title="pymor.analyticalproblems.expressions.Neg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Neg</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.BinaryOp" title="pymor.analyticalproblems.expressions.BinaryOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryOp</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Indexed" title="pymor.analyticalproblems.expressions.Indexed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indexed</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Neg" title="pymor.analyticalproblems.expressions.Neg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Neg</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall" title="pymor.analyticalproblems.expressions.UnaryFunctionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryFunctionCall</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Indexed" title="pymor.analyticalproblems.expressions.Indexed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indexed</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryReductionCall" title="pymor.analyticalproblems.expressions.UnaryReductionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryReductionCall</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall" title="pymor.analyticalproblems.expressions.UnaryFunctionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryFunctionCall</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Sum" title="pymor.analyticalproblems.expressions.Sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sum</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryReductionCall" title="pymor.analyticalproblems.expressions.UnaryReductionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryReductionCall</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Diff" title="pymor.analyticalproblems.expressions.Diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Diff</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Sum" title="pymor.analyticalproblems.expressions.Sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sum</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Prod" title="pymor.analyticalproblems.expressions.Prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Prod</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Diff" title="pymor.analyticalproblems.expressions.Diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Diff</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Div" title="pymor.analyticalproblems.expressions.Div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Div</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Prod" title="pymor.analyticalproblems.expressions.Prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Prod</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pow" title="pymor.analyticalproblems.expressions.Pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pow</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Div" title="pymor.analyticalproblems.expressions.Div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Div</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Mod" title="pymor.analyticalproblems.expressions.Mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mod</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pow" title="pymor.analyticalproblems.expressions.Pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pow</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LE" title="pymor.analyticalproblems.expressions.LE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Mod" title="pymor.analyticalproblems.expressions.Mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mod</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GE" title="pymor.analyticalproblems.expressions.GE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LE" title="pymor.analyticalproblems.expressions.LE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LE</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LT" title="pymor.analyticalproblems.expressions.LT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LT</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GE" title="pymor.analyticalproblems.expressions.GE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GE</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GT" title="pymor.analyticalproblems.expressions.GT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LT" title="pymor.analyticalproblems.expressions.LT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LT</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sin" title="pymor.analyticalproblems.expressions.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GT" title="pymor.analyticalproblems.expressions.GT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GT</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cos" title="pymor.analyticalproblems.expressions.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sin" title="pymor.analyticalproblems.expressions.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tan" title="pymor.analyticalproblems.expressions.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cos" title="pymor.analyticalproblems.expressions.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsin" title="pymor.analyticalproblems.expressions.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tan" title="pymor.analyticalproblems.expressions.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccos" title="pymor.analyticalproblems.expressions.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsin" title="pymor.analyticalproblems.expressions.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctan" title="pymor.analyticalproblems.expressions.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccos" title="pymor.analyticalproblems.expressions.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sinh" title="pymor.analyticalproblems.expressions.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctan" title="pymor.analyticalproblems.expressions.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cosh" title="pymor.analyticalproblems.expressions.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sinh" title="pymor.analyticalproblems.expressions.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tanh" title="pymor.analyticalproblems.expressions.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cosh" title="pymor.analyticalproblems.expressions.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsinh" title="pymor.analyticalproblems.expressions.arcsinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsinh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tanh" title="pymor.analyticalproblems.expressions.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccosh" title="pymor.analyticalproblems.expressions.arccosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccosh</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsinh" title="pymor.analyticalproblems.expressions.arcsinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsinh</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctanh" title="pymor.analyticalproblems.expressions.arctanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctanh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccosh" title="pymor.analyticalproblems.expressions.arccosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccosh</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp" title="pymor.analyticalproblems.expressions.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctanh" title="pymor.analyticalproblems.expressions.arctanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctanh</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp2" title="pymor.analyticalproblems.expressions.exp2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp2</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp" title="pymor.analyticalproblems.expressions.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log" title="pymor.analyticalproblems.expressions.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp2" title="pymor.analyticalproblems.expressions.exp2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp2</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log2" title="pymor.analyticalproblems.expressions.log2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log2</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log" title="pymor.analyticalproblems.expressions.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log10" title="pymor.analyticalproblems.expressions.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log2" title="pymor.analyticalproblems.expressions.log2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log2</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sqrt" title="pymor.analyticalproblems.expressions.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log10" title="pymor.analyticalproblems.expressions.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.abs" title="pymor.analyticalproblems.expressions.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sqrt" title="pymor.analyticalproblems.expressions.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sign" title="pymor.analyticalproblems.expressions.sign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.abs" title="pymor.analyticalproblems.expressions.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.angle" title="pymor.analyticalproblems.expressions.angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angle</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sign" title="pymor.analyticalproblems.expressions.sign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.norm" title="pymor.analyticalproblems.expressions.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.angle" title="pymor.analyticalproblems.expressions.angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angle</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.min" title="pymor.analyticalproblems.expressions.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.norm" title="pymor.analyticalproblems.expressions.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.max" title="pymor.analyticalproblems.expressions.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.min" title="pymor.analyticalproblems.expressions.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sum" title="pymor.analyticalproblems.expressions.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.max" title="pymor.analyticalproblems.expressions.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.prod" title="pymor.analyticalproblems.expressions.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sum" title="pymor.analyticalproblems.expressions.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pi" title="pymor.analyticalproblems.expressions.Pi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pi</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.prod" title="pymor.analyticalproblems.expressions.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.E" title="pymor.analyticalproblems.expressions.E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pi" title="pymor.analyticalproblems.expressions.Pi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pi</span></code></a></p></td>
+<td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.E" title="pymor.analyticalproblems.expressions.E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E</span></code></a></p></td>
 <td><p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p></td>
 </tr>
 </tbody>
@@ -916,6 +919,11 @@ ensured that both dicts are disjoint.</p>
 <dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the object really depends on a parameter, i.e. <a class="reference internal" href="#pymor.analyticalproblems.expressions.Constant.parameters" title="pymor.analyticalproblems.expressions.Constant.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a>
 is not empty.</p>
 </dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Constant.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Constant.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Parameter">
@@ -970,6 +978,62 @@ is not empty.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Parameter.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Parameter.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">Array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Expression</span></code></a></p>
+<p>Base class for immutable mathematical entities depending on some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p>
+<p>Each <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.ParametricObject" title="pymor.parameters.base.ParametricObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParametricObject</span></code></a> lists the <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> it depends on in the <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a>
+attribute. Usually, these <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> are automatically derived as the union of all
+<a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> of the object’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code> arguments.</p>
+<p>Additional <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> introduced by the object itself can be specified by setting the
+<a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_own" title="pymor.analyticalproblems.expressions.Array.parameters_own"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_own</span></code></a> attribute in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. In case the object fixes some <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>
+it’s child objects depend on to concrete values, those <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> can be removed from
+the <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a> attribute by setting <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_internal" title="pymor.analyticalproblems.expressions.Array.parameters_internal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_internal</span></code></a>.</p>
+<p>Alternatively, <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a> can be initialized manually in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> the object depends on.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.parameters_own">
+<span class="sig-name descname"><span class="pre">parameters_own</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.parameters_own" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> the object depends on which are not inherited from a child
+object the object depends on. Each item of <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_own" title="pymor.analyticalproblems.expressions.Array.parameters_own"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_own</span></code></a> is also an
+item of <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a>.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.parameters_inherited">
+<span class="sig-name descname"><span class="pre">parameters_inherited</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.parameters_inherited" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> the object depends on because some child object depends on them.
+Each item of <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_own" title="pymor.analyticalproblems.expressions.Array.parameters_own"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_own</span></code></a> is also an item of <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a>.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.parameters_internal">
+<span class="sig-name descname"><span class="pre">parameters_internal</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.parameters_internal" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> some of the object’s child objects may depend on, but which are
+fixed to a concrete value by this object. All items of <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_internal" title="pymor.analyticalproblems.expressions.Array.parameters_internal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_internal</span></code></a>
+are removed from <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a> and <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_inherited" title="pymor.analyticalproblems.expressions.Array.parameters_inherited"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_inherited</span></code></a>. When
+initializing <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_own" title="pymor.analyticalproblems.expressions.Array.parameters_own"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_own</span></code></a> and <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters_internal" title="pymor.analyticalproblems.expressions.Array.parameters_internal"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters_internal</span></code></a>, it has to be
+ensured that both dicts are disjoint.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.parametric">
+<span class="sig-name descname"><span class="pre">parametric</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.parametric" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the object really depends on a parameter, i.e. <a class="reference internal" href="#pymor.analyticalproblems.expressions.Array.parameters" title="pymor.analyticalproblems.expressions.Array.parameters"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parameters</span></code></a>
+is not empty.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.numpy_expr">
+<span class="sig-name descname"><span class="pre">numpy_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.numpy_expr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/symbolic_expressions/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 </dd></dl>
