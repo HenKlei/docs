@@ -14,12 +14,11 @@ Classes
 
    pymor.analyticalproblems.expressions.Expression
    pymor.analyticalproblems.expressions.BaseConstant
-   pymor.analyticalproblems.expressions.Parameter
    pymor.analyticalproblems.expressions.Constant
+   pymor.analyticalproblems.expressions.Parameter
    pymor.analyticalproblems.expressions.BinaryOp
    pymor.analyticalproblems.expressions.Neg
    pymor.analyticalproblems.expressions.Indexed
-   pymor.analyticalproblems.expressions.X
    pymor.analyticalproblems.expressions.UnaryFunctionCall
    pymor.analyticalproblems.expressions.UnaryReductionCall
    pymor.analyticalproblems.expressions.Sum
@@ -91,7 +90,7 @@ Attributes
 
    
 
-.. py:function:: parse_expression(expression, dim_domain, parameters={}, values={})
+.. py:function:: parse_expression(expression, parameters={}, values={})
 
 
 .. py:class:: Expression
@@ -145,7 +144,7 @@ Attributes
 
       
 
-   .. py:method:: to_numpy(self)
+   .. py:method:: to_numpy(self, variables)
 
 
    .. py:method:: numpy_expr(self)
@@ -280,53 +279,6 @@ Attributes
 
 
 
-.. py:class:: Parameter(name, dim)
-
-   Bases: :py:obj:`BaseConstant`
-
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
-
-
 .. py:class:: Constant(value)
 
    Bases: :py:obj:`BaseConstant`
@@ -372,6 +324,61 @@ Attributes
       `True` if the object really depends on a parameter, i.e. :attr:`parameters`
       is not empty.
       
+
+
+.. py:class:: Parameter(name, dim)
+
+   Bases: :py:obj:`Expression`
+
+   Base class for immutable mathematical entities depending on some |Parameters|.
+
+   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
+   attribute. Usually, these |Parameters| are automatically derived as the union of all
+   |Parameters| of the object's `__init__` arguments.
+
+   Additional |Parameters| introduced by the object itself can be specified by setting the
+   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
+   it's child objects depend on to concrete values, those |Parameters| can be removed from
+   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
+
+   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
+
+   .. attribute:: parameters
+
+      The |Parameters| the object depends on.
+
+   .. attribute:: parameters_own
+
+      The |Parameters| the object depends on which are not inherited from a child
+      object the object depends on. Each item of :attr:`parameters_own` is also an
+      item of :attr:`parameters`.
+
+   .. attribute:: parameters_inherited
+
+      The |Parameters| the object depends on because some child object depends on them.
+      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
+
+   .. attribute:: parameters_internal
+
+      The |Parameters| some of the object's child objects may depend on, but which are
+      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
+      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
+      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
+      ensured that both dicts are disjoint.
+
+   .. attribute:: parametric
+
+      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
+      is not empty.
+      
+
+   .. py:method:: numpy_expr(self)
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
 
 
 .. py:class:: BinaryOp(first, second)
@@ -490,61 +497,6 @@ Attributes
 
 
 .. py:class:: Indexed(base, index)
-
-   Bases: :py:obj:`Expression`
-
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
-
-   .. py:method:: numpy_expr(self)
-
-
-   .. py:method:: __str__(self)
-
-      Return str(self).
-
-
-
-.. py:class:: X(dim_domain)
 
    Bases: :py:obj:`Expression`
 

@@ -204,11 +204,6 @@ Classes
        name
            The name of the function.
            
-   .. py:attribute:: functions
-      
-
-      
-
    .. py:method:: __reduce__(self)
 
       Helper for pickle.
