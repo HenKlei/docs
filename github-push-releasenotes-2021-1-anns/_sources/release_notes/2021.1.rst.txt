@@ -64,8 +64,9 @@ case was implemented. The new reductor for the stationary case is used in
 :class:`~pymor.reductors.neural_network.NeuralNetworkReductor`.
 
 As part of `[#1282] <https://github.com/pymor/pymor/pull/1282>`_, the
-ANN-reductors were refactored and the neural network training routines have
-been separated from the reductors.
+ANN-reductors were refactored, and in
+`[#1274] <https://github.com/pymor/pymor/pull/1274>`_, the neural network
+training routines have been separated from the reductors.
 
 Improvements to the HAPOD algorithm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
