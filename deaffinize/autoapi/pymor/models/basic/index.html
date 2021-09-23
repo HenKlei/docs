@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.basic &#8212; pyMOR v2021.1rc0+640.gfe20abf3 Manual</title>
+    <title>pymor.models.basic &#8212; pyMOR v2021.1rc0+640.gbdf6fbb1 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+640.gfe20abf3 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+640.gbdf6fbb1 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+640.gfe20abf3 Manual logo">
+                   alt="pyMOR v2021.1rc0+640.gbdf6fbb1 Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+640.gfe20abf3 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+640.gbdf6fbb1 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+640.gfe20abf3 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+640.gbdf6fbb1 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+640.gfe20abf3 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+640.gbdf6fbb1 Manual">Documentation</a>
   </label>
   
 
@@ -610,6 +610,20 @@ moved to the right-hand side to obtain:</p>
 solutions of the deaffinized <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
 <p>The <code class="xref py py-attr docutils literal notranslate"><span class="pre">output_functional</span></code> is adapted accordingly to
 yield the same output for given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>arg</dt><dd><p>Either a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of length 1 containing the vector <code class="docutils literal notranslate"><span class="pre">u_0</span></code>.
+Alternatively, <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> can be provided, for which the
+model is <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model.solve" title="pymor.models.interface.Model.solve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">solved</span></code></a> to
+obtain <code class="docutils literal notranslate"><span class="pre">u_0</span></code>.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>The deaffinized <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+</div>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
