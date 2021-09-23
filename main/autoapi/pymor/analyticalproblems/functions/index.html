@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.analyticalproblems.functions &#8212; pyMOR v2021.1rc0+635.g12a8f0a6 Manual</title>
+    <title>pymor.analyticalproblems.functions &#8212; pyMOR v2021.1rc0+662.ga5dfe96a Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="pymor.analyticalproblems.helmholtz" href="../helmholtz/index.html" />
-    <link rel="prev" title="pymor.analyticalproblems.elliptic" href="../elliptic/index.html" />
+    <link rel="prev" title="pymor.analyticalproblems.expressions" href="../expressions/index.html" />
 
 
   
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+635.g12a8f0a6 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+662.ga5dfe96a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+635.g12a8f0a6 Manual logo">
+                   alt="pyMOR v2021.1rc0+662.ga5dfe96a Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+635.g12a8f0a6 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+662.ga5dfe96a Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.analyticalproblems</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+635.g12a8f0a6 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+662.ga5dfe96a Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+635.g12a8f0a6 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+662.ga5dfe96a Manual">Documentation</a>
   </label>
   
 
@@ -290,6 +290,13 @@
     
     
       <a href="../elliptic/index.html" class="md-nav__link">elliptic</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../expressions/index.html" class="md-nav__link">expressions</a>
       
     
     </li>
@@ -655,7 +662,7 @@ to be vectorized, i.e.:</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.functions.ExpressionFunction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.functions.</span></span><span class="sig-name descname"><span class="pre">ExpressionFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/analyticalproblems/functions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.functions.ExpressionFunction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.functions.</span></span><span class="sig-name descname"><span class="pre">ExpressionFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/analyticalproblems/functions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.functions.ExpressionFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.analyticalproblems.functions.GenericFunction" title="pymor.analyticalproblems.functions.GenericFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericFunction</span></code></a></p>
 <p>Turns a Python expression given as a string into a <a class="reference internal" href="#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>.</p>
 <p>Some <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.21)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a> arithmetic functions like ‘sin’, ‘log’, ‘min’ are supported.
@@ -669,26 +676,21 @@ mayhem and destruction!</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>expression</dt><dd><p>A Python expression of one variable <code class="docutils literal notranslate"><span class="pre">x</span></code> and a parameter <code class="docutils literal notranslate"><span class="pre">mu</span></code> given as
-a string.</p>
+<dt>expression</dt><dd><p>A Python expression of one variable and the <code class="docutils literal notranslate"><span class="pre">parameters</span></code>, given as a <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 </dd>
 <dt>dim_domain</dt><dd><p>The dimension of the domain.</p>
-</dd>
-<dt>shape_range</dt><dd><p>The shape of the values returned by the expression.</p>
 </dd>
 <dt>parameters</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> the expression accepts.</p>
 </dd>
 <dt>values</dt><dd><p>Dictionary of additional constants that can be used in <code class="docutils literal notranslate"><span class="pre">expression</span></code>
 with their corresponding value.</p>
 </dd>
+<dt>variable</dt><dd><p>Name of the input variable in the given expression.</p>
+</dd>
 <dt>name</dt><dd><p>The name of the function.</p>
 </dd>
 </dl>
 </div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.analyticalproblems.functions.ExpressionFunction.functions">
-<span class="sig-name descname"><span class="pre">functions</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/analyticalproblems/functions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.functions.ExpressionFunction.functions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.functions.ExpressionFunction.__reduce__">
 <span class="sig-name descname"><span class="pre">__reduce__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/analyticalproblems/functions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.functions.ExpressionFunction.__reduce__" title="Permalink to this definition">¶</a></dt>
@@ -910,7 +912,7 @@ undefined.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../elliptic/index.html" title="pymor.analyticalproblems.elliptic"
+            <a href="../expressions/index.html" title="pymor.analyticalproblems.expressions"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -919,7 +921,7 @@ undefined.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.analyticalproblems.elliptic</span></code> </span>
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.analyticalproblems.expressions</span></code> </span>
               </div>
             </a>
           
