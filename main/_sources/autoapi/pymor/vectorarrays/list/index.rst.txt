@@ -603,6 +603,11 @@ Classes
 
       
 
+   .. py:attribute:: vector_type
+      
+
+      
+
    .. py:method:: zero_vector(self)
       :abstractmethod:
 
@@ -766,7 +771,12 @@ Classes
 
    |VectorSpace| of |ListVectorArrays|.
 
-   .. py:attribute:: complexified_vector_type
+   .. py:attribute:: real_vector_type
+      
+
+      
+
+   .. py:attribute:: vector_type
       
 
       
@@ -810,6 +820,11 @@ Classes
    Bases: :py:obj:`ListVectorSpace`
 
    |VectorSpace| of |ListVectorArrays|.
+
+   .. py:attribute:: vector_type
+      
+
+      
 
    .. py:method:: __eq__(self, other)
 
