@@ -3,6 +3,49 @@
 
 .. py:module:: pymor.analyticalproblems.expressions
 
+.. autoapi-nested-parse::
+
+   This module contains a basic symbolic expression library.
+
+   The library is used by |ExpressionFunction| and |ExpressionParameterFunctional|
+   by calling :func:`parse_expression`, which parses `str` expressions by replacing
+   the names in the string with objects from this module. The result is an
+   :class:`Expression` object, which can be converted to a |NumPy|-vectorized function
+   using :meth:`Expression.to_numpy`. In the future, more conversion routines will
+   be added to make the same :class:`Expression` usable for :mod:`pymor.discretizers`
+   that use external PDE solvers. Further advantages of using this expression library:
+
+   - meaningful error messages are generated at parse time of the `str` expression,
+     instead of hard-to-debug errors in lambda functions at evaluation time,
+   - expressions are automatically correctly vectorized. In particular, there is no
+     longer a need to add `...` to indexing expressions,
+   - the shape of the resulting expressions is automatically determined.
+
+   In the future, we will also provide support for symbolic differentiation of the
+   given :class:`Expressions`.
+
+   Every :class:`Expression` is built from the following atoms:
+
+   - a :class:`Constant`, which is a fixed value of arbitrary shape,
+   - a :class:`Parameter`, which is a variable of a fixed one-dimensional shape.
+
+   Note that both |Parameters| and input variables are treated as a :class:`Parameter`
+   in the expression. Only when calling, e.g., :meth:`~Expression.to_numpy`, it is
+   determined which :class:`Parameter` belongs to the resulting function's |Parameters|
+   and which :class:`Parameter` is treated as an input variable.
+
+   More complex expressions can be built using:
+
+   - :class:`binary operators <BinaryOp>`,
+   - :class:`negation <Neg>`,
+   - :class:`function calls <UnaryFunctionCall>`,
+   - :class:`indexing <Indexed>`,
+   - :class:`array construction <Array>`.
+
+   For binary operations of :class:`Expressions <Expression>` of different shape,
+   the usual broadcasting rules apply.
+
+
 
 Module Contents
 ---------------
@@ -71,7 +114,7 @@ Functions
 
    pymor.analyticalproblems.expressions.parse_expression
    pymor.analyticalproblems.expressions._convert_to_expression
-   pymor.analyticalproblems.expressions._broadcastable
+   pymor.analyticalproblems.expressions._broadcastable_shapes
 
 
 
@@ -98,58 +141,29 @@ Attributes
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   A symbolic math expression
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
+   .. attribute:: shape
 
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
-
-   .. py:attribute:: shape
-      
-
+      The shape of the object this expression evaluates to
+      in the sense of |NumPy|.
       
 
    .. py:method:: to_numpy(self, variables)
 
+      Convert expression to a |NumPy|-vectorized callable.
+
+      .. admonition:: Parameters
+
+          variables
+              List of names of :class:`~Parameters <Parameter>` in
+              the expression which shall be treated as input variables.
+              
 
    .. py:method:: numpy_expr(self)
       :abstractmethod:
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __getitem__(self, index)
@@ -219,47 +233,7 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   A constant value.
 
    .. py:attribute:: numpy_symbol
       
@@ -273,6 +247,8 @@ Attributes
 
    .. py:method:: numpy_expr(self)
 
+      Called by :meth:`~Expression.to_numpy`.
+
 
    .. py:method:: __str__(self)
 
@@ -284,47 +260,7 @@ Attributes
 
    Bases: :py:obj:`BaseConstant`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   A constant value given by a |NumPy| array.
 
    .. py:method:: __str__(self)
 
@@ -336,49 +272,21 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   A free parameter in an :class:`Expression`.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
+   Parameters represent both pyMOR |Parameters| as well as
+   input variables. Each parameter is a vector of shape `(dim,)`.
 
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
+   .. admonition:: Parameters
 
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
-
+       name
+           The name of the parameter.
+       dim
+           The dimension of the parameter.
+           
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -391,49 +299,11 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   An array of scalar-valued :class:`Expressions <Expression>`.
 
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -446,47 +316,7 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       
@@ -494,6 +324,8 @@ Attributes
       
 
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -506,49 +338,11 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Negated :class:`Expression`.
 
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -561,49 +355,11 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Indexed :class:`Expression`.
 
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -616,47 +372,9 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       
@@ -664,6 +382,8 @@ Attributes
       
 
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -676,49 +396,14 @@ Attributes
 
    Bases: :py:obj:`Expression`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
 
    .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
 
 
    .. py:method:: __str__(self)
@@ -729,55 +414,17 @@ Attributes
 
 .. py:function:: _convert_to_expression(obj)
 
+   Used internally to convert literals/list constructors to an :class:`Expression`.
 
-.. py:function:: _broadcastable(first, second)
+
+.. py:function:: _broadcastable_shapes(first, second)
 
 
 .. py:class:: Sum(first, second)
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = +
@@ -789,47 +436,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = -
@@ -841,47 +448,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = *
@@ -893,47 +460,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = /
@@ -945,47 +472,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = **
@@ -997,47 +484,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = %
@@ -1049,47 +496,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = <=
@@ -1101,47 +508,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = >=
@@ -1153,47 +520,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = <
@@ -1205,47 +532,7 @@ Attributes
 
    Bases: :py:obj:`BinaryOp`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
 
    .. py:attribute:: numpy_symbol
       :annotation: = >
@@ -1257,47 +544,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = sin
@@ -1309,47 +558,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = cos
@@ -1361,47 +572,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = tan
@@ -1413,47 +586,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = arcsin
@@ -1465,47 +600,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = arccos
@@ -1517,47 +614,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = arctan
@@ -1569,47 +628,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = sinh
@@ -1621,47 +642,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = cosh
@@ -1673,47 +656,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = tanh
@@ -1725,47 +670,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = arcsinh
@@ -1777,47 +684,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = arccosh
@@ -1829,47 +698,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = arctanh
@@ -1881,47 +712,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = exp
@@ -1933,47 +726,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = exp2
@@ -1985,47 +740,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = log
@@ -2037,47 +754,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = log2
@@ -2089,47 +768,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = log10
@@ -2141,47 +782,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = sqrt
@@ -2193,47 +796,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = abs
@@ -2245,47 +810,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = sign
@@ -2297,47 +824,9 @@ Attributes
 
    Bases: :py:obj:`UnaryFunctionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied component-wise.
 
    .. py:attribute:: numpy_symbol
       :annotation: = angle
@@ -2349,47 +838,10 @@ Attributes
 
    Bases: :py:obj:`UnaryReductionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
 
    .. py:attribute:: numpy_symbol
       :annotation: = norm
@@ -2401,47 +853,10 @@ Attributes
 
    Bases: :py:obj:`UnaryReductionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
 
    .. py:attribute:: numpy_symbol
       :annotation: = min
@@ -2453,47 +868,10 @@ Attributes
 
    Bases: :py:obj:`UnaryReductionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
 
    .. py:attribute:: numpy_symbol
       :annotation: = max
@@ -2505,47 +883,10 @@ Attributes
 
    Bases: :py:obj:`UnaryReductionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
 
    .. py:attribute:: numpy_symbol
       :annotation: = sum
@@ -2557,47 +898,10 @@ Attributes
 
    Bases: :py:obj:`UnaryReductionCall`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
 
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
 
    .. py:attribute:: numpy_symbol
       :annotation: = prod
@@ -2609,47 +913,7 @@ Attributes
 
    Bases: :py:obj:`BaseConstant`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   A constant value.
 
    .. py:attribute:: numpy_symbol
       :annotation: = pi
@@ -2661,47 +925,7 @@ Attributes
 
    Bases: :py:obj:`BaseConstant`
 
-   Base class for immutable mathematical entities depending on some |Parameters|.
-
-   Each |ParametricObject| lists the |Parameters| it depends on in the :attr:`parameters`
-   attribute. Usually, these |Parameters| are automatically derived as the union of all
-   |Parameters| of the object's `__init__` arguments.
-
-   Additional |Parameters| introduced by the object itself can be specified by setting the
-   :attr:`parameters_own` attribute in `__init__`. In case the object fixes some |Parameters|
-   it's child objects depend on to concrete values, those |Parameters| can be removed from
-   the :attr:`parameters` attribute by setting :attr:`parameters_internal`.
-
-   Alternatively, :attr:`parameters` can be initialized manually in `__init__`.
-
-   .. attribute:: parameters
-
-      The |Parameters| the object depends on.
-
-   .. attribute:: parameters_own
-
-      The |Parameters| the object depends on which are not inherited from a child
-      object the object depends on. Each item of :attr:`parameters_own` is also an
-      item of :attr:`parameters`.
-
-   .. attribute:: parameters_inherited
-
-      The |Parameters| the object depends on because some child object depends on them.
-      Each item of :attr:`parameters_own` is also an item of :attr:`parameters`.
-
-   .. attribute:: parameters_internal
-
-      The |Parameters| some of the object's child objects may depend on, but which are
-      fixed to a concrete value by this object. All items of :attr:`parameters_internal`
-      are removed from :attr:`parameters` and :attr:`parameters_inherited`. When
-      initializing :attr:`parameters_own` and :attr:`parameters_internal`, it has to be
-      ensured that both dicts are disjoint.
-
-   .. attribute:: parametric
-
-      `True` if the object really depends on a parameter, i.e. :attr:`parameters`
-      is not empty.
-      
+   A constant value.
 
    .. py:attribute:: numpy_symbol
       :annotation: = e
