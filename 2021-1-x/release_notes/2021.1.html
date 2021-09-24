@@ -47,7 +47,7 @@
   
   
   
-    <title>pyMOR 2021.1 (September 24, 2021) &#8212; pyMOR v2021.1rc0+688.g85e167e5 Manual</title>
+    <title>pyMOR 2021.1 (September 24, 2021) &#8212; pyMOR v2021.1rc0+692.g32912b46 Manual</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="pyMOR v2021.1rc0+688.g85e167e5 Manual"
+        <a href="../index.html" title="pyMOR v2021.1rc0+692.g32912b46 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+688.g85e167e5 Manual logo">
+                   alt="pyMOR v2021.1rc0+692.g32912b46 Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+688.g85e167e5 Manual</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+692.g32912b46 Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -174,13 +174,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="pyMOR v2021.1rc0+688.g85e167e5 Manual" class="md-nav__button md-logo">
+    <a href="../index.html" title="pyMOR v2021.1rc0+692.g32912b46 Manual" class="md-nav__button md-logo">
       
         <img src="../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="pyMOR v2021.1rc0+688.g85e167e5 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+692.g32912b46 Manual">Documentation</a>
   </label>
   
 
@@ -315,13 +315,34 @@ The reductor also implements a dense method for small to medium problems.</p>
 </section>
 <section id="time-dependent-parameter-values">
 <h3 id="time-dependent-parameter-values">Time-dependent parameter values<a class="headerlink" href="#time-dependent-parameter-values" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1379">[#1379] Time dependent parameter values</a></p></li>
-</ul>
+<p>We have extended the handling of <a class="reference internal" href="../autoapi/pymor/parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> in pyMOR to allow time-dependent
+<a class="reference internal" href="../autoapi/pymor/parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>. Such parameter values are specified by instantiating a
+<a class="reference internal" href="../autoapi/pymor/parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mu</span></code></a> object with a <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> that maps the current
+time to the respective parameter value. The function is automatically evaluated
+at <code class="docutils literal notranslate"><span class="pre">mu['t']</span></code> and correspondingly updated in <code class="docutils literal notranslate"><span class="pre">mu.with_(t=new_time)</span></code> such that
+the time dependence of the values is completely transparent to their consumer.
+This allows existing ROMs to be used with time-dependent parameter values
+without any changes in the MOR algorithm. For further details, see
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1379">[#1379]</a>.</p>
 </section>
 </section>
 <section id="additional-new-features">
 <h2 id="additional-new-features">Additional new features<a class="headerlink" href="#additional-new-features" title="Permalink to this headline">¶</a></h2>
+<section id="symbolic-expressionfunctions">
+<h3 id="symbolic-expressionfunctions">Symbolic ExpressionFunctions<a class="headerlink" href="#symbolic-expressionfunctions" title="Permalink to this headline">¶</a></h3>
+<p>A simple symbolic math expression library has been added to pyMOR, which is now
+used by <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> and <a class="reference internal" href="../autoapi/pymor/parameters/functionals/index.html#pymor.parameters.functionals.ExpressionParameterFunctional" title="pymor.parameters.functionals.ExpressionParameterFunctional"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionParameterFunctional</span></code></a> to parse and
+evaluate the given expressions, see
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1277">[#1277]</a>. As immediate benefits,
+the <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function.shape_range" title="pymor.analyticalproblems.functions.Function.shape_range"><code class="xref py py-attr docutils literal notranslate"><span class="pre">shape</span></code></a>
+of the expression is now automatically determined and the expression is
+automatically vectorized correctly. In particular, there is no longer a need to
+add <code class="docutils literal notranslate"><span class="pre">...</span></code> to indexing expressions. Further, malformed expressions now lead
+to meaningful error messages at parse time.</p>
+<p>In the future, conversion routines will be added to make the expression library
+usable for <a class="reference internal" href="../autoapi/pymor/discretizers/index.html#module-pymor.discretizers" title="pymor.discretizers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discretizers</span></code></a> that use external PDE solvers, such that
+the same <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> can be used for different PDE solver backends.</p>
+</section>
 <section id="output-reductor-using-anns">
 <h3 id="output-reductor-using-anns">Output reductor using ANNs<a class="headerlink" href="#output-reductor-using-anns" title="Permalink to this headline">¶</a></h3>
 <p>To further extend the neural network based reductors, in
@@ -338,15 +359,36 @@ training routines have been separated from the reductors.</p>
 </section>
 <section id="improvements-to-the-hapod-algorithm">
 <h3 id="improvements-to-the-hapod-algorithm">Improvements to the HAPOD algorithm<a class="headerlink" href="#improvements-to-the-hapod-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>pyMOR’s implementation of
+<a class="reference external" href="https://epubs.siam.org/doi/abs/10.1137/16M1085413">the HAPOD algorithm</a>
+has seen several significant improvements in
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1322">[#1322]</a>:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1322">[#1322] Various Improvements to the HAPOD algorithm (v2)</a></p></li>
+<li><p><a class="reference internal" href="../autoapi/pymor/algorithms/hapod/index.html#pymor.algorithms.hapod.hapod" title="pymor.algorithms.hapod.hapod"><code class="xref py py-func docutils literal notranslate"><span class="pre">hapod</span></code></a> now launches its own asyncio event
+loop in order to avoid conflicts with already running event loops
+(e.g. when running from jupyter).</p></li>
+<li><p>It is now possible to explicitly specify that a node has to be processed
+after certain other nodes. In particular, this can be used to ensure the
+right execution order for incremental POD computations.</p></li>
+<li><p>HAPOD trees are now created dynamically, which should significantly simplify
+specifying own tree topologies.</p></li>
+<li><p><a class="reference internal" href="../autoapi/pymor/algorithms/hapod/index.html#pymor.algorithms.hapod.dist_hapod" title="pymor.algorithms.hapod.dist_hapod"><code class="xref py py-func docutils literal notranslate"><span class="pre">dist_hapod</span></code></a> now has an <code class="docutils literal notranslate"><span class="pre">arity</span></code> argument, which
+allows to control the number of intermediate POD levels.</p></li>
+<li><p><a class="reference internal" href="../autoapi/pymor/algorithms/hapod/index.html#pymor.algorithms.hapod.inc_hapod" title="pymor.algorithms.hapod.inc_hapod"><code class="xref py py-func docutils literal notranslate"><span class="pre">inc_hapod</span></code></a> now accepts arbitrary iterables for
+the snapshot data, which makes it easy to incrementally compute the data
+while computing the POD.</p></li>
 </ul>
 </section>
-<section id="empirical-interpolation-improvements">
-<h3 id="empirical-interpolation-improvements">Empirical Interpolation improvements<a class="headerlink" href="#empirical-interpolation-improvements" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1240">[#1240] Several EI improvements</a></p></li>
-</ul>
+<section id="improved-support-for-empirical-interpolation-of-functions">
+<h3 id="improved-support-for-empirical-interpolation-of-functions">Improved support for Empirical Interpolation of functions<a class="headerlink" href="#improved-support-for-empirical-interpolation-of-functions" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../autoapi/pymor/algorithms/ei/index.html#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a> algorithm has been improved, in
+particular to make it more useful for the interpolation of coefficient
+<a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Functions</span></code></a>. Based on these improvements, an
+<a class="reference internal" href="../autoapi/pymor/algorithms/ei/index.html#pymor.algorithms.ei.interpolate_function" title="pymor.algorithms.ei.interpolate_function"><code class="xref py py-func docutils literal notranslate"><span class="pre">interpolate_function</span></code></a> method has been added which
+creates an <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction" title="pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalInterpolatedFunction</span></code></a>
+from an arbitrary pyMOR <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>. The <code class="docutils literal notranslate"><span class="pre">function_ei</span></code> demo script
+demonstrates the new functionality. For further details, see
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1240">[#1240]</a>.</p>
 </section>
 <section id="methods-for-exporting-matrices-of-system-models">
 <h3 id="methods-for-exporting-matrices-of-system-models">Methods for exporting matrices of system models<a class="headerlink" href="#methods-for-exporting-matrices-of-system-models" title="Permalink to this headline">¶</a></h3>
@@ -357,25 +399,28 @@ In <a class="reference external" href="https://github.com/pymor/pymor/pull/1309"
 the corresponding <code class="docutils literal notranslate"><span class="pre">to_*</span></code> methods were added for exporting matrices from a model.</p>
 </section>
 <section id="pymor-is-now-a-pure-python-package">
-<h3 id="pymor-is-now-a-pure-python-package">pyMOR is now a pure-Python package<a class="headerlink" href="#pymor-is-now-a-pure-python-package" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1314">[#1314] Replace all Cython modules by equivalent NumPy code</a></p></li>
-</ul>
-</section>
-<section id="symbolic-expressionfunctions">
-<h3 id="symbolic-expressionfunctions">Symbolic ExpressionFunctions<a class="headerlink" href="#symbolic-expressionfunctions" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1277">[#1277] Use symbolic expressions in ExpressionFunction</a></p></li>
-</ul>
+<h3 id="pymor-is-now-a-pure-python-package">pyMOR is now a pure Python package<a class="headerlink" href="#pymor-is-now-a-pure-python-package" title="Permalink to this headline">¶</a></h3>
+<p>All Cython modules in pyMOR’s discretization toolkit have been replaced by
+equivalent <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.21)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a> code, see <a class="reference external" href="https://github.com/pymor/pymor/pull/1314">[#1314]</a>.
+As a result, pyMOR is now a pure Python package, which should significantly
+simplify pyMOR’s installation when no pre-built binary wheels are available.</p>
 </section>
 </section>
 <section id="backward-incompatible-changes">
 <h2 id="backward-incompatible-changes">Backward incompatible changes<a class="headerlink" href="#backward-incompatible-changes" title="Permalink to this headline">¶</a></h2>
 <section id="drop-python-3-6-support">
 <h3 id="drop-python-3-6-support">Drop python 3.6 support<a class="headerlink" href="#drop-python-3-6-support" title="Permalink to this headline">¶</a></h3>
+<p>Support for Python 3.6 has been dropped in pyMOR 2021.1
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1302">[#1302]</a>. The minimum supported
+version now is Python 3.7.</p>
 </section>
-<section id="id9">
-<h3 id="id9">Symbolic ExpressionFunctions<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<section id="id14">
+<h3 id="id14">Symbolic ExpressionFunctions<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Due to the improvements in <a class="reference external" href="https://github.com/pymor/pymor/pull/1277">[#1277]</a>,
+the signature of <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> has changed. To use existing code with
+pyMOR 2021.1, the <code class="docutils literal notranslate"><span class="pre">shape_range</span></code> argument has to be removed from all
+instantiations of <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a>. Further, all occurrences of <code class="docutils literal notranslate"><span class="pre">...</span></code>
+have to be removed in indexing expressions.</p>
 </section>
 </section>
 <section id="further-notable-improvements">
@@ -388,7 +433,6 @@ the corresponding <code class="docutils literal notranslate"><span class="pre">t
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1270">[#1270] Simplify SecondOrderModel-related operators</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1294">[#1294] Let sample_randomly return a Mu instance in case count=None</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1296">[#1296] Simplify semantics of assemble_lincomb / fix #1276</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1302">[#1302] Drop python 3.6 support</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1304">[#1304] Several improvements to Qt-based visualizations</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1309">[#1309] Add methods to models.iosys for exporting matrices</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1317">[#1317] Add FenicsMatrixOperator._real_apply_inverse_adjoint_one_vector</a></p></li>
