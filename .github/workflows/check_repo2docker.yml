@@ -1,0 +1,17 @@
+name: repo2docker
+on:
+  push:
+   branches:
+      - "**"
+
+jobs:
+  repo2docker:
+    name: Check branch for working binder setup
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install requirements
+        run: pip install jinja2 jupyter-repo2docker six chardet 
+      - name: run repo2docker
+        run: repo2docker --user-id 2000 --user-name juno --no-run --debug .
+
