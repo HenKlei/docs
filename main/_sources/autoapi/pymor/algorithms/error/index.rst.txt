@@ -15,11 +15,12 @@ Functions
   :nosignatures:
 
    pymor.algorithms.error.reduction_error_analysis
+   pymor.algorithms.error.plot_reduction_error_analysis
    pymor.algorithms.error._compute_errors
 
 
 
-.. py:function:: reduction_error_analysis(rom, fom, reductor, test_mus, basis_sizes=0, error_estimator=True, condition=False, error_norms=(), error_norm_names=None, error_estimator_norm_index=0, custom=(), plot=False, plot_custom_logarithmic=True, pool=dummy_pool)
+.. py:function:: reduction_error_analysis(rom, fom, reductor, test_mus, basis_sizes=0, error_estimator=True, condition=False, error_norms=(), error_norm_names=None, error_estimator_norm_index=0, custom=(), custom_names=None, plot=False, plot_custom_logarithmic=True, pool=dummy_pool)
 
    Analyze the model reduction error.
 
@@ -66,6 +67,8 @@ Functions
            
                def custom_value(rom, fom, reductor, mu, dim):
                    pass
+       custom_names
+           List of names to be used for plotting custom values.
            
        plot
            If `True`, generate a plot of the computed quantities w.r.t.
@@ -85,8 +88,7 @@ Functions
            :basis_sizes:               The reduced basis dimensions which have been considered.
            
            :norms:                     |Array| of the norms of the high-dimensional solutions
-                                       w.r.t. all given test |Parameters|, reduced basis
-                                       dimensions and norms in `error_norms`.
+                                       w.r.t. all given test |Parameters| and norms in `error_norms`.
                                        (Only present when `error_norms` has been specified.)
            
            :max_norms:                 Maxima of `norms` over the given test |Parameters|.
@@ -156,8 +158,26 @@ Functions
            :summary:                   String containing a summary of all computed quantities for
                                        the largest (last) considered basis size.
            
-           :figure:                    The figure containing the generated plots.
-                                       (Only present when `plot` is `True`.)
+
+.. py:function:: plot_reduction_error_analysis(result, max_basis_size=None, plot_effectivities=True, plot_condition=True, plot_custom_logarithmic=True, plot_custom_with_errors=False)
+
+   Plots the results from :meth:`reduction_error_analysis`.
+
+   .. admonition:: Parameters
+
+       result
+           Dictionary with entries as returned by :meth:`reduction_error_analysis`.
+       max_basis_size
+           Only plot results up to this basis size.
+       plot_effectivities
+           If `True`, plot the effectivities of the a posteriori error estimate.
+       plot_condition
+           If `True`, plot the condition of the reduced system matrix.
+       plot_custom_logarithmic
+           If `True`, use a logarithmic y-axis to plot the computed custom
+           values.
+       plot_custom_with_errors
+           It `True`, plot errors and custom values in a single plot (otherwise in separate ones).
            
 
 .. py:function:: _compute_errors(mu, fom, reductor, error_estimator, error_norms, condition, custom, basis_sizes)

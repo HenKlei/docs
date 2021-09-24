@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.error &#8212; pyMOR v2021.1rc0+687.ge86aa5b0 Manual</title>
+    <title>pymor.algorithms.error &#8212; pyMOR v2021.1rc0+704.g89016bbf Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+687.ge86aa5b0 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+704.g89016bbf Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+687.ge86aa5b0 Manual logo">
+                   alt="pyMOR v2021.1rc0+704.g89016bbf Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+687.ge86aa5b0 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+704.g89016bbf Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+687.ge86aa5b0 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+704.g89016bbf Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+687.ge86aa5b0 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+704.g89016bbf Manual">Documentation</a>
   </label>
   
 
@@ -627,14 +627,17 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.error.reduction_error_analysis" title="pymor.algorithms.error.reduction_error_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduction_error_analysis</span></code></a></p></td>
 <td><p>Analyze the model reduction error.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.error._compute_errors" title="pymor.algorithms.error._compute_errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_compute_errors</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.error.plot_reduction_error_analysis" title="pymor.algorithms.error.plot_reduction_error_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_reduction_error_analysis</span></code></a></p></td>
+<td><p>Plots the results from <a class="reference internal" href="#pymor.algorithms.error.reduction_error_analysis" title="pymor.algorithms.error.reduction_error_analysis"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduction_error_analysis</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.error._compute_errors" title="pymor.algorithms.error._compute_errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_compute_errors</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.error.reduction_error_analysis">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.error.</span></span><span class="sig-name descname"><span class="pre">reduction_error_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reductor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_mus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_sizes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator_norm_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_custom_logarithmic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">dummy_pool</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/algorithms/error.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.error.reduction_error_analysis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.error.</span></span><span class="sig-name descname"><span class="pre">reduction_error_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reductor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_mus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_sizes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator_norm_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_custom_logarithmic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">dummy_pool</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/algorithms/error.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.error.reduction_error_analysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Analyze the model reduction error.</p>
 <p>The maximum model reduction error is estimated by solving the reduced
 <a class="reference internal" href="../../models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> for given random <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>.</p>
@@ -680,6 +683,8 @@ the signature</p>
 </pre></div>
 </div>
 </dd>
+<dt>custom_names</dt><dd><p>List of names to be used for plotting custom values.</p>
+</dd>
 <dt>plot</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, generate a plot of the computed quantities w.r.t.
 the basis size.</p>
 </dd>
@@ -703,8 +708,7 @@ values.</p>
 </dd>
 <dt class="field-odd">norms</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the norms of the high-dimensional solutions
-w.r.t. all given test <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a>, reduced basis
-dimensions and norms in <code class="docutils literal notranslate"><span class="pre">error_norms</span></code>.
+w.r.t. all given test <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> and norms in <code class="docutils literal notranslate"><span class="pre">error_norms</span></code>.
 (Only present when <code class="docutils literal notranslate"><span class="pre">error_norms</span></code> has been specified.)</p>
 </dd>
 <dt class="field-even">max_norms</dt>
@@ -799,12 +803,31 @@ dimensions and functions in <code class="docutils literal notranslate"><span cla
 <dd class="field-even"><p>String containing a summary of all computed quantities for
 the largest (last) considered basis size.</p>
 </dd>
-<dt class="field-odd">figure</dt>
-<dd class="field-odd"><p>The figure containing the generated plots.
-(Only present when <code class="docutils literal notranslate"><span class="pre">plot</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.)</p>
-</dd>
 </dl>
 </div></blockquote>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.algorithms.error.plot_reduction_error_analysis">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.error.</span></span><span class="sig-name descname"><span class="pre">plot_reduction_error_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_basis_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_effectivities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_custom_logarithmic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_custom_with_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/algorithms/error.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.error.plot_reduction_error_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the results from <a class="reference internal" href="#pymor.algorithms.error.reduction_error_analysis" title="pymor.algorithms.error.reduction_error_analysis"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduction_error_analysis</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>result</dt><dd><p>Dictionary with entries as returned by <a class="reference internal" href="#pymor.algorithms.error.reduction_error_analysis" title="pymor.algorithms.error.reduction_error_analysis"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduction_error_analysis</span></code></a>.</p>
+</dd>
+<dt>max_basis_size</dt><dd><p>Only plot results up to this basis size.</p>
+</dd>
+<dt>plot_effectivities</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, plot the effectivities of the a posteriori error estimate.</p>
+</dd>
+<dt>plot_condition</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, plot the condition of the reduced system matrix.</p>
+</dd>
+<dt>plot_custom_logarithmic</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use a logarithmic y-axis to plot the computed custom
+values.</p>
+</dd>
+<dt>plot_custom_with_errors</dt><dd><p>It <code class="docutils literal notranslate"><span class="pre">True</span></code>, plot errors and custom values in a single plot (otherwise in separate ones).</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 <dl class="py function">
