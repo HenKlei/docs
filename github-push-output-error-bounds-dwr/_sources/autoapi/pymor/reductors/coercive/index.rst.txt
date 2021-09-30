@@ -1,0 +1,210 @@
+:mod:`pymor.reductors.coercive`
+===============================
+
+.. py:module:: pymor.reductors.coercive
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.reductors.coercive.CoerciveRBReductor
+   pymor.reductors.coercive.CorrectedOutputFunctional
+   pymor.reductors.coercive.CoerciveRBEstimator
+   pymor.reductors.coercive.SimpleCoerciveRBReductor
+   pymor.reductors.coercive.SimpleCoerciveRBEstimator
+
+
+
+
+.. py:class:: CoerciveRBReductor(fom, RB=None, product=None, coercivity_estimator=None, operator_is_symmetric=False, dual_bases=None, check_orthonormality=None, check_tol=None, assemble_error_estimate=True, assemble_output_error_estimate=True)
+
+   Bases: :py:obj:`pymor.reductors.basic.StationaryRBReductor`
+
+   Reduced Basis reductor for |StationaryModels| with coercive linear operator.
+
+   The only addition to :class:`~pymor.reductors.basic.StationaryRBReductor` is an error
+   estimator which evaluates the dual norm of the residual with respect to a given inner
+   product and an output error estimator. For the reduction of the residual we use
+   :class:`~pymor.reductors.residual.ResidualReductor` for improved numerical stability
+   :cite:`BEOR14`.
+
+   .. admonition:: Parameters
+
+       fom
+           The |Model| which is to be reduced.
+       RB
+           |VectorArray| containing the reduced basis on which to project.
+       product
+           Inner product for the orthonormalization of `RB`, the projection of the
+           |Operators| given by `vector_ranged_operators` and for the computation of
+           Riesz representatives of the residual. If `None`, the Euclidean product is used.
+       coercivity_estimator
+           `None` or a |Parameterfunctional| returning a lower bound for the coercivity
+           constant of the given problem. Note that the computed error estimate is only
+           guaranteed to be an upper bound for the error when an appropriate coercivity
+           estimate is specified.
+       operator_is_symmetric
+           If `assemble_output_error_estimate` is `True`, the DWR estimator can either be
+           build with the operator itself (if the operator is symmetric, or with the adjoint
+           operator. For the symmetric case `operator_is_symmetric` is to be set as `True`.
+       dual_basis
+           If `operator_is_symmetric` is `False` or if the output functional of the |Model|
+           differs substantially from the right hand side of the |Model|, it makes sense to
+           provide a reduced basis for the dual problems
+           (see :func:`~pymor.reductors.coercive.CoerciveRBReductor.dual_model` for details)
+           
+   .. py:method:: project_operators(self)
+
+
+   .. py:method:: project_operators_to_subbasis(self, dims)
+
+
+   .. py:method:: assemble_error_estimator(self)
+
+
+   .. py:method:: dual_model(cls, fom, dim=0, operator_is_symmetric=False)
+      :classmethod:
+
+      Return dual model with the output as right hand side.
+
+      See :cite:`Haa17` (Definition 2.26)
+
+      .. admonition:: Parameters
+
+          fom
+              The |Model| for which to construct the dual model
+          dim
+              The dimension of the `fom.output_functional` for which the dual model is to be built.
+          operator_is_symmetric
+              If `True`, `fom.operator` is used for the dual problem.
+              This is only feasable if the operator is symmetric (in theory).
+              If `False` the adjoint `fom.operator.H` is used instead.
+              
+      .. admonition:: Returns
+
+          A |Model| with the adjoint operator and the corresponding right hand side
+              
+
+   .. py:method:: prepare_dwr_output_error_estimator(self)
+
+      Prepare the output error estimator with the DWR approach.
+
+      See :cite:`Haa17` (Proposition 2.27).
+      If the no (corrected) output needs to be built or no estimation is required,
+      this code returns empty defaults.
+
+
+   .. py:method:: assemble_error_estimator_for_subbasis(self, dims)
+
+
+
+.. py:class:: CorrectedOutputFunctional(output_functional, dual_models, dual_projected_primal_residuals)
+
+   Bases: :py:obj:`pymor.operators.interface.Operator`
+
+   |Operator| representing the corrected output functional from :cite:`Haa17` (Definition 2.26)
+
+   .. admonition:: Parameters
+
+       output_functional
+           Original output_functional
+       dual_models
+           All dual models that are required for the corrected output
+       dual_projected_primal_residuals
+           The evaluated primal residuals
+           
+   .. py:method:: apply(self, solution, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: reduce_to_subbasis(self, dim_range, dim_source)
+
+
+
+.. py:class:: CoerciveRBEstimator(residual, residual_range_dims, coercivity_estimator, dual_residuals=None, dual_residuals_range_dims=None, dual_models=None)
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   Instantiated by :class:`CoerciveRBReductor`.
+
+   Not to be used directly.
+
+   .. py:method:: estimate_error(self, U, mu, m)
+
+
+   .. py:method:: estimate_output_error(self, U, mu, m)
+
+
+   .. py:method:: restricted_to_subbasis(self, dim, m)
+
+
+
+.. py:class:: SimpleCoerciveRBReductor(fom, RB=None, product=None, coercivity_estimator=None, check_orthonormality=None, check_tol=None, assemble_error_estimate=True, assemble_output_error_estimate=True)
+
+   Bases: :py:obj:`pymor.reductors.basic.StationaryRBReductor`
+
+   Reductor for linear |StationaryModels| with affinely decomposed operator and rhs.
+
+   .. note::
+      The reductor :class:`CoerciveRBReductor` can be used for arbitrary coercive
+      |StationaryModels| and offers an improved error estimator
+      with better numerical stability.
+
+   The only addition is to :class:`~pymor.reductors.basic.StationaryRBReductor` is an error
+   estimator, which evaluates the norm of the residual with respect to a given inner product.
+
+   .. admonition:: Parameters
+
+       fom
+           The |Model| which is to be reduced.
+       RB
+           |VectorArray| containing the reduced basis on which to project.
+       product
+           Inner product for the orthonormalization of `RB`, the projection of the
+           |Operators| given by `vector_ranged_operators` and for the computation of
+           Riesz representatives of the residual. If `None`, the Euclidean product is used.
+       coercivity_estimator
+           `None` or a |Parameterfunctional| returning a lower bound for the coercivity
+           constant of the given problem. Note that the computed error estimate is only
+           guaranteed to be an upper bound for the error when an appropriate coercivity
+           estimate is specified.
+           
+   .. py:method:: assemble_error_estimator(self)
+
+
+   .. py:method:: assemble_error_estimator_for_subbasis(self, dims)
+
+
+
+.. py:class:: SimpleCoerciveRBEstimator(estimator_matrix, coercivity_estimator)
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   Instantiated by :class:`SimpleCoerciveRBReductor`.
+
+   Not to be used directly.
+
+   .. py:method:: estimate_error(self, U, mu, m)
+
+
+   .. py:method:: restricted_to_subbasis(self, dim, m)
+
+
+
