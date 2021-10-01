@@ -179,4 +179,7 @@ Functions
    .. py:method:: action_ProjectedOperator(self, op)
 
 
+   .. py:method:: action_CorrectedOutputFunctional(self, op)
+
+
 

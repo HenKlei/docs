@@ -13,7 +13,6 @@ Classes
 .. autoapisummary::
 
    pymor.reductors.coercive.CoerciveRBReductor
-   pymor.reductors.coercive.CorrectedOutputFunctional
    pymor.reductors.coercive.CoerciveRBEstimator
    pymor.reductors.coercive.SimpleCoerciveRBReductor
    pymor.reductors.coercive.SimpleCoerciveRBEstimator
@@ -52,16 +51,14 @@ Classes
            If `assemble_output_error_estimate` is `True`, the DWR estimator can either be
            build with the operator itself (if the operator is symmetric, or with the adjoint
            operator. For the symmetric case `operator_is_symmetric` is to be set as `True`.
-       dual_basis
+       dual_bases
            If `operator_is_symmetric` is `False` or if the output functional of the |Model|
            differs substantially from the right hand side of the |Model|, it makes sense to
-           provide a reduced basis for the dual problems
+           provide a reduced basis for the dual problems. If °dual_bases° are given, then the
+           corrected reduced output functional is built automatically.
            (see :func:`~pymor.reductors.coercive.CoerciveRBReductor.dual_model` for details)
            
    .. py:method:: project_operators(self)
-
-
-   .. py:method:: project_operators_to_subbasis(self, dims)
 
 
    .. py:method:: assemble_error_estimator(self)
@@ -100,41 +97,6 @@ Classes
 
 
    .. py:method:: assemble_error_estimator_for_subbasis(self, dims)
-
-
-
-.. py:class:: CorrectedOutputFunctional(output_functional, dual_models, dual_projected_primal_residuals)
-
-   Bases: :py:obj:`pymor.operators.interface.Operator`
-
-   |Operator| representing the corrected output functional from :cite:`Haa17` (Definition 2.26)
-
-   .. admonition:: Parameters
-
-       output_functional
-           Original output_functional
-       dual_models
-           All dual models that are required for the corrected output
-       dual_projected_primal_residuals
-           The evaluated primal residuals
-           
-   .. py:method:: apply(self, solution, mu=None)
-
-      Apply the operator to a |VectorArray|.
-
-      .. admonition:: Parameters
-
-          U
-              |VectorArray| of vectors to which the operator is applied.
-          mu
-              The |parameter values| for which to evaluate the operator.
-              
-      .. admonition:: Returns
-
-          |VectorArray| of the operator evaluations.
-              
-
-   .. py:method:: reduce_to_subbasis(self, dim_range, dim_source)
 
 
 

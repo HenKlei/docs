@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.operators.constructions &#8212; pyMOR v2021.1rc0+723.g20119d78 Manual</title>
+    <title>pymor.operators.constructions &#8212; pyMOR v2021.1rc0+726.gcfec429b Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -94,11 +94,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+723.g20119d78 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+726.gcfec429b Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+723.g20119d78 Manual logo">
+                   alt="pyMOR v2021.1rc0+726.gcfec429b Manual logo">
           
         </a>
       </div>
@@ -164,7 +164,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+723.g20119d78 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+726.gcfec429b Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code></a></li>
@@ -179,13 +179,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+723.g20119d78 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+726.gcfec429b Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+723.g20119d78 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+726.gcfec429b Manual">Documentation</a>
   </label>
   
 
@@ -526,7 +526,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pymor.operators.constructions.SelectionOperator" title="pymor.operators.constructions.SelectionOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SelectionOperator</span></code></a></p></td>
 <td><p>An <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> selected from a list of <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.operators.constructions.InducedNorm" title="pymor.operators.constructions.InducedNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InducedNorm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.operators.constructions.CorrectedOutputFunctional" title="pymor.operators.constructions.CorrectedOutputFunctional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CorrectedOutputFunctional</span></code></a></p></td>
+<td><p><a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the corrected output functional from <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id18" title="B. Haasdonk. Reduced basis methods for parametrized PDEs—a tutorial introduction for stationary and instationary problems. In P. Benner, A. Cohen, M. Ohlberger, and K. Willcox, editors, Model Reduction and Approximation: Theory and Algorithms, pages 65–136. SIAM, 2017. doi:10.1137/1.9781611974829.ch2.">Haa17</a>]</span> (Definition 2.26)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.operators.constructions.InducedNorm" title="pymor.operators.constructions.InducedNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InducedNorm</span></code></a></p></td>
 <td><p>Instantiated by <a class="reference internal" href="#pymor.operators.constructions.induced_norm" title="pymor.operators.constructions.induced_norm"><code class="xref py py-func docutils literal notranslate"><span class="pre">induced_norm</span></code></a>. Do not use directly.</p></td>
 </tr>
 </tbody>
@@ -3326,6 +3329,41 @@ representation.</p>
 </div>
 </dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.operators.constructions.CorrectedOutputFunctional">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.constructions.</span></span><span class="sig-name descname"><span class="pre">CorrectedOutputFunctional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_functional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dual_models</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dual_projected_primal_residuals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_output_error_bounds_DWR/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.CorrectedOutputFunctional" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
+<p><a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the corrected output functional from <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id18" title="B. Haasdonk. Reduced basis methods for parametrized PDEs—a tutorial introduction for stationary and instationary problems. In P. Benner, A. Cohen, M. Ohlberger, and K. Willcox, editors, Model Reduction and Approximation: Theory and Algorithms, pages 65–136. SIAM, 2017. doi:10.1137/1.9781611974829.ch2.">Haa17</a>]</span> (Definition 2.26)</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>output_functional</dt><dd><p>Original output_functional</p>
+</dd>
+<dt>dual_models</dt><dd><p>All dual models that are required for the corrected output</p>
+</dd>
+<dt>dual_projected_primal_residuals</dt><dd><p>The evaluated primal residuals</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.CorrectedOutputFunctional.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_output_error_bounds_DWR/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.CorrectedOutputFunctional.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the operator to a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the operator evaluations.</p>
+</div>
+</dd></dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.operators.constructions.induced_norm">
 <span class="sig-prename descclassname"><span class="pre">pymor.operators.constructions.</span></span><span class="sig-name descname"><span class="pre">induced_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_negative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_output_error_bounds_DWR/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.induced_norm" title="Permalink to this definition">¶</a></dt>
@@ -3425,7 +3463,7 @@ are passed to the product.</p>
               
           </div>
             Last updated on
-              Sep 30, 2021.
+              Oct 01, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.

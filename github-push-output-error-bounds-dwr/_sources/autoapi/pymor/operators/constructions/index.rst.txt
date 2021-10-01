@@ -37,6 +37,7 @@ Classes
    pymor.operators.constructions.InverseAdjointOperator
    pymor.operators.constructions.AdjointOperator
    pymor.operators.constructions.SelectionOperator
+   pymor.operators.constructions.CorrectedOutputFunctional
    pymor.operators.constructions.InducedNorm
 
 
@@ -2645,6 +2646,38 @@ Functions
 
           V
               The |VectorArray| defined above.
+              
+
+
+.. py:class:: CorrectedOutputFunctional(output_functional, dual_models, dual_projected_primal_residuals)
+
+   Bases: :py:obj:`pymor.operators.interface.Operator`
+
+   |Operator| representing the corrected output functional from :cite:`Haa17` (Definition 2.26)
+
+   .. admonition:: Parameters
+
+       output_functional
+           Original output_functional
+       dual_models
+           All dual models that are required for the corrected output
+       dual_projected_primal_residuals
+           The evaluated primal residuals
+           
+   .. py:method:: apply(self, solution, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
               
 
 
