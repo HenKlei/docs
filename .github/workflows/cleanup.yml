@@ -1,0 +1,26 @@
+name: Repo cleanup
+on:
+  schedule:
+    - cron: "19 09 * * 1"
+
+concurrency: 
+  group: cleanup
+  cancel-in-progress: true
+
+jobs:
+  cleanup:
+    name: Prune branches, squash commits and re-index
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: pip install jinja2
+      - name: set git identity
+        run: git config --global user.email "actions@github.com" && git config --global user.name "GitHub Actions"
+      - name: run cleanup
+        run: make cleanup
+      - name: update index
+        run: make index && git commit -au -m 'update index after cleanup'
+      - name: push updates
+        run: git push origin --force
+
