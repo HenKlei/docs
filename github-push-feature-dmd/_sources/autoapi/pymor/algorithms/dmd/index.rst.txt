@@ -1,0 +1,54 @@
+:mod:`pymor.algorithms.dmd`
+===========================
+
+.. py:module:: pymor.algorithms.dmd
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.algorithms.dmd.dmd
+
+
+
+.. py:function:: dmd(X, Y=None, target_rank=None, dt=1, modes='exact', svd_method='qr_svd', return_A_approx=False)
+
+   Dynamic Mode Decomposition.
+
+   See Algorithm 1 and Algorithm 2 in :cite:`TRLBK14`.
+
+   .. admonition:: Parameters
+
+       X : |VectorArray|
+           The |VectorArray| for which the DMD Modes are to be computed.
+           If Y is given, X and Y are the left resp. right Snapshot series.
+       Y : optional/|VectorArray|
+           The |VectorArray| of the right Snapshot series.
+       target_rank : int/optional
+           Number of DMD Modes to be computed. If None target_rank = len(A).
+       dt : scalar, optional (default: 1)
+           Factor specifying the time difference between the observations.
+           Used if the input data is a timeseries in continuous time.
+       modes : str `{'standard', 'exact', 'exact_scaled'}`
+           - 'standard' : uses the standard definition to compute the dynamic modes,
+                       where U are the left singular vectors `Wk = U * evecs`.
+           - 'exact' : computes the exact dynamic modes, `Wk = (1/evals) * Y * V * Sigma_inv * evecs`.
+       svd_method
+           Which SVD method from :mod:`~pymor.algorithms.svd_va` to use
+           (`'method_of_snapshots'` or `'qr_svd'`).
+           
+   .. admonition:: Returns
+
+       Wk : |VectorArray|
+           |VectorArray| containing the dynamic modes.
+       omega : array_like
+           Time scaled eigenvalues: `ln(l)/dt`.
+           
+
