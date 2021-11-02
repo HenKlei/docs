@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.core.base &#8212; pyMOR v2021.1rc0+692.g32912b46 Manual</title>
+    <title>pymor.core.base &#8212; pyMOR v2021.1.0+6.g8e03fb7a Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+692.g32912b46 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1.0+6.g8e03fb7a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+692.g32912b46 Manual logo">
+                   alt="pyMOR v2021.1.0+6.g8e03fb7a Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+692.g32912b46 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1.0+6.g8e03fb7a Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+692.g32912b46 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1.0+6.g8e03fb7a Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+692.g32912b46 Manual">Documentation</a>
+       title="pyMOR v2021.1.0+6.g8e03fb7a Manual">Documentation</a>
   </label>
   
 
@@ -460,7 +460,7 @@ are the following:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p><a class="reference internal" href="#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasicObject</span></code></a> sets class <a class="reference internal" href="#pymor.core.base.UberMeta" title="pymor.core.base.UberMeta"><code class="xref py py-class docutils literal notranslate"><span class="pre">UberMeta</span></code></a> as metaclass
-which itself inherits from <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABCMeta" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code></a>. Thus it is possible
+which itself inherits from <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABCMeta" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code></a>. Thus it is possible
 to define interface classes with abstract methods using the
 <a class="reference internal" href="#pymor.core.base.abstractmethod" title="pymor.core.base.abstractmethod"><code class="xref py py-func docutils literal notranslate"><span class="pre">abstractmethod</span></code></a> decorator. There are also decorators for
 abstract class methods, static methods, and properties.</p></li>
@@ -596,7 +596,7 @@ attributes of the same name.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.UberMeta">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">UberMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/2021.1.x/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UberMeta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABCMeta" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABCMeta" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code></a></p>
 <p>Metaclass for defining Abstract Base Classes (ABCs).</p>
 <p>Use this metaclass to create an ABC.  An ABC can be subclassed
 directly, and then acts as a mix-in class.  You can also register
@@ -615,7 +615,7 @@ even via super()).</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.core.base.BasicObject.logger">
 <span class="sig-name descname"><span class="pre">logger</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/2021.1.x/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.BasicObject.logger" title="Permalink to this definition">¶</a></dt>
-<dd><p>A per-class instance of <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Logger</span></code></a> with the class
+<dd><p>A per-class instance of <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Logger</span></code></a> with the class
 name as prefix.</p>
 </dd></dl>
 <dl class="py attribute">
@@ -815,7 +815,7 @@ has to be an argument to <code class="docutils literal notranslate"><span class=
               
           </div>
             Last updated on
-              Sep 24, 2021.
+              Nov 02, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.

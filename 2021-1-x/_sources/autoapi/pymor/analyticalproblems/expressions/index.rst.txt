@@ -228,6 +228,9 @@ Attributes
       Return self>value.
 
 
+   .. py:method:: __bool__(self)
+
+
 
 .. py:class:: BaseConstant
 

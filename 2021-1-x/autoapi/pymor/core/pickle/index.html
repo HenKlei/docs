@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.core.pickle &#8212; pyMOR v2021.1rc0+692.g32912b46 Manual</title>
+    <title>pymor.core.pickle &#8212; pyMOR v2021.1.0+6.g8e03fb7a Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+692.g32912b46 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1.0+6.g8e03fb7a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+692.g32912b46 Manual logo">
+                   alt="pyMOR v2021.1.0+6.g8e03fb7a Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+692.g32912b46 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1.0+6.g8e03fb7a Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+692.g32912b46 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1.0+6.g8e03fb7a Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+692.g32912b46 Manual">Documentation</a>
+       title="pyMOR v2021.1.0+6.g8e03fb7a Manual">Documentation</a>
   </label>
   
 
@@ -455,7 +455,7 @@
 <span id="pymor-core-pickle"></span><h1 id="autoapi-pymor-core-pickle-index--page-root"><a class="reference internal" href="#autoapi-pymor-core-pickle-index--page-root" title="pymor.core.pickle"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core.pickle</span></code></a><a class="headerlink" href="#autoapi-pymor-core-pickle-index--page-root" title="Permalink to this headline">¶</a></h1>
 <p>This module contains methods for object serialization.</p>
 <p>Instead of importing serialization functions from Python’s
-<a class="reference external" href="https://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> module directly, you should use the <code class="docutils literal notranslate"><span class="pre">dump</span></code>, <code class="docutils literal notranslate"><span class="pre">dumps</span></code>,
+<a class="reference external" href="https://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.10)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> module directly, you should use the <code class="docutils literal notranslate"><span class="pre">dump</span></code>, <code class="docutils literal notranslate"><span class="pre">dumps</span></code>,
 <code class="docutils literal notranslate"><span class="pre">load</span></code>, <code class="docutils literal notranslate"><span class="pre">loads</span></code> functions defined here. In particular, these
 methods will use <a class="reference internal" href="#pymor.core.pickle.dumps_function" title="pymor.core.pickle.dumps_function"><code class="xref py py-func docutils literal notranslate"><span class="pre">dumps_function</span></code></a> to serialize
 function objects which cannot be pickled by Python’s standard
@@ -572,7 +572,7 @@ implementation details of CPython to achieve its goals.</p>
 <dd><p>Tries hard to pickle a function object:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>The function’s code object is serialized using the <a class="reference external" href="https://docs.python.org/3/library/marshal.html#module-marshal" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">marshal</span></code></a> module.</p></li>
+<li><p>The function’s code object is serialized using the <a class="reference external" href="https://docs.python.org/3/library/marshal.html#module-marshal" title="(in Python v3.10)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">marshal</span></code></a> module.</p></li>
 <li><p>For all global names used in the function’s code object the corresponding
 object in the function’s global namespace is pickled. In case this object
 is a module, the modules __package__ name is pickled.</p></li>
@@ -647,7 +647,7 @@ work with CPython. If possible, avoid using this method.</p>
               
           </div>
             Last updated on
-              Sep 24, 2021.
+              Nov 02, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
