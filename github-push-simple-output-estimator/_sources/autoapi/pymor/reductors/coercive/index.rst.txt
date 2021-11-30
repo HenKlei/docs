@@ -66,7 +66,7 @@ Classes
    .. py:method:: estimate_error(self, U, mu, m)
 
 
-   .. py:method:: estimate_output_error(self, U, mu, m, return_error_vector=False)
+   .. py:method:: estimate_output_error(self, U, mu, m, return_estimate_vector=False)
 
 
    .. py:method:: restricted_to_subbasis(self, dim, m)
@@ -124,7 +124,7 @@ Classes
    .. py:method:: estimate_error(self, U, mu, m)
 
 
-   .. py:method:: estimate_output_error(self, U, mu, m, return_error_vector=False)
+   .. py:method:: estimate_output_error(self, U, mu, m, return_estimate_vector=False)
 
 
    .. py:method:: restricted_to_subbasis(self, dim, m)
