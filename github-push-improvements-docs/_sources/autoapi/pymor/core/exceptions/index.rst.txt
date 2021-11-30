@@ -127,3 +127,15 @@ Module Contents
    Import can't find module, or can't find name in module.
 
 
+.. py:exception:: UnpicklableError(cls)
+
+   Bases: :py:obj:`Exception`
+
+   Common base class for all non-exit exceptions.
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+

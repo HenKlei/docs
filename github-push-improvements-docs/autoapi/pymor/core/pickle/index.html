@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.core.pickle &#8212; pyMOR v2021.1rc0+790.g7620cdfb Manual</title>
+    <title>pymor.core.pickle &#8212; pyMOR v2021.1rc0+853.g171c3bbd Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+790.g7620cdfb Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+853.g171c3bbd Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+790.g7620cdfb Manual logo">
+                   alt="pyMOR v2021.1rc0+853.g171c3bbd Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+790.g7620cdfb Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+853.g171c3bbd Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+790.g7620cdfb Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+853.g171c3bbd Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+790.g7620cdfb Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+853.g171c3bbd Manual">Documentation</a>
   </label>
   
 
@@ -505,22 +505,25 @@ implementation details of CPython to achieve its goals.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle.dump" title="pymor.core.pickle.dump"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle._generate_opcode" title="pymor.core.pickle._generate_opcode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_generate_opcode</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle.unpicklable" title="pymor.core.pickle.unpicklable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpicklable</span></code></a></p></td>
+<td><p>Class decorator to mark a class as unpicklable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle._generate_opcode" title="pymor.core.pickle._generate_opcode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_generate_opcode</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle._global_names" title="pymor.core.pickle._global_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_global_names</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle._global_names" title="pymor.core.pickle._global_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_global_names</span></code></a></p></td>
 <td><p>Return all names in code_object.co_names which are used in a LOAD_GLOBAL statement.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle.dumps_function" title="pymor.core.pickle.dumps_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dumps_function</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle.dumps_function" title="pymor.core.pickle.dumps_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dumps_function</span></code></a></p></td>
 <td><p>Tries hard to pickle a function object:</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle.loads_function" title="pymor.core.pickle.loads_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loads_function</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle.loads_function" title="pymor.core.pickle.loads_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loads_function</span></code></a></p></td>
 <td><p>Restores a function serialized with <a class="reference internal" href="#pymor.core.pickle.dumps_function" title="pymor.core.pickle.dumps_function"><code class="xref py py-func docutils literal notranslate"><span class="pre">dumps_function</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle._function_pickling_handler" title="pymor.core.pickle._function_pickling_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_function_pickling_handler</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle._function_pickling_handler" title="pymor.core.pickle._function_pickling_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_function_pickling_handler</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.core.pickle._function_unpickling_handler" title="pymor.core.pickle._function_unpickling_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_function_unpickling_handler</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.core.pickle._function_unpickling_handler" title="pymor.core.pickle._function_unpickling_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_function_unpickling_handler</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -562,6 +565,11 @@ implementation details of CPython to achieve its goals.</p>
 <span class="sig-prename descclassname"><span class="pre">pymor.core.pickle.</span></span><span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/core/pickle.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.pickle.dump" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
+<dt class="sig sig-object py" id="pymor.core.pickle.unpicklable">
+<span class="sig-prename descclassname"><span class="pre">pymor.core.pickle.</span></span><span class="sig-name descname"><span class="pre">unpicklable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/core/pickle.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.pickle.unpicklable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class decorator to mark a class as unpicklable.</p>
+</dd></dl>
+<dl class="py function">
 <dt class="sig sig-object py" id="pymor.core.pickle._generate_opcode">
 <span class="sig-prename descclassname"><span class="pre">pymor.core.pickle.</span></span><span class="sig-name descname"><span class="pre">_generate_opcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code_object</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/core/pickle.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.pickle._generate_opcode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -572,7 +580,7 @@ implementation details of CPython to achieve its goals.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.pickle.Module">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.pickle.</span></span><span class="sig-name descname"><span class="pre">Module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/core/pickle.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.pickle.Module" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.pickle.</span></span><span class="sig-name descname"><span class="pre">Module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/core/pickle.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.pickle.Module" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pymor.core.pickle.Module.__getstate__">
 <span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/core/pickle.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.pickle.Module.__getstate__" title="Permalink to this definition">¶</a></dt>
@@ -663,10 +671,10 @@ work with CPython. If possible, avoid using this method.</p>
               
           </div>
             Last updated on
-              Nov 29, 2021.
+              Nov 30, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

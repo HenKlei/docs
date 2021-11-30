@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.discretizers.builtin.list &#8212; pyMOR v2021.1rc0+790.g7620cdfb Manual</title>
+    <title>pymor.discretizers.builtin.list &#8212; pyMOR v2021.1rc0+853.g171c3bbd Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../../index.html" title="pyMOR v2021.1rc0+790.g7620cdfb Manual"
+        <a href="../../../../../index.html" title="pyMOR v2021.1rc0+853.g171c3bbd Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+790.g7620cdfb Manual logo">
+                   alt="pyMOR v2021.1rc0+853.g171c3bbd Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+790.g7620cdfb Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+853.g171c3bbd Manual</a></li>
           <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers</span></code></a></li>
@@ -194,13 +194,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../../index.html" title="pyMOR v2021.1rc0+790.g7620cdfb Manual" class="md-nav__button md-logo">
+    <a href="../../../../../index.html" title="pyMOR v2021.1rc0+853.g171c3bbd Manual" class="md-nav__button md-logo">
       
         <img src="../../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../../index.html"
-       title="pyMOR v2021.1rc0+790.g7620cdfb Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+853.g171c3bbd Manual">Documentation</a>
   </label>
   
 
@@ -450,7 +450,7 @@
 </table>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.discretizers.builtin.list.convert_to_numpy_list_vector_array">
-<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.list.</span></span><span class="sig-name descname"><span class="pre">convert_to_numpy_list_vector_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.convert_to_numpy_list_vector_array" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.list.</span></span><span class="sig-name descname"><span class="pre">convert_to_numpy_list_vector_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.convert_to_numpy_list_vector_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use NumpyListVectorArrayMatrixOperator instead of NumpyMatrixOperator.</p>
 <p>This simple function recursively converts <a class="reference internal" href="../../../operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperators</span></code></a> to corresponding
 <a class="reference internal" href="../../../operators/list/index.html#pymor.operators.list.NumpyListVectorArrayMatrixOperator" title="pymor.operators.list.NumpyListVectorArrayMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyListVectorArrayMatrixOperators</span></code></a>.</p>
@@ -459,6 +459,8 @@
 <dl class="simple">
 <dt>obj</dt><dd><p>Either an <a class="reference internal" href="../../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>, e.g. <a class="reference internal" href="../../../operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a> or a <a class="reference internal" href="../../../operators/constructions/index.html#pymor.operators.constructions.LincombOperator" title="pymor.operators.constructions.LincombOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LincombOperator</span></code></a> of
 <a class="reference internal" href="../../../operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperators</span></code></a>, or an entire <a class="reference internal" href="../../../models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that is to be converted.</p>
+</dd>
+<dt>space</dt><dd><p>The <a class="reference internal" href="../../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> that is to be converted.</p>
 </dd>
 </dl>
 </div>
@@ -469,7 +471,7 @@
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.list.</span></span><span class="sig-name descname"><span class="pre">ConvertToNumpyListVectorArrayRules</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.list.</span></span><span class="sig-name descname"><span class="pre">ConvertToNumpyListVectorArrayRules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../algorithms/rules/index.html#pymor.algorithms.rules.RuleTable" title="pymor.algorithms.rules.RuleTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.algorithms.rules.RuleTable</span></code></a></p>
 <p>Define algorithm by a table of match conditions and corresponding actions.</p>
 <p><a class="reference internal" href="../../../algorithms/rules/index.html#pymor.algorithms.rules.RuleTable" title="pymor.algorithms.rules.RuleTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuleTable</span></code></a> manages a table of <a class="reference internal" href="../../../algorithms/rules/index.html#pymor.algorithms.rules.rule" title="pymor.algorithms.rules.rule"><code class="xref py py-class docutils literal notranslate"><span class="pre">rules</span></code></a>, stored in the <code class="docutils literal notranslate"><span class="pre">rules</span></code>
@@ -497,12 +499,16 @@ which the defined <a class="reference internal" href="../../../algorithms/rules/
 <span class="sig-name descname"><span class="pre">action_recurse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_recurse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_NumpyMatrixOperator">
-<span class="sig-name descname"><span class="pre">action_NumpyMatrixOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_NumpyMatrixOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_only_range">
+<span class="sig-name descname"><span class="pre">action_only_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_only_range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_VectorArrayOperator">
-<span class="sig-name descname"><span class="pre">action_VectorArrayOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_VectorArrayOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_only_source">
+<span class="sig-name descname"><span class="pre">action_only_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_only_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_NumpyMatrixOperator">
+<span class="sig-name descname"><span class="pre">action_NumpyMatrixOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_improvements-docs/src/pymor/discretizers/builtin/list.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.list.ConvertToNumpyListVectorArrayRules.action_NumpyMatrixOperator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </section>
@@ -556,10 +562,10 @@ which the defined <a class="reference internal" href="../../../algorithms/rules/
               
           </div>
             Last updated on
-              Nov 29, 2021.
+              Nov 30, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

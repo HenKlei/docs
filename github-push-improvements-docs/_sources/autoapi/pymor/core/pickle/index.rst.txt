@@ -37,6 +37,7 @@ Functions
   :nosignatures:
 
    pymor.core.pickle.dump
+   pymor.core.pickle.unpicklable
    pymor.core.pickle._generate_opcode
    pymor.core.pickle._global_names
    pymor.core.pickle.dumps_function
@@ -72,6 +73,11 @@ Attributes
    
 
 .. py:function:: dump(obj, file, protocol=None)
+
+
+.. py:function:: unpicklable(cls)
+
+   Class decorator to mark a class as unpicklable.
 
 
 .. py:function:: _generate_opcode(code_object)
