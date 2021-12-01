@@ -451,6 +451,22 @@ Functions
           Linear |Operator| representing the Jacobian.
               
 
+   .. py:method:: d_mu(self, parameter, index=0)
+
+      Return the operator's derivative with respect to a given parameter.
+
+      .. admonition:: Parameters
+
+          parameter
+              The parameter w.r.t. which to return the derivative.
+          index
+              Index of the parameter's component w.r.t which to return the derivative.
+              
+      .. admonition:: Returns
+
+          New |Operator| representing the partial derivative.
+              
+
    .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
@@ -2701,7 +2717,10 @@ Functions
    Converts |VectorArrays| to |NumpyVectorArrays|.
 
    Note that the input |VectorArrays| need to support
-   :meth:`~pymor.vectorarrays.interface.from_numpy`.
+   :meth:`~pymor.vectorarrays.interface.VectorArray.to_numpy`.
+   For the adjoint,
+   :meth:`~pymor.vectorarrays.interface.VectorSpace.from_numpy`
+   needs to be implemented.
 
    .. admonition:: Parameters
 

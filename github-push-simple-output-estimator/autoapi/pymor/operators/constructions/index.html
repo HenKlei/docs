@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.operators.constructions &#8212; pyMOR v2021.1rc0+866.gf0a9e390 Manual</title>
+    <title>pymor.operators.constructions &#8212; pyMOR v2021.1rc0+884.g2c102f0d Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -74,6 +74,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -94,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+866.gf0a9e390 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+884.g2c102f0d Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+866.gf0a9e390 Manual logo">
+                   alt="pyMOR v2021.1rc0+884.g2c102f0d Manual logo">
           
         </a>
       </div>
@@ -164,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+866.gf0a9e390 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+884.g2c102f0d Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code></a></li>
@@ -179,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+866.gf0a9e390 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+884.g2c102f0d Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+866.gf0a9e390 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+884.g2c102f0d Manual">Documentation</a>
   </label>
   
 
@@ -977,6 +993,24 @@ the Jacobian.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <p>Linear <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the Jacobian.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.ConcatenationOperator.d_mu">
+<span class="sig-name descname"><span class="pre">d_mu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_simple_output_estimator/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.ConcatenationOperator.d_mu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the operator’s derivative with respect to a given parameter.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>parameter</dt><dd><p>The parameter w.r.t. which to return the derivative.</p>
+</dd>
+<dt>index</dt><dd><p>Index of the parameter’s component w.r.t which to return the derivative.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>New <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the partial derivative.</p>
 </div>
 </dd></dl>
 <dl class="py method">
@@ -3383,7 +3417,10 @@ are passed to the product.</p>
 <dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
 <p>Converts <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> to <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArrays</span></code></a>.</p>
 <p>Note that the input <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> need to support
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">from_numpy</span></code>.</p>
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray.to_numpy" title="pymor.vectorarrays.interface.VectorArray.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.
+For the adjoint,
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace.from_numpy" title="pymor.vectorarrays.interface.VectorSpace.from_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_numpy</span></code></a>
+needs to be implemented.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -3584,10 +3621,10 @@ may be undesirable.</p>
               
           </div>
             Last updated on
-              Nov 30, 2021.
+              Dec 01, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
