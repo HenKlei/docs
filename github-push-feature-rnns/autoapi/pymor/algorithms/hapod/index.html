@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.hapod &#8212; pyMOR v2021.1rc0+845.gd3047db1 Manual</title>
+    <title>pymor.algorithms.hapod &#8212; pyMOR v2021.1rc0+875.g26c778d3 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -72,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -92,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+845.gd3047db1 Manual logo">
+                   alt="pyMOR v2021.1rc0+875.g26c778d3 Manual logo">
           
         </a>
       </div>
@@ -162,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+845.gd3047db1 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+875.g26c778d3 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -177,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+845.gd3047db1 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+875.g26c778d3 Manual">Documentation</a>
   </label>
   
 
@@ -675,22 +691,22 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.Node">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.hapod.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.hapod.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.Node.add_child">
 <span class="sig-name descname"><span class="pre">add_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.add_child" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.Node.depth">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.depth" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.depth" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.Node.is_leaf">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_leaf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.is_leaf" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_leaf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.is_leaf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.Node.is_root">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.is_root" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.Node.is_root" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.Node.traverse">
@@ -918,14 +934,14 @@ for parallelization.</p>
 <dd></dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.LifoExecutor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.hapod.</span></span><span class="sig-name descname"><span class="pre">LifoExecutor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.LifoExecutor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.hapod.</span></span><span class="sig-name descname"><span class="pre">LifoExecutor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.LifoExecutor" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.LifoExecutor.submit">
 <span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.LifoExecutor.submit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.LifoExecutor.run_task">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">run_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.LifoExecutor.run_task" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.LifoExecutor.run_task" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.LifoExecutor.done_callback">
@@ -934,10 +950,10 @@ for parallelization.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.FakeExecutor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.hapod.</span></span><span class="sig-name descname"><span class="pre">FakeExecutor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.FakeExecutor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.hapod.</span></span><span class="sig-name descname"><span class="pre">FakeExecutor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.FakeExecutor" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.hapod.FakeExecutor.submit">
-<em class="property"><span class="pre">async</span> <span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.FakeExecutor.submit" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/algorithms/hapod.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.hapod.FakeExecutor.submit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </section>
@@ -994,7 +1010,7 @@ for parallelization.</p>
               Dec 01, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

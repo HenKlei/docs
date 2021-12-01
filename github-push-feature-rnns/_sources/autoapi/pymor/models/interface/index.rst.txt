@@ -17,7 +17,7 @@ Classes
 
 
 
-.. py:class:: Model(products=None, error_estimator=None, visualizer=None, name=None)
+.. py:class:: Model(dim_input=0, products=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.core.cache.CacheableObject`, :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -229,7 +229,7 @@ Classes
           `'solution_error_estimate'`.
               
 
-   .. py:method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, *, mu=None, **kwargs)
+   .. py:method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, *, mu=None, input=None, **kwargs)
 
       Compute the solution of the model and associated quantities.
 
@@ -269,6 +269,12 @@ Classes
               Otherwise, return a dict of gradients for each |Parameter|.
           mu
               |Parameter values| for which to compute the values.
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
           kwargs
               Further keyword arguments to select further quantities that sould
               be returned or to customize how the values are computed.
@@ -278,7 +284,7 @@ Classes
           A dict with the computed values.
               
 
-   .. py:method:: solve(self, mu=None, return_error_estimate=False, **kwargs)
+   .. py:method:: solve(self, mu=None, input=None, return_error_estimate=False, **kwargs)
 
       Solve the discrete problem for the |parameter values| `mu`.
 
@@ -294,6 +300,12 @@ Classes
 
           mu
               |Parameter values| for which to solve.
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
           return_error_estimate
               If `True`, also return an error estimate for the computed solution.
           kwargs
@@ -306,7 +318,7 @@ Classes
           the estimate is returned as second value.
               
 
-   .. py:method:: output(self, mu=None, return_error_estimate=False, **kwargs)
+   .. py:method:: output(self, mu=None, input=None, return_error_estimate=False, **kwargs)
 
       Return the model output for given |parameter values| `mu`.
 
@@ -316,6 +328,12 @@ Classes
 
           mu
               |Parameter values| for which to compute the output.
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
           return_error_estimate
               If `True`, also return an error estimate for the computed output.
           kwargs
@@ -332,7 +350,7 @@ Classes
           second value.
               
 
-   .. py:method:: solve_d_mu(self, parameter, index, mu=None, **kwargs)
+   .. py:method:: solve_d_mu(self, parameter, index, mu=None, input=None, **kwargs)
 
       Solve for the partial derivative of the solution w.r.t. a parameter index
 
@@ -344,13 +362,19 @@ Classes
               parameter index for which to compute the sensitivity
           mu
               |Parameter value| for which to solve
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
               
       .. admonition:: Returns
 
           The sensitivity of the solution as a |VectorArray|.
               
 
-   .. py:method:: output_d_mu(self, mu=None, return_array=False, **kwargs)
+   .. py:method:: output_d_mu(self, mu=None, input=None, return_array=False, **kwargs)
 
       Compute the gradient w.r.t. the parameter of the output functional.
 
@@ -358,6 +382,12 @@ Classes
 
           mu
               |Parameter value| for which to compute the gradient
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
           return_array
               if `True`, return the output gradient as a |NumPy array|.
               Otherwise, return a dict of gradients for each |Parameter|.
@@ -367,7 +397,7 @@ Classes
           The gradient as a |NumPy array| or a dict of |NumPy arrays|.
               
 
-   .. py:method:: estimate_error(self, mu=None, **kwargs)
+   .. py:method:: estimate_error(self, mu=None, input=None, **kwargs)
 
       Estimate the error for the computed internal state.
 
@@ -384,6 +414,12 @@ Classes
 
           mu
               |Parameter values| for which to estimate the error.
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
           kwargs
               Additional keyword arguments passed to :meth:`compute` that
               might affect how the error estimate (or the solution) is computed.
@@ -393,7 +429,7 @@ Classes
           The estimated error.
               
 
-   .. py:method:: estimate_output_error(self, mu=None, **kwargs)
+   .. py:method:: estimate_output_error(self, mu=None, input=None, **kwargs)
 
       Estimate the error for the computed output.
 
@@ -410,6 +446,12 @@ Classes
 
           mu
               |Parameter values| for which to estimate the error.
+          input
+              The model input. Either a |NumPy array| of shape `(self.dim_input,)`,
+              a |Function| with `dim_domain == 1` and `shape_range == (self.dim_input,)`
+              mapping time to input, or a `str` expression whith `t` as variable that
+              can be used to instatiate an |ExpressionFunction| of this type.
+              Can be `None` if `self.dim_input == 0`.
           kwargs
               Additional keyword arguments passed to :meth:`compute` that
               might affect how the error estimate (or the output) is computed.

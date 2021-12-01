@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.core.base &#8212; pyMOR v2021.1rc0+845.gd3047db1 Manual</title>
+    <title>pymor.core.base &#8212; pyMOR v2021.1rc0+875.g26c778d3 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -72,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -92,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+845.gd3047db1 Manual logo">
+                   alt="pyMOR v2021.1rc0+875.g26c778d3 Manual logo">
           
         </a>
       </div>
@@ -162,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+845.gd3047db1 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+875.g26c778d3 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core</span></code></a></li>
@@ -177,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+845.gd3047db1 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+875.g26c778d3 Manual">Documentation</a>
   </label>
   
 
@@ -570,11 +586,11 @@ attributes of the same name.</p>
 <dd></dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.UID">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">UID</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UID" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">UID</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides unique, quickly computed ids by combining a session UUID4 with a counter.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.core.base.UID.__slots__">
-<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">['uid']</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UID.__slots__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">['uid']</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UID.__slots__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.core.base.UID.prefix">
@@ -582,7 +598,7 @@ attributes of the same name.</p>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.core.base.UID.counter">
-<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[0]</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UID.counter" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">[0]</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UID.counter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.core.base.UID.__getstate__">
@@ -595,7 +611,7 @@ attributes of the same name.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.UberMeta">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">UberMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UberMeta" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">UberMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.UberMeta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABCMeta" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code></a></p>
 <p>Metaclass for defining Abstract Base Classes (ABCs).</p>
 <p>Use this metaclass to create an ABC.  An ABC can be subclassed
@@ -610,7 +626,7 @@ even via super()).</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.BasicObject">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">BasicObject</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.BasicObject" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">BasicObject</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.BasicObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for most classes in pyMOR.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.core.base.BasicObject.logger">
@@ -677,7 +693,7 @@ set to the class name.</p>
 <dd></dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.classinstancemethod">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">classinstancemethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_meth</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.classinstancemethod" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">classinstancemethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_meth</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.classinstancemethod" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pymor.core.base.classinstancemethod.__get__">
 <span class="sig-name descname"><span class="pre">__get__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.classinstancemethod.__get__" title="Permalink to this definition">¶</a></dt>
@@ -689,7 +705,7 @@ set to the class name.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.ImmutableMeta">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">ImmutableMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.ImmutableMeta" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">ImmutableMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.ImmutableMeta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.core.base.UberMeta" title="pymor.core.base.UberMeta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UberMeta</span></code></a></p>
 <p>Metaclass for <a class="reference internal" href="#pymor.core.base.ImmutableObject" title="pymor.core.base.ImmutableObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmutableObject</span></code></a>.</p>
 <dl class="py attribute">
@@ -703,7 +719,7 @@ set to the class name.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.core.base.ImmutableObject">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">ImmutableObject</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.ImmutableObject" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.base.</span></span><span class="sig-name descname"><span class="pre">ImmutableObject</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.ImmutableObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BasicObject</span></code></a></p>
 <p>Base class for immutable objects in pyMOR.</p>
 <p>Instances of <code class="docutils literal notranslate"><span class="pre">ImmutableObject</span></code> are immutable in the sense that
@@ -724,7 +740,7 @@ after initialization, you have to ensure that this state is not affected
 by possible changes of the global <a class="reference internal" href="../defaults/index.html#module-pymor.core.defaults" title="pymor.core.defaults"><code class="xref py py-mod docutils literal notranslate"><span class="pre">defaults</span></code></a>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.core.base.ImmutableObject._locked">
-<span class="sig-name descname"><span class="pre">_locked</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.ImmutableObject._locked" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_locked</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/core/base.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.base.ImmutableObject._locked" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.core.base.ImmutableObject.__setattr__">
@@ -818,7 +834,7 @@ has to be an argument to <code class="docutils literal notranslate"><span class=
               Dec 01, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

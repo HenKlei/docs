@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.reductors.bt &#8212; pyMOR v2021.1rc0+845.gd3047db1 Manual</title>
+    <title>pymor.reductors.bt &#8212; pyMOR v2021.1rc0+875.g26c778d3 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -61,7 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -74,6 +74,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -94,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+845.gd3047db1 Manual logo">
+                   alt="pyMOR v2021.1rc0+875.g26c778d3 Manual logo">
           
         </a>
       </div>
@@ -164,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+845.gd3047db1 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+875.g26c778d3 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors</span></code></a></li>
@@ -179,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+845.gd3047db1 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+875.g26c778d3 Manual">Documentation</a>
   </label>
   
 
@@ -512,7 +528,7 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.reductors.bt.GenericBTReductor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">GenericBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.GenericBTReductor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">GenericBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.GenericBTReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
 <p>Generic Balanced Truncation reductor.</p>
 <div class="admonition-parameters admonition">
@@ -526,7 +542,7 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.bt.GenericBTReductor._gramians">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_gramians</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.GenericBTReductor._gramians" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_gramians</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.GenericBTReductor._gramians" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return low-rank Cholesky factors of Gramians.</p>
 </dd></dl>
 <dl class="py method">
@@ -536,7 +552,7 @@
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.bt.GenericBTReductor.error_bounds">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">error_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.GenericBTReductor.error_bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">error_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.GenericBTReductor.error_bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns error bounds for all possible reduced orders.</p>
 </dd></dl>
 <dl class="py method">
@@ -578,7 +594,7 @@ projection matrices (using <a class="reference internal" href="../../algorithms/
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.reductors.bt.BTReductor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">BTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.BTReductor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">BTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.BTReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.bt.GenericBTReductor" title="pymor.reductors.bt.GenericBTReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBTReductor</span></code></a></p>
 <p>Standard (Lyapunov) Balanced Truncation reductor.</p>
 <p>See Section 7.3 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id2" title="A. C. Antoulas. Approximation of Large-Scale Dynamical Systems. Volume 6 of Adv. Des. Control. SIAM Publications, Philadelphia, PA, 2005. ISBN 9780898715293. doi:10.1137/1.9780898718713.">Ant05</a>]</span>.</p>
@@ -604,7 +620,7 @@ projection matrices (using <a class="reference internal" href="../../algorithms/
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.reductors.bt.FDBTReductor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">FDBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ast_pole_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.FDBTReductor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">FDBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ast_pole_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.FDBTReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.bt.GenericBTReductor" title="pymor.reductors.bt.GenericBTReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBTReductor</span></code></a></p>
 <p>Balanced Truncation reductor using frequency domain representation of Gramians.</p>
 <p>See <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id37" title="K. Zhou, G. Salomon, and E. Wu. Balanced realization and model reduction for unstable systems. Internat. J. Robust Nonlinear Control, 9(3):183–198, 1999. doi:10.1002/(SICI)1099-1239(199903)9:3&lt;183::AID-RNC399&gt;3.0.CO;2-E.">ZSW99</a>]</span>.</p>
@@ -639,7 +655,7 @@ and <code class="docutils literal notranslate"><span class="pre">lev</span></cod
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.reductors.bt.LQGBTReductor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">LQGBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.LQGBTReductor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">LQGBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.LQGBTReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.bt.GenericBTReductor" title="pymor.reductors.bt.GenericBTReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBTReductor</span></code></a></p>
 <p>Linear Quadratic Gaussian (LQG) Balanced Truncation reductor.</p>
 <p>See Section 3 in <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id28" title="D. Mustafa and K. Glover. Controller reduction by $\mathcal H_\infty $-balanced truncation. IEEE Trans. Autom. Control, 36(6):668–682, 1991. doi:10.1109/9.86941.">MG91</a>]</span>.</p>
@@ -667,7 +683,7 @@ and <code class="docutils literal notranslate"><span class="pre">lev</span></cod
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.reductors.bt.BRBTReductor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">BRBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.BRBTReductor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.bt.</span></span><span class="sig-name descname"><span class="pre">BRBTReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/reductors/bt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.bt.BRBTReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.reductors.bt.GenericBTReductor" title="pymor.reductors.bt.GenericBTReductor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericBTReductor</span></code></a></p>
 <p>Bounded Real (BR) Balanced Truncation reductor.</p>
 <p>See <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id2" title="A. C. Antoulas. Approximation of Large-Scale Dynamical Systems. Volume 6 of Adv. Des. Control. SIAM Publications, Philadelphia, PA, 2005. ISBN 9780898715293. doi:10.1137/1.9780898718713.">Ant05</a>]</span> (Section 7.5.3) and <span id="id5">[<a class="reference internal" href="../../../../bibliography.html#id30" title="P. C. Opdenacker and E. A. Jonckheere. A contraction mapping preserving balanced reduction scheme and its infinity norm error bounds. IEEE Trans. Circuits Syst., 35(2):184–189, 1988. doi:10.1109/31.1720.">OJ88</a>]</span>.</p>
@@ -749,7 +765,7 @@ and <code class="docutils literal notranslate"><span class="pre">lev</span></cod
               Dec 01, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

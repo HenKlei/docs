@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.operators.block &#8212; pyMOR v2021.1rc0+845.gd3047db1 Manual</title>
+    <title>pymor.operators.block &#8212; pyMOR v2021.1rc0+875.g26c778d3 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -61,7 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -74,6 +74,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -94,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+845.gd3047db1 Manual logo">
+                   alt="pyMOR v2021.1rc0+875.g26c778d3 Manual logo">
           
         </a>
       </div>
@@ -164,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+845.gd3047db1 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+875.g26c778d3 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code></a></li>
@@ -179,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+845.gd3047db1 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+875.g26c778d3 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+845.gd3047db1 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+875.g26c778d3 Manual">Documentation</a>
   </label>
   
 
@@ -493,7 +509,7 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockOperatorBase">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockOperatorBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperatorBase" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockOperatorBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperatorBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
 <p>Interface for <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> dependent discrete operators.</p>
 <p>An operator in pyMOR is simply a mapping which for any given
@@ -703,7 +719,7 @@ representation.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockOperatorBase" title="pymor.operators.block.BlockOperatorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockOperatorBase</span></code></a></p>
 <p>A matrix of arbitrary <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p>
 <p>This operator can be <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator.apply" title="pymor.operators.interface.Operator.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">applied</span></code></a>
@@ -717,56 +733,56 @@ to a compatible <a class="reference internal" href="../../vectorarrays/block/ind
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockOperator.blocked_source">
-<span class="sig-name descname"><span class="pre">blocked_source</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperator.blocked_source" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">blocked_source</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperator.blocked_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockOperator.blocked_range">
-<span class="sig-name descname"><span class="pre">blocked_range</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperator.blocked_range" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">blocked_range</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockOperator.blocked_range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockRowOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockRowOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockRowOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockRowOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockRowOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockOperatorBase" title="pymor.operators.block.BlockOperatorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockOperatorBase</span></code></a></p>
 <p>A row vector of arbitrary <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockRowOperator.blocked_source">
-<span class="sig-name descname"><span class="pre">blocked_source</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockRowOperator.blocked_source" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">blocked_source</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockRowOperator.blocked_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockRowOperator.blocked_range">
-<span class="sig-name descname"><span class="pre">blocked_range</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockRowOperator.blocked_range" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">blocked_range</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockRowOperator.blocked_range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockColumnOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockColumnOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockColumnOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockColumnOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockColumnOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockOperatorBase" title="pymor.operators.block.BlockOperatorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockOperatorBase</span></code></a></p>
 <p>A column vector of arbitrary <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockColumnOperator.blocked_source">
-<span class="sig-name descname"><span class="pre">blocked_source</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockColumnOperator.blocked_source" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">blocked_source</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockColumnOperator.blocked_source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockColumnOperator.blocked_range">
-<span class="sig-name descname"><span class="pre">blocked_range</span></span><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockColumnOperator.blocked_range" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">blocked_range</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockColumnOperator.blocked_range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockProjectionOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockProjectionOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockProjectionOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockProjectionOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockProjectionOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockRowOperator" title="pymor.operators.block.BlockRowOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockRowOperator</span></code></a></p>
 <p>A row vector of arbitrary <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockEmbeddingOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockEmbeddingOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockEmbeddingOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockEmbeddingOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockEmbeddingOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockColumnOperator" title="pymor.operators.block.BlockColumnOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockColumnOperator</span></code></a></p>
 <p>A column vector of arbitrary <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.BlockDiagonalOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockDiagonalOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockDiagonalOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">BlockDiagonalOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.BlockDiagonalOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockOperator" title="pymor.operators.block.BlockOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockOperator</span></code></a></p>
 <p>Block diagonal <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> of arbitrary <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.</p>
 <p>This is a specialization of <a class="reference internal" href="#pymor.operators.block.BlockOperator" title="pymor.operators.block.BlockOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockOperator</span></code></a> for the
@@ -923,7 +939,7 @@ depends on a <a class="reference internal" href="../../parameters/base/index.htm
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.operators.block.SecondOrderModelOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">SecondOrderModelOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.SecondOrderModelOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.block.</span></span><span class="sig-name descname"><span class="pre">SecondOrderModelOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_feature-RNNs/src/pymor/operators/block.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.block.SecondOrderModelOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.block.BlockOperator" title="pymor.operators.block.BlockOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BlockOperator</span></code></a></p>
 <p>BlockOperator appearing in SecondOrderModel.to_lti().</p>
 <p>This represents a block operator</p>
@@ -1172,7 +1188,7 @@ depends on a <a class="reference internal" href="../../parameters/base/index.htm
               Dec 01, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
