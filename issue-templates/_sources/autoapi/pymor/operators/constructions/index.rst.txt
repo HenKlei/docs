@@ -38,6 +38,7 @@ Classes
    pymor.operators.constructions.AdjointOperator
    pymor.operators.constructions.SelectionOperator
    pymor.operators.constructions.InducedNorm
+   pymor.operators.constructions.NumpyConversionOperator
 
 
 
@@ -448,6 +449,22 @@ Functions
       .. admonition:: Returns
 
           Linear |Operator| representing the Jacobian.
+              
+
+   .. py:method:: d_mu(self, parameter, index=0)
+
+      Return the operator's derivative with respect to a given parameter.
+
+      .. admonition:: Parameters
+
+          parameter
+              The parameter w.r.t. which to return the derivative.
+          index
+              Index of the parameter's component w.r.t which to return the derivative.
+              
+      .. admonition:: Returns
+
+          New |Operator| representing the partial derivative.
               
 
    .. py:method:: restricted(self, dofs)
@@ -2691,5 +2708,154 @@ Functions
 
    .. py:method:: __call__(self, U, mu=None)
 
+
+
+.. py:class:: NumpyConversionOperator(space, direction='to_numpy')
+
+   Bases: :py:obj:`pymor.operators.interface.Operator`
+
+   Converts |VectorArrays| to |NumpyVectorArrays|.
+
+   Note that the input |VectorArrays| need to support
+   :meth:`~pymor.vectorarrays.interface.VectorArray.to_numpy`.
+   For the adjoint,
+   :meth:`~pymor.vectorarrays.interface.VectorSpace.from_numpy`
+   needs to be implemented.
+
+   .. admonition:: Parameters
+
+       space
+           The |VectorSpace| of the |VectorArrays| that are converted to
+           |NumpyVectorArrays|.
+       direction
+           Either `'to_numpy'` or `'from_numpy'`. In case of `'to_numpy'`
+           :meth:`apply` takes a |VectorArray| from `space` and returns
+           a |NumpyVectorArray|. In case of `'from_numpy'`, :meth:`apply`
+           takes a |NumpyVectorArray| and returns a |VectorArray| from
+           `space`.
+           
+   .. py:attribute:: linear
+      :annotation: = True
+
+      
+
+   .. py:method:: H(self)
+      :property:
+
+
+   .. py:method:: apply(self, U, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+
+      Apply the inverse operator.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the inverse operator is applied.
+          mu
+              The |parameter values| for which to evaluate the inverse operator.
+          initial_guess
+              |VectorArray| with the same length as `V` containing initial guesses
+              for the solution.  Some implementations of `apply_inverse` may
+              ignore this parameter.  If `None` a solver-dependent default is used.
+          least_squares
+              If `True`, solve the least squares problem::
+              
+                  u = argmin ||op(u) - v||_2.
+              
+              Since for an invertible operator the least squares solution agrees
+              with the result of the application of the inverse operator,
+              setting this option should, in general, have no effect on the result
+              for those operators. However, note that when no appropriate
+              |solver_options| are set for the operator, most implementations
+              will choose a least squares solver by default which may be
+              undesirable.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the inverse operator evaluations.
+              
+      .. admonition:: Raises
+
+          InversionError
+              The operator could not be inverted.
+              
+
+   .. py:method:: apply_adjoint(self, V, mu=None)
+
+      Apply the adjoint operator.
+
+      For any given linear |Operator| `op`, |parameter values| `mu` and
+      |VectorArrays| `U`, `V` in the :attr:`~Operator.source`
+      resp. :attr:`~Operator.range` we have::
+
+          op.apply_adjoint(V, mu).dot(U) == V.inner(op.apply(U, mu))
+
+      Thus, when `op` is represented by a matrix `M`, `apply_adjoint` is
+      given by left-multplication of (the complex conjugate of) `M` with `V`.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the adjoint operator is applied.
+          mu
+              The |parameter values| for which to apply the adjoint operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the adjoint operator evaluations.
+              
+
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+
+      Apply the inverse adjoint operator.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the inverse adjoint operator is applied.
+          mu
+              The |parameter values| for which to evaluate the inverse adjoint operator.
+          initial_guess
+              |VectorArray| with the same length as `U` containing initial guesses
+              for the solution.  Some implementations of `apply_inverse_adjoint` may
+              ignore this parameter.  If `None` a solver-dependent default is used.
+          least_squares
+              If `True`, solve the least squares problem::
+              
+                  v = argmin ||op^*(v) - u||_2.
+              
+              Since for an invertible operator the least squares solution agrees
+              with the result of the application of the inverse operator,
+              setting this option should, in general, have no effect on the result
+              for those operators. However, note that when no appropriate
+              |solver_options| are set for the operator, most operator
+              implementations will choose a least squares solver by default which
+              may be undesirable.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the inverse adjoint operator evaluations.
+              
+      .. admonition:: Raises
+
+          InversionError
+              The operator could not be inverted.
+              
 
 

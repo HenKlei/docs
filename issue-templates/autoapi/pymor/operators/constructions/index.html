@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.operators.constructions &#8212; pyMOR v2021.1rc0+852.gb57e425c Manual</title>
+    <title>pymor.operators.constructions &#8212; pyMOR v2021.1rc0+874.gd04ccc01 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -74,6 +74,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -94,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+852.gb57e425c Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+874.gd04ccc01 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+852.gb57e425c Manual logo">
+                   alt="pyMOR v2021.1rc0+874.gd04ccc01 Manual logo">
           
         </a>
       </div>
@@ -164,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+852.gb57e425c Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+874.gd04ccc01 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code></a></li>
@@ -179,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+852.gb57e425c Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+874.gd04ccc01 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+852.gb57e425c Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+874.gd04ccc01 Manual">Documentation</a>
   </label>
   
 
@@ -528,6 +544,9 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.operators.constructions.InducedNorm" title="pymor.operators.constructions.InducedNorm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InducedNorm</span></code></a></p></td>
 <td><p>Instantiated by <a class="reference internal" href="#pymor.operators.constructions.induced_norm" title="pymor.operators.constructions.induced_norm"><code class="xref py py-func docutils literal notranslate"><span class="pre">induced_norm</span></code></a>. Do not use directly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.operators.constructions.NumpyConversionOperator" title="pymor.operators.constructions.NumpyConversionOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyConversionOperator</span></code></a></p></td>
+<td><p>Converts <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> to <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArrays</span></code></a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -974,6 +993,24 @@ the Jacobian.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <p>Linear <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the Jacobian.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.ConcatenationOperator.d_mu">
+<span class="sig-name descname"><span class="pre">d_mu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.ConcatenationOperator.d_mu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the operator’s derivative with respect to a given parameter.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>parameter</dt><dd><p>The parameter w.r.t. which to return the derivative.</p>
+</dd>
+<dt>index</dt><dd><p>Index of the parameter’s component w.r.t which to return the derivative.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>New <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the partial derivative.</p>
 </div>
 </dd></dl>
 <dl class="py method">
@@ -3374,6 +3411,165 @@ are passed to the product.</p>
 <span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.InducedNorm.__call__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.constructions.</span></span><span class="sig-name descname"><span class="pre">NumpyConversionOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'to_numpy'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
+<p>Converts <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> to <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArrays</span></code></a>.</p>
+<p>Note that the input <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> need to support
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray.to_numpy" title="pymor.vectorarrays.interface.VectorArray.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.
+For the adjoint,
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace.from_numpy" title="pymor.vectorarrays.interface.VectorSpace.from_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_numpy</span></code></a>
+needs to be implemented.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>space</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> of the <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> that are converted to
+<a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArrays</span></code></a>.</p>
+</dd>
+<dt>direction</dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">'to_numpy'</span></code> or <code class="docutils literal notranslate"><span class="pre">'from_numpy'</span></code>. In case of <code class="docutils literal notranslate"><span class="pre">'to_numpy'</span></code>
+<a class="reference internal" href="#pymor.operators.constructions.NumpyConversionOperator.apply" title="pymor.operators.constructions.NumpyConversionOperator.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply</span></code></a> takes a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">space</span></code> and returns
+a <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArray</span></code></a>. In case of <code class="docutils literal notranslate"><span class="pre">'from_numpy'</span></code>, <a class="reference internal" href="#pymor.operators.constructions.NumpyConversionOperator.apply" title="pymor.operators.constructions.NumpyConversionOperator.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply</span></code></a>
+takes a <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArray</span></code></a> and returns a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from
+<code class="docutils literal notranslate"><span class="pre">space</span></code>.</p>
+</dd>
+</dl>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator.linear">
+<span class="sig-name descname"><span class="pre">linear</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator.linear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator.H">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator.H" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the operator to a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the operator evaluations.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator.apply_inverse">
+<span class="sig-name descname"><span class="pre">apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator.apply_inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the inverse operator.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt>V</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the inverse operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the inverse operator.</p>
+</dd>
+<dt>initial_guess</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> with the same length as <code class="docutils literal notranslate"><span class="pre">V</span></code> containing initial guesses
+for the solution.  Some implementations of <code class="docutils literal notranslate"><span class="pre">apply_inverse</span></code> may
+ignore this parameter.  If <code class="docutils literal notranslate"><span class="pre">None</span></code> a solver-dependent default is used.</p>
+</dd>
+<dt>least_squares</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, solve the least squares problem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">argmin</span> <span class="o">||</span><span class="n">op</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-</span> <span class="n">v</span><span class="o">||</span><span class="n">_2</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Since for an invertible operator the least squares solution agrees
+with the result of the application of the inverse operator,
+setting this option should, in general, have no effect on the result
+for those operators. However, note that when no appropriate
+<a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator.solver_options" title="pymor.operators.interface.Operator.solver_options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">solver_options</span></code></a> are set for the operator, most implementations
+will choose a least squares solver by default which may be
+undesirable.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the inverse operator evaluations.</p>
+</div>
+<div class="admonition-raises admonition">
+<p class="admonition-title">Raises</p>
+<dl class="simple">
+<dt>InversionError</dt><dd><p>The operator could not be inverted.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator.apply_adjoint">
+<span class="sig-name descname"><span class="pre">apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator.apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the adjoint operator.</p>
+<p>For any given linear <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> <code class="docutils literal notranslate"><span class="pre">op</span></code>, <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> <code class="docutils literal notranslate"><span class="pre">mu</span></code> and
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> <code class="docutils literal notranslate"><span class="pre">U</span></code>, <code class="docutils literal notranslate"><span class="pre">V</span></code> in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
+resp. <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> we have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">apply_adjoint</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">)</span> <span class="o">==</span> <span class="n">V</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">mu</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Thus, when <code class="docutils literal notranslate"><span class="pre">op</span></code> is represented by a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">apply_adjoint</span></code> is
+given by left-multplication of (the complex conjugate of) <code class="docutils literal notranslate"><span class="pre">M</span></code> with <code class="docutils literal notranslate"><span class="pre">V</span></code>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>V</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the adjoint operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to apply the adjoint operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the adjoint operator evaluations.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.operators.constructions.NumpyConversionOperator.apply_inverse_adjoint">
+<span class="sig-name descname"><span class="pre">apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/issue-templates/src/pymor/operators/constructions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.constructions.NumpyConversionOperator.apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the inverse adjoint operator.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the inverse adjoint operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the inverse adjoint operator.</p>
+</dd>
+<dt>initial_guess</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> with the same length as <code class="docutils literal notranslate"><span class="pre">U</span></code> containing initial guesses
+for the solution.  Some implementations of <code class="docutils literal notranslate"><span class="pre">apply_inverse_adjoint</span></code> may
+ignore this parameter.  If <code class="docutils literal notranslate"><span class="pre">None</span></code> a solver-dependent default is used.</p>
+</dd>
+<dt>least_squares</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, solve the least squares problem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">argmin</span> <span class="o">||</span><span class="n">op</span><span class="o">^*</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">-</span> <span class="n">u</span><span class="o">||</span><span class="n">_2</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Since for an invertible operator the least squares solution agrees
+with the result of the application of the inverse operator,
+setting this option should, in general, have no effect on the result
+for those operators. However, note that when no appropriate
+<a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator.solver_options" title="pymor.operators.interface.Operator.solver_options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">solver_options</span></code></a> are set for the operator, most operator
+implementations will choose a least squares solver by default which
+may be undesirable.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the inverse adjoint operator evaluations.</p>
+</div>
+<div class="admonition-raises admonition">
+<p class="admonition-title">Raises</p>
+<dl class="simple">
+<dt>InversionError</dt><dd><p>The operator could not be inverted.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+</dd></dl>
 </section>
 </section>
 </section>
@@ -3425,10 +3621,10 @@ are passed to the product.</p>
               
           </div>
             Last updated on
-              Nov 30, 2021.
+              Dec 01, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
