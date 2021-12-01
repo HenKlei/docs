@@ -451,6 +451,22 @@ Functions
           Linear |Operator| representing the Jacobian.
               
 
+   .. py:method:: d_mu(self, parameter, index=0)
+
+      Return the operator's derivative with respect to a given parameter.
+
+      .. admonition:: Parameters
+
+          parameter
+              The parameter w.r.t. which to return the derivative.
+          index
+              Index of the parameter's component w.r.t which to return the derivative.
+              
+      .. admonition:: Returns
+
+          New |Operator| representing the partial derivative.
+              
+
    .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
