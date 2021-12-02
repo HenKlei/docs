@@ -19,7 +19,7 @@ Functions
 
 
 
-.. function:: format_source(obj)
+.. py:function:: format_source(obj)
 
    Format source code of an object.
 
@@ -35,8 +35,7 @@ Functions
            terminal.
            
 
-
-.. function:: print_source(obj)
+.. py:function:: print_source(obj)
 
    Print source code of an object.
 
@@ -45,5 +44,4 @@ Functions
        obj
            The object of which to print the source code.
            
-
 

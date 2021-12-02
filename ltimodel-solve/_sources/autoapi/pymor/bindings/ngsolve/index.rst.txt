@@ -17,12 +17,12 @@ Classes
 
 
 
-.. class:: NGSolveVectorCommon
+.. py:class:: NGSolveVectorCommon
 
-   .. method:: amax(self)
+   .. py:method:: amax(self)
 
 
-   .. method:: dofs(self, dof_indices)
+   .. py:method:: dofs(self, dof_indices)
 
 
 

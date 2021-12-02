@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,25 +47,22 @@
   
   
   
-    <title>pymor.algorithms.lradi &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.algorithms.lradi &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -76,6 +74,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +133,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -181,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -280,6 +294,13 @@
     
     
       <a href="../basic/index.html" class="md-nav__link">basic</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../bernoulli/index.html" class="md-nav__link">bernoulli</a>
       
     
     </li>
@@ -609,11 +630,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.algorithms.lradi">
 <span id="pymor-algorithms-lradi"></span><h1 id="autoapi-pymor-algorithms-lradi-index--page-root"><a class="reference internal" href="#autoapi-pymor-algorithms-lradi-index--page-root" title="pymor.algorithms.lradi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms.lradi</span></code></a><a class="headerlink" href="#autoapi-pymor-algorithms-lradi-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -628,16 +649,22 @@
 <td><p>Compute an approximate low-rank solution of a Lyapunov equation.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.lradi.projection_shifts_init" title="pymor.algorithms.lradi.projection_shifts_init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection_shifts_init</span></code></a></p></td>
-<td><p>Find starting shift parameters for low-rank ADI iteration using</p></td>
+<td><p>Find starting projection shifts.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.lradi.projection_shifts" title="pymor.algorithms.lradi.projection_shifts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection_shifts</span></code></a></p></td>
-<td><p>Find further shift parameters for low-rank ADI iteration using</p></td>
+<td><p>Find further projection shifts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.lradi.wachspress_shifts_init" title="pymor.algorithms.lradi.wachspress_shifts_init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wachspress_shifts_init</span></code></a></p></td>
+<td><p>Compute optimal shifts for symmetric matrices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.lradi.cycle_shifts" title="pymor.algorithms.lradi.cycle_shifts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cycle_shifts</span></code></a></p></td>
+<td><p>Return previously computed shifts.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py function">
-<dt id="pymor.algorithms.lradi.lyap_lrcf_solver_options">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></code><code class="sig-name descname"><span class="pre">lyap_lrcf_solver_options</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lradi_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lradi_maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lradi_shifts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'projection_shifts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_shifts_init_maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_shifts_init_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.lyap_lrcf_solver_options" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.lradi.lyap_lrcf_solver_options">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></span><span class="sig-name descname"><span class="pre">lyap_lrcf_solver_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lradi_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lradi_maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lradi_shifts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'projection_shifts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_shifts_init_maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_shifts_init_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_shifts_subspace_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wachspress_large_ritz_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wachspress_small_ritz_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wachspress_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.lyap_lrcf_solver_options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return available Lyapunov solvers with default options.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -652,6 +679,14 @@
 </dd>
 <dt>projection_shifts_init_seed</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.lradi.projection_shifts_init" title="pymor.algorithms.lradi.projection_shifts_init"><code class="xref py py-func docutils literal notranslate"><span class="pre">projection_shifts_init</span></code></a>.</p>
 </dd>
+<dt>projection_shifts_subspace_columns</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.lradi.projection_shifts" title="pymor.algorithms.lradi.projection_shifts"><code class="xref py py-func docutils literal notranslate"><span class="pre">projection_shifts</span></code></a>.</p>
+</dd>
+<dt>wachspress_large_ritz_num</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.lradi.wachspress_shifts_init" title="pymor.algorithms.lradi.wachspress_shifts_init"><code class="xref py py-func docutils literal notranslate"><span class="pre">wachspress_shifts_init</span></code></a>.</p>
+</dd>
+<dt>wachspress_small_ritz_num</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.lradi.wachspress_shifts_init" title="pymor.algorithms.lradi.wachspress_shifts_init"><code class="xref py py-func docutils literal notranslate"><span class="pre">wachspress_shifts_init</span></code></a>.</p>
+</dd>
+<dt>wachspress_tol</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.lradi.wachspress_shifts_init" title="pymor.algorithms.lradi.wachspress_shifts_init"><code class="xref py py-func docutils literal notranslate"><span class="pre">wachspress_shifts_init</span></code></a>.</p>
+</dd>
 </dl>
 </div>
 <div class="admonition-returns admonition">
@@ -660,13 +695,13 @@
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.lradi.solve_lyap_lrcf">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></code><code class="sig-name descname"><span class="pre">solve_lyap_lrcf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.solve_lyap_lrcf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.lradi.solve_lyap_lrcf">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></span><span class="sig-name descname"><span class="pre">solve_lyap_lrcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.solve_lyap_lrcf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute an approximate low-rank solution of a Lyapunov equation.</p>
 <p>See <a class="reference internal" href="../lyapunov/index.html#pymor.algorithms.lyapunov.solve_lyap_lrcf" title="pymor.algorithms.lyapunov.solve_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_lyap_lrcf</span></code></a> for a
 general description.</p>
 <p>This function uses the low-rank ADI iteration as described in
-Algorithm 4.3 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id22">Kurschner16</a>]</span>.</p>
+Algorithm 4.3 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id25" title="Patrick Kürschner. Efficient low-rank solution of large-scale matrix equations. PhD thesis, Shaker Verlag Aachen, 2016. URL: http://pubman.mpdl.mpg.de/pubman/.">Kurschner16</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -694,11 +729,13 @@ transposed.</p>
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.lradi.projection_shifts_init">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></code><code class="sig-name descname"><span class="pre">projection_shifts_init</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.projection_shifts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find starting shift parameters for low-rank ADI iteration using
-Galerkin projection on spaces spanned by LR-ADI iterates.</p>
-<p>See <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id22">Kurschner16</a>]</span>, pp. 92-95.</p>
+<dt class="sig sig-object py" id="pymor.algorithms.lradi.projection_shifts_init">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></span><span class="sig-name descname"><span class="pre">projection_shifts_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.projection_shifts_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find starting projection shifts.</p>
+<p>Uses Galerkin projection on the space spanned by the right-hand side if
+it produces stable shifts.
+Otherwise, uses a randomly generated subspace.
+See <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id25" title="Patrick Kürschner. Efficient low-rank solution of large-scale matrix equations. PhD thesis, Shaker Verlag Aachen, 2016. URL: http://pubman.mpdl.mpg.de/pubman/.">Kurschner16</a>]</span>, pp. 92-95.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -721,11 +758,11 @@ Galerkin projection on spaces spanned by LR-ADI iterates.</p>
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.lradi.projection_shifts">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></code><code class="sig-name descname"><span class="pre">projection_shifts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev_shifts</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.projection_shifts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find further shift parameters for low-rank ADI iteration using
-Galerkin projection on spaces spanned by LR-ADI iterates.</p>
-<p>See <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id22">Kurschner16</a>]</span>, pp. 92-95.</p>
+<dt class="sig sig-object py" id="pymor.algorithms.lradi.projection_shifts">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></span><span class="sig-name descname"><span class="pre">projection_shifts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev_shifts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.projection_shifts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find further projection shifts.</p>
+<p>Uses Galerkin projection on spaces spanned by LR-ADI iterates.
+See <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id25" title="Patrick Kürschner. Efficient low-rank solution of large-scale matrix equations. PhD thesis, Shaker Verlag Aachen, 2016. URL: http://pubman.mpdl.mpg.de/pubman/.">Kurschner16</a>]</span>, pp. 92-95.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -735,8 +772,12 @@ Galerkin projection on spaces spanned by LR-ADI iterates.</p>
 </dd>
 <dt>V</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> representing the currently computed iterate.</p>
 </dd>
+<dt>Z</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> representing the current approximate solution.</p>
+</dd>
 <dt>prev_shifts</dt><dd><p>A <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> containing the set of all previously used shift
 parameters.</p>
+</dd>
+<dt>shift_options</dt><dd><p>The shift options to use (see <a class="reference internal" href="#pymor.algorithms.lradi.lyap_lrcf_solver_options" title="pymor.algorithms.lradi.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">lyap_lrcf_solver_options</span></code></a>).</p>
 </dd>
 </dl>
 </div>
@@ -748,9 +789,43 @@ parameters.</p>
 </dl>
 </div>
 </dd></dl>
-
-
-
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.algorithms.lradi.wachspress_shifts_init">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></span><span class="sig-name descname"><span class="pre">wachspress_shifts_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.wachspress_shifts_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute optimal shifts for symmetric matrices.</p>
+<p>This method computes optimal shift parameters for the LR-ADI iteration
+based on Wachspress’ method which is discussed in <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id26" title="J.-R. Li and J. White. Low rank solution of Lyapunov equations. SIAM J. Matrix Anal. Appl., 24(1):260–280, 2002. doi:10.1137/S0895479801384937.">LW02</a>]</span>. This
+implementation assumes that <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(E\)</span> are both real and
+symmetric.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>A</dt><dd><p>The <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> A from the corresponding Lyapunov equation.</p>
+</dd>
+<dt>E</dt><dd><p>The <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> E from the corresponding Lyapunov equation.</p>
+</dd>
+<dt>B</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> B from the corresponding Lyapunov equation.</p>
+</dd>
+<dt>shift_options</dt><dd><p>The shift options to use (see <a class="reference internal" href="#pymor.algorithms.lradi.lyap_lrcf_solver_options" title="pymor.algorithms.lradi.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">lyap_lrcf_solver_options</span></code></a>).</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<dl class="simple">
+<dt>shifts</dt><dd><p>A <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> containing a set of stable shift parameters.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.algorithms.lradi.cycle_shifts">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.lradi.</span></span><span class="sig-name descname"><span class="pre">cycle_shifts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev_shifts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/lradi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.lradi.cycle_shifts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return previously computed shifts.</p>
+</dd></dl>
+</section>
+</section>
+</section>
 
 
           </article>
@@ -799,10 +874,10 @@ parameters.</p>
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

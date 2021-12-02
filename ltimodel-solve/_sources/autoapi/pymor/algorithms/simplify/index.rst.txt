@@ -26,7 +26,7 @@ Functions
 
 
 
-.. function:: expand(obj)
+.. py:function:: expand(obj)
 
    Expand concatenations of LincombOperators.
 
@@ -60,9 +60,7 @@ Functions
        The transformed object.
            
 
-
-.. class:: ExpandRules
-
+.. py:class:: ExpandRules
 
    Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
 
@@ -88,13 +86,13 @@ Functions
       `list` of all defined |rules|.
       
 
-   .. method:: action_LincombOperator(self, op)
+   .. py:method:: action_LincombOperator(self, op)
 
 
-   .. method:: action_ConcatenationOperator(self, op)
+   .. py:method:: action_ConcatenationOperator(self, op)
 
 
-   .. method:: action_recurse(self, op)
+   .. py:method:: action_recurse(self, op)
 
 
 

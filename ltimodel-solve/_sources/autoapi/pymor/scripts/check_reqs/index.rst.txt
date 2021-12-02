@@ -22,18 +22,18 @@ Functions
 
 
 
-.. function:: _output_rich(filename, status)
+.. py:function:: _output_rich(filename, status)
 
 
-.. function:: _output_plain(filename, status)
+.. py:function:: _output_plain(filename, status)
 
 
-.. function:: _process_file(filename)
+.. py:function:: _process_file(filename)
 
 
-.. function:: main(filename: str)
+.. py:function:: main(filename: str)
 
 
-.. function:: run()
+.. py:function:: run()
 
 

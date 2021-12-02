@@ -26,8 +26,7 @@ Functions
 
 
 
-.. class:: SubGrid(parent_grid, parent_entities)
-
+.. py:class:: SubGrid(parent_grid, parent_entities)
 
    Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.Grid`
 
@@ -51,34 +50,39 @@ Functions
       might return `None` if the original grid has been destroyed.
       
 
-   .. attribute:: reference_element
+   .. py:attribute:: reference_element
       
 
       
 
-   .. method:: parent_indices(self, codim)
+   .. py:method:: parent_indices(self, codim)
 
       `retval[e]` is the index of the `e`-th codim-`codim` entity in the parent grid.
 
 
-   .. method:: indices_from_parent_indices(self, ind, codim)
+   .. py:method:: indices_from_parent_indices(self, ind, codim)
 
-      Maps a |NumPy array| of indicies of codim-`codim` entites of the parent grid to indicies
-      of the subgrid.
+      Maps indices of codim-`codim` entities of the parent grid to indices of the subgrid.
 
+      .. admonition:: Parameters
+
+          ind
+              |NumPy array| of indices of codim-`codim` entities of the parent grid
+          codim
+              codim of the entities indicated by `ind`
+              
       .. admonition:: Raises
 
           ValueError
               Not all provided indices correspond to entities contained in the subgrid.
               
 
-
-   .. method:: size(self, codim)
+   .. py:method:: size(self, codim)
 
       The number of entities of codimension `codim`.
 
 
-   .. method:: subentities(self, codim, subentity_codim)
+   .. py:method:: subentities(self, codim, subentity_codim)
 
       `retval[e,s]` is the global index of the `s`-th codim-`subentity_codim` subentity of the
       codim-`codim` entity with global index `e`.
@@ -100,7 +104,7 @@ Functions
       `embeddings(codim)`
 
 
-   .. method:: embeddings(self, codim)
+   .. py:method:: embeddings(self, codim)
 
       Returns tuple `(A, B)` where `A[e]` and `B[e]` are the linear part and the translation
       part of the map from the reference element of `e` to `e`.
@@ -110,11 +114,11 @@ Functions
       subentity_embedding of `e` into `e_0` determined by the reference element.
 
 
-   .. method:: __getstate__(self)
+   .. py:method:: __getstate__(self)
 
 
 
-.. function:: make_sub_grid_boundary_info(sub_grid, parent_grid, parent_grid_boundary_info, new_boundary_type=None)
+.. py:function:: make_sub_grid_boundary_info(sub_grid, parent_grid, parent_grid_boundary_info, new_boundary_type=None)
 
    Derives a |BoundaryInfo| for a :class:`~pymor.discretizers.builtin.grids.subgrid.SubGrid`.
 
@@ -135,5 +139,4 @@ Functions
 
        |BoundaryInfo| associated with sub_grid.
            
-
 

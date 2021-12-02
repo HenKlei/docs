@@ -26,8 +26,7 @@ Functions
 
 
 
-.. class:: UnstructuredTriangleGrid(sizes, subentity_data, embedding_data)
-
+.. py:class:: UnstructuredTriangleGrid(sizes, subentity_data, embedding_data)
 
    Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.Grid`
 
@@ -36,17 +35,17 @@ Functions
    Use :meth:`~UnstructuredTriangleGrid.from_vertices` to instantiate
    the grid from vertex coordinates and connectivity data.
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 2
 
       
 
-   .. attribute:: reference_element
+   .. py:attribute:: reference_element
       
 
       
 
-   .. method:: from_vertices(cls, vertices, faces)
+   .. py:method:: from_vertices(cls, vertices, faces)
       :classmethod:
 
       Instantiate grid from vertex coordinates and connectivity data.
@@ -64,13 +63,12 @@ Functions
               given triangles (codim 0 entities).
               
 
-
-   .. method:: size(self, codim=0)
+   .. py:method:: size(self, codim=0)
 
       The number of entities of codimension `codim`.
 
 
-   .. method:: subentities(self, codim=0, subentity_codim=None)
+   .. py:method:: subentities(self, codim=0, subentity_codim=None)
 
       `retval[e,s]` is the global index of the `s`-th codim-`subentity_codim` subentity of the
       codim-`codim` entity with global index `e`.
@@ -92,7 +90,7 @@ Functions
       `embeddings(codim)`
 
 
-   .. method:: embeddings(self, codim=0)
+   .. py:method:: embeddings(self, codim=0)
 
       Returns tuple `(A, B)` where `A[e]` and `B[e]` are the linear part and the translation
       part of the map from the reference element of `e` to `e`.
@@ -102,7 +100,7 @@ Functions
       subentity_embedding of `e` into `e_0` determined by the reference element.
 
 
-   .. method:: visualize(self, U, codim=2, **kwargs)
+   .. py:method:: visualize(self, U, codim=2, **kwargs)
 
       Visualize scalar data associated to the grid as a patch plot.
 
@@ -119,13 +117,12 @@ Functions
               See :func:`~pymor.discretizers.builtin.gui.visualizers.PatchVisualizer.visualize`
               
 
-
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
 
-.. function:: compute_edges(subentities)
+.. py:function:: compute_edges(subentities)
 
 

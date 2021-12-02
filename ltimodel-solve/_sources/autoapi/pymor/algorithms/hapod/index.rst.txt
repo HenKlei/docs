@@ -36,43 +36,42 @@ Functions
 
 
 
-.. class:: Node(tag=None, parent=None, after=None)
+.. py:class:: Node(tag=None, parent=None, after=None)
+
+   .. py:method:: add_child(self, tag=None, after=None, **kwargs)
 
 
-   .. method:: add_child(self, tag=None, after=None, **kwargs)
-
-
-   .. method:: depth(self)
+   .. py:method:: depth(self)
       :property:
 
 
-   .. method:: is_leaf(self)
+   .. py:method:: is_leaf(self)
       :property:
 
 
-   .. method:: is_root(self)
+   .. py:method:: is_root(self)
       :property:
 
 
-   .. method:: traverse(self, return_level=False)
+   .. py:method:: traverse(self, return_level=False)
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
 
-.. function:: inc_hapod_tree(steps)
+.. py:function:: inc_hapod_tree(steps)
 
 
-.. function:: dist_hapod_tree(num_slices, arity=None)
+.. py:function:: dist_hapod_tree(num_slices, arity=None)
 
 
-.. function:: default_pod_method(U, eps, is_root_node, product)
+.. py:function:: default_pod_method(U, eps, is_root_node, product)
 
 
-.. function:: hapod(tree, snapshots, local_eps, product=None, pod_method=default_pod_method, executor=None, eval_snapshots_in_executor=False)
+.. py:function:: hapod(tree, snapshots, local_eps, product=None, pod_method=default_pod_method, executor=None, eval_snapshots_in_executor=False)
 
    Compute the Hierarchical Approximate POD.
 
@@ -113,8 +112,7 @@ Functions
            The total number of input snapshot vectors.
            
 
-
-.. function:: inc_hapod(steps, snapshots, eps, omega, product=None, executor=None)
+.. py:function:: inc_hapod(steps, snapshots, eps, omega, product=None, executor=None)
 
    Incremental Hierarchical Approximate POD.
 
@@ -123,7 +121,7 @@ Functions
    .. admonition:: Parameters
 
        steps
-           The number of incremental POD updates. Has to agree with the lenght
+           The number of incremental POD updates. Has to agree with the length
            of `snapshots`.
        snapshots
            An iterable returning for each incremental POD step the associated
@@ -149,8 +147,7 @@ Functions
            The total number of input snapshot vectors.
            
 
-
-.. function:: dist_hapod(num_slices, snapshots, eps, omega, arity=None, product=None, executor=None, eval_snapshots_in_executor=False)
+.. py:function:: dist_hapod(num_slices, snapshots, eps, omega, arity=None, product=None, executor=None, eval_snapshots_in_executor=False)
 
    Distributed Hierarchical Approximate POD.
 
@@ -190,8 +187,7 @@ Functions
            The total number of input snapshot vectors.
            
 
-
-.. function:: inc_vectorarray_hapod(steps, U, eps, omega, product=None)
+.. py:function:: inc_vectorarray_hapod(steps, U, eps, omega, product=None)
 
    Incremental Hierarchical Approximate POD.
 
@@ -221,8 +217,7 @@ Functions
            The total number of input snapshot vectors.
            
 
-
-.. function:: dist_vectorarray_hapod(num_slices, U, eps, omega, arity=None, product=None, executor=None)
+.. py:function:: dist_vectorarray_hapod(num_slices, U, eps, omega, arity=None, product=None, executor=None)
 
    Distributed Hierarchical Approximate POD.
 
@@ -259,27 +254,25 @@ Functions
            The total number of input snapshot vectors.
            
 
-
-.. function:: std_local_eps(tree, eps, omega, pod_on_leafs=True)
-
-
-.. class:: LifoExecutor(executor, max_workers=None)
+.. py:function:: std_local_eps(tree, eps, omega, pod_on_leafs=True)
 
 
-   .. method:: submit(self, f, *args)
+.. py:class:: LifoExecutor(executor, max_workers=None)
+
+   .. py:method:: submit(self, f, *args)
 
 
-   .. method:: run_task(self)
+   .. py:method:: run_task(self)
       :async:
 
 
-   .. method:: done_callback(self, future, executor_future)
+   .. py:method:: done_callback(self, future, executor_future)
 
 
 
-.. class:: FakeExecutor
+.. py:class:: FakeExecutor
 
-   .. method:: submit(f, *args)
+   .. py:method:: submit(f, *args)
       :staticmethod:
       :async:
 

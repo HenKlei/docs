@@ -33,13 +33,12 @@ Attributes
    pymor.analyticalproblems.domaindescriptions.KNOWN_BOUNDARY_TYPES
 
 
-.. data:: KNOWN_BOUNDARY_TYPES
+.. py:data:: KNOWN_BOUNDARY_TYPES
    
 
    
 
-.. class:: DomainDescription
-
+.. py:class:: DomainDescription
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -54,21 +53,20 @@ Attributes
       Set of boundary types the domain has.
       
 
-   .. method:: has_dirichlet(self)
+   .. py:method:: has_dirichlet(self)
       :property:
 
 
-   .. method:: has_neumann(self)
+   .. py:method:: has_neumann(self)
       :property:
 
 
-   .. method:: has_robin(self)
+   .. py:method:: has_robin(self)
       :property:
 
 
 
-.. class:: RectDomain(domain=([0, 0], [1, 1]), left='dirichlet', right='dirichlet', top='dirichlet', bottom='dirichlet')
-
+.. py:class:: RectDomain(domain=([0, 0], [1, 1]), left='dirichlet', right='dirichlet', top='dirichlet', bottom='dirichlet')
 
    Bases: :py:obj:`DomainDescription`
 
@@ -102,38 +100,37 @@ Attributes
 
       
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 2
 
       
 
-   .. method:: lower_left(self)
+   .. py:method:: lower_left(self)
       :property:
 
 
-   .. method:: upper_right(self)
+   .. py:method:: upper_right(self)
       :property:
 
 
-   .. method:: width(self)
+   .. py:method:: width(self)
       :property:
 
 
-   .. method:: height(self)
+   .. py:method:: height(self)
       :property:
 
 
-   .. method:: volume(self)
+   .. py:method:: volume(self)
       :property:
 
 
-   .. method:: diameter(self)
+   .. py:method:: diameter(self)
       :property:
 
 
 
-.. class:: CylindricalDomain(domain=([0, 0], [1, 1]), top='dirichlet', bottom='dirichlet')
-
+.. py:class:: CylindricalDomain(domain=([0, 0], [1, 1]), top='dirichlet', bottom='dirichlet')
 
    Bases: :py:obj:`DomainDescription`
 
@@ -159,38 +156,37 @@ Attributes
 
       
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 2
 
       
 
-   .. method:: lower_left(self)
+   .. py:method:: lower_left(self)
       :property:
 
 
-   .. method:: upper_right(self)
+   .. py:method:: upper_right(self)
       :property:
 
 
-   .. method:: width(self)
+   .. py:method:: width(self)
       :property:
 
 
-   .. method:: height(self)
+   .. py:method:: height(self)
       :property:
 
 
-   .. method:: volume(self)
+   .. py:method:: volume(self)
       :property:
 
 
-   .. method:: diameter(self)
+   .. py:method:: diameter(self)
       :property:
 
 
 
-.. class:: TorusDomain(domain=([0, 0], [1, 1]))
-
+.. py:class:: TorusDomain(domain=([0, 0], [1, 1]))
 
    Bases: :py:obj:`DomainDescription`
 
@@ -207,38 +203,37 @@ Attributes
 
       
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 2
 
       
 
-   .. method:: lower_left(self)
+   .. py:method:: lower_left(self)
       :property:
 
 
-   .. method:: upper_right(self)
+   .. py:method:: upper_right(self)
       :property:
 
 
-   .. method:: width(self)
+   .. py:method:: width(self)
       :property:
 
 
-   .. method:: height(self)
+   .. py:method:: height(self)
       :property:
 
 
-   .. method:: volume(self)
+   .. py:method:: volume(self)
       :property:
 
 
-   .. method:: diameter(self)
+   .. py:method:: diameter(self)
       :property:
 
 
 
-.. class:: LineDomain(domain=(0, 1), left='dirichlet', right='dirichlet')
-
+.. py:class:: LineDomain(domain=(0, 1), left='dirichlet', right='dirichlet')
 
    Bases: :py:obj:`DomainDescription`
 
@@ -263,18 +258,17 @@ Attributes
 
       
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 1
 
       
 
-   .. method:: width(self)
+   .. py:method:: width(self)
       :property:
 
 
 
-.. class:: CircleDomain(domain=(0, 1))
-
+.. py:class:: CircleDomain(domain=(0, 1))
 
    Bases: :py:obj:`DomainDescription`
 
@@ -290,18 +284,17 @@ Attributes
 
       
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 1
 
       
 
-   .. method:: width(self)
+   .. py:method:: width(self)
       :property:
 
 
 
-.. class:: PolygonalDomain(points, boundary_types, holes=None)
-
+.. py:class:: PolygonalDomain(points, boundary_types, holes=None)
 
    Bases: :py:obj:`DomainDescription`
 
@@ -328,14 +321,13 @@ Attributes
 
       
 
-   .. attribute:: dim
+   .. py:attribute:: dim
       :annotation: = 2
 
       
 
 
-.. class:: CircularSectorDomain(angle, radius, arc='dirichlet', radii='dirichlet', num_points=100)
-
+.. py:class:: CircularSectorDomain(angle, radius, arc='dirichlet', radii='dirichlet', num_points=100)
 
    Bases: :py:obj:`PolygonalDomain`
 
@@ -368,8 +360,7 @@ Attributes
       
 
 
-.. class:: DiscDomain(radius, boundary='dirichlet', num_points=100)
-
+.. py:class:: DiscDomain(radius, boundary='dirichlet', num_points=100)
 
    Bases: :py:obj:`PolygonalDomain`
 

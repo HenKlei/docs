@@ -31,8 +31,7 @@ Functions
 
 
 
-.. class:: ProjectionBasedReductor(fom, bases, products={}, check_orthonormality=True, check_tol=0.001)
-
+.. py:class:: ProjectionBasedReductor(fom, bases, products={}, check_orthonormality=True, check_tol=0.001)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -56,48 +55,46 @@ Functions
            If `check_orthonormality` is `True`, the numerical tolerance with which the checks
            are performed.
            
-
-   .. method:: reduce(self, dims=None)
-
-
-   .. method:: _reduce(self)
+   .. py:method:: reduce(self, dims=None)
 
 
-   .. method:: _reduce_to_subbasis(self, dims)
+   .. py:method:: _reduce(self)
 
 
-   .. method:: project_operators(self)
+   .. py:method:: _reduce_to_subbasis(self, dims)
+
+
+   .. py:method:: project_operators(self)
       :abstractmethod:
 
 
-   .. method:: assemble_error_estimator(self)
+   .. py:method:: assemble_error_estimator(self)
 
 
-   .. method:: build_rom(self, projected_operators, error_estimator)
+   .. py:method:: build_rom(self, projected_operators, error_estimator)
       :abstractmethod:
 
 
-   .. method:: project_operators_to_subbasis(self, dims)
+   .. py:method:: project_operators_to_subbasis(self, dims)
       :abstractmethod:
 
 
-   .. method:: assemble_error_estimator_for_subbasis(self, dims)
+   .. py:method:: assemble_error_estimator_for_subbasis(self, dims)
 
 
-   .. method:: reconstruct(self, u, basis='RB')
+   .. py:method:: reconstruct(self, u, basis='RB')
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
-   .. method:: extend_basis(self, U, basis='RB', method='gram_schmidt', pod_modes=1, pod_orthonormalize=True, copy_U=True)
+   .. py:method:: extend_basis(self, U, basis='RB', method='gram_schmidt', pod_modes=1, pod_orthonormalize=True, copy_U=True)
 
 
-   .. method:: _check_orthonormality(self, basis, offset=0)
+   .. py:method:: _check_orthonormality(self, basis, offset=0)
 
 
 
-.. class:: StationaryRBReductor(fom, RB=None, product=None, check_orthonormality=None, check_tol=None)
-
+.. py:class:: StationaryRBReductor(fom, RB=None, product=None, check_orthonormality=None, check_tol=None)
 
    Bases: :py:obj:`ProjectionBasedReductor`
 
@@ -117,19 +114,17 @@ Functions
        check_tol
            See :class:`ProjectionBasedReductor`.
            
-
-   .. method:: project_operators(self)
-
-
-   .. method:: project_operators_to_subbasis(self, dims)
+   .. py:method:: project_operators(self)
 
 
-   .. method:: build_rom(self, projected_operators, error_estimator)
+   .. py:method:: project_operators_to_subbasis(self, dims)
+
+
+   .. py:method:: build_rom(self, projected_operators, error_estimator)
 
 
 
-.. class:: InstationaryRBReductor(fom, RB=None, product=None, initial_data_product=None, product_is_mass=False, check_orthonormality=None, check_tol=None)
-
+.. py:class:: InstationaryRBReductor(fom, RB=None, product=None, initial_data_product=None, product_is_mass=False, check_orthonormality=None, check_tol=None)
 
    Bases: :py:obj:`ProjectionBasedReductor`
 
@@ -155,19 +150,17 @@ Functions
        check_tol
            See :class:`ProjectionBasedReductor`.
            
-
-   .. method:: project_operators(self)
-
-
-   .. method:: project_operators_to_subbasis(self, dims)
+   .. py:method:: project_operators(self)
 
 
-   .. method:: build_rom(self, projected_operators, error_estimator)
+   .. py:method:: project_operators_to_subbasis(self, dims)
+
+
+   .. py:method:: build_rom(self, projected_operators, error_estimator)
 
 
 
-.. class:: LTIPGReductor(fom, W, V, E_biorthonormal=False)
-
+.. py:class:: LTIPGReductor(fom, W, V, E_biorthonormal=False)
 
    Bases: :py:obj:`ProjectionBasedReductor`
 
@@ -185,28 +178,26 @@ Functions
            If `True`, no `E` matrix will be assembled for the reduced |Model|.
            Set to `True` if `W` and `V` are biorthonormal w.r.t. `fom.E`.
            
-
-   .. method:: project_operators(self)
-
-
-   .. method:: project_operators_to_subbasis(self, dims)
+   .. py:method:: project_operators(self)
 
 
-   .. method:: build_rom(self, projected_operators, error_estimator)
+   .. py:method:: project_operators_to_subbasis(self, dims)
 
 
-   .. method:: extend_basis(self, **kwargs)
+   .. py:method:: build_rom(self, projected_operators, error_estimator)
+
+
+   .. py:method:: extend_basis(self, **kwargs)
       :abstractmethod:
 
 
-   .. method:: reconstruct(self, u, basis='V')
+   .. py:method:: reconstruct(self, u, basis='V')
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. class:: SOLTIPGReductor(fom, W, V, M_biorthonormal=False)
-
+.. py:class:: SOLTIPGReductor(fom, W, V, M_biorthonormal=False)
 
    Bases: :py:obj:`ProjectionBasedReductor`
 
@@ -224,28 +215,26 @@ Functions
            If `True`, no `E` matrix will be assembled for the reduced |Model|.
            Set to `True` if `W` and `V` are biorthonormal w.r.t. `fom.E`.
            
-
-   .. method:: project_operators(self)
-
-
-   .. method:: project_operators_to_subbasis(self, dims)
+   .. py:method:: project_operators(self)
 
 
-   .. method:: build_rom(self, projected_operators, error_estimator)
+   .. py:method:: project_operators_to_subbasis(self, dims)
 
 
-   .. method:: extend_basis(self, **kwargs)
+   .. py:method:: build_rom(self, projected_operators, error_estimator)
+
+
+   .. py:method:: extend_basis(self, **kwargs)
       :abstractmethod:
 
 
-   .. method:: reconstruct(self, u, basis='V')
+   .. py:method:: reconstruct(self, u, basis='V')
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. class:: DelayLTIPGReductor(fom, W, V, E_biorthonormal=False)
-
+.. py:class:: DelayLTIPGReductor(fom, W, V, E_biorthonormal=False)
 
    Bases: :py:obj:`ProjectionBasedReductor`
 
@@ -263,26 +252,25 @@ Functions
            If `True`, no `E` matrix will be assembled for the reduced |Model|.
            Set to `True` if `W` and `V` are biorthonormal w.r.t. `fom.E`.
            
-
-   .. method:: project_operators(self)
-
-
-   .. method:: project_operators_to_subbasis(self, dims)
+   .. py:method:: project_operators(self)
 
 
-   .. method:: build_rom(self, projected_operators, error_estimator)
+   .. py:method:: project_operators_to_subbasis(self, dims)
 
 
-   .. method:: extend_basis(self, **kwargs)
+   .. py:method:: build_rom(self, projected_operators, error_estimator)
+
+
+   .. py:method:: extend_basis(self, **kwargs)
       :abstractmethod:
 
 
-   .. method:: reconstruct(self, u, basis='V')
+   .. py:method:: reconstruct(self, u, basis='V')
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
 
-.. function:: extend_basis(U, basis, product=None, method='gram_schmidt', pod_modes=1, pod_orthonormalize=True, copy_U=True)
+.. py:function:: extend_basis(U, basis, product=None, method='gram_schmidt', pod_modes=1, pod_orthonormalize=True, copy_U=True)
 
 

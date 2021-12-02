@@ -19,12 +19,14 @@ Classes
    pymor.analyticalproblems.functions.LincombFunction
    pymor.analyticalproblems.functions.ProductFunction
    pymor.analyticalproblems.functions.BitmapFunction
+   pymor.analyticalproblems.functions.EmpiricalInterpolatedFunction
+   pymor.analyticalproblems.functions.EmpiricalInterpolatedFunctionFunctional
+   pymor.analyticalproblems.functions.EmpiricalInterpolatedFunctionBasisFunction
 
 
 
 
-.. class:: Function
-
+.. py:class:: Function
 
    Bases: :py:obj:`pymor.parameters.base.ParametricObject`
 
@@ -59,49 +61,48 @@ Classes
       The shape of the function values.
       
 
-   .. attribute:: __rmul__
+   .. py:attribute:: __rmul__
       
 
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
       :abstractmethod:
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
-   .. method:: __call__(self, x, mu=None)
+   .. py:method:: __call__(self, x, mu=None)
 
       Shorthand for :meth:`~Function.evaluate`.
 
 
-   .. method:: _add_sub(self, other, sign)
+   .. py:method:: _add_sub(self, other, sign)
 
 
-   .. method:: _radd_sub(self, other, sign)
+   .. py:method:: _radd_sub(self, other, sign)
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __radd__(self, other)
+   .. py:method:: __radd__(self, other)
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __rsub__(self, other)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
 
-.. class:: ConstantFunction(value=np.array(1.0), dim_domain=1, name=None)
-
+.. py:class:: ConstantFunction(value=np.array(1.0), dim_domain=1, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -120,20 +121,18 @@ Classes
        name
            The name of the function.
            
-
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: GenericFunction(mapping, dim_domain=1, shape_range=(), parameters={}, name=None)
-
+.. py:class:: GenericFunction(mapping, dim_domain=1, shape_range=(), parameters={}, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -163,20 +162,18 @@ Classes
        name
            The name of the function.
            
-
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: ExpressionFunction(expression, dim_domain=1, shape_range=(), parameters={}, values=None, name=None)
-
+.. py:class:: ExpressionFunction(expression, dim_domain=1, parameters={}, values={}, variable='x', name=None)
 
    Bases: :py:obj:`GenericFunction`
 
@@ -193,34 +190,31 @@ Classes
    .. admonition:: Parameters
 
        expression
-           A Python expression of one variable `x` and a parameter `mu` given as
-           a string.
+           A Python expression of one variable and the `parameters`, given as a `str`.
        dim_domain
            The dimension of the domain.
-       shape_range
-           The shape of the values returned by the expression.
        parameters
            The |Parameters| the expression accepts.
        values
            Dictionary of additional constants that can be used in `expression`
            with their corresponding value.
+       variable
+           Name of the input variable in the given expression.
        name
            The name of the function.
            
-
-   .. attribute:: functions
-      
-
-      
-
-   .. method:: __reduce__(self)
+   .. py:method:: __reduce__(self)
 
       Helper for pickle.
 
 
+   .. py:method:: __str__(self)
 
-.. class:: LincombFunction(functions, coefficients, name=None)
+      Return str(self).
 
+
+
+.. py:class:: LincombFunction(functions, coefficients, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -245,19 +239,18 @@ Classes
 
       
 
-   .. method:: evaluate_coefficients(self, mu)
+   .. py:method:: evaluate_coefficients(self, mu)
 
       Compute the linear coefficients for given |parameter values| `mu`.
 
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: ProductFunction(functions, name=None)
-
+.. py:class:: ProductFunction(functions, name=None)
 
    Bases: :py:obj:`Function`
 
@@ -274,14 +267,13 @@ Classes
 
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 
 
 
-.. class:: BitmapFunction(filename, bounding_box=None, range=None)
-
+.. py:class:: BitmapFunction(filename, bounding_box=None, range=None)
 
    Bases: :py:obj:`Function`
 
@@ -296,18 +288,124 @@ Classes
        range
            A pixel of value p is mapped to `(p / 255.) * range[1] + range[0]`.
            
-
-   .. attribute:: dim_domain
+   .. py:attribute:: dim_domain
       :annotation: = 2
 
       
 
-   .. attribute:: shape_range
+   .. py:attribute:: shape_range
       :annotation: = []
 
       
 
-   .. method:: evaluate(self, x, mu=None)
+   .. py:method:: evaluate(self, x, mu=None)
+
+      Evaluate the function for given argument `x` and |parameter values| `mu`.
+
+
+
+.. py:class:: EmpiricalInterpolatedFunction(function, interpolation_points, interpolation_matrix, triangular, snapshot_mus, snapshot_coefficients, evaluation_points=None, basis_evaluations=None, name=None)
+
+   Bases: :py:obj:`LincombFunction`
+
+   Empirically interpolated |Function|.
+
+   Instantiated by :func:`~pymor.algorithm.ei.interpolate_function`.
+
+   .. admonition:: Parameters
+
+       function
+           The |Function| to interpolate.
+       interpolation_points
+           |NumPy array| containing the coordinates at which the function
+           is interpolated. Typically `X[dofs]` where `X` is the array of
+           evaluation points used for snapshot data generation and `dofs`
+           is returned by :func:`~pymor.algorithm.ei.ei_greedy`.
+       interpolation_matrix
+           The interpolation matrix corresponding to the selected interpolation
+           basis vectors and `interpolation_points` as returned by
+           :func:`pymor.algorithms.ei.ei_greedy`.
+       triangular
+           Whether or not `interpolation_matrix` is lower triangular with unit
+           diagonal.
+       snapshot_mus
+           List of |parameter values| for which the snapshot data for
+           :func:`pymor.algorithms.ei.ei_greedy` has been computed.
+       snapshot_coefficients
+           Matrix of linear coefficients s.t. the i-th interpolation basis vector
+           is given by a linear combination of the functions corresponding to
+           `snapshot_mus` with the i-th row of `snapshot_coefficients` as
+           coefficients. Returned by :func:`~pymor.algorithm.ei.ei_greedy` as
+           `data['coefficients']`.
+       evaluation_points
+           Optional |NumPy array| of coordinates at which the function has been
+           evaluated to obtain the snapshot data. If the same evaluation points
+           are used to evaluate :class:`EmpiricalInterpolatedFunction`, then
+           re-evaluation of the snapshot data at the evaluation points can be
+           avoided, when this argument is specified together with `basis_evaluations`.
+       basis_evaluations
+           Optional |Numpy array| of evaluations of the interpolation basis at
+           `evaluation_points`. Corresponds to the `basis` return value of
+           :func:`~pymor.algorithms.ei.ei_greedy`.
+           
+   .. py:method:: _update_coefficients(self, mu)
+
+
+   .. py:method:: _update_evaluation_points(self, x)
+
+
+
+.. py:class:: EmpiricalInterpolatedFunctionFunctional(interpolated_function, index)
+
+   Bases: :py:obj:`pymor.parameters.functionals.ParameterFunctional`
+
+   Interface for |Parameter| functionals.
+
+   A parameter functional is simply a function mapping |Parameters| to
+   a number.
+
+   .. py:method:: evaluate(self, mu=None)
+
+      Evaluate the functional for given |parameter values| `mu`.
+
+
+
+.. py:class:: EmpiricalInterpolatedFunctionBasisFunction(interpolated_function, index)
+
+   Bases: :py:obj:`Function`
+
+   Interface for |Parameter| dependent analytical functions.
+
+   Every |Function| is a map of the form ::
+
+      f(μ): Ω ⊆ R^d -> R^(shape_range)
+
+   The returned values are |NumPy arrays| of arbitrary (but fixed)
+   shape. Note that NumPy distinguishes between one-dimensional
+   arrays of length 1 (with shape `(1,)`) and zero-dimensional
+   scalar arrays (with shape `()`). In pyMOR, we usually
+   expect scalar-valued functions to have `shape_range == ()`.
+
+   While the function might raise an error if it is evaluated
+   for an argument not in the domain Ω, the exact behavior is left
+   undefined.
+
+   Functions are vectorized in the sense, that if `x.ndim == k`, then ::
+
+      f(x, μ)[i0, i1, ..., i(k-2)] == f(x[i0, i1, ..., i(k-2)], μ).
+
+   In particular, `f(x, μ).shape == x.shape[:-1] + shape_range`.
+
+   .. attribute:: dim_domain
+
+      The dimension d > 0.
+
+   .. attribute:: shape_range
+
+      The shape of the function values.
+      
+
+   .. py:method:: evaluate(self, x, mu=None)
 
       Evaluate the function for given argument `x` and |parameter values| `mu`.
 

@@ -22,12 +22,12 @@ Classes
    pymor.reductors.h2.OneSidedIRKAReductor
    pymor.reductors.h2.TSIAReductor
    pymor.reductors.h2.TFIRKAReductor
+   pymor.reductors.h2.GapIRKAReductor
 
 
 
 
-.. class:: GenericIRKAReductor(fom, mu=None)
-
+.. py:class:: GenericIRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -40,50 +40,48 @@ Classes
        mu
            |Parameter values|.
            
+   .. py:method:: _clear_lists(self)
 
-   .. method:: _clear_lists(self)
 
-
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
 
 
-   .. method:: _check_rom0_params(self, rom0_params)
+   .. py:method:: _check_rom0_params(self, rom0_params)
 
 
-   .. method:: _check_common_args(tol, maxit, num_prev, conv_crit)
+   .. py:method:: _check_common_args(tol, maxit, num_prev, conv_crit)
       :staticmethod:
 
 
-   .. method:: _order_to_sigma_b_c(self, r)
+   .. py:method:: _order_to_sigma_b_c(self, r)
 
 
-   .. method:: _rom_to_sigma_b_c(rom, force_sigma_in_rhp)
+   .. py:method:: _rom_to_sigma_b_c(rom, force_sigma_in_rhp)
       :staticmethod:
 
 
-   .. method:: _rom0_params_to_sigma_b_c(self, rom0_params, force_sigma_in_rhp)
+   .. py:method:: _rom0_params_to_sigma_b_c(self, rom0_params, force_sigma_in_rhp)
 
 
-   .. method:: _rom0_params_to_rom(self, rom0_params)
+   .. py:method:: _rom0_params_to_rom(self, rom0_params)
 
 
-   .. method:: _store_sigma_b_c(self, sigma, b, c)
+   .. py:method:: _store_sigma_b_c(self, sigma, b, c)
 
 
-   .. method:: _update_conv_data(self, sigma, rom, conv_crit)
+   .. py:method:: _update_conv_data(self, sigma, rom, conv_crit)
 
 
-   .. method:: _compute_conv_crit(self, rom, conv_crit, it)
+   .. py:method:: _compute_conv_crit(self, rom, conv_crit, it)
 
 
-   .. method:: _compute_error(self, rom, it, compute_errors)
+   .. py:method:: _compute_error(self, rom, it, compute_errors)
 
 
 
-.. class:: IRKAReductor(fom, mu=None)
-
+.. py:class:: IRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -96,8 +94,7 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using IRKA.
 
@@ -161,9 +158,7 @@ Classes
               
 
 
-
-.. class:: OneSidedIRKAReductor(fom, version, mu=None)
-
+.. py:class:: OneSidedIRKAReductor(fom, version, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -181,8 +176,7 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using one-sided IRKA.
 
@@ -241,13 +235,11 @@ Classes
               Reduced |LTIModel| model.
               
 
-
-   .. method:: _set_V_reductor(self, sigma, b, c, projection)
-
+   .. py:method:: _set_V_reductor(self, sigma, b, c, projection)
 
 
-.. class:: TSIAReductor(fom, mu=None)
 
+.. py:class:: TSIAReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -260,8 +252,7 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, projection='orth', conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, projection='orth', conv_crit='sigma', compute_errors=False)
 
       Reduce using TSIA.
 
@@ -325,13 +316,11 @@ Classes
               Reduced |LTIModel|.
               
 
-
-   .. method:: _set_V_W_reductor(self, rom, projection)
-
+   .. py:method:: _set_V_W_reductor(self, rom, projection)
 
 
-.. class:: TFIRKAReductor(fom, mu=None)
 
+.. py:class:: TFIRKAReductor(fom, mu=None)
 
    Bases: :py:obj:`GenericIRKAReductor`
 
@@ -346,8 +335,7 @@ Classes
        mu
            |Parameter values|.
            
-
-   .. method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, conv_crit='sigma', compute_errors=False)
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, force_sigma_in_rhp=False, conv_crit='sigma', compute_errors=False)
 
       Reduce using TF-IRKA.
 
@@ -399,10 +387,92 @@ Classes
               Reduced |LTIModel| model.
               
 
-
-   .. method:: reconstruct(self, u)
+   .. py:method:: reconstruct(self, u)
 
       Reconstruct high-dimensional vector from reduced vector `u`.
+
+
+
+.. py:class:: GapIRKAReductor(fom, mu=None, solver_options=None)
+
+   Bases: :py:obj:`GenericIRKAReductor`
+
+   Gap-IRKA reductor.
+
+   .. admonition:: Parameters
+
+       fom
+           The full-order |LTIModel| to reduce.
+       mu
+           |Parameter|.
+           
+   .. py:method:: reduce(self, rom0_params, tol=0.0001, maxit=100, num_prev=1, conv_crit='sigma', projection='orth')
+
+      Reduce using gap-IRKA.
+
+      See :cite:`BBG19` Algorithm 1.
+
+      .. admonition:: Parameters
+
+          rom0_params
+              Can be:
+              
+              - order of the reduced model (a positive integer),
+              - initial interpolation points (a 1D |NumPy array|),
+              - dict with `'sigma'`, `'b'`, `'c'` as keys mapping to
+                initial interpolation points (a 1D |NumPy array|), right
+                tangential directions (|VectorArray| from
+                `fom.input_space`), and left tangential directions
+                (|VectorArray| from `fom.output_space`), all of the same
+                length (the order of the reduced model),
+              - initial reduced-order model (|LTIModel|).
+              
+              If the order of reduced model is given, initial
+              interpolation data is generated randomly.
+          tol
+              Tolerance for the convergence criterion.
+          maxit
+              Maximum number of iterations.
+          num_prev
+              Number of previous iterations to compare the current
+              iteration to. A larger number can avoid occasional cyclic
+              behavior.
+          conv_crit
+              Convergence criterion:
+              
+              - `'sigma'`: relative change in interpolation points
+              - `'htwogap'`: :math:`\mathcal{H}_2-gap` distance of
+                reduced-order models divided by :math:`\mathcal{L}_2`
+                norm of new reduced-order model
+              - `'ltwo'`: relative :math:`\mathcal{L}_2` distance of
+                reduced-order models
+          projection
+              Projection method:
+              
+              - `'orth'`: projection matrix is orthogonalized with respect
+                to the Euclidean inner product,
+              - `'biorth'`: projection matrix is orthogonalized with
+                respect to the E product.
+              
+      .. admonition:: Returns
+
+          rom
+              Reduced |LTIModel| model.
+              
+
+   .. py:method:: _rom0_params_to_sigma_b_c(self, rom0_params)
+
+
+   .. py:method:: _unstable_rom_to_sigma_b_c(self, rom)
+
+
+   .. py:method:: _unstable_lti_to_poles_b_c(self, rom)
+
+
+   .. py:method:: _update_conv_data(self, sigma, gap_rom, rom, conv_crit)
+
+
+   .. py:method:: _compute_conv_crit(self, rom, conv_crit, it)
 
 
 

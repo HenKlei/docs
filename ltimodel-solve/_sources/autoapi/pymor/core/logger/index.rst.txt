@@ -68,83 +68,82 @@ Attributes
    pymor.core.logger.dummy_logger
 
 
-.. data:: BLOCK
+.. py:data:: BLOCK
    
 
    
 
-.. data:: BLOCK_TIME
+.. py:data:: BLOCK_TIME
    
 
    
 
-.. data:: INFO2
+.. py:data:: INFO2
    
 
    
 
-.. data:: INFO3
+.. py:data:: INFO3
    
 
    
 
-.. data:: RESET_SEQ
+.. py:data:: RESET_SEQ
    :annotation: = [0m
 
    
 
-.. data:: COLOR_SEQ
+.. py:data:: COLOR_SEQ
    :annotation: = [1;%dm
 
    
 
-.. data:: BOLD_SEQ
+.. py:data:: BOLD_SEQ
    :annotation: = [1m
 
    
 
-.. data:: COLORS
+.. py:data:: COLORS
    
 
    
 
-.. data:: CSSCOLORS
+.. py:data:: CSSCOLORS
    
 
    
 
-.. data:: MAX_HIERARCHY_LEVEL
+.. py:data:: MAX_HIERARCHY_LEVEL
    :annotation: = 1
 
    
 
-.. data:: BLOCK_TIMINGS
+.. py:data:: BLOCK_TIMINGS
    :annotation: = True
 
    
 
-.. data:: INDENT_BLOCKS
+.. py:data:: INDENT_BLOCKS
    :annotation: = True
 
    
 
-.. data:: INDENT
+.. py:data:: INDENT
    :annotation: = 0
 
    
 
-.. data:: LAST_TIMESTAMP_LENGTH
+.. py:data:: LAST_TIMESTAMP_LENGTH
    :annotation: = 0
 
    
 
-.. data:: start_time
+.. py:data:: start_time
    
 
    
 
-.. class:: ColoredFormatter
-
+.. py:class:: ColoredFormatter
 
    Bases: :py:obj:`logging.Formatter`
 
@@ -152,10 +151,10 @@ Attributes
    loglevel keyword output. Coloring can be disabled by setting the
    `PYMOR_COLORS_DISABLE` environment variable to `1`.
 
-   .. method:: _format_common(self, record)
+   .. py:method:: _format_common(self, record)
 
 
-   .. method:: format(self, record)
+   .. py:method:: format(self, record)
 
       Format the specified record as text.
 
@@ -169,16 +168,22 @@ Attributes
       it is formatted using formatException() and appended to the message.
 
 
-   .. method:: format_html(self, record)
+   .. py:method:: format_html(self, record)
 
 
 
-.. function:: default_handler(filename='')
+.. py:function:: default_handler(filename='')
 
 
-.. function:: getLogger(module, level=None, filename='')
+.. py:function:: getLogger(module, level=None, filename='')
 
    Get the logger of the respective module for pyMOR's logging facility.
+
+   In addition to the logging methods inherited from :class:`~logging.Logger`
+   all returned loggers get a block, info2, info3 method for the
+   respective new levels. Plus all warnings methods get a `XXX_once` method
+   that caches the msg and only emits the log entry the first time (per logger
+   instance, not globally).
 
    .. admonition:: Parameters
 
@@ -192,87 +197,86 @@ Attributes
            written to.
            
 
+.. py:class:: DummyLogger
 
-.. class:: DummyLogger
-
-   .. attribute:: __slots__
+   .. py:attribute:: __slots__
       :annotation: = []
 
       
 
-   .. attribute:: propagate
+   .. py:attribute:: propagate
       :annotation: = False
 
       
 
-   .. attribute:: debug
+   .. py:attribute:: debug
       
 
       
 
-   .. attribute:: info
+   .. py:attribute:: info
       
 
       
 
-   .. attribute:: warn
+   .. py:attribute:: warn
       
 
       
 
-   .. attribute:: warning
+   .. py:attribute:: warning
       
 
       
 
-   .. attribute:: error
+   .. py:attribute:: error
       
 
       
 
-   .. attribute:: critical
+   .. py:attribute:: critical
       
 
       
 
-   .. attribute:: log
+   .. py:attribute:: log
       
 
       
 
-   .. attribute:: exception
+   .. py:attribute:: exception
       
 
       
 
-   .. method:: nop(self, *args, **kwargs)
+   .. py:method:: nop(self, *args, **kwargs)
 
 
-   .. method:: isEnabledFor(sefl, lvl)
+   .. py:method:: isEnabledFor(sefl, lvl)
 
 
-   .. method:: getEffectiveLevel(self)
+   .. py:method:: getEffectiveLevel(self)
 
 
-   .. method:: getChild(self)
+   .. py:method:: getChild(self)
 
 
-   .. method:: block(self, msg, *args, **kwargs)
+   .. py:method:: block(self, msg, *args, **kwargs)
 
 
-   .. method:: info2(self, msg, *args, **kwargs)
+   .. py:method:: info2(self, msg, *args, **kwargs)
 
 
-   .. method:: info3(self, msg, *args, **kwargs)
+   .. py:method:: info3(self, msg, *args, **kwargs)
 
 
 
-.. data:: dummy_logger
+.. py:data:: dummy_logger
    
 
    
 
-.. function:: set_log_levels(levels=None)
+.. py:function:: set_log_levels(levels=None)
 
    Set log levels for pyMOR's logging facility.
 
@@ -284,8 +288,7 @@ Attributes
            (see :meth:`~logging.Logger.setLevel`).
            
 
-
-.. function:: set_log_format(max_hierarchy_level=1, indent_blocks=True, block_timings=False)
+.. py:function:: set_log_format(max_hierarchy_level=1, indent_blocks=True, block_timings=False)
 
    Set log levels for pyMOR's logging facility.
 
@@ -303,27 +306,25 @@ Attributes
            `with logger.block(...)`.
            
 
+.. py:class:: LogIndenter(logger, doit)
 
-.. class:: LogIndenter(logger, doit)
-
-
-   .. method:: __enter__(self)
+   .. py:method:: __enter__(self)
 
 
-   .. method:: __exit__(self, exc_type, exc_val, exc_tb)
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
 
 
 
-.. function:: _block(self, msg, *args, **kwargs)
+.. py:function:: _block(self, msg, *args, **kwargs)
 
 
-.. function:: _info2(self, msg, *args, **kwargs)
+.. py:function:: _info2(self, msg, *args, **kwargs)
 
 
-.. function:: _info3(self, msg, *args, **kwargs)
+.. py:function:: _info3(self, msg, *args, **kwargs)
 
 
-.. function:: log_levels(level_mapping)
+.. py:function:: log_levels(level_mapping)
 
    Change levels for given loggers on entry and reset to before state on exit.
 
@@ -332,5 +333,4 @@ Attributes
        level_mapping
            a dict of logger name -> level name
            
-
 

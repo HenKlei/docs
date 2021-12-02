@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pyMOR - Model Order Reduction with python &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <title>pyMOR - Model Order Reduction with python &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/thebelab-helper.js"></script>
     <script src="_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="_static/pymor_favicon.png"/>
@@ -75,6 +71,22 @@
    
 
 <link rel="stylesheet" href="_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -95,11 +107,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="#" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="#" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -118,7 +130,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="GET" name="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -165,7 +177,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="#" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="#" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -177,13 +189,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="#" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="#" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="#"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -274,7 +286,7 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="pymor-model-order-reduction-with-python">
 <h1 id="index--page-root">pyMOR - Model Order Reduction with python<a class="headerlink" href="#index--page-root" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://pymor.org">pyMOR</a> is a software library for building model order
 reduction applications with the Python programming language. Implemented
@@ -343,12 +355,7 @@ provided for getting started quickly.</p>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_lti_systems.html#system-poles">System poles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_lti_systems.html#system-gramians">System Gramians</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_lti_systems.html#hankel-singular-values">Hankel singular values</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial_lti_systems.html#system-norms">System norms</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="tutorial_lti_systems.html#mathcal-h-2-norm"><span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span> norm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorial_lti_systems.html#mathcal-h-infty-norm"><span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span> norm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tutorial_lti_systems.html#hankel-norm">Hankel norm</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_lti_systems.html#system-norms">System norms</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_bt.html">Tutorial: Reducing an LTI system using balanced truncation</a><ul>
@@ -356,9 +363,17 @@ provided for getting started quickly.</p>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_bt.html#balanced-truncation-in-pymor">Balanced truncation in pyMOR</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_unstable_lti_systems.html">Tutorial: Model order reduction for unstable LTI systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_unstable_lti_systems.html#an-unstable-model">An unstable model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_unstable_lti_systems.html#frequency-domain-balanced-truncation">Frequency domain balanced truncation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_unstable_lti_systems.html#gap-irka">Gap-IRKA</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_mor_with_anns.html">Tutorial: Model order reduction with artificial neural networks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_mor_with_anns.html#feedforward-neural-networks">Feedforward neural networks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_mor_with_anns.html#a-non-intrusive-reduced-order-method-using-artificial-neural-networks">A non-intrusive reduced order method using artificial neural networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_mor_with_anns.html#direct-approximation-of-output-quantities">Direct approximation of output quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_mor_with_anns.html#neural-networks-for-instationary-problems">Neural networks for instationary problems</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_optimization.html">Tutorial: Model order reduction for PDE-constrained optimization problems</a><ul>
@@ -383,21 +398,45 @@ provided for getting started quickly.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes/all.html">Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-2020-2-december-10-2020">pyMOR 2020.2 (December 10, 2020)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-2021-1-september-24-2021">pyMOR 2021.1 (September 24, 2021)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#release-highlights">Release highlights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#methods-for-unstable-lti-systems">Methods for unstable LTI systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#modal-truncation">Modal truncation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#time-dependent-parameter-values">Time-dependent parameter values</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#additional-new-features">Additional new features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#symbolic-expressionfunctions">Symbolic ExpressionFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#output-reductor-using-anns">Output reductor using ANNs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improvements-to-the-hapod-algorithm">Improvements to the HAPOD algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improved-support-for-empirical-interpolation-of-functions">Improved support for Empirical Interpolation of functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#methods-for-exporting-matrices-of-system-models">Methods for exporting matrices of system models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#pymor-is-now-a-pure-python-package">pyMOR is now a pure Python package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#backward-incompatible-changes">Backward incompatible changes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#drop-python-3-6-support">Drop python 3.6 support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#id15">Symbolic ExpressionFunctions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#further-notable-improvements">Further notable improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-2020-2-december-10-2020">pyMOR 2020.2 (December 10, 2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id17">Release highlights</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#parameter-derivatives-of-solutions-and-outputs">Parameter derivatives of solutions and outputs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#neural-network-reductor-for-non-stationary-problems">Neural network reductor for non-stationary problems</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#new-tutorials">New tutorials</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#additional-new-features">Additional new features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id28">Additional new features</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#bode-plot-for-input-output-systems">Bode plot for input-output systems</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#iterable-vectorarrays">Iterable VectorArrays</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#expansion-of-concatenationoperators-and-improved-projection-algorithms">Expansion of ConcatenationOperators and improved projection algorithms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#support-for-python-3-9">Support for Python 3.9</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#backward-incompatible-changes">Backward incompatible changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id34">Backward incompatible changes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#updated-model-interface">Updated Model interface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#changes-in-methods-for-inner-products-and-norms-of-vectorarrays">Changes in methods for inner products and norms of VectorArrays</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#restructuring-of-grid-classes">Restructuring of grid classes</a></li>
@@ -405,18 +444,18 @@ provided for getting started quickly.</p>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#minimal-pip-and-manylinux-wheel-version">Minimal pip and Manylinux wheel version</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#further-notable-improvements">Further notable improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id43">Further notable improvements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-2020-1-july-23-2020">pyMOR 2020.1 (July 23, 2020)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id25">Release highlights</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id44">Release highlights</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#model-order-reduction-using-artificial-neural-networks">Model order reduction using artificial neural networks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#new-system-analysis-and-linear-algebra-algorithms">New system analysis and linear algebra algorithms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improved-parameter-handling">Improved parameter handling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#pymor-tutorial-collection">pyMOR tutorial collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id35">Additional new features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id54">Additional new features</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improvements-to-parameterfunctionals">Improvements to ParameterFunctionals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#extended-newton-algorithm">Extended Newton algorithm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#initial-guess-parameter-for-apply-inverse">initial_guess parameter for apply_inverse</a></li>
@@ -425,25 +464,25 @@ provided for getting started quickly.</p>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#webgl-based-visualizations">WebGL-based visualizations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id43">Backward incompatible changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id62">Backward incompatible changes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#renamed-interface-classes">Renamed interface classes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#module-cleanup">Module cleanup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#state-ids-removed-and-caching-simplified">State ids removed and caching simplified</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#further-api-changes">Further API changes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id53">Further notable improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id72">Further notable improvements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-2019-2-december-16-2019">pyMOR 2019.2 (December 16, 2019)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id54">Release highlights</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id73">Release highlights</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#implement-new-models-and-reductors-more-easily">Implement new models and reductors more easily</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#extended-vectorarray-interface-with-generic-complex-number-support">Extended VectorArray interface with generic complex number support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improved-and-extended-support-for-system-theoretic-mor-methods">Improved and extended support for system-theoretic MOR methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#model-outputs-and-parameter-sensitivities">Model outputs and parameter sensitivities</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id71">Additional new features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id90">Additional new features</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#extended-fenics-bindings">Extended FEniCS bindings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improved-greedy-algorithms">Improved greedy algorithms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#numerical-linear-algebra-algorithms">Numerical linear algebra algorithms</a></li>
@@ -454,18 +493,18 @@ provided for getting started quickly.</p>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#improvements-to-pymor-s-discretization-toolbox">Improvements to pyMOR’s discretization toolbox</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id87">Backward incompatible changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id106">Backward incompatible changes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#dropped-python-3-5-support">Dropped Python 3.5 support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#global-randomstate">Global RandomState</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#space-id-handling">Space id handling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#id91">Further API Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#id110">Further API Changes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id94">Further notable improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id113">Further notable improvements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-0-5-january-17-2019">pyMOR 0.5 (January 17, 2019)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id95">Release highlights</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id114">Release highlights</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#python-3-support">Python 3 support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#system-theoretic-mor-methods">System-theoretic MOR methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#ngsolve-support">NGSolve support</a></li>
@@ -474,13 +513,13 @@ provided for getting started quickly.</p>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#ruletable-based-algorithms">RuleTable based algorithms</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id105">Additional new features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id116">Backward incompatible changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id125">Further notable improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id124">Additional new features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id135">Backward incompatible changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id144">Further notable improvements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="release_notes/all.html#pymor-0-4-september-28-2016">pyMOR 0.4 (September 28, 2016)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id126">Release highlights</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id145">Release highlights</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#fenics-and-deal-ii-support">FEniCS and deal.II support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#parallelization-of-pymor-s-reduction-algorithms">Parallelization of pyMOR’s reduction algorithms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#support-classes-for-mpi-distributed-external-pde-solvers">Support classes for MPI distributed external PDE solvers</a></li>
@@ -490,8 +529,8 @@ provided for getting started quickly.</p>
 <li class="toctree-l4"><a class="reference internal" href="release_notes/all.html#caching-improvements">Caching improvements</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id150">Additional new features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id161">Backward incompatible changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id169">Additional new features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#id180">Backward incompatible changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="release_notes/all.html#further-improvements">Further improvements</a></li>
 </ul>
 </li>
@@ -536,7 +575,7 @@ provided for getting started quickly.</p>
 </li>
 </ul>
 </div>
-
+<section id="api-documentation">
 <h2 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -588,6 +627,7 @@ provided for getting started quickly.</p>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/pymor/tools/index.html">tools</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/index.html#submodules">Submodules</a></li>
 </ul>
 </li>
@@ -631,6 +671,7 @@ provided for getting started quickly.</p>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/pymor/algorithms/index.html#submodules">Submodules</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/algorithms/adaptivegreedy/index.html">adaptivegreedy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/algorithms/basic/index.html">basic</a></li>
+<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/algorithms/bernoulli/index.html">bernoulli</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/algorithms/ei/index.html">ei</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/algorithms/eigs/index.html">eigs</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/algorithms/error/index.html">error</a></li>
@@ -667,6 +708,7 @@ provided for getting started quickly.</p>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/burgers/index.html">burgers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/domaindescriptions/index.html">domaindescriptions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/elliptic/index.html">elliptic</a></li>
+<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/expressions/index.html">expressions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/functions/index.html">functions</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/helmholtz/index.html">helmholtz</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/analyticalproblems/instationary/index.html">instationary</a></li>
@@ -678,9 +720,9 @@ provided for getting started quickly.</p>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/pymor/bindings/index.html">bindings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/pymor/bindings/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/dunegdt/index.html">dunegdt</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/fenics/index.html">fenics</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/ngsolve/index.html">ngsolve</a></li>
-<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/pyamg/index.html">pyamg</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/pymess/index.html">pymess</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/scipy/index.html">scipy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/bindings/slycot/index.html">slycot</a></li>
@@ -780,6 +822,10 @@ provided for getting started quickly.</p>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/pymor/tools/index.html">tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pymor/tools/index.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/io/index.html">io</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/pymor/tools/index.html#submodules">Submodules</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/context/index.html">context</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/counter/index.html">counter</a></li>
@@ -788,7 +834,6 @@ provided for getting started quickly.</p>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/formatrepr/index.html">formatrepr</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/formatsrc/index.html">formatsrc</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/frozendict/index.html">frozendict</a></li>
-<li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/io/index.html">io</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/mpi/index.html">mpi</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/pprint/index.html">pprint</a></li>
 <li class="toctree-l5"><a class="reference internal" href="autoapi/pymor/tools/random/index.html">random</a></li>
@@ -846,13 +891,8 @@ provided for getting started quickly.</p>
 </li>
 </ul>
 </div>
-
-
-<h2 id="demo-applications">Demo Applications<a class="headerlink" href="#demo-applications" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-</div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -888,10 +928,10 @@ provided for getting started quickly.</p>
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -27,7 +27,7 @@ Functions
 
 
 
-.. function:: adaptive_weak_greedy(surrogate, parameter_space, target_error=None, max_extensions=None, validation_mus=0, rho=1.1, gamma=0.2, theta=0.0, visualize=False, visualize_vertex_size=80, pool=None)
+.. py:function:: adaptive_weak_greedy(surrogate, parameter_space, target_error=None, max_extensions=None, validation_mus=0, rho=1.1, gamma=0.2, theta=0.0, visualize=False, visualize_vertex_size=80, pool=None)
 
    Weak greedy basis generation algorithm with adaptively refined training set.
 
@@ -90,8 +90,7 @@ Functions
            :time:                   Duration of the algorithm.
            
 
-
-.. function:: rb_adaptive_greedy(fom, reductor, parameter_space, use_error_estimator=True, error_norm=None, target_error=None, max_extensions=None, validation_mus=0, rho=1.1, gamma=0.2, theta=0.0, extension_params=None, visualize=False, visualize_vertex_size=80, pool=None)
+.. py:function:: rb_adaptive_greedy(fom, reductor, parameter_space, use_error_estimator=True, error_norm=None, target_error=None, max_extensions=None, validation_mus=0, rho=1.1, gamma=0.2, theta=0.0, extension_params=None, visualize=False, visualize_vertex_size=80, pool=None)
 
    Reduced basis greedy basis generation with adaptively refined training set.
 
@@ -149,9 +148,7 @@ Functions
            :time:                   Duration of the algorithm.
            
 
-
-.. class:: AdaptiveSampleSet(parameter_space)
-
+.. py:class:: AdaptiveSampleSet(parameter_space)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -159,34 +156,33 @@ Functions
 
    Used by :func:`adaptive_weak_greedy`.
 
-   .. class:: Element(level, center, sample_set)
+   .. py:class:: Element(level, center, sample_set)
 
-
-      .. attribute:: __slots__
+      .. py:attribute:: __slots__
          :annotation: = ['level', 'center', 'vertex_ids', 'children', 'creation_time']
 
          
 
-      .. method:: refine(self, sample_set)
+      .. py:method:: refine(self, sample_set)
 
 
 
-   .. method:: refine(self, ids)
+   .. py:method:: refine(self, ids)
 
 
-   .. method:: map_vertex_to_mu(self, vertex)
+   .. py:method:: map_vertex_to_mu(self, vertex)
 
 
-   .. method:: visualize(self, vertex_data=None, vertex_inds=None, center_data=None, center_inds=None, volume_data=None, vertex_size=80, vmin=None, vmax=None, new_figure=True)
+   .. py:method:: visualize(self, vertex_data=None, vertex_inds=None, center_data=None, center_inds=None, volume_data=None, vertex_size=80, vmin=None, vmax=None, new_figure=True)
 
 
-   .. method:: _iter_leafs(self)
+   .. py:method:: _iter_leafs(self)
 
 
-   .. method:: _update(self)
+   .. py:method:: _update(self)
 
 
-   .. method:: _add_vertex(self, v)
+   .. py:method:: _add_vertex(self, v)
 
 
 

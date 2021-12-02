@@ -23,12 +23,14 @@ Functions
    pymor.bindings.scipy.solve_lyap_dense
    pymor.bindings.scipy.ricc_lrcf_solver_options
    pymor.bindings.scipy.solve_ricc_lrcf
+   pymor.bindings.scipy.ricc_dense_solver_options
+   pymor.bindings.scipy.solve_ricc_dense
    pymor.bindings.scipy.pos_ricc_lrcf_solver_options
    pymor.bindings.scipy.solve_pos_ricc_lrcf
 
 
 
-.. function:: solver_options(bicgstab_tol=1e-15, bicgstab_maxiter=None, spilu_drop_tol=0.0001, spilu_fill_factor=10, spilu_drop_rule=None, spilu_permc_spec='COLAMD', spsolve_permc_spec='COLAMD', spsolve_keep_factorization=True, lgmres_tol=1e-05, lgmres_maxiter=1000, lgmres_inner_m=39, lgmres_outer_k=3, least_squares_lsmr_damp=0.0, least_squares_lsmr_atol=1e-06, least_squares_lsmr_btol=1e-06, least_squares_lsmr_conlim=100000000.0, least_squares_lsmr_maxiter=None, least_squares_lsmr_show=False, least_squares_lsqr_damp=0.0, least_squares_lsqr_atol=1e-06, least_squares_lsqr_btol=1e-06, least_squares_lsqr_conlim=100000000.0, least_squares_lsqr_iter_lim=None, least_squares_lsqr_show=False)
+.. py:function:: solver_options(bicgstab_tol=1e-15, bicgstab_maxiter=None, spilu_drop_tol=0.0001, spilu_fill_factor=10, spilu_drop_rule=None, spilu_permc_spec='COLAMD', spsolve_permc_spec='COLAMD', spsolve_keep_factorization=True, lgmres_tol=1e-05, lgmres_maxiter=1000, lgmres_inner_m=39, lgmres_outer_k=3, least_squares_lsmr_damp=0.0, least_squares_lsmr_atol=1e-06, least_squares_lsmr_btol=1e-06, least_squares_lsmr_conlim=100000000.0, least_squares_lsmr_maxiter=None, least_squares_lsmr_show=False, least_squares_lsqr_damp=0.0, least_squares_lsqr_atol=1e-06, least_squares_lsqr_btol=1e-06, least_squares_lsqr_conlim=100000000.0, least_squares_lsqr_iter_lim=None, least_squares_lsqr_show=False)
 
    Returns available solvers with default |solver_options| for the SciPy backend.
 
@@ -88,8 +90,7 @@ Functions
        A dict of available solvers with default |solver_options|.
            
 
-
-.. function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='scipy_spsolve', default_least_squares_solver='scipy_least_squares_lsmr')
+.. py:function:: apply_inverse(op, V, initial_guess=None, options=None, least_squares=False, check_finite=True, default_solver='scipy_spsolve', default_least_squares_solver='scipy_least_squares_lsmr')
 
    Solve linear equation system.
 
@@ -123,11 +124,10 @@ Functions
        |VectorArray| of the solution vectors.
            
 
+.. py:function:: matrix_astype_nocopy(matrix, dtype)
 
-.. function:: matrix_astype_nocopy(matrix, dtype)
 
-
-.. function:: lyap_lrcf_solver_options()
+.. py:function:: lyap_lrcf_solver_options()
 
    Return available Lyapunov solvers with default options for the SciPy backend.
 
@@ -136,8 +136,7 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
-.. function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
+.. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Lyapunov equation.
 
@@ -176,8 +175,7 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
-.. function:: lyap_dense_solver_options()
+.. py:function:: lyap_dense_solver_options()
 
    Return available dense Lyapunov solvers with default options for the SciPy backend.
 
@@ -186,8 +184,7 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
-.. function:: solve_lyap_dense(A, E, B, trans=False, options=None)
+.. py:function:: solve_lyap_dense(A, E, B, trans=False, options=None)
 
    Compute the solution of a Lyapunov equation.
 
@@ -204,11 +201,11 @@ Functions
    .. admonition:: Parameters
 
        A
-           The operator A as a 2D |NumPy array|.
+           The matrix A as a 2D |NumPy array|.
        E
-           The operator E as a 2D |NumPy array| or `None`.
+           The matrix E as a 2D |NumPy array| or `None`.
        B
-           The operator B as a 2D |NumPy array|.
+           The matrix B as a 2D |NumPy array|.
        trans
            Whether the first operator in the Lyapunov equation is
            transposed.
@@ -222,8 +219,7 @@ Functions
            Lyapunov equation solution as a |NumPy array|.
            
 
-
-.. function:: ricc_lrcf_solver_options()
+.. py:function:: ricc_lrcf_solver_options()
 
    Return available Riccati solvers with default options for the SciPy backend.
 
@@ -232,8 +228,7 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
-.. function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+.. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Riccati equation.
 
@@ -258,7 +253,7 @@ Functions
        C
            The operator C as a |VectorArray| from `A.source`.
        R
-           The operator R as a 2D |NumPy array| or `None`.
+           The matrix R as a 2D |NumPy array| or `None`.
        trans
            Whether the first |Operator| in the Riccati equation is
            transposed.
@@ -272,8 +267,51 @@ Functions
            |VectorArray| from `A.source`.
            
 
+.. py:function:: ricc_dense_solver_options()
 
-.. function:: pos_ricc_lrcf_solver_options()
+   Return available Riccati solvers with default options for the SciPy backend.
+
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: solve_ricc_dense(A, E, B, C, R=None, trans=False, options=None)
+
+   Compute the solution of a Riccati equation.
+
+   See :func:`pymor.algorithms.riccati.solve_ricc_dense` for a general
+   description.
+
+   This function uses `scipy.linalg.solve_continuous_are`, which
+   is a dense solver.
+
+   .. admonition:: Parameters
+
+       A
+           The matrix A as a 2D |NumPy array|.
+       E
+           The matrix E as a 2D |NumPy array| or `None`.
+       B
+           The matrix B as a 2D |NumPy array|.
+       C
+           The matrix C as a 2D |NumPy array|.
+       R
+           The matrix R as a 2D |NumPy array| or `None`.
+       trans
+           Whether the first operator in the Riccati equation is
+           transposed.
+       options
+           The solver options to use (see
+           :func:`ricc_dense_solver_options`).
+           
+   .. admonition:: Returns
+
+       X
+           Riccati equation solution as a |NumPy array|.
+           
+
+.. py:function:: pos_ricc_lrcf_solver_options()
 
    Return available positive Riccati solvers with default options for the SciPy backend.
 
@@ -282,8 +320,7 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
-.. function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+.. py:function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a positive Riccati equation.
 
@@ -308,7 +345,7 @@ Functions
        C
            The operator C as a |VectorArray| from `A.source`.
        R
-           The operator R as a 2D |NumPy array| or `None`.
+           The matrix R as a 2D |NumPy array| or `None`.
        trans
            Whether the first |Operator| in the positive Riccati equation is
            transposed.
@@ -322,5 +359,4 @@ Functions
            Low-rank Cholesky factor of the positive Riccati equation
            solution, |VectorArray| from `A.source`.
            
-
 

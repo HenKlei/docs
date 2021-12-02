@@ -26,7 +26,7 @@ Attributes
    pymor.parallel.dummy.dummy_pool
 
 
-.. class:: DummyPool
+.. py:class:: DummyPool
 
    Bases: :py:obj:`pymor.parallel.interface.WorkerPool`
 
@@ -46,12 +46,12 @@ Attributes
 
    All operations are performed synchronously.
 
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
 
       The number of workers in the pool.
 
 
-   .. method:: push(self, obj)
+   .. py:method:: push(self, obj)
 
       Push a copy of `obj` to  all workers of the pool.
 
@@ -77,8 +77,7 @@ Attributes
           A |RemoteObject| referring to the pushed data.
               
 
-
-   .. method:: scatter_array(self, U, copy=True)
+   .. py:method:: scatter_array(self, U, copy=True)
 
       Distribute |VectorArray| evenly among the workers.
 
@@ -98,8 +97,7 @@ Attributes
           A |RemoteObject| referring to the scattered data.
               
 
-
-   .. method:: scatter_list(self, l)
+   .. py:method:: scatter_list(self, l)
 
       Distribute list of objects evenly among the workers.
 
@@ -117,11 +115,10 @@ Attributes
           A |RemoteObject| referring to the scattered data.
               
 
+   .. py:method:: _map_kwargs(self, kwargs)
 
-   .. method:: _map_kwargs(self, kwargs)
 
-
-   .. method:: apply(self, function, *args, **kwargs)
+   .. py:method:: apply(self, function, *args, **kwargs)
 
       Apply function in parallel on each worker.
 
@@ -149,8 +146,7 @@ Attributes
           worker number (from `0` to `len(pool) - 1`).
               
 
-
-   .. method:: apply_only(self, function, worker, *args, **kwargs)
+   .. py:method:: apply_only(self, function, worker, *args, **kwargs)
 
       Apply function on a single worker.
 
@@ -180,8 +176,7 @@ Attributes
           Return value of the function execution.
               
 
-
-   .. method:: map(self, function, *args, **kwargs)
+   .. py:method:: map(self, function, *args, **kwargs)
 
       Parallel version of the builtin :func:`map` function.
 
@@ -210,18 +205,16 @@ Attributes
           the sequence of positional arguments.
               
 
-
-   .. method:: __bool__(self)
-
+   .. py:method:: __bool__(self)
 
 
-.. data:: dummy_pool
+
+.. py:data:: dummy_pool
    
 
    
 
-.. class:: DummyRemoteObject(obj)
-
+.. py:class:: DummyRemoteObject(obj)
 
    Bases: :py:obj:`pymor.parallel.interface.RemoteObject`
 
@@ -241,7 +234,7 @@ Attributes
       `True`, after :meth:`remove` has been called.
       
 
-   .. method:: _remove(self)
+   .. py:method:: _remove(self)
 
       Actual implementation of 'remove'.
 

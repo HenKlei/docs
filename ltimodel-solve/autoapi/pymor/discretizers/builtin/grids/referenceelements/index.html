@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.discretizers.builtin.grids.referenceelements &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/thebelab.css" />
+    <title>pymor.discretizers.builtin.grids.referenceelements &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../../_static/jquery.js"></script>
     <script src="../../../../../../_static/underscore.js"></script>
     <script src="../../../../../../_static/doctools.js"></script>
-    <script src="../../../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../../../_static/pymor_favicon.png"/>
@@ -76,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +131,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers</span></code></a></li>
@@ -183,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -406,11 +418,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.discretizers.builtin.grids.referenceelements">
 <span id="pymor-discretizers-builtin-grids-referenceelements"></span><h1 id="autoapi-pymor-discretizers-builtin-grids-referenceelements-index--page-root"><a class="reference internal" href="#autoapi-pymor-discretizers-builtin-grids-referenceelements-index--page-root" title="pymor.discretizers.builtin.grids.referenceelements"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.referenceelements</span></code></a><a class="headerlink" href="#autoapi-pymor-discretizers-builtin-grids-referenceelements-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -432,8 +444,8 @@
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="attributes">
 <h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -456,38 +468,38 @@
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">Point</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">Point</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interfaces/index.html#pymor.discretizers.builtin.grids.interfaces.ReferenceElement" title="pymor.discretizers.builtin.grids.interfaces.ReferenceElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.interfaces.ReferenceElement</span></code></a></p>
 <p>Defines a reference element.</p>
 <p>All reference elements have the property that all subentities of a given codimension are of the
 same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
 faces at the same time.</p>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.dim">
-<code class="sig-name descname"><span class="pre">dim</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.dim" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dimension of the reference element</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.volume">
-<code class="sig-name descname"><span class="pre">volume</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.volume" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>The volume of the reference element</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.size">
-<code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.size" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of subentities of codimension <code class="docutils literal notranslate"><span class="pre">codim</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.subentities">
-<code class="sig-name descname"><span class="pre">subentities</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.subentities" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.subentities">
+<span class="sig-name descname"><span class="pre">subentities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.subentities" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">subentities(c,sc)[i,j]</span></code> is, with respect to the indexing inside the
 reference element, the index of the <code class="docutils literal notranslate"><span class="pre">j</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentity of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentity of the reference element.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.subentity_embedding">
-<code class="sig-name descname"><span class="pre">subentity_embedding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.subentity_embedding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.subentity_embedding">
+<span class="sig-name descname"><span class="pre">subentity_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.subentity_embedding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple <code class="docutils literal notranslate"><span class="pre">(A,</span> <span class="pre">B)</span></code> which defines the embedding of the codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentities into the reference element.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">subentity_codim</span> <span class="pre">&gt;</span> <span class="pre">1',</span> <span class="pre">the</span> <span class="pre">embedding</span> <span class="pre">is</span> <span class="pre">by</span> <span class="pre">default</span> <span class="pre">given</span> <span class="pre">recursively</span> <span class="pre">via</span>
@@ -496,79 +508,79 @@ subentities into the reference element.</p>
 the superentity with smallest index.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.sub_reference_element">
-<code class="sig-name descname"><span class="pre">sub_reference_element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.sub_reference_element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.sub_reference_element">
+<span class="sig-name descname"><span class="pre">sub_reference_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.sub_reference_element" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the reference element of the codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentities.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.unit_outer_normals">
-<code class="sig-name descname"><span class="pre">unit_outer_normals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.unit_outer_normals">
+<span class="sig-name descname"><span class="pre">unit_outer_normals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">retval[e]</span></code> is the unit outer-normal vector to the codim-1 subentity
 with index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.center">
-<code class="sig-name descname"><span class="pre">center</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.center" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coordinates of the barycenter.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.mapped_diameter">
-<code class="sig-name descname"><span class="pre">mapped_diameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.mapped_diameter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.mapped_diameter">
+<span class="sig-name descname"><span class="pre">mapped_diameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.mapped_diameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>The diameter of the reference element after transforming it with the
 matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> (vectorized).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.quadrature_info">
-<code class="sig-name descname"><span class="pre">quadrature_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.quadrature_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.quadrature_info">
+<span class="sig-name descname"><span class="pre">quadrature_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.quadrature_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple of dicts <code class="docutils literal notranslate"><span class="pre">(O,</span> <span class="pre">N)</span></code> where <code class="docutils literal notranslate"><span class="pre">O[quadrature_type]</span></code> is a list
 of orders which are implemented for <code class="docutils literal notranslate"><span class="pre">quadrature_type</span></code> and <code class="docutils literal notranslate"><span class="pre">N[quadrature_type]</span></code>
 is a list of the corresponding numbers of integration points.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Point.quadrature">
-<code class="sig-name descname"><span class="pre">quadrature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.quadrature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Point.quadrature">
+<span class="sig-name descname"><span class="pre">quadrature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Point.quadrature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns tuple <code class="docutils literal notranslate"><span class="pre">(P,</span> <span class="pre">W)</span></code> where <code class="docutils literal notranslate"><span class="pre">P</span></code> is an array of quadrature points with
 corresponding weights <code class="docutils literal notranslate"><span class="pre">W</span></code>.</p>
 <p>The quadrature is of order <code class="docutils literal notranslate"><span class="pre">order</span></code> or has <code class="docutils literal notranslate"><span class="pre">npoints</span></code> integration points.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.point">
-<code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">point</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.point" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.point">
+<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">point</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.point" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py class">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">Line</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">Line</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interfaces/index.html#pymor.discretizers.builtin.grids.interfaces.ReferenceElement" title="pymor.discretizers.builtin.grids.interfaces.ReferenceElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.interfaces.ReferenceElement</span></code></a></p>
 <p>Defines a reference element.</p>
 <p>All reference elements have the property that all subentities of a given codimension are of the
 same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
 faces at the same time.</p>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.dim">
-<code class="sig-name descname"><span class="pre">dim</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.dim" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dimension of the reference element</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.volume">
-<code class="sig-name descname"><span class="pre">volume</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.volume" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>The volume of the reference element</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.size">
-<code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.size" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of subentities of codimension <code class="docutils literal notranslate"><span class="pre">codim</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.subentities">
-<code class="sig-name descname"><span class="pre">subentities</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.subentities" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.subentities">
+<span class="sig-name descname"><span class="pre">subentities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.subentities" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">subentities(c,sc)[i,j]</span></code> is, with respect to the indexing inside the
 reference element, the index of the <code class="docutils literal notranslate"><span class="pre">j</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentity of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentity of the reference element.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.subentity_embedding">
-<code class="sig-name descname"><span class="pre">subentity_embedding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.subentity_embedding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.subentity_embedding">
+<span class="sig-name descname"><span class="pre">subentity_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.subentity_embedding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple <code class="docutils literal notranslate"><span class="pre">(A,</span> <span class="pre">B)</span></code> which defines the embedding of the codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentities into the reference element.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">subentity_codim</span> <span class="pre">&gt;</span> <span class="pre">1',</span> <span class="pre">the</span> <span class="pre">embedding</span> <span class="pre">is</span> <span class="pre">by</span> <span class="pre">default</span> <span class="pre">given</span> <span class="pre">recursively</span> <span class="pre">via</span>
@@ -577,79 +589,79 @@ subentities into the reference element.</p>
 the superentity with smallest index.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.sub_reference_element">
-<code class="sig-name descname"><span class="pre">sub_reference_element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.sub_reference_element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.sub_reference_element">
+<span class="sig-name descname"><span class="pre">sub_reference_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.sub_reference_element" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the reference element of the codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentities.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.unit_outer_normals">
-<code class="sig-name descname"><span class="pre">unit_outer_normals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.unit_outer_normals">
+<span class="sig-name descname"><span class="pre">unit_outer_normals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">retval[e]</span></code> is the unit outer-normal vector to the codim-1 subentity
 with index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.center">
-<code class="sig-name descname"><span class="pre">center</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.center" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coordinates of the barycenter.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.mapped_diameter">
-<code class="sig-name descname"><span class="pre">mapped_diameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.mapped_diameter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.mapped_diameter">
+<span class="sig-name descname"><span class="pre">mapped_diameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.mapped_diameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>The diameter of the reference element after transforming it with the
 matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> (vectorized).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.quadrature_info">
-<code class="sig-name descname"><span class="pre">quadrature_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.quadrature_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.quadrature_info">
+<span class="sig-name descname"><span class="pre">quadrature_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.quadrature_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple of dicts <code class="docutils literal notranslate"><span class="pre">(O,</span> <span class="pre">N)</span></code> where <code class="docutils literal notranslate"><span class="pre">O[quadrature_type]</span></code> is a list
 of orders which are implemented for <code class="docutils literal notranslate"><span class="pre">quadrature_type</span></code> and <code class="docutils literal notranslate"><span class="pre">N[quadrature_type]</span></code>
 is a list of the corresponding numbers of integration points.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Line.quadrature">
-<code class="sig-name descname"><span class="pre">quadrature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.quadrature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Line.quadrature">
+<span class="sig-name descname"><span class="pre">quadrature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Line.quadrature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns tuple <code class="docutils literal notranslate"><span class="pre">(P,</span> <span class="pre">W)</span></code> where <code class="docutils literal notranslate"><span class="pre">P</span></code> is an array of quadrature points with
 corresponding weights <code class="docutils literal notranslate"><span class="pre">W</span></code>.</p>
 <p>The quadrature is of order <code class="docutils literal notranslate"><span class="pre">order</span></code> or has <code class="docutils literal notranslate"><span class="pre">npoints</span></code> integration points.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.line">
-<code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">line</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.line" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.line">
+<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">line</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.line" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py class">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">Square</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">Square</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interfaces/index.html#pymor.discretizers.builtin.grids.interfaces.ReferenceElement" title="pymor.discretizers.builtin.grids.interfaces.ReferenceElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.interfaces.ReferenceElement</span></code></a></p>
 <p>Defines a reference element.</p>
 <p>All reference elements have the property that all subentities of a given codimension are of the
 same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
 faces at the same time.</p>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.dim">
-<code class="sig-name descname"><span class="pre">dim</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.dim" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dimension of the reference element</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.volume">
-<code class="sig-name descname"><span class="pre">volume</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.volume" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>The volume of the reference element</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.size">
-<code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.size" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of subentities of codimension <code class="docutils literal notranslate"><span class="pre">codim</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.subentities">
-<code class="sig-name descname"><span class="pre">subentities</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.subentities" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.subentities">
+<span class="sig-name descname"><span class="pre">subentities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.subentities" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">subentities(c,sc)[i,j]</span></code> is, with respect to the indexing inside the
 reference element, the index of the <code class="docutils literal notranslate"><span class="pre">j</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentity of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentity of the reference element.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.subentity_embedding">
-<code class="sig-name descname"><span class="pre">subentity_embedding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.subentity_embedding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.subentity_embedding">
+<span class="sig-name descname"><span class="pre">subentity_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.subentity_embedding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple <code class="docutils literal notranslate"><span class="pre">(A,</span> <span class="pre">B)</span></code> which defines the embedding of the codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentities into the reference element.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">subentity_codim</span> <span class="pre">&gt;</span> <span class="pre">1',</span> <span class="pre">the</span> <span class="pre">embedding</span> <span class="pre">is</span> <span class="pre">by</span> <span class="pre">default</span> <span class="pre">given</span> <span class="pre">recursively</span> <span class="pre">via</span>
@@ -658,79 +670,79 @@ subentities into the reference element.</p>
 the superentity with smallest index.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.sub_reference_element">
-<code class="sig-name descname"><span class="pre">sub_reference_element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.sub_reference_element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.sub_reference_element">
+<span class="sig-name descname"><span class="pre">sub_reference_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.sub_reference_element" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the reference element of the codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentities.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.unit_outer_normals">
-<code class="sig-name descname"><span class="pre">unit_outer_normals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.unit_outer_normals">
+<span class="sig-name descname"><span class="pre">unit_outer_normals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">retval[e]</span></code> is the unit outer-normal vector to the codim-1 subentity
 with index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.center">
-<code class="sig-name descname"><span class="pre">center</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.center" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coordinates of the barycenter.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.mapped_diameter">
-<code class="sig-name descname"><span class="pre">mapped_diameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.mapped_diameter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.mapped_diameter">
+<span class="sig-name descname"><span class="pre">mapped_diameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.mapped_diameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>The diameter of the reference element after transforming it with the
 matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> (vectorized).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.quadrature_info">
-<code class="sig-name descname"><span class="pre">quadrature_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.quadrature_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.quadrature_info">
+<span class="sig-name descname"><span class="pre">quadrature_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.quadrature_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple of dicts <code class="docutils literal notranslate"><span class="pre">(O,</span> <span class="pre">N)</span></code> where <code class="docutils literal notranslate"><span class="pre">O[quadrature_type]</span></code> is a list
 of orders which are implemented for <code class="docutils literal notranslate"><span class="pre">quadrature_type</span></code> and <code class="docutils literal notranslate"><span class="pre">N[quadrature_type]</span></code>
 is a list of the corresponding numbers of integration points.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Square.quadrature">
-<code class="sig-name descname"><span class="pre">quadrature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.quadrature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Square.quadrature">
+<span class="sig-name descname"><span class="pre">quadrature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Square.quadrature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns tuple <code class="docutils literal notranslate"><span class="pre">(P,</span> <span class="pre">W)</span></code> where <code class="docutils literal notranslate"><span class="pre">P</span></code> is an array of quadrature points with
 corresponding weights <code class="docutils literal notranslate"><span class="pre">W</span></code>.</p>
 <p>The quadrature is of order <code class="docutils literal notranslate"><span class="pre">order</span></code> or has <code class="docutils literal notranslate"><span class="pre">npoints</span></code> integration points.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.square">
-<code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">square</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.square" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.square">
+<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">square</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.square" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py class">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">Triangle</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interfaces/index.html#pymor.discretizers.builtin.grids.interfaces.ReferenceElement" title="pymor.discretizers.builtin.grids.interfaces.ReferenceElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.interfaces.ReferenceElement</span></code></a></p>
 <p>Defines a reference element.</p>
 <p>All reference elements have the property that all subentities of a given codimension are of the
 same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
 faces at the same time.</p>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.dim">
-<code class="sig-name descname"><span class="pre">dim</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.dim" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dimension of the reference element</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.volume">
-<code class="sig-name descname"><span class="pre">volume</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.volume" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>The volume of the reference element</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.size">
-<code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.size" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of subentities of codimension <code class="docutils literal notranslate"><span class="pre">codim</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.subentities">
-<code class="sig-name descname"><span class="pre">subentities</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.subentities" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.subentities">
+<span class="sig-name descname"><span class="pre">subentities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.subentities" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">subentities(c,sc)[i,j]</span></code> is, with respect to the indexing inside the
 reference element, the index of the <code class="docutils literal notranslate"><span class="pre">j</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentity of the <code class="docutils literal notranslate"><span class="pre">i</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentity of the reference element.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.subentity_embedding">
-<code class="sig-name descname"><span class="pre">subentity_embedding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.subentity_embedding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.subentity_embedding">
+<span class="sig-name descname"><span class="pre">subentity_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.subentity_embedding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple <code class="docutils literal notranslate"><span class="pre">(A,</span> <span class="pre">B)</span></code> which defines the embedding of the codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code>
 subentities into the reference element.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">subentity_codim</span> <span class="pre">&gt;</span> <span class="pre">1',</span> <span class="pre">the</span> <span class="pre">embedding</span> <span class="pre">is</span> <span class="pre">by</span> <span class="pre">default</span> <span class="pre">given</span> <span class="pre">recursively</span> <span class="pre">via</span>
@@ -739,49 +751,49 @@ subentities into the reference element.</p>
 the superentity with smallest index.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.sub_reference_element">
-<code class="sig-name descname"><span class="pre">sub_reference_element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.sub_reference_element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.sub_reference_element">
+<span class="sig-name descname"><span class="pre">sub_reference_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.sub_reference_element" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the reference element of the codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> subentities.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.unit_outer_normals">
-<code class="sig-name descname"><span class="pre">unit_outer_normals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.unit_outer_normals">
+<span class="sig-name descname"><span class="pre">unit_outer_normals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.unit_outer_normals" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">retval[e]</span></code> is the unit outer-normal vector to the codim-1 subentity
 with index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.center">
-<code class="sig-name descname"><span class="pre">center</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.center" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coordinates of the barycenter.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.mapped_diameter">
-<code class="sig-name descname"><span class="pre">mapped_diameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.mapped_diameter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.mapped_diameter">
+<span class="sig-name descname"><span class="pre">mapped_diameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.mapped_diameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>The diameter of the reference element after transforming it with the
 matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> (vectorized).</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature_info">
-<code class="sig-name descname"><span class="pre">quadrature_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature_info">
+<span class="sig-name descname"><span class="pre">quadrature_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple of dicts <code class="docutils literal notranslate"><span class="pre">(O,</span> <span class="pre">N)</span></code> where <code class="docutils literal notranslate"><span class="pre">O[quadrature_type]</span></code> is a list
 of orders which are implemented for <code class="docutils literal notranslate"><span class="pre">quadrature_type</span></code> and <code class="docutils literal notranslate"><span class="pre">N[quadrature_type]</span></code>
 is a list of the corresponding numbers of integration points.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature">
-<code class="sig-name descname"><span class="pre">quadrature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature">
+<span class="sig-name descname"><span class="pre">quadrature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns tuple <code class="docutils literal notranslate"><span class="pre">(P,</span> <span class="pre">W)</span></code> where <code class="docutils literal notranslate"><span class="pre">P</span></code> is an array of quadrature points with
 corresponding weights <code class="docutils literal notranslate"><span class="pre">W</span></code>.</p>
 <p>The quadrature is of order <code class="docutils literal notranslate"><span class="pre">order</span></code> or has <code class="docutils literal notranslate"><span class="pre">npoints</span></code> integration points.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.discretizers.builtin.grids.referenceelements.triangle">
-<code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></code><code class="sig-name descname"><span class="pre">triangle</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.triangle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.referenceelements.triangle">
+<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.referenceelements.</span></span><span class="sig-name descname"><span class="pre">triangle</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/referenceelements.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.referenceelements.triangle" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -830,10 +842,10 @@ corresponding weights <code class="docutils literal notranslate"><span class="pr
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

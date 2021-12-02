@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.algorithms.adaptivegreedy &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.algorithms.adaptivegreedy &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
@@ -76,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +131,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -181,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -289,6 +301,13 @@
     
     
       <a href="../basic/index.html" class="md-nav__link">basic</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../bernoulli/index.html" class="md-nav__link">bernoulli</a>
       
     
     </li>
@@ -609,11 +628,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.algorithms.adaptivegreedy">
 <span id="pymor-algorithms-adaptivegreedy"></span><h1 id="autoapi-pymor-algorithms-adaptivegreedy-index--page-root"><a class="reference internal" href="#autoapi-pymor-algorithms-adaptivegreedy-index--page-root" title="pymor.algorithms.adaptivegreedy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms.adaptivegreedy</span></code></a><a class="headerlink" href="#autoapi-pymor-algorithms-adaptivegreedy-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -626,8 +645,8 @@
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -644,12 +663,12 @@
 </tbody>
 </table>
 <dl class="py function">
-<dt id="pymor.algorithms.adaptivegreedy.adaptive_weak_greedy">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.adaptivegreedy.</span></code><code class="sig-name descname"><span class="pre">adaptive_weak_greedy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surrogate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_extensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_mus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize_vertex_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.adaptive_weak_greedy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.adaptive_weak_greedy">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.adaptivegreedy.</span></span><span class="sig-name descname"><span class="pre">adaptive_weak_greedy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surrogate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_extensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_mus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize_vertex_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.adaptive_weak_greedy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Weak greedy basis generation algorithm with adaptively refined training set.</p>
 <p>This method extends pyMOR’s default <a class="reference internal" href="../greedy/index.html#pymor.algorithms.greedy.weak_greedy" title="pymor.algorithms.greedy.weak_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">weak_greedy</span></code></a>
 greedy basis generation algorithm by adaptive refinement of the
-parameter training set according to <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id16">HDO11</a>]</span> to prevent overfitting
+parameter training set according to <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id19" title="B. Haasdonk, M. Dihlmann, and M. Ohlberger. A training set and multiple basis generation approach for parametrized model reduction based on adaptive grids in parameter space. Math. Comput. Model. Dyn. Syst., 17(4):423–442, 2011.">HDO11</a>]</span> to prevent overfitting
 of the approximation basis to the training set. This is achieved by
 estimating the approximation error on an additional validation set of
 parameters. If the ratio between the estimated errors on the validation
@@ -731,12 +750,12 @@ for 2 and 3 dimensional parameter spaces.)</p>
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.algorithms.adaptivegreedy.rb_adaptive_greedy">
-<code class="sig-prename descclassname"><span class="pre">pymor.algorithms.adaptivegreedy.</span></code><code class="sig-name descname"><span class="pre">rb_adaptive_greedy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reductor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_extensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_mus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize_vertex_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.rb_adaptive_greedy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.rb_adaptive_greedy">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.adaptivegreedy.</span></span><span class="sig-name descname"><span class="pre">rb_adaptive_greedy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reductor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_extensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_mus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize_vertex_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.rb_adaptive_greedy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduced basis greedy basis generation with adaptively refined training set.</p>
 <p>This method extends pyMOR’s default <a class="reference internal" href="../greedy/index.html#pymor.algorithms.greedy.rb_greedy" title="pymor.algorithms.greedy.rb_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">rb_greedy</span></code></a>
 greedy reduced basis generation algorithm by adaptive refinement of the
-parameter training set <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id16">HDO11</a>]</span> to prevent overfitting
+parameter training set <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id19" title="B. Haasdonk, M. Dihlmann, and M. Ohlberger. A training set and multiple basis generation approach for parametrized model reduction based on adaptive grids in parameter space. Math. Comput. Model. Dyn. Syst., 17(4):423–442, 2011.">HDO11</a>]</span> to prevent overfitting
 of the reduced basis to the training set as implemented in <a class="reference internal" href="#pymor.algorithms.adaptivegreedy.adaptive_weak_greedy" title="pymor.algorithms.adaptivegreedy.adaptive_weak_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">adaptive_weak_greedy</span></code></a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -811,51 +830,51 @@ computed basis.</p>
 </div>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.algorithms.adaptivegreedy.</span></code><code class="sig-name descname"><span class="pre">AdaptiveSampleSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.adaptivegreedy.</span></span><span class="sig-name descname"><span class="pre">AdaptiveSampleSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_space</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
 <p>An adaptive parameter sample set.</p>
 <p>Used by <a class="reference internal" href="#pymor.algorithms.adaptivegreedy.adaptive_weak_greedy" title="pymor.algorithms.adaptivegreedy.adaptive_weak_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">adaptive_weak_greedy</span></code></a>.</p>
 <dl class="py class">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_set</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_set</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.__slots__">
-<code class="sig-name descname"><span class="pre">__slots__</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['level',</span> <span class="pre">'center',</span> <span class="pre">'vertex_ids',</span> <span class="pre">'children',</span> <span class="pre">'creation_time']</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.__slots__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">['level',</span> <span class="pre">'center',</span> <span class="pre">'vertex_ids',</span> <span class="pre">'children',</span> <span class="pre">'creation_time']</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.__slots__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.refine">
-<code class="sig-name descname"><span class="pre">refine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_set</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.refine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.refine">
+<span class="sig-name descname"><span class="pre">refine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_set</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.Element.refine" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.refine">
-<code class="sig-name descname"><span class="pre">refine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.refine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.refine">
+<span class="sig-name descname"><span class="pre">refine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.refine" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.map_vertex_to_mu">
-<code class="sig-name descname"><span class="pre">map_vertex_to_mu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.map_vertex_to_mu" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.map_vertex_to_mu">
+<span class="sig-name descname"><span class="pre">map_vertex_to_mu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.map_vertex_to_mu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.visualize">
-<code class="sig-name descname"><span class="pre">visualize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.visualize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.visualize">
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertex_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet.visualize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._iter_leafs">
-<code class="sig-name descname"><span class="pre">_iter_leafs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._iter_leafs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._iter_leafs">
+<span class="sig-name descname"><span class="pre">_iter_leafs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._iter_leafs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._update">
-<code class="sig-name descname"><span class="pre">_update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._update">
+<span class="sig-name descname"><span class="pre">_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._update" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._add_vertex">
-<code class="sig-name descname"><span class="pre">_add_vertex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._add_vertex" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._add_vertex">
+<span class="sig-name descname"><span class="pre">_add_vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/algorithms/adaptivegreedy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.adaptivegreedy.AdaptiveSampleSet._add_vertex" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -904,10 +923,10 @@ computed basis.</p>
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

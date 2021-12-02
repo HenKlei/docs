@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.parallel.mpi &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.parallel.mpi &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
@@ -76,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +131,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.parallel</span></code></a></li>
@@ -181,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -455,11 +467,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.parallel.mpi">
 <span id="pymor-parallel-mpi"></span><h1 id="autoapi-pymor-parallel-mpi-index--page-root"><a class="reference internal" href="#autoapi-pymor-parallel-mpi-index--page-root" title="pymor.parallel.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.parallel.mpi</span></code></a><a class="headerlink" href="#autoapi-pymor-parallel-mpi-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -468,12 +480,12 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.parallel.mpi.MPIPool" title="pymor.parallel.mpi.MPIPool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MPIPool</span></code></a></p></td>
-<td><p><a class="reference internal" href="../interface/index.html#pymor.parallel.interface.WorkerPool" title="pymor.parallel.interface.WorkerPool"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkerPool</span></code></a> based pyMOR’s MPI <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.tools.mpi" title="pymor.tools.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">event</span> <span class="pre">loop</span></code></a>.</p></td>
+<td><p><a class="reference internal" href="../interface/index.html#pymor.parallel.interface.WorkerPool" title="pymor.parallel.interface.WorkerPool"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkerPool</span></code></a> based pyMOR's MPI <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.tools.mpi" title="pymor.tools.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">event</span> <span class="pre">loop</span></code></a>.</p></td>
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -499,63 +511,63 @@
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pymor.parallel.mpi.MPIPool">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIPool</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIPool</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../basic/index.html#pymor.parallel.basic.WorkerPoolBase" title="pymor.parallel.basic.WorkerPoolBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.parallel.basic.WorkerPoolBase</span></code></a></p>
 <p><a class="reference internal" href="../interface/index.html#pymor.parallel.interface.WorkerPool" title="pymor.parallel.interface.WorkerPool"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkerPool</span></code></a> based pyMOR’s MPI <a class="reference internal" href="../../tools/mpi/index.html#module-pymor.tools.mpi" title="pymor.tools.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">event</span> <span class="pre">loop</span></code></a>.</p>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool.__del__">
-<code class="sig-name descname"><span class="pre">__del__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool.__del__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool.__del__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool.__len__">
-<code class="sig-name descname"><span class="pre">__len__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool.__len__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool.__len__" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of workers in the pool.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool._push_object">
-<code class="sig-name descname"><span class="pre">_push_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._push_object" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool._push_object">
+<span class="sig-name descname"><span class="pre">_push_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._push_object" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool._apply">
-<code class="sig-name descname"><span class="pre">_apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._apply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool._apply">
+<span class="sig-name descname"><span class="pre">_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool._apply_only">
-<code class="sig-name descname"><span class="pre">_apply_only</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._apply_only" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool._apply_only">
+<span class="sig-name descname"><span class="pre">_apply_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._apply_only" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool._map">
-<code class="sig-name descname"><span class="pre">_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunks</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._map" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool._map">
+<span class="sig-name descname"><span class="pre">_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunks</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.parallel.mpi.MPIPool._remove_object">
-<code class="sig-name descname"><span class="pre">_remove_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._remove_object" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi.MPIPool._remove_object">
+<span class="sig-name descname"><span class="pre">_remove_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi.MPIPool._remove_object" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.parallel.mpi._worker_call_function">
-<code class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></code><code class="sig-name descname"><span class="pre">_worker_call_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._worker_call_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi._worker_call_function">
+<span class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></span><span class="sig-name descname"><span class="pre">_worker_call_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._worker_call_function" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.parallel.mpi._single_worker_call_function">
-<code class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></code><code class="sig-name descname"><span class="pre">_single_worker_call_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._single_worker_call_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi._single_worker_call_function">
+<span class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></span><span class="sig-name descname"><span class="pre">_single_worker_call_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._single_worker_call_function" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.parallel.mpi._worker_map_function">
-<code class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></code><code class="sig-name descname"><span class="pre">_worker_map_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._worker_map_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi._worker_map_function">
+<span class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></span><span class="sig-name descname"><span class="pre">_worker_map_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._worker_map_function" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.parallel.mpi._setup_worker">
-<code class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></code><code class="sig-name descname"><span class="pre">_setup_worker</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._setup_worker" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi._setup_worker">
+<span class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></span><span class="sig-name descname"><span class="pre">_setup_worker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._setup_worker" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.parallel.mpi._push_object">
-<code class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></code><code class="sig-name descname"><span class="pre">_push_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._push_object" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.parallel.mpi._push_object">
+<span class="sig-prename descclassname"><span class="pre">pymor.parallel.mpi.</span></span><span class="sig-name descname"><span class="pre">_push_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/parallel/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.parallel.mpi._push_object" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -604,10 +616,10 @@
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

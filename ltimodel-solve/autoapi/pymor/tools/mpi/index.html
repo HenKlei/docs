@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,36 +47,47 @@
   
   
   
-    <title>pymor.tools.mpi &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.tools.mpi &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="pymor.tools.pprint" href="../pprint/index.html" />
-    <link rel="prev" title="pymor.tools.io" href="../io/index.html" />
+    <link rel="prev" title="pymor.tools.frozendict" href="../frozendict/index.html" />
 
 
   
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +131,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.tools</span></code></a></li>
@@ -181,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -344,6 +356,13 @@
     <li class="md-nav__item">
     
     
+      <a href="../index.html#subpackages" class="md-nav__link">Subpackages</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="../index.html#submodules" class="md-nav__link">Submodules</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
@@ -392,13 +411,6 @@
     
     
       <a href="../frozendict/index.html" class="md-nav__link">frozendict</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../io/index.html" class="md-nav__link">io</a>
       
     
     </li>
@@ -504,7 +516,7 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.tools.mpi">
 <span id="pymor-tools-mpi"></span><h1 id="autoapi-pymor-tools-mpi-index--page-root"><a class="reference internal" href="#autoapi-pymor-tools-mpi-index--page-root" title="pymor.tools.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.tools.mpi</span></code></a><a class="headerlink" href="#autoapi-pymor-tools-mpi-index--page-root" title="Permalink to this headline">¶</a></h1>
 <p>This module provides helper methods to use pyMOR in parallel with MPI.</p>
 <p>Executing this module will run <a class="reference internal" href="#pymor.tools.mpi.event_loop" title="pymor.tools.mpi.event_loop"><code class="xref py py-func docutils literal notranslate"><span class="pre">event_loop</span></code></a> on all MPI ranks
@@ -549,9 +561,9 @@ return value and return the corresponding <a class="reference internal" href="#p
 <a class="reference internal" href="#pymor.tools.mpi.ObjectId" title="pymor.tools.mpi.ObjectId"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectId</span></code></a> and a string as first and second argument and execute
 the method named by the second argument on the object referred to by the
 first argument.</p>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -564,8 +576,8 @@ first argument.</p>
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -574,51 +586,54 @@ first argument.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.event_loop_settings" title="pymor.tools.mpi.event_loop_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">event_loop_settings</span></code></a></p></td>
-<td><p>Settings for pyMOR’s MPI event loop.</p></td>
+<td><p>Settings for pyMOR's MPI event loop.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.event_loop" title="pymor.tools.mpi.event_loop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">event_loop</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.launch_event_loop" title="pymor.tools.mpi.launch_event_loop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">launch_event_loop</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.event_loop" title="pymor.tools.mpi.event_loop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">event_loop</span></code></a></p></td>
 <td><p>Launches an MPI-based event loop.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a></p></td>
 <td><p>Execute method on all MPI ranks.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.quit" title="pymor.tools.mpi.quit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quit</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.quit" title="pymor.tools.mpi.quit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quit</span></code></a></p></td>
 <td><p>Exit the event loop on all MPI ranks.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.mpi_info" title="pymor.tools.mpi.mpi_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mpi_info</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.mpi_info" title="pymor.tools.mpi.mpi_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mpi_info</span></code></a></p></td>
 <td><p>Print some information on the MPI setup.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.run_code" title="pymor.tools.mpi.run_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_code</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.run_code" title="pymor.tools.mpi.run_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_code</span></code></a></p></td>
 <td><p>Execute the code string <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.import_module" title="pymor.tools.mpi.import_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">import_module</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.import_module" title="pymor.tools.mpi.import_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">import_module</span></code></a></p></td>
 <td><p>Import the module named by <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.function_call" title="pymor.tools.mpi.function_call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function_call</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.function_call" title="pymor.tools.mpi.function_call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function_call</span></code></a></p></td>
 <td><p>Execute the function <code class="docutils literal notranslate"><span class="pre">f</span></code> with given arguments.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.function_call_manage" title="pymor.tools.mpi.function_call_manage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function_call_manage</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.function_call_manage" title="pymor.tools.mpi.function_call_manage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function_call_manage</span></code></a></p></td>
 <td><p>Execute the function <code class="docutils literal notranslate"><span class="pre">f</span></code> and manage the return value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.method_call" title="pymor.tools.mpi.method_call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">method_call</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.method_call" title="pymor.tools.mpi.method_call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">method_call</span></code></a></p></td>
 <td><p>Execute a method with given arguments.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.method_call_manage" title="pymor.tools.mpi.method_call_manage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">method_call_manage</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.method_call_manage" title="pymor.tools.mpi.method_call_manage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">method_call_manage</span></code></a></p></td>
 <td><p>Execute a method with given arguments and manage the return value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.manage_object" title="pymor.tools.mpi.manage_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">manage_object</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.manage_object" title="pymor.tools.mpi.manage_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">manage_object</span></code></a></p></td>
 <td><p>Keep track of <code class="docutils literal notranslate"><span class="pre">obj</span></code> and return an <a class="reference internal" href="#pymor.tools.mpi.ObjectId" title="pymor.tools.mpi.ObjectId"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectId</span></code></a> handle.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.get_object" title="pymor.tools.mpi.get_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_object</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.get_object" title="pymor.tools.mpi.get_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_object</span></code></a></p></td>
 <td><p>Return the object referred to by <code class="docutils literal notranslate"><span class="pre">obj_id</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.remove_object" title="pymor.tools.mpi.remove_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_object</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.remove_object" title="pymor.tools.mpi.remove_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_object</span></code></a></p></td>
 <td><p>Remove the object referred to by <code class="docutils literal notranslate"><span class="pre">obj_id</span></code> from the registry.</p></td>
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="attributes">
 <h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -641,34 +656,41 @@ first argument.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi._object_counter" title="pymor.tools.mpi._object_counter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_object_counter</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi.filename" title="pymor.tools.mpi.filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.mpi._event_loop_running" title="pymor.tools.mpi._event_loop_running"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_event_loop_running</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.mpi.filename" title="pymor.tools.mpi.filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py data">
-<dt id="pymor.tools.mpi.comm">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">comm</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.comm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.comm">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">comm</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.comm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.tools.mpi.rank0">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">rank0</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.rank0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.rank0">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">rank0</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.rank0" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.tools.mpi.parallel">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">parallel</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.parallel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.parallel">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">parallel</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.parallel" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.tools.mpi._managed_objects">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">_managed_objects</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi._managed_objects" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi._managed_objects">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">_managed_objects</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi._managed_objects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py data">
-<dt id="pymor.tools.mpi._object_counter">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">_object_counter</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi._object_counter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi._object_counter">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">_object_counter</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi._object_counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py data">
+<dt class="sig sig-object py" id="pymor.tools.mpi._event_loop_running">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">_event_loop_running</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi._event_loop_running" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.event_loop_settings">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">event_loop_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_launch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.event_loop_settings" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.event_loop_settings">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">event_loop_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_launch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.event_loop_settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Settings for pyMOR’s MPI event loop.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -680,16 +702,20 @@ all MPI ranks (except 0) when pyMOR is imported.</p>
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.event_loop">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">event_loop</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.event_loop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.launch_event_loop">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">launch_event_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.launch_event_loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.tools.mpi.event_loop">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">event_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.event_loop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Launches an MPI-based event loop.</p>
 <p>Events can be sent by either calling <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a> on
 rank 0 to execute an arbitrary method on all ranks or
 by calling <a class="reference internal" href="#pymor.tools.mpi.quit" title="pymor.tools.mpi.quit"><code class="xref py py-func docutils literal notranslate"><span class="pre">quit</span></code></a> to exit the loop.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.call">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.call">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute method on all MPI ranks.</p>
 <p>Assuming <a class="reference internal" href="#pymor.tools.mpi.event_loop" title="pymor.tools.mpi.event_loop"><code class="xref py py-func docutils literal notranslate"><span class="pre">event_loop</span></code></a> is running on all MPI ranks
 (except rank 0), this will execute <code class="docutils literal notranslate"><span class="pre">method</span></code> on all
@@ -712,41 +738,41 @@ ranks (including rank 0) with positional arguments
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.quit">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">quit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.quit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.quit">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">quit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.quit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exit the event loop on all MPI ranks.</p>
 <p>This will cause <a class="reference internal" href="#pymor.tools.mpi.event_loop" title="pymor.tools.mpi.event_loop"><code class="xref py py-func docutils literal notranslate"><span class="pre">event_loop</span></code></a> to terminate on all
 MPI ranks.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.mpi_info">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">mpi_info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.mpi_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.mpi_info">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">mpi_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.mpi_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print some information on the MPI setup.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.run_code">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">run_code</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.run_code" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.run_code">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">run_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.run_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute the code string <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.import_module">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">import_module</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.import_module" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.import_module">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">import_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.import_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import the module named by <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.function_call">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">function_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.function_call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.function_call">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">function_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.function_call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute the function <code class="docutils literal notranslate"><span class="pre">f</span></code> with given arguments.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.
 Arguments of type <a class="reference internal" href="#pymor.tools.mpi.ObjectId" title="pymor.tools.mpi.ObjectId"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectId</span></code></a> are transparently
 mapped to the object they refer to.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.function_call_manage">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">function_call_manage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.function_call_manage" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.function_call_manage">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">function_call_manage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.function_call_manage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute the function <code class="docutils literal notranslate"><span class="pre">f</span></code> and manage the return value.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.
 The return value of <code class="docutils literal notranslate"><span class="pre">f</span></code> is managed by calling <a class="reference internal" href="#pymor.tools.mpi.manage_object" title="pymor.tools.mpi.manage_object"><code class="xref py py-func docutils literal notranslate"><span class="pre">manage_object</span></code></a>
@@ -755,8 +781,8 @@ Arguments of type <a class="reference internal" href="#pymor.tools.mpi.ObjectId"
 mapped to the object they refer to.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.method_call">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">method_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.method_call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.method_call">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">method_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.method_call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute a method with given arguments.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.
 Arguments of type <a class="reference internal" href="#pymor.tools.mpi.ObjectId" title="pymor.tools.mpi.ObjectId"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectId</span></code></a> are transparently
@@ -777,8 +803,8 @@ the method.</p>
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.method_call_manage">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">method_call_manage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.method_call_manage" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.method_call_manage">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">method_call_manage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.method_call_manage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute a method with given arguments and manage the return value.</p>
 <p>Intended to be used in conjunction with <a class="reference internal" href="#pymor.tools.mpi.call" title="pymor.tools.mpi.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">call</span></code></a>.
 The return value of the called method is managed by calling
@@ -801,33 +827,33 @@ the method.</p>
 </div>
 </dd></dl>
 <dl class="py class">
-<dt id="pymor.tools.mpi.ObjectId">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">ObjectId</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.ObjectId" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p>
+<dt class="sig sig-object py" id="pymor.tools.mpi.ObjectId">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">ObjectId</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.ObjectId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a></p>
 <p>A handle to an MPI distributed object.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.manage_object">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">manage_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.manage_object" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.manage_object">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">manage_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.manage_object" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keep track of <code class="docutils literal notranslate"><span class="pre">obj</span></code> and return an <a class="reference internal" href="#pymor.tools.mpi.ObjectId" title="pymor.tools.mpi.ObjectId"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectId</span></code></a> handle.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.get_object">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">get_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.get_object" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.get_object">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.get_object" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the object referred to by <code class="docutils literal notranslate"><span class="pre">obj_id</span></code>.</p>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.tools.mpi.remove_object">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">remove_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.remove_object" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.remove_object">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">remove_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.remove_object" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the object referred to by <code class="docutils literal notranslate"><span class="pre">obj_id</span></code> from the registry.</p>
 </dd></dl>
 <dl class="py data">
-<dt id="pymor.tools.mpi.filename">
-<code class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></code><code class="sig-name descname"><span class="pre">filename</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.filename" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.tools.mpi.filename">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.mpi.</span></span><span class="sig-name descname"><span class="pre">filename</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/tools/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.mpi.filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -839,7 +865,7 @@ the method.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../io/index.html" title="pymor.tools.io"
+            <a href="../frozendict/index.html" title="pymor.tools.frozendict"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -848,7 +874,7 @@ the method.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.tools.io</span></code> </span>
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.tools.frozendict</span></code> </span>
               </div>
             </a>
           
@@ -876,10 +902,10 @@ the method.</p>
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

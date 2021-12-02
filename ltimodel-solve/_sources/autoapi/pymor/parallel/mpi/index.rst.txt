@@ -30,49 +30,48 @@ Functions
 
 
 
-.. class:: MPIPool
-
+.. py:class:: MPIPool
 
    Bases: :py:obj:`pymor.parallel.basic.WorkerPoolBase`
 
    |WorkerPool| based pyMOR's MPI :mod:`event loop <pymor.tools.mpi>`.
 
-   .. method:: __del__(self)
+   .. py:method:: __del__(self)
 
 
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
 
       The number of workers in the pool.
 
 
-   .. method:: _push_object(self, obj)
+   .. py:method:: _push_object(self, obj)
 
 
-   .. method:: _apply(self, function, *args, **kwargs)
+   .. py:method:: _apply(self, function, *args, **kwargs)
 
 
-   .. method:: _apply_only(self, function, worker, *args, **kwargs)
+   .. py:method:: _apply_only(self, function, worker, *args, **kwargs)
 
 
-   .. method:: _map(self, function, chunks, **kwargs)
+   .. py:method:: _map(self, function, chunks, **kwargs)
 
 
-   .. method:: _remove_object(self, remote_id)
+   .. py:method:: _remove_object(self, remote_id)
 
 
 
-.. function:: _worker_call_function(function, *args, **kwargs)
+.. py:function:: _worker_call_function(function, *args, **kwargs)
 
 
-.. function:: _single_worker_call_function(payload, worker)
+.. py:function:: _single_worker_call_function(payload, worker)
 
 
-.. function:: _worker_map_function(payload, function, **kwargs)
+.. py:function:: _worker_map_function(payload, function, **kwargs)
 
 
-.. function:: _setup_worker()
+.. py:function:: _setup_worker()
 
 
-.. function:: _push_object(obj)
+.. py:function:: _push_object(obj)
 
 

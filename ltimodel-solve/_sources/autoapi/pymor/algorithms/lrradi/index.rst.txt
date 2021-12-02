@@ -21,7 +21,7 @@ Functions
 
 
 
-.. function:: ricc_lrcf_solver_options(lrradi_tol=1e-10, lrradi_maxiter=500, lrradi_shifts='hamiltonian_shifts', hamiltonian_shifts_init_maxiter=20, hamiltonian_shifts_init_seed=None, hamiltonian_shifts_subspace_columns=6)
+.. py:function:: ricc_lrcf_solver_options(lrradi_tol=1e-10, lrradi_maxiter=500, lrradi_shifts='hamiltonian_shifts', hamiltonian_shifts_init_maxiter=20, hamiltonian_shifts_init_seed=None, hamiltonian_shifts_subspace_columns=6)
 
    Returns available Riccati equation solvers with default solver options.
 
@@ -45,8 +45,7 @@ Functions
        A dict of available solvers with default solver options.
            
 
-
-.. function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+.. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
 
    Compute an approximate low-rank solution of a Riccati equation.
 
@@ -66,7 +65,7 @@ Functions
        C
            The operator C as a |VectorArray| from `A.source`.
        R
-           The operator R as a 2D |NumPy array| or `None`.
+           The matrix R as a 2D |NumPy array| or `None`.
        trans
            Whether the first |Operator| in the Riccati equation is
            transposed.
@@ -81,8 +80,7 @@ Functions
            |VectorArray| from `A.source`.
            
 
-
-.. function:: hamiltonian_shifts_init(A, E, B, C, shift_options)
+.. py:function:: hamiltonian_shifts_init(A, E, B, C, shift_options)
 
    Compute initial shift parameters for low-rank RADI iteration.
 
@@ -111,8 +109,7 @@ Functions
            A |NumPy array| containing a set of stable shift parameters.
            
 
-
-.. function:: hamiltonian_shifts(A, E, B, R, K, Z, shift_options)
+.. py:function:: hamiltonian_shifts(A, E, B, R, K, Z, shift_options)
 
    Compute further shift parameters for low-rank RADI iteration.
 
@@ -144,5 +141,4 @@ Functions
        shifts
            A |NumPy array| containing a set of stable shift parameters.
            
-
 

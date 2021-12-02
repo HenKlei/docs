@@ -18,7 +18,7 @@ Classes
 
 
 
-.. class:: WorkerPool
+.. py:class:: WorkerPool
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -38,13 +38,13 @@ Classes
 
    All operations are performed synchronously.
 
-   .. method:: __len__(self)
+   .. py:method:: __len__(self)
       :abstractmethod:
 
       The number of workers in the pool.
 
 
-   .. method:: push(self, obj)
+   .. py:method:: push(self, obj)
       :abstractmethod:
 
       Push a copy of `obj` to  all workers of the pool.
@@ -71,8 +71,7 @@ Classes
           A |RemoteObject| referring to the pushed data.
               
 
-
-   .. method:: scatter_array(self, U, copy=True)
+   .. py:method:: scatter_array(self, U, copy=True)
       :abstractmethod:
 
       Distribute |VectorArray| evenly among the workers.
@@ -93,8 +92,7 @@ Classes
           A |RemoteObject| referring to the scattered data.
               
 
-
-   .. method:: scatter_list(self, l)
+   .. py:method:: scatter_list(self, l)
       :abstractmethod:
 
       Distribute list of objects evenly among the workers.
@@ -113,8 +111,7 @@ Classes
           A |RemoteObject| referring to the scattered data.
               
 
-
-   .. method:: apply(self, function, *args, **kwargs)
+   .. py:method:: apply(self, function, *args, **kwargs)
       :abstractmethod:
 
       Apply function in parallel on each worker.
@@ -143,8 +140,7 @@ Classes
           worker number (from `0` to `len(pool) - 1`).
               
 
-
-   .. method:: apply_only(self, function, worker, *args, **kwargs)
+   .. py:method:: apply_only(self, function, worker, *args, **kwargs)
       :abstractmethod:
 
       Apply function on a single worker.
@@ -175,8 +171,7 @@ Classes
           Return value of the function execution.
               
 
-
-   .. method:: map(self, function, *args, **kwargs)
+   .. py:method:: map(self, function, *args, **kwargs)
       :abstractmethod:
 
       Parallel version of the builtin :func:`map` function.
@@ -207,8 +202,7 @@ Classes
               
 
 
-
-.. class:: RemoteObject
+.. py:class:: RemoteObject
 
    Handle to remote data on the workers of a |WorkerPool|.
 
@@ -226,13 +220,13 @@ Classes
       `True`, after :meth:`remove` has been called.
       
 
-   .. method:: _remove(self)
+   .. py:method:: _remove(self)
       :abstractmethod:
 
       Actual implementation of 'remove'.
 
 
-   .. method:: remove(self)
+   .. py:method:: remove(self)
 
       Remove the remote object from the workers.
 
@@ -244,13 +238,13 @@ Classes
       which refer to the object (see :meth:`~WorkerPool.push`).
 
 
-   .. method:: __enter__(self)
+   .. py:method:: __enter__(self)
 
 
-   .. method:: __exit__(self, exc_type, exc_val, exc_tb)
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
 
 
-   .. method:: __del__(self)
+   .. py:method:: __del__(self)
 
 
 

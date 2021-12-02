@@ -18,39 +18,47 @@ Classes
 
 
 
-.. class:: FrozenDict(*args, **kwargs)
-
+.. py:class:: FrozenDict(*args, **kwargs)
 
    Bases: :py:obj:`dict`
 
    An immutable dictionary.
 
-   .. method:: _blocked_attribute(self)
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   .. py:method:: _blocked_attribute(self)
       :property:
 
 
-   .. method:: _post_init(self)
+   .. py:method:: _post_init(self)
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
-   .. method:: __reduce__(self)
+   .. py:method:: __reduce__(self)
 
       Helper for pickle.
 
 
 
-.. class:: SortedFrozenDict(*args, **kwargs)
-
+.. py:class:: SortedFrozenDict(*args, **kwargs)
 
    Bases: :py:obj:`FrozenDict`
 
    A sorted immutable dictionary.
 
-   .. method:: __repr__(self)
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 

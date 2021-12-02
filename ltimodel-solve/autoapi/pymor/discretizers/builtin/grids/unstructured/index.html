@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.discretizers.builtin.grids.unstructured &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/thebelab.css" />
+    <title>pymor.discretizers.builtin.grids.unstructured &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../../_static/jquery.js"></script>
     <script src="../../../../../../_static/underscore.js"></script>
     <script src="../../../../../../_static/doctools.js"></script>
-    <script src="../../../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../../../_static/pymor_favicon.png"/>
@@ -76,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +131,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers</span></code></a></li>
@@ -183,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -406,11 +418,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.discretizers.builtin.grids.unstructured">
 <span id="pymor-discretizers-builtin-grids-unstructured"></span><h1 id="autoapi-pymor-discretizers-builtin-grids-unstructured-index--page-root"><a class="reference internal" href="#autoapi-pymor-discretizers-builtin-grids-unstructured-index--page-root" title="pymor.discretizers.builtin.grids.unstructured"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.unstructured</span></code></a><a class="headerlink" href="#autoapi-pymor-discretizers-builtin-grids-unstructured-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -423,8 +435,8 @@
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -438,23 +450,23 @@
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.unstructured.</span></code><code class="sig-name descname"><span class="pre">UnstructuredTriangleGrid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding_data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.unstructured.</span></span><span class="sig-name descname"><span class="pre">UnstructuredTriangleGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding_data</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interfaces/index.html#pymor.discretizers.builtin.grids.interfaces.Grid" title="pymor.discretizers.builtin.grids.interfaces.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.grids.interfaces.Grid</span></code></a></p>
 <p>A generic unstructured, triangular grid.</p>
 <p>Use <a class="reference internal" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.from_vertices" title="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.from_vertices"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_vertices</span></code></a> to instantiate
 the grid from vertex coordinates and connectivity data.</p>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.dim">
-<code class="sig-name descname"><span class="pre">dim</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.dim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">2</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.dim" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.reference_element">
-<code class="sig-name descname"><span class="pre">reference_element</span></code><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.reference_element" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.reference_element">
+<span class="sig-name descname"><span class="pre">reference_element</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.reference_element" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.from_vertices">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_vertices</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">faces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.from_vertices" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.from_vertices">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_vertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">faces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.from_vertices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instantiate grid from vertex coordinates and connectivity data.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -472,13 +484,13 @@ given triangles (codim 0 entities).</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.size">
-<code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.size" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of entities of codimension <code class="docutils literal notranslate"><span class="pre">codim</span></code>.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.subentities">
-<code class="sig-name descname"><span class="pre">subentities</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.subentities" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.subentities">
+<span class="sig-name descname"><span class="pre">subentities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subentity_codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.subentities" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">retval[e,s]</span></code> is the global index of the <code class="docutils literal notranslate"><span class="pre">s</span></code>-th codim-<code class="docutils literal notranslate"><span class="pre">subentity_codim</span></code> subentity of the
 codim-<code class="docutils literal notranslate"><span class="pre">codim</span></code> entity with global index <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 <p>The ordering of <code class="docutils literal notranslate"><span class="pre">subentities(0,</span> <span class="pre">subentity_codim)[e]</span></code> has to correspond, w.r.t. the embedding
@@ -499,8 +511,8 @@ w.r.t. the embedding determined by <code class="docutils literal notranslate"><s
 <code class="docutils literal notranslate"><span class="pre">embeddings(codim)</span></code></p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.embeddings">
-<code class="sig-name descname"><span class="pre">embeddings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.embeddings" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.embeddings">
+<span class="sig-name descname"><span class="pre">embeddings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.embeddings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns tuple <code class="docutils literal notranslate"><span class="pre">(A,</span> <span class="pre">B)</span></code> where <code class="docutils literal notranslate"><span class="pre">A[e]</span></code> and <code class="docutils literal notranslate"><span class="pre">B[e]</span></code> are the linear part and the translation
 part of the map from the reference element of <code class="docutils literal notranslate"><span class="pre">e</span></code> to <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">codim</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, we provide a default implementation by taking the embedding of the codim-1
@@ -508,8 +520,8 @@ parent entity <code class="docutils literal notranslate"><span class="pre">e_0</
 subentity_embedding of <code class="docutils literal notranslate"><span class="pre">e</span></code> into <code class="docutils literal notranslate"><span class="pre">e_0</span></code> determined by the reference element.</p>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.visualize">
-<code class="sig-name descname"><span class="pre">visualize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.visualize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.visualize">
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.visualize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Visualize scalar data associated to the grid as a patch plot.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -527,18 +539,18 @@ each entry of the tuple. The lengths of all arrays have to agree.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.__str__">
-<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.__str__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.UnstructuredTriangleGrid.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.discretizers.builtin.grids.unstructured.compute_edges">
-<code class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.unstructured.</span></code><code class="sig-name descname"><span class="pre">compute_edges</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subentities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.compute_edges" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.grids.unstructured.compute_edges">
+<span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.grids.unstructured.</span></span><span class="sig-name descname"><span class="pre">compute_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subentities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/discretizers/builtin/grids/unstructured.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.grids.unstructured.compute_edges" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -587,10 +599,10 @@ each entry of the tuple. The lengths of all arrays have to agree.</p>
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

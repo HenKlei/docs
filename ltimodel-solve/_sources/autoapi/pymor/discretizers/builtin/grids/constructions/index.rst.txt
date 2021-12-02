@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: flatten_grid(grid)
+.. py:function:: flatten_grid(grid)
 
    Flatten a |Grid|.
 
@@ -41,5 +41,4 @@ Functions
            Maps the indices of the codim-`grid.dim` entities of the flattened
            grid to the indices of the corresponding entities in the original grid.
            
-
 

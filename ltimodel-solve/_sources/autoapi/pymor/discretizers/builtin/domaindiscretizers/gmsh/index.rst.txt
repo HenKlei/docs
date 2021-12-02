@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: discretize_gmsh(domain_description=None, geo_file=None, geo_file_path=None, msh_file_path=None, mesh_algorithm='del2d', clscale=1.0, options='', refinement_steps=0)
+.. py:function:: discretize_gmsh(domain_description=None, geo_file=None, geo_file_path=None, msh_file_path=None, mesh_algorithm='del2d', clscale=1.0, options='', refinement_steps=0)
 
    Mesh a |DomainDescription| or an already existing Gmsh GEO-file using the Gmsh mesher.
 
@@ -54,5 +54,4 @@ Functions
        boundary_info
            The generated :class:`~pymor.discretizers.builtin.grids.gmsh.GmshBoundaryInfo`.
            
-
 

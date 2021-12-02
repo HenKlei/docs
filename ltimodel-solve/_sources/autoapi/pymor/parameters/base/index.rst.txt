@@ -32,8 +32,7 @@ Classes
 
 
 
-.. class:: Parameters(*args, **kwargs)
-
+.. py:class:: Parameters(*args, **kwargs)
 
    Bases: :py:obj:`pymor.tools.frozendict.SortedFrozenDict`
 
@@ -43,10 +42,15 @@ Classes
    name of a parameter. The corresponding value is a non-negative `int`
    specifying the dimension (number of scalar components) of the parameter.
 
-   .. method:: _post_init(self)
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   .. py:method:: _post_init(self)
 
 
-   .. method:: of(cls, *args)
+   .. py:method:: of(cls, *args)
       :classmethod:
 
       Computes the total set of |Parameters| a collection of objects depends on.
@@ -62,14 +66,13 @@ Classes
               traversed recursively.
               
 
-
-   .. method:: dim(self)
+   .. py:method:: dim(self)
       :property:
 
       The sum of the dimensions of all parameters.
 
 
-   .. method:: parse(self, mu)
+   .. py:method:: parse(self, mu)
 
       Takes a user input `mu` and interprets it as set of |parameter values|
       according to the given |Parameters|.
@@ -81,7 +84,12 @@ Classes
           Parameters(b=2, a=1).parse([1,2,3])
 
       will assign to parameter `a` the value `[1]` and to parameter `b` the
-      values `[2, 3]`.
+      values `[2, 3]`. Further, each parameter value can be given as a
+      vector-valued |Function| with `dim_domain == 1` to specify time-dependent
+      values. A `str` is converted to an appropriate |ExpressionFunction|.
+      Note that |ExpressionFunctions| are functions of the variable `x`, so you
+      have to write `x` instead of `t` for the time parameter in the string
+      expression.
 
       .. admonition:: Parameters
 
@@ -99,8 +107,7 @@ Classes
               given |Parameters|.
               
 
-
-   .. method:: space(self, *ranges)
+   .. py:method:: space(self, *ranges)
 
       Create a |ParameterSpace| with given ranges.
 
@@ -111,7 +118,7 @@ Classes
       See |ParameterSpace| for allowed range arguments.
 
 
-   .. method:: assert_compatible(self, mu)
+   .. py:method:: assert_compatible(self, mu)
 
       Assert that |parameter values| are compatible with the given |Parameters|.
 
@@ -123,7 +130,7 @@ Classes
       Otherwise, an `AssertionError` will be raised.
 
 
-   .. method:: is_compatible(self, mu)
+   .. py:method:: is_compatible(self, mu)
 
       Check if |parameter values| are compatible with the given |Parameters|.
 
@@ -133,63 +140,88 @@ Classes
           mu[parameter].size == self[parameter]
 
 
-   .. method:: why_incompatible(self, mu)
+   .. py:method:: why_incompatible(self, mu)
 
 
-   .. method:: __or__(self, other)
+   .. py:method:: __or__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __le__(self, mu)
+   .. py:method:: __le__(self, params)
 
-      Check if |parameter values| are compatible with the given |Parameters|.
-
-      Each of the parameter must be contained in  `mu` and the dimensions have to match,
-      i.e. ::
-
-          mu[parameter].size == self[parameter]
+      Return self<=value.
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
-   .. method:: __hash__(self)
+   .. py:method:: __hash__(self)
 
       Return hash(self).
 
 
 
-.. class:: Mu(*args, **kwargs)
+.. py:class:: Mu(*args, **kwargs)
 
-
-   Bases: :py:obj:`pymor.tools.frozendict.SortedFrozenDict`
+   Bases: :py:obj:`pymor.tools.frozendict.FrozenDict`
 
    Immutable mapping of |Parameter| names to parameter values.
 
    .. admonition:: Parameters
 
        Anything that dict accepts for the construction of a dictionary.
-       Values are automatically converted to immutable one-dimensional |NumPy arrays|,
-       unless the Python interpreter runs with the `-O` flag.
+       Values are automatically converted to one-dimensional |NumPy arrays|,
+       except for |Functions| which are interpreted as time-dependent parameter
+       values. Unless the Python interpreter runs with the `-O` flag,
+       the arrays are made immutable.
            
    .. attribute:: parameters
 
       The |Parameters| to which the mapping assigns values.
       
 
-   .. method:: with_(self, **kwargs)
+   .. py:attribute:: __slots__
+      :annotation: = _raw_values
+
+      
+
+   .. py:method:: is_time_dependent(self, param)
+
+      Check whether the values for a given parameter depend on time.
+
+      This is the case when the value for `self[param]` was given by a |Function|
+      instead of a constant array.
 
 
-   .. method:: allclose(self, mu)
+   .. py:method:: get_time_dependent_value(self, param)
+
+      Return time-dependent |Function| for given parameter.
+
+      .. admonition:: Parameters
+
+          param
+              The parameter for which to return the time-dependent values.
+              
+      .. admonition:: Returns
+
+          If `param` depends on time, this corresponding |Function| (and not its
+          evaluation at the current time) is returned. If `param` is not given
+          by a |Function|, a |ConstantFunction| is returned.
+              
+
+   .. py:method:: with_(self, **kwargs)
+
+
+   .. py:method:: allclose(self, mu)
 
       Compare two dicts of |parameter values| using
       :meth:`~pymor.tools.floatcmp.float_cmp_all`.
@@ -205,35 +237,33 @@ Classes
           components of the parameter values are almost equal, else `False`.
               
 
-
-   .. method:: to_numpy(self)
+   .. py:method:: to_numpy(self)
 
       All parameter values as a NumPy array, ordered alphabetically.
 
 
-   .. method:: copy(self)
+   .. py:method:: copy(self)
 
       D.copy() -> a shallow copy of D
 
 
-   .. method:: __eq__(self, mu)
+   .. py:method:: __eq__(self, mu)
 
       Return self==value.
 
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: __repr__(self)
+   .. py:method:: __repr__(self)
 
       Return repr(self).
 
 
 
-.. class:: ParametricObject
-
+.. py:class:: ParametricObject
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -279,27 +309,26 @@ Classes
       is not empty.
       
 
-   .. attribute:: _parameters
+   .. py:attribute:: _parameters
       
 
       
 
-   .. attribute:: _parameters_own
+   .. py:attribute:: _parameters_own
       
 
       
 
-   .. attribute:: _parameters_internal
+   .. py:attribute:: _parameters_internal
       
 
       
 
-   .. method:: __check_parameter_consistency(self)
+   .. py:method:: __check_parameter_consistency(self)
 
 
 
-.. class:: ParameterSpace(parameters, *ranges)
-
+.. py:class:: ParameterSpace(parameters, *ranges)
 
    Bases: :py:obj:`ParametricObject`
 
@@ -322,8 +351,7 @@ Classes
            - or a dict of those tuples, specifying upper and lower
              bounds individually for each parameter of the space.
            
-
-   .. method:: sample_uniformly(self, counts)
+   .. py:method:: sample_uniformly(self, counts)
 
       Uniformly sample |parameter values| from the space.
 
@@ -339,8 +367,7 @@ Classes
           List of |parameter value| dicts.
               
 
-
-   .. method:: sample_randomly(self, count=None, random_state=None, seed=None)
+   .. py:method:: sample_randomly(self, count=None, random_state=None, seed=None)
 
       Randomly sample |parameter values| from the space.
 
@@ -363,8 +390,7 @@ Classes
           The sampled |parameter values|.
               
 
-
-   .. method:: contains(self, mu)
+   .. py:method:: contains(self, mu)
 
 
 

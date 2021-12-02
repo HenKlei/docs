@@ -32,8 +32,7 @@ Functions
 
 
 
-.. class:: MPIOperator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
-
+.. py:class:: MPIOperator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
 
    Bases: :py:obj:`pymor.operators.interface.Operator`
 
@@ -74,7 +73,7 @@ Functions
            If `pickle_local_spaces` is `False`, a unique identifier
            is computed for each local source/range |VectorSpace|, which is then
            transferred to rank 0 instead of the true |VectorSpace|. This
-           allows the useage of :class:`~pymor.vectorarrays.mpi.MPIVectorArray`
+           allows the usage of :class:`~pymor.vectorarrays.mpi.MPIVectorArray`
            even when the local |VectorSpaces| are not picklable.
        space_type
            This class will be used to wrap the local |VectorArrays|
@@ -84,8 +83,7 @@ Functions
            other options are :class:`~pymor.vectorarrays.mpi.MPIVectorSpaceAutoComm`
            and :class:`~pymor.vectorarrays.mpi.MPIVectorSpaceNoComm`.
            
-
-   .. method:: apply(self, U, mu=None)
+   .. py:method:: apply(self, U, mu=None)
 
       Apply the operator to a |VectorArray|.
 
@@ -101,8 +99,7 @@ Functions
           |VectorArray| of the operator evaluations.
               
 
-
-   .. method:: as_range_array(self, mu=None)
+   .. py:method:: as_range_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its range space.
 
@@ -127,8 +124,7 @@ Functions
               The |VectorArray| defined above.
               
 
-
-   .. method:: as_source_array(self, mu=None)
+   .. py:method:: as_source_array(self, mu=None)
 
       Return a |VectorArray| representation of the operator in its source space.
 
@@ -153,8 +149,7 @@ Functions
               The |VectorArray| defined above.
               
 
-
-   .. method:: apply2(self, V, U, mu=None)
+   .. py:method:: apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U.
 
@@ -172,7 +167,7 @@ Functions
           V
               |VectorArray| of the left arguments V.
           U
-              |VectorArray| of the right right arguments U.
+              |VectorArray| of the right arguments U.
           mu
               The |parameter values| for which to evaluate the operator.
               
@@ -182,8 +177,7 @@ Functions
           evaluations.
               
 
-
-   .. method:: pairwise_apply2(self, V, U, mu=None)
+   .. py:method:: pairwise_apply2(self, V, U, mu=None)
 
       Treat the operator as a 2-form and apply it to V and U in pairs.
 
@@ -193,7 +187,7 @@ Functions
 
           op.apply2(V, U)[i] = V[i]^T*M*U[i].
 
-      In the case of complex numbers, note that `pairwirse_apply2` is anti-linear in the
+      In the case of complex numbers, note that `pairwise_apply2` is anti-linear in the
       first variable by definition of `pairwise_inner`.
 
 
@@ -202,7 +196,7 @@ Functions
           V
               |VectorArray| of the left arguments V.
           U
-              |VectorArray| of the right right arguments U.
+              |VectorArray| of the right arguments U.
           mu
               The |parameter values| for which to evaluate the operator.
               
@@ -212,8 +206,7 @@ Functions
           the 2-form evaluations.
               
 
-
-   .. method:: apply_adjoint(self, V, mu=None)
+   .. py:method:: apply_adjoint(self, V, mu=None)
 
       Apply the adjoint operator.
 
@@ -238,8 +231,7 @@ Functions
           |VectorArray| of the adjoint operator evaluations.
               
 
-
-   .. method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse operator.
 
@@ -276,8 +268,7 @@ Functions
               The operator could not be inverted.
               
 
-
-   .. method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
 
       Apply the inverse adjoint operator.
 
@@ -314,8 +305,7 @@ Functions
               The operator could not be inverted.
               
 
-
-   .. method:: jacobian(self, U, mu=None)
+   .. py:method:: jacobian(self, U, mu=None)
 
       Return the operator's Jacobian as a new |Operator|.
 
@@ -332,8 +322,7 @@ Functions
           Linear |Operator| representing the Jacobian.
               
 
-
-   .. method:: assemble(self, mu=None)
+   .. py:method:: assemble(self, mu=None)
 
       Assemble the operator for given |parameter values|.
 
@@ -355,8 +344,7 @@ Functions
           Parameter-independent, assembled |Operator|.
               
 
-
-   .. method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
 
       Try to assemble a linear combination of the given operators.
 
@@ -390,8 +378,7 @@ Functions
           The assembled |Operator| if assembly is possible, otherwise `None`.
               
 
-
-   .. method:: restricted(self, dofs)
+   .. py:method:: restricted(self, dofs)
 
       Restrict the operator range to a given set of degrees of freedom.
 
@@ -427,24 +414,23 @@ Functions
               defined above.
               
 
-
-   .. method:: __del__(self)
-
+   .. py:method:: __del__(self)
 
 
-.. function:: _MPIOperator_get_local_spaces(self, source, pickle_local_spaces)
+
+.. py:function:: _MPIOperator_get_local_spaces(self, source, pickle_local_spaces)
 
 
-.. function:: _MPIOperator_assemble_lincomb(operators, coefficients, identity_shift, name)
+.. py:function:: _MPIOperator_assemble_lincomb(operators, coefficients, identity_shift, name)
 
 
-.. function:: _MPIOperator_restriced(self, dofs)
+.. py:function:: _MPIOperator_restriced(self, dofs)
 
 
-.. function:: _MPIOperator_assemble(self, mu)
+.. py:function:: _MPIOperator_assemble(self, mu)
 
 
-.. function:: mpi_wrap_operator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
+.. py:function:: mpi_wrap_operator(obj_id, mpi_range, mpi_source, with_apply2=False, pickle_local_spaces=True, space_type=MPIVectorSpace)
 
    Wrap MPI distributed local |Operators| to a global |Operator| on rank 0.
 
@@ -464,10 +450,9 @@ Functions
        The wrapped |Operator|.
            
 
+.. py:function:: _mpi_wrap_operator_LincombOperator_manage_operators(obj_id)
 
-.. function:: _mpi_wrap_operator_LincombOperator_manage_operators(obj_id)
 
-
-.. function:: _mpi_wrap_operator_VectorArrayOperator_manage_array(obj_id, pickle_local_spaces)
+.. py:function:: _mpi_wrap_operator_VectorArrayOperator_manage_array(obj_id, pickle_local_spaces)
 
 

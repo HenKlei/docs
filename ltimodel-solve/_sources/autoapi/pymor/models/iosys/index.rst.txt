@@ -35,36 +35,35 @@ Functions
 
 
 
-.. function:: sparse_min_size(value=1000)
+.. py:function:: sparse_min_size(value=1000)
 
    Return minimal sparse problem size for which to warn about converting to dense.
 
 
-.. class:: InputOutputModel(dim_input, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: InputOutputModel(dim_input, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
    Base class for input-output systems.
 
-   .. attribute:: cache_region
+   .. py:attribute:: cache_region
       :annotation: = memory
 
       
 
-   .. method:: eval_tf(self, s, mu=None)
+   .. py:method:: eval_tf(self, s, mu=None)
       :abstractmethod:
 
       Evaluate the transfer function.
 
 
-   .. method:: eval_dtf(self, s, mu=None)
+   .. py:method:: eval_dtf(self, s, mu=None)
       :abstractmethod:
 
       Evaluate the derivative of the transfer function.
 
 
-   .. method:: freq_resp(self, w, mu=None)
+   .. py:method:: freq_resp(self, w, mu=None)
 
       Evaluate the transfer function on the imaginary axis.
 
@@ -82,8 +81,7 @@ Functions
               `(len(w), self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: bode(self, w, mu=None)
+   .. py:method:: bode(self, w, mu=None)
 
       Compute magnitudes and phases.
 
@@ -104,8 +102,7 @@ Functions
               `(len(w), self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
 
       Draw the Bode plot for all input-output pairs.
 
@@ -133,8 +130,7 @@ Functions
               List of matplotlib artists added.
               
 
-
-   .. method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
 
       Draw the magnitude plot.
 
@@ -162,8 +158,7 @@ Functions
               List of matplotlib artists added.
               
 
-
-   .. method:: h2_norm(self, return_norm_only=True, **quad_kwargs)
+   .. py:method:: h2_norm(self, return_norm_only=True, **quad_kwargs)
 
       Compute the H2-norm using quadrature.
 
@@ -192,8 +187,7 @@ Functions
               See `scipy.integrate.quad` documentation for more details.
               
 
-
-   .. method:: h2_inner(self, lti)
+   .. py:method:: h2_inner(self, lti)
 
       Compute H2 inner product with an |LTIModel|.
 
@@ -213,21 +207,18 @@ Functions
               
 
 
-
-.. class:: InputStateOutputModel(dim_input, solution_space, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: InputStateOutputModel(dim_input, solution_space, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`InputOutputModel`
 
    Base class for input-output systems with state space.
 
-   .. method:: order(self)
+   .. py:method:: order(self)
       :property:
 
 
 
-.. class:: LTIModel(A, B, C, D=None, E=None, cont_time=True, T=None, initial_data=None, time_stepper=None, num_values=None, solver_options=None, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: LTIModel(A, B, C, D=None, E=None, cont_time=True, T=None, initial_data=None, time_stepper=None, num_values=None, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`InputStateOutputModel`
 
@@ -325,17 +316,12 @@ Functions
       The |Operator| E.
       
 
-   .. attribute:: _compute_allowed_kwargs
-      
-
-      
-
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: from_matrices(cls, A, B, C, D=None, E=None, cont_time=True, T=None, initial_data=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_matrices(cls, A, B, C, D=None, E=None, cont_time=True, T=None, initial_data=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices.
@@ -387,8 +373,7 @@ Functions
               The |LTIModel| with operators A, B, C, D, and E.
               
 
-
-   .. method:: to_matrices(self)
+   .. py:method:: to_matrices(self)
 
       Return operators as matrices.
 
@@ -406,8 +391,7 @@ Functions
               The |NumPy array| or |SciPy spmatrix| E or `None` (if E is an `IdentityOperator`).
               
 
-
-   .. method:: from_files(cls, A_file, B_file, C_file, D_file=None, E_file=None, cont_time=True, T=None, initial_data_file=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_files(cls, A_file, B_file, C_file, D_file=None, E_file=None, cont_time=True, T=None, initial_data_file=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in separate files.
@@ -459,8 +443,7 @@ Functions
               The |LTIModel| with operators A, B, C, D, and E.
               
 
-
-   .. method:: to_files(self, A_file, B_file, C_file, D_file=None, E_file=None)
+   .. py:method:: to_files(self, A_file, B_file, C_file, D_file=None, E_file=None)
 
       Write operators to files as matrices.
 
@@ -479,8 +462,7 @@ Functions
               `IdentityOperator`.
               
 
-
-   .. method:: from_mat_file(cls, file_name, cont_time=True, T=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_mat_file(cls, file_name, cont_time=True, T=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in a .mat file.
@@ -522,8 +504,7 @@ Functions
               The |LTIModel| with operators A, B, C, D, and E.
               
 
-
-   .. method:: to_mat_file(self, file_name)
+   .. py:method:: to_mat_file(self, file_name)
 
       Save operators as matrices to .mat file.
 
@@ -533,8 +514,7 @@ Functions
               The name of the .mat file (extension .mat does not need to be included).
               
 
-
-   .. method:: from_abcde_files(cls, files_basename, cont_time=True, T=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_abcde_files(cls, files_basename, cont_time=True, T=None, time_stepper=None, num_values=None, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in .[ABCDE] files.
@@ -575,8 +555,7 @@ Functions
               The |LTIModel| with operators A, B, C, D, and E.
               
 
-
-   .. method:: to_abcde_files(self, files_basename)
+   .. py:method:: to_abcde_files(self, files_basename)
 
       Save operators as matrices to .[ABCDE] files in Matrix Market format.
 
@@ -586,31 +565,30 @@ Functions
               The basename of files containing the operators.
               
 
+   .. py:method:: _compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, mu=None, **kwargs)
 
-   .. method:: _compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, mu=None, input=None, **kwargs)
 
-
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
       Add an |LTIModel|.
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
       Subtract an |LTIModel|.
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
       Negate the |LTIModel|.
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
       Postmultiply by an |LTIModel|.
 
 
-   .. method:: poles(self, mu=None)
+   .. py:method:: poles(self, mu=None)
 
       Compute system poles.
 
@@ -627,8 +605,7 @@ Functions
           One-dimensional |NumPy array| of system poles.
               
 
-
-   .. method:: eval_tf(self, s, mu=None)
+   .. py:method:: eval_tf(self, s, mu=None)
 
       Evaluate the transfer function.
 
@@ -655,8 +632,7 @@ Functions
               `(self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: eval_dtf(self, s, mu=None)
+   .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
@@ -684,8 +660,7 @@ Functions
               shape `(self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: gramian(self, typ, mu=None)
+   .. py:method:: gramian(self, typ, mu=None)
 
       Compute a Gramian.
 
@@ -714,8 +689,7 @@ Functions
           If typ is `'c_dense'` or `'o_dense'`, then the Gramian as a |NumPy array|.
               
 
-
-   .. method:: _hsv_U_V(self, mu=None)
+   .. py:method:: _hsv_U_V(self, mu=None)
 
       Compute Hankel singular values and vectors.
 
@@ -737,8 +711,7 @@ Functions
               |NumPy array| of right singular vectors.
               
 
-
-   .. method:: hsv(self, mu=None)
+   .. py:method:: hsv(self, mu=None)
 
       Hankel singular values.
 
@@ -756,8 +729,7 @@ Functions
               One-dimensional |NumPy array| of singular values.
               
 
-
-   .. method:: h2_norm(self, mu=None)
+   .. py:method:: h2_norm(self, mu=None)
 
       Compute the H2-norm of the |LTIModel|.
 
@@ -775,13 +747,14 @@ Functions
               H_2-norm.
               
 
-
-   .. method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
+   .. py:method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
 
       Compute the H_infinity-norm of the |LTIModel|.
 
       .. note::
-          Assumes the system is asymptotically stable.
+          Assumes the system is asymptotically stable. Under this is assumption
+          the H_infinity-norm is equal to the L_infinity-norm. Accordingly, this
+          method calls :meth:`~pymor.models.iosys.LTIModel.linf_norm`.
 
       .. admonition:: Parameters
 
@@ -800,8 +773,7 @@ Functions
               Frequency at which the maximum is achieved (if `return_fpeak` is `True`).
               
 
-
-   .. method:: hankel_norm(self, mu=None)
+   .. py:method:: hankel_norm(self, mu=None)
 
       Compute the Hankel-norm of the |LTIModel|.
 
@@ -819,10 +791,100 @@ Functions
               Hankel-norm.
               
 
+   .. py:method:: l2_norm(self, ast_pole_data=None, mu=None)
+
+      Compute the L2-norm of the |LTIModel|.
+
+      The L2-norm of an |LTIModel| is defined via the integral
+
+      .. math::
+          \lVert H \rVert_{\mathcal{L}_2}
+          =
+          \left(
+            \frac{1}{2 \pi}
+            \int_{-\infty}^{\infty}
+            \lVert H(\boldsymbol{\imath} \omega) \rVert_{\operatorname{F}}^2
+            \operatorname{d}\!\omega
+          \right)^{\frac{1}{2}}.
+
+      .. admonition:: Parameters
+
+          ast_pole_data
+              Can be:
+              
+              - dictionary of parameters for :func:`~pymor.algorithms.eigs.eigs`,
+              - list of anti-stable eigenvalues (scalars),
+              - tuple `(lev, ew, rev)` where `ew` contains the anti-stable eigenvalues
+                and `lev` and `rev` are |VectorArrays| representing the eigenvectors.
+              - `None` if anti-stable eigenvalues should be computed via dense methods.
+          mu
+              |Parameter|.
+              
+      .. admonition:: Returns
+
+          norm
+              L_2-norm.
+              
+
+   .. py:method:: linf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
+
+      Compute the L_infinity-norm of the |LTIModel|.
+
+      The L-infinity norm of an |LTIModel| is defined via
+
+      .. math::
+
+          \lVert H \rVert_{\mathcal{L}_\infty}
+          = \sup_{\omega \in \mathbb{R}}
+          \lVert H(\boldsymbol{\imath} \omega) \rVert_2.
+
+      .. admonition:: Parameters
+
+          mu
+              |Parameter|.
+          return_fpeak
+              Whether to return the frequency at which the maximum is achieved.
+          ab13dd_equilibrate
+              Whether `slycot.ab13dd` should use equilibration.
+              
+      .. admonition:: Returns
+
+          norm
+              L_infinity-norm.
+          fpeak
+              Frequency at which the maximum is achieved (if `return_fpeak` is `True`).
+              
+
+   .. py:method:: get_ast_spectrum(self, ast_pole_data=None, mu=None)
+
+      Compute anti-stable subset of the poles of the |LTIModel|.
+
+      .. admonition:: Parameters
+
+          ast_pole_data
+              Can be:
+              
+              - dictionary of parameters for :func:`~pymor.algorithms.eigs.eigs`,
+              - list of anti-stable eigenvalues (scalars),
+              - tuple `(lev, ew, rev)` where `ew` contains the sorted anti-stable eigenvalues
+                and `lev` and `rev` are |VectorArrays| representing the eigenvectors.
+              - `None` if anti-stable eigenvalues should be computed via dense methods.
+          mu
+              |Parameter|.
+              
+      .. admonition:: Returns
+
+          lev
+              |VectorArray| of left eigenvectors.
+          ew
+              One-dimensional |NumPy array| of anti-stable eigenvalues sorted from smallest to
+              largest.
+          rev
+              |VectorArray| of right eigenvectors.
+              
 
 
-.. class:: TransferFunction(dim_input, dim_output, tf, dtf, parameters={}, cont_time=True, name=None)
-
+.. py:class:: TransferFunction(dim_input, dim_output, tf, dtf, parameters={}, cont_time=True, name=None)
 
    Bases: :py:obj:`InputOutputModel`
 
@@ -864,47 +926,46 @@ Functions
       The complex derivative of the transfer function.
       
 
-   .. attribute:: __radd__
+   .. py:attribute:: __radd__
       
 
       
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: eval_tf(self, s, mu=None)
+   .. py:method:: eval_tf(self, s, mu=None)
 
       Evaluate the transfer function.
 
 
-   .. method:: eval_dtf(self, s, mu=None)
+   .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __rsub__(self, other)
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
 
-   .. method:: __rmul__(self, other)
+   .. py:method:: __rmul__(self, other)
 
 
 
-.. class:: SecondOrderModel(M, E, K, B, Cp, Cv=None, D=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: SecondOrderModel(M, E, K, B, Cp, Cv=None, D=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`InputStateOutputModel`
 
@@ -1014,12 +1075,12 @@ Functions
       The |Operator| D.
       
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: from_matrices(cls, M, E, K, B, Cp, Cv=None, D=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_matrices(cls, M, E, K, B, Cp, Cv=None, D=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create a second order system from matrices.
@@ -1062,8 +1123,7 @@ Functions
               The SecondOrderModel with operators M, E, K, B, Cp, Cv, and D.
               
 
-
-   .. method:: to_matrices(self)
+   .. py:method:: to_matrices(self)
 
       Return operators as matrices.
 
@@ -1085,8 +1145,7 @@ Functions
               The |NumPy array| or |SciPy spmatrix| D or `None` (if D is a `ZeroOperator`).
               
 
-
-   .. method:: from_files(cls, M_file, E_file, K_file, B_file, Cp_file, Cv_file=None, D_file=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_files(cls, M_file, E_file, K_file, B_file, Cp_file, Cv_file=None, D_file=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in separate files.
@@ -1127,12 +1186,11 @@ Functions
               
       .. admonition:: Returns
 
-          som
+          some
               The |SecondOrderModel| with operators M, E, K, B, Cp, Cv, and D.
               
 
-
-   .. method:: to_files(self, M_file, E_file, K_file, B_file, Cp_file, Cv_file=None, D_file=None)
+   .. py:method:: to_files(self, M_file, E_file, K_file, B_file, Cp_file, Cv_file=None, D_file=None)
 
       Write operators to files as matrices.
 
@@ -1154,8 +1212,7 @@ Functions
               The name of the file (with extension) containing D or `None` if D is a `ZeroOperator`.
               
 
-
-   .. method:: to_lti(self)
+   .. py:method:: to_lti(self)
 
       Return a first order representation.
 
@@ -1205,43 +1262,42 @@ Functions
               |LTIModel| equivalent to the second-order model.
               
 
-
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
       Add a |SecondOrderModel| or an |LTIModel|.
 
 
-   .. method:: __radd__(self, other)
+   .. py:method:: __radd__(self, other)
 
       Add to an |LTIModel|.
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
       Subtract a |SecondOrderModel| or an |LTIModel|.
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __rsub__(self, other)
 
       Subtract from an |LTIModel|.
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
       Negate the |SecondOrderModel|.
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
       Postmultiply by a |SecondOrderModel| or an |LTIModel|.
 
 
-   .. method:: __rmul__(self, other)
+   .. py:method:: __rmul__(self, other)
 
       Premultiply by an |LTIModel|.
 
 
-   .. method:: poles(self, mu=None)
+   .. py:method:: poles(self, mu=None)
 
       Compute system poles.
 
@@ -1258,8 +1314,7 @@ Functions
           One-dimensional |NumPy array| of system poles.
               
 
-
-   .. method:: eval_tf(self, s, mu=None)
+   .. py:method:: eval_tf(self, s, mu=None)
 
       Evaluate the transfer function.
 
@@ -1288,8 +1343,7 @@ Functions
               `(self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: eval_dtf(self, s, mu=None)
+   .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
@@ -1319,8 +1373,7 @@ Functions
               shape `(self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: gramian(self, typ, mu=None)
+   .. py:method:: gramian(self, typ, mu=None)
 
       Compute a second-order Gramian.
 
@@ -1353,8 +1406,7 @@ Functions
           |NumPy array|.
               
 
-
-   .. method:: psv(self, mu=None)
+   .. py:method:: psv(self, mu=None)
 
       Position singular values.
 
@@ -1371,8 +1423,7 @@ Functions
           One-dimensional |NumPy array| of singular values.
               
 
-
-   .. method:: vsv(self, mu=None)
+   .. py:method:: vsv(self, mu=None)
 
       Velocity singular values.
 
@@ -1389,8 +1440,7 @@ Functions
           One-dimensional |NumPy array| of singular values.
               
 
-
-   .. method:: pvsv(self, mu=None)
+   .. py:method:: pvsv(self, mu=None)
 
       Position-velocity singular values.
 
@@ -1407,8 +1457,7 @@ Functions
           One-dimensional |NumPy array| of singular values.
               
 
-
-   .. method:: vpsv(self, mu=None)
+   .. py:method:: vpsv(self, mu=None)
 
       Velocity-position singular values.
 
@@ -1425,8 +1474,7 @@ Functions
           One-dimensional |NumPy array| of singular values.
               
 
-
-   .. method:: h2_norm(self, mu=None)
+   .. py:method:: h2_norm(self, mu=None)
 
       Compute the H2-norm.
 
@@ -1444,8 +1492,7 @@ Functions
               H_2-norm.
               
 
-
-   .. method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
+   .. py:method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
 
       Compute the H_infinity-norm.
 
@@ -1469,8 +1516,7 @@ Functions
               Frequency at which the maximum is achieved (if `return_fpeak` is `True`).
               
 
-
-   .. method:: hankel_norm(self, mu=None)
+   .. py:method:: hankel_norm(self, mu=None)
 
       Compute the Hankel-norm.
 
@@ -1489,9 +1535,7 @@ Functions
               
 
 
-
-.. class:: LinearDelayModel(A, Ad, tau, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: LinearDelayModel(A, Ad, tau, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`InputStateOutputModel`
 
@@ -1601,47 +1645,47 @@ Functions
       The |Operator| E.
       
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
-   .. method:: __add__(self, other)
+   .. py:method:: __add__(self, other)
 
       Add an |LTIModel|, |SecondOrderModel| or |LinearDelayModel|.
 
 
-   .. method:: __radd__(self, other)
+   .. py:method:: __radd__(self, other)
 
       Add to an |LTIModel| or a |SecondOrderModel|.
 
 
-   .. method:: __sub__(self, other)
+   .. py:method:: __sub__(self, other)
 
       Subtract an |LTIModel|, |SecondOrderModel| or |LinearDelayModel|.
 
 
-   .. method:: __rsub__(self, other)
+   .. py:method:: __rsub__(self, other)
 
       Subtract from an |LTIModel| or a |SecondOrderModel|.
 
 
-   .. method:: __neg__(self)
+   .. py:method:: __neg__(self)
 
       Negate the |LinearDelayModel|.
 
 
-   .. method:: __mul__(self, other)
+   .. py:method:: __mul__(self, other)
 
       Postmultiply an |LTIModel|, |SecondOrderModel| or |LinearDelayModel|.
 
 
-   .. method:: __rmul__(self, other)
+   .. py:method:: __rmul__(self, other)
 
       Premultiply by an |LTIModel| or a |SecondOrderModel|.
 
 
-   .. method:: eval_tf(self, s, mu=None)
+   .. py:method:: eval_tf(self, s, mu=None)
 
       Evaluate the transfer function.
 
@@ -1670,8 +1714,7 @@ Functions
               `(self.dim_output, self.dim_input)`.
               
 
-
-   .. method:: eval_dtf(self, s, mu=None)
+   .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
@@ -1704,9 +1747,7 @@ Functions
               
 
 
-
-.. class:: LinearStochasticModel(A, As, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: LinearStochasticModel(A, As, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`InputStateOutputModel`
 
@@ -1810,14 +1851,13 @@ Functions
       The |Operator| E.
       
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
 
-.. class:: BilinearModel(A, N, B, C, D, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: BilinearModel(A, N, B, C, D, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`InputStateOutputModel`
 
@@ -1917,13 +1957,13 @@ Functions
       The |Operator| E.
       
 
-   .. method:: __str__(self)
+   .. py:method:: __str__(self)
 
       Return str(self).
 
 
 
-.. function:: _lti_to_poles_b_c(lti)
+.. py:function:: _lti_to_poles_b_c(lti)
 
    Compute poles and residues.
 
@@ -1943,8 +1983,7 @@ Functions
            |NumPy array| of shape `(lti.order, lti.dim_output)`.
            
 
-
-.. function:: _poles_b_c_to_lti(poles, b, c)
+.. py:function:: _poles_b_c_to_lti(poles, b, c)
 
    Create an |LTIModel| from poles and residue rank-1 factors.
 
@@ -1970,5 +2009,4 @@ Functions
 
        |LTIModel|.
            
-
 

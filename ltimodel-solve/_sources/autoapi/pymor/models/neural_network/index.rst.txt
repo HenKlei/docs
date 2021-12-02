@@ -3,6 +3,16 @@
 
 .. py:module:: pymor.models.neural_network
 
+.. autoapi-nested-parse::
+
+   Remark on the documentation:
+
+   Due to an issue in autoapi, the classes `NeuralNetworkStatefreeOutputModel`,
+   `NeuralNetworkInstationaryModel`, `NeuralNetworkInstationaryStatefreeOutputModel`
+   and `FullyConnectedNN` do not appear in the documentation,
+   see https://github.com/pymor/pymor/issues/1343.
+
+
 
 Module Contents
 ---------------
@@ -17,8 +27,7 @@ Classes
 
 
 
-.. class:: NeuralNetworkModel(neural_network, parameters={}, output_functional=None, products=None, error_estimator=None, visualizer=None, name=None)
-
+.. py:class:: NeuralNetworkModel(neural_network, parameters={}, output_functional=None, products=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -60,8 +69,7 @@ Classes
        name
            Name of the model.
            
-
-   .. method:: _compute_solution(self, mu=None, **kwargs)
+   .. py:method:: _compute_solution(self, mu=None, **kwargs)
 
       Compute the model's solution for |parameter values| `mu`.
 
@@ -81,6 +89,5 @@ Classes
           |VectorArray| with the computed solution or a dict which at least
           must contain the key `'solution'`.
               
-
 
 

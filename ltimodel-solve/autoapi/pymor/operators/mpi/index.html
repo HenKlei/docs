@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -46,23 +47,18 @@
   
   
   
-    <title>pymor.operators.mpi &#8212; pyMOR v2021.1rc0+417.gd7affbd4 Manual</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <title>pymor.operators.mpi &#8212; pyMOR v2021.1rc0+878.gb77b5cba Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="../../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
@@ -76,6 +72,22 @@
    
 
 <link rel="stylesheet" href="../../../../_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
   </head>
   <body dir=ltr
         data-md-color-primary=indigo data-md-color-accent=blue>
@@ -96,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+417.gd7affbd4 Manual logo">
+                   alt="pyMOR v2021.1rc0+878.gb77b5cba Manual logo">
           
         </a>
       </div>
@@ -119,7 +131,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../../search.html" method="GET" name="search">
+    <form class="md-search__form" action="../../../../search.html" method="get" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -166,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+417.gd7affbd4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+878.gb77b5cba Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code></a></li>
@@ -181,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+417.gd7affbd4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+878.gb77b5cba Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+417.gd7affbd4 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+878.gb77b5cba Manual">Documentation</a>
   </label>
   
 
@@ -455,11 +467,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="module-pymor.operators.mpi">
 <span id="pymor-operators-mpi"></span><h1 id="autoapi-pymor-operators-mpi-index--page-root"><a class="reference internal" href="#autoapi-pymor-operators-mpi-index--page-root" title="pymor.operators.mpi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators.mpi</span></code></a><a class="headerlink" href="#autoapi-pymor-operators-mpi-index--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="module-contents">
 <h2 id="module-contents">Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-
+<section id="classes">
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -472,8 +484,8 @@
 </tr>
 </tbody>
 </table>
-
-
+</section>
+<section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -505,8 +517,8 @@
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pymor.operators.mpi.MPIOperator">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">MPIOperator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_apply2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MPIVectorSpace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">MPIOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_apply2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MPIVectorSpace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
 <p>MPI distributed <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
 <p>Given a single-rank implementation of an <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>, this
@@ -540,7 +552,7 @@ will be used.</p>
 <dt>pickle_local_spaces</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">pickle_local_spaces</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, a unique identifier
 is computed for each local source/range <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>, which is then
 transferred to rank 0 instead of the true <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>. This
-allows the useage of <a class="reference internal" href="../../vectorarrays/mpi/index.html#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArray</span></code></a>
+allows the usage of <a class="reference internal" href="../../vectorarrays/mpi/index.html#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPIVectorArray</span></code></a>
 even when the local <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpaces</span></code></a> are not picklable.</p>
 </dd>
 <dt>space_type</dt><dd><p>This class will be used to wrap the local <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>
@@ -553,8 +565,8 @@ and <a class="reference internal" href="../../vectorarrays/mpi/index.html#pymor.
 </dl>
 </div>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.apply">
-<code class="sig-name descname"><span class="pre">apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the operator to a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -571,8 +583,8 @@ and <a class="reference internal" href="../../vectorarrays/mpi/index.html#pymor.
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.as_range_array">
-<code class="sig-name descname"><span class="pre">as_range_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.as_range_array" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.as_range_array">
+<span class="sig-name descname"><span class="pre">as_range_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.as_range_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> representation of the operator in its range space.</p>
 <p>In the case of a linear operator with <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> as
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>, this method returns for given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>
@@ -599,8 +611,8 @@ representation.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.as_source_array">
-<code class="sig-name descname"><span class="pre">as_source_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.as_source_array" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.as_source_array">
+<span class="sig-name descname"><span class="pre">as_source_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.as_source_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> representation of the operator in its source space.</p>
 <p>In the case of a linear operator with <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> as
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>, this method returns for given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>
@@ -627,8 +639,8 @@ representation.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.apply2">
-<code class="sig-name descname"><span class="pre">apply2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.apply2">
+<span class="sig-name descname"><span class="pre">apply2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Treat the operator as a 2-form and apply it to V and U.</p>
 <p>This method is usually implemented as <code class="docutils literal notranslate"><span class="pre">V.inner(self.apply(U))</span></code>.
 In particular, if the operator is a linear operator given by multiplication
@@ -643,7 +655,7 @@ first variable by definition of <code class="docutils literal notranslate"><span
 <dl class="simple">
 <dt>V</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the left arguments V.</p>
 </dd>
-<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the right right arguments U.</p>
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the right arguments U.</p>
 </dd>
 <dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the operator.</p>
 </dd>
@@ -656,8 +668,8 @@ evaluations.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.pairwise_apply2">
-<code class="sig-name descname"><span class="pre">pairwise_apply2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.pairwise_apply2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.pairwise_apply2">
+<span class="sig-name descname"><span class="pre">pairwise_apply2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.pairwise_apply2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Treat the operator as a 2-form and apply it to V and U in pairs.</p>
 <p>This method is usually implemented as <code class="docutils literal notranslate"><span class="pre">V.pairwise_inner(self.apply(U))</span></code>.
 In particular, if the operator is a linear operator given by multiplication
@@ -665,14 +677,14 @@ with a matrix M, then <code class="docutils literal notranslate"><span class="pr
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">apply2</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">U</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="n">T</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>In the case of complex numbers, note that <code class="docutils literal notranslate"><span class="pre">pairwirse_apply2</span></code> is anti-linear in the
+<p>In the case of complex numbers, note that <code class="docutils literal notranslate"><span class="pre">pairwise_apply2</span></code> is anti-linear in the
 first variable by definition of <code class="docutils literal notranslate"><span class="pre">pairwise_inner</span></code>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>V</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the left arguments V.</p>
 </dd>
-<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the right right arguments U.</p>
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the right arguments U.</p>
 </dd>
 <dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the operator.</p>
 </dd>
@@ -685,8 +697,8 @@ the 2-form evaluations.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.apply_adjoint">
-<code class="sig-name descname"><span class="pre">apply_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.apply_adjoint">
+<span class="sig-name descname"><span class="pre">apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the adjoint operator.</p>
 <p>For any given linear <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> <code class="docutils literal notranslate"><span class="pre">op</span></code>, <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> <code class="docutils literal notranslate"><span class="pre">mu</span></code> and
 <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> <code class="docutils literal notranslate"><span class="pre">U</span></code>, <code class="docutils literal notranslate"><span class="pre">V</span></code> in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
@@ -711,8 +723,8 @@ given by left-multplication of (the complex conjugate of) <code class="docutils 
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.apply_inverse">
-<code class="sig-name descname"><span class="pre">apply_inverse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply_inverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.apply_inverse">
+<span class="sig-name descname"><span class="pre">apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply_inverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the inverse operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -752,8 +764,8 @@ undesirable.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.apply_inverse_adjoint">
-<code class="sig-name descname"><span class="pre">apply_inverse_adjoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.apply_inverse_adjoint">
+<span class="sig-name descname"><span class="pre">apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the inverse adjoint operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -793,8 +805,8 @@ may be undesirable.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.jacobian">
-<code class="sig-name descname"><span class="pre">jacobian</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.jacobian" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.jacobian">
+<span class="sig-name descname"><span class="pre">jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.jacobian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the operator’s Jacobian as a new <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -812,8 +824,8 @@ the Jacobian.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.assemble">
-<code class="sig-name descname"><span class="pre">assemble</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.assemble" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.assemble">
+<span class="sig-name descname"><span class="pre">assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.assemble" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assemble the operator for given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>.</p>
 <p>The result of the method strongly depends on the given operator.
 For instance, a matrix-based operator will assemble its matrix, a <a class="reference internal" href="../constructions/index.html#pymor.operators.constructions.LincombOperator" title="pymor.operators.constructions.LincombOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LincombOperator</span></code></a>
@@ -835,8 +847,8 @@ depends on a <a class="reference internal" href="../../parameters/base/index.htm
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator._assemble_lincomb">
-<code class="sig-name descname"><span class="pre">_assemble_lincomb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator._assemble_lincomb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator._assemble_lincomb">
+<span class="sig-name descname"><span class="pre">_assemble_lincomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator._assemble_lincomb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to assemble a linear combination of the given operators.</p>
 <p>Returns a new <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which represents the sum</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_1</span><span class="o">*</span><span class="n">O_1</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="n">c_N</span><span class="o">*</span><span class="n">O_N</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">I</span>
@@ -869,8 +881,8 @@ Otherwise, the method returns <code class="docutils literal notranslate"><span c
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.restricted">
-<code class="sig-name descname"><span class="pre">restricted</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.restricted" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.restricted">
+<span class="sig-name descname"><span class="pre">restricted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.restricted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restrict the operator range to a given set of degrees of freedom.</p>
 <p>This method returns a restricted version <code class="docutils literal notranslate"><span class="pre">restricted_op</span></code> of the
 operator along with an array <code class="docutils literal notranslate"><span class="pre">source_dofs</span></code> such that for any
@@ -908,29 +920,29 @@ defined above.</p>
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="pymor.operators.mpi.MPIOperator.__del__">
-<code class="sig-name descname"><span class="pre">__del__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.__del__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.MPIOperator.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.MPIOperator.__del__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi._MPIOperator_get_local_spaces">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIOperator_get_local_spaces</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_get_local_spaces" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi._MPIOperator_get_local_spaces">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIOperator_get_local_spaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_get_local_spaces" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi._MPIOperator_assemble_lincomb">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIOperator_assemble_lincomb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_assemble_lincomb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi._MPIOperator_assemble_lincomb">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIOperator_assemble_lincomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_assemble_lincomb" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi._MPIOperator_restriced">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIOperator_restriced</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_restriced" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi._MPIOperator_restriced">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIOperator_restriced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_restriced" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi._MPIOperator_assemble">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">_MPIOperator_assemble</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_assemble" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi._MPIOperator_assemble">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">_MPIOperator_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._MPIOperator_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi.mpi_wrap_operator">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">mpi_wrap_operator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_apply2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MPIVectorSpace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.mpi_wrap_operator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi.mpi_wrap_operator">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">mpi_wrap_operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_apply2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MPIVectorSpace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi.mpi_wrap_operator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrap MPI distributed local <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> to a global <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> on rank 0.</p>
 <p>Given MPI distributed local <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> referred to by the
 <a class="reference internal" href="../../tools/mpi/index.html#pymor.tools.mpi.ObjectId" title="pymor.tools.mpi.ObjectId"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectId</span></code></a> <code class="docutils literal notranslate"><span class="pre">obj_id</span></code>, return a new <a class="reference internal" href="../interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>
@@ -948,16 +960,16 @@ will be wrapped as a <a class="reference internal" href="../constructions/index.
 </div>
 </dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi._mpi_wrap_operator_LincombOperator_manage_operators">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">_mpi_wrap_operator_LincombOperator_manage_operators</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._mpi_wrap_operator_LincombOperator_manage_operators" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi._mpi_wrap_operator_LincombOperator_manage_operators">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">_mpi_wrap_operator_LincombOperator_manage_operators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._mpi_wrap_operator_LincombOperator_manage_operators" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
-<dt id="pymor.operators.mpi._mpi_wrap_operator_VectorArrayOperator_manage_array">
-<code class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></code><code class="sig-name descname"><span class="pre">_mpi_wrap_operator_VectorArrayOperator_manage_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._mpi_wrap_operator_VectorArrayOperator_manage_array" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pymor.operators.mpi._mpi_wrap_operator_VectorArrayOperator_manage_array">
+<span class="sig-prename descclassname"><span class="pre">pymor.operators.mpi.</span></span><span class="sig-name descname"><span class="pre">_mpi_wrap_operator_VectorArrayOperator_manage_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_local_spaces</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/ltimodel-solve/src/pymor/operators/mpi.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.mpi._mpi_wrap_operator_VectorArrayOperator_manage_array" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -1006,10 +1018,10 @@ will be wrapped as a <a class="reference internal" href="../constructions/index.
               
           </div>
             Last updated on
-              Jun 29, 2021.
+              Dec 02, 2021.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

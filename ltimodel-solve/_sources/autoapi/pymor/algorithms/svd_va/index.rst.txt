@@ -24,7 +24,7 @@ Functions
 
 
 
-.. function:: method_of_snapshots(A, product=None, modes=None, rtol=1e-07, atol=0.0, l2_err=0.0)
+.. py:function:: method_of_snapshots(A, product=None, modes=None, rtol=1e-07, atol=0.0, l2_err=0.0)
 
    SVD of a |VectorArray| using the method of snapshots.
 
@@ -72,8 +72,7 @@ Functions
            |NumPy array| of right singular vectors.
            
 
-
-.. function:: qr_svd(A, product=None, modes=None, rtol=4e-08, atol=0.0, l2_err=0.0)
+.. py:function:: qr_svd(A, product=None, modes=None, rtol=4e-08, atol=0.0, l2_err=0.0)
 
    SVD of a |VectorArray| using Gram-Schmidt orthogonalization.
 
@@ -116,5 +115,4 @@ Functions
        Vh
            |NumPy array| of right singular vectors.
            
-
 
