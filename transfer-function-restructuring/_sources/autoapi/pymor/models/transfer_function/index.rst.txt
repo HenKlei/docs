@@ -303,4 +303,21 @@ Classes
        name
            Name of the system.
            
+   .. py:attribute:: __radd__
+      
+
+      
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __rmul__(self, other)
+
+
 
