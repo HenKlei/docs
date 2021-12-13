@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="indigo">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Tutorial: Model order reduction for unstable LTI systems &#8212; pyMOR v2021.1rc0+940.ge0786e0b Manual</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="_static/pymor_favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial: Model order reduction with artificial neural networks" href="tutorial_mor_with_anns.html" />
+    <link rel="prev" title="Tutorial: Reducing an LTI system using balanced truncation" href="tutorial_bt.html" />
+
+
+  
+   
+
+<link rel="stylesheet" href="_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
+  </head>
+  <body dir=ltr
+        data-md-color-primary=indigo data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#tutorial_unstable_lti_systems" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="pyMOR v2021.1rc0+940.ge0786e0b Manual"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/pymor_logo_white.svg" height="26"
+                   alt="pyMOR v2021.1rc0+940.ge0786e0b Manual logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Documentation</span>
+          <span class="md-header-nav__topic"> Tutorial: Model order reduction for unstable LTI systems </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "/versions.json",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">pyMOR v2021.1rc0+940.ge0786e0b Manual</a></li>
+          <li class="md-tabs__item"><a href="tutorials.html" class="md-tabs__link">pyMOR Tutorials</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="pyMOR v2021.1rc0+940.ge0786e0b Manual" class="md-nav__button md-logo">
+      
+        <img src="_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="index.html"
+       title="pyMOR v2021.1rc0+940.ge0786e0b Manual">Documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="getting_started.html" class="md-nav__link">Getting started</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="technical_overview.html" class="md-nav__link">Technical Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="environment.html" class="md-nav__link">Environment Variables</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorials.html" class="md-nav__link">pyMOR Tutorials</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_builtin_discretizer.html" class="md-nav__link">Tutorial: Using pyMOR’s discretization toolkit</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_basis_generation.html" class="md-nav__link">Tutorial: Building a Reduced Basis</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_projection.html" class="md-nav__link">Tutorial: Projecting a Model</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_lti_systems.html" class="md-nav__link">Tutorial: Linear time-invariant systems</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_bt.html" class="md-nav__link">Tutorial: Reducing an LTI system using balanced truncation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Tutorial: Model order reduction for unstable LTI systems </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Tutorial: Model order reduction for unstable LTI systems</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#an-unstable-model" class="md-nav__link">An unstable model</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#frequency-domain-balanced-truncation" class="md-nav__link">Frequency domain balanced truncation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#gap-irka" class="md-nav__link">Gap-IRKA</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_mor_with_anns.html" class="md-nav__link">Tutorial: Model order reduction with artificial neural networks</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_optimization.html" class="md-nav__link">Tutorial: Model order reduction for PDE-constrained optimization problems</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_external_solver.html" class="md-nav__link">Tutorial: Binding an external PDE solver to pyMOR</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="release_notes/all.html" class="md-nav__link">Release Notes</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="bibliography.html" class="md-nav__link">Bibliography</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="developer_docs.html" class="md-nav__link">Developer Documentation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="autoapi/index.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="autoapi/pymor/index.html" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<div class="admonition">
+<p class="admonition-title">Run this tutorial</p>
+<a href="https://mybinder.org/v2/gh/pymor/docs/ci-actually-really-fix-oldest-jobs?filepath=tutorial_unstable_lti_systems.ipynb">Click here</a> to run this tutorial on mybinder.org: <a href="https://mybinder.org/v2/gh/pymor/docs/ci-actually-really-fix-oldest-jobs?filepath=tutorial_unstable_lti_systems.ipynb">
+<img alt="try on mybinder.org" src="https://mybinder.org/badge_logo.svg"/>
+</a><br/>
+<emph>Please note that starting the notebook server may take a couple of minutes.</emph>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-model-order-reduction-for-unstable-lti-systems">
+<h1 id="tutorial-unstable-lti-systems--page-root">Tutorial: Model order reduction for unstable LTI systems<a class="headerlink" href="#tutorial-unstable-lti-systems--page-root" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference internal" href="tutorial_lti_systems.html"><span class="doc">Tutorial: Linear time-invariant systems</span></a> we introduced LTI systems of the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    E \dot{x}(t) &amp; = A x(t) + B u(t), \\
+    y(t) &amp; = C x(t) + D u(t).
+\end{align}\end{split}\]</div>
+<p>If the system is asymptotically stable, i.e., all eigenvalues of the
+matrix pair <span class="math notranslate nohighlight">\((A, E)\)</span> lie in the open left half plane, methods like
+balanced truncation (see <a class="reference internal" href="tutorial_bt.html"><span class="doc">Tutorial: Reducing an LTI system using balanced truncation</span></a>) can be used for model
+order reduction. Asymptotic stability of the LTI system is a crucial
+assumption for balanced truncation because the observability and
+controllability Gramians are not defined if the matrix pair <span class="math notranslate nohighlight">\((A, E)\)</span> has
+eigenvalues with a positive real part (in this case we call the LTI system
+unstable). Additionally, commonly used system norms like the
+<span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span> norm, the <span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span> norm, and
+the Hankel (semi)norm are not defined for unstable LTI systems.</p>
+<p>In this tutorial we show how unstable LTI systems with an invertible
+<span class="math notranslate nohighlight">\(E\)</span> matrix can be reduced using pyMOR.</p>
+<section id="an-unstable-model">
+<h2 id="an-unstable-model">An unstable model<a class="headerlink" href="#an-unstable-model" title="Permalink to this headline">¶</a></h2>
+<p>We consider the following one-dimensional heat equation over <span class="math notranslate nohighlight">\((0, 1)\)</span> with
+one input <span class="math notranslate nohighlight">\(u(t)\)</span> and one output <span class="math notranslate nohighlight">\(y(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \partial_t T(\xi, t) &amp; = \partial_{\xi \xi} T(\xi, t) + \lambda T(\xi, t),
+    &amp; 0 &lt; \xi &lt; 1,\ t &gt; 0, \\
+    -\partial_\xi T(0, t) &amp; = -T(0, t) + u(t),
+    &amp; t &gt; 0, \\
+    \partial_\xi T(1, t) &amp; = -T(1, t),
+    &amp; t &gt; 0, \\
+    y(t) &amp; = T(1, t),
+    &amp; t &gt; 0.
+\end{align}\end{split}\]</div>
+<p>Depending on the choice of the parameter <span class="math notranslate nohighlight">\(\lambda\)</span> the discretization of
+the above partial differential equation is an unstable LTI system. In order to
+build the <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> we follow the lines of <a class="reference internal" href="tutorial_lti_systems.html"><span class="doc">Tutorial: Linear time-invariant systems</span></a>.</p>
+<p>First, we do the necessary imports and some matplotlib style choices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="k">as</span> <span class="nn">sps</span>
+<span class="kn">from</span> <span class="nn">pymor.models.iosys</span> <span class="kn">import</span> <span class="n">LTIModel</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.grid'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we can assemble the matrices based on a centered finite difference
+approximation using standard methods of NumPy and SciPy. Here we use
+<span class="math notranslate nohighlight">\(\lambda = 50\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'lil'</span><span class="p">)</span>
+<span class="n">E</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+
+<span class="n">d0</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">l</span><span class="p">]</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">diags</span><span class="p">([</span><span class="n">d1</span><span class="p">,</span> <span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'lil'</span><span class="p">)</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">l</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can create an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> from NumPy and SciPy matrices <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>,
+<code class="docutils literal notranslate"><span class="pre">E</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span> <span class="o">=</span> <span class="n">LTIModel</span><span class="o">.</span><span class="n">from_matrices</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, let’s check whether our system is indeed unstable. For this, we can use the
+method <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.get_ast_spectrum" title="pymor.models.iosys.LTIModel.get_ast_spectrum"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_ast_spectrum</span></code></a>, which will
+compute the subset of system poles with a positive real part and the corresponding
+eigenvectors as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ast_spectrum</span> <span class="o">=</span> <span class="n">fom</span><span class="o">.</span><span class="n">get_ast_spectrum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast_spectrum</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 6.65573911+0.j 36.50842397+0.j 48.29293004+0.j]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code snippet above, all eigenvalues of the matrix pair <span class="math notranslate nohighlight">\((A, E)\)</span> are
+computed using dense methods. This works well for systems with a small state space
+dimension. For large-scale systems it is wiser to rely on iterative methods for
+computing eigenvalues. The code below computes 10 system poles which are
+close to 0 using pyMOR’s iterative eigensolver and filters the result for
+values with a positive real part.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ast_spectrum</span> <span class="o">=</span> <span class="n">fom</span><span class="o">.</span><span class="n">get_ast_spectrum</span><span class="p">(</span><span class="n">ast_pole_data</span><span class="o">=</span><span class="p">{</span><span class="s1">'k'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'sigma'</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast_spectrum</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "0a442fdf0f9d421b9c0ee492802af105", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 6.65573911+0.j 36.50842397+0.j 48.29293004+0.j]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="frequency-domain-balanced-truncation">
+<h2 id="frequency-domain-balanced-truncation">Frequency domain balanced truncation<a class="headerlink" href="#frequency-domain-balanced-truncation" title="Permalink to this headline">¶</a></h2>
+<p>The observability and controllability Gramians (defined in the time-domain)
+introduced in <a class="reference internal" href="tutorial_lti_systems.html"><span class="doc">Tutorial: Linear time-invariant systems</span></a> do not exist for unstable systems.
+However, the frequency domain representations of these Gramians are defined for
+systems with no poles on the imaginary axis. Hence, for most unstable systems we
+can follow a similar approach to the one from <a class="reference internal" href="tutorial_bt.html"><span class="doc">Tutorial: Reducing an LTI system using balanced truncation</span></a> but using the
+frequency domain representations of the controllability and observability Gramians</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    P &amp; =
+    \frac{1}{2 \pi} \int_{-\infty}^\infty
+    (\imath \omega E - A)^{-1}
+    B B^{\operatorname{T}}
+    (-\imath \omega E^{\operatorname{T}} - A^{\operatorname{T}})^{-1}
+    \operatorname{d}\!\omega, \text{ and} \\
+    E^{\operatorname{T}} Q E &amp; =
+    \frac{1}{2 \pi} E^{\operatorname{T}} \int_{-\infty}^\infty
+    (-\imath \omega E^{\operatorname{T}} - A^{\operatorname{T}})^{-1}
+    C^{\operatorname{T}} C
+    (\imath \omega E - A)^{-1}
+    \operatorname{d}\!\omega\, E.
+\end{align*}\end{split}\]</div>
+<p>Again, two Lyapunov equations have to be solved in order to obtain these Gramians.
+Additionally, it is necessary to perform a Bernoulli stabilization of the system
+matrices before solving the matrix equations. Both of these steps are done internally
+by the <a class="reference internal" href="autoapi/pymor/reductors/bt/index.html#pymor.reductors.bt.FDBTReductor" title="pymor.reductors.bt.FDBTReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">FDBTReductor</span></code></a>.</p>
+<p>Let us start with initializing a reductor object</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pymor.reductors.bt</span> <span class="kn">import</span> <span class="n">FDBTReductor</span>
+<span class="n">fdbt</span> <span class="o">=</span> <span class="n">FDBTReductor</span><span class="p">(</span><span class="n">fom</span><span class="p">,</span> <span class="n">ast_pole_data</span><span class="o">=</span><span class="p">{</span><span class="s1">'k'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'sigma'</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to perform a Bernoulli stabilization, knowledge about the anti-stable
+subset of system poles is required. With the <code class="docutils literal notranslate"><span class="pre">ast_pole_data</span></code> argument we can provide
+information about the system poles to the reductor (i.e. list of anti-stable
+eigenvalues with or without corresponding eigenvectors) or specify how eigenvalues
+should be computed (i.e. <code class="docutils literal notranslate"><span class="pre">None</span></code> for computing all eigenvalues using dense methods
+or arguments for pyMOR’s iterative eigensolver like in the code above).</p>
+<p>Before we use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce</span></code> method to
+obtain a reduced-order model, we take a look at some a priori error bounds for
+the reductor. In particular, we get a <span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span> rather than the
+<span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span> error bound from classic balanced truncation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_bounds</span> <span class="o">=</span> <span class="n">fdbt</span><span class="o">.</span><span class="n">error_bounds</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">error_bounds</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">error_bounds</span><span class="p">,</span> <span class="s1">'.-'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Reduced order'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\mathcal</span><span class="si">{L}</span><span class="s1">_\infty$ error bounds'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "731980512b9943f8ae603592eea56016", "version_major": 2, "version_minor": 0}
+</script><img alt="_images/tutorial_unstable_lti_systems_15_1.png" src="_images/tutorial_unstable_lti_systems_15_1.png">
+</img></div>
+</div>
+<p>To get a reduced-order model of order 10, we call the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method with the
+appropriate argument:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rom</span> <span class="o">=</span> <span class="n">fdbt</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "39bc9e6e61c847fea275f90d81c40c52", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Alternatively, we can specify a desired error tolerance rather than the order
+of the reduced model.</p>
+<p>Finally, we can compute the relative <span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span> error to check
+the quality of the reduced-order model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">err</span> <span class="o">=</span> <span class="n">fom</span> <span class="o">-</span> <span class="n">rom</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Relative Linf error:   </span><span class="si">{</span><span class="n">err</span><span class="o">.</span><span class="n">linf_norm</span><span class="p">()</span> <span class="o">/</span> <span class="n">fom</span><span class="o">.</span><span class="n">linf_norm</span><span class="p">()</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative Linf error:   2.973e-09
+</pre></div>
+</div>
+</div>
+</div>
+<p>Clearly, this result is in accordance with our previously computed
+<span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span> error bound:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Linf error:   </span><span class="si">{</span><span class="n">err</span><span class="o">.</span><span class="n">linf_norm</span><span class="p">()</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Linf upper bound:   </span><span class="si">{</span><span class="n">error_bounds</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linf error:   8.477e-10
+Linf upper bound:   1.657e-09
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gap-irka">
+<h2 id="gap-irka">Gap-IRKA<a class="headerlink" href="#gap-irka" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="autoapi/pymor/reductors/h2/index.html#pymor.reductors.h2.IRKAReductor" title="pymor.reductors.h2.IRKAReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">IRKAReductor</span></code></a> is specifically designed to find
+<span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span>-optimal reduced-order models (see e.g. <span id="id1">[<a class="reference internal" href="bibliography.html#id17" title="S. Gugercin, A. C. Antoulas, and C. Beattie. $\mathcal H_2$ model reduction for large-scale linear dynamical systems. SIAM J. Matrix Anal. Appl., 30(2):609–638, 2008. doi:10.1137/060666123.">GAB08</a>]</span>).
+Since we cannot compute <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span>-norms for unstable systems,
+we can not expect the IRKA to yield high-quality approximations for unstable
+full-order models.
+In <span id="id2">[<a class="reference internal" href="bibliography.html#id4" title="Tobias Breiten, Chris A. Beattie, and Serkan Gugercin. $\mathcal H_2$-gap model reduction for stabilizable and detectable systems. e-prints 1909.13764, arXiv, 2019. math.NA. URL: http://arxiv.org/abs/1909.13764.">BBG19</a>]</span> the authors introduce a variant of the IRKA (the Gap-IRKA) which
+is based on the <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span>-gap-norm.
+As desired, this norm is defined for most unstable systems which makes the
+Gap-IRKA a suitable algorithm for finding reduced-order models for unstable systems.</p>
+<p>One major advantage of the <a class="reference internal" href="autoapi/pymor/reductors/h2/index.html#pymor.reductors.h2.GapIRKAReductor" title="pymor.reductors.h2.GapIRKAReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">GapIRKAReductor</span></code></a> over the
+<a class="reference internal" href="autoapi/pymor/reductors/bt/index.html#pymor.reductors.bt.FDBTReductor" title="pymor.reductors.bt.FDBTReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">FDBTReductor</span></code></a> is that
+no a priori information about the system poles is required. However, we do not
+obtain an a priori <span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span> error bound. Let us compute a
+reduced-order model of order 10 using the <a class="reference internal" href="autoapi/pymor/reductors/h2/index.html#pymor.reductors.h2.GapIRKAReductor" title="pymor.reductors.h2.GapIRKAReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">GapIRKAReductor</span></code></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pymor.reductors.h2</span> <span class="kn">import</span> <span class="n">GapIRKAReductor</span>
+<span class="n">gapirka</span> <span class="o">=</span> <span class="n">GapIRKAReductor</span><span class="p">(</span><span class="n">fom</span><span class="p">)</span>
+<span class="n">rom</span> <span class="o">=</span> <span class="n">gapirka</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "83776117ab424ff99af5d879edef7299", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Beside the desired order of the reduced model, the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method has a few
+other arguments as well: <code class="docutils literal notranslate"><span class="pre">conv_crit</span></code> allows for choosing the stopping criterion
+of the algorithm. By specifying <code class="docutils literal notranslate"><span class="pre">conv_crit='sigma'</span></code> the relative change in
+interpolation points, <code class="docutils literal notranslate"><span class="pre">conv_crit='htwogap'</span></code> the relative change in
+<span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span>-gap distance of the reduced-order models and <code class="docutils literal notranslate"><span class="pre">conv_crit='ltwo'</span></code> the
+relative change of <span class="math notranslate nohighlight">\(\mathcal{L}_2\)</span> distances of the reduced-order models are
+used as a stopping criterion. The <code class="docutils literal notranslate"><span class="pre">tol</span></code> argument sets the tolerance for
+any of the chosen stopping criterion.</p>
+<p>Again, we can compute the relative <span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span> error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">err</span> <span class="o">=</span> <span class="n">fom</span> <span class="o">-</span> <span class="n">rom</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Relative Linf error:   </span><span class="si">{</span><span class="n">err</span><span class="o">.</span><span class="n">linf_norm</span><span class="p">()</span> <span class="o">/</span> <span class="n">fom</span><span class="o">.</span><span class="n">linf_norm</span><span class="p">()</span><span class="si">:</span><span class="s1">.3e</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative Linf error:   2.849e-09
+</pre></div>
+</div>
+</div>
+</div>
+<p>Download the code:
+<a class="reference download internal" download="" href="_downloads/6036e8d252910d6cb0076c37543127b9/tutorial_unstable_lti_systems.md"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_unstable_lti_systems.md</span></code></a>,
+<a class="reference download internal" download="" href="_downloads/218cda5bb1e3c69656498232df908d06/tutorial_unstable_lti_systems.ipynb"><code class="xref download myst-nb docutils literal notranslate"><span class="pre">tutorial_unstable_lti_systems.ipynb</span></code></a>.</p>
+</section>
+</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"077926ed26da47a2974e343318e650cf": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "088fa49529784fbdb9b4262b34f03a02": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0a442fdf0f9d421b9c0ee492802af105": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_0d8b5f7989904333bc956de5f0510f1e"], "layout": "IPY_MODEL_66fdff7ee74c400fa992c997cc76c8ad", "selected_index": null}}, "0d8b5f7989904333bc956de5f0510f1e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_7718a24a91c7481881d710e200bf7c87", "placeholder": "\u200b", "style": "IPY_MODEL_a74e4570a5b548bbac92b4de4abdf625", "value": "<p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 10 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 11 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 12 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 13 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 14 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 15 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 1.02869e-05</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 2: 1.89242e-10</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 3: 1.20707e-15</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 2.81680e-29</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 5.24844e-27</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 3.34271e-29</p>"}}, "1223647b9e2e40ffa25c9ea8f9762ac2": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "2169c9fe80044ab288f55b38bc1b5dc7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5bf37af885e94f4cbe5d48de01ea0baf", "placeholder": "\u200b", "style": "IPY_MODEL_cbe90ca4d042410e83c120d03044d8b9", "value": ""}}, "2a7ede395f914644a8ba2c13c18783f2": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_7e82b7ca24964db3aafa2305de34644a", "placeholder": "\u200b", "style": "IPY_MODEL_4c9275c6ee99430a9b8bb58796a1f99c", "value": ""}}, "2dac2c07f31b4ba19e8ee35834c95274": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "2ea471de5c90475c929379476aaaf09d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3615f2f009f54632a266ca88b5c965bf": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "38df7a48b9f348a49a4f6fc1997434d9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_2169c9fe80044ab288f55b38bc1b5dc7"], "layout": "IPY_MODEL_f6d408cfb5ee40858e1c90d85b81a1fc", "selected_index": null}}, "39bc9e6e61c847fea275f90d81c40c52": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_f99a73cca5de4c6d8126f75a664622cd"], "layout": "IPY_MODEL_8ee129c7ba4243d9b2d956986cdd8f21", "selected_index": null}}, "3a3bd8ae69a44c1e9a7f50993f4c4dfe": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_4fe49f9415d344a9b7ecb2fce9a38a8c", "placeholder": "\u200b", "style": "IPY_MODEL_44000658f4344a5a9647f87977d1781f", "value": ""}}, "3fe963da594045a4b7da3c60ecf2689e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "44000658f4344a5a9647f87977d1781f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "450d1653862d4c89bb4fa97a4b176c5f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_aad107ab120149f2af7bb4e7b601dfd9", "placeholder": "\u200b", "style": "IPY_MODEL_e25a59349b8b41d69a5c68cebc97ea62", "value": ""}}, "4c9275c6ee99430a9b8bb58796a1f99c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "4fe49f9415d344a9b7ecb2fce9a38a8c": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "53564bc806a24e2689a6d5886456e0b0": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "53a0680de8a54dd8b97f13c00bc6be9d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_9317b2d6700a43f1873758e0c56c3028"], "layout": "IPY_MODEL_e6c48ddd8bb44460a7358e2d85d67e98", "selected_index": null}}, "5bf37af885e94f4cbe5d48de01ea0baf": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "5d3e89a56a2443199664cc3c18bd01f4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "60af8d69872b41fc9665294e031bafb7": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "62210deebf9c4dd3b74de9a2c09834fb": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "66fdff7ee74c400fa992c997cc76c8ad": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6cd8461528754f9d8690157d7d07fc8a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "71eb7c93eb34404592e36a79b8e59aa1": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_450d1653862d4c89bb4fa97a4b176c5f"], "layout": "IPY_MODEL_fab8e8e1bdfe418c867380cfcf659fc0", "selected_index": null}}, "731980512b9943f8ae603592eea56016": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_742e7c98d44b4fb89343b1b5388281ff"], "layout": "IPY_MODEL_088fa49529784fbdb9b4262b34f03a02", "selected_index": null}}, "74294e4afdd84432a125e672a159d313": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5d3e89a56a2443199664cc3c18bd01f4", "placeholder": "\u200b", "style": "IPY_MODEL_88a43880dcfa4bb29c92f5f4e8b713c3", "value": ""}}, "742e7c98d44b4fb89343b1b5388281ff": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_60af8d69872b41fc9665294e031bafb7", "placeholder": "\u200b", "style": "IPY_MODEL_fd47e7f114454134bef20bfa40b0bf35", "value": "<p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 10 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 11 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 12 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 13 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 14 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 15 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 1.02869e-05</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 2: 1.89242e-10</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 3: 1.20707e-15</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 2.81680e-29</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 5.24844e-27</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:02 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:02 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 3.34271e-29</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 0: 2.35087e+01</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 1: 4.88678e-01</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 2: 2.77956e-02</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 3: 1.53979e-04</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 4: 4.81367e-09</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 5: 6.50007e-17</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 6: 1.30001e-16</p><p style=\"line-height:120%\">00:02 <bold>solve_bernoulli</bold>: Relative change of iterates at step 7: 6.50007e-17</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 0: 2.35087e+01</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 1: 4.88678e-01</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 2: 2.77956e-02</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 3: 1.53979e-04</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 4: 4.81367e-09</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 5: 6.50007e-17</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 6: 1.30001e-16</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 7: 6.50007e-17</p>"}}, "758c78d567fe4e89b4e561133525e8ac": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_a415b9e2d9154d1c8f2b984dfbd25b71"], "layout": "IPY_MODEL_90b455cbf8264fec96fb1b39d865ffd4", "selected_index": null}}, "7718a24a91c7481881d710e200bf7c87": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "7e82b7ca24964db3aafa2305de34644a": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "83776117ab424ff99af5d879edef7299": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_aebc2e70c96e49ff9f908ee33119ab94"], "layout": "IPY_MODEL_8eaebf033a004d2fb679085903558e28", "selected_index": null}}, "88a43880dcfa4bb29c92f5f4e8b713c3": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "8be426d9c02e4c99b3c98f225be9e0ac": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_2a7ede395f914644a8ba2c13c18783f2"], "layout": "IPY_MODEL_bc0fafece2194405bc25ef2db67e3992", "selected_index": null}}, "8db7684f28d94f0289ad3d4c6b7be731": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "8eaebf033a004d2fb679085903558e28": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8ee129c7ba4243d9b2d956986cdd8f21": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "90b455cbf8264fec96fb1b39d865ffd4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9317b2d6700a43f1873758e0c56c3028": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_cb71469e759a43aca18dd68c68fb3d21", "placeholder": "\u200b", "style": "IPY_MODEL_9f3eb4db1d0448d891a48a278cedae16", "value": ""}}, "9dc8396115234cc5a5acb5f8a3822961": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1223647b9e2e40ffa25c9ea8f9762ac2", "placeholder": "\u200b", "style": "IPY_MODEL_3615f2f009f54632a266ca88b5c965bf", "value": ""}}, "9f3eb4db1d0448d891a48a278cedae16": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a415b9e2d9154d1c8f2b984dfbd25b71": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2dac2c07f31b4ba19e8ee35834c95274", "placeholder": "\u200b", "style": "IPY_MODEL_dcb55bbe5afc4295931d0d34ec34f55e", "value": ""}}, "a74e4570a5b548bbac92b4de4abdf625": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "aad107ab120149f2af7bb4e7b601dfd9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "aebc2e70c96e49ff9f908ee33119ab94": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_8db7684f28d94f0289ad3d4c6b7be731", "placeholder": "\u200b", "style": "IPY_MODEL_6cd8461528754f9d8690157d7d07fc8a", "value": "<p style=\"line-height:120%\">00:03 <bold>GapIRKAReductor</bold>: Generating initial interpolation data</p><p style=\"line-height:120%\">00:03 <bold>GapIRKAReductor</bold>: Starting gap IRKA</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:03 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 1: 1.647171e+04</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:03 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 2: 9.112819e-01</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:03 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 3: 5.301503e-01</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:03 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 4: 9.167607e-02</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:04 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 5: 2.126239e-02</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:04 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 6: 4.797176e-03</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:04 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 7: 1.089136e-03</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:04 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 8: 2.468829e-04</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:04 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:04 <bold>LTIPGReductor</bold>: Building ROM ...</p><p style=\"line-height:120%\">00:04 <bold>GapIRKAReductor</bold>: Convergence criterion in iteration 9: 5.596491e-05</p>"}}, "b03a28187d92451580fd78344da05a3c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_d54ddd5534a9473e919ef2346b08ba48"], "layout": "IPY_MODEL_c32c5da3f3fd40dda899a44e2e80b78a", "selected_index": null}}, "b90ac932b1eb448bb3d5b5d76c5be705": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bc0fafece2194405bc25ef2db67e3992": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bddd26d812ce4a9d9138c53e26684967": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_74294e4afdd84432a125e672a159d313"], "layout": "IPY_MODEL_3fe963da594045a4b7da3c60ecf2689e", "selected_index": null}}, "c32c5da3f3fd40dda899a44e2e80b78a": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c876a14cd0e741b6ac57906c78aaa102": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_3a3bd8ae69a44c1e9a7f50993f4c4dfe"], "layout": "IPY_MODEL_2ea471de5c90475c929379476aaaf09d", "selected_index": null}}, "cb71469e759a43aca18dd68c68fb3d21": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "cbe90ca4d042410e83c120d03044d8b9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d54ddd5534a9473e919ef2346b08ba48": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_53564bc806a24e2689a6d5886456e0b0", "placeholder": "\u200b", "style": "IPY_MODEL_077926ed26da47a2974e343318e650cf", "value": ""}}, "dcb55bbe5afc4295931d0d34ec34f55e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e25a59349b8b41d69a5c68cebc97ea62": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e3b9406e80bc46db95300dd0abd753dc": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_9dc8396115234cc5a5acb5f8a3822961"], "layout": "IPY_MODEL_f55b89527a10458ca8f817b96cacfea0", "selected_index": null}}, "e6c48ddd8bb44460a7358e2d85d67e98": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f55b89527a10458ca8f817b96cacfea0": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f6d408cfb5ee40858e1c90d85b81a1fc": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f99a73cca5de4c6d8126f75a664622cd": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_62210deebf9c4dd3b74de9a2c09834fb", "placeholder": "\u200b", "style": "IPY_MODEL_b90ac932b1eb448bb3d5b5d76c5be705", "value": "<p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 10 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 11 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 12 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 13 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 14 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 15 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:03 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 1.02869e-05</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:03 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 2: 1.89242e-10</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 16 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 17 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 18 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 19 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 20 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 21 again</p><p style=\"line-height:120%\">00:03 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 3: 1.20707e-15</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 2.81680e-29</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 5.24844e-27</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 1 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>eigs</bold>: Maximum of relative Ritz estimates at step 1: 3.34271e-29</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 0: 2.35087e+01</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 1: 4.88678e-01</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 2: 2.77956e-02</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 3: 1.53979e-04</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 4: 4.81367e-09</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 5: 6.50007e-17</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 6: 1.30001e-16</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 7: 6.50007e-17</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 0: 2.35087e+01</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 1: 4.88678e-01</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 2: 2.77956e-02</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 3: 1.53979e-04</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 4: 4.81367e-09</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 5: 6.50007e-17</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 6: 1.30001e-16</p><p style=\"line-height:120%\">00:03 <bold>solve_bernoulli</bold>: Relative change of iterates at step 7: 6.50007e-17</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 2 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 3 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 4 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 5 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 6 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 7 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 8 again</p><p style=\"line-height:120%\">00:03 <bold>gram_schmidt</bold>: Orthonormalizing vector 9 again</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Operator projection ...</p><p style=\"line-height:120%\">00:03 <bold>LTIPGReductor</bold>: Building ROM ...</p>"}}, "fab8e8e1bdfe418c867380cfcf659fc0": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fd47e7f114454134bef20bfa40b0bf35": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="tutorial_bt.html" title="Tutorial: Reducing an LTI system using balanced truncation"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Tutorial: Reducing an LTI system using balanced truncation </span>
+              </div>
+            </a>
+          
+          
+            <a href="tutorial_mor_with_anns.html" title="Tutorial: Model order reduction with artificial neural networks"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Tutorial: Model order reduction with artificial neural networks </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2013-2021 pyMOR developers and contributors.
+              
+          </div>
+            Last updated on
+              Dec 13, 2021.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
