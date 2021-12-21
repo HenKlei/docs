@@ -45,6 +45,10 @@ Classes
    .. attribute:: products
 
       Dict of inner product operators associated with the model.
+
+   .. attribute:: order
+
+      Dimension of the `solution_space`.
       
 
    .. py:attribute:: _compute_allowed_kwargs

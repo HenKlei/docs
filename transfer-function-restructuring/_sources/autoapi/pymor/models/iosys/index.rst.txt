@@ -12,7 +12,6 @@ Classes
 
 .. autoapisummary::
 
-   pymor.models.iosys.InputStateOutputModel
    pymor.models.iosys.LTIModel
    pymor.models.iosys.SecondOrderModel
    pymor.models.iosys.LinearDelayModel
@@ -38,20 +37,9 @@ Functions
    Return minimal sparse problem size for which to warn about converting to dense.
 
 
-.. py:class:: InputStateOutputModel(dim_input, solution_space, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
-   Bases: :py:obj:`pymor.models.interface.Model`
-
-   Base class for input-output systems with state space.
-
-   .. py:method:: order(self)
-      :property:
-
-
-
 .. py:class:: LTIModel(A, B, C, D=None, E=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear time-invariant systems.
 
@@ -69,6 +57,10 @@ Functions
 
    if discrete-time, where :math:`A`, :math:`B`, :math:`C`, :math:`D`, and :math:`E` are linear
    operators.
+
+   All methods related to the transfer function
+   (e.g., frequency response calculation and Bode plots)
+   are attached to the `transfer_function` attribute.
 
    .. admonition:: Parameters
 
@@ -384,6 +376,60 @@ Functions
           One-dimensional |NumPy array| of system poles.
               
 
+   .. py:method:: eval_tf(self, s, mu=None)
+
+      Evaluate the transfer function.
+
+      This function is an alias for `transfer_function.eval_tf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
+      documentation.
+
+
+   .. py:method:: eval_dtf(self, s, mu=None)
+
+      Evaluate the derivative of the transfer function.
+
+      This function is an alias for `transfer_function.eval_dtf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
+      documentation.
+
+
+   .. py:method:: freq_resp(self, w, mu=None)
+
+      Evaluate the transfer function on the imaginary axis.
+
+      This function is an alias for `transfer_function.freq_resp`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
+      documentation.
+
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      This function is an alias for `transfer_function.bode`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
+      documentation.
+
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      This function is an alias for `transfer_function.bode_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
+      documentation.
+
+
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      This function is an alias for `transfer_function.mag_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
+      documentation.
+
+
    .. py:method:: gramian(self, typ, mu=None)
 
       Compute a Gramian.
@@ -610,7 +656,7 @@ Functions
 
 .. py:class:: SecondOrderModel(M, E, K, B, Cp, Cv=None, D=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear second order systems.
 
@@ -644,6 +690,10 @@ Functions
 
    if discrete-time, where :math:`M`, :math:`E`, :math:`K`, :math:`B`, :math:`C_p`, :math:`C_v`,
    and :math:`D` are linear operators.
+
+   All methods related to the transfer function
+   (e.g., frequency response calculation and Bode plots)
+   are attached to the `transfer_function` attribute.
 
    .. admonition:: Parameters
 
@@ -961,6 +1011,60 @@ Functions
           One-dimensional |NumPy array| of system poles.
               
 
+   .. py:method:: eval_tf(self, s, mu=None)
+
+      Evaluate the transfer function.
+
+      This function is an alias for `transfer_function.eval_tf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
+      documentation.
+
+
+   .. py:method:: eval_dtf(self, s, mu=None)
+
+      Evaluate the derivative of the transfer function.
+
+      This function is an alias for `transfer_function.eval_dtf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
+      documentation.
+
+
+   .. py:method:: freq_resp(self, w, mu=None)
+
+      Evaluate the transfer function on the imaginary axis.
+
+      This function is an alias for `transfer_function.freq_resp`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
+      documentation.
+
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      This function is an alias for `transfer_function.bode`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
+      documentation.
+
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      This function is an alias for `transfer_function.bode_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
+      documentation.
+
+
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      This function is an alias for `transfer_function.mag_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
+      documentation.
+
+
    .. py:method:: gramian(self, typ, mu=None)
 
       Compute a second-order Gramian.
@@ -1125,7 +1229,7 @@ Functions
 
 .. py:class:: LinearDelayModel(A, Ad, tau, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear delay systems.
 
@@ -1157,6 +1261,10 @@ Functions
 
    if discrete-time, where :math:`E`, :math:`A`, :math:`A_i`, :math:`B`, :math:`C`, and :math:`D`
    are linear operators.
+
+   All methods related to the transfer function
+   (e.g., frequency response calculation and Bode plots)
+   are attached to the `transfer_function` attribute.
 
    .. admonition:: Parameters
 
@@ -1277,10 +1385,64 @@ Functions
       Premultiply by an |LTIModel| or a |SecondOrderModel|.
 
 
+   .. py:method:: eval_tf(self, s, mu=None)
+
+      Evaluate the transfer function.
+
+      This function is an alias for `transfer_function.eval_tf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
+      documentation.
+
+
+   .. py:method:: eval_dtf(self, s, mu=None)
+
+      Evaluate the derivative of the transfer function.
+
+      This function is an alias for `transfer_function.eval_dtf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
+      documentation.
+
+
+   .. py:method:: freq_resp(self, w, mu=None)
+
+      Evaluate the transfer function on the imaginary axis.
+
+      This function is an alias for `transfer_function.freq_resp`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
+      documentation.
+
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      This function is an alias for `transfer_function.bode`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
+      documentation.
+
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      This function is an alias for `transfer_function.bode_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
+      documentation.
+
+
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      This function is an alias for `transfer_function.mag_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
+      documentation.
+
+
 
 .. py:class:: LinearStochasticModel(A, As, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear stochastic systems.
 
@@ -1390,7 +1552,7 @@ Functions
 
 .. py:class:: BilinearModel(A, N, B, C, D, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for bilinear systems.
 
