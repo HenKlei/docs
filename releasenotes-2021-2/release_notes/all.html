@@ -47,7 +47,7 @@
   
   
   
-    <title>Release Notes &#8212; pyMOR v2021.1rc0+991.g6998119f6 Manual</title>
+    <title>Release Notes &#8212; pyMOR v2021.1rc0+992.gadbd17d81 Manual</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="pyMOR v2021.1rc0+991.g6998119f6 Manual"
+        <a href="../index.html" title="pyMOR v2021.1rc0+992.gadbd17d81 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+991.g6998119f6 Manual logo">
+                   alt="pyMOR v2021.1rc0+992.gadbd17d81 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+991.g6998119f6 Manual</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+992.gadbd17d81 Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -192,13 +192,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="pyMOR v2021.1rc0+991.g6998119f6 Manual" class="md-nav__button md-logo">
+    <a href="../index.html" title="pyMOR v2021.1rc0+992.gadbd17d81 Manual" class="md-nav__button md-logo">
       
         <img src="../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="pyMOR v2021.1rc0+991.g6998119f6 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+992.gadbd17d81 Manual">Documentation</a>
   </label>
   
 
@@ -1135,7 +1135,18 @@ computation for LTI models with symmetric system matrices was added.</p>
 <h3 id="backward-incompatible-changes">Backward incompatible changes<a class="headerlink" href="#backward-incompatible-changes" title="Permalink to this headline">¶</a></h3>
 <section id="transfer-function-restructuring">
 <h4 id="transfer-function-restructuring">Transfer function restructuring<a class="headerlink" href="#transfer-function-restructuring" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://github.com/pymor/pymor/pull/1486">[#1486]</a></p>
+<p>In the pursuit of unifying system-theoretic and reduced basis <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a>,
+the <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.TransferFunction" title="pymor.models.iosys.TransferFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransferFunction</span></code></a> class is no longer a subclass of <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> and
+it is moved from <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#module-pymor.models.iosys" title="pymor.models.iosys"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models.iosys</span></code></a> to
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models.transfer_function</span></code>.
+Additionally, the <code class="docutils literal notranslate"><span class="pre">InputOutputModel</span></code> and <code class="docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code> classes are
+removed.
+Furthermore, the transfer function-related methods of <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>,
+<a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.SecondOrderModel" title="pymor.models.iosys.SecondOrderModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SecondOrderModel</span></code></a> and <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LinearDelayModel" title="pymor.models.iosys.LinearDelayModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearDelayModel</span></code></a> are deprecated and the attribute
+<code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> should be used instead
+(e.g., <code class="docutils literal notranslate"><span class="pre">m.bode_plot(...)</span></code> should be replaced with
+<code class="docutils literal notranslate"><span class="pre">m.transfer_function.bode_plot(...)</span></code>).
+See <a class="reference external" href="https://github.com/pymor/pymor/pull/1486">[#1486]</a> for more details.</p>
 </section>
 </section>
 <section id="further-notable-improvements">
