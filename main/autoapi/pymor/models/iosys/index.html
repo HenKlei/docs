@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.iosys &#8212; pyMOR v2021.1rc0+1017.gd83088d91 Manual</title>
+    <title>pymor.models.iosys &#8212; pyMOR v2021.1rc0+1063.g3038aa699 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+1017.gd83088d91 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+1063.g3038aa699 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+1017.gd83088d91 Manual logo">
+                   alt="pyMOR v2021.1rc0+1063.g3038aa699 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+1017.gd83088d91 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+1063.g3038aa699 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+1017.gd83088d91 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+1063.g3038aa699 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+1017.gd83088d91 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+1063.g3038aa699 Manual">Documentation</a>
   </label>
   
 
@@ -361,6 +361,13 @@
       <a href="../neural_network/index.html" class="md-nav__link">neural_network</a>
       
     
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../transfer_function/index.html" class="md-nav__link">transfer_function</a>
+      
+    
     </li></ul>
     
     </li></ul>
@@ -467,28 +474,19 @@
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.iosys.InputOutputModel" title="pymor.models.iosys.InputOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputOutputModel</span></code></a></p></td>
-<td><p>Base class for input-output systems.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a></p></td>
-<td><p>Base class for input-output systems with state space.</p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LTIModel</span></code></a></p></td>
 <td><p>Class for linear time-invariant systems.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.iosys.TransferFunction" title="pymor.models.iosys.TransferFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TransferFunction</span></code></a></p></td>
-<td><p>Class for systems represented by a transfer function.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.iosys.SecondOrderModel" title="pymor.models.iosys.SecondOrderModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SecondOrderModel</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.iosys.SecondOrderModel" title="pymor.models.iosys.SecondOrderModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SecondOrderModel</span></code></a></p></td>
 <td><p>Class for linear second order systems.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.iosys.LinearDelayModel" title="pymor.models.iosys.LinearDelayModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearDelayModel</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.iosys.LinearDelayModel" title="pymor.models.iosys.LinearDelayModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearDelayModel</span></code></a></p></td>
 <td><p>Class for linear delay systems.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.iosys.LinearStochasticModel" title="pymor.models.iosys.LinearStochasticModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearStochasticModel</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.iosys.LinearStochasticModel" title="pymor.models.iosys.LinearStochasticModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearStochasticModel</span></code></a></p></td>
 <td><p>Class for linear stochastic systems.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.iosys.BilinearModel" title="pymor.models.iosys.BilinearModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BilinearModel</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.iosys.BilinearModel" title="pymor.models.iosys.BilinearModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BilinearModel</span></code></a></p></td>
 <td><p>Class for bilinear systems.</p></td>
 </tr>
 </tbody>
@@ -519,203 +517,9 @@
 <dd><p>Return minimal sparse problem size for which to warn about converting to dense.</p>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">InputOutputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
-<p>Base class for input-output systems.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.cache_region">
-<span class="sig-name descname"><span class="pre">cache_region</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">memory</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.cache_region" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.eval_tf">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eval_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.eval_tf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the transfer function.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.eval_dtf">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eval_dtf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.eval_dtf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the derivative of the transfer function.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.freq_resp">
-<span class="sig-name descname"><span class="pre">freq_resp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.freq_resp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the transfer function on the imaginary axis.</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>w</dt><dd><p>A sequence of angular frequencies at which to compute the transfer function.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to evaluate the transfer function.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>tfw</dt><dd><p>Transfer function values at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
-<code class="docutils literal notranslate"><span class="pre">(len(w),</span> <span class="pre">self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.bode">
-<span class="sig-name descname"><span class="pre">bode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.bode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute magnitudes and phases.</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>w</dt><dd><p>A sequence of angular frequencies at which to compute the transfer function.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to evaluate the transfer function.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>mag</dt><dd><p>Transfer function magnitudes at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
-<code class="docutils literal notranslate"><span class="pre">(len(w),</span> <span class="pre">self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-<dt>phase</dt><dd><p>Transfer function phases (in radians) at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
-<code class="docutils literal notranslate"><span class="pre">(len(w),</span> <span class="pre">self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.bode_plot">
-<span class="sig-name descname"><span class="pre">bode_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.bode_plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw the Bode plot for all input-output pairs.</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>w</dt><dd><p>A sequence of angular frequencies at which to compute the transfer function.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> for which to evaluate the transfer function.</p>
-</dd>
-<dt>ax</dt><dd><p>Axis of shape (2 * <code class="docutils literal notranslate"><span class="pre">self.dim_output</span></code>, <code class="docutils literal notranslate"><span class="pre">self.dim_input</span></code>) to which to plot.
-If not given, <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.gcf</span></code> is used to get the figure and create axis.</p>
-</dd>
-<dt>Hz</dt><dd><p>Should the frequency be in Hz on the plot.</p>
-</dd>
-<dt>dB</dt><dd><p>Should the magnitude be in dB on the plot.</p>
-</dd>
-<dt>deg</dt><dd><p>Should the phase be in degrees (otherwise in radians).</p>
-</dd>
-<dt>mpl_kwargs</dt><dd><p>Keyword arguments used in the matplotlib plot function.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>artists</dt><dd><p>List of matplotlib artists added.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.mag_plot">
-<span class="sig-name descname"><span class="pre">mag_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.mag_plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw the magnitude plot.</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>w</dt><dd><p>A sequence of angular frequencies at which to compute the transfer function.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to evaluate the transfer function.</p>
-</dd>
-<dt>ax</dt><dd><p>Axis to which to plot.
-If not given, <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.gca</span></code> is used.</p>
-</dd>
-<dt>ord</dt><dd><p>The order of the norm used to compute the magnitude (the default is the Frobenius norm).</p>
-</dd>
-<dt>Hz</dt><dd><p>Should the frequency be in Hz on the plot.</p>
-</dd>
-<dt>dB</dt><dd><p>Should the magnitude be in dB on the plot.</p>
-</dd>
-<dt>mpl_kwargs</dt><dd><p>Keyword arguments used in the matplotlib plot function.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>out</dt><dd><p>List of matplotlib artists added.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.h2_norm">
-<span class="sig-name descname"><span class="pre">h2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_norm_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">quad_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.h2_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the H2-norm using quadrature.</p>
-<p>This method uses <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code> and makes no assumptions on the form of the transfer
-function.</p>
-<p>By default, the absolute error tolerance in <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code> is set to zero (see its
-optional argument <code class="docutils literal notranslate"><span class="pre">epsabs</span></code>).
-It can be changed by using the <code class="docutils literal notranslate"><span class="pre">epsabs</span></code> keyword argument.</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>return_norm_only</dt><dd><p>Whether to only return the approximate H2-norm.</p>
-</dd>
-<dt>quad_kwargs</dt><dd><p>Keyword arguments passed to <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>norm</dt><dd><p>Computed H2-norm.</p>
-</dd>
-<dt>norm_relerr</dt><dd><p>Relative error estimate (returned if <code class="docutils literal notranslate"><span class="pre">return_norm_only</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
-</dd>
-<dt>info</dt><dd><p>Quadrature info (returned if <code class="docutils literal notranslate"><span class="pre">return_norm_only</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">full_output</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>).
-See <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code> documentation for more details.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputOutputModel.h2_inner">
-<span class="sig-name descname"><span class="pre">h2_inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lti</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputOutputModel.h2_inner" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute H2 inner product with an <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
-<p>Uses the inner product formula based on the pole-residue form
-(see, e.g., Lemma 1 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id3" title="A. C. Antoulas, C. A. Beattie, and S. Gugercin. Interpolatory model reduction of large-scale dynamical systems. In Javad Mohammadpour and Karolos M. Grigoriadis, editors, Efficient Modeling and Control of Large-Scale Systems, pages 3–58. Springer US, 2010. doi:10.1007/978-1-4419-5757-3_1.">ABG10</a>]</span>).</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>lti</dt><dd><p><a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> consisting of <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> that can be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.
-The D operator is ignored.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>inner</dt><dd><p>H2 inner product.</p>
-</dd>
-</dl>
-</div>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputStateOutputModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">InputStateOutputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputStateOutputModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputOutputModel" title="pymor.models.iosys.InputOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputOutputModel</span></code></a></p>
-<p>Base class for input-output systems with state space.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.InputStateOutputModel.order">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.InputStateOutputModel.order" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-</dd></dl>
-<dl class="py class">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">LTIModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
 <p>Class for linear time-invariant systems.</p>
 <p>This class describes input-state-output systems given by</p>
 <div class="math notranslate nohighlight">
@@ -727,6 +531,9 @@ The D operator is ignored.</p>
        y(k, \mu)     &amp; = C(\mu) x(k, \mu) + D(\mu) u(k),\end{split}\]</div>
 <p>if discrete-time, where <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, and <span class="math notranslate nohighlight">\(E\)</span> are linear
 operators.</p>
+<p>All methods related to the transfer function
+(e.g., frequency response calculation and Bode plots)
+are attached to the <code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> attribute.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -797,6 +604,11 @@ the visualizer’s <code class="docutils literal notranslate"><span class="pre">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.E">
 <span class="sig-name descname"><span class="pre">E</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.E" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> E.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.transfer_function">
+<span class="sig-name descname"><span class="pre">transfer_function</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.transfer_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transfer function.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.__str__">
@@ -1073,62 +885,49 @@ to the model which forwards its arguments to the visualizer’s <code class="doc
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.eval_tf">
 <span class="sig-name descname"><span class="pre">eval_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.eval_tf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the transfer function.</p>
-<p>The transfer function at <span class="math notranslate nohighlight">\(s\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[C(\mu) (s E(\mu) - A(\mu))^{-1} B(\mu) + D(\mu).\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Assumes that the number of inputs and outputs is much smaller than the order of the
-system.</p>
-</div>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>s</dt><dd><p>Complex number.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>tfs</dt><dd><p>Transfer function evaluated at the complex number <code class="docutils literal notranslate"><span class="pre">s</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
-<code class="docutils literal notranslate"><span class="pre">(self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.eval_tf</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_tf" title="pymor.models.transfer_function.TransferFunction.eval_tf"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval_tf</span></code></a> for a detailed
+documentation.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.eval_dtf">
 <span class="sig-name descname"><span class="pre">eval_dtf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.eval_dtf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the derivative of the transfer function.</p>
-<p>The derivative of the transfer function at <span class="math notranslate nohighlight">\(s\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[-C(\mu) (s E(\mu) - A(\mu))^{-1} E(\mu)
-    (s E(\mu) - A(\mu))^{-1} B(\mu).\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Assumes that the number of inputs and outputs is much smaller than the order of the
-system.</p>
-</div>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>s</dt><dd><p>Complex number.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>dtfs</dt><dd><p>Derivative of transfer function evaluated at the complex number <code class="docutils literal notranslate"><span class="pre">s</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of
-shape <code class="docutils literal notranslate"><span class="pre">(self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.eval_dtf</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_dtf" title="pymor.models.transfer_function.TransferFunction.eval_dtf"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval_dtf</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.freq_resp">
+<span class="sig-name descname"><span class="pre">freq_resp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.freq_resp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the transfer function on the imaginary axis.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.freq_resp</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.freq_resp" title="pymor.models.transfer_function.TransferFunction.freq_resp"><code class="xref py py-func docutils literal notranslate"><span class="pre">freq_resp</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.bode">
+<span class="sig-name descname"><span class="pre">bode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.bode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute magnitudes and phases.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.bode</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.bode" title="pymor.models.transfer_function.TransferFunction.bode"><code class="xref py py-func docutils literal notranslate"><span class="pre">bode</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.bode_plot">
+<span class="sig-name descname"><span class="pre">bode_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.bode_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the Bode plot for all input-output pairs.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.bode_plot</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.bode_plot" title="pymor.models.transfer_function.TransferFunction.bode_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">bode_plot</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.mag_plot">
+<span class="sig-name descname"><span class="pre">mag_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.mag_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the magnitude plot.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.mag_plot</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.mag_plot" title="pymor.models.transfer_function.TransferFunction.mag_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">mag_plot</span></code></a> for a detailed
+documentation.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.gramian">
@@ -1393,98 +1192,9 @@ largest.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">TransferFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputOutputModel" title="pymor.models.iosys.InputOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputOutputModel</span></code></a></p>
-<p>Class for systems represented by a transfer function.</p>
-<p>This class describes input-output systems given by a transfer
-function <span class="math notranslate nohighlight">\(H(s, mu)\)</span>.</p>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>dim_input</dt><dd><p>The number of inputs.</p>
-</dd>
-<dt>dim_output</dt><dd><p>The number of outputs.</p>
-</dd>
-<dt>tf</dt><dd><p>The transfer function defined at least on the open right complex half-plane.
-<code class="docutils literal notranslate"><span class="pre">tf(s,</span> <span class="pre">mu)</span></code> is a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(p,</span> <span class="pre">m)</span></code>.</p>
-</dd>
-<dt>dtf</dt><dd><p>The complex derivative of <code class="docutils literal notranslate"><span class="pre">H</span></code> with respect to <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
-</dd>
-<dt>cont_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the system is continuous-time, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-</dd>
-<dt>name</dt><dd><p>Name of the system.</p>
-</dd>
-</dl>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.dim_input">
-<span class="sig-name descname"><span class="pre">dim_input</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.dim_input" title="Permalink to this definition">¶</a></dt>
-<dd><p>The number of inputs.</p>
-</dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.dim_output">
-<span class="sig-name descname"><span class="pre">dim_output</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.dim_output" title="Permalink to this definition">¶</a></dt>
-<dd><p>The number of outputs.</p>
-</dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.tf">
-<span class="sig-name descname"><span class="pre">tf</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.tf" title="Permalink to this definition">¶</a></dt>
-<dd><p>The transfer function.</p>
-</dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.dtf">
-<span class="sig-name descname"><span class="pre">dtf</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.dtf" title="Permalink to this definition">¶</a></dt>
-<dd><p>The complex derivative of the transfer function.</p>
-</dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__radd__">
-<span class="sig-name descname"><span class="pre">__radd__</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__radd__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__str__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return str(self).</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.eval_tf">
-<span class="sig-name descname"><span class="pre">eval_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.eval_tf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the transfer function.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.eval_dtf">
-<span class="sig-name descname"><span class="pre">eval_dtf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.eval_dtf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the derivative of the transfer function.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__add__">
-<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__add__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__sub__">
-<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__sub__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__rsub__">
-<span class="sig-name descname"><span class="pre">__rsub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__rsub__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__neg__">
-<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__neg__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__mul__">
-<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__mul__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.models.iosys.TransferFunction.__rmul__">
-<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.TransferFunction.__rmul__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-</dd></dl>
-<dl class="py class">
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">SecondOrderModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
 <p>Class for linear second order systems.</p>
 <p>This class describes input-output systems given by</p>
 <div class="math notranslate nohighlight">
@@ -1512,6 +1222,9 @@ y(k, \mu)
     + D(\mu) u(k),\end{split}\]</div>
 <p>if discrete-time, where <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C_p\)</span>, <span class="math notranslate nohighlight">\(C_v\)</span>,
 and <span class="math notranslate nohighlight">\(D\)</span> are linear operators.</p>
+<p>All methods related to the transfer function
+(e.g., frequency response calculation and Bode plots)
+are attached to the <code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> attribute.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -1595,6 +1308,11 @@ the model which forwards its arguments to the visualizer’s <code class="docuti
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.D">
 <span class="sig-name descname"><span class="pre">D</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.D" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> D.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.transfer_function">
+<span class="sig-name descname"><span class="pre">transfer_function</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.transfer_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transfer function.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.__str__">
@@ -1851,67 +1569,49 @@ y(t)
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.eval_tf">
 <span class="sig-name descname"><span class="pre">eval_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.eval_tf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the transfer function.</p>
-<p>The transfer function at <span class="math notranslate nohighlight">\(s\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[(C_p(\mu) + s C_v(\mu))
-    (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1} B(\mu)
-+ D(\mu).\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Assumes that the number of inputs and outputs is much smaller than the order of the
-system.</p>
-</div>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>s</dt><dd><p>Complex number.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>tfs</dt><dd><p>Transfer function evaluated at the complex number <code class="docutils literal notranslate"><span class="pre">s</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
-<code class="docutils literal notranslate"><span class="pre">(self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.eval_tf</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_tf" title="pymor.models.transfer_function.TransferFunction.eval_tf"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval_tf</span></code></a> for a detailed
+documentation.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.eval_dtf">
 <span class="sig-name descname"><span class="pre">eval_dtf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.eval_dtf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the derivative of the transfer function.</p>
-<div class="math notranslate nohighlight">
-\[s C_v(\mu) (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1} B(\mu)
-- (C_p(\mu) + s C_v(\mu))
-    (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1}
-    (2 s M(\mu) + E(\mu))
-    (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1}
-    B(\mu).\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Assumes that the number of inputs and outputs is much smaller than the order of the
-system.</p>
-</div>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>s</dt><dd><p>Complex number.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>dtfs</dt><dd><p>Derivative of transfer function evaluated at the complex number <code class="docutils literal notranslate"><span class="pre">s</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of
-shape <code class="docutils literal notranslate"><span class="pre">(self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.eval_dtf</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_dtf" title="pymor.models.transfer_function.TransferFunction.eval_dtf"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval_dtf</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.freq_resp">
+<span class="sig-name descname"><span class="pre">freq_resp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.freq_resp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the transfer function on the imaginary axis.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.freq_resp</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.freq_resp" title="pymor.models.transfer_function.TransferFunction.freq_resp"><code class="xref py py-func docutils literal notranslate"><span class="pre">freq_resp</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.bode">
+<span class="sig-name descname"><span class="pre">bode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.bode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute magnitudes and phases.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.bode</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.bode" title="pymor.models.transfer_function.TransferFunction.bode"><code class="xref py py-func docutils literal notranslate"><span class="pre">bode</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.bode_plot">
+<span class="sig-name descname"><span class="pre">bode_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.bode_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the Bode plot for all input-output pairs.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.bode_plot</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.bode_plot" title="pymor.models.transfer_function.TransferFunction.bode_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">bode_plot</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.mag_plot">
+<span class="sig-name descname"><span class="pre">mag_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.mag_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the magnitude plot.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.mag_plot</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.mag_plot" title="pymor.models.transfer_function.TransferFunction.mag_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">mag_plot</span></code></a> for a detailed
+documentation.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.gramian">
@@ -2109,7 +1809,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'pc_dense
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">LinearDelayModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
 <p>Class for linear delay systems.</p>
 <p>This class describes input-state-output systems given by</p>
 <div class="math notranslate nohighlight">
@@ -2135,6 +1835,9 @@ y(k)
     + D u(k),\end{split}\]</div>
 <p>if discrete-time, where <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(A_i\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, and <span class="math notranslate nohighlight">\(D\)</span>
 are linear operators.</p>
+<p>All methods related to the transfer function
+(e.g., frequency response calculation and Bode plots)
+are attached to the <code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> attribute.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -2222,6 +1925,11 @@ the model which forwards its arguments to the visualizer’s <code class="docuti
 <span class="sig-name descname"><span class="pre">E</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.E" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> E.</p>
 </dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.transfer_function">
+<span class="sig-name descname"><span class="pre">transfer_function</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.transfer_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transfer function.</p>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.__str__" title="Permalink to this definition">¶</a></dt>
@@ -2266,74 +1974,55 @@ the model which forwards its arguments to the visualizer’s <code class="docuti
 <dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.eval_tf">
 <span class="sig-name descname"><span class="pre">eval_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.eval_tf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the transfer function.</p>
-<p>The transfer function at <span class="math notranslate nohighlight">\(s\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[C \left(s E - A
-    - \sum_{i = 1}^q{e^{-\tau_i s} A_i}\right)^{-1} B
-+ D.\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Assumes that the number of inputs and outputs is much smaller than the order of the
-system.</p>
-</div>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>s</dt><dd><p>Complex number.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>tfs</dt><dd><p>Transfer function evaluated at the complex number <code class="docutils literal notranslate"><span class="pre">s</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
-<code class="docutils literal notranslate"><span class="pre">(self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.eval_tf</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_tf" title="pymor.models.transfer_function.TransferFunction.eval_tf"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval_tf</span></code></a> for a detailed
+documentation.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.eval_dtf">
 <span class="sig-name descname"><span class="pre">eval_dtf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.eval_dtf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the derivative of the transfer function.</p>
-<p>The derivative of the transfer function at <span class="math notranslate nohighlight">\(s\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[-C \left(s E - A
-        - \sum_{i = 1}^q{e^{-\tau_i s} A_i}\right)^{-1}
-    \left(E
-        + \sum_{i = 1}^q{\tau_i e^{-\tau_i s} A_i}\right)
-    \left(s E - A
-        - \sum_{i = 1}^q{e^{-\tau_i s} A_i}\right)^{-1} B.\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Assumes that the number of inputs and outputs is much smaller than the order of the
-system.</p>
-</div>
-<div class="admonition-parameters admonition">
-<p class="admonition-title">Parameters</p>
-<dl class="simple">
-<dt>s</dt><dd><p>Complex number.</p>
-</dd>
-<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
-</dd>
-</dl>
-</div>
-<div class="admonition-returns admonition">
-<p class="admonition-title">Returns</p>
-<dl class="simple">
-<dt>dtfs</dt><dd><p>Derivative of transfer function evaluated at the complex number <code class="docutils literal notranslate"><span class="pre">s</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of
-shape <code class="docutils literal notranslate"><span class="pre">(self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
-</dd>
-</dl>
-</div>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.eval_dtf</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_dtf" title="pymor.models.transfer_function.TransferFunction.eval_dtf"><code class="xref py py-func docutils literal notranslate"><span class="pre">eval_dtf</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.freq_resp">
+<span class="sig-name descname"><span class="pre">freq_resp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.freq_resp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the transfer function on the imaginary axis.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.freq_resp</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.freq_resp" title="pymor.models.transfer_function.TransferFunction.freq_resp"><code class="xref py py-func docutils literal notranslate"><span class="pre">freq_resp</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.bode">
+<span class="sig-name descname"><span class="pre">bode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.bode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute magnitudes and phases.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.bode</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.bode" title="pymor.models.transfer_function.TransferFunction.bode"><code class="xref py py-func docutils literal notranslate"><span class="pre">bode</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.bode_plot">
+<span class="sig-name descname"><span class="pre">bode_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.bode_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the Bode plot for all input-output pairs.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.bode_plot</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.bode_plot" title="pymor.models.transfer_function.TransferFunction.bode_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">bode_plot</span></code></a> for a detailed
+documentation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.iosys.LinearDelayModel.mag_plot">
+<span class="sig-name descname"><span class="pre">mag_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">mpl_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearDelayModel.mag_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the magnitude plot.</p>
+<p>This function is an alias for <code class="docutils literal notranslate"><span class="pre">transfer_function.mag_plot</span></code>.
+See <a class="reference internal" href="../transfer_function/index.html#pymor.models.transfer_function.TransferFunction.mag_plot" title="pymor.models.transfer_function.TransferFunction.mag_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">mag_plot</span></code></a> for a detailed
+documentation.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.models.iosys.LinearStochasticModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">LinearStochasticModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">As</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LinearStochasticModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
 <p>Class for linear stochastic systems.</p>
 <p>This class describes input-state-output systems given by</p>
 <div class="math notranslate nohighlight">
@@ -2448,7 +2137,7 @@ the model which forwards its arguments to the visualizer’s <code class="docuti
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.models.iosys.BilinearModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.iosys.</span></span><span class="sig-name descname"><span class="pre">BilinearModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.BilinearModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
 <p>Class for bilinear systems.</p>
 <p>This class describes input-output systems given by</p>
 <div class="math notranslate nohighlight">

@@ -12,10 +12,7 @@ Classes
 
 .. autoapisummary::
 
-   pymor.models.iosys.InputOutputModel
-   pymor.models.iosys.InputStateOutputModel
    pymor.models.iosys.LTIModel
-   pymor.models.iosys.TransferFunction
    pymor.models.iosys.SecondOrderModel
    pymor.models.iosys.LinearDelayModel
    pymor.models.iosys.LinearStochasticModel
@@ -40,187 +37,9 @@ Functions
    Return minimal sparse problem size for which to warn about converting to dense.
 
 
-.. py:class:: InputOutputModel(dim_input, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
-   Bases: :py:obj:`pymor.models.interface.Model`
-
-   Base class for input-output systems.
-
-   .. py:attribute:: cache_region
-      :annotation: = memory
-
-      
-
-   .. py:method:: eval_tf(self, s, mu=None)
-      :abstractmethod:
-
-      Evaluate the transfer function.
-
-
-   .. py:method:: eval_dtf(self, s, mu=None)
-      :abstractmethod:
-
-      Evaluate the derivative of the transfer function.
-
-
-   .. py:method:: freq_resp(self, w, mu=None)
-
-      Evaluate the transfer function on the imaginary axis.
-
-      .. admonition:: Parameters
-
-          w
-              A sequence of angular frequencies at which to compute the transfer function.
-          mu
-              |Parameter values| for which to evaluate the transfer function.
-              
-      .. admonition:: Returns
-
-          tfw
-              Transfer function values at frequencies in `w`, |NumPy array| of shape
-              `(len(w), self.dim_output, self.dim_input)`.
-              
-
-   .. py:method:: bode(self, w, mu=None)
-
-      Compute magnitudes and phases.
-
-      .. admonition:: Parameters
-
-          w
-              A sequence of angular frequencies at which to compute the transfer function.
-          mu
-              |Parameter values| for which to evaluate the transfer function.
-              
-      .. admonition:: Returns
-
-          mag
-              Transfer function magnitudes at frequencies in `w`, |NumPy array| of shape
-              `(len(w), self.dim_output, self.dim_input)`.
-          phase
-              Transfer function phases (in radians) at frequencies in `w`, |NumPy array| of shape
-              `(len(w), self.dim_output, self.dim_input)`.
-              
-
-   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
-
-      Draw the Bode plot for all input-output pairs.
-
-      .. admonition:: Parameters
-
-          w
-              A sequence of angular frequencies at which to compute the transfer function.
-          mu
-              |Parameter| for which to evaluate the transfer function.
-          ax
-              Axis of shape (2 * `self.dim_output`, `self.dim_input`) to which to plot.
-              If not given, `matplotlib.pyplot.gcf` is used to get the figure and create axis.
-          Hz
-              Should the frequency be in Hz on the plot.
-          dB
-              Should the magnitude be in dB on the plot.
-          deg
-              Should the phase be in degrees (otherwise in radians).
-          mpl_kwargs
-              Keyword arguments used in the matplotlib plot function.
-              
-      .. admonition:: Returns
-
-          artists
-              List of matplotlib artists added.
-              
-
-   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
-
-      Draw the magnitude plot.
-
-      .. admonition:: Parameters
-
-          w
-              A sequence of angular frequencies at which to compute the transfer function.
-          mu
-              |Parameter values| for which to evaluate the transfer function.
-          ax
-              Axis to which to plot.
-              If not given, `matplotlib.pyplot.gca` is used.
-          ord
-              The order of the norm used to compute the magnitude (the default is the Frobenius norm).
-          Hz
-              Should the frequency be in Hz on the plot.
-          dB
-              Should the magnitude be in dB on the plot.
-          mpl_kwargs
-              Keyword arguments used in the matplotlib plot function.
-              
-      .. admonition:: Returns
-
-          out
-              List of matplotlib artists added.
-              
-
-   .. py:method:: h2_norm(self, return_norm_only=True, **quad_kwargs)
-
-      Compute the H2-norm using quadrature.
-
-      This method uses `scipy.integrate.quad` and makes no assumptions on the form of the transfer
-      function.
-
-      By default, the absolute error tolerance in `scipy.integrate.quad` is set to zero (see its
-      optional argument `epsabs`).
-      It can be changed by using the `epsabs` keyword argument.
-
-      .. admonition:: Parameters
-
-          return_norm_only
-              Whether to only return the approximate H2-norm.
-          quad_kwargs
-              Keyword arguments passed to `scipy.integrate.quad`.
-              
-      .. admonition:: Returns
-
-          norm
-              Computed H2-norm.
-          norm_relerr
-              Relative error estimate (returned if `return_norm_only` is `False`).
-          info
-              Quadrature info (returned if `return_norm_only` is `False` and `full_output` is `True`).
-              See `scipy.integrate.quad` documentation for more details.
-              
-
-   .. py:method:: h2_inner(self, lti)
-
-      Compute H2 inner product with an |LTIModel|.
-
-      Uses the inner product formula based on the pole-residue form
-      (see, e.g., Lemma 1 in :cite:`ABG10`).
-
-      .. admonition:: Parameters
-
-          lti
-              |LTIModel| consisting of |Operators| that can be converted to |NumPy arrays|.
-              The D operator is ignored.
-              
-      .. admonition:: Returns
-
-          inner
-              H2 inner product.
-              
-
-
-.. py:class:: InputStateOutputModel(dim_input, solution_space, dim_output, cont_time=True, error_estimator=None, visualizer=None, name=None)
-
-   Bases: :py:obj:`InputOutputModel`
-
-   Base class for input-output systems with state space.
-
-   .. py:method:: order(self)
-      :property:
-
-
-
 .. py:class:: LTIModel(A, B, C, D=None, E=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear time-invariant systems.
 
@@ -238,6 +57,10 @@ Functions
 
    if discrete-time, where :math:`A`, :math:`B`, :math:`C`, :math:`D`, and :math:`E` are linear
    operators.
+
+   All methods related to the transfer function
+   (e.g., frequency response calculation and Bode plots)
+   are attached to the `transfer_function` attribute.
 
    .. admonition:: Parameters
 
@@ -299,6 +122,10 @@ Functions
    .. attribute:: E
 
       The |Operator| E.
+
+   .. attribute:: transfer_function
+
+      The transfer function.
       
 
    .. py:method:: __str__(self)
@@ -553,56 +380,55 @@ Functions
 
       Evaluate the transfer function.
 
-      The transfer function at :math:`s` is
+      This function is an alias for `transfer_function.eval_tf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
+      documentation.
 
-      .. math::
-          C(\mu) (s E(\mu) - A(\mu))^{-1} B(\mu) + D(\mu).
-
-      .. note::
-          Assumes that the number of inputs and outputs is much smaller than the order of the
-          system.
-
-      .. admonition:: Parameters
-
-          s
-              Complex number.
-          mu
-              |Parameter values|.
-              
-      .. admonition:: Returns
-
-          tfs
-              Transfer function evaluated at the complex number `s`, |NumPy array| of shape
-              `(self.dim_output, self.dim_input)`.
-              
 
    .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
-      The derivative of the transfer function at :math:`s` is
+      This function is an alias for `transfer_function.eval_dtf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
+      documentation.
 
-      .. math::
-          -C(\mu) (s E(\mu) - A(\mu))^{-1} E(\mu)
-              (s E(\mu) - A(\mu))^{-1} B(\mu).
 
-      .. note::
-          Assumes that the number of inputs and outputs is much smaller than the order of the
-          system.
+   .. py:method:: freq_resp(self, w, mu=None)
 
-      .. admonition:: Parameters
+      Evaluate the transfer function on the imaginary axis.
 
-          s
-              Complex number.
-          mu
-              |Parameter values|.
-              
-      .. admonition:: Returns
+      This function is an alias for `transfer_function.freq_resp`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
+      documentation.
 
-          dtfs
-              Derivative of transfer function evaluated at the complex number `s`, |NumPy array| of
-              shape `(self.dim_output, self.dim_input)`.
-              
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      This function is an alias for `transfer_function.bode`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
+      documentation.
+
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      This function is an alias for `transfer_function.bode_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
+      documentation.
+
+
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      This function is an alias for `transfer_function.mag_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
+      documentation.
+
 
    .. py:method:: gramian(self, typ, mu=None)
 
@@ -828,90 +654,9 @@ Functions
               
 
 
-.. py:class:: TransferFunction(dim_input, dim_output, tf, dtf, parameters={}, cont_time=True, name=None)
-
-   Bases: :py:obj:`InputOutputModel`
-
-   Class for systems represented by a transfer function.
-
-   This class describes input-output systems given by a transfer
-   function :math:`H(s, mu)`.
-
-   .. admonition:: Parameters
-
-       dim_input
-           The number of inputs.
-       dim_output
-           The number of outputs.
-       tf
-           The transfer function defined at least on the open right complex half-plane.
-           `tf(s, mu)` is a |NumPy array| of shape `(p, m)`.
-       dtf
-           The complex derivative of `H` with respect to `s`.
-       cont_time
-           `True` if the system is continuous-time, otherwise `False`.
-       name
-           Name of the system.
-           
-   .. attribute:: dim_input
-
-      The number of inputs.
-
-   .. attribute:: dim_output
-
-      The number of outputs.
-
-   .. attribute:: tf
-
-      The transfer function.
-
-   .. attribute:: dtf
-
-      The complex derivative of the transfer function.
-      
-
-   .. py:attribute:: __radd__
-      
-
-      
-
-   .. py:method:: __str__(self)
-
-      Return str(self).
-
-
-   .. py:method:: eval_tf(self, s, mu=None)
-
-      Evaluate the transfer function.
-
-
-   .. py:method:: eval_dtf(self, s, mu=None)
-
-      Evaluate the derivative of the transfer function.
-
-
-   .. py:method:: __add__(self, other)
-
-
-   .. py:method:: __sub__(self, other)
-
-
-   .. py:method:: __rsub__(self, other)
-
-
-   .. py:method:: __neg__(self)
-
-
-   .. py:method:: __mul__(self, other)
-
-
-   .. py:method:: __rmul__(self, other)
-
-
-
 .. py:class:: SecondOrderModel(M, E, K, B, Cp, Cv=None, D=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear second order systems.
 
@@ -945,6 +690,10 @@ Functions
 
    if discrete-time, where :math:`M`, :math:`E`, :math:`K`, :math:`B`, :math:`C_p`, :math:`C_v`,
    and :math:`D` are linear operators.
+
+   All methods related to the transfer function
+   (e.g., frequency response calculation and Bode plots)
+   are attached to the `transfer_function` attribute.
 
    .. admonition:: Parameters
 
@@ -1017,6 +766,10 @@ Functions
    .. attribute:: D
 
       The |Operator| D.
+
+   .. attribute:: transfer_function
+
+      The transfer function.
       
 
    .. py:method:: __str__(self)
@@ -1262,60 +1015,55 @@ Functions
 
       Evaluate the transfer function.
 
-      The transfer function at :math:`s` is
+      This function is an alias for `transfer_function.eval_tf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
+      documentation.
 
-      .. math::
-          (C_p(\mu) + s C_v(\mu))
-              (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1} B(\mu)
-          + D(\mu).
-
-      .. note::
-          Assumes that the number of inputs and outputs is much smaller than the order of the
-          system.
-
-      .. admonition:: Parameters
-
-          s
-              Complex number.
-          mu
-              |Parameter values|.
-              
-      .. admonition:: Returns
-
-          tfs
-              Transfer function evaluated at the complex number `s`, |NumPy array| of shape
-              `(self.dim_output, self.dim_input)`.
-              
 
    .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
-      .. math::
-          s C_v(\mu) (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1} B(\mu)
-          - (C_p(\mu) + s C_v(\mu))
-              (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1}
-              (2 s M(\mu) + E(\mu))
-              (s^2 M(\mu) + s E(\mu) + K(\mu))^{-1}
-              B(\mu).
+      This function is an alias for `transfer_function.eval_dtf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
+      documentation.
 
-      .. note::
-          Assumes that the number of inputs and outputs is much smaller than the order of the
-          system.
 
-      .. admonition:: Parameters
+   .. py:method:: freq_resp(self, w, mu=None)
 
-          s
-              Complex number.
-          mu
-              |Parameter values|.
-              
-      .. admonition:: Returns
+      Evaluate the transfer function on the imaginary axis.
 
-          dtfs
-              Derivative of transfer function evaluated at the complex number `s`, |NumPy array| of
-              shape `(self.dim_output, self.dim_input)`.
-              
+      This function is an alias for `transfer_function.freq_resp`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
+      documentation.
+
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      This function is an alias for `transfer_function.bode`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
+      documentation.
+
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      This function is an alias for `transfer_function.bode_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
+      documentation.
+
+
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      This function is an alias for `transfer_function.mag_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
+      documentation.
+
 
    .. py:method:: gramian(self, typ, mu=None)
 
@@ -1481,7 +1229,7 @@ Functions
 
 .. py:class:: LinearDelayModel(A, Ad, tau, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear delay systems.
 
@@ -1513,6 +1261,10 @@ Functions
 
    if discrete-time, where :math:`E`, :math:`A`, :math:`A_i`, :math:`B`, :math:`C`, and :math:`D`
    are linear operators.
+
+   All methods related to the transfer function
+   (e.g., frequency response calculation and Bode plots)
+   are attached to the `transfer_function` attribute.
 
    .. admonition:: Parameters
 
@@ -1587,6 +1339,10 @@ Functions
    .. attribute:: E
 
       The |Operator| E.
+
+   .. attribute:: transfer_function
+
+      The transfer function.
       
 
    .. py:method:: __str__(self)
@@ -1633,67 +1389,60 @@ Functions
 
       Evaluate the transfer function.
 
-      The transfer function at :math:`s` is
+      This function is an alias for `transfer_function.eval_tf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
+      documentation.
 
-      .. math::
-          C \left(s E - A
-              - \sum_{i = 1}^q{e^{-\tau_i s} A_i}\right)^{-1} B
-          + D.
-
-      .. note::
-          Assumes that the number of inputs and outputs is much smaller than the order of the
-          system.
-
-      .. admonition:: Parameters
-
-          s
-              Complex number.
-          mu
-              |Parameter values|.
-              
-      .. admonition:: Returns
-
-          tfs
-              Transfer function evaluated at the complex number `s`, |NumPy array| of shape
-              `(self.dim_output, self.dim_input)`.
-              
 
    .. py:method:: eval_dtf(self, s, mu=None)
 
       Evaluate the derivative of the transfer function.
 
-      The derivative of the transfer function at :math:`s` is
+      This function is an alias for `transfer_function.eval_dtf`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
+      documentation.
 
-      .. math::
-          -C \left(s E - A
-                  - \sum_{i = 1}^q{e^{-\tau_i s} A_i}\right)^{-1}
-              \left(E
-                  + \sum_{i = 1}^q{\tau_i e^{-\tau_i s} A_i}\right)
-              \left(s E - A
-                  - \sum_{i = 1}^q{e^{-\tau_i s} A_i}\right)^{-1} B.
 
-      .. note::
-          Assumes that the number of inputs and outputs is much smaller than the order of the
-          system.
+   .. py:method:: freq_resp(self, w, mu=None)
 
-      .. admonition:: Parameters
+      Evaluate the transfer function on the imaginary axis.
 
-          s
-              Complex number.
-          mu
-              |Parameter values|.
-              
-      .. admonition:: Returns
+      This function is an alias for `transfer_function.freq_resp`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
+      documentation.
 
-          dtfs
-              Derivative of transfer function evaluated at the complex number `s`, |NumPy array| of
-              shape `(self.dim_output, self.dim_input)`.
-              
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      This function is an alias for `transfer_function.bode`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
+      documentation.
+
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      This function is an alias for `transfer_function.bode_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
+      documentation.
+
+
+   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      This function is an alias for `transfer_function.mag_plot`.
+      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
+      documentation.
+
 
 
 .. py:class:: LinearStochasticModel(A, As, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for linear stochastic systems.
 
@@ -1803,7 +1552,7 @@ Functions
 
 .. py:class:: BilinearModel(A, N, B, C, D, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
 
-   Bases: :py:obj:`InputStateOutputModel`
+   Bases: :py:obj:`pymor.models.interface.Model`
 
    Class for bilinear systems.
 
