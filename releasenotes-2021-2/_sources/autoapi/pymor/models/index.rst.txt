@@ -15,5 +15,6 @@ Submodules
    iosys <iosys/index.rst>
    mpi <mpi/index.rst>
    neural_network <neural_network/index.rst>
+   transfer_function <transfer_function/index.rst>
 
 
