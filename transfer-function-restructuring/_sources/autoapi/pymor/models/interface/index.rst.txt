@@ -56,7 +56,7 @@ Classes
 
       
 
-   .. py:method:: _compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, mu=None, **kwargs)
+   .. py:method:: _compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, output_error_estimate_return_vector=False, mu=None, **kwargs)
 
 
    .. py:method:: _compute_solution(self, mu=None, **kwargs)
@@ -201,7 +201,7 @@ Classes
           `'solution_error_estimate'`.
               
 
-   .. py:method:: _compute_output_error_estimate(self, solution, mu=None, **kwargs)
+   .. py:method:: _compute_output_error_estimate(self, solution, mu=None, return_vector=False, **kwargs)
 
       Compute an error estimate for the computed model output.
 
@@ -223,6 +223,11 @@ Classes
               Internal model state for the given |parameter values|.
           mu
               |Parameter values| for which to compute the error estimate.
+          return_vector
+              If `True`, return the output estimate as a |NumPy array|,
+              where each component corresponds to the respective component
+              of the :attr:`output_functional`.
+              Otherwise, return the euclidian norm of all components.
           kwargs
               Additional keyword arguments to customize how the error estimate is
               computed or to select additional data to be returned.
@@ -233,7 +238,7 @@ Classes
           `'solution_error_estimate'`.
               
 
-   .. py:method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, *, mu=None, input=None, **kwargs)
+   .. py:method:: compute(self, solution=False, output=False, solution_d_mu=False, output_d_mu=False, solution_error_estimate=False, output_error_estimate=False, output_d_mu_return_array=False, output_error_estimate_return_vector=False, *, mu=None, input=None, **kwargs)
 
       Compute the solution of the model and associated quantities.
 
@@ -269,8 +274,13 @@ Classes
           output_error_estimate
               If `True`, return an error estimate for the computed output.
           output_d_mu_return_array
-              if `True`, return the output gradient as a |NumPy array|.
+              If `True`, return the output gradient as a |NumPy array|.
               Otherwise, return a dict of gradients for each |Parameter|.
+          output_error_estimate_return_vector
+              If `True`, return the output estimate as a |NumPy array|,
+              where each component corresponds to the respective component
+              of the :attr:`output_functional`.
+              Otherwise, return the euclidian norm of all components.
           mu
               |Parameter values| for which to compute the values.
           input
@@ -322,7 +332,7 @@ Classes
           the estimate is returned as second value.
               
 
-   .. py:method:: output(self, mu=None, input=None, return_error_estimate=False, **kwargs)
+   .. py:method:: output(self, mu=None, input=None, return_error_estimate=False, return_error_estimate_vector=False, **kwargs)
 
       Return the model output for given |parameter values| `mu`.
 
@@ -340,6 +350,11 @@ Classes
               Can be `None` if `self.dim_input == 0`.
           return_error_estimate
               If `True`, also return an error estimate for the computed output.
+          return_error_estimate_vector
+              If `True`, return the output estimate as a |NumPy array|,
+              where each component corresponds to the respective component
+              of the :attr:`output_functional`.
+              Otherwise, return the euclidian norm of all components.
           kwargs
               Additional keyword arguments passed to :meth:`compute` that
               might affect how the solution is computed.
@@ -433,7 +448,7 @@ Classes
           The estimated error.
               
 
-   .. py:method:: estimate_output_error(self, mu=None, input=None, **kwargs)
+   .. py:method:: estimate_output_error(self, mu=None, input=None, return_vector=False, **kwargs)
 
       Estimate the error for the computed output.
 
@@ -456,6 +471,11 @@ Classes
               mapping time to input, or a `str` expression whith `t` as variable that
               can be used to instatiate an |ExpressionFunction| of this type.
               Can be `None` if `self.dim_input == 0`.
+          return_vector
+              If `True`, return the output estimate as a |NumPy array|,
+              where each component corresponds to the respective component
+              of the :attr:`output_functional`.
+              Otherwise, return the euclidian norm of all components.
           kwargs
               Additional keyword arguments passed to :meth:`compute` that
               might affect how the error estimate (or the output) is computed.

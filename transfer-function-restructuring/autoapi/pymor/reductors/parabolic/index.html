@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.reductors.parabolic &#8212; pyMOR v2021.1rc0+913.g2bb11e918 Manual</title>
+    <title>pymor.reductors.parabolic &#8212; pyMOR v2021.1rc0+1043.gccc03d687 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+913.g2bb11e918 Manual logo">
+                   alt="pyMOR v2021.1rc0+1043.gccc03d687 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+913.g2bb11e918 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+1043.gccc03d687 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+913.g2bb11e918 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+1043.gccc03d687 Manual">Documentation</a>
   </label>
   
 
@@ -567,13 +567,17 @@ for the coercivity constant of <code class="docutils literal notranslate"><span 
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.reductors.parabolic.ParabolicRBEstimator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.parabolic.</span></span><span class="sig-name descname"><span class="pre">ParabolicRBEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">residual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual_range_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_residual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_residual_range_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coercivity_estimator</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/reductors/parabolic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.parabolic.ParabolicRBEstimator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.parabolic.</span></span><span class="sig-name descname"><span class="pre">ParabolicRBEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">residual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual_range_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_residual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_residual_range_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coercivity_estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projected_output_adjoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/reductors/parabolic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.parabolic.ParabolicRBEstimator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.ImmutableObject" title="pymor.core.base.ImmutableObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.ImmutableObject</span></code></a></p>
 <p>Instantiated by <a class="reference internal" href="#pymor.reductors.parabolic.ParabolicRBReductor" title="pymor.reductors.parabolic.ParabolicRBReductor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParabolicRBReductor</span></code></a>.</p>
 <p>Not to be used directly.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.parabolic.ParabolicRBEstimator.estimate_error">
 <span class="sig-name descname"><span class="pre">estimate_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_error_sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/reductors/parabolic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.parabolic.ParabolicRBEstimator.estimate_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.reductors.parabolic.ParabolicRBEstimator.estimate_output_error">
+<span class="sig-name descname"><span class="pre">estimate_output_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_error_sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/reductors/parabolic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.parabolic.ParabolicRBEstimator.estimate_output_error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.parabolic.ParabolicRBEstimator.restricted_to_subbasis">
@@ -631,7 +635,7 @@ for the coercivity constant of <code class="docutils literal notranslate"><span 
               
           </div>
             Last updated on
-              Dec 20, 2021.
+              Dec 21, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.

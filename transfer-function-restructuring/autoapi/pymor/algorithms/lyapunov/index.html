@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.lyapunov &#8212; pyMOR v2021.1rc0+913.g2bb11e918 Manual</title>
+    <title>pymor.algorithms.lyapunov &#8212; pyMOR v2021.1rc0+1043.gccc03d687 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+913.g2bb11e918 Manual logo">
+                   alt="pyMOR v2021.1rc0+1043.gccc03d687 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+913.g2bb11e918 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+1043.gccc03d687 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+913.g2bb11e918 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+1043.gccc03d687 Manual">Documentation</a>
   </label>
   
 
@@ -301,6 +301,13 @@
     
     
       <a href="../bernoulli/index.html" class="md-nav__link">bernoulli</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../dmd/index.html" class="md-nav__link">dmd</a>
       
     
     </li>
@@ -734,14 +741,14 @@ backend is chosen based on availability in the following order:</p>
 <li><p>for sparse problems (minimum size specified by
 <a class="reference internal" href="#pymor.algorithms.lyapunov.mat_eqn_sparse_min_size" title="pymor.algorithms.lyapunov.mat_eqn_sparse_min_size"><code class="xref py py-func docutils literal notranslate"><span class="pre">mat_eqn_sparse_min_size</span></code></a>)</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pymess</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.solve_lyap_lrcf</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pymess</span></code> (see <a class="reference internal" href="../../bindings/pymess/index.html#pymor.bindings.pymess.solve_lyap_lrcf" title="pymor.bindings.pymess.solve_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.solve_lyap_lrcf</span></code></a>),</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lradi</span></code> (see <a class="reference internal" href="../lradi/index.html#pymor.algorithms.lradi.solve_lyap_lrcf" title="pymor.algorithms.lradi.solve_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lradi.solve_lyap_lrcf</span></code></a>),</p></li>
 </ol>
 </li>
 <li><p>for dense problems (smaller than <a class="reference internal" href="#pymor.algorithms.lyapunov.mat_eqn_sparse_min_size" title="pymor.algorithms.lyapunov.mat_eqn_sparse_min_size"><code class="xref py py-func docutils literal notranslate"><span class="pre">mat_eqn_sparse_min_size</span></code></a>)</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pymess</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.solve_lyap_lrcf</span></code>),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">slycot</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.solve_lyap_lrcf</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pymess</span></code> (see <a class="reference internal" href="../../bindings/pymess/index.html#pymor.bindings.pymess.solve_lyap_lrcf" title="pymor.bindings.pymess.solve_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.solve_lyap_lrcf</span></code></a>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slycot</span></code> (see <a class="reference internal" href="../../bindings/slycot/index.html#pymor.bindings.slycot.solve_lyap_lrcf" title="pymor.bindings.slycot.solve_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.solve_lyap_lrcf</span></code></a>),</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> (see <a class="reference internal" href="../../bindings/scipy/index.html#pymor.bindings.scipy.solve_lyap_lrcf" title="pymor.bindings.scipy.solve_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.scipy.solve_lyap_lrcf</span></code></a>).</p></li>
 </ol>
 </li>
@@ -764,7 +771,7 @@ See:</p>
 <li><p><a class="reference internal" href="../lradi/index.html#pymor.algorithms.lradi.lyap_lrcf_solver_options" title="pymor.algorithms.lradi.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lradi.lyap_lrcf_solver_options</span></code></a>,</p></li>
 <li><p><a class="reference internal" href="../../bindings/scipy/index.html#pymor.bindings.scipy.lyap_lrcf_solver_options" title="pymor.bindings.scipy.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.scipy.lyap_lrcf_solver_options</span></code></a>,</p></li>
 <li><p><a class="reference internal" href="../../bindings/slycot/index.html#pymor.bindings.slycot.lyap_lrcf_solver_options" title="pymor.bindings.slycot.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.lyap_lrcf_solver_options</span></code></a>,</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.lyap_lrcf_solver_options</span></code>.</p></li>
+<li><p><a class="reference internal" href="../../bindings/pymess/index.html#pymor.bindings.pymess.lyap_lrcf_solver_options" title="pymor.bindings.pymess.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.lyap_lrcf_solver_options</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt>default_sparse_solver_backend</dt><dd><p>Default sparse solver backend to use (pymess, lradi).</p>
@@ -816,8 +823,8 @@ unique solution X).</p>
 <p>If the solver is not specified using the options argument, a solver
 backend is chosen based on availability in the following order:</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pymess</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.solve_lyap_dense</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">slycot</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.solve_lyap_dense</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pymess</span></code> (see <a class="reference internal" href="../../bindings/pymess/index.html#pymor.bindings.pymess.solve_lyap_dense" title="pymor.bindings.pymess.solve_lyap_dense"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.solve_lyap_dense</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slycot</span></code> (see <a class="reference internal" href="../../bindings/slycot/index.html#pymor.bindings.slycot.solve_lyap_dense" title="pymor.bindings.slycot.solve_lyap_dense"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.solve_lyap_dense</span></code></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> (see <a class="reference internal" href="../../bindings/scipy/index.html#pymor.bindings.scipy.solve_lyap_dense" title="pymor.bindings.scipy.solve_lyap_dense"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.scipy.solve_lyap_dense</span></code></a>)</p></li>
 </ol>
 <div class="admonition-parameters admonition">
@@ -836,8 +843,8 @@ transposed.</p>
 See:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../bindings/scipy/index.html#pymor.bindings.scipy.lyap_dense_solver_options" title="pymor.bindings.scipy.lyap_dense_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.scipy.lyap_dense_solver_options</span></code></a>,</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.lyap_dense_solver_options</span></code>,</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.lyap_dense_solver_options</span></code>.</p></li>
+<li><p><a class="reference internal" href="../../bindings/slycot/index.html#pymor.bindings.slycot.lyap_dense_solver_options" title="pymor.bindings.slycot.lyap_dense_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.slycot.lyap_dense_solver_options</span></code></a>,</p></li>
+<li><p><a class="reference internal" href="../../bindings/pymess/index.html#pymor.bindings.pymess.lyap_dense_solver_options" title="pymor.bindings.pymess.lyap_dense_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.bindings.pymess.lyap_dense_solver_options</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt>default_solver_backend</dt><dd><p>Default solver backend to use (pymess, slycot, scipy).</p>
@@ -928,7 +935,7 @@ used for singular matrices).</p>
               
           </div>
             Last updated on
-              Dec 20, 2021.
+              Dec 21, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.

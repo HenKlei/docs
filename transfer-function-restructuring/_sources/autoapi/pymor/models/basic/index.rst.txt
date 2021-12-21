@@ -245,6 +245,11 @@ Classes
        name
            Name of the model.
            
+   .. py:attribute:: _compute_allowed_kwargs
+      
+
+      
+
    .. py:method:: __str__(self)
 
       Return str(self).

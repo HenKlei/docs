@@ -55,7 +55,7 @@ Classes
 
 
 
-.. py:class:: CoerciveRBEstimator(residual, residual_range_dims, coercivity_estimator)
+.. py:class:: CoerciveRBEstimator(residual, residual_range_dims, coercivity_estimator, projected_output_adjoint=None)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -64,6 +64,9 @@ Classes
    Not to be used directly.
 
    .. py:method:: estimate_error(self, U, mu, m)
+
+
+   .. py:method:: estimate_output_error(self, U, mu, m, return_vector=False)
 
 
    .. py:method:: restricted_to_subbasis(self, dim, m)
@@ -103,11 +106,14 @@ Classes
    .. py:method:: assemble_error_estimator(self)
 
 
+   .. py:method:: assemble_output_error_estimator(self)
+
+
    .. py:method:: assemble_error_estimator_for_subbasis(self, dims)
 
 
 
-.. py:class:: SimpleCoerciveRBEstimator(estimator_matrix, coercivity_estimator)
+.. py:class:: SimpleCoerciveRBEstimator(estimator_matrix, coercivity_estimator, output_estimator_matrices, output_functional_coeffs)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -116,6 +122,9 @@ Classes
    Not to be used directly.
 
    .. py:method:: estimate_error(self, U, mu, m)
+
+
+   .. py:method:: estimate_output_error(self, U, mu, m, return_vector=False)
 
 
    .. py:method:: restricted_to_subbasis(self, dim, m)

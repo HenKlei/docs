@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.bindings.fenics &#8212; pyMOR v2021.1rc0+913.g2bb11e918 Manual</title>
+    <title>pymor.bindings.fenics &#8212; pyMOR v2021.1rc0+1043.gccc03d687 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+913.g2bb11e918 Manual logo">
+                   alt="pyMOR v2021.1rc0+1043.gccc03d687 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+913.g2bb11e918 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+1043.gccc03d687 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+913.g2bb11e918 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+1043.gccc03d687 Manual">Documentation</a>
   </label>
   
 
@@ -475,6 +475,38 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.fenics.FenicsVector" title="pymor.bindings.fenics.FenicsVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FenicsVector</span></code></a></p></td>
 <td><p>Wraps a FEniCS vector to make it usable with ListVectorArray.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.fenics.ComplexifiedFenicsVector" title="pymor.bindings.fenics.ComplexifiedFenicsVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComplexifiedFenicsVector</span></code></a></p></td>
+<td><p>Interface for vectors used in conjunction with <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.fenics.FenicsVectorSpace" title="pymor.bindings.fenics.FenicsVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FenicsVectorSpace</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> of <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArrays</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.fenics.FenicsMatrixOperator" title="pymor.bindings.fenics.FenicsMatrixOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FenicsMatrixOperator</span></code></a></p></td>
+<td><p>Wraps a FEniCS matrix as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.fenics.FenicsOperator" title="pymor.bindings.fenics.FenicsOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FenicsOperator</span></code></a></p></td>
+<td><p>Wraps a FEniCS form as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.fenics.RestrictedFenicsOperator" title="pymor.bindings.fenics.RestrictedFenicsOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RestrictedFenicsOperator</span></code></a></p></td>
+<td><p>Interface for <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> dependent discrete operators.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.fenics.FenicsVisualizer" title="pymor.bindings.fenics.FenicsVisualizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FenicsVisualizer</span></code></a></p></td>
+<td><p>Visualize a FEniCS grid function.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.fenics.compute_parent_facet_indices" title="pymor.bindings.fenics.compute_parent_facet_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_parent_facet_indices</span></code></a></p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py class">
@@ -555,6 +587,374 @@
 <span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVector.__neg__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.ComplexifiedFenicsVector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">ComplexifiedFenicsVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_part</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag_part</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.ComplexifiedFenicsVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ComplexifiedVector" title="pymor.vectorarrays.list.ComplexifiedVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.ComplexifiedVector</span></code></a></p>
+<p>Interface for vectors used in conjunction with <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.</p>
+<p>This interface must be satisfied by the individual entries of the
+vector <code class="docutils literal notranslate"><span class="pre">list</span></code> managed by <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>. All interface methods
+have a direct counterpart in the <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> interface.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.ComplexifiedFenicsVector.amax">
+<span class="sig-name descname"><span class="pre">amax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.ComplexifiedFenicsVector.amax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">FenicsVectorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'STATE'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ComplexifiedListVectorSpace" title="pymor.vectorarrays.list.ComplexifiedListVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.ComplexifiedListVectorSpace</span></code></a></p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> of <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArrays</span></code></a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.real_vector_type">
+<span class="sig-name descname"><span class="pre">real_vector_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.real_vector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.vector_type">
+<span class="sig-name descname"><span class="pre">vector_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.vector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.dim">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.dim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.real_zero_vector">
+<span class="sig-name descname"><span class="pre">real_zero_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.real_zero_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.real_full_vector">
+<span class="sig-name descname"><span class="pre">real_full_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.real_full_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.real_random_vector">
+<span class="sig-name descname"><span class="pre">real_random_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.real_random_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.real_vector_from_numpy">
+<span class="sig-name descname"><span class="pre">real_vector_from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.real_vector_from_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVectorSpace.real_make_vector">
+<span class="sig-name descname"><span class="pre">real_make_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVectorSpace.real_make_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsMatrixOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">FenicsMatrixOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsMatrixOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../operators/list/index.html#pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase" title="pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase</span></code></a></p>
+<p>Wraps a FEniCS matrix as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsMatrixOperator._real_apply_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsMatrixOperator._real_apply_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsMatrixOperator._real_apply_adjoint_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_adjoint_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsMatrixOperator._real_apply_adjoint_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsMatrixOperator._real_apply_inverse_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_inverse_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsMatrixOperator._real_apply_inverse_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsMatrixOperator._real_apply_inverse_adjoint_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_inverse_adjoint_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsMatrixOperator._real_apply_inverse_adjoint_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsMatrixOperator._assemble_lincomb">
+<span class="sig-name descname"><span class="pre">_assemble_lincomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsMatrixOperator._assemble_lincomb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to assemble a linear combination of the given operators.</p>
+<p>Returns a new <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which represents the sum</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_1</span><span class="o">*</span><span class="n">O_1</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="n">c_N</span><span class="o">*</span><span class="n">O_N</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">I</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">O_i</span></code> are <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>, <code class="docutils literal notranslate"><span class="pre">c_i</span></code>, <code class="docutils literal notranslate"><span class="pre">s</span></code> scalar coefficients and <code class="docutils literal notranslate"><span class="pre">I</span></code> the identity.</p>
+<p>This method is called in the <code class="xref py py-meth docutils literal notranslate"><span class="pre">assemble</span></code> method of <a class="reference internal" href="../../operators/constructions/index.html#pymor.operators.constructions.LincombOperator" title="pymor.operators.constructions.LincombOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LincombOperator</span></code></a> on
+the first of its operators. If an assembly of the given linear combination
+is possible, e.g. the linear combination of the system matrices of the
+operators can be formed, then the assembled operator is returned.
+Otherwise, the method returns <code class="docutils literal notranslate"><span class="pre">None</span></code> to indicate that assembly is not possible.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>operators</dt><dd><p>List of <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> <code class="docutils literal notranslate"><span class="pre">O_i</span></code> whose linear combination is formed.</p>
+</dd>
+<dt>coefficients</dt><dd><p>List of the corresponding linear coefficients <code class="docutils literal notranslate"><span class="pre">c_i</span></code>.</p>
+</dd>
+<dt>identity_shift</dt><dd><p>The coefficient <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+</dd>
+<dt>solver_options</dt><dd><p><a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.solver_options" title="pymor.operators.interface.Operator.solver_options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">solver_options</span></code></a> for the assembled operator.</p>
+</dd>
+<dt>name</dt><dd><p>Name of the assembled operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>The assembled <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> if assembly is possible, otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">FenicsOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirichlet_bcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_setter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
+<p>Wraps a FEniCS form as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator.linear">
+<span class="sig-name descname"><span class="pre">linear</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator.linear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator._set_mu">
+<span class="sig-name descname"><span class="pre">_set_mu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator._set_mu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the operator to a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the operator evaluations.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator.jacobian">
+<span class="sig-name descname"><span class="pre">jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator.jacobian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the operator’s Jacobian as a new <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p>Length 1 <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> containing the vector for which to compute
+the Jacobian.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to compute the Jacobian.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>Linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the Jacobian.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator.restricted">
+<span class="sig-name descname"><span class="pre">restricted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator.restricted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restrict the operator range to a given set of degrees of freedom.</p>
+<p>This method returns a restricted version <code class="docutils literal notranslate"><span class="pre">restricted_op</span></code> of the
+operator along with an array <code class="docutils literal notranslate"><span class="pre">source_dofs</span></code> such that for any
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> <code class="docutils literal notranslate"><span class="pre">U</span></code> in <code class="docutils literal notranslate"><span class="pre">self.source</span></code> the following is true:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span><span class="o">.</span><span class="n">dofs</span><span class="p">(</span><span class="n">dofs</span><span class="p">)</span>
+    <span class="o">==</span> <span class="n">restricted_op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">NumpyVectorArray</span><span class="p">(</span><span class="n">U</span><span class="o">.</span><span class="n">dofs</span><span class="p">(</span><span class="n">source_dofs</span><span class="p">)),</span> <span class="n">mu</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Such an operator is mainly useful for
+<a class="reference internal" href="../../operators/ei/index.html#pymor.operators.ei.EmpiricalInterpolatedOperator" title="pymor.operators.ei.EmpiricalInterpolatedOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">empirical</span> <span class="pre">interpolation</span></code></a>
+where the evaluation of the original operator only needs to be known
+for few selected degrees of freedom. If the operator has a small
+stencil, only few <code class="docutils literal notranslate"><span class="pre">source_dofs</span></code> will be needed to evaluate the
+restricted operator which can make its evaluation very fast
+compared to evaluating the original operator.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<dl class="simple">
+<dt>restricted_op</dt><dd><p>The restricted operator as defined above. The operator will have
+<a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
+and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
+</dd>
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+defined above.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator._restrict_form">
+<span class="sig-name descname"><span class="pre">_restrict_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator._restrict_form" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator._restrict_dirichlet_bcs">
+<span class="sig-name descname"><span class="pre">_restrict_dirichlet_bcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_dofs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V_r_source</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator._restrict_dirichlet_bcs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsOperator._build_dof_map">
+<span class="sig-name descname"><span class="pre">_build_dof_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsOperator._build_dof_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">RestrictedFenicsOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restricted_range_dofs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.interface.Operator</span></code></a></p>
+<p>Interface for <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> dependent discrete operators.</p>
+<p>An operator in pyMOR is simply a mapping which for any given
+<a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> maps vectors from its <code class="docutils literal notranslate"><span class="pre">source</span></code> <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>
+to vectors in its <code class="docutils literal notranslate"><span class="pre">range</span></code> <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+<p>Note that there is no special distinction between functionals
+and operators in pyMOR. A functional is simply an operator with
+<a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(1)</span></code> as its <code class="docutils literal notranslate"><span class="pre">range</span></code> <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.solver_options">
+<span class="sig-name descname"><span class="pre">solver_options</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.solver_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>If not <code class="docutils literal notranslate"><span class="pre">None</span></code>, a dict which can contain the following keys:</p>
+<dl class="field-list simple">
+<dt class="field-odd">‘inverse’</dt>
+<dd class="field-odd"><p>solver options used for
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply_inverse</span></code></p>
+</dd>
+<dt class="field-even">‘inverse_adjoint’</dt>
+<dd class="field-even"><p>solver options used for
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">apply_inverse_adjoint</span></code></p>
+</dd>
+<dt class="field-odd">‘jacobian’</dt>
+<dd class="field-odd"><p>solver options for the operators returned
+by <code class="xref py py-meth docutils literal notranslate"><span class="pre">jacobian</span></code>
+(has no effect for linear operators)</p>
+</dd>
+</dl>
+<p>If <code class="docutils literal notranslate"><span class="pre">solver_options</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or a dict entry is missing
+or <code class="docutils literal notranslate"><span class="pre">None</span></code>, default options are used.
+The interpretation of the given solver options is up to
+the operator at hand. In general, values in <code class="docutils literal notranslate"><span class="pre">solver_options</span></code>
+should either be strings (indicating a solver type) or
+dicts of options, usually with an entry <code class="docutils literal notranslate"><span class="pre">'type'</span></code> which
+specifies the solver type to use and further items which
+configure this solver.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.linear">
+<span class="sig-name descname"><span class="pre">linear</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.linear" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the operator is linear.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.range">
+<span class="sig-name descname"><span class="pre">range</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>The range <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.H">
+<span class="sig-name descname"><span class="pre">H</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.H" title="Permalink to this definition">¶</a></dt>
+<dd><p>The adjoint operator, i.e.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_adjoint</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>for all V, mu.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the operator to a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of vectors to which the operator is applied.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to evaluate the operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the operator evaluations.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.RestrictedFenicsOperator.jacobian">
+<span class="sig-name descname"><span class="pre">jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.RestrictedFenicsOperator.jacobian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the operator’s Jacobian as a new <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p>Length 1 <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> containing the vector for which to compute
+the Jacobian.</p>
+</dd>
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to compute the Jacobian.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>Linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the Jacobian.</p>
+</div>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVisualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">FenicsVisualizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_refinements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVisualizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.ImmutableObject" title="pymor.core.base.ImmutableObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.ImmutableObject</span></code></a></p>
+<p>Visualize a FEniCS grid function.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>space</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">FenicsVectorSpace</span></code> for which we want to visualize DOF vectors.</p>
+</dd>
+<dt>mesh_refinements</dt><dd><p>Number of uniform mesh refinements to perform for vtk visualization
+(of functions from higher-order FE spaces).</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.FenicsVisualizer.visualize">
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_colorbars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.FenicsVisualizer.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize the provided data.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the data to visualize (length must be 1). Alternatively,
+a tuple of <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> which will be visualized in separate windows.
+If <code class="docutils literal notranslate"><span class="pre">filename</span></code> is specified, only one <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> may be provided which,
+however, is allowed to contain multiple vectors that will be interpreted
+as a time series.</p>
+</dd>
+<dt>title</dt><dd><p>Title of the plot.</p>
+</dd>
+<dt>legend</dt><dd><p>Description of the data that is plotted. If <code class="docutils literal notranslate"><span class="pre">U</span></code> is a tuple of <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>,
+<code class="docutils literal notranslate"><span class="pre">legend</span></code> has to be a tuple of the same length.</p>
+</dd>
+<dt>filename</dt><dd><p>If specified, write the data to that file. <code class="docutils literal notranslate"><span class="pre">filename</span></code> needs to have an extension
+supported by FEniCS (e.g. <code class="docutils literal notranslate"><span class="pre">.pvd</span></code>).</p>
+</dd>
+<dt>separate_colorbars</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use separate colorbars for each subplot.</p>
+</dd>
+<dt>block</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, block execution until the plot window is closed.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.bindings.fenics.compute_parent_facet_indices">
+<span class="sig-prename descclassname"><span class="pre">pymor.bindings.fenics.</span></span><span class="sig-name descname"><span class="pre">compute_parent_facet_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/fenics.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.fenics.compute_parent_facet_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 </section>
 </section>
 </section>
@@ -606,7 +1006,7 @@
               
           </div>
             Last updated on
-              Dec 20, 2021.
+              Dec 21, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.

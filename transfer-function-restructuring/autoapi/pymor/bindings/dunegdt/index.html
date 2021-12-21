@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.bindings.dunegdt &#8212; pyMOR v2021.1rc0+913.g2bb11e918 Manual</title>
+    <title>pymor.bindings.dunegdt &#8212; pyMOR v2021.1rc0+1043.gccc03d687 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+913.g2bb11e918 Manual logo">
+                   alt="pyMOR v2021.1rc0+1043.gccc03d687 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+913.g2bb11e918 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+1043.gccc03d687 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+913.g2bb11e918 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+1043.gccc03d687 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+913.g2bb11e918 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+1043.gccc03d687 Manual">Documentation</a>
   </label>
   
 
@@ -475,6 +475,15 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.dunegdt.DuneXTVector" title="pymor.bindings.dunegdt.DuneXTVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DuneXTVector</span></code></a></p></td>
 <td><p>Wraps a vector from dune-xt to make it usable with ListVectorArray.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.dunegdt.ComplexifiedDuneXTVector" title="pymor.bindings.dunegdt.ComplexifiedDuneXTVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComplexifiedDuneXTVector</span></code></a></p></td>
+<td><p>Required for DuneXTVectorSpace, Usually not to be used directly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.dunegdt.DuneXTVectorSpace" title="pymor.bindings.dunegdt.DuneXTVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DuneXTVectorSpace</span></code></a></p></td>
+<td><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> yielding DuneXTVector</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator" title="pymor.bindings.dunegdt.DuneXTMatrixOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DuneXTMatrixOperator</span></code></a></p></td>
+<td><p>Wraps a dune-xt matrix as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py class">
@@ -566,6 +575,152 @@
 <span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVector.to_numpy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.ComplexifiedDuneXTVector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.dunegdt.</span></span><span class="sig-name descname"><span class="pre">ComplexifiedDuneXTVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_part</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag_part</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.ComplexifiedDuneXTVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ComplexifiedVector" title="pymor.vectorarrays.list.ComplexifiedVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.ComplexifiedVector</span></code></a></p>
+<p>Required for DuneXTVectorSpace, Usually not to be used directly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.ComplexifiedDuneXTVector.amax">
+<span class="sig-name descname"><span class="pre">amax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.ComplexifiedDuneXTVector.amax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.dunegdt.</span></span><span class="sig-name descname"><span class="pre">DuneXTVectorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dune_vector_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IstlVector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'STATE'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ComplexifiedListVectorSpace" title="pymor.vectorarrays.list.ComplexifiedListVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.ComplexifiedListVectorSpace</span></code></a></p>
+<p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> yielding DuneXTVector</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>dim</dt><dd><p>Dimension of the <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>, i.e., length of the resulting vectors.</p>
+</dd>
+<dt>vector_type</dt><dd><p>Type of the actual vector from dune.xt.la, usually IstlVector.</p>
+</dd>
+<dt>id</dt><dd><p>Identifier of the <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+</dd>
+</dl>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.real_vector_type">
+<span class="sig-name descname"><span class="pre">real_vector_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.real_vector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.vector_type">
+<span class="sig-name descname"><span class="pre">vector_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.vector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.real_zero_vector">
+<span class="sig-name descname"><span class="pre">real_zero_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.real_zero_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.real_full_vector">
+<span class="sig-name descname"><span class="pre">real_full_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.real_full_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.real_random_vector">
+<span class="sig-name descname"><span class="pre">real_random_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.real_random_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.real_vector_from_numpy">
+<span class="sig-name descname"><span class="pre">real_vector_from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.real_vector_from_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTVectorSpace.real_make_vector">
+<span class="sig-name descname"><span class="pre">real_make_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTVectorSpace.real_make_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTMatrixOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.dunegdt.</span></span><span class="sig-name descname"><span class="pre">DuneXTMatrixOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'STATE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'STATE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../operators/list/index.html#pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase" title="pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase</span></code></a></p>
+<p>Wraps a dune-xt matrix as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>matrix</dt><dd><p>The actual matrix from dune.xt.la, usually IstlMatrix.</p>
+</dd>
+<dt>source_id</dt><dd><p>Identifier of the source <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+</dd>
+<dt>range_id</dt><dd><p>Identifier of the source <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.</p>
+</dd>
+<dt>solver_options</dt><dd><p>If specified, either a string or a dict specifying the solver used in apply_inverse. See
+<a class="reference external" href="https://zivgitlab.uni-muenster.de/ag-ohlberger/dune-community/dune-xt/-/tree/master/dune/xt/la/solver">https://zivgitlab.uni-muenster.de/ag-ohlberger/dune-community/dune-xt/-/tree/master/dune/xt/la/solver</a>
+for available options, depending on the type of <code class="docutils literal notranslate"><span class="pre">matrix</span></code>. E.g., for
+dune.xt.la.IstlSparseMatrix, (as can be queried from dune.xt.la.IstlSparseMatrixSolver
+via <code class="docutils literal notranslate"><span class="pre">types()</span></code> and <code class="docutils literal notranslate"><span class="pre">options(type)</span></code>):
+- ‘bicgstab.ssor’
+- ‘bicgstab.amg.ssor’
+- ‘bicgstab.amg.ilu0’
+- ‘bicgstab.ilut’
+- ‘bicgstab’
+- ‘cg’</p>
+</dd>
+<dt>name</dt><dd><p>Optional name of the resulting <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+</dd>
+</dl>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTMatrixOperator.linear">
+<span class="sig-name descname"><span class="pre">linear</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">True</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator.linear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTMatrixOperator._real_apply_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator._real_apply_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTMatrixOperator._apply_adjoint_one_vector">
+<span class="sig-name descname"><span class="pre">_apply_adjoint_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator._apply_adjoint_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTMatrixOperator._real_apply_inverse_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_inverse_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator._real_apply_inverse_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.dunegdt.DuneXTMatrixOperator._assemble_lincomb">
+<span class="sig-name descname"><span class="pre">_assemble_lincomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/transfer-function-restructuring/src/pymor/bindings/dunegdt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.dunegdt.DuneXTMatrixOperator._assemble_lincomb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to assemble a linear combination of the given operators.</p>
+<p>Returns a new <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which represents the sum</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_1</span><span class="o">*</span><span class="n">O_1</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="n">c_N</span><span class="o">*</span><span class="n">O_N</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">I</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">O_i</span></code> are <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>, <code class="docutils literal notranslate"><span class="pre">c_i</span></code>, <code class="docutils literal notranslate"><span class="pre">s</span></code> scalar coefficients and <code class="docutils literal notranslate"><span class="pre">I</span></code> the identity.</p>
+<p>This method is called in the <code class="xref py py-meth docutils literal notranslate"><span class="pre">assemble</span></code> method of <a class="reference internal" href="../../operators/constructions/index.html#pymor.operators.constructions.LincombOperator" title="pymor.operators.constructions.LincombOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LincombOperator</span></code></a> on
+the first of its operators. If an assembly of the given linear combination
+is possible, e.g. the linear combination of the system matrices of the
+operators can be formed, then the assembled operator is returned.
+Otherwise, the method returns <code class="docutils literal notranslate"><span class="pre">None</span></code> to indicate that assembly is not possible.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>operators</dt><dd><p>List of <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> <code class="docutils literal notranslate"><span class="pre">O_i</span></code> whose linear combination is formed.</p>
+</dd>
+<dt>coefficients</dt><dd><p>List of the corresponding linear coefficients <code class="docutils literal notranslate"><span class="pre">c_i</span></code>.</p>
+</dd>
+<dt>identity_shift</dt><dd><p>The coefficient <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+</dd>
+<dt>solver_options</dt><dd><p><a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.solver_options" title="pymor.operators.interface.Operator.solver_options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">solver_options</span></code></a> for the assembled operator.</p>
+</dd>
+<dt>name</dt><dd><p>Name of the assembled operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>The assembled <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> if assembly is possible, otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
+</dd></dl>
+</dd></dl>
 </section>
 </section>
 </section>
@@ -617,7 +772,7 @@
               
           </div>
             Last updated on
-              Dec 20, 2021.
+              Dec 21, 2021.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
