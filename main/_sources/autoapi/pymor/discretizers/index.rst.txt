@@ -11,5 +11,6 @@ Subpackages
    :maxdepth: 3
 
    builtin <builtin/index.rst>
+   skfem <skfem/index.rst>
 
 
