@@ -47,7 +47,7 @@
   
   
   
-    <title>pyMOR 2021.1 (December 22, 2021) &#8212; pyMOR v2021.1rc0+994.g0be2484e8 Manual</title>
+    <title>pyMOR 2021.1 (December 22, 2021) &#8212; pyMOR v2021.1rc0+995.g061386063 Manual</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -106,11 +106,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="pyMOR v2021.1rc0+994.g0be2484e8 Manual"
+        <a href="../index.html" title="pyMOR v2021.1rc0+995.g061386063 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+994.g0be2484e8 Manual logo">
+                   alt="pyMOR v2021.1rc0+995.g061386063 Manual logo">
           
         </a>
       </div>
@@ -176,7 +176,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+994.g0be2484e8 Manual</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+995.g061386063 Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -188,13 +188,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="pyMOR v2021.1rc0+994.g0be2484e8 Manual" class="md-nav__button md-logo">
+    <a href="../index.html" title="pyMOR v2021.1rc0+995.g061386063 Manual" class="md-nav__button md-logo">
       
         <img src="../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="pyMOR v2021.1rc0+994.g0be2484e8 Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+995.g061386063 Manual">Documentation</a>
   </label>
   
 
@@ -302,7 +302,7 @@ for more details.</p>
 <section id="release-highlights">
 <h2 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permalink to this headline">¶</a></h2>
 <section id="data-driven-model-order-reduction-with-dynamic-mode-decomposition">
-<h3 id="data-driven-model-order-reduction-with-dynamic-mode-decomposition">Data-driven Model Order Reduction with Dynamic Mode Decomposition<a class="headerlink" href="#data-driven-model-order-reduction-with-dynamic-mode-decomposition" title="Permalink to this headline">¶</a></h3>
+<h3 id="data-driven-model-order-reduction-with-dynamic-mode-decomposition">Data-driven model order reduction with Dynamic Mode Decomposition<a class="headerlink" href="#data-driven-model-order-reduction-with-dynamic-mode-decomposition" title="Permalink to this headline">¶</a></h3>
 <p>Dynamic Mode Decomposition (DMD) is a well-established method for computing
 low-rank dynamics from observational or simulation data. In contrast to
 Proper Orthogonal Decomposition (POD) where the computed modes are weighted
@@ -329,7 +329,7 @@ passed to <a class="reference internal" href="../autoapi/pymor/models/interface/
 <span class="n">U</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s1">'[sin(t[0])]'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For further details see <a class="reference external" href="https://github.com/pymor/pymor/pull/1469">[#1469]</a>.</p>
+<p>For further details, see <a class="reference external" href="https://github.com/pymor/pymor/pull/1469">[#1469]</a>.</p>
 </section>
 </section>
 <section id="additional-new-features">
@@ -341,14 +341,14 @@ estimate for the <a class="reference internal" href="../autoapi/pymor/models/int
 Given a linear output functional, this estimate is given by the product
 of the estimated state-space error and the dual norm of the output functional.
 The dual norm is computed efficiently online, also for parameter-dependent
-output functionals which are parameter separable. For further details see
+output functionals that are parameter-separable. For further details, see
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1474">[#1474]</a>. A DWR-based output
 error estimator is currently under development
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1496">[#1496]</a>.</p>
 </section>
 <section id="experimental-scikit-fem-support">
 <h3 id="experimental-scikit-fem-support">Experimental scikit-fem support<a class="headerlink" href="#experimental-scikit-fem-support" title="Permalink to this headline">¶</a></h3>
-<p>In <a class="reference external" href="https://github.com/pymor/pymor/pull/1507">[#1507]</a> experimental support was
+<p>In <a class="reference external" href="https://github.com/pymor/pymor/pull/1507">[#1507]</a>, experimental support was
 added for building <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a> from pyMOR’s <a class="reference internal" href="../autoapi/pymor/analyticalproblems/index.html#module-pymor.analyticalproblems" title="pymor.analyticalproblems"><code class="xref py py-mod docutils literal notranslate"><span class="pre">analyticalproblems</span></code></a> using
 <a class="reference external" href="https://scikit-fem.readthedocs.io/">scikit-fem</a> as a discretization backend.
 scikit-fem is a lightweight NumPy/SciPy-based finite-element library that offers
@@ -360,11 +360,11 @@ features of the corresponding builtin discretizer.</p>
 <section id="wachspress-shifts">
 <h3 id="wachspress-shifts">Wachspress’ shifts<a class="headerlink" href="#wachspress-shifts" title="Permalink to this headline">¶</a></h3>
 <p>When performing model order reduction with the balanced truncation method, the primary
-computational cost consists of solving two Lyapunov equations. In pyMOR the low-rank
+computational cost consists of solving two Lyapunov equations. In pyMOR, the low-rank
 ADI iteration is used to solve these matrix equations in a large-scale setting. In
-this method shift parameter selection plays a crucial role in convergence speed.
-For general systems a heuristic for computing sub-optimal shifts is implemented in pyMOR.
-Through <a class="reference external" href="https://github.com/pymor/pymor/pull/1445">[#1445]</a> optimal shift parameter
+this method, shift parameter selection plays a crucial role in convergence speed.
+For general systems, a heuristic for computing sub-optimal shifts is implemented in pyMOR.
+Through <a class="reference external" href="https://github.com/pymor/pymor/pull/1445">[#1445]</a>, optimal shift parameter
 computation for LTI models with symmetric system matrices was added.</p>
 </section>
 </section>
