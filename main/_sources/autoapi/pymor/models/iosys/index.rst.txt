@@ -376,60 +376,6 @@ Functions
           One-dimensional |NumPy array| of system poles.
               
 
-   .. py:method:: eval_tf(self, s, mu=None)
-
-      Evaluate the transfer function.
-
-      This function is an alias for `transfer_function.eval_tf`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
-      documentation.
-
-
-   .. py:method:: eval_dtf(self, s, mu=None)
-
-      Evaluate the derivative of the transfer function.
-
-      This function is an alias for `transfer_function.eval_dtf`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
-      documentation.
-
-
-   .. py:method:: freq_resp(self, w, mu=None)
-
-      Evaluate the transfer function on the imaginary axis.
-
-      This function is an alias for `transfer_function.freq_resp`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
-      documentation.
-
-
-   .. py:method:: bode(self, w, mu=None)
-
-      Compute magnitudes and phases.
-
-      This function is an alias for `transfer_function.bode`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
-      documentation.
-
-
-   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
-
-      Draw the Bode plot for all input-output pairs.
-
-      This function is an alias for `transfer_function.bode_plot`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
-      documentation.
-
-
-   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
-
-      Draw the magnitude plot.
-
-      This function is an alias for `transfer_function.mag_plot`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
-      documentation.
-
-
    .. py:method:: gramian(self, typ, mu=None)
 
       Compute a Gramian.
@@ -1011,60 +957,6 @@ Functions
           One-dimensional |NumPy array| of system poles.
               
 
-   .. py:method:: eval_tf(self, s, mu=None)
-
-      Evaluate the transfer function.
-
-      This function is an alias for `transfer_function.eval_tf`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
-      documentation.
-
-
-   .. py:method:: eval_dtf(self, s, mu=None)
-
-      Evaluate the derivative of the transfer function.
-
-      This function is an alias for `transfer_function.eval_dtf`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
-      documentation.
-
-
-   .. py:method:: freq_resp(self, w, mu=None)
-
-      Evaluate the transfer function on the imaginary axis.
-
-      This function is an alias for `transfer_function.freq_resp`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
-      documentation.
-
-
-   .. py:method:: bode(self, w, mu=None)
-
-      Compute magnitudes and phases.
-
-      This function is an alias for `transfer_function.bode`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
-      documentation.
-
-
-   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
-
-      Draw the Bode plot for all input-output pairs.
-
-      This function is an alias for `transfer_function.bode_plot`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
-      documentation.
-
-
-   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
-
-      Draw the magnitude plot.
-
-      This function is an alias for `transfer_function.mag_plot`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
-      documentation.
-
-
    .. py:method:: gramian(self, typ, mu=None)
 
       Compute a second-order Gramian.
@@ -1383,60 +1275,6 @@ Functions
    .. py:method:: __rmul__(self, other)
 
       Premultiply by an |LTIModel| or a |SecondOrderModel|.
-
-
-   .. py:method:: eval_tf(self, s, mu=None)
-
-      Evaluate the transfer function.
-
-      This function is an alias for `transfer_function.eval_tf`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.eval_tf` for a detailed
-      documentation.
-
-
-   .. py:method:: eval_dtf(self, s, mu=None)
-
-      Evaluate the derivative of the transfer function.
-
-      This function is an alias for `transfer_function.eval_dtf`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.eval_dtf` for a detailed
-      documentation.
-
-
-   .. py:method:: freq_resp(self, w, mu=None)
-
-      Evaluate the transfer function on the imaginary axis.
-
-      This function is an alias for `transfer_function.freq_resp`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.freq_resp` for a detailed
-      documentation.
-
-
-   .. py:method:: bode(self, w, mu=None)
-
-      Compute magnitudes and phases.
-
-      This function is an alias for `transfer_function.bode`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.bode` for a detailed
-      documentation.
-
-
-   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
-
-      Draw the Bode plot for all input-output pairs.
-
-      This function is an alias for `transfer_function.bode_plot`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.bode_plot` for a detailed
-      documentation.
-
-
-   .. py:method:: mag_plot(self, w, mu=None, ax=None, ord=None, Hz=False, dB=False, **mpl_kwargs)
-
-      Draw the magnitude plot.
-
-      This function is an alias for `transfer_function.mag_plot`.
-      See :func:`~pymor.models.transfer_function.TransferFunction.mag_plot` for a detailed
-      documentation.
 
 
 
