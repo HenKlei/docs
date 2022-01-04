@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.transfer_function &#8212; pyMOR v2021.2.0+4.g36fcf02c5 Manual</title>
+    <title>pymor.models.transfer_function &#8212; pyMOR v2021.2.0+11.gd5989378a Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+4.g36fcf02c5 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+11.gd5989378a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+4.g36fcf02c5 Manual logo">
+                   alt="pyMOR v2021.2.0+11.gd5989378a Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+4.g36fcf02c5 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+11.gd5989378a Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+4.g36fcf02c5 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+11.gd5989378a Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+4.g36fcf02c5 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+11.gd5989378a Manual">Documentation</a>
   </label>
   
 
@@ -498,7 +498,7 @@ function <span class="math notranslate nohighlight">\(H(s, \mu)\)</span>.</p>
 </dd>
 <dt>tf</dt><dd><p>The transfer function H, given by a callable that takes a complex value <code class="docutils literal notranslate"><span class="pre">s</span></code> and,
 if parametric, a <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">value</span></code></a> <code class="docutils literal notranslate"><span class="pre">mu</span></code>.
-The result of <code class="docutils literal notranslate"><span class="pre">tf(s,</span> <span class="pre">mu)</span></code> is a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(dim_output,</span> <span class="pre">dim_input)</span></code>.</p>
+The result of <code class="docutils literal notranslate"><span class="pre">tf(s,</span> <span class="pre">mu)</span></code> is a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(dim_output,</span> <span class="pre">dim_input)</span></code>.</p>
 </dd>
 <dt>dtf</dt><dd><p>The complex derivative of <code class="docutils literal notranslate"><span class="pre">H</span></code> with respect to <code class="docutils literal notranslate"><span class="pre">s</span></code> (optional).</p>
 </dd>
@@ -558,7 +558,7 @@ The result of <code class="docutils literal notranslate"><span class="pre">tf(s,
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>Transfer function value as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<p>Transfer function value as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </div>
 </dd></dl>
 <dl class="py method">
@@ -576,7 +576,7 @@ The result of <code class="docutils literal notranslate"><span class="pre">tf(s,
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>Transfer function value as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<p>Transfer function value as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </div>
 </dd></dl>
 <dl class="py method">
@@ -595,7 +595,7 @@ The result of <code class="docutils literal notranslate"><span class="pre">tf(s,
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>tfw</dt><dd><p>Transfer function values at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>tfw</dt><dd><p>Transfer function values at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(w),</span> <span class="pre">self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
 </dd>
 </dl>
@@ -617,10 +617,10 @@ The result of <code class="docutils literal notranslate"><span class="pre">tf(s,
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>mag</dt><dd><p>Transfer function magnitudes at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>mag</dt><dd><p>Transfer function magnitudes at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(w),</span> <span class="pre">self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
 </dd>
-<dt>phase</dt><dd><p>Transfer function phases (in radians) at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>phase</dt><dd><p>Transfer function phases (in radians) at frequencies in <code class="docutils literal notranslate"><span class="pre">w</span></code>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(w),</span> <span class="pre">self.dim_output,</span> <span class="pre">self.dim_input)</span></code>.</p>
 </dd>
 </dl>
@@ -732,7 +732,7 @@ It assumes that <code class="docutils literal notranslate"><span class="pre">sel
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>lti</dt><dd><p><a class="reference internal" href="../iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> consisting of <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> that can be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.
+<dt>lti</dt><dd><p><a class="reference internal" href="../iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> consisting of <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> that can be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.
 The D operator is ignored.</p>
 </dd>
 </dl>
@@ -871,7 +871,7 @@ function of the form
               
           </div>
             Last updated on
-              Dec 29, 2021.
+              Jan 04, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
