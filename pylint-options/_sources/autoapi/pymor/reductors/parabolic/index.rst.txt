@@ -68,7 +68,7 @@ Classes
 
 
 
-.. py:class:: ParabolicRBEstimator(residual, residual_range_dims, initial_residual, initial_residual_range_dims, coercivity_estimator)
+.. py:class:: ParabolicRBEstimator(residual, residual_range_dims, initial_residual, initial_residual_range_dims, coercivity_estimator, projected_output_adjoint=None)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -77,6 +77,9 @@ Classes
    Not to be used directly.
 
    .. py:method:: estimate_error(self, U, mu, m, return_error_sequence=False)
+
+
+   .. py:method:: estimate_output_error(self, U, mu, m, return_error_sequence=False, return_vector=False)
 
 
    .. py:method:: restricted_to_subbasis(self, dim, m)

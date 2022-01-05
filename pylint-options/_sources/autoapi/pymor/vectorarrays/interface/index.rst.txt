@@ -643,6 +643,8 @@ Functions
 
       Normalize given indices such that they are independent of the array length.
 
+      Does not check validity of the indices.
+
 
    .. py:method:: sub_index(self, ind, ind_ind)
 

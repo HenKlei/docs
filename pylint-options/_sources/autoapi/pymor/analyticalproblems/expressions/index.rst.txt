@@ -371,7 +371,7 @@ Attributes
 
 
 
-.. py:class:: UnaryFunctionCall(*arg)
+.. py:class:: UnaryFunctionCall(arg, *args)
 
    Bases: :py:obj:`Expression`
 
@@ -381,6 +381,11 @@ Attributes
 
    .. py:attribute:: numpy_symbol
       
+
+      
+
+   .. py:attribute:: _parameters_varargs_warning
+      :annotation: = False
 
       
 
@@ -395,7 +400,7 @@ Attributes
 
 
 
-.. py:class:: UnaryReductionCall(*arg)
+.. py:class:: UnaryReductionCall(arg, *args)
 
    Bases: :py:obj:`Expression`
 
@@ -403,6 +408,11 @@ Attributes
 
    The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
    returning a single number.
+
+   .. py:attribute:: _parameters_varargs_warning
+      :annotation: = False
+
+      
 
    .. py:method:: numpy_expr(self)
 
@@ -543,7 +553,7 @@ Attributes
       
 
 
-.. py:class:: sin(*arg)
+.. py:class:: sin(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -557,7 +567,7 @@ Attributes
       
 
 
-.. py:class:: cos(*arg)
+.. py:class:: cos(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -571,7 +581,7 @@ Attributes
       
 
 
-.. py:class:: tan(*arg)
+.. py:class:: tan(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -585,7 +595,7 @@ Attributes
       
 
 
-.. py:class:: arcsin(*arg)
+.. py:class:: arcsin(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -599,7 +609,7 @@ Attributes
       
 
 
-.. py:class:: arccos(*arg)
+.. py:class:: arccos(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -613,7 +623,7 @@ Attributes
       
 
 
-.. py:class:: arctan(*arg)
+.. py:class:: arctan(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -627,7 +637,7 @@ Attributes
       
 
 
-.. py:class:: sinh(*arg)
+.. py:class:: sinh(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -641,7 +651,7 @@ Attributes
       
 
 
-.. py:class:: cosh(*arg)
+.. py:class:: cosh(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -655,7 +665,7 @@ Attributes
       
 
 
-.. py:class:: tanh(*arg)
+.. py:class:: tanh(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -669,7 +679,7 @@ Attributes
       
 
 
-.. py:class:: arcsinh(*arg)
+.. py:class:: arcsinh(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -683,7 +693,7 @@ Attributes
       
 
 
-.. py:class:: arccosh(*arg)
+.. py:class:: arccosh(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -697,7 +707,7 @@ Attributes
       
 
 
-.. py:class:: arctanh(*arg)
+.. py:class:: arctanh(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -711,7 +721,7 @@ Attributes
       
 
 
-.. py:class:: exp(*arg)
+.. py:class:: exp(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -725,7 +735,7 @@ Attributes
       
 
 
-.. py:class:: exp2(*arg)
+.. py:class:: exp2(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -739,7 +749,7 @@ Attributes
       
 
 
-.. py:class:: log(*arg)
+.. py:class:: log(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -753,7 +763,7 @@ Attributes
       
 
 
-.. py:class:: log2(*arg)
+.. py:class:: log2(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -767,7 +777,7 @@ Attributes
       
 
 
-.. py:class:: log10(*arg)
+.. py:class:: log10(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -781,7 +791,7 @@ Attributes
       
 
 
-.. py:class:: sqrt(*arg)
+.. py:class:: sqrt(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -795,7 +805,7 @@ Attributes
       
 
 
-.. py:class:: abs(*arg)
+.. py:class:: abs(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -809,7 +819,7 @@ Attributes
       
 
 
-.. py:class:: sign(*arg)
+.. py:class:: sign(arg, *args)
 
    Bases: :py:obj:`UnaryFunctionCall`
 
@@ -837,7 +847,7 @@ Attributes
       
 
 
-.. py:class:: norm(*arg)
+.. py:class:: norm(arg, *args)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -852,7 +862,7 @@ Attributes
       
 
 
-.. py:class:: min(*arg)
+.. py:class:: min(arg, *args)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -867,7 +877,7 @@ Attributes
       
 
 
-.. py:class:: max(*arg)
+.. py:class:: max(arg, *args)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -882,7 +892,7 @@ Attributes
       
 
 
-.. py:class:: sum(*arg)
+.. py:class:: sum(arg, *args)
 
    Bases: :py:obj:`UnaryReductionCall`
 
@@ -897,7 +907,7 @@ Attributes
       
 
 
-.. py:class:: prod(*arg)
+.. py:class:: prod(arg, *args)
 
    Bases: :py:obj:`UnaryReductionCall`
 

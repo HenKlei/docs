@@ -47,7 +47,7 @@
   
   
   
-    <title>Release Notes &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>Release Notes &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -192,13 +192,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -249,12 +249,89 @@
     <li class="md-nav__item">
     
     
-      <a href="#pymor-2021-1-september-24-2021" class="md-nav__link">pyMOR 2021.1 (September 24, 2021)</a>
+      <a href="#pymor-2021-2-december-22-2021" class="md-nav__link">pyMOR 2021.2 (December 22, 2021)</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
       <a href="#release-highlights" class="md-nav__link">Release highlights</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#data-driven-model-order-reduction-with-dynamic-mode-decomposition" class="md-nav__link">Data-driven model order reduction with Dynamic Mode Decomposition</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#formalization-of-model-inputs" class="md-nav__link">Formalization of Model inputs</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#additional-new-features" class="md-nav__link">Additional new features</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#basic-rb-output-error-estimates" class="md-nav__link">Basic RB output error estimates</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#experimental-scikit-fem-support" class="md-nav__link">Experimental scikit-fem support</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#wachspress-shifts" class="md-nav__link">Wachspress’ shifts</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#backward-incompatible-changes" class="md-nav__link">Backward incompatible changes</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#transfer-function-restructuring" class="md-nav__link">Transfer function restructuring</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#further-notable-improvements" class="md-nav__link">Further notable improvements</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#pymor-2021-1-september-24-2021" class="md-nav__link">pyMOR 2021.1 (September 24, 2021)</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#id10" class="md-nav__link">Release highlights</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -282,7 +359,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#additional-new-features" class="md-nav__link">Additional new features</a>
+      <a href="#id15" class="md-nav__link">Additional new features</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -331,7 +408,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#backward-incompatible-changes" class="md-nav__link">Backward incompatible changes</a>
+      <a href="#id24" class="md-nav__link">Backward incompatible changes</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -343,7 +420,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id15" class="md-nav__link">Symbolic ExpressionFunctions</a>
+      <a href="#id26" class="md-nav__link">Symbolic ExpressionFunctions</a>
       
     
     </li></ul>
@@ -352,7 +429,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#further-notable-improvements" class="md-nav__link">Further notable improvements</a>
+      <a href="#id28" class="md-nav__link">Further notable improvements</a>
       
     
     </li></ul>
@@ -366,7 +443,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id17" class="md-nav__link">Release highlights</a>
+      <a href="#id29" class="md-nav__link">Release highlights</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -394,7 +471,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id28" class="md-nav__link">Additional new features</a>
+      <a href="#id40" class="md-nav__link">Additional new features</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -429,7 +506,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id34" class="md-nav__link">Backward incompatible changes</a>
+      <a href="#id46" class="md-nav__link">Backward incompatible changes</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -471,7 +548,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id43" class="md-nav__link">Further notable improvements</a>
+      <a href="#id55" class="md-nav__link">Further notable improvements</a>
       
     
     </li></ul>
@@ -485,7 +562,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id44" class="md-nav__link">Release highlights</a>
+      <a href="#id56" class="md-nav__link">Release highlights</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -520,7 +597,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id54" class="md-nav__link">Additional new features</a>
+      <a href="#id66" class="md-nav__link">Additional new features</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -569,7 +646,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id62" class="md-nav__link">Backward incompatible changes</a>
+      <a href="#id74" class="md-nav__link">Backward incompatible changes</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -604,7 +681,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id72" class="md-nav__link">Further notable improvements</a>
+      <a href="#id84" class="md-nav__link">Further notable improvements</a>
       
     
     </li></ul>
@@ -618,7 +695,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id73" class="md-nav__link">Release highlights</a>
+      <a href="#id85" class="md-nav__link">Release highlights</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -653,7 +730,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id90" class="md-nav__link">Additional new features</a>
+      <a href="#id102" class="md-nav__link">Additional new features</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -716,7 +793,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id106" class="md-nav__link">Backward incompatible changes</a>
+      <a href="#id118" class="md-nav__link">Backward incompatible changes</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -742,7 +819,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id110" class="md-nav__link">Further API Changes</a>
+      <a href="#id122" class="md-nav__link">Further API Changes</a>
       
     
     </li></ul>
@@ -751,7 +828,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id113" class="md-nav__link">Further notable improvements</a>
+      <a href="#id125" class="md-nav__link">Further notable improvements</a>
       
     
     </li></ul>
@@ -765,7 +842,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id114" class="md-nav__link">Release highlights</a>
+      <a href="#id126" class="md-nav__link">Release highlights</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -814,21 +891,21 @@
     <li class="md-nav__item">
     
     
-      <a href="#id124" class="md-nav__link">Additional new features</a>
+      <a href="#id136" class="md-nav__link">Additional new features</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#id135" class="md-nav__link">Backward incompatible changes</a>
+      <a href="#id147" class="md-nav__link">Backward incompatible changes</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#id144" class="md-nav__link">Further notable improvements</a>
+      <a href="#id156" class="md-nav__link">Further notable improvements</a>
       
     
     </li></ul>
@@ -842,7 +919,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#id145" class="md-nav__link">Release highlights</a>
+      <a href="#id157" class="md-nav__link">Release highlights</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -898,14 +975,14 @@
     <li class="md-nav__item">
     
     
-      <a href="#id169" class="md-nav__link">Additional new features</a>
+      <a href="#id181" class="md-nav__link">Additional new features</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#id180" class="md-nav__link">Backward incompatible changes</a>
+      <a href="#id192" class="md-nav__link">Backward incompatible changes</a>
       
     
     </li>
@@ -979,6 +1056,125 @@
             
   <section id="release-notes">
 <span id="id1"></span><h1 id="release-notes-all--page-root">Release Notes<a class="headerlink" href="#release-notes-all--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="pymor-2021-2-december-22-2021">
+<h2 id="pymor-2021-2-december-22-2021">pyMOR 2021.2 (December 22, 2021)<a class="headerlink" href="#pymor-2021-2-december-22-2021" title="Permalink to this headline">¶</a></h2>
+<p>We are proud to announce the release of pyMOR 2021.2! New features in
+this release are the addition of Dynamic Mode Decomposition for data-driven
+model order reduction and the formalization of model inputs. Further,
+general output error bounds for Reduced Basis reductors and experimental
+scikit-fem support as an alternative to the builtin discretizers were
+added. Wachspress’ shifts accelerate the solution of Lyapunov equations
+for symmetric system matrices.</p>
+<p>Over 300 single commits have entered this release. For a full list of changes
+see <a class="reference external" href="https://github.com/pymor/pymor/compare/2021.1.x...2021.2.x">here</a>.</p>
+<p>pyMOR 2021.2 contains contributions by Tim Keil, Jonas Nicodemus and
+Henrike von Hülsen. See <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a>
+for more details.</p>
+<section id="release-highlights">
+<h3 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permalink to this headline">¶</a></h3>
+<section id="data-driven-model-order-reduction-with-dynamic-mode-decomposition">
+<h4 id="data-driven-model-order-reduction-with-dynamic-mode-decomposition">Data-driven model order reduction with Dynamic Mode Decomposition<a class="headerlink" href="#data-driven-model-order-reduction-with-dynamic-mode-decomposition" title="Permalink to this headline">¶</a></h4>
+<p>Dynamic Mode Decomposition (DMD) is a well-established method for computing
+low-rank dynamics from observational or simulation data. In contrast to
+Proper Orthogonal Decomposition (POD) where the computed modes are weighted
+by energy content, DMD modes are associated with oscillation frequency and
+decay rate. In <a class="reference external" href="https://github.com/pymor/pymor/pull/1424">[#1424]</a>, both
+the ‘standard’ and ‘exact’ versions of DMD in the sense of <span id="id3">[<a class="reference internal" href="../bibliography.html#id34" title="J. H. Tu, C. W. Rowley, D. M. Luchtenburg, S. L. Brunton, and J. N. Kutz. On dynamic mode decomposition: theory and applications. Journal of Computational Dynamics, pages 391–421, 2014.">TRL+14</a>]</span>
+have been implemented as algorithms operating on arbitrary <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>.
+As such, <a class="reference internal" href="../autoapi/pymor/algorithms/dmd/index.html#pymor.algorithms.dmd.dmd" title="pymor.algorithms.dmd.dmd"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymor.algorithms.dmd.dmd</span></code></a> can be applied also to
+<a class="reference internal" href="../autoapi/pymor/vectorarrays/block/index.html#pymor.vectorarrays.block.BlockVectorArray" title="pymor.vectorarrays.block.BlockVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">blocked</span></code></a> or
+<a class="reference internal" href="../autoapi/pymor/vectorarrays/mpi/index.html#pymor.vectorarrays.mpi.MPIVectorArray" title="pymor.vectorarrays.mpi.MPIVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">MPI-distributed</span></code></a> datasets.</p>
+</section>
+<section id="formalization-of-model-inputs">
+<h4 id="formalization-of-model-inputs">Formalization of Model inputs<a class="headerlink" href="#formalization-of-model-inputs" title="Permalink to this headline">¶</a></h4>
+<p>In an ongoing effort to unify system-theoretic and Reduced Basis <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a> in
+pyMOR and to enable time-domain simulations for system-theoretic <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a>, we
+have formalized the notion of the input of a <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>. Building on pyMOR’s
+recently introduced support for time-dependent parameter values, <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a> can
+now have an <code class="docutils literal notranslate"><span class="pre">input</span></code> parameter, for which time-dependent parameter values are
+passed to <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model.solve" title="pymor.models.interface.Model.solve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">solve</span></code></a>,
+<a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model.output" title="pymor.models.interface.Model.output"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output</span></code></a> and related methods via the new
+<code class="docutils literal notranslate"><span class="pre">input</span></code> keyword argument. For instance, for an arbitrary <a class="reference internal" href="../autoapi/pymor/models/basic/index.html#pymor.models.basic.InstationaryModel" title="pymor.models.basic.InstationaryModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">InstationaryModel</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">m</span></code> we can interpret the <code class="docutils literal notranslate"><span class="pre">rhs</span></code> operator as an input-to-state map as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">with_</span><span class="p">(</span><span class="n">rhs</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">rhs</span> <span class="o">*</span> <span class="n">ProjectionParameterFunctional</span><span class="p">(</span><span class="s1">'input'</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s1">'[sin(t[0])]'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For further details, see <a class="reference external" href="https://github.com/pymor/pymor/pull/1469">[#1469]</a>.</p>
+</section>
+</section>
+<section id="additional-new-features">
+<h3 id="additional-new-features">Additional new features<a class="headerlink" href="#additional-new-features" title="Permalink to this headline">¶</a></h3>
+<section id="basic-rb-output-error-estimates">
+<h4 id="basic-rb-output-error-estimates">Basic RB output error estimates<a class="headerlink" href="#basic-rb-output-error-estimates" title="Permalink to this headline">¶</a></h4>
+<p>pyMOR’s Reduced Basis reductors have been extended to compute a basic
+estimate for the <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model.output" title="pymor.models.interface.Model.output"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output</span></code></a> error.
+Given a linear output functional, this estimate is given by the product
+of the estimated state-space error and the dual norm of the output functional.
+The dual norm is computed efficiently online, also for parameter-dependent
+output functionals that are parameter-separable. For further details, see
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1474">[#1474]</a>. A DWR-based output
+error estimator is currently under development
+<a class="reference external" href="https://github.com/pymor/pymor/pull/1496">[#1496]</a>.</p>
+</section>
+<section id="experimental-scikit-fem-support">
+<h4 id="experimental-scikit-fem-support">Experimental scikit-fem support<a class="headerlink" href="#experimental-scikit-fem-support" title="Permalink to this headline">¶</a></h4>
+<p>In <a class="reference external" href="https://github.com/pymor/pymor/pull/1507">[#1507]</a>, experimental support was
+added for building <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a> from pyMOR’s <a class="reference internal" href="../autoapi/pymor/analyticalproblems/index.html#module-pymor.analyticalproblems" title="pymor.analyticalproblems"><code class="xref py py-mod docutils literal notranslate"><span class="pre">analyticalproblems</span></code></a> using
+<a class="reference external" href="https://scikit-fem.readthedocs.io/">scikit-fem</a> as a discretization backend.
+scikit-fem is a lightweight NumPy/SciPy-based finite-element library that offers
+more advanced features than pyMOR’s builtin discretization toolkit, such as 3d meshes
+or higher-order methods. Currently, only <a class="reference internal" href="../autoapi/pymor/analyticalproblems/elliptic/index.html#pymor.analyticalproblems.elliptic.StationaryProblem" title="pymor.analyticalproblems.elliptic.StationaryProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">StationaryProblems</span></code></a> can be discretized using
+<a class="reference internal" href="../autoapi/pymor/discretizers/skfem/cg/index.html#pymor.discretizers.skfem.cg.discretize_stationary_cg" title="pymor.discretizers.skfem.cg.discretize_stationary_cg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymor.discretizers.skfem.cg.discretize_stationary_cg</span></code></a>, which supports most
+features of the corresponding builtin discretizer.</p>
+</section>
+<section id="wachspress-shifts">
+<h4 id="wachspress-shifts">Wachspress’ shifts<a class="headerlink" href="#wachspress-shifts" title="Permalink to this headline">¶</a></h4>
+<p>When performing model order reduction with the balanced truncation method, the primary
+computational cost consists of solving two Lyapunov equations. In pyMOR, the low-rank
+ADI iteration is used to solve these matrix equations in a large-scale setting. In
+this method, shift parameter selection plays a crucial role in convergence speed.
+For general systems, a heuristic for computing sub-optimal shifts is implemented in pyMOR.
+Through <a class="reference external" href="https://github.com/pymor/pymor/pull/1445">[#1445]</a>, optimal shift parameter
+computation for LTI models with symmetric system matrices was added.</p>
+</section>
+</section>
+<section id="backward-incompatible-changes">
+<h3 id="backward-incompatible-changes">Backward incompatible changes<a class="headerlink" href="#backward-incompatible-changes" title="Permalink to this headline">¶</a></h3>
+<section id="transfer-function-restructuring">
+<h4 id="transfer-function-restructuring">Transfer function restructuring<a class="headerlink" href="#transfer-function-restructuring" title="Permalink to this headline">¶</a></h4>
+<p>In the pursuit of unifying system-theoretic and Reduced Basis <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a>,
+the <a class="reference internal" href="../autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction" title="pymor.models.transfer_function.TransferFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransferFunction</span></code></a> class is no longer a subclass of <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> and
+is moved from <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#module-pymor.models.iosys" title="pymor.models.iosys"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models.iosys</span></code></a> to <a class="reference internal" href="../autoapi/pymor/models/transfer_function/index.html#module-pymor.models.transfer_function" title="pymor.models.transfer_function"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models.transfer_function</span></code></a>.
+Additionally, the <code class="docutils literal notranslate"><span class="pre">InputOutputModel</span></code> and <code class="docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code> classes have
+been removed.
+Furthermore, the transfer function-related methods of <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>,
+<a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.SecondOrderModel" title="pymor.models.iosys.SecondOrderModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SecondOrderModel</span></code></a> and <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LinearDelayModel" title="pymor.models.iosys.LinearDelayModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearDelayModel</span></code></a> are deprecated and the attribute
+<code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> should be used instead (e.g., <code class="docutils literal notranslate"><span class="pre">m.bode_plot(...)</span></code> should be replaced
+with <code class="docutils literal notranslate"><span class="pre">m.transfer_function.bode_plot(...)</span></code>).
+See <a class="reference external" href="https://github.com/pymor/pymor/pull/1486">[#1486]</a> for more details.</p>
+</section>
+</section>
+<section id="further-notable-improvements">
+<h3 id="further-notable-improvements">Further notable improvements<a class="headerlink" href="#further-notable-improvements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1179">[#1179] Update error analysis</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1422">[#1422] Fix passing a function as boundary_types argument to PolygonalDomain</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1437">[#1437] Prevent invalid conversion of an Expression to bool</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1439">[#1439] Fix deprecated usage of asyncio.wait in HAPOD algorithm</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1442">[#1442] SAMDP improvement</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1453">[#1453] Improve error handling in DiskRegion / Don’t disable caching in mpi_wrap_model</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1454">[#1454] Ensure that output_functional is never None</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1478">[#1478] Add NumpyConversionOperator</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1479">[#1479] Fix VectorArray slicing and disable slice filtering in VectorArray tests</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1484">[#1484] Ensure that mu arguments are parsed before cache keys are built</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1490">[#1490] Speedup computations by passing inputs as batch in the instationary ANN models</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1492">[#1492] Minor fixes to symbolic expression library</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1493">[#1493] Warn when __init__ of a ParametricObject takes a variable number of arguments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1506">[#1506] Fix to_numpy() for Array expression</a></p></li>
+</ul>
+</section>
+</section>
 <section id="pymor-2021-1-september-24-2021">
 <h2 id="pymor-2021-1-september-24-2021">pyMOR 2021.1 (September 24, 2021)<a class="headerlink" href="#pymor-2021-1-september-24-2021" title="Permalink to this headline">¶</a></h2>
 <p>We are proud to announce the release of pyMOR 2021.1! This release includes
@@ -991,8 +1187,8 @@ see <a class="reference external" href="https://github.com/pymor/pymor/compare/2
 <p>pyMOR 2021.1 contains contributions by Tim Keil, Hendrik Kleikamp, Josefine Zeller
 and Meret Behrens. See <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a>
 for more details.</p>
-<section id="release-highlights">
-<h3 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permalink to this headline">¶</a></h3>
+<section id="id10">
+<h3 id="id10">Release highlights<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <section id="methods-for-unstable-lti-systems">
 <h4 id="methods-for-unstable-lti-systems">Methods for unstable LTI systems<a class="headerlink" href="#methods-for-unstable-lti-systems" title="Permalink to this headline">¶</a></h4>
 <p>Many popular system-theoretic model order reduction methods are not applicable
@@ -1034,8 +1230,8 @@ without any changes in the MOR algorithm. For further details, see
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1379">[#1379]</a>.</p>
 </section>
 </section>
-<section id="additional-new-features">
-<h3 id="additional-new-features">Additional new features<a class="headerlink" href="#additional-new-features" title="Permalink to this headline">¶</a></h3>
+<section id="id15">
+<h3 id="id15">Additional new features<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <section id="symbolic-expressionfunctions">
 <h4 id="symbolic-expressionfunctions">Symbolic ExpressionFunctions<a class="headerlink" href="#symbolic-expressionfunctions" title="Permalink to this headline">¶</a></h4>
 <p>A simple symbolic math expression library has been added to pyMOR, which is now
@@ -1109,21 +1305,21 @@ the corresponding <code class="docutils literal notranslate"><span class="pre">t
 <section id="pymor-is-now-a-pure-python-package">
 <h4 id="pymor-is-now-a-pure-python-package">pyMOR is now a pure Python package<a class="headerlink" href="#pymor-is-now-a-pure-python-package" title="Permalink to this headline">¶</a></h4>
 <p>All Cython modules in pyMOR’s discretization toolkit have been replaced by
-equivalent <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.21)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a> code, see <a class="reference external" href="https://github.com/pymor/pymor/pull/1314">[#1314]</a>.
+equivalent <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a> code, see <a class="reference external" href="https://github.com/pymor/pymor/pull/1314">[#1314]</a>.
 As a result, pyMOR is now a pure Python package, which should significantly
 simplify pyMOR’s installation when no pre-built binary wheels are available.</p>
 </section>
 </section>
-<section id="backward-incompatible-changes">
-<h3 id="backward-incompatible-changes">Backward incompatible changes<a class="headerlink" href="#backward-incompatible-changes" title="Permalink to this headline">¶</a></h3>
+<section id="id24">
+<h3 id="id24">Backward incompatible changes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <section id="drop-python-3-6-support">
 <h4 id="drop-python-3-6-support">Drop python 3.6 support<a class="headerlink" href="#drop-python-3-6-support" title="Permalink to this headline">¶</a></h4>
 <p>Support for Python 3.6 has been dropped in pyMOR 2021.1
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1302">[#1302]</a>. The minimum supported
 version now is Python 3.7.</p>
 </section>
-<section id="id15">
-<h4 id="id15">Symbolic ExpressionFunctions<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<section id="id26">
+<h4 id="id26">Symbolic ExpressionFunctions<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
 <p>Due to the improvements in <a class="reference external" href="https://github.com/pymor/pymor/pull/1277">[#1277]</a>,
 the signature of <a class="reference internal" href="../autoapi/pymor/analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> has changed. To use existing code with
 pyMOR 2021.1, the <code class="docutils literal notranslate"><span class="pre">shape_range</span></code> argument has to be removed from all
@@ -1131,8 +1327,8 @@ instantiations of <a class="reference internal" href="../autoapi/pymor/analytica
 have to be removed in indexing expressions.</p>
 </section>
 </section>
-<section id="further-notable-improvements">
-<h3 id="further-notable-improvements">Further notable improvements<a class="headerlink" href="#further-notable-improvements" title="Permalink to this headline">¶</a></h3>
+<section id="id28">
+<h3 id="id28">Further notable improvements<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1196">[#1196] Add outputs to FV discretizers</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1234">[#1234] [operators/block] skip ZeroOperators in apply and apply_adjoint</a></p></li>
@@ -1170,8 +1366,8 @@ see <a class="reference external" href="https://github.com/pymor/pymor/compare/2
 <p>pyMOR 2020.2 contains contributions by Tim Keil and Hendrik Kleikamp.
 See <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a> for
 more details.</p>
-<section id="id17">
-<h3 id="id17">Release highlights<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<section id="id29">
+<h3 id="id29">Release highlights<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <section id="parameter-derivatives-of-solutions-and-outputs">
 <h4 id="parameter-derivatives-of-solutions-and-outputs">Parameter derivatives of solutions and outputs<a class="headerlink" href="#parameter-derivatives-of-solutions-and-outputs" title="Permalink to this headline">¶</a></h4>
 <p>In <a class="reference external" href="https://github.com/pymor/pymor/pull/1110">[#1110]</a> tools for
@@ -1219,14 +1415,14 @@ directory were converted to demo scripts <a class="reference external" href="htt
 and the <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> directory was removed <a class="reference external" href="https://github.com/pymor/pymor/pull/1198">[#1198]</a>.</p>
 </section>
 </section>
-<section id="id28">
-<h3 id="id28">Additional new features<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<section id="id40">
+<h3 id="id40">Additional new features<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
 <section id="bode-plot-for-input-output-systems">
 <h4 id="bode-plot-for-input-output-systems">Bode plot for input-output systems<a class="headerlink" href="#bode-plot-for-input-output-systems" title="Permalink to this headline">¶</a></h4>
-<p>The <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.InputOutputModel.bode_plot" title="pymor.models.iosys.InputOutputModel.bode_plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bode_plot</span></code></a> method for creating a
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">bode_plot</span></code> method for creating a
 Bode plot was added <a class="reference external" href="https://github.com/pymor/pymor/pull/1051">[#1051]</a>,
-complementing the <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.InputOutputModel.mag_plot" title="pymor.models.iosys.InputOutputModel.mag_plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mag_plot</span></code></a> method.
-Additionally, the <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.InputOutputModel.bode" title="pymor.models.iosys.InputOutputModel.bode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bode</span></code></a> method can
+complementing the <code class="xref py py-meth docutils literal notranslate"><span class="pre">mag_plot</span></code> method.
+Additionally, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">bode</span></code> method can
 be used to compute the magnitudes and phases over the imaginary axis (for
 continuous-time systems).</p>
 </section>
@@ -1257,8 +1453,8 @@ Moreover, several minor improvements have been made to
 </ul>
 </section>
 </section>
-<section id="id34">
-<h3 id="id34">Backward incompatible changes<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<section id="id46">
+<h3 id="id46">Backward incompatible changes<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
 <section id="updated-model-interface">
 <h4 id="updated-model-interface">Updated Model interface<a class="headerlink" href="#updated-model-interface" title="Permalink to this headline">¶</a></h4>
 <p>To make the simultaneous computation of multiple <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> output quantities such as internal state,
@@ -1278,7 +1474,7 @@ the model outputs, i.e., the results of <code class="xref py py-meth docutils li
 are no longer generic <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>, but NumPy arrays.
 For consistency, <code class="docutils literal notranslate"><span class="pre">input_space</span></code> and <code class="docutils literal notranslate"><span class="pre">output_space</span></code> were removed and
 <code class="docutils literal notranslate"><span class="pre">input_dim</span></code> and <code class="docutils literal notranslate"><span class="pre">output_dim</span></code> were renamed to <code class="docutils literal notranslate"><span class="pre">dim_input</span></code> and <code class="docutils literal notranslate"><span class="pre">dim_output</span></code>
-in <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.InputOutputModel" title="pymor.models.iosys.InputOutputModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputOutputModel</span></code></a>
+in <code class="xref py py-class docutils literal notranslate"><span class="pre">InputOutputModel</span></code>
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1089">[#1089]</a>.</p>
 </section>
 <section id="changes-in-methods-for-inner-products-and-norms-of-vectorarrays">
@@ -1328,8 +1524,8 @@ Pip 19.0 already understands the Manylinux 2010 tag, which going further is the 
 for.</p>
 </section>
 </section>
-<section id="id43">
-<h3 id="id43">Further notable improvements<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<section id="id55">
+<h3 id="id55">Further notable improvements<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/960">[#960] Avoid nested parameter functionals and functions for sums and products</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/1008">[#1008] Energy product in elliptic discretizer</a></p></li>
@@ -1358,14 +1554,14 @@ see <a class="reference external" href="https://github.com/pymor/pymor/compare/2
 and Luca Mechelli. We are also happy to welcome Linus as a new main developer!
 See <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a> for more
 details.</p>
-<section id="id44">
-<h3 id="id44">Release highlights<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
+<section id="id56">
+<h3 id="id56">Release highlights<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
 <section id="model-order-reduction-using-artificial-neural-networks">
 <h4 id="model-order-reduction-using-artificial-neural-networks">Model order reduction using artificial neural networks<a class="headerlink" href="#model-order-reduction-using-artificial-neural-networks" title="Permalink to this headline">¶</a></h4>
 <p>With this release, we introduce a simple approach for non-intrusive model order
 reduction to pyMOR that makes use of artificial neural networks
 <a class="reference external" href="https://github.com/pymor/pymor/pull/1001">[#1001]</a>. The method was first
-described in <span id="id46">[<a class="reference internal" href="../bibliography.html#id24" title="Jan S Hesthaven and Stefano Ubbiali. Non-intrusive reduced order modeling of nonlinear problems using neural networks. Journal of Computational Physics, 363:55–78, 2018.">HU18</a>]</span> and only requires being able to compute solution snapshots of
+described in <span id="id58">[<a class="reference internal" href="../bibliography.html#id24" title="Jan S Hesthaven and Stefano Ubbiali. Non-intrusive reduced order modeling of nonlinear problems using neural networks. Journal of Computational Physics, 363:55–78, 2018.">HU18</a>]</span> and only requires being able to compute solution snapshots of
 the full-order <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>. Thus, it can be applied to arbitrary (nonlinear) <a class="reference internal" href="../autoapi/pymor/models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Models</span></code></a> even when no
 access to the model’s <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> is possible.</p>
 <p>Our implementation internally wraps <a class="reference external" href="https://pytorch.org">PyTorch</a> for the training and evaluation of
@@ -1376,14 +1572,14 @@ the neural networks. No knowledge of PyTorch or neural networks is required to a
 <p>The new <a class="reference internal" href="../autoapi/pymor/algorithms/eigs/index.html#pymor.algorithms.eigs.eigs" title="pymor.algorithms.eigs.eigs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">eigs</span></code></a> method
 <a class="reference external" href="https://github.com/pymor/pymor/pull/880">[#880]</a> computes
 smallest/largest eigenvalues of an arbitary linear real <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>
-using the implicitly restarted Arnoldi method <span id="id48">[<a class="reference internal" href="../bibliography.html#id31" title="Richard Bruno Lehoucq. Analysis and implementation of an implicitly restarted Arnoldi iteration. PhD thesis, Rice University, Houston, USA, 1995. URL: https://scholarship.rice.edu/handle/1911/16844.">Leh95</a>]</span>. It can also
+using the implicitly restarted Arnoldi method <span id="id60">[<a class="reference internal" href="../bibliography.html#id31" title="Richard Bruno Lehoucq. Analysis and implementation of an implicitly restarted Arnoldi iteration. PhD thesis, Rice University, Houston, USA, 1995. URL: https://scholarship.rice.edu/handle/1911/16844.">Leh95</a>]</span>. It can also
 be used to solve generalized eigenvalue problems.</p>
 <p>So far, computing poles of an <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> was only supported by its
 <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.poles" title="pymor.models.iosys.LTIModel.poles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poles</span></code></a> method, which uses a dense eigenvalue
 solver and converts the operators to dense matrices.
 The new <a class="reference internal" href="../autoapi/pymor/algorithms/samdp/index.html#pymor.algorithms.samdp.samdp" title="pymor.algorithms.samdp.samdp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">samdp</span></code></a> method
 <a class="reference external" href="https://github.com/pymor/pymor/pull/834">[#834]</a> implements the
-subspace accelerated dominant pole (SAMDP) algorithm  <span id="id50">[<a class="reference internal" href="../bibliography.html#id33" title="Joost Rommes and Nelson Martins. Efficient computation of multivariable transfer function dominant poles using subspace acceleration. IEEE transactions on power systems, 21(4):1471–1483, 2006.">RM06</a>]</span>,
+subspace accelerated dominant pole (SAMDP) algorithm  <span id="id62">[<a class="reference internal" href="../bibliography.html#id33" title="Joost Rommes and Nelson Martins. Efficient computation of multivariable transfer function dominant poles using subspace acceleration. IEEE transactions on power systems, 21(4):1471–1483, 2006.">RM06</a>]</span>,
 which can be used to compute the dominant poles operators of an
 <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> with arbitrary (in particular sparse) system <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>
 without relying on dense matrix operations.</p>
@@ -1427,8 +1623,8 @@ particular users can now learn about:</p>
 </ul>
 </section>
 </section>
-<section id="id54">
-<h3 id="id54">Additional new features<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+<section id="id66">
+<h3 id="id66">Additional new features<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
 <section id="improvements-to-parameterfunctionals">
 <h4 id="improvements-to-parameterfunctionals">Improvements to ParameterFunctionals<a class="headerlink" href="#improvements-to-parameterfunctionals" title="Permalink to this headline">¶</a></h4>
 <p>Several improvements have been made to pyMOR’s <a class="reference internal" href="../autoapi/pymor/parameters/functionals/index.html#pymor.parameters.functionals.ParameterFunctional" title="pymor.parameters.functionals.ParameterFunctional"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterFunctionals</span></code></a>:</p>
@@ -1490,8 +1686,8 @@ The old behaviour can be reactivated using</p>
 </div>
 </section>
 </section>
-<section id="id62">
-<h3 id="id62">Backward incompatible changes<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
+<section id="id74">
+<h3 id="id74">Backward incompatible changes<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
 <section id="renamed-interface-classes">
 <h4 id="renamed-interface-classes">Renamed interface classes<a class="headerlink" href="#renamed-interface-classes" title="Permalink to this headline">¶</a></h4>
 <p>The names of pyMOR’s interface classes have been shortened
@@ -1534,8 +1730,8 @@ program runs is desired <a class="reference external" href="https://github.com/p
 </ul>
 </section>
 </section>
-<section id="id72">
-<h3 id="id72">Further notable improvements<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
+<section id="id84">
+<h3 id="id84">Further notable improvements<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/885">[#885] Implement VectorArrayOperator.apply_inverse</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/888">[#888] Implement FenicsVectorSpace.from_numpy</a></p></li>
@@ -1561,8 +1757,8 @@ see <a class="reference external" href="https://github.com/pymor/pymor/compare/0
 <p>pyMOR 2019.2 contains contributions by Linus Balicki, Dennis Eickhorn and Tim
 Keil. See <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a> for
 more details.</p>
-<section id="id73">
-<h3 id="id73">Release highlights<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
+<section id="id85">
+<h3 id="id85">Release highlights<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
 <section id="implement-new-models-and-reductors-more-easily">
 <h4 id="implement-new-models-and-reductors-more-easily">Implement new models and reductors more easily<a class="headerlink" href="#implement-new-models-and-reductors-more-easily" title="Permalink to this headline">¶</a></h4>
 <p>As many users have been struggling with the notion of <code class="docutils literal notranslate"><span class="pre">Discretization</span></code> in pyMOR
@@ -1613,7 +1809,7 @@ more explicit the result of the
 Further improvements in naming has been renaming attributes <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code>, and <code class="docutils literal notranslate"><span class="pre">p</span></code> to
 <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">input_dim</span></code>, and <code class="docutils literal notranslate"><span class="pre">output_dim</span></code>
 <a class="reference external" href="https://github.com/pymor/pymor/pull/578">[#578]</a> and the <code class="docutils literal notranslate"><span class="pre">bode</span></code> method to
-<a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.InputOutputModel.freq_resp" title="pymor.models.iosys.InputOutputModel.freq_resp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">freq_resp</span></code></a>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">freq_resp</span></code>
 <a class="reference external" href="https://github.com/pymor/pymor/pull/729">[#729]</a>.
 Reductors in <a class="reference internal" href="../autoapi/pymor/reductors/bt/index.html#module-pymor.reductors.bt" title="pymor.reductors.bt"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bt</span></code></a> and <a class="reference internal" href="../autoapi/pymor/reductors/h2/index.html#module-pymor.reductors.h2" title="pymor.reductors.h2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">h2</span></code></a> received
 numerous improvements (<a class="reference external" href="https://github.com/pymor/pymor/pull/656">[#656]</a>,
@@ -1640,8 +1836,8 @@ which return the partial derivative with respect to a given parameter component
 <a class="reference external" href="https://github.com/pymor/pymor/pull/748">[#748]</a>.</p>
 </section>
 </section>
-<section id="id90">
-<h3 id="id90">Additional new features<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
+<section id="id102">
+<h3 id="id102">Additional new features<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h3>
 <section id="extended-fenics-bindings">
 <h4 id="extended-fenics-bindings">Extended FEniCS bindings<a class="headerlink" href="#extended-fenics-bindings" title="Permalink to this headline">¶</a></h4>
 <p>FEniCS support has been improved by adding support for nonlinear <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> including
@@ -1735,8 +1931,8 @@ code in <code class="xref py py-meth docutils literal notranslate"><span class="
 </ul>
 </section>
 </section>
-<section id="id106">
-<h3 id="id106">Backward incompatible changes<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h3>
+<section id="id118">
+<h3 id="id118">Backward incompatible changes<a class="headerlink" href="#id118" title="Permalink to this headline">¶</a></h3>
 <section id="dropped-python-3-5-support">
 <h4 id="dropped-python-3-5-support">Dropped Python 3.5 support<a class="headerlink" href="#dropped-python-3-5-support" title="Permalink to this headline">¶</a></h4>
 <p>As Python 3.6 or newer now ships with the current versions of all major Linux distributions,
@@ -1747,11 +1943,11 @@ preservation <a class="reference external" href="https://github.com/pymor/pymor/
 </section>
 <section id="global-randomstate">
 <h4 id="global-randomstate">Global RandomState<a class="headerlink" href="#global-randomstate" title="Permalink to this headline">¶</a></h4>
-<p>pyMOR now has a (mutable) global default <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a>. This means
+<p>pyMOR now has a (mutable) global default <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a>. This means
 that when <code class="xref py py-meth docutils literal notranslate"><span class="pre">sample_randomly</span></code> is called
 repeatedly without specifying a <code class="docutils literal notranslate"><span class="pre">random_state</span></code> or <code class="docutils literal notranslate"><span class="pre">seed</span></code> argument, different <a class="reference internal" href="../autoapi/pymor/parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>
 samples will be returned in contrast to the (surprising) previous behavior where the
-same samples would have been returned. The same <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a> is
+same samples would have been returned. The same <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a> is
 used by the newly introduced <code class="xref py py-meth docutils literal notranslate"><span class="pre">random</span></code>
 method of the <code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrayInterface</span></code>
 <a class="reference external" href="https://github.com/pymor/pymor/pull/620">[#620]</a>.</p>
@@ -1768,8 +1964,8 @@ has been reduced throughout pyMOR to avoid unwanted errors due to incompatible <
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/615">[#615] Remove ‘space’ parameter from as_vector</a></p></li>
 </ul>
 </section>
-<section id="id110">
-<h4 id="id110">Further API Changes<a class="headerlink" href="#id110" title="Permalink to this headline">¶</a></h4>
+<section id="id122">
+<h4 id="id122">Further API Changes<a class="headerlink" href="#id122" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>The stagnation criterion of the <a class="reference internal" href="../autoapi/pymor/algorithms/newton/index.html#pymor.algorithms.newton.newton" title="pymor.algorithms.newton.newton"><code class="xref py py-func docutils literal notranslate"><span class="pre">newton</span></code></a> is disabled by default
 (and a relaxation parameter has been added) <a class="reference external" href="https://github.com/pymor/pymor/pull/800">[#800]</a>.</p></li>
@@ -1778,8 +1974,8 @@ has been renamed to <code class="docutils literal notranslate"><span class="pre"
 </ul>
 </section>
 </section>
-<section id="id113">
-<h3 id="id113">Further notable improvements<a class="headerlink" href="#id113" title="Permalink to this headline">¶</a></h3>
+<section id="id125">
+<h3 id="id125">Further notable improvements<a class="headerlink" href="#id125" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/559">[#559] fix arnoldi when E is not identity</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/569">[#569] Fix NonProjectedResidualOperator.apply</a></p></li>
@@ -1826,8 +2022,8 @@ see <a class="reference external" href="https://github.com/pymor/pymor/compare/0
 <p>pyMOR 0.5 contains contributions by Linus Balicki, Julia Brunken and Christoph
 Lehrenfeld. See <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a>
 for more details.</p>
-<section id="id114">
-<h3 id="id114">Release highlights<a class="headerlink" href="#id114" title="Permalink to this headline">¶</a></h3>
+<section id="id126">
+<h3 id="id126">Release highlights<a class="headerlink" href="#id126" title="Permalink to this headline">¶</a></h3>
 <section id="python-3-support">
 <h4 id="python-3-support">Python 3 support<a class="headerlink" href="#python-3-support" title="Permalink to this headline">¶</a></h4>
 <p>pyMOR is now compatible with Python 3.5 or greater. Since the use of Python 3 is
@@ -1843,7 +2039,7 @@ improved support for asynchronous programming.</p>
 <p>With 386 commits, <a class="reference external" href="https://github.com/pymor/pymor/pull/464">[#464]</a> added
 systems-theoretic methods to pyMOR. Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizations.iosys</span></code>
 contains new discretization classes for input-output systems, e.g. <code class="docutils literal notranslate"><span class="pre">LTISystem</span></code>,
-<code class="docutils literal notranslate"><span class="pre">SecondOrderSystem</span></code> and <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.TransferFunction" title="pymor.models.iosys.TransferFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransferFunction</span></code></a>. At present, methods related to these
+<code class="docutils literal notranslate"><span class="pre">SecondOrderSystem</span></code> and <a class="reference internal" href="../autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction" title="pymor.models.transfer_function.TransferFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransferFunction</span></code></a>. At present, methods related to these
 classes mainly focus on continuous-time, non-parametric systems.</p>
 <p>Since matrix equation solvers are important tools in many system-theoretic
 methods, support for Lyapunov, Riccati and Sylvester equations has been added in
@@ -1910,14 +2106,14 @@ in the space. The
 allows to differentiate between technically identical but mathematically
 different spaces <a class="reference external" href="https://github.com/pymor/pymor/pull/323">[#323]</a>.</p></li>
 <li><p><a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> can now be indexed to select a subset of vectors to operate on.
-In contrast to advanced indexing in <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.21)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>, indexing a <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> will
+In contrast to advanced indexing in <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>, indexing a <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> will
 always return a view onto the original array data
 <a class="reference external" href="https://github.com/pymor/pymor/pull/299">[#299]</a>.</p></li>
 <li><p>New methods with clear semantics have been introduced for the conversion of
 <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> to
 (<code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy</span></code>) and
 from (<code class="xref py py-meth docutils literal notranslate"><span class="pre">from_numpy</span></code>)
-<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> <a class="reference external" href="https://github.com/pymor/pymor/pull/446">[#446]</a>.</p></li>
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> <a class="reference external" href="https://github.com/pymor/pymor/pull/446">[#446]</a>.</p></li>
 <li><p>Inner products between <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> w.r.t. to a given inner product
 <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> or their norm w.r.t. such an operator can now easily be computed by
 passing the <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> as the optional <code class="docutils literal notranslate"><span class="pre">product</span></code> argument to the new
@@ -1961,8 +2157,8 @@ shipped with pyMOR.</p></li>
 </ul>
 </section>
 </section>
-<section id="id124">
-<h3 id="id124">Additional new features<a class="headerlink" href="#id124" title="Permalink to this headline">¶</a></h3>
+<section id="id136">
+<h3 id="id136">Additional new features<a class="headerlink" href="#id136" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Reduction algorithms are now implemented using mutable reductor objects, e.g.
 <code class="xref py py-class docutils literal notranslate"><span class="pre">GenericRBReductor</span></code>, which store and
@@ -2018,8 +2214,8 @@ bindings to is available for demonstration and development purposes:</p>
 </li>
 </ul>
 </section>
-<section id="id135">
-<h3 id="id135">Backward incompatible changes<a class="headerlink" href="#id135" title="Permalink to this headline">¶</a></h3>
+<section id="id147">
+<h3 id="id147">Backward incompatible changes<a class="headerlink" href="#id147" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dim_outer</span></code> has been removed from the grid interface <a class="reference external" href="https://github.com/pymor/pymor/pull/277">[#277]</a>.</p></li>
 <li><p>All wrapper code for interfacing with external PDE libraries or equation
@@ -2035,15 +2231,15 @@ have been replaced by <code class="docutils literal notranslate"><span class="pr
 <a class="reference external" href="https://github.com/pymor/pymor/pull/416">[#416]</a>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">_matrix</span></code> attribute of <a class="reference internal" href="../autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a> has been renamed to <code class="docutils literal notranslate"><span class="pre">matrix</span></code>
 <a class="reference external" href="https://github.com/pymor/pymor/pull/436">[#436]</a>. If <code class="docutils literal notranslate"><span class="pre">matrix</span></code> holds a
-<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> this array is automatically made read-only to prevent accidental
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> this array is automatically made read-only to prevent accidental
 modification of the <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> <a class="reference external" href="https://github.com/pymor/pymor/pull/462">[#462]</a>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">BoundaryType</span></code> class has been removed in favor of simple strings <a class="reference external" href="https://github.com/pymor/pymor/pull/305">[#305]</a>.</p></li>
 <li><p>The complicated and unused mapping of local parameter component names to
 global names has been removed <a class="reference external" href="https://github.com/pymor/pymor/pull/306">[#306]</a>.</p></li>
 </ul>
 </section>
-<section id="id144">
-<h3 id="id144">Further notable improvements<a class="headerlink" href="#id144" title="Permalink to this headline">¶</a></h3>
+<section id="id156">
+<h3 id="id156">Further notable improvements<a class="headerlink" href="#id156" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/176">[#176] Support different colormaps in GLPatchWidget</a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/pymor/pymor/pull/238">[#238] From Operator to NumPy operator</a>.</p></li>
@@ -2096,8 +2292,8 @@ pyMOR 0.4 contains contributions by Andreas Buhr, Michael Laier, Falk Meyer,
 Petar Mlinarić and Michael Schaefer. See
 <a class="reference external" href="https://github.com/pymor/pymor/blob/main/AUTHORS.md">here</a> for more
 details.</p>
-<section id="id145">
-<h3 id="id145">Release highlights<a class="headerlink" href="#id145" title="Permalink to this headline">¶</a></h3>
+<section id="id157">
+<h3 id="id157">Release highlights<a class="headerlink" href="#id157" title="Permalink to this headline">¶</a></h3>
 <section id="fenics-and-deal-ii-support">
 <h4 id="fenics-and-deal-ii-support">FEniCS and deal.II support<a class="headerlink" href="#fenics-and-deal-ii-support" title="Permalink to this headline">¶</a></h4>
 <p>pyMOR now includes wrapper classes for integrating PDE solvers
@@ -2151,11 +2347,11 @@ For an example, see <code class="xref py py-meth docutils literal notranslate"><
 <h4 id="new-reduction-algorithms">New reduction algorithms<a class="headerlink" href="#new-reduction-algorithms" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">adaptive_greedy</span></code> uses adaptive
-parameter training set refinement according to <span id="id151">[<a class="reference internal" href="../bibliography.html#id19" title="B. Haasdonk, M. Dihlmann, and M. Ohlberger. A training set and multiple basis generation approach for parametrized model reduction based on adaptive grids in parameter space. Math. Comput. Model. Dyn. Syst., 17(4):423–442, 2011.">HDO11</a>]</span> to prevent
+parameter training set refinement according to <span id="id163">[<a class="reference internal" href="../bibliography.html#id19" title="B. Haasdonk, M. Dihlmann, and M. Ohlberger. A training set and multiple basis generation approach for parametrized model reduction based on adaptive grids in parameter space. Math. Comput. Model. Dyn. Syst., 17(4):423–442, 2011.">HDO11</a>]</span> to prevent
 overfitting of the reduced model to the training set <a class="reference external" href="https://github.com/pymor/pymor/pull/213">[#213]</a>.</p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce_parabolic</span></code> reduces linear parabolic
 problems using <code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce_generic_rb</span></code> and
-assembles an error estimator similar to <span id="id153">[<a class="reference internal" href="../bibliography.html#id16" title="Martin A Grepl and Anthony T Patera. A posteriori error bounds for reduced-basis approximations of parametrized parabolic partial differential equations. ESAIM: Mathematical Modelling and Numerical Analysis, 39(1):157–181, 2005.">GP05</a>]</span>, <span id="id154">[<a class="reference internal" href="../bibliography.html#id20" title="B. Haasdonk and M. Ohlberger. Reduced basis method for finite volume approximations of parametrized linear evolution equations. ESAIM: Math. Model. Numer. Anal., 42(2):277–302, 2008.">HO08</a>]</span>.
+assembles an error estimator similar to <span id="id165">[<a class="reference internal" href="../bibliography.html#id16" title="Martin A Grepl and Anthony T Patera. A posteriori error bounds for reduced-basis approximations of parametrized parabolic partial differential equations. ESAIM: Mathematical Modelling and Numerical Analysis, 39(1):157–181, 2005.">GP05</a>]</span>, <span id="id166">[<a class="reference internal" href="../bibliography.html#id20" title="B. Haasdonk and M. Ohlberger. Reduced basis method for finite volume approximations of parametrized linear evolution equations. ESAIM: Math. Model. Numer. Anal., 42(2):277–302, 2008.">HO08</a>]</span>.
 The <code class="xref py py-mod docutils literal notranslate"><span class="pre">parabolic_mor</span></code> demo contains a simple sample
 application using this reductor <a class="reference external" href="https://github.com/pymor/pymor/issues/190">[#190]</a>.</p></li>
 <li><p>The <a class="reference internal" href="../autoapi/pymor/algorithms/image/index.html#pymor.algorithms.image.estimate_image" title="pymor.algorithms.image.estimate_image"><code class="xref py py-meth docutils literal notranslate"><span class="pre">estimate_image</span></code></a> and
@@ -2255,8 +2451,8 @@ calculation <a class="reference external" href="https://github.com/pymor/pymor/p
 </ul>
 </section>
 </section>
-<section id="id169">
-<h3 id="id169">Additional new features<a class="headerlink" href="#id169" title="Permalink to this headline">¶</a></h3>
+<section id="id181">
+<h3 id="id181">Additional new features<a class="headerlink" href="#id181" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply_inverse_adjoint</span></code> has been added to the <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> interface <a class="reference external" href="https://github.com/pymor/pymor/issues/133">[#133]</a>.</p></li>
 <li><p>Support for complex values in <a class="reference internal" href="../autoapi/pymor/vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorArray" title="pymor.vectorarrays.numpy.NumpyVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyVectorArray</span></code></a> and <a class="reference internal" href="../autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a> <a class="reference external" href="https://github.com/pymor/pymor/issues/131">[#131]</a>.</p></li>
@@ -2291,7 +2487,7 @@ can be used to construct such objects from data files of various formats
 <li><dl class="simple">
 <dt><a class="reference internal" href="../autoapi/pymor/vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>-based <a class="reference internal" href="../autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a> <a class="reference external" href="https://github.com/pymor/pymor/pull/164">[#164]</a>.</dt><dd><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">playground</span></code> now contains
 <code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyListVectorArrayMatrixOperator</span></code>
-which can apply <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.21)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>/<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/index.html#module-scipy" title="(in SciPy v1.7.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a> matrices to a <a class="reference internal" href="../autoapi/pymor/vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.
+which can apply <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>/<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/index.html#module-scipy" title="(in SciPy v1.7.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a> matrices to a <a class="reference internal" href="../autoapi/pymor/vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.
 This <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is mainly intended for performance testing purposes.
 The <code class="xref py py-mod docutils literal notranslate"><span class="pre">thermalblock</span></code> demo now has an option
 <code class="docutils literal notranslate"><span class="pre">--list-vector-array</span></code> for using this operator instead of <a class="reference internal" href="../autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a>.</p>
@@ -2322,8 +2518,8 @@ contains a default implementation for functionals by calling
 <li><p>Test coverage has been raised to 80 percent.</p></li>
 </ul>
 </section>
-<section id="id180">
-<h3 id="id180">Backward incompatible changes<a class="headerlink" href="#id180" title="Permalink to this headline">¶</a></h3>
+<section id="id192">
+<h3 id="id192">Backward incompatible changes<a class="headerlink" href="#id192" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> implementations have been moved to the <a class="reference internal" href="../autoapi/pymor/vectorarrays/index.html#module-pymor.vectorarrays" title="pymor.vectorarrays"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.vectorarrays</span></code></a> sub-package <a class="reference external" href="https://github.com/pymor/pymor/issues/89">[#89]</a>.</p></li>
 <li><dl class="simple">
@@ -2509,10 +2705,10 @@ all changes can be obtained under the following address:
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

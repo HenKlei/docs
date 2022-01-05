@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.discretizers.builtin.gui.qt &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>pymor.discretizers.builtin.gui.qt &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../../../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../../../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../../../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -315,6 +315,13 @@
     
     
       <a href="../../index.html" class="md-nav__link">builtin</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../skfem/index.html" class="md-nav__link">skfem</a>
       
     
     </li></ul>
@@ -527,8 +534,12 @@ toolkit for the GUI.</p>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.qt.PlotMainWindow.closeEvent">
-<span class="sig-name descname"><span class="pre">closeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/discretizers/builtin/gui/qt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.qt.PlotMainWindow.closeEvent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">closeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/discretizers/builtin/gui/qt.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.qt.PlotMainWindow.closeEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is directly called from CI</p>
+<p>Xvfb (sometimes) raises errors on interpreter shutdown
+when there are still ‘live’ MPL plot objects. This
+happens even if the referencing MainWindow was already destroyed</p>
+</dd></dl>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.qt._qt_app">
@@ -658,10 +669,10 @@ case <code class="docutils literal notranslate"><span class="pre">legend</span><
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

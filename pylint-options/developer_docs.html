@@ -47,7 +47,7 @@
   
   
   
-    <title>Developer Documentation &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>Developer Documentation &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/material.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -190,13 +190,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -317,7 +317,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#pymor-s-dependencies" class="md-nav__link">pyMOR’s dependencies</a>
+      <a href="#pymors-dependencies" class="md-nav__link">pyMOR’s dependencies</a>
       
     
     </li>
@@ -399,13 +399,6 @@
     <li class="md-nav__item">
     
     
-      <a href="#azure-pipelines" class="md-nav__link">Azure Pipelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
       <a href="#docker-images" class="md-nav__link">Docker images</a>
       
     
@@ -450,7 +443,7 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="developer-documentation">
+  <section class="tex2jax_ignore mathjax_ignore" id="developer-documentation">
 <h1 id="developer-docs--page-root">Developer Documentation<a class="headerlink" href="#developer-docs--page-root" title="Permalink to this headline">¶</a></h1>
 <section id="setting-up-an-environment-for-pymor-development">
 <h2 id="setting-up-an-environment-for-pymor-development">Setting up an Environment for pyMOR Development<a class="headerlink" href="#setting-up-an-environment-for-pymor-development" title="Permalink to this headline">¶</a></h2>
@@ -507,7 +500,7 @@ be sufficiently well documented.</p>
 </section>
 <section id="github-project">
 <h3 id="github-project">GitHub project<a class="headerlink" href="#github-project" title="Permalink to this headline">¶</a></h3>
-<p>All new code enters pyMOR by means of a pull request. Pull requests (PR) trigger <a class="reference external" href="ref_section_ci">automatic tests</a>
+<p>All new code enters pyMOR by means of a pull request. Pull requests (PR) trigger <a class="reference internal" href="#continuous-testing-integration-setup"><span class="std std-doc">automatic tests</span></a>
 which are mandatory to pass before the PR can be merged. A PR must also be tagged with either one of the
 <code class="docutils literal notranslate"><span class="pre">pr:new-feature</span></code>, <code class="docutils literal notranslate"><span class="pre">pr:fix</span></code>, <code class="docutils literal notranslate"><span class="pre">pr:removal</span></code>, <code class="docutils literal notranslate"><span class="pre">pr:deprecation</span></code> or <code class="docutils literal notranslate"><span class="pre">pr:change</span></code> labels to clearly identify the type of
 changes it introduces. See the <a class="reference external" href="https://github.com/pymor/pymor/labels?q=pr%3A">labels’ descriptions</a> for more details.</p>
@@ -517,23 +510,29 @@ changes it introduces. See the <a class="reference external" href="https://githu
 <p>pyMOR ships a config for the <a class="reference external" href="https://pre-commit.com/">pre-commit</a> hook management system.
 Using this setup can be a good way to find flake8 errors before pushing to GitHub, but using
 it is not required. Once you have <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> installed in you environment, run</p>
-<blockquote>
-<div><p>pre-commit install</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span>
+</pre></div>
+</div>
 <p>Afterwards, the hooks configured in <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> will run on all changed
 files prior to committing changes. Errors will block the commit, some
 checks will automatically fix the file.</p>
 </section>
 </section>
-<section id="pymor-s-dependencies">
-<h2 id="pymor-s-dependencies">pyMOR’s dependencies<a class="headerlink" href="#pymor-s-dependencies" title="Permalink to this headline">¶</a></h2>
+<section id="pymors-dependencies">
+<h2 id="pymors-dependencies">pyMOR’s dependencies<a class="headerlink" href="#pymors-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>The single source of truth for our dependency setup is <code class="docutils literal notranslate"><span class="pre">dependencies.py</span></code>.
 From it the <code class="docutils literal notranslate"><span class="pre">requirements*txt</span></code> files  and <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> are generated (by calling <code class="docutils literal notranslate"><span class="pre">make</span></code>).
 During <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> execution <code class="docutils literal notranslate"><span class="pre">dependencies.py</span></code> is imported and the package lists passed to setuptools’s
 <code class="docutils literal notranslate"><span class="pre">setup_requires</span></code>, <code class="docutils literal notranslate"><span class="pre">install_requires</span></code>, <code class="docutils literal notranslate"><span class="pre">tests_require</span></code> and <code class="docutils literal notranslate"><span class="pre">extra_requires</span></code> accordingly
 (see <a class="reference internal" href="#ref-gitlab-ci-stage-test"><span class="std std-ref">this list</span></a>).
 The <code class="docutils literal notranslate"><span class="pre">extra_requires</span></code> dictionary here controls what ‘extra’ configurations are available for
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pymor[extra1,extra2,extra3]</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pymor[extra1,extra2,extra3]</span></code>.
+The requirements files are input for <code class="docutils literal notranslate"><span class="pre">.ci/create_conda_env.py</span></code> which created a Conda Environment
+spec file that contains only those dependencies that are available on all OS-Python combinations
+for which GitHub Action based CI is run in Conda envs.</p>
+<p>A GitHub Action will update all “downstream” files of <code class="docutils literal notranslate"><span class="pre">dependencies.py</span></code> if it changes in a push.
+The result will be pushed into the same branch, but due to a GitHub limitation no new workflows
+will run as a result of that push.</p>
 <p>When adding new package dependencies, or version restrictions, these need to be reflected into
 a commit in our docker repository for the <a class="reference external" href="https://github.com/pymor/docker/tree/main/constraints">constraints requirements</a>
 so that updated images become available to CI after entering the new commit hash into <code class="docutils literal notranslate"><span class="pre">.env</span></code>.</p>
@@ -556,9 +555,9 @@ overridden like this: <code class="docutils literal notranslate"><span class="pr
 </section>
 </section>
 <section id="continuous-testing-integration-setup">
-<span id="ref-section-ci"></span><h2 id="continuous-testing-integration-setup">Continuous Testing / Integration Setup<a class="headerlink" href="#continuous-testing-integration-setup" title="Permalink to this headline">¶</a></h2>
-<p>Our CI infrastructure is spread across three major platforms. These are Gitlab CI (Linux testsuite),
-Azure Pipelines (MacOS and Windows testsuite) and GitHub Actions (misc. checks).</p>
+<h2 id="continuous-testing-integration-setup">Continuous Testing / Integration Setup<a class="headerlink" href="#continuous-testing-integration-setup" title="Permalink to this headline">¶</a></h2>
+<p>Our CI infrastructure is spread across two major platforms. These are Gitlab CI (Linux testsuite)
+and GitHub Actions (Conda-based MacOS and Windows testsuite, misc. checks).</p>
 <p>pyMOR uses <a class="reference external" href="https://pytest.org/">pytest</a> for unit testing.
 All tests are contained within the <code class="docutils literal notranslate"><span class="pre">src/pymortests</span></code> directory and can be run
 individually by executing <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">src/pymortests/the_module.py</span></code> or invoking
@@ -585,7 +584,7 @@ Also ensures CI config and requirements generated from their templates match the
 <section id="stage-test">
 <span id="ref-gitlab-ci-stage-test"></span><h4 id="stage-test">Stage: Test<a class="headerlink" href="#stage-test" title="Permalink to this headline">¶</a></h4>
 <p>This stage executes <code class="docutils literal notranslate"><span class="pre">./.ci/gitlab/test_{{script}}.bash</span></code> for a list of different scripts:</p>
-<dl class="simple">
+<dl class="simple myst">
 <dt>vanilla</dt><dd><p>This runs plain <code class="docutils literal notranslate"><span class="pre">pytest</span></code> with the common options defined in <code class="docutils literal notranslate"><span class="pre">./.ci/gitlab/common_test_setup.bash</span></code>.</p>
 </dd>
 <dt>cpp_demo</dt><dd><p>Builds and executes the minimal cpp demo in <code class="docutils literal notranslate"><span class="pre">src/pymordemos/minimal_cpp_demo/</span></code>,
@@ -618,7 +617,7 @@ deployment of the documentation in the last stage.</p>
 </section>
 <section id="stage-install-checks">
 <span id="ref-gitlab-ci-stage-install"></span><h4 id="stage-install-checks">Stage: Install_checks<a class="headerlink" href="#stage-install-checks" title="Permalink to this headline">¶</a></h4>
-<dl class="simple">
+<dl class="simple myst">
 <dt>from wheel</dt><dd><p>Try to install wheels produced in previous stage on a few different Linuxs.</p>
 </dd>
 <dt>from source</dt><dd><p>Try to install <code class="docutils literal notranslate"><span class="pre">pymor[full]</span></code> from git checkout. This checks that the extension module compile works,
@@ -631,20 +630,16 @@ packages omitted from <code class="docutils literal notranslate"><span class="pr
 </section>
 <section id="stage-deploy">
 <span id="ref-gitlab-ci-stage-deploy"></span><h4 id="stage-deploy">Stage: Deploy<a class="headerlink" href="#stage-deploy" title="Permalink to this headline">¶</a></h4>
-<dl class="simple">
+<dl class="simple myst">
 <dt>docs</dt><dd><p>Commits documentation built in <a class="reference internal" href="#ref-gitlab-ci-stage-build"><span class="std std-ref">Stage: Build</span></a> (from a single Python version, not all) to the
 <a class="reference external" href="https://github.com/pymor/docs">documentation repository</a>. This repository is the source for
 <a class="reference external" href="https://docs.pymor.org/">https://docs.pymor.org/</a> served via GitHub Pages.
 A binder setup for the generated tutorials notebooks is added on a branch with a name
 matching the currently checked out git branch of pyMOR.</p>
 </dd>
-</dl>
-<p>pypi</p>
-<blockquote>
-<div><p>Upload wheels to either the test or the real instance of the pypi repository, depending on whether
+<dt>pypi</dt><dd><p>Upload wheels to either the test or the real instance of the pypi repository, depending on whether
 the pipeline runs for a tagged commit.</p>
-</div></blockquote>
-<dl class="simple">
+</dd>
 <dt>coverage</dt><dd><p>This job accumulates all the coverage databases generated by previous stages and submits that
 to <a class="reference external" href="https://codecov.io/github/pymor/pymor/">codecov.io</a>.</p>
 </dd>
@@ -669,19 +664,17 @@ The bridge also does this for forks of pyMOR, but these have to be whitelisted i
 <li><p>Make sure at least one <code class="docutils literal notranslate"><span class="pre">pr:*</span></code> label is set on the PR.</p></li>
 <li><p>Prohibit any commits with messages that indicate they can be auto-squashed</p></li>
 <li><p>Auto-assign the labels if certain files are changed by the PR.</p></li>
+<li><p>Update requirement files / conda env if <code class="docutils literal notranslate"><span class="pre">depependencies.py</span></code> changes.</p></li>
+<li><p>Runs pytest in conda-based environments on Windows/MacOS/Linux for oldest and newest supported Pythons</p>
+<ul>
+<li><p>Entire conda envs are cached and only update if either manually invalidated by incrementing <code class="docutils literal notranslate"><span class="pre">CACHE_NUMBER</span></code>
+or if dependencies change.</p></li>
+<li><p>All pytest jobs export a full environment lockfile, which can be downloaded on the summary tab for
+the “Conda Tests” action. Look for “Conda Env Exports”.</p></li>
+<li><p>Pytest XML reports can also be found there.</p></li>
 </ul>
-</section>
-<section id="azure-pipelines">
-<h3 id="azure-pipelines">Azure Pipelines<a class="headerlink" href="#azure-pipelines" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Configured by <code class="docutils literal notranslate"><span class="pre">.ci/azure/pipeline-{osx,win}.yml</span></code> respectively.</p>
-</div>
-<p>Setup test environments with conda and run pytest. Also generate and upload coverage reports.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">.ci/azure/pymor_defaults.py_*</span></code> may override defaults</p>
-</div>
+</li>
+</ul>
 </section>
 <section id="docker-images">
 <span id="ref-docker-images"></span><h3 id="docker-images">Docker images<a class="headerlink" href="#docker-images" title="Permalink to this headline">¶</a></h3>
@@ -746,10 +739,10 @@ those packages will become available in the <code class="docutils literal notran
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

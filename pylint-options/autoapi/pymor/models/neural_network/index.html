@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.neural_network &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>pymor.models.neural_network &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -64,7 +64,7 @@
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="pymor.operators" href="../../operators/index.html" />
+    <link rel="next" title="pymor.models.transfer_function" href="../transfer_function/index.html" />
     <link rel="prev" title="pymor.models.mpi" href="../mpi/index.html" />
 
 
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -359,6 +359,13 @@
 </nav>
       
     
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../transfer_function/index.html" class="md-nav__link">transfer_function</a>
+      
+    
     </li></ul>
     
     </li></ul>
@@ -473,6 +480,18 @@ see <a class="reference external" href="https://github.com/pymor/pymor/issues/13
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.neural_network.NeuralNetworkModel" title="pymor.models.neural_network.NeuralNetworkModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNetworkModel</span></code></a></p></td>
 <td><p>Class for models of stationary problems that use artificial neural networks.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.neural_network.NeuralNetworkStatefreeOutputModel" title="pymor.models.neural_network.NeuralNetworkStatefreeOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNetworkStatefreeOutputModel</span></code></a></p></td>
+<td><p>Class for models of the output of stationary problems that use ANNs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.neural_network.NeuralNetworkInstationaryModel" title="pymor.models.neural_network.NeuralNetworkInstationaryModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNetworkInstationaryModel</span></code></a></p></td>
+<td><p>Class for models of instationary problems that use artificial neural networks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.models.neural_network.NeuralNetworkInstationaryStatefreeOutputModel" title="pymor.models.neural_network.NeuralNetworkInstationaryStatefreeOutputModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuralNetworkInstationaryStatefreeOutputModel</span></code></a></p></td>
+<td><p>Class for models of the output of instationary problems that use ANNs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.models.neural_network.FullyConnectedNN" title="pymor.models.neural_network.FullyConnectedNN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FullyConnectedNN</span></code></a></p></td>
+<td><p>Class for neural networks with fully connected layers.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py class">
@@ -486,7 +505,7 @@ see <a class="reference external" href="https://github.com/pymor/pymor/issues/13
 <dl class="simple">
 <dt>neural_network</dt><dd><p>The neural network that approximates the mapping from parameter space
 to solution space. Should be an instance of
-<code class="xref py py-class docutils literal notranslate"><span class="pre">FullyConnectedNN</span></code> with input size that
+<a class="reference internal" href="#pymor.models.neural_network.FullyConnectedNN" title="pymor.models.neural_network.FullyConnectedNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullyConnectedNN</span></code></a> with input size that
 matches the (total) number of parameters and output size equal to the
 dimension of the reduced space.</p>
 </dd>
@@ -540,6 +559,181 @@ must contain the key <code class="docutils literal notranslate"><span class="pre
 </div>
 </dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.models.neural_network.NeuralNetworkStatefreeOutputModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.neural_network.</span></span><span class="sig-name descname"><span class="pre">NeuralNetworkStatefreeOutputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">neural_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.NeuralNetworkStatefreeOutputModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
+<p>Class for models of the output of stationary problems that use ANNs.</p>
+<p>This class implements a <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that uses a neural network for solving for the output
+quantity.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>neural_network</dt><dd><p>The neural network that approximates the mapping from parameter space
+to output space. Should be an instance of
+<a class="reference internal" href="#pymor.models.neural_network.FullyConnectedNN" title="pymor.models.neural_network.FullyConnectedNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullyConnectedNN</span></code></a> with input size that
+matches the (total) number of parameters and output size equal to the
+dimension of the output space.</p>
+</dd>
+<dt>parameters</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> of the reduced order model (the same as used in the full-order
+model).</p>
+</dd>
+<dt>error_estimator</dt><dd><p>An error estimator for the problem. This can be any object with
+an <code class="docutils literal notranslate"><span class="pre">estimate_error(U,</span> <span class="pre">mu,</span> <span class="pre">m)</span></code> method. If <code class="docutils literal notranslate"><span class="pre">error_estimator</span></code> is
+not <code class="docutils literal notranslate"><span class="pre">None</span></code>, an <code class="docutils literal notranslate"><span class="pre">estimate_error(U,</span> <span class="pre">mu)</span></code> method is added to the
+model which will call <code class="docutils literal notranslate"><span class="pre">error_estimator.estimate_error(U,</span> <span class="pre">mu,</span> <span class="pre">self)</span></code>.</p>
+</dd>
+<dt>name</dt><dd><p>Name of the model.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.neural_network.NeuralNetworkStatefreeOutputModel._compute">
+<span class="sig-name descname"><span class="pre">_compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu_return_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.NeuralNetworkStatefreeOutputModel._compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.models.neural_network.NeuralNetworkInstationaryModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.neural_network.</span></span><span class="sig-name descname"><span class="pre">NeuralNetworkInstationaryModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neural_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_functional</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">products</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.NeuralNetworkInstationaryModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
+<p>Class for models of instationary problems that use artificial neural networks.</p>
+<p>This class implements a <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that uses a neural network for solving.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>T</dt><dd><p>The final time T.</p>
+</dd>
+<dt>nt</dt><dd><p>The number of time steps.</p>
+</dd>
+<dt>neural_network</dt><dd><p>The neural network that approximates the mapping from parameter space
+to solution space. Should be an instance of
+<a class="reference internal" href="#pymor.models.neural_network.FullyConnectedNN" title="pymor.models.neural_network.FullyConnectedNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullyConnectedNN</span></code></a> with input size that
+matches the (total) number of parameters and output size equal to the
+dimension of the reduced space.</p>
+</dd>
+<dt>parameters</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> of the reduced order model (the same as used in the full-order
+model).</p>
+</dd>
+<dt>output_functional</dt><dd><p><a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> mapping a given solution to the model output. In many applications,
+this will be a <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Functional</span></code></a>, i.e. an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> mapping to scalars.
+This is not required, however.</p>
+</dd>
+<dt>products</dt><dd><p>A dict of inner product <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> defined on the discrete space the
+problem is posed on. For each product with key <code class="docutils literal notranslate"><span class="pre">'x'</span></code> a corresponding
+attribute <code class="docutils literal notranslate"><span class="pre">x_product</span></code>, as well as a norm method <code class="docutils literal notranslate"><span class="pre">x_norm</span></code> is added to
+the model.</p>
+</dd>
+<dt>error_estimator</dt><dd><p>An error estimator for the problem. This can be any object with
+an <code class="docutils literal notranslate"><span class="pre">estimate_error(U,</span> <span class="pre">mu,</span> <span class="pre">m)</span></code> method. If <code class="docutils literal notranslate"><span class="pre">error_estimator</span></code> is
+not <code class="docutils literal notranslate"><span class="pre">None</span></code>, an <code class="docutils literal notranslate"><span class="pre">estimate_error(U,</span> <span class="pre">mu)</span></code> method is added to the
+model which will call <code class="docutils literal notranslate"><span class="pre">error_estimator.estimate_error(U,</span> <span class="pre">mu,</span> <span class="pre">self)</span></code>.</p>
+</dd>
+<dt>visualizer</dt><dd><p>A visualizer for the problem. This can be any object with
+a <code class="docutils literal notranslate"><span class="pre">visualize(U,</span> <span class="pre">m,</span> <span class="pre">...)</span></code> method. If <code class="docutils literal notranslate"><span class="pre">visualizer</span></code>
+is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, a <code class="docutils literal notranslate"><span class="pre">visualize(U,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code> method is added
+to the model which forwards its arguments to the
+visualizer’s <code class="docutils literal notranslate"><span class="pre">visualize</span></code> method.</p>
+</dd>
+<dt>name</dt><dd><p>Name of the model.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.neural_network.NeuralNetworkInstationaryModel._compute_solution">
+<span class="sig-name descname"><span class="pre">_compute_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.NeuralNetworkInstationaryModel._compute_solution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the model’s solution for <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> <code class="docutils literal notranslate"><span class="pre">mu</span></code>.</p>
+<p>This method is called by the default implementation of <code class="xref py py-meth docutils literal notranslate"><span class="pre">compute</span></code>
+in <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to compute the solution.</p>
+</dd>
+<dt>kwargs</dt><dd><p>Additional keyword arguments to customize how the solution is
+computed or to select additional data to be returned.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> with the computed solution or a dict which at least
+must contain the key <code class="docutils literal notranslate"><span class="pre">'solution'</span></code>.</p>
+</div>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.models.neural_network.NeuralNetworkInstationaryStatefreeOutputModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.neural_network.</span></span><span class="sig-name descname"><span class="pre">NeuralNetworkInstationaryStatefreeOutputModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neural_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.NeuralNetworkInstationaryStatefreeOutputModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a></p>
+<p>Class for models of the output of instationary problems that use ANNs.</p>
+<p>This class implements a <a class="reference internal" href="../interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that uses a neural network for solving for the output
+quantity in the instationary case.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>T</dt><dd><p>The final time T.</p>
+</dd>
+<dt>nt</dt><dd><p>The number of time steps.</p>
+</dd>
+<dt>neural_network</dt><dd><p>The neural network that approximates the mapping from parameter space
+to output space. Should be an instance of
+<a class="reference internal" href="#pymor.models.neural_network.FullyConnectedNN" title="pymor.models.neural_network.FullyConnectedNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullyConnectedNN</span></code></a> with input size that
+matches the (total) number of parameters and output size equal to the
+dimension of the output space.</p>
+</dd>
+<dt>parameters</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> of the reduced order model (the same as used in the full-order
+model).</p>
+</dd>
+<dt>error_estimator</dt><dd><p>An error estimator for the problem. This can be any object with
+an <code class="docutils literal notranslate"><span class="pre">estimate_error(U,</span> <span class="pre">mu,</span> <span class="pre">m)</span></code> method. If <code class="docutils literal notranslate"><span class="pre">error_estimator</span></code> is
+not <code class="docutils literal notranslate"><span class="pre">None</span></code>, an <code class="docutils literal notranslate"><span class="pre">estimate_error(U,</span> <span class="pre">mu)</span></code> method is added to the
+model which will call <code class="docutils literal notranslate"><span class="pre">error_estimator.estimate_error(U,</span> <span class="pre">mu,</span> <span class="pre">self)</span></code>.</p>
+</dd>
+<dt>name</dt><dd><p>Name of the model.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.neural_network.NeuralNetworkInstationaryStatefreeOutputModel._compute">
+<span class="sig-name descname"><span class="pre">_compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu_return_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.NeuralNetworkInstationaryStatefreeOutputModel._compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.models.neural_network.FullyConnectedNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.models.neural_network.</span></span><span class="sig-name descname"><span class="pre">FullyConnectedNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_sizes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.tanh</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.FullyConnectedNN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
+<p>Class for neural networks with fully connected layers.</p>
+<p>This class implements neural networks consisting of linear and fully connected layers.
+Furthermore, the same activation function is used between each layer, except for the
+last one where no activation function is applied.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>layer_sizes</dt><dd><p>List of sizes (i.e. number of neurons) for the layers of the neural network.</p>
+</dd>
+<dt>activation_function</dt><dd><p>Function to use as activation function between the single layers.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.models.neural_network.FullyConnectedNN.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/neural_network.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.neural_network.FullyConnectedNN.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs the forward pass through the neural network.</p>
+<p>Applies the weights in the linear layers and passes the outcomes to the
+activation function.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>x</dt><dd><p>Input for the neural network.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>The output of the neural network for the input x.</p>
+</div>
+</dd></dl>
+</dd></dl>
 </section>
 </section>
 </section>
@@ -568,12 +762,12 @@ must contain the key <code class="docutils literal notranslate"><span class="pre
             </a>
           
           
-            <a href="../../operators/index.html" title="pymor.operators"
+            <a href="../transfer_function/index.html" title="pymor.models.transfer_function"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code> </span>
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models.transfer_function</span></code> </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -591,10 +785,10 @@ must contain the key <code class="docutils literal notranslate"><span class="pre
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

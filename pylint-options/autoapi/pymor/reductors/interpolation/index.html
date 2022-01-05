@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.reductors.interpolation &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>pymor.reductors.interpolation &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -531,24 +531,28 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.reductors.interpolation.</span></span><span class="sig-name descname"><span class="pre">GenericBHIReductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
 <p>Generic bitangential Hermite interpolation reductor.</p>
-<p>This is a generic reductor for reducing any linear
-<a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.InputStateOutputModel" title="pymor.models.iosys.InputStateOutputModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputStateOutputModel</span></code></a> with the transfer
-function which can be written in the generalized coprime
-factorization <span class="math notranslate nohighlight">\(H(s) = \mathcal{C}(s) \mathcal{K}(s)^{-1}
-\mathcal{B}(s)\)</span> as in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id8" title="C. A. Beattie and S. Gugercin. Interpolatory projection methods for structure-preserving model reduction. Systems Control Lett., 58(3):225–232, 2009. doi:10.1016/j.sysconle.2008.10.016.">BG09</a>]</span>. The interpolation here is limited to
-only up to the first derivative. Interpolation points are assumed to
-be pairwise distinct.</p>
-<p>In particular, given interpolation points <span class="math notranslate nohighlight">\(\sigma_i\)</span>, right
-tangential directions <span class="math notranslate nohighlight">\(b_i\)</span>, and left tangential directions
-<span class="math notranslate nohighlight">\(c_i\)</span>, for <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, r\)</span>, which are closed under
-conjugation (if <span class="math notranslate nohighlight">\(\sigma_i\)</span> is real, then so are <span class="math notranslate nohighlight">\(b_i\)</span>
-and <span class="math notranslate nohighlight">\(c_i\)</span>; if <span class="math notranslate nohighlight">\(\sigma_i\)</span> is complex, there is
-<span class="math notranslate nohighlight">\(\sigma_j\)</span> such that <span class="math notranslate nohighlight">\(\sigma_j = \overline{\sigma_i}\)</span>,
-<span class="math notranslate nohighlight">\(b_j = \overline{b_i}\)</span>, <span class="math notranslate nohighlight">\(c_j = \overline{c_i}\)</span>), this
-reductor finds a transfer function <span class="math notranslate nohighlight">\(\hat{H}\)</span> such that</p>
+<p>This is a generic reductor for reducing any linear <code class="docutils literal notranslate"><span class="pre">Model</span></code> that has a
+transfer function that is a <code class="docutils literal notranslate"><span class="pre">FactorizedTransferFunction</span></code>
+(see <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id8" title="C. A. Beattie and S. Gugercin. Interpolatory projection methods for structure-preserving model reduction. Systems Control Lett., 58(3):225–232, 2009. doi:10.1016/j.sysconle.2008.10.016.">BG09</a>]</span>).
+The interpolation here is limited to only up to the first derivative.
+Interpolation points are assumed to be pairwise distinct.</p>
+<p>In particular, given:</p>
+<ul class="simple">
+<li><p>interpolation points <span class="math notranslate nohighlight">\(\sigma_i\)</span>,</p></li>
+<li><p>right tangential directions <span class="math notranslate nohighlight">\(b_i\)</span>, and</p></li>
+<li><p>left tangential directions <span class="math notranslate nohighlight">\(c_i\)</span>,</p></li>
+</ul>
+<p>for <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, r\)</span>,
+which are closed under conjugation
+(if <span class="math notranslate nohighlight">\(\sigma_i\)</span> is real, then so are <span class="math notranslate nohighlight">\(b_i\)</span> and <span class="math notranslate nohighlight">\(c_i\)</span>;
+if <span class="math notranslate nohighlight">\(\sigma_i\)</span> is complex, there is <span class="math notranslate nohighlight">\(\sigma_j\)</span> such that
+<span class="math notranslate nohighlight">\(\sigma_j = \overline{\sigma_i}\)</span>,
+<span class="math notranslate nohighlight">\(b_j = \overline{b_i}\)</span>,
+<span class="math notranslate nohighlight">\(c_j = \overline{c_i}\)</span>),
+this reductor finds a transfer function <span class="math notranslate nohighlight">\(\hat{H}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}H(\sigma_i) b_i &amp; = \hat{H}(\sigma_i) b_i, \\
-c_i^T H(\sigma_i) &amp; = c_i^T \hat{H}(\sigma_i) b_i, \ - \widehat{y}\
+c_i^T H(\sigma_i) &amp; = c_i^T \hat{H}(\sigma_i), \\
 c_i^T H'(\sigma_i) b_i &amp; = c_i^T \hat{H}'(\sigma_i) b_i,\end{split}\]</div>
 <p>for all <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, r\)</span>.</p>
 <div class="admonition-parameters admonition">
@@ -566,19 +570,19 @@ c_i^T H'(\sigma_i) b_i &amp; = c_i^T \hat{H}'(\sigma_i) b_i,\end{split}\]</div>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._B_apply">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.GenericBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.GenericBHIReductor._fom_assemble">
@@ -594,10 +598,10 @@ c_i^T H'(\sigma_i) b_i &amp; = c_i^T \hat{H}'(\sigma_i) b_i,\end{split}\]</div>
 <dt>sigma</dt><dd><p>Interpolation points (closed under conjugation), sequence of
 length <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
 </dd>
-<dt>b</dt><dd><p>Right tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>b</dt><dd><p>Right tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">fom.dim_input)</span></code>.</p>
 </dd>
-<dt>c</dt><dd><p>Left tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>c</dt><dd><p>Left tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">fom.dim_output)</span></code>.</p>
 </dd>
 <dt>projection</dt><dd><p>Projection method:</p>
@@ -643,22 +647,6 @@ respect to the E product</p></li>
 <span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._B_apply">
-<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._C_apply_adjoint">
-<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse">
-<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse_adjoint">
-<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.LTIBHIReductor._fom_assemble">
 <span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.LTIBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -672,10 +660,10 @@ respect to the E product</p></li>
 <dt>sigma</dt><dd><p>Interpolation points (closed under conjugation), sequence of
 length <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
 </dd>
-<dt>b</dt><dd><p>Right tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>b</dt><dd><p>Right tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">fom.dim_input)</span></code>.</p>
 </dd>
-<dt>c</dt><dd><p>Left tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>c</dt><dd><p>Left tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">fom.dim_output)</span></code>.</p>
 </dd>
 <dt>projection</dt><dd><p>Projection method:</p>
@@ -719,22 +707,6 @@ systems).</p></li>
 <span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._B_apply">
-<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._C_apply_adjoint">
-<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse">
-<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse_adjoint">
-<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.SOBHIReductor._fom_assemble">
 <span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.SOBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -758,22 +730,6 @@ systems).</p></li>
 <span class="sig-name descname"><span class="pre">_PGReductor</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._PGReductor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._B_apply">
-<span class="sig-name descname"><span class="pre">_B_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._B_apply" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._C_apply_adjoint">
-<span class="sig-name descname"><span class="pre">_C_apply_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._C_apply_adjoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse">
-<span class="sig-name descname"><span class="pre">_K_apply_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse_adjoint">
-<span class="sig-name descname"><span class="pre">_K_apply_inverse_adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._K_apply_inverse_adjoint" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
 <dt class="sig sig-object py" id="pymor.reductors.interpolation.DelayBHIReductor._fom_assemble">
 <span class="sig-name descname"><span class="pre">_fom_assemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/interpolation.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.interpolation.DelayBHIReductor._fom_assemble" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -787,7 +743,7 @@ systems).</p></li>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>fom</dt><dd><p>The <a class="reference internal" href="../../models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> with <code class="docutils literal notranslate"><span class="pre">eval_tf</span></code> and <code class="docutils literal notranslate"><span class="pre">eval_dtf</span></code> methods.</p>
+<dt>fom</dt><dd><p><a class="reference internal" href="../../models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction" title="pymor.models.transfer_function.TransferFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransferFunction</span></code></a> or <a class="reference internal" href="../../models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> with a <code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> attribute.</p>
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
 </dd>
@@ -803,10 +759,10 @@ systems).</p></li>
 <dt>sigma</dt><dd><p>Interpolation points (closed under conjugation), sequence of
 length <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
 </dd>
-<dt>b</dt><dd><p>Right tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>b</dt><dd><p>Right tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">fom.dim_input)</span></code>.</p>
 </dd>
-<dt>c</dt><dd><p>Left tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+<dt>c</dt><dd><p>Left tangential directions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(r,</span> <span class="pre">fom.dim_output)</span></code>.</p>
 </dd>
 </dl>
@@ -877,10 +833,10 @@ function of <code class="docutils literal notranslate"><span class="pre">fom</sp
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

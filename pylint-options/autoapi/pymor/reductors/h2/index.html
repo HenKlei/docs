@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.reductors.h2 &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>pymor.reductors.h2 &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -619,12 +619,12 @@
 <dt>rom0_params</dt><dd><p>Can be:</p>
 <ul class="simple">
 <li><p>order of the reduced model (a positive integer),</p></li>
-<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
+<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
 <li><p>dict with <code class="docutils literal notranslate"><span class="pre">'sigma'</span></code>, <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> as keys mapping to
-initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
-tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
+tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>), and left tangential directions
-(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
+(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
 <li><p>initial reduced-order model (<a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>).</p></li>
 </ul>
 <p>If the order of reduced model is given, initial
@@ -708,12 +708,12 @@ this option only if necessary.</p>
 <dt>rom0_params</dt><dd><p>Can be:</p>
 <ul class="simple">
 <li><p>order of the reduced model (a positive integer),</p></li>
-<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
+<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
 <li><p>dict with <code class="docutils literal notranslate"><span class="pre">'sigma'</span></code>, <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> as keys mapping to
-initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
-tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
+tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>), and left tangential directions
-(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
+(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
 <li><p>initial reduced-order model (<a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>).</p></li>
 </ul>
 <p>If the order of reduced model is given, initial
@@ -787,7 +787,7 @@ this option only if necessary.</p>
 <dt class="sig sig-object py" id="pymor.reductors.h2.TSIAReductor.reduce">
 <span class="sig-name descname"><span class="pre">reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rom0_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_prev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_crit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sigma'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/h2.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.h2.TSIAReductor.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduce using TSIA.</p>
-<p>See <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id36" title="Y. Xu and T. Zeng. Optimal $\mathcal H_2$ model reduction for large scale MIMO systems via tangential interpolation. Int. J. Numer. Anal. Model., 8(1):174–188, 2011. URL: http://www.math.ualberta.ca/ijnam/Volume-8-2011/No-1-11/2011-01-10.pdf.">XZ11</a>]</span> (Algorithm 1) and <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id10" title="P. Benner, M. Köhler, and J. Saak. Sparse-dense Sylvester equations in $H_2$-model order reduction. Preprint MPIMD/11-11, Max Planck Institute Magdeburg, December 2011. URL: https://csc.mpi-magdeburg.mpg.de/preprints/2011/11/.">BKohlerS11</a>]</span>.</p>
+<p>See <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id37" title="Y. Xu and T. Zeng. Optimal $\mathcal H_2$ model reduction for large scale MIMO systems via tangential interpolation. Int. J. Numer. Anal. Model., 8(1):174–188, 2011. URL: http://www.math.ualberta.ca/ijnam/Volume-8-2011/No-1-11/2011-01-10.pdf.">XZ11</a>]</span> (Algorithm 1) and <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id10" title="P. Benner, M. Köhler, and J. Saak. Sparse-dense Sylvester equations in $H_2$-model order reduction. Preprint MPIMD/11-11, Max Planck Institute Magdeburg, December 2011. URL: https://csc.mpi-magdeburg.mpg.de/preprints/2011/11/.">BKohlerS11</a>]</span>.</p>
 <p>In exact arithmetic, TSIA is equivalent to IRKA (under some
 assumptions on the poles of the reduced model). The main
 difference in implementation is that TSIA computes the Schur
@@ -800,12 +800,12 @@ for non-normal reduced matrices.</p>
 <dt>rom0_params</dt><dd><p>Can be:</p>
 <ul class="simple">
 <li><p>order of the reduced model (a positive integer),</p></li>
-<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
+<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
 <li><p>dict with <code class="docutils literal notranslate"><span class="pre">'sigma'</span></code>, <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> as keys mapping to
-initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
-tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
+tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>), and left tangential directions
-(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
+(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
 <li><p>initial reduced-order model (<a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>).</p></li>
 </ul>
 <p>If the order of reduced model is given, initial
@@ -866,7 +866,9 @@ this option only if necessary.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>fom</dt><dd><p>The full-order <a class="reference internal" href="../../models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> with <code class="docutils literal notranslate"><span class="pre">eval_tf</span></code> and <code class="docutils literal notranslate"><span class="pre">eval_dtf</span></code> methods.</p>
+<dt>fom</dt><dd><p><a class="reference internal" href="../../models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction" title="pymor.models.transfer_function.TransferFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransferFunction</span></code></a> or <a class="reference internal" href="../../models/interface/index.html#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> with a <code class="docutils literal notranslate"><span class="pre">transfer_function</span></code> attribute,
+with <code class="docutils literal notranslate"><span class="pre">eval_tf</span></code> and <code class="docutils literal notranslate"><span class="pre">eval_dtf</span></code> methods that should be defined at least
+over the open right half of the complex plane.</p>
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
 </dd>
@@ -882,12 +884,12 @@ this option only if necessary.</p>
 <dt>rom0_params</dt><dd><p>Can be:</p>
 <ul class="simple">
 <li><p>order of the reduced model (a positive integer),</p></li>
-<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
+<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
 <li><p>dict with <code class="docutils literal notranslate"><span class="pre">'sigma'</span></code>, <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> as keys mapping to
-initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
-tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
+initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
+tangential directions (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape
 <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>), and left tangential directions
-(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
+(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(len(sigma),</span> <span class="pre">fom.dim_input)</span></code>),</p></li>
 <li><p>initial reduced-order model (<a class="reference internal" href="../../models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>).</p></li>
 </ul>
 <p>If the order of reduced model is given, initial
@@ -961,9 +963,9 @@ this option only if necessary.</p>
 <dt>rom0_params</dt><dd><p>Can be:</p>
 <ul class="simple">
 <li><p>order of the reduced model (a positive integer),</p></li>
-<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
+<li><p>initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>),</p></li>
 <li><p>dict with <code class="docutils literal notranslate"><span class="pre">'sigma'</span></code>, <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code> as keys mapping to
-initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
+initial interpolation points (a 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>), right
 tangential directions (<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from
 <code class="docutils literal notranslate"><span class="pre">fom.input_space</span></code>), and left tangential directions
 (<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">fom.output_space</span></code>), all of the same
@@ -1081,10 +1083,10 @@ respect to the E product.</p></li>
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

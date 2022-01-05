@@ -69,8 +69,7 @@ Functions
            If the residual is smaller than dorqitol the two-sided Rayleigh quotient iteration
            is executed.
        rqitol
-           Tolerance for the relative change of a pole in the two-sided Rayleigh quotient
-           iteration.
+           Tolerance for the residual of a pole in the two-sided Rayleigh quotient iteration.
        maxrestart
            The maximum number of restarts.
        krestart
@@ -113,7 +112,7 @@ Functions
        imagtol
            Relative tolerance for imaginary parts of pairs of complex conjugate eigenvalues.
        rqitol
-           Convergence tolerance for the relative change of the pole.
+           Convergence tolerance for the residual of the pole.
        maxiter
            Maximum number of iteration.
            

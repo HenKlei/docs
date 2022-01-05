@@ -85,7 +85,13 @@ Attributes
    .. py:method:: step_backward(self)
 
 
-   .. py:method:: closeEvent(self, event)
+   .. py:method:: closeEvent(self, event=None)
+
+      This is directly called from CI
+
+      Xvfb (sometimes) raises errors on interpreter shutdown
+      when there are still 'live' MPL plot objects. This
+      happens even if the referencing MainWindow was already destroyed
 
 
 

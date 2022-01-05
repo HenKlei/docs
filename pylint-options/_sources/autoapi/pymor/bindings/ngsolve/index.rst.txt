@@ -13,6 +13,11 @@ Classes
 .. autoapisummary::
 
    pymor.bindings.ngsolve.NGSolveVectorCommon
+   pymor.bindings.ngsolve.NGSolveVector
+   pymor.bindings.ngsolve.ComplexifiedNGSolveVector
+   pymor.bindings.ngsolve.NGSolveVectorSpace
+   pymor.bindings.ngsolve.NGSolveMatrixOperator
+   pymor.bindings.ngsolve.NGSolveVisualizer
 
 
 
@@ -23,6 +28,182 @@ Classes
 
 
    .. py:method:: dofs(self, dof_indices)
+
+
+
+.. py:class:: NGSolveVector(impl)
+
+   Bases: :py:obj:`NGSolveVectorCommon`, :py:obj:`pymor.vectorarrays.list.CopyOnWriteVector`
+
+   Wraps a NGSolve BaseVector to make it usable with ListVectorArray.
+
+   .. py:method:: from_instance(cls, instance)
+      :classmethod:
+
+
+   .. py:method:: _copy_data(self)
+
+
+   .. py:method:: to_numpy(self, ensure_copy=False)
+
+
+   .. py:method:: _scal(self, alpha)
+
+
+   .. py:method:: _axpy(self, alpha, x)
+
+
+   .. py:method:: inner(self, other)
+
+
+   .. py:method:: norm(self)
+
+
+   .. py:method:: norm2(self)
+
+
+
+.. py:class:: ComplexifiedNGSolveVector(real_part, imag_part)
+
+   Bases: :py:obj:`NGSolveVectorCommon`, :py:obj:`pymor.vectorarrays.list.ComplexifiedVector`
+
+   Interface for vectors used in conjunction with |ListVectorArray|.
+
+   This interface must be satisfied by the individual entries of the
+   vector `list` managed by |ListVectorArray|. All interface methods
+   have a direct counterpart in the |VectorArray| interface.
+
+
+.. py:class:: NGSolveVectorSpace(V, id='STATE')
+
+   Bases: :py:obj:`pymor.vectorarrays.list.ComplexifiedListVectorSpace`
+
+   |VectorSpace| of |ListVectorArrays|.
+
+   .. py:attribute:: real_vector_type
+      
+
+      
+
+   .. py:attribute:: vector_type
+      
+
+      
+
+   .. py:method:: __eq__(self, other)
+
+      Return self==value.
+
+
+   .. py:method:: __hash__(self)
+
+      Return hash(self).
+
+
+   .. py:method:: value_dim(self)
+      :property:
+
+
+   .. py:method:: dim(self)
+      :property:
+
+
+   .. py:method:: space_from_vector_obj(cls, vec, id)
+      :classmethod:
+
+
+   .. py:method:: real_zero_vector(self)
+
+
+   .. py:method:: real_make_vector(self, obj)
+
+
+   .. py:method:: real_vector_from_numpy(self, data, ensure_copy=False)
+
+
+
+.. py:class:: NGSolveMatrixOperator(matrix, range, source, solver_options=None, name=None)
+
+   Bases: :py:obj:`pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase`
+
+   Wraps a NGSolve matrix as an |Operator|.
+
+   .. py:method:: _prepare_apply(self, U, mu, kind, least_squares=False, default_solver='')
+
+
+   .. py:method:: _real_apply_one_vector(self, u, mu=None, prepare_data=None)
+
+
+   .. py:method:: _real_apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
+
+
+   .. py:method:: _real_apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+
+
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+
+      Try to assemble a linear combination of the given operators.
+
+      Returns a new |Operator| which represents the sum ::
+
+          c_1*O_1 + ... + c_N*O_N + s*I
+
+      where `O_i` are |Operators|, `c_i`, `s` scalar coefficients and `I` the identity.
+
+      This method is called in the :meth:`assemble` method of |LincombOperator| on
+      the first of its operators. If an assembly of the given linear combination
+      is possible, e.g. the linear combination of the system matrices of the
+      operators can be formed, then the assembled operator is returned.
+      Otherwise, the method returns `None` to indicate that assembly is not possible.
+
+      .. admonition:: Parameters
+
+          operators
+              List of |Operators| `O_i` whose linear combination is formed.
+          coefficients
+              List of the corresponding linear coefficients `c_i`.
+          identity_shift
+              The coefficient `s`.
+          solver_options
+              |solver_options| for the assembled operator.
+          name
+              Name of the assembled operator.
+              
+      .. admonition:: Returns
+
+          The assembled |Operator| if assembly is possible, otherwise `None`.
+              
+
+   .. py:method:: as_vector(self, copy=True)
+
+      Return a vector representation of a linear functional or vector operator.
+
+      Depending on the operator's :attr:`~Operator.source` and
+      :attr:`~Operator.range`, this method is equivalent to calling
+      :meth:`~Operator.as_range_array` or :meth:`~Operator.as_source_array`
+      respectively. The resulting |VectorArray| is required to have length 1.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to return the vector representation.
+              
+      .. admonition:: Returns
+
+          V
+              |VectorArray| of length 1 containing the vector representation.
+              
+
+
+.. py:class:: NGSolveVisualizer(mesh, fespace)
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   Visualize an NGSolve grid function.
+
+   .. py:method:: visualize(self, U, legend=None, separate_colorbars=True, filename=None, block=True)
+
+      Visualize the provided data.
 
 
 

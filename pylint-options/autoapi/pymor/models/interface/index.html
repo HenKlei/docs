@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.interface &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>pymor.models.interface &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -359,6 +359,13 @@
       <a href="../neural_network/index.html" class="md-nav__link">neural_network</a>
       
     
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../transfer_function/index.html" class="md-nav__link">transfer_function</a>
+      
+    
     </li></ul>
     
     </li></ul>
@@ -502,12 +509,17 @@ model has no output.</p>
 <dd><p>Dict of inner product operators associated with the model.</p>
 </dd></dl>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.models.interface.Model.order">
+<span class="sig-name descname"><span class="pre">order</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the <code class="docutils literal notranslate"><span class="pre">solution_space</span></code>.</p>
+</dd></dl>
+<dl class="py attribute">
 <dt class="sig sig-object py" id="pymor.models.interface.Model._compute_allowed_kwargs">
 <span class="sig-name descname"><span class="pre">_compute_allowed_kwargs</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model._compute_allowed_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.interface.Model._compute">
-<span class="sig-name descname"><span class="pre">_compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu_return_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model._compute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu_return_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate_return_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model._compute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.interface.Model._compute_solution">
@@ -560,7 +572,7 @@ computed or to select additional data to be returned.</p>
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> with the computed output or a dict which at least
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> with the computed output or a dict which at least
 must contain the key <code class="docutils literal notranslate"><span class="pre">'output'</span></code>.</p>
 </div>
 </dd></dl>
@@ -615,14 +627,14 @@ must contain the key <code class="docutils literal notranslate"><span class="pre
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">value</span></code></a> for which to compute the gradient</p>
 </dd>
-<dt>return_array</dt><dd><p>if <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.
+<dt>return_array</dt><dd><p>if <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.
 Otherwise, return a dict of gradients for each <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>.</p>
 </dd>
 </dl>
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>The gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or a dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.</p>
+<p>The gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or a dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.</p>
 </div>
 </dd></dl>
 <dl class="py method">
@@ -660,7 +672,7 @@ computed or to select additional data to be returned.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.interface.Model._compute_output_error_estimate">
-<span class="sig-name descname"><span class="pre">_compute_output_error_estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model._compute_output_error_estimate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_compute_output_error_estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model._compute_output_error_estimate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute an error estimate for the computed model output.</p>
 <p>This method is called by the default implementation of <a class="reference internal" href="#pymor.models.interface.Model.compute" title="pymor.models.interface.Model.compute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute</span></code></a>
 in <a class="reference internal" href="#pymor.models.interface.Model" title="pymor.models.interface.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">pymor.models.interface.Model</span></code></a>. The assumption is made
@@ -680,6 +692,11 @@ given by the <code class="xref py py-attr docutils literal notranslate"><span cl
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to compute the error estimate.</p>
 </dd>
+<dt>return_vector</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output estimate as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>,
+where each component corresponds to the respective component
+of the <code class="xref py py-attr docutils literal notranslate"><span class="pre">output_functional</span></code>.
+Otherwise, return the euclidian norm of all components.</p>
+</dd>
 <dt>kwargs</dt><dd><p>Additional keyword arguments to customize how the error estimate is
 computed or to select additional data to be returned.</p>
 </dd>
@@ -693,7 +710,7 @@ computed or to select additional data to be returned.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.interface.Model.compute">
-<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu_return_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.compute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_d_mu_return_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_error_estimate_return_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.compute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the solution of the model and associated quantities.</p>
 <p>This methods computes the output of the model it’s internal state
 and various associated quantities for given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a>
@@ -726,12 +743,17 @@ to return the derivative of a single parameter component.</p>
 </dd>
 <dt>output_error_estimate</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return an error estimate for the computed output.</p>
 </dd>
-<dt>output_d_mu_return_array</dt><dd><p>if <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.
+<dt>output_d_mu_return_array</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.
 Otherwise, return a dict of gradients for each <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>.</p>
+</dd>
+<dt>output_error_estimate_return_vector</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output estimate as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>,
+where each component corresponds to the respective component
+of the <code class="xref py py-attr docutils literal notranslate"><span class="pre">output_functional</span></code>.
+Otherwise, return the euclidian norm of all components.</p>
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to compute the values.</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
@@ -762,7 +784,7 @@ in case caching has been activated for the given model.</p>
 <dl class="simple">
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to solve.</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
@@ -783,7 +805,7 @@ the estimate is returned as second value.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.interface.Model.output">
-<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.output" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_error_estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_error_estimate_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the model output for given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> <code class="docutils literal notranslate"><span class="pre">mu</span></code>.</p>
 <p>This method is a convenience wrapper around <a class="reference internal" href="#pymor.models.interface.Model.compute" title="pymor.models.interface.Model.compute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -791,13 +813,18 @@ the estimate is returned as second value.</p>
 <dl class="simple">
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to compute the output.</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
 Can be <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">self.dim_input</span> <span class="pre">==</span> <span class="pre">0</span></code>.</p>
 </dd>
 <dt>return_error_estimate</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, also return an error estimate for the computed output.</p>
+</dd>
+<dt>return_error_estimate_vector</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output estimate as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>,
+where each component corresponds to the respective component
+of the <code class="xref py py-attr docutils literal notranslate"><span class="pre">output_functional</span></code>.
+Otherwise, return the euclidian norm of all components.</p>
 </dd>
 <dt>kwargs</dt><dd><p>Additional keyword arguments passed to <a class="reference internal" href="#pymor.models.interface.Model.compute" title="pymor.models.interface.Model.compute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute</span></code></a> that
 might affect how the solution is computed.</p>
@@ -806,7 +833,7 @@ might affect how the solution is computed.</p>
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>The computed model output as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>. The dimension
+<p>The computed model output as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>. The dimension
 of axis 1 is : attr:<code class="docutils literal notranslate"><span class="pre">dim_output</span></code>. (For stationary problems, axis 0 has
 dimension 1. For time-dependent problems, the dimension of axis 0
 depends on the number of time steps.)
@@ -827,7 +854,7 @@ second value.</p>
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">value</span></code></a> for which to solve</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
@@ -849,20 +876,20 @@ Can be <code class="docutils literal notranslate"><span class="pre">None</span><
 <dl class="simple">
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">value</span></code></a> for which to compute the gradient</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
 Can be <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">self.dim_input</span> <span class="pre">==</span> <span class="pre">0</span></code>.</p>
 </dd>
-<dt>return_array</dt><dd><p>if <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.
+<dt>return_array</dt><dd><p>if <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.
 Otherwise, return a dict of gradients for each <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>.</p>
 </dd>
 </dl>
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>The gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or a dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.</p>
+<p>The gradient as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or a dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>.</p>
 </div>
 </dd></dl>
 <dl class="py method">
@@ -881,7 +908,7 @@ a corresponding high-dimensional <a class="reference internal" href="#pymor.mode
 <dl class="simple">
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to estimate the error.</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
@@ -899,7 +926,7 @@ might affect how the error estimate (or the solution) is computed.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.interface.Model.estimate_output_error">
-<span class="sig-name descname"><span class="pre">estimate_output_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.estimate_output_error" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">estimate_output_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_vector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/models/interface.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.interface.Model.estimate_output_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the error for the computed output.</p>
 <p>For given <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> <code class="docutils literal notranslate"><span class="pre">mu</span></code> this method returns an
 error estimate for the computed model output as returned
@@ -913,11 +940,16 @@ a corresponding high-dimensional <a class="reference internal" href="#pymor.mode
 <dl class="simple">
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a> for which to estimate the error.</p>
 </dd>
-<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
+<dt>input</dt><dd><p>The model input. Either a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of shape <code class="docutils literal notranslate"><span class="pre">(self.dim_input,)</span></code>,
 a <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.Function" title="pymor.analyticalproblems.functions.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> with <code class="docutils literal notranslate"><span class="pre">dim_domain</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">shape_range</span> <span class="pre">==</span> <span class="pre">(self.dim_input,)</span></code>
 mapping time to input, or a <code class="docutils literal notranslate"><span class="pre">str</span></code> expression whith <code class="docutils literal notranslate"><span class="pre">t</span></code> as variable that
 can be used to instatiate an <a class="reference internal" href="../../analyticalproblems/functions/index.html#pymor.analyticalproblems.functions.ExpressionFunction" title="pymor.analyticalproblems.functions.ExpressionFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionFunction</span></code></a> of this type.
 Can be <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">self.dim_input</span> <span class="pre">==</span> <span class="pre">0</span></code>.</p>
+</dd>
+<dt>return_vector</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return the output estimate as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>,
+where each component corresponds to the respective component
+of the <code class="xref py py-attr docutils literal notranslate"><span class="pre">output_functional</span></code>.
+Otherwise, return the euclidian norm of all components.</p>
 </dd>
 <dt>kwargs</dt><dd><p>Additional keyword arguments passed to <a class="reference internal" href="#pymor.models.interface.Model.compute" title="pymor.models.interface.Model.compute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute</span></code></a> that
 might affect how the error estimate (or the output) is computed.</p>
@@ -997,10 +1029,10 @@ See the docstring of <code class="docutils literal notranslate"><span class="pre
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.bindings.ngsolve &#8212; pyMOR v2021.1rc0+870.ge696728d Manual</title>
+    <title>pymor.bindings.ngsolve &#8212; pyMOR v2021.2.0+48.gfc1f18cb6 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+870.ge696728d Manual logo">
+                   alt="pyMOR v2021.2.0+48.gfc1f18cb6 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+870.ge696728d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+48.gfc1f18cb6 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+870.ge696728d Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+870.ge696728d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+48.gfc1f18cb6 Manual">Documentation</a>
   </label>
   
 
@@ -475,6 +475,21 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveVectorCommon" title="pymor.bindings.ngsolve.NGSolveVectorCommon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveVectorCommon</span></code></a></p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveVector" title="pymor.bindings.ngsolve.NGSolveVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveVector</span></code></a></p></td>
+<td><p>Wraps a NGSolve BaseVector to make it usable with ListVectorArray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.ngsolve.ComplexifiedNGSolveVector" title="pymor.bindings.ngsolve.ComplexifiedNGSolveVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComplexifiedNGSolveVector</span></code></a></p></td>
+<td><p>Interface for vectors used in conjunction with <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveVectorSpace" title="pymor.bindings.ngsolve.NGSolveVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveVectorSpace</span></code></a></p></td>
+<td><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> of <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArrays</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator" title="pymor.bindings.ngsolve.NGSolveMatrixOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveMatrixOperator</span></code></a></p></td>
+<td><p>Wraps a NGSolve matrix as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveVisualizer" title="pymor.bindings.ngsolve.NGSolveVisualizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveVisualizer</span></code></a></p></td>
+<td><p>Visualize an NGSolve grid function.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py class">
@@ -488,6 +503,191 @@
 <dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorCommon.dofs">
 <span class="sig-name descname"><span class="pre">dofs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_indices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorCommon.dofs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.ngsolve.</span></span><span class="sig-name descname"><span class="pre">NGSolveVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impl</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveVectorCommon" title="pymor.bindings.ngsolve.NGSolveVectorCommon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveVectorCommon</span></code></a>, <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.CopyOnWriteVector" title="pymor.vectorarrays.list.CopyOnWriteVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.CopyOnWriteVector</span></code></a></p>
+<p>Wraps a NGSolve BaseVector to make it usable with ListVectorArray.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector.from_instance">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector.from_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector._copy_data">
+<span class="sig-name descname"><span class="pre">_copy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector._copy_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector.to_numpy">
+<span class="sig-name descname"><span class="pre">to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector.to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector._scal">
+<span class="sig-name descname"><span class="pre">_scal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector._scal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector._axpy">
+<span class="sig-name descname"><span class="pre">_axpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector._axpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector.inner">
+<span class="sig-name descname"><span class="pre">inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector.inner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector.norm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVector.norm2">
+<span class="sig-name descname"><span class="pre">norm2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVector.norm2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.ComplexifiedNGSolveVector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.ngsolve.</span></span><span class="sig-name descname"><span class="pre">ComplexifiedNGSolveVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_part</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag_part</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.ComplexifiedNGSolveVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pymor.bindings.ngsolve.NGSolveVectorCommon" title="pymor.bindings.ngsolve.NGSolveVectorCommon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NGSolveVectorCommon</span></code></a>, <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ComplexifiedVector" title="pymor.vectorarrays.list.ComplexifiedVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.ComplexifiedVector</span></code></a></p>
+<p>Interface for vectors used in conjunction with <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.</p>
+<p>This interface must be satisfied by the individual entries of the
+vector <code class="docutils literal notranslate"><span class="pre">list</span></code> managed by <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>. All interface methods
+have a direct counterpart in the <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> interface.</p>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.ngsolve.</span></span><span class="sig-name descname"><span class="pre">NGSolveVectorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'STATE'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ComplexifiedListVectorSpace" title="pymor.vectorarrays.list.ComplexifiedListVectorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.vectorarrays.list.ComplexifiedListVectorSpace</span></code></a></p>
+<p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> of <a class="reference internal" href="../../vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArrays</span></code></a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.real_vector_type">
+<span class="sig-name descname"><span class="pre">real_vector_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.real_vector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.vector_type">
+<span class="sig-name descname"><span class="pre">vector_type</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.vector_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.__hash__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.value_dim">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.value_dim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.dim">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.dim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.space_from_vector_obj">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">space_from_vector_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.space_from_vector_obj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.real_zero_vector">
+<span class="sig-name descname"><span class="pre">real_zero_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.real_zero_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.real_make_vector">
+<span class="sig-name descname"><span class="pre">real_make_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.real_make_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVectorSpace.real_vector_from_numpy">
+<span class="sig-name descname"><span class="pre">real_vector_from_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVectorSpace.real_vector_from_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.ngsolve.</span></span><span class="sig-name descname"><span class="pre">NGSolveMatrixOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../operators/list/index.html#pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase" title="pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase</span></code></a></p>
+<p>Wraps a NGSolve matrix as an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator._prepare_apply">
+<span class="sig-name descname"><span class="pre">_prepare_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator._prepare_apply" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator._real_apply_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator._real_apply_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator._real_apply_adjoint_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_adjoint_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator._real_apply_adjoint_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator._real_apply_inverse_one_vector">
+<span class="sig-name descname"><span class="pre">_real_apply_inverse_one_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">least_squares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator._real_apply_inverse_one_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator._assemble_lincomb">
+<span class="sig-name descname"><span class="pre">_assemble_lincomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator._assemble_lincomb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to assemble a linear combination of the given operators.</p>
+<p>Returns a new <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which represents the sum</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_1</span><span class="o">*</span><span class="n">O_1</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="n">c_N</span><span class="o">*</span><span class="n">O_N</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">I</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">O_i</span></code> are <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>, <code class="docutils literal notranslate"><span class="pre">c_i</span></code>, <code class="docutils literal notranslate"><span class="pre">s</span></code> scalar coefficients and <code class="docutils literal notranslate"><span class="pre">I</span></code> the identity.</p>
+<p>This method is called in the <code class="xref py py-meth docutils literal notranslate"><span class="pre">assemble</span></code> method of <a class="reference internal" href="../../operators/constructions/index.html#pymor.operators.constructions.LincombOperator" title="pymor.operators.constructions.LincombOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LincombOperator</span></code></a> on
+the first of its operators. If an assembly of the given linear combination
+is possible, e.g. the linear combination of the system matrices of the
+operators can be formed, then the assembled operator is returned.
+Otherwise, the method returns <code class="docutils literal notranslate"><span class="pre">None</span></code> to indicate that assembly is not possible.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>operators</dt><dd><p>List of <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> <code class="docutils literal notranslate"><span class="pre">O_i</span></code> whose linear combination is formed.</p>
+</dd>
+<dt>coefficients</dt><dd><p>List of the corresponding linear coefficients <code class="docutils literal notranslate"><span class="pre">c_i</span></code>.</p>
+</dd>
+<dt>identity_shift</dt><dd><p>The coefficient <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+</dd>
+<dt>solver_options</dt><dd><p><a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator.solver_options" title="pymor.operators.interface.Operator.solver_options"><code class="xref py py-attr docutils literal notranslate"><span class="pre">solver_options</span></code></a> for the assembled operator.</p>
+</dd>
+<dt>name</dt><dd><p>Name of the assembled operator.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<p>The assembled <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> if assembly is possible, otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveMatrixOperator.as_vector">
+<span class="sig-name descname"><span class="pre">as_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveMatrixOperator.as_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a vector representation of a linear functional or vector operator.</p>
+<p>Depending on the operator’s <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code> and
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>, this method is equivalent to calling
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">as_range_array</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">as_source_array</span></code>
+respectively. The resulting <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> is required to have length 1.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>mu</dt><dd><p>The <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> for which to return the vector representation.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<dl class="simple">
+<dt>V</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of length 1 containing the vector representation.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVisualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.bindings.ngsolve.</span></span><span class="sig-name descname"><span class="pre">NGSolveVisualizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fespace</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVisualizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.ImmutableObject" title="pymor.core.base.ImmutableObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.ImmutableObject</span></code></a></p>
+<p>Visualize an NGSolve grid function.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.bindings.ngsolve.NGSolveVisualizer.visualize">
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_colorbars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/bindings/ngsolve.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.ngsolve.NGSolveVisualizer.visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize the provided data.</p>
+</dd></dl>
 </dd></dl>
 </section>
 </section>
@@ -540,10 +740,10 @@
               
           </div>
             Last updated on
-              Dec 01, 2021.
+              Jan 05, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
