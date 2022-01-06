@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.bindings.scipy &#8212; pyMOR v2021.1rc0+809.g875771c4e Manual</title>
+    <title>pymor.bindings.scipy &#8212; pyMOR v2021.1rc0+813.g3be0c6b2 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+809.g875771c4e Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+813.g3be0c6b2 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+809.g875771c4e Manual logo">
+                   alt="pyMOR v2021.1rc0+813.g3be0c6b2 Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+809.g875771c4e Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+813.g3be0c6b2 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+809.g875771c4e Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+813.g3be0c6b2 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+809.g875771c4e Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+813.g3be0c6b2 Manual">Documentation</a>
   </label>
   
 
@@ -608,7 +608,7 @@ scipy_least_squares_lsqr).</p>
 description.</p>
 <p>This function uses <code class="docutils literal notranslate"><span class="pre">scipy.linalg.solve_continuous_lyapunov</span></code>, which
 is a dense solver for Lyapunov equations with E=I.
-Therefore, we assume A and E can be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>
+Therefore, we assume A and E can be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>
 using <a class="reference internal" href="../../algorithms/to_matrix/index.html#pymor.algorithms.to_matrix.to_matrix" title="pymor.algorithms.to_matrix.to_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_matrix</span></code></a> and that
 <code class="docutils literal notranslate"><span class="pre">B.to_numpy</span></code> is implemented.</p>
 <div class="admonition note">
@@ -667,11 +667,11 @@ continuous-time algebraic Lyapunov equation by inverting E.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>A</dt><dd><p>The matrix A as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>A</dt><dd><p>The matrix A as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
-<dt>E</dt><dd><p>The matrix E as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt>E</dt><dd><p>The matrix E as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
-<dt>B</dt><dd><p>The matrix B as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>B</dt><dd><p>The matrix B as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
 <dt>trans</dt><dd><p>Whether the first operator in the Lyapunov equation is
 transposed.</p>
@@ -684,7 +684,7 @@ transposed.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>X</dt><dd><p>Lyapunov equation solution as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>X</dt><dd><p>Lyapunov equation solution as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
 </dl>
 </div>
@@ -707,7 +707,7 @@ description.</p>
 <p>This function uses <code class="docutils literal notranslate"><span class="pre">scipy.linalg.solve_continuous_are</span></code>, which
 is a dense solver.
 Therefore, we assume all <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> and <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> can be
-converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> using
+converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> using
 <a class="reference internal" href="../../algorithms/to_matrix/index.html#pymor.algorithms.to_matrix.to_matrix" title="pymor.algorithms.to_matrix.to_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_matrix</span></code></a> and
 <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray.to_numpy" title="pymor.vectorarrays.interface.VectorArray.to_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -721,7 +721,7 @@ converted to <a class="reference external" href="https://numpy.org/doc/stable/re
 </dd>
 <dt>C</dt><dd><p>The operator C as a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">A.source</span></code>.</p>
 </dd>
-<dt>R</dt><dd><p>The matrix R as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt>R</dt><dd><p>The matrix R as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 <dt>trans</dt><dd><p>Whether the first <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> in the Riccati equation is
 transposed.</p>
@@ -759,15 +759,15 @@ is a dense solver.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>A</dt><dd><p>The matrix A as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>A</dt><dd><p>The matrix A as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
-<dt>E</dt><dd><p>The matrix E as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt>E</dt><dd><p>The matrix E as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
-<dt>B</dt><dd><p>The matrix B as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>B</dt><dd><p>The matrix B as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
-<dt>C</dt><dd><p>The matrix C as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>C</dt><dd><p>The matrix C as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
-<dt>R</dt><dd><p>The matrix R as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt>R</dt><dd><p>The matrix R as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 <dt>trans</dt><dd><p>Whether the first operator in the Riccati equation is
 transposed.</p>
@@ -780,7 +780,7 @@ transposed.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>X</dt><dd><p>Riccati equation solution as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<dt>X</dt><dd><p>Riccati equation solution as a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
 </dl>
 </div>
@@ -803,7 +803,7 @@ general description.</p>
 <p>This function uses <code class="docutils literal notranslate"><span class="pre">scipy.linalg.solve_continuous_are</span></code>, which
 is a dense solver.
 Therefore, we assume all <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> and <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> can be
-converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> using
+converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> using
 <a class="reference internal" href="../../algorithms/to_matrix/index.html#pymor.algorithms.to_matrix.to_matrix" title="pymor.algorithms.to_matrix.to_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_matrix</span></code></a> and
 <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray.to_numpy" title="pymor.vectorarrays.interface.VectorArray.to_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.</p>
 <div class="admonition-parameters admonition">
@@ -817,7 +817,7 @@ converted to <a class="reference external" href="https://numpy.org/doc/stable/re
 </dd>
 <dt>C</dt><dd><p>The operator C as a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">A.source</span></code>.</p>
 </dd>
-<dt>R</dt><dd><p>The matrix R as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt>R</dt><dd><p>The matrix R as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 <dt>trans</dt><dd><p>Whether the first <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> in the positive Riccati equation is
 transposed.</p>
@@ -887,7 +887,7 @@ solution, <a class="reference internal" href="../../vectorarrays/interface/index
               
           </div>
             Last updated on
-              Dec 13, 2021.
+              Jan 06, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.2.0.

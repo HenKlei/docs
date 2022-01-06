@@ -64,20 +64,21 @@ Functions
        M * d_t u + A(u, mu, t) = F(mu, t),
                     u(mu, t_0) = u_0(mu).
 
-   Time-steppers used by |InstationaryModel| have to fulfill this interface. Time evolution can be performed
-   by calling :meth:`solve`.
+   Time-steppers used by |InstationaryModel| have to fulfill this interface. Time evolution can be
+   performed by calling :meth:`solve`.
 
    Note that the actual work is done in an iterator derived from :class:`TimeStepperIterator`.
 
    .. admonition:: Parameters
 
        num_values
-           The number of returned vectors of the solution trajectory. If `None`, each intermediate vector that is
-           calculated is returned. Else an interpolation of the calculated vectors on an equidistant temporal grid is
-           returned, using an appropriate interpolation of the respective time stepper.
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
        interpolation
-           Type of temporal interpolation to be used. Currently implemented are: piecewise constant (P0) and piecewise
-           linear (P1).
+           Type of temporal interpolation to be used. Currently implemented are: piecewise constant
+           (P0) and piecewise linear (P1).
            
    .. py:attribute:: IteratorType
       
@@ -122,14 +123,14 @@ Functions
       .. admonition:: Returns
 
           U
-              If `return_iter` is `False` and `return_times` is `False` (the default), where `U` is a |VectorArray|
-              containing the solution trajectory.
+              If `return_iter` is `False` and `return_times` is `False` (the default), where `U` is a
+              |VectorArray| containing the solution trajectory.
           (U, t)
-              If `return_iter` is `False` and `return_times` is `True`, where `t` is the list of time points corresponding to
-              the solution vectors in `U`.
+              If `return_iter` is `False` and `return_times` is `True`, where `t` is the list of time
+              points corresponding to the solution vectors in `U`.
           iterator
-              If `return_iter` is `True`, an iterator yielding either `U_n` (if `return_times` is `False`) or `(U_n, t_n)` in
-              each step.
+              If `return_iter` is `True`, an iterator yielding either `U_n` (if `return_times` is
+              `False`) or `(U_n, t_n)` in each step.
               
 
 
@@ -141,9 +142,11 @@ Functions
 
    See :meth:`TimeStepper.solve` for a documentation of the init parameters except `stepper`.
 
-   Note: derived classes usually only have to implement :meth:`_step`, and optionally :meth:`_interpolate` if none of
-         the provided interpolations are suitable. Using the interpolation from this base class requires the
-         implementor to store certain data in each step (see :meth:`_interpolate`).
+   .. note::
+       Derived classes usually only have to implement :meth:`_step`, and optionally
+       :meth:`_interpolate` if none of the provided interpolations are suitable. Using the
+       interpolation from this base class requires the implementor to store certain data in each
+       step (see :meth:`_interpolate`).
 
    .. admonition:: Parameters
 
@@ -155,22 +158,25 @@ Functions
 
       Called in :meth:`_interpolated_step` to compute the next step of the time evolution.
 
-      The iterator is assumed to be in the n-th time-step, `self.t == t_n`, the current state of the solution is
-      often available as `self.U_n` (depending on the interpolation and the choice of the implementor).
+      The iterator is assumed to be in the n-th time-step, `self.t == t_n`, the current state of
+      the solution is often available as `self.U_n` (depending on the interpolation and the choice
+      of the implementor).
 
       .. admonition:: Returns
 
           U_np1
               A |VectorArray| of length 1 containing U(t_{n + 1}).
           t_np1
-              The next time instance t_{n + 1} = t_n + dt, where dt has to be determined by the implementor.
+              The next time instance t_{n + 1} = t_n + dt, where dt has to be determined by the
+              implementor.
               
 
    .. py:method:: _interpolate(self, t)
 
       Called in :meth:`_interpolated_step` to compute an interpolated value of the solution.
 
-      If not overridden in derived classes, requires the following data to be present after a call to :meth:`_step`:
+      If not overridden in derived classes, requires the following data to be present after a call
+      to :meth:`_step`:
       - P0: self.t_n, self.t_np1, self.U_n
       - P1: self.t_n, self.t_np1, self.U_n, self.U_np1
 
@@ -187,11 +193,12 @@ Functions
 
    .. py:method:: _interpolated_step(self)
 
-      Returns `(U_next, t_next)` (if `return_times == True`, otherwise `U_next`), behavior depends on `num_values`:
-      If `num_values` is provided, performs as many actual steps (by calling :meth:`_step`) as required to obtain
-      an interpolation of the solution, U(t_next) at the next required interpolation point t_next >= t_n, and
-      returns (U(t_next), t_next). If `num_values` is not provided, performs a single step (by calling :meth:`_step`)
-      starting from t_n, to compute (U(t_{n + 1}), t_{n + 1}).
+      Returns `(U_next, t_next)` (if `return_times == True`, otherwise `U_next`), behavior depends
+      on `num_values`: If `num_values` is provided, performs as many actual steps
+      (by calling :meth:`_step`) as required to obtain an interpolation of the solution, U(t_next)
+      at the next required interpolation point t_next >= t_n, and returns (U(t_next), t_next). If
+      `num_values` is not provided, performs a single step (by calling :meth:`_step`) starting
+      from t_n, to compute (U(t_{n + 1}), t_{n + 1}).
 
 
    .. py:method:: __iter__(self)
@@ -209,7 +216,8 @@ Functions
 
    See :meth:`TimeStepperIterator` for a documentation of the init parameters.
 
-   Note: derived classes only have to implement :meth:`_step_function`, and optionally :meth:`_interpolate`
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
 
    .. py:method:: _step_function(self, U_n, t_n)
       :abstractmethod:
@@ -219,15 +227,17 @@ Functions
 
       Called in :meth:`_interpolated_step` to compute the next step of the time evolution.
 
-      The iterator is assumed to be in the n-th time-step, `self.t == t_n`, the current state of the solution is
-      often available as `self.U_n` (depending on the interpolation and the choice of the implementor).
+      The iterator is assumed to be in the n-th time-step, `self.t == t_n`, the current state of
+      the solution is often available as `self.U_n` (depending on the interpolation and the choice
+      of the implementor).
 
       .. admonition:: Returns
 
           U_np1
               A |VectorArray| of length 1 containing U(t_{n + 1}).
           t_np1
-              The next time instance t_{n + 1} = t_n + dt, where dt has to be determined by the implementor.
+              The next time instance t_{n + 1} = t_n + dt, where dt has to be determined by the
+              implementor.
               
 
 
@@ -239,7 +249,8 @@ Functions
 
    See :meth:`TimeStepperIterator` for a documentation of the init parameters.
 
-   Note: derived classes only have to implement :meth:`_step_function`, and optionally :meth:`_interpolate`
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
 
    .. py:method:: _step_function(self, U_n, t_n)
 
@@ -263,15 +274,16 @@ Functions
        nt
            The number of time-steps the time-stepper will perform.
        num_values
-           The number of returned vectors of the solution trajectory. If `None`, each intermediate vector that is
-           calculated is returned. Else an interpolation of the calculated vectors on an equidistant temporal grid is
-           returned, using an appropriate interpolation of the respective time stepper.
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
        solver_options
-           The |solver_options| used to invert `M + dt*A`. The special values `'mass'` and `'operator'` are recognized,
-           in which case the solver_options of `M` (resp. `A`) are used.
+           The |solver_options| used to invert `M + dt*A`. The special values `'mass'` and `'operator'`
+           are recognized, in which case the solver_options of `M` (resp. `A`) are used.
        interpolation
-           Type of temporal interpolation to be used. Currently implemented are: piecewise constant (P0) and piecewise
-           linear (P1).
+           Type of temporal interpolation to be used. Currently implemented are: piecewise constant
+           (P0) and piecewise linear (P1).
            
    .. py:attribute:: IteratorType
       
@@ -287,7 +299,8 @@ Functions
 
    See :meth:`TimeStepperIterator` for a documentation of the init parameters.
 
-   Note: derived classes only have to implement :meth:`_step_function`, and optionally :meth:`_interpolate`
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
 
    .. py:method:: _step_function(self, U_n, t_n)
 
@@ -311,12 +324,13 @@ Functions
        nt
            The number of time-steps the time-stepper will perform.
        num_values
-           The number of returned vectors of the solution trajectory. If `None`, each intermediate vector that is
-           calculated is returned. Else an interpolation of the calculated vectors on an equidistant temporal grid is
-           returned, using an appropriate interpolation of the respective time stepper.
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
        interpolation
-           Type of temporal interpolation to be used. Currently implemented are: piecewise constant (P0) and piecewise
-           linear (P1).
+           Type of temporal interpolation to be used. Currently implemented are: piecewise constant
+           (P0) and piecewise linear (P1).
            
    .. py:attribute:: IteratorType
       
@@ -332,7 +346,8 @@ Functions
 
    See :meth:`TimeStepperIterator` for a documentation of the init parameters.
 
-   Note: derived classes only have to implement :meth:`_step_function`, and optionally :meth:`_interpolate`
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
 
    .. py:method:: _step_function(self, U_n, t_n)
 
@@ -358,9 +373,10 @@ Functions
        nt
            The number of time-steps the time-stepper will perform.
        num_values
-           The number of returned vectors of the solution trajectory. If `None`, each intermediate vector that is
-           calculated is returned. Else an interpolation of the calculated vectors on an equidistant temporal grid is
-           returned, using an appropriate interpolation of the respective time stepper.
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
            
    .. py:attribute:: IteratorType
       
