@@ -727,7 +727,7 @@ interpolation matrix, which might lead to decreased numerical accuracy.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl>
-<dt>interpolation_dofs</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the DOFs at which the vectors are evaluated.</p>
+<dt>interpolation_dofs</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the DOFs at which the vectors are evaluated.</p>
 </dd>
 <dt>collateral_basis</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> containing the generated collateral basis.</p>
 </dd>
@@ -744,7 +744,7 @@ matrix coefficients in the upper triangle (should
 be near zero).</p>
 </dd>
 <dt class="field-odd">coefficients</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of coefficients such that <code class="docutils literal notranslate"><span class="pre">collateral_basis</span></code>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of coefficients such that <code class="docutils literal notranslate"><span class="pre">collateral_basis</span></code>
 is given by <code class="docutils literal notranslate"><span class="pre">U.lincomb(coefficients)</span></code>.</p>
 </dd>
 <dt class="field-even">interpolation_matrix</dt>
@@ -789,7 +789,7 @@ is used as collateral basis.</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl>
-<dt>interpolation_dofs</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the DOFs at which the vectors are interpolated.</p>
+<dt>interpolation_dofs</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the DOFs at which the vectors are interpolated.</p>
 </dd>
 <dt>collateral_basis</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> containing the generated collateral basis.</p>
 </dd>
@@ -859,7 +859,7 @@ Has no effect if <code class="docutils literal notranslate"><span class="pre">al
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">dofs</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the DOFs at which the <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> have to be evaluated.</p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the DOFs at which the <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> have to be evaluated.</p>
 </dd>
 <dt class="field-even">basis</dt>
 <dd class="field-even"><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> containing the generated collateral basis.</p>
@@ -897,7 +897,7 @@ given by <code class="docutils literal notranslate"><span class="pre">parameter_
 <dt>parameter_sample</dt><dd><p>A list of <a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameters</span></code></a> for which <code class="docutils literal notranslate"><span class="pre">function</span></code> is evaluated to generate the
 training data.</p>
 </dd>
-<dt>evaluation_points</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of coordinates at which <code class="docutils literal notranslate"><span class="pre">function</span></code> should be evaluated to
+<dt>evaluation_points</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of coordinates at which <code class="docutils literal notranslate"><span class="pre">function</span></code> should be evaluated to
 generate the training data.</p>
 </dd>
 <dt>atol</dt><dd><p>See <a class="reference internal" href="#pymor.algorithms.ei.ei_greedy" title="pymor.algorithms.ei.ei_greedy"><code class="xref py py-func docutils literal notranslate"><span class="pre">ei_greedy</span></code></a>.</p>
@@ -998,7 +998,7 @@ the parameter separable approximation of <code class="docutils literal notransla
               
           </div>
             Last updated on
-              Dec 22, 2021.
+              Jan 06, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.

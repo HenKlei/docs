@@ -478,11 +478,11 @@ the grid from vertex coordinates and connectivity data.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>vertices</dt><dd><p>A (num_vertices, 2)-shaped <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> containing the coordinates
+<dt>vertices</dt><dd><p>A (num_vertices, 2)-shaped <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> containing the coordinates
 of all vertices in the grid. The row numbers in the array will
 be the global indices of the given vertices (codim 2 entities).</p>
 </dd>
-<dt>faces</dt><dd><p>A (num_faces, 3)-shaped <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> containing the global indices
+<dt>faces</dt><dd><p>A (num_faces, 3)-shaped <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> containing the global indices
 of the vertices which define a given triangle in the grid.
 The row numbers in the array will be the global indices of the
 given triangles (codim 0 entities).</p>
@@ -533,9 +533,9 @@ subentity_embedding of <code class="docutils literal notranslate"><span class="p
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>U</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the data to visualize. If <code class="docutils literal notranslate"><span class="pre">U.dim</span> <span class="pre">==</span> <span class="pre">2</span> <span class="pre">and</span> <span class="pre">len(U)</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, the
+<dt>U</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the data to visualize. If <code class="docutils literal notranslate"><span class="pre">U.dim</span> <span class="pre">==</span> <span class="pre">2</span> <span class="pre">and</span> <span class="pre">len(U)</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, the
 data is visualized as a time series of plots. Alternatively, a tuple of
-<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> can be provided, in which case a subplot is created for
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> can be provided, in which case a subplot is created for
 each entry of the tuple. The lengths of all arrays have to agree.</p>
 </dd>
 <dt>codim</dt><dd><p>The codimension of the entities the data in <code class="docutils literal notranslate"><span class="pre">U</span></code> is attached to (either 0 or 2).</p>
@@ -606,7 +606,7 @@ each entry of the tuple. The lengths of all arrays have to agree.</p>
               
           </div>
             Last updated on
-              Dec 22, 2021.
+              Jan 06, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.

@@ -484,11 +484,11 @@ preservation <a class="reference external" href="https://github.com/pymor/pymor/
 </section>
 <section id="global-randomstate">
 <h3 id="global-randomstate">Global RandomState<a class="headerlink" href="#global-randomstate" title="Permalink to this headline">¶</a></h3>
-<p>pyMOR now has a (mutable) global default <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a>. This means
+<p>pyMOR now has a (mutable) global default <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a>. This means
 that when <code class="xref py py-meth docutils literal notranslate"><span class="pre">sample_randomly</span></code> is called
 repeatedly without specifying a <code class="docutils literal notranslate"><span class="pre">random_state</span></code> or <code class="docutils literal notranslate"><span class="pre">seed</span></code> argument, different <a class="reference internal" href="../autoapi/pymor/parameters/base/index.html#pymor.parameters.base.Parameters" title="pymor.parameters.base.Parameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a>
 samples will be returned in contrast to the (surprising) previous behavior where the
-same samples would have been returned. The same <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a> is
+same samples would have been returned. The same <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomState</span></code></a> is
 used by the newly introduced <code class="xref py py-meth docutils literal notranslate"><span class="pre">random</span></code>
 method of the <code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrayInterface</span></code>
 <a class="reference external" href="https://github.com/pymor/pymor/pull/620">[#620]</a>.</p>
@@ -569,7 +569,7 @@ has been renamed to <code class="docutils literal notranslate"><span class="pre"
               
           </div>
             Last updated on
-              Dec 22, 2021.
+              Jan 06, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.

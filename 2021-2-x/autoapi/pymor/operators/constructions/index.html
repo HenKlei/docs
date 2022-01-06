@@ -648,7 +648,7 @@ first variable by definition of <code class="docutils literal notranslate"><span
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>A <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> with shape <code class="docutils literal notranslate"><span class="pre">(len(V),</span> <span class="pre">len(U))</span></code> containing the 2-form
+<p>A <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> with shape <code class="docutils literal notranslate"><span class="pre">(len(V),</span> <span class="pre">len(U))</span></code> containing the 2-form
 evaluations.</p>
 </div>
 </dd></dl>
@@ -677,7 +677,7 @@ first variable by definition of <code class="docutils literal notranslate"><span
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
-<p>A <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> with shape <code class="docutils literal notranslate"><span class="pre">(len(V),)</span> <span class="pre">==</span> <span class="pre">(len(U),)</span></code> containing
+<p>A <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> with shape <code class="docutils literal notranslate"><span class="pre">(len(V),)</span> <span class="pre">==</span> <span class="pre">(len(U),)</span></code> containing
 the 2-form evaluations.</p>
 </div>
 </dd></dl>
@@ -1034,7 +1034,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -1046,7 +1046,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -1192,13 +1192,13 @@ given by left-multplication of (the complex conjugate of) <code class="docutils 
 <p>Non-parametric low-rank operator.</p>
 <p>Represents an operator of the form <span class="math notranslate nohighlight">\(L C R^H\)</span> or
 <span class="math notranslate nohighlight">\(L C^{-1} R^H\)</span> where <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(R\)</span> are
-<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> of column vectors and <span class="math notranslate nohighlight">\(C\)</span> a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
+<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> of column vectors and <span class="math notranslate nohighlight">\(C\)</span> a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>left</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> representing <span class="math notranslate nohighlight">\(L\)</span>.</p>
 </dd>
-<dt>core</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> representing <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<dt>core</dt><dd><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> representing <span class="math notranslate nohighlight">\(C\)</span>.</p>
 </dd>
 <dt>right</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> representing <span class="math notranslate nohighlight">\(R\)</span>.</p>
 </dd>
@@ -1392,7 +1392,7 @@ may be undesirable.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>components</dt><dd><p>List or 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the indices of the vector
+<dt>components</dt><dd><p>List or 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the indices of the vector
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">components</span></code> that are
 to be extracted by the operator.</p>
 </dd>
@@ -1445,7 +1445,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -1457,7 +1457,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -1660,7 +1660,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -1672,7 +1672,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -1758,7 +1758,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -1770,7 +1770,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -1989,7 +1989,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -2001,7 +2001,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -2244,7 +2244,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -2256,7 +2256,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -2521,7 +2521,7 @@ compared to evaluating the original operator.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
+<dt>dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of degrees of freedom in the operator
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code> to which to restrict.</p>
 </dd>
 </dl>
@@ -2533,7 +2533,7 @@ compared to evaluating the original operator.</p>
 <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(source_dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code>
 and <a class="reference internal" href="../../vectorarrays/numpy/index.html#pymor.vectorarrays.numpy.NumpyVectorSpace" title="pymor.vectorarrays.numpy.NumpyVectorSpace"><code class="xref py py-func docutils literal notranslate"><span class="pre">NumpyVectorSpace</span></code></a> <code class="docutils literal notranslate"><span class="pre">(len(dofs))</span></code> as <code class="xref py py-attr docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
-<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
+<dt>source_dofs</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of source degrees of freedom as
 defined above.</p>
 </dd>
 </dl>
@@ -3621,7 +3621,7 @@ may be undesirable.</p>
               
           </div>
             Last updated on
-              Dec 22, 2021.
+              Jan 06, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
