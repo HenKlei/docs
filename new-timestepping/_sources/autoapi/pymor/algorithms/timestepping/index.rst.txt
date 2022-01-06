@@ -12,11 +12,9 @@
    can also be used to turn an arbitrary stationary |Model| provided
    by an external library into an instationary |Model|.
 
-   Currently, implementations of :func:`explicit_euler` and :func:`implicit_euler`
-   time-stepping are provided, based on the :class:`ExplicitEulerTimeStepper` and
-   :class:`ImplicitEulerTimeStepper` classes. These derive from :class:`TimeStepper`,
-   which defines a common interface that has to be fulfilled by the time-steppers used
-   by |InstationaryModel|.
+   Currently, implementations of :class:`ExplicitEulerTimeStepper`, :class:`ImplicitEulerTimeStepper`
+   and :class:`ExplicitRungeKuttaTimeStepper` are provided, deriving from the common
+   :class:`TimeStepper` interface.
 
 
 
@@ -61,13 +59,13 @@ Functions
    Algorithms implementing this interface solve time-dependent initial value problems
    of the form ::
 
-       M * d_t u + A(u, mu, t) = F(mu, t),
-                    u(mu, t_0) = u_0(mu).
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                        u(mu, t_0) = u_0(mu).
 
-   Time-steppers used by |InstationaryModel| have to fulfill this interface. Time evolution can be
-   performed by calling :meth:`solve`.
+   Time evolution can be performed by calling :meth:`solve`.
 
-   Note that the actual work is done in an iterator derived from :class:`TimeStepperIterator`.
+   .. note::
+       The actual work is done in an iterator derived from :class:`TimeStepperIterator`.
 
    .. admonition:: Parameters
 
@@ -90,27 +88,27 @@ Functions
 
       
 
-   .. py:method:: solve(self, t0, t1, U0, A, F=None, M=None, mu=None, return_iter=False, return_times=False)
+   .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, return_iter=False, return_times=False)
 
       Apply time-stepper to the equation ::
 
-          M * d_t u + A(u, mu, t) = F(mu, t),
-                       u(mu, t_0) = u_0(mu).
+          M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                           u(mu, t_0) = u_0(mu).
 
       .. admonition:: Parameters
 
-          t0
+          initial_time
               The time at which to begin time-stepping.
-          t1
+          end_time
               The time until which to perform time-stepping.
-          U0
-              The solution vector at `t0`.
-          A
+          initial_data
+              The solution vector at `initial_time`.
+          operator
               The |Operator| A.
-          F
+          rhs
               The right-hand side F (either |VectorArray| of length 1 or |Operator| with
               `source.dim == 1`). If `None`, zero right-hand side is assumed.
-          M
+          mass
               The |Operator| M. If `None`, the identity operator is assumed.
           mu
               |Parameter values| for which `operator` and `rhs` are evaluated. The current
@@ -134,7 +132,7 @@ Functions
               
 
 
-.. py:class:: TimeStepperIterator(stepper, t0, t1, U0, A, F, M, mu, return_iter, return_times)
+.. py:class:: TimeStepperIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
@@ -208,7 +206,7 @@ Functions
 
 
 
-.. py:class:: SingleStepTimeStepperIterator(stepper, t0, t1, U0, A, F, M, mu, return_iter, return_times)
+.. py:class:: SingleStepTimeStepperIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
 
    Bases: :py:obj:`TimeStepperIterator`
 
@@ -241,7 +239,7 @@ Functions
               
 
 
-.. py:class:: ImplicitEulerIterator(stepper, t0, t1, U0, A, F, M, mu, return_iter, return_times)
+.. py:class:: ImplicitEulerIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
 
    Bases: :py:obj:`SingleStepTimeStepperIterator`
 
@@ -264,8 +262,8 @@ Functions
 
    Solves equations of the form ::
 
-       M * d_t u + A(u, mu, t) = F(mu, t),
-                    u(mu, t_0) = u_0(mu),
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                        u(mu, t_0) = u_0(mu),
 
    by an implicit Euler time integration, implemented in :class:`ImplicitEulerIterator`.
 
@@ -291,7 +289,7 @@ Functions
       
 
 
-.. py:class:: ExplicitEulerIterator(stepper, t0, t1, U0, A, F, M, mu, return_iter, return_times)
+.. py:class:: ExplicitEulerIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
 
    Bases: :py:obj:`SingleStepTimeStepperIterator`
 
@@ -314,8 +312,8 @@ Functions
 
    Solves equations of the form ::
 
-       M * d_t u + A(u, mu, t) = F(mu, t),
-                    u(mu, t_0) = u_0(mu),
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                        u(mu, t_0) = u_0(mu),
 
    by an explicit Euler time integration, implemented in :class:`ExplicitEulerIterator`.
 
@@ -338,7 +336,7 @@ Functions
       
 
 
-.. py:class:: ExplicitRungeKuttaIterator(stepper, t0, t1, U0, A, F, M, mu, return_iter, return_times)
+.. py:class:: ExplicitRungeKuttaIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
 
    Bases: :py:obj:`SingleStepTimeStepperIterator`
 
@@ -361,8 +359,8 @@ Functions
 
    Solves equations of the form ::
 
-       M * d_t u + A(u, mu, t) = F(mu, t).
-                    u(mu, t_0) = u_0(mu),
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t).
+                        u(mu, t_0) = u_0(mu),
 
    by a Runge-Kutta method, implemented in :class:`ExplicitRungeKuttaIterator`.
 
