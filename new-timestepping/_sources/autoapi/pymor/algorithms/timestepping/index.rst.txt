@@ -156,10 +156,6 @@ Functions
 
       Called in :meth:`_interpolated_step` to compute the next step of the time evolution.
 
-      The iterator is assumed to be in the n-th time-step, `self.t == t_n`, the current state of
-      the solution is often available as `self.U_n` (depending on the interpolation and the choice
-      of the implementor).
-
       .. admonition:: Returns
 
           U_np1
@@ -224,10 +220,6 @@ Functions
    .. py:method:: _step(self)
 
       Called in :meth:`_interpolated_step` to compute the next step of the time evolution.
-
-      The iterator is assumed to be in the n-th time-step, `self.t == t_n`, the current state of
-      the solution is often available as `self.U_n` (depending on the interpolation and the choice
-      of the implementor).
 
       .. admonition:: Returns
 

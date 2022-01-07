@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.timestepping &#8212; pyMOR v2021.1rc0+825.g7df41300a Manual</title>
+    <title>pymor.algorithms.timestepping &#8212; pyMOR v2021.1rc0+827.ga08dc3c66 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -92,11 +92,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.1rc0+825.g7df41300a Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.1rc0+827.ga08dc3c66 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.1rc0+825.g7df41300a Manual logo">
+                   alt="pyMOR v2021.1rc0+827.ga08dc3c66 Manual logo">
           
         </a>
       </div>
@@ -162,7 +162,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+825.g7df41300a Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.1rc0+827.ga08dc3c66 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -177,13 +177,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.1rc0+825.g7df41300a Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.1rc0+827.ga08dc3c66 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.1rc0+825.g7df41300a Manual">Documentation</a>
+       title="pyMOR v2021.1rc0+827.ga08dc3c66 Manual">Documentation</a>
   </label>
   
 
@@ -791,9 +791,6 @@ step (see <a class="reference internal" href="#pymor.algorithms.timestepping.Tim
 <dt class="sig sig-object py" id="pymor.algorithms.timestepping.TimeStepperIterator._step">
 <em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/new-timestepping/src/pymor/algorithms/timestepping.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.timestepping.TimeStepperIterator._step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called in <a class="reference internal" href="#pymor.algorithms.timestepping.TimeStepperIterator._interpolated_step" title="pymor.algorithms.timestepping.TimeStepperIterator._interpolated_step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_interpolated_step</span></code></a> to compute the next step of the time evolution.</p>
-<p>The iterator is assumed to be in the n-th time-step, <code class="docutils literal notranslate"><span class="pre">self.t</span> <span class="pre">==</span> <span class="pre">t_n</span></code>, the current state of
-the solution is often available as <code class="docutils literal notranslate"><span class="pre">self.U_n</span></code> (depending on the interpolation and the choice
-of the implementor).</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
@@ -863,9 +860,6 @@ from t_n, to compute (U(t_{n + 1}), t_{n + 1}).</p>
 <dt class="sig sig-object py" id="pymor.algorithms.timestepping.SingleStepTimeStepperIterator._step">
 <span class="sig-name descname"><span class="pre">_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/new-timestepping/src/pymor/algorithms/timestepping.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.timestepping.SingleStepTimeStepperIterator._step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called in <code class="xref py py-meth docutils literal notranslate"><span class="pre">_interpolated_step</span></code> to compute the next step of the time evolution.</p>
-<p>The iterator is assumed to be in the n-th time-step, <code class="docutils literal notranslate"><span class="pre">self.t</span> <span class="pre">==</span> <span class="pre">t_n</span></code>, the current state of
-the solution is often available as <code class="docutils literal notranslate"><span class="pre">self.U_n</span></code> (depending on the interpolation and the choice
-of the implementor).</p>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
