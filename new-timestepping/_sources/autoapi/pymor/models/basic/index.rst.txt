@@ -242,11 +242,6 @@ Classes
        name
            Name of the model.
            
-   .. py:attribute:: _compute_allowed_kwargs
-      
-
-      
-
    .. py:method:: __str__(self)
 
       Return str(self).
@@ -255,7 +250,7 @@ Classes
    .. py:method:: with_time_stepper(self, **kwargs)
 
 
-   .. py:method:: _compute_solution(self, mu=None, return_iter=False, return_times=False, **kwargs)
+   .. py:method:: _compute_solution(self, mu=None, **kwargs)
 
       Compute the model's solution for |parameter values| `mu`.
 
