@@ -1,0 +1,390 @@
+:mod:`pymor.algorithms.timestepping`
+====================================
+
+.. py:module:: pymor.algorithms.timestepping
+
+.. autoapi-nested-parse::
+
+   Generic time-stepping algorithms for the solution of instationary problems.
+
+   The algorithms are generic in the sense that each algorithms operates exclusively
+   on |Operators| and |VectorArrays|. In particular, the algorithms
+   can also be used to turn an arbitrary stationary |Model| provided
+   by an external library into an instationary |Model|.
+
+   Currently, implementations of :class:`ExplicitEulerTimeStepper`, :class:`ImplicitEulerTimeStepper`
+   and :class:`ExplicitRungeKuttaTimeStepper` are provided, deriving from the common
+   :class:`TimeStepper` interface.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.algorithms.timestepping.TimeStepper
+   pymor.algorithms.timestepping.TimeStepperIterator
+   pymor.algorithms.timestepping.SingleStepTimeStepperIterator
+   pymor.algorithms.timestepping.ImplicitEulerIterator
+   pymor.algorithms.timestepping.ImplicitEulerTimeStepper
+   pymor.algorithms.timestepping.ExplicitEulerIterator
+   pymor.algorithms.timestepping.ExplicitEulerTimeStepper
+   pymor.algorithms.timestepping.ExplicitRungeKuttaIterator
+   pymor.algorithms.timestepping.ExplicitRungeKuttaTimeStepper
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.algorithms.timestepping._depends_on_time
+   pymor.algorithms.timestepping.implicit_euler
+   pymor.algorithms.timestepping.explicit_euler
+
+
+
+.. py:class:: TimeStepper(num_values=None, interpolation='P1')
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   Interface for time-stepping algorithms.
+
+   Algorithms implementing this interface solve time-dependent initial value problems
+   of the form ::
+
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                        u(mu, t_0) = u_0(mu).
+
+   Time evolution can be performed by calling :meth:`solve`.
+
+   .. note::
+       The actual work is done in an iterator derived from :class:`TimeStepperIterator`.
+
+   .. admonition:: Parameters
+
+       num_values
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
+       interpolation
+           Type of temporal interpolation to be used. Currently implemented are: piecewise constant
+           (P0) and piecewise linear (P1).
+           
+   .. py:attribute:: IteratorType
+      
+
+      
+
+   .. py:attribute:: available_interpolations
+      :annotation: = ['P0', 'P1']
+
+      
+
+   .. py:method:: solve(self, initial_time, end_time, initial_data, operator, rhs=None, mass=None, mu=None, return_iter=False, return_times=False)
+
+      Apply time-stepper to the equation ::
+
+          M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                           u(mu, t_0) = u_0(mu).
+
+      .. admonition:: Parameters
+
+          initial_time
+              The time at which to begin time-stepping.
+          end_time
+              The time until which to perform time-stepping.
+          initial_data
+              The solution vector at `initial_time`.
+          operator
+              The |Operator| A.
+          rhs
+              The right-hand side F (either |VectorArray| of length 1 or |Operator| with
+              `source.dim == 1`). If `None`, zero right-hand side is assumed.
+          mass
+              The |Operator| M. If `None`, the identity operator is assumed.
+          mu
+              |Parameter values| for which `operator` and `rhs` are evaluated. The current
+              time is added to `mu` with key `t`.
+          return_iter
+              Determines the return data, see below.
+          return_times
+              Determines the return data, see below.
+              
+      .. admonition:: Returns
+
+          U
+              If `return_iter` is `False` and `return_times` is `False` (the default), where `U` is a
+              |VectorArray| containing the solution trajectory.
+          (U, t)
+              If `return_iter` is `False` and `return_times` is `True`, where `t` is the list of time
+              points corresponding to the solution vectors in `U`.
+          iterator
+              If `return_iter` is `True`, an iterator yielding either `U_n` (if `return_times` is
+              `False`) or `(U_n, t_n)` in each step.
+              
+
+
+.. py:class:: TimeStepperIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
+
+   Bases: :py:obj:`pymor.core.base.BasicObject`
+
+   Base class to derive time-stepper iterators from.
+
+   See :meth:`TimeStepper.solve` for a documentation of the init parameters except `stepper`.
+
+   .. note::
+       Derived classes usually only have to implement :meth:`_step`, and optionally
+       :meth:`_interpolate` if none of the provided interpolations are suitable. Using the
+       interpolation from this base class requires the implementor to store certain data in each
+       step (see :meth:`_interpolate`).
+
+   .. admonition:: Parameters
+
+       stepper
+           The associated :class:`TimeStepper`.
+           
+   .. py:method:: _step(self)
+      :abstractmethod:
+
+      Called in :meth:`_interpolated_step` to compute the next step of the time evolution.
+
+      .. admonition:: Returns
+
+          U_np1
+              A |VectorArray| of length 1 containing U(t_{n + 1}).
+          t_np1
+              The next time instance t_{n + 1} = t_n + dt, where dt has to be determined by the
+              implementor.
+              
+
+   .. py:method:: _interpolate(self, t)
+
+      Called in :meth:`_interpolated_step` to compute an interpolated value of the solution.
+
+      If not overridden in derived classes, requires the following data to be present after a call
+      to :meth:`_step`:
+      - P0: self.t_n, self.t_np1, self.U_n
+      - P1: self.t_n, self.t_np1, self.U_n, self.U_np1
+
+      .. admonition:: Parameters
+
+          t
+              The interpolation point within the latest computed step interval.
+              
+      .. admonition:: Returns
+
+          U
+              A |VectorArray| of length 1 containing U(t).
+              
+
+   .. py:method:: _interpolated_step(self)
+
+      Returns `(U_next, t_next)` (if `return_times == True`, otherwise `U_next`), behavior depends
+      on `num_values`: If `num_values` is provided, performs as many actual steps
+      (by calling :meth:`_step`) as required to obtain an interpolation of the solution, U(t_next)
+      at the next required interpolation point t_next >= t_n, and returns (U(t_next), t_next). If
+      `num_values` is not provided, performs a single step (by calling :meth:`_step`) starting
+      from t_n, to compute (U(t_{n + 1}), t_{n + 1}).
+
+
+   .. py:method:: __iter__(self)
+
+
+   .. py:method:: __next__(self)
+
+
+
+.. py:class:: SingleStepTimeStepperIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
+
+   Bases: :py:obj:`TimeStepperIterator`
+
+   Base class for iterators of single-step methods.
+
+   See :meth:`TimeStepperIterator` for a documentation of the init parameters.
+
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
+
+   .. py:method:: _step_function(self, U_n, t_n)
+      :abstractmethod:
+
+
+   .. py:method:: _step(self)
+
+      Called in :meth:`_interpolated_step` to compute the next step of the time evolution.
+
+      .. admonition:: Returns
+
+          U_np1
+              A |VectorArray| of length 1 containing U(t_{n + 1}).
+          t_np1
+              The next time instance t_{n + 1} = t_n + dt, where dt has to be determined by the
+              implementor.
+              
+
+
+.. py:class:: ImplicitEulerIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
+
+   Bases: :py:obj:`SingleStepTimeStepperIterator`
+
+   Base class for iterators of single-step methods.
+
+   See :meth:`TimeStepperIterator` for a documentation of the init parameters.
+
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
+
+   .. py:method:: _step_function(self, U_n, t_n)
+
+
+
+.. py:class:: ImplicitEulerTimeStepper(nt, num_values=None, solver_options='operator', interpolation='P1')
+
+   Bases: :py:obj:`TimeStepper`
+
+   Implicit Euler :class:`TimeStepper`.
+
+   Solves equations of the form ::
+
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                        u(mu, t_0) = u_0(mu),
+
+   by an implicit Euler time integration, implemented in :class:`ImplicitEulerIterator`.
+
+   .. admonition:: Parameters
+
+       nt
+           The number of time-steps the time-stepper will perform.
+       num_values
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
+       solver_options
+           The |solver_options| used to invert `M + dt*A`. The special values `'mass'` and `'operator'`
+           are recognized, in which case the solver_options of `M` (resp. `A`) are used.
+       interpolation
+           Type of temporal interpolation to be used. Currently implemented are: piecewise constant
+           (P0) and piecewise linear (P1).
+           
+   .. py:attribute:: IteratorType
+      
+
+      
+
+
+.. py:class:: ExplicitEulerIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
+
+   Bases: :py:obj:`SingleStepTimeStepperIterator`
+
+   Base class for iterators of single-step methods.
+
+   See :meth:`TimeStepperIterator` for a documentation of the init parameters.
+
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
+
+   .. py:method:: _step_function(self, U_n, t_n)
+
+
+
+.. py:class:: ExplicitEulerTimeStepper(nt, num_values=None, interpolation='P1')
+
+   Bases: :py:obj:`TimeStepper`
+
+   Explicit Euler :class:`TimeStepper`.
+
+   Solves equations of the form ::
+
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t),
+                        u(mu, t_0) = u_0(mu),
+
+   by an explicit Euler time integration, implemented in :class:`ExplicitEulerIterator`.
+
+   .. admonition:: Parameters
+
+       nt
+           The number of time-steps the time-stepper will perform.
+       num_values
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
+       interpolation
+           Type of temporal interpolation to be used. Currently implemented are: piecewise constant
+           (P0) and piecewise linear (P1).
+           
+   .. py:attribute:: IteratorType
+      
+
+      
+
+
+.. py:class:: ExplicitRungeKuttaIterator(stepper, initial_time, end_time, initial_data, operator, rhs, mass, mu, return_iter, return_times)
+
+   Bases: :py:obj:`SingleStepTimeStepperIterator`
+
+   Base class for iterators of single-step methods.
+
+   See :meth:`TimeStepperIterator` for a documentation of the init parameters.
+
+   Note: derived classes only have to implement :meth:`_step_function`, and optionally
+   :meth:`_interpolate`
+
+   .. py:method:: _step_function(self, U_n, t_n)
+
+
+
+.. py:class:: ExplicitRungeKuttaTimeStepper(method, nt, num_values=None, interpolation='P1')
+
+   Bases: :py:obj:`TimeStepper`
+
+   Explicit Runge-Kutta :class:`TimeStepper`.
+
+   Solves equations of the form ::
+
+       M(mu) * d_t u + A(u, mu, t) = F(mu, t).
+                        u(mu, t_0) = u_0(mu),
+
+   by a Runge-Kutta method, implemented in :class:`ExplicitRungeKuttaIterator`.
+
+   .. admonition:: Parameters
+
+       method
+           Either a string identifying the method or a tuple (c, A, b) of butcher tableaus.
+       nt
+           The number of time-steps the time-stepper will perform.
+       num_values
+           The number of returned vectors of the solution trajectory. If `None`, each intermediate
+           vector that is calculated is returned. Else an interpolation of the calculated vectors on an
+           equidistant temporal grid is returned, using an appropriate interpolation of the respective
+           time stepper.
+           
+   .. py:attribute:: IteratorType
+      
+
+      
+
+   .. py:attribute:: available_RK_methods
+      
+
+      
+
+
+.. py:function:: _depends_on_time(obj, mu)
+
+
+.. py:function:: implicit_euler(A, F, M, U0, t0, t1, nt, mu=None, num_values=None, solver_options='operator')
+
+
+.. py:function:: explicit_euler(A, F, U0, t0, t1, nt, mu=None, num_values=None)
+
+
