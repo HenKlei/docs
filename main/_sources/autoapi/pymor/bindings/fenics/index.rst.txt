@@ -163,6 +163,15 @@ Functions
 
    Wraps a FEniCS matrix as an |Operator|.
 
+   .. py:method:: _solver_options(self, adjoint=False)
+
+
+   .. py:method:: _create_solver(self, adjoint=False)
+
+
+   .. py:method:: _apply_inverse(self, r, v, adjoint=False)
+
+
    .. py:method:: _real_apply_one_vector(self, u, mu=None, prepare_data=None)
 
 
