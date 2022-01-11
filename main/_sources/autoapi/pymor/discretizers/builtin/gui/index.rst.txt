@@ -21,6 +21,7 @@ Submodules
 
    gl <gl/index.rst>
    matplotlib <matplotlib/index.rst>
+   matplotlib_base <matplotlib_base/index.rst>
    qt <qt/index.rst>
    visualizers <visualizers/index.rst>
 

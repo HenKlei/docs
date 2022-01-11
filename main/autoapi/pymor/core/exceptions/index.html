@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.core.exceptions &#8212; pyMOR v2021.2.0+51.ge253a08f1 Manual</title>
+    <title>pymor.core.exceptions &#8212; pyMOR v2021.2.0+77.gc73b87460 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+51.ge253a08f1 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+77.gc73b87460 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+51.ge253a08f1 Manual logo">
+                   alt="pyMOR v2021.2.0+77.gc73b87460 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+51.ge253a08f1 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+77.gc73b87460 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.core</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+51.ge253a08f1 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+77.gc73b87460 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+51.ge253a08f1 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+77.gc73b87460 Manual">Documentation</a>
   </label>
   
 
@@ -544,15 +544,21 @@ in the span of the basis.</p>
 <p>Is raised when training of a neural network fails.</p>
 </dd></dl>
 <dl class="py exception">
+<dt class="sig sig-object py" id="pymor.core.exceptions.DependencyMissing">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">DependencyMissing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/core/exceptions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.exceptions.DependencyMissing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ImportError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportError</span></code></a></p>
+<p>Raised when optional packages are required but are not installed.</p>
+</dd></dl>
+<dl class="py exception">
 <dt class="sig sig-object py" id="pymor.core.exceptions.QtMissing">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">QtMissing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/core/exceptions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.exceptions.QtMissing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ImportError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#pymor.core.exceptions.DependencyMissing" title="pymor.core.exceptions.DependencyMissing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DependencyMissing</span></code></a></p>
 <p>Raise me where having importable Qt bindings is non-optional</p>
 </dd></dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="pymor.core.exceptions.TorchMissing">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">TorchMissing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/core/exceptions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.core.exceptions.TorchMissing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ImportError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#pymor.core.exceptions.DependencyMissing" title="pymor.core.exceptions.DependencyMissing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DependencyMissing</span></code></a></p>
 <p>Raise me where having importable torch version is non-optional</p>
 </dd></dl>
 <dl class="py exception">
@@ -634,7 +640,7 @@ in the span of the basis.</p>
               
           </div>
             Last updated on
-              Jan 10, 2022.
+              Jan 11, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.

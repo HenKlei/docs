@@ -18,6 +18,15 @@
 Module Contents
 ---------------
 
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.gui.gl.GLPatchWidget
+   pymor.discretizers.builtin.gui.gl.ColorBarWidget
+
+
 
 Functions
 ~~~~~~~~~
@@ -26,11 +35,127 @@ Functions
   :nosignatures:
 
    pymor.discretizers.builtin.gui.gl.compile_shader
+   pymor.discretizers.builtin.gui.gl.link_shader_program
+   pymor.discretizers.builtin.gui.gl.colormap_texture
 
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.gui.gl.VS
+   pymor.discretizers.builtin.gui.gl.FS
 
 
 .. py:function:: compile_shader(source, vertex=True)
 
    Compile a vertex shader from source.
+
+
+.. py:function:: link_shader_program(shaders)
+
+   Create a shader program with from compiled shaders.
+
+
+.. py:data:: VS
+   :annotation: = Multiline-String
+
+    .. raw:: html
+
+        <details><summary>Show Value</summary>
+
+    .. code-block:: text
+        :linenos:
+
+        
+        #version 120
+        // Attribute variable that contains coordinates of the vertices.
+        attribute vec3 position;
+        varying float value;
+
+        void main()
+        {
+            gl_Position.xy = position.xy;
+            gl_Position.z = 0.;
+            gl_Position.w = 1.;
+            value = position.z;
+        }
+
+
+    .. raw:: html
+
+        </details>
+
+   
+
+.. py:data:: FS
+   :annotation: = Multiline-String
+
+    .. raw:: html
+
+        <details><summary>Show Value</summary>
+
+    .. code-block:: text
+        :linenos:
+
+        
+        #version 120
+
+        uniform sampler1D colormap;
+
+        varying float value;
+
+        void main()
+        {
+            gl_FragColor = texture1D(colormap, value);
+        }
+
+
+    .. raw:: html
+
+        </details>
+
+   
+
+.. py:function:: colormap_texture(name='viridis')
+
+
+.. py:class:: GLPatchWidget(parent, grid, vmin=None, vmax=None, bounding_box=([0, 0], [1, 1]), codim=2)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QOpenGLWidget`
+
+   .. py:method:: resizeGL(self, w, h)
+
+
+   .. py:method:: initializeGL(self)
+
+
+   .. py:method:: paintGL(self)
+
+
+   .. py:method:: set_coordinates(self, coordinates)
+
+
+   .. py:method:: set(self, U, vmin=None, vmax=None)
+
+
+
+.. py:class:: ColorBarWidget(parent, U=None, vmin=None, vmax=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QOpenGLWidget`
+
+   .. py:method:: resizeGL(self, w, h)
+
+
+   .. py:method:: initializeGL(self)
+
+
+   .. py:method:: set(self, U=None, vmin=None, vmax=None)
+
+
+   .. py:method:: paintGL(self)
+
 
 

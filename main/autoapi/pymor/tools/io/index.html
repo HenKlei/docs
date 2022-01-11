@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.tools.io &#8212; pyMOR v2021.2.0+51.ge253a08f1 Manual</title>
+    <title>pymor.tools.io &#8212; pyMOR v2021.2.0+77.gc73b87460 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+51.ge253a08f1 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+77.gc73b87460 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+51.ge253a08f1 Manual logo">
+                   alt="pyMOR v2021.2.0+77.gc73b87460 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+51.ge253a08f1 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+77.gc73b87460 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.tools</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+51.ge253a08f1 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+77.gc73b87460 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+51.ge253a08f1 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+77.gc73b87460 Manual">Documentation</a>
   </label>
   
 
@@ -445,6 +445,20 @@
 </section>
 <section id="package-contents">
 <h2 id="package-contents">Package Contents<a class="headerlink" href="#package-contents" title="Permalink to this headline">¶</a></h2>
+<section id="classes">
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.io.Deprecated" title="pymor.tools.io.Deprecated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Deprecated</span></code></a></p></td>
+<td><p>Decorator for marking functions as deprecated.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="functions">
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <table class="longtable docutils align-default">
@@ -462,27 +476,16 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.io.read_vtkfile" title="pymor.tools.io.read_vtkfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_vtkfile</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.io.safe_temporary_filename" title="pymor.tools.io.safe_temporary_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">safe_temporary_filename</span></code></a></p></td>
-<td><p>Cross~platform safe equivalent of re-opening a NamedTemporaryFile.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.io.change_to_directory" title="pymor.tools.io.change_to_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">change_to_directory</span></code></a></p></td>
-<td><p>Change current working directory to <code class="docutils literal notranslate"><span class="pre">name</span></code> for the scope of the context.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.io.file_owned_by_current_user" title="pymor.tools.io.file_owned_by_current_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_owned_by_current_user</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.io.write_vtk_collection" title="pymor.tools.io.write_vtk_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_vtk_collection</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="attributes">
-<h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.io.config" title="pymor.tools.io.config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.io.safe_temporary_filename" title="pymor.tools.io.safe_temporary_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">safe_temporary_filename</span></code></a></p></td>
+<td><p>Cross~platform safe equivalent of re-opening a NamedTemporaryFile.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.tools.io.change_to_directory" title="pymor.tools.io.change_to_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">change_to_directory</span></code></a></p></td>
+<td><p>Change current working directory to <code class="docutils literal notranslate"><span class="pre">name</span></code> for the scope of the context.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.tools.io.file_owned_by_current_user" title="pymor.tools.io.file_owned_by_current_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_owned_by_current_user</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -538,19 +541,28 @@
 </dl>
 </div>
 </dd></dl>
-<dl class="py data">
-<dt class="sig sig-object py" id="pymor.tools.io.config">
-<span class="sig-prename descclassname"><span class="pre">pymor.tools.io.</span></span><span class="sig-name descname"><span class="pre">config</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.config" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.tools.io.Deprecated">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.tools.io.</span></span><span class="sig-name descname"><span class="pre">Deprecated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no</span> <span class="pre">alternative</span> <span class="pre">given'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.Deprecated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for marking functions as deprecated.</p>
+<p>It will result in a warning being emitted when the function is used.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.tools.io.Deprecated.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.Deprecated.__call__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-<dl class="py exception">
-<dt class="sig sig-object py" id="pymor.tools.io.IOLibsMissing">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.tools.io.</span></span><span class="sig-name descname"><span class="pre">IOLibsMissing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.IOLibsMissing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ImportError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportError</span></code></a></p>
-<p>Import can’t find module, or can’t find name in module.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.tools.io.Deprecated.__get__">
+<span class="sig-name descname"><span class="pre">__get__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ownerClass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.Deprecated.__get__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a wrapper that binds self as a method of obj (!)</p>
+</dd></dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.tools.io.read_vtkfile">
 <span class="sig-prename descclassname"><span class="pre">pymor.tools.io.</span></span><span class="sig-name descname"><span class="pre">read_vtkfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.read_vtkfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.tools.io.write_vtk_collection">
+<span class="sig-prename descclassname"><span class="pre">pymor.tools.io.</span></span><span class="sig-name descname"><span class="pre">write_vtk_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/tools/io.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.tools.io.write_vtk_collection" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.tools.io.safe_temporary_filename">
@@ -628,7 +640,7 @@ Defaults to tempfile.gettempdir().</p>
               
           </div>
             Last updated on
-              Jan 10, 2022.
+              Jan 11, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
