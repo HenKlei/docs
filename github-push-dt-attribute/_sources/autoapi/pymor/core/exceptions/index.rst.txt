@@ -92,16 +92,23 @@ Module Contents
    Is raised when training of a neural network fails.
 
 
-.. py:exception:: QtMissing(msg=None)
+.. py:exception:: DependencyMissing(dependency, msg=None)
 
    Bases: :py:obj:`ImportError`
+
+   Raised when optional packages are required but are not installed.
+
+
+.. py:exception:: QtMissing(msg=None)
+
+   Bases: :py:obj:`DependencyMissing`
 
    Raise me where having importable Qt bindings is non-optional
 
 
 .. py:exception:: TorchMissing(msg=None)
 
-   Bases: :py:obj:`ImportError`
+   Bases: :py:obj:`DependencyMissing`
 
    Raise me where having importable torch version is non-optional
 

@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.discretizers.builtin.gui.matplotlib &#8212; pyMOR v2021.2.0+30.ga425ac3a4 Manual</title>
+    <title>pymor.discretizers.builtin.gui.matplotlib &#8212; pyMOR v2021.2.0+95.g114886cdc Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/togglebutton.css" />
@@ -64,7 +64,7 @@
     <link rel="shortcut icon" href="../../../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="pymor.discretizers.builtin.gui.qt" href="../qt/index.html" />
+    <link rel="next" title="pymor.discretizers.builtin.gui.matplotlib_base" href="../matplotlib_base/index.html" />
     <link rel="prev" title="pymor.discretizers.builtin.gui.gl" href="../gl/index.html" />
 
 
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../../../index.html" title="pyMOR v2021.2.0+30.ga425ac3a4 Manual"
+        <a href="../../../../../../index.html" title="pyMOR v2021.2.0+95.g114886cdc Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+30.ga425ac3a4 Manual logo">
+                   alt="pyMOR v2021.2.0+95.g114886cdc Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+30.ga425ac3a4 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+95.g114886cdc Manual</a></li>
           <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../../../index.html" title="pyMOR v2021.2.0+30.ga425ac3a4 Manual" class="md-nav__button md-logo">
+    <a href="../../../../../../index.html" title="pyMOR v2021.2.0+95.g114886cdc Manual" class="md-nav__button md-logo">
       
         <img src="../../../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../../../index.html"
-       title="pyMOR v2021.2.0+30.ga425ac3a4 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+95.g114886cdc Manual">Documentation</a>
   </label>
   
 
@@ -441,78 +441,14 @@ scalar data assigned to one- and two-dimensional grids using
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase" title="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibAxesBase</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget" title="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matplotlib1DWidget</span></code></a></p></td>
+<td><p>The canvas the figure renders into.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes" title="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibPatchAxes</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes" title="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matplotlib1DAxes</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget" title="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matplotlib1DWidget</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget" title="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibPatchWidget</span></code></a></p></td>
 <td><p>The canvas the figure renders into.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py class">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.gui.matplotlib.</span></span><span class="sig-name descname"><span class="pre">MatplotlibAxesBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_timer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aspect_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase._plot_init">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_plot_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase._plot_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Setup MPL figure display with empty data.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase.set">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase.set" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load new data into existing plot objects.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase.animate">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase.animate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load new data into existing plot objects.</p>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.gui.matplotlib.</span></span><span class="sig-name descname"><span class="pre">MatplotlibPatchAxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounding_box</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_timer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase" title="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibAxesBase</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes._plot_init">
-<span class="sig-name descname"><span class="pre">_plot_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes._plot_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Setup MPL figure display with empty data.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchAxes.set" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load new data into existing plot objects.</p>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.gui.matplotlib.</span></span><span class="sig-name descname"><span class="pre">Matplotlib1DAxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_timer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounding_box</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase" title="pymor.discretizers.builtin.gui.matplotlib.MatplotlibAxesBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatplotlibAxesBase</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes._plot_init">
-<span class="sig-name descname"><span class="pre">_plot_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes._plot_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Setup MPL figure display with empty data.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes._set">
-<span class="sig-name descname"><span class="pre">_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes._set" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes.animate">
-<span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes.animate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load new data into existing plot objects.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DAxes.set" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load new data into existing plot objects.</p>
-</dd></dl>
-</dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.gui.matplotlib.</span></span><span class="sig-name descname"><span class="pre">Matplotlib1DWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_plots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget" title="Permalink to this definition">¶</a></dt>
@@ -526,6 +462,21 @@ scalar data assigned to one- and two-dimensional grids using
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget.set">
 <span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.discretizers.builtin.gui.matplotlib.</span></span><span class="sig-name descname"><span class="pre">MatplotlibPatchWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounding_box</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg</span></code></p>
+<p>The canvas the figure renders into.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget.figure">
+<span class="sig-name descname"><span class="pre">figure</span></span><em class="property"><span class="w"> </span><span class="pre">`matplotlib.figure.Figure`</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget.figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>A high-level figure instance.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_dt-attribute/src/pymor/discretizers/builtin/gui/matplotlib.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget.set" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </section>
@@ -556,12 +507,12 @@ scalar data assigned to one- and two-dimensional grids using
             </a>
           
           
-            <a href="../qt/index.html" title="pymor.discretizers.builtin.gui.qt"
+            <a href="../matplotlib_base/index.html" title="pymor.discretizers.builtin.gui.matplotlib_base"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.gui.qt</span></code> </span>
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.discretizers.builtin.gui.matplotlib_base</span></code> </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -575,11 +526,11 @@ scalar data assigned to one- and two-dimensional grids using
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
           <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2013-2021 pyMOR developers and contributors.
+              &#169; Copyright pyMOR developers and contributors.
               
           </div>
             Last updated on
-              Jan 13, 2022.
+              Jan 14, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.

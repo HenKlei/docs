@@ -17,6 +17,14 @@ Submodules
 Package Contents
 ----------------
 
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.io.Deprecated
+
+
 
 Functions
 ~~~~~~~~~
@@ -27,18 +35,11 @@ Functions
    pymor.tools.io.load_matrix
    pymor.tools.io.save_matrix
    pymor.tools.io.read_vtkfile
+   pymor.tools.io.write_vtk_collection
    pymor.tools.io.safe_temporary_filename
    pymor.tools.io.change_to_directory
    pymor.tools.io.file_owned_by_current_user
 
-
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pymor.tools.io.config
 
 
 .. py:function:: load_matrix(path, key=None)
@@ -82,19 +83,25 @@ Attributes
            If saving fails.
            
 
-.. py:data:: config
-   
+.. py:class:: Deprecated(alt='no alternative given')
 
-   
+   Decorator for marking functions as deprecated.
 
-.. py:exception:: IOLibsMissing(msg=None)
+   It will result in a warning being emitted when the function is used.
 
-   Bases: :py:obj:`ImportError`
+   .. py:method:: __call__(self, func)
 
-   Import can't find module, or can't find name in module.
+
+   .. py:method:: __get__(self, obj, ownerClass=None)
+
+      Return a wrapper that binds self as a method of obj (!)
+
 
 
 .. py:function:: read_vtkfile(*args, **kwargs)
+
+
+.. py:function:: write_vtk_collection(*args, **kwargs)
 
 
 .. py:function:: safe_temporary_filename(name=None, parent_dir=None)

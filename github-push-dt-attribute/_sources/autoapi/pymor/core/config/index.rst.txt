@@ -98,6 +98,9 @@ Attributes
       :property:
 
 
+   .. py:method:: require(self, dependency)
+
+
    .. py:method:: __getattr__(self, name)
 
 
