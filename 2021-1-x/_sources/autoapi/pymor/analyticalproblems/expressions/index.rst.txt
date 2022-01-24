@@ -1,0 +1,953 @@
+:mod:`pymor.analyticalproblems.expressions`
+===========================================
+
+.. py:module:: pymor.analyticalproblems.expressions
+
+.. autoapi-nested-parse::
+
+   This module contains a basic symbolic expression library.
+
+   The library is used by |ExpressionFunction| and |ExpressionParameterFunctional|
+   by calling :func:`parse_expression`, which parses `str` expressions by replacing
+   the names in the string with objects from this module. The result is an
+   :class:`Expression` object, which can be converted to a |NumPy|-vectorized function
+   using :meth:`Expression.to_numpy`. In the future, more conversion routines will
+   be added to make the same :class:`Expression` usable for :mod:`pymor.discretizers`
+   that use external PDE solvers. Further advantages of using this expression library:
+
+   - meaningful error messages are generated at parse time of the `str` expression,
+     instead of hard-to-debug errors in lambda functions at evaluation time,
+   - expressions are automatically correctly vectorized. In particular, there is no
+     longer a need to add `...` to indexing expressions,
+   - the shape of the resulting expressions is automatically determined.
+
+   In the future, we will also provide support for symbolic differentiation of the
+   given :class:`Expressions`.
+
+   Every :class:`Expression` is built from the following atoms:
+
+   - a :class:`Constant`, which is a fixed value of arbitrary shape,
+   - a :class:`Parameter`, which is a variable of a fixed one-dimensional shape.
+
+   Note that both |Parameters| and input variables are treated as a :class:`Parameter`
+   in the expression. Only when calling, e.g., :meth:`~Expression.to_numpy`, it is
+   determined which :class:`Parameter` belongs to the resulting function's |Parameters|
+   and which :class:`Parameter` is treated as an input variable.
+
+   More complex expressions can be built using:
+
+   - :class:`binary operators <BinaryOp>`,
+   - :class:`negation <Neg>`,
+   - :class:`function calls <UnaryFunctionCall>`,
+   - :class:`indexing <Indexed>`,
+   - :class:`array construction <Array>`.
+
+   For binary operations of :class:`Expressions <Expression>` of different shape,
+   the usual broadcasting rules apply.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.analyticalproblems.expressions.Expression
+   pymor.analyticalproblems.expressions.BaseConstant
+   pymor.analyticalproblems.expressions.Constant
+   pymor.analyticalproblems.expressions.Parameter
+   pymor.analyticalproblems.expressions.Array
+   pymor.analyticalproblems.expressions.BinaryOp
+   pymor.analyticalproblems.expressions.Neg
+   pymor.analyticalproblems.expressions.Indexed
+   pymor.analyticalproblems.expressions.UnaryFunctionCall
+   pymor.analyticalproblems.expressions.UnaryReductionCall
+   pymor.analyticalproblems.expressions.Sum
+   pymor.analyticalproblems.expressions.Diff
+   pymor.analyticalproblems.expressions.Prod
+   pymor.analyticalproblems.expressions.Div
+   pymor.analyticalproblems.expressions.Pow
+   pymor.analyticalproblems.expressions.Mod
+   pymor.analyticalproblems.expressions.LE
+   pymor.analyticalproblems.expressions.GE
+   pymor.analyticalproblems.expressions.LT
+   pymor.analyticalproblems.expressions.GT
+   pymor.analyticalproblems.expressions.sin
+   pymor.analyticalproblems.expressions.cos
+   pymor.analyticalproblems.expressions.tan
+   pymor.analyticalproblems.expressions.arcsin
+   pymor.analyticalproblems.expressions.arccos
+   pymor.analyticalproblems.expressions.arctan
+   pymor.analyticalproblems.expressions.sinh
+   pymor.analyticalproblems.expressions.cosh
+   pymor.analyticalproblems.expressions.tanh
+   pymor.analyticalproblems.expressions.arcsinh
+   pymor.analyticalproblems.expressions.arccosh
+   pymor.analyticalproblems.expressions.arctanh
+   pymor.analyticalproblems.expressions.exp
+   pymor.analyticalproblems.expressions.exp2
+   pymor.analyticalproblems.expressions.log
+   pymor.analyticalproblems.expressions.log2
+   pymor.analyticalproblems.expressions.log10
+   pymor.analyticalproblems.expressions.sqrt
+   pymor.analyticalproblems.expressions.abs
+   pymor.analyticalproblems.expressions.sign
+   pymor.analyticalproblems.expressions.angle
+   pymor.analyticalproblems.expressions.norm
+   pymor.analyticalproblems.expressions.min
+   pymor.analyticalproblems.expressions.max
+   pymor.analyticalproblems.expressions.sum
+   pymor.analyticalproblems.expressions.prod
+   pymor.analyticalproblems.expressions.Pi
+   pymor.analyticalproblems.expressions.E
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.analyticalproblems.expressions.parse_expression
+   pymor.analyticalproblems.expressions._convert_to_expression
+   pymor.analyticalproblems.expressions._broadcastable_shapes
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.analyticalproblems.expressions.builtin_max
+   pymor.analyticalproblems.expressions.pi
+   pymor.analyticalproblems.expressions.e
+   pymor.analyticalproblems.expressions._numpy_functions
+
+
+.. py:data:: builtin_max
+   
+
+   
+
+.. py:function:: parse_expression(expression, parameters={}, values={})
+
+
+.. py:class:: Expression
+
+   Bases: :py:obj:`pymor.parameters.base.ParametricObject`
+
+   A symbolic math expression
+
+   .. attribute:: shape
+
+      The shape of the object this expression evaluates to
+      in the sense of |NumPy|.
+      
+
+   .. py:method:: to_numpy(self, variables)
+
+      Convert expression to a |NumPy|-vectorized callable.
+
+      .. admonition:: Parameters
+
+          variables
+              List of names of :class:`~Parameters <Parameter>` in
+              the expression which shall be treated as input variables.
+              
+
+   .. py:method:: numpy_expr(self)
+      :abstractmethod:
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __getitem__(self, index)
+
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __radd__(self, other)
+
+
+   .. py:method:: __sub__(self, other)
+
+
+   .. py:method:: __rsub__(self, other)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __rmul__(self, other)
+
+
+   .. py:method:: __truediv__(self, other)
+
+
+   .. py:method:: __rtruediv__(self, other)
+
+
+   .. py:method:: __pow__(self, other)
+
+
+   .. py:method:: __rpow__(self, other)
+
+
+   .. py:method:: __mod__(self, other)
+
+
+   .. py:method:: __rmod__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+   .. py:method:: __le__(self, other)
+
+      Return self<=value.
+
+
+   .. py:method:: __ge__(self, other)
+
+      Return self>=value.
+
+
+   .. py:method:: __lt__(self, other)
+
+      Return self<value.
+
+
+   .. py:method:: __gt__(self, other)
+
+      Return self>value.
+
+
+   .. py:method:: __bool__(self)
+
+
+
+.. py:class:: BaseConstant
+
+   Bases: :py:obj:`Expression`
+
+   A constant value.
+
+   .. py:attribute:: numpy_symbol
+      
+
+      
+
+   .. py:attribute:: shape
+      :annotation: = []
+
+      
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: Constant(value)
+
+   Bases: :py:obj:`BaseConstant`
+
+   A constant value given by a |NumPy| array.
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: Parameter(name, dim)
+
+   Bases: :py:obj:`Expression`
+
+   A free parameter in an :class:`Expression`.
+
+   Parameters represent both pyMOR |Parameters| as well as
+   input variables. Each parameter is a vector of shape `(dim,)`.
+
+   .. admonition:: Parameters
+
+       name
+           The name of the parameter.
+       dim
+           The dimension of the parameter.
+           
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: Array(array)
+
+   Bases: :py:obj:`Expression`
+
+   An array of scalar-valued :class:`Expressions <Expression>`.
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: BinaryOp(first, second)
+
+   Bases: :py:obj:`Expression`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      
+
+      
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: Neg(operand)
+
+   Bases: :py:obj:`Expression`
+
+   Negated :class:`Expression`.
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: Indexed(base, index)
+
+   Bases: :py:obj:`Expression`
+
+   Indexed :class:`Expression`.
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: UnaryFunctionCall(*arg)
+
+   Bases: :py:obj:`Expression`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      
+
+      
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: UnaryReductionCall(*arg)
+
+   Bases: :py:obj:`Expression`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
+
+   .. py:method:: numpy_expr(self)
+
+      Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:function:: _convert_to_expression(obj)
+
+   Used internally to convert literals/list constructors to an :class:`Expression`.
+
+
+.. py:function:: _broadcastable_shapes(first, second)
+
+
+.. py:class:: Sum(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = +
+
+      
+
+
+.. py:class:: Diff(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = -
+
+      
+
+
+.. py:class:: Prod(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = *
+
+      
+
+
+.. py:class:: Div(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = /
+
+      
+
+
+.. py:class:: Pow(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = **
+
+      
+
+
+.. py:class:: Mod(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = %
+
+      
+
+
+.. py:class:: LE(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = <=
+
+      
+
+
+.. py:class:: GE(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = >=
+
+      
+
+
+.. py:class:: LT(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = <
+
+      
+
+
+.. py:class:: GT(first, second)
+
+   Bases: :py:obj:`BinaryOp`
+
+   Compound :class:`Expression` of a binary operator acting on two sub-expressions.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = >
+
+      
+
+
+.. py:class:: sin(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = sin
+
+      
+
+
+.. py:class:: cos(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = cos
+
+      
+
+
+.. py:class:: tan(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = tan
+
+      
+
+
+.. py:class:: arcsin(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = arcsin
+
+      
+
+
+.. py:class:: arccos(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = arccos
+
+      
+
+
+.. py:class:: arctan(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = arctan
+
+      
+
+
+.. py:class:: sinh(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = sinh
+
+      
+
+
+.. py:class:: cosh(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = cosh
+
+      
+
+
+.. py:class:: tanh(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = tanh
+
+      
+
+
+.. py:class:: arcsinh(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = arcsinh
+
+      
+
+
+.. py:class:: arccosh(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = arccosh
+
+      
+
+
+.. py:class:: arctanh(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = arctanh
+
+      
+
+
+.. py:class:: exp(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = exp
+
+      
+
+
+.. py:class:: exp2(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = exp2
+
+      
+
+
+.. py:class:: log(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = log
+
+      
+
+
+.. py:class:: log2(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = log2
+
+      
+
+
+.. py:class:: log10(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = log10
+
+      
+
+
+.. py:class:: sqrt(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = sqrt
+
+      
+
+
+.. py:class:: abs(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = abs
+
+      
+
+
+.. py:class:: sign(*arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = sign
+
+      
+
+
+.. py:class:: angle(arg)
+
+   Bases: :py:obj:`UnaryFunctionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied component-wise.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = angle
+
+      
+
+
+.. py:class:: norm(*arg)
+
+   Bases: :py:obj:`UnaryReductionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = norm
+
+      
+
+
+.. py:class:: min(*arg)
+
+   Bases: :py:obj:`UnaryReductionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = min
+
+      
+
+
+.. py:class:: max(*arg)
+
+   Bases: :py:obj:`UnaryReductionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = max
+
+      
+
+
+.. py:class:: sum(*arg)
+
+   Bases: :py:obj:`UnaryReductionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = sum
+
+      
+
+
+.. py:class:: prod(*arg)
+
+   Bases: :py:obj:`UnaryReductionCall`
+
+   Compound :class:`Expression` of an unary function applied to a sub-expression.
+
+   The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
+   returning a single number.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = prod
+
+      
+
+
+.. py:class:: Pi
+
+   Bases: :py:obj:`BaseConstant`
+
+   A constant value.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = pi
+
+      
+
+
+.. py:class:: E
+
+   Bases: :py:obj:`BaseConstant`
+
+   A constant value.
+
+   .. py:attribute:: numpy_symbol
+      :annotation: = e
+
+      
+
+
+.. py:data:: pi
+   
+
+   
+
+.. py:data:: e
+   
+
+   
+
+.. py:data:: _numpy_functions
+   
+
+   
+
