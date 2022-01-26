@@ -223,8 +223,7 @@ Classes
 
    .. py:method:: allclose(self, mu)
 
-      Compare two dicts of |parameter values| using
-      :meth:`~pymor.tools.floatcmp.float_cmp_all`.
+      Compare two dicts of |parameter values| using :meth:`~pymor.tools.floatcmp.float_cmp_all`.
 
       .. admonition:: Parameters
 
