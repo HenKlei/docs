@@ -172,10 +172,10 @@ Attributes
 
 
 
-.. py:function:: default_handler(filename='')
+.. py:function:: default_handler(filename=None)
 
 
-.. py:function:: getLogger(module, level=None, filename='')
+.. py:function:: getLogger(module, level=None, filename=None)
 
    Get the logger of the respective module for pyMOR's logging facility.
 
