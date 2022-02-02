@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.bindings.slycot &#8212; pyMOR v2021.2.0+135.g5e9cfdd17 Manual</title>
+    <title>pymor.bindings.slycot &#8212; pyMOR v2021.2.0+136.g0524aab12 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+135.g5e9cfdd17 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+136.g0524aab12 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+135.g5e9cfdd17 Manual logo">
+                   alt="pyMOR v2021.2.0+136.g0524aab12 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+135.g5e9cfdd17 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+136.g0524aab12 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+135.g5e9cfdd17 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+136.g0524aab12 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+135.g5e9cfdd17 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+136.g0524aab12 Manual">Documentation</a>
   </label>
   
 
@@ -523,13 +523,15 @@
 <dt class="sig sig-object py" id="pymor.bindings.slycot.solve_lyap_lrcf">
 <span class="sig-prename descclassname"><span class="pre">pymor.bindings.slycot.</span></span><span class="sig-name descname"><span class="pre">solve_lyap_lrcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_discrete_gramians/src/pymor/bindings/slycot.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.slycot.solve_lyap_lrcf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute an approximate low-rank solution of a Lyapunov equation.</p>
-<p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_lyap_lrcf</span></code> for a
-general description.</p>
-<p>This function uses <code class="docutils literal notranslate"><span class="pre">slycot.sb03md</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">None</span></code>) and
-<code class="docutils literal notranslate"><span class="pre">slycot.sg03ad</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code>), which are dense solvers
-based on the Bartels-Stewart algorithm.
-Therefore, we assume A and E can be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a>
-using <a class="reference internal" href="../../algorithms/to_matrix/index.html#pymor.algorithms.to_matrix.to_matrix" title="pymor.algorithms.to_matrix.to_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_matrix</span></code></a> and that
+<p>See</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../algorithms/lyapunov/index.html#pymor.algorithms.lyapunov.solve_cont_lyap_lrcf" title="pymor.algorithms.lyapunov.solve_cont_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_cont_lyap_lrcf</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../algorithms/lyapunov/index.html#pymor.algorithms.lyapunov.solve_disc_lyap_lrcf" title="pymor.algorithms.lyapunov.solve_disc_lyap_lrcf"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_disc_lyap_lrcf</span></code></a></p></li>
+</ul>
+<p>for a general description.</p>
+<p>This function uses <code class="docutils literal notranslate"><span class="pre">slycot.sb03md</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">None</span></code>) and <code class="docutils literal notranslate"><span class="pre">slycot.sg03ad</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code>),
+which are dense solvers based on the Bartels-Stewart algorithm. Therefore, we assume A and E can
+be converted to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">arrays</span></code></a> using <a class="reference internal" href="../../algorithms/to_matrix/index.html#pymor.algorithms.to_matrix.to_matrix" title="pymor.algorithms.to_matrix.to_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">to_matrix</span></code></a> and that
 <code class="docutils literal notranslate"><span class="pre">B.to_numpy</span></code> is implemented.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -540,19 +542,18 @@ using <a class="reference internal" href="../../algorithms/to_matrix/index.html#
 </dd>
 <dt>B</dt><dd><p>The operator B as a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">A.source</span></code>.</p>
 </dd>
-<dt>trans</dt><dd><p>Whether the first <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> in the Lyapunov equation is
-transposed.</p>
+<dt>trans</dt><dd><p>Whether the first <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> in the Lyapunov equation is transposed.</p>
 </dd>
-<dt>options</dt><dd><p>The solver options to use (see
-<a class="reference internal" href="#pymor.bindings.slycot.lyap_lrcf_solver_options" title="pymor.bindings.slycot.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">lyap_lrcf_solver_options</span></code></a>).</p>
+<dt>cont_time</dt><dd><p>Whether the continuous- or discrete-time Lyapunov equation is solved.</p>
+</dd>
+<dt>options</dt><dd><p>The solver options to use (see <a class="reference internal" href="#pymor.bindings.slycot.lyap_lrcf_solver_options" title="pymor.bindings.slycot.lyap_lrcf_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">lyap_lrcf_solver_options</span></code></a>).</p>
 </dd>
 </dl>
 </div>
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>Z</dt><dd><p>Low-rank Cholesky factor of the Lyapunov equation solution,
-<a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">A.source</span></code>.</p>
+<dt>Z</dt><dd><p>Low-rank Cholesky factor of the Lyapunov equation solution, <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> from <code class="docutils literal notranslate"><span class="pre">A.source</span></code>.</p>
 </dd>
 </dl>
 </div>
@@ -570,11 +571,14 @@ transposed.</p>
 <dt class="sig sig-object py" id="pymor.bindings.slycot.solve_lyap_dense">
 <span class="sig-prename descclassname"><span class="pre">pymor.bindings.slycot.</span></span><span class="sig-name descname"><span class="pre">solve_lyap_dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_discrete_gramians/src/pymor/bindings/slycot.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.bindings.slycot.solve_lyap_dense" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the solution of a Lyapunov equation.</p>
-<p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_lyap_dense</span></code> for a
-general description.</p>
-<p>This function uses <code class="docutils literal notranslate"><span class="pre">slycot.sb03md</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">None</span></code>) and
-<code class="docutils literal notranslate"><span class="pre">slycot.sg03ad</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code>), which are based on the
-Bartels-Stewart algorithm.</p>
+<p>See</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../algorithms/lyapunov/index.html#pymor.algorithms.lyapunov.solve_cont_lyap_dense" title="pymor.algorithms.lyapunov.solve_cont_lyap_dense"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_cont_lyap_dense</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../algorithms/lyapunov/index.html#pymor.algorithms.lyapunov.solve_disc_lyap_dense" title="pymor.algorithms.lyapunov.solve_disc_lyap_dense"><code class="xref py py-func docutils literal notranslate"><span class="pre">pymor.algorithms.lyapunov.solve_disc_lyap_dense</span></code></a></p></li>
+</ul>
+<p>for a general description.</p>
+<p>This function uses <code class="docutils literal notranslate"><span class="pre">slycot.sb03md</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">None</span></code>) and <code class="docutils literal notranslate"><span class="pre">slycot.sg03ad</span></code> (if <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code>),
+which are based on the Bartels-Stewart algorithm.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
@@ -584,11 +588,11 @@ Bartels-Stewart algorithm.</p>
 </dd>
 <dt>B</dt><dd><p>The matrix B as a 2D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a>.</p>
 </dd>
-<dt>trans</dt><dd><p>Whether the first matrix in the Lyapunov equation is
-transposed.</p>
+<dt>trans</dt><dd><p>Whether the first matrix in the Lyapunov equation is transposed.</p>
 </dd>
-<dt>options</dt><dd><p>The solver options to use (see
-<a class="reference internal" href="#pymor.bindings.slycot.lyap_dense_solver_options" title="pymor.bindings.slycot.lyap_dense_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">lyap_dense_solver_options</span></code></a>).</p>
+<dt>cont_time</dt><dd><p>Whether the continuous- or discrete-time Lyapunov equation is solved.</p>
+</dd>
+<dt>options</dt><dd><p>The solver options to use (see <a class="reference internal" href="#pymor.bindings.slycot.lyap_dense_solver_options" title="pymor.bindings.slycot.lyap_dense_solver_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">lyap_dense_solver_options</span></code></a>).</p>
 </dd>
 </dl>
 </div>
