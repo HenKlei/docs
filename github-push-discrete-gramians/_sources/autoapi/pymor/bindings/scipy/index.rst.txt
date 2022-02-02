@@ -190,7 +190,12 @@ Functions
 
    Compute the solution of a Lyapunov equation.
 
-   See :func:`pymor.algorithms.lyapunov.solve_lyap_dense` for a general description.
+   See
+
+   - :func:`pymor.algorithms.lyapunov.solve_cont_lyap_dense`
+   - :func:`pymor.algorithms.lyapunov.solve_disc_lyap_dense`
+
+   for a general description.
 
    This function uses `scipy.linalg.solve_continuous_lyapunov` or
    `scipy.linalg.solve_discrete_lyapunov`, which is a dense solver for Lyapunov equations with E=I.
