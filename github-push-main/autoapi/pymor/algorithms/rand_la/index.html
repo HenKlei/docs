@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.rand_la &#8212; pyMOR v2021.2.0+124.ge9e2426f8 Manual</title>
+    <title>pymor.algorithms.rand_la &#8212; pyMOR v2021.2.0+126.geb14eccad Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+124.ge9e2426f8 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+126.geb14eccad Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+124.ge9e2426f8 Manual logo">
+                   alt="pyMOR v2021.2.0+126.geb14eccad Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+124.ge9e2426f8 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+126.geb14eccad Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+124.ge9e2426f8 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+126.geb14eccad Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+124.ge9e2426f8 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+126.geb14eccad Manual">Documentation</a>
   </label>
   
 
@@ -655,6 +655,12 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.rand_la.rrf" title="pymor.algorithms.rand_la.rrf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rrf</span></code></a></p></td>
 <td><p>Randomized range approximation of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.algorithms.rand_la.random_generalized_svd" title="pymor.algorithms.rand_la.random_generalized_svd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_generalized_svd</span></code></a></p></td>
+<td><p>Randomized SVD of a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> or an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.algorithms.rand_la.random_ghep" title="pymor.algorithms.rand_la.random_ghep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_ghep</span></code></a></p></td>
+<td><p>Approximates a few eigenvalues of a linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> with randomized methods.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py function">
@@ -701,7 +707,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.rand_la.rrf">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.rand_la.</span></span><span class="sig-name descname"><span class="pre">rrf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iscomplex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_main/src/pymor/algorithms/rand_la.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.rand_la.rrf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.rand_la.</span></span><span class="sig-name descname"><span class="pre">rrf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_rand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iscomplex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_main/src/pymor/algorithms/rand_la.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.rand_la.rrf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Randomized range approximation of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
 <p>This is an implementation of Algorithm 4.4 in <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id21" title="Nathan Halko, Per-Gunnar Martinsson, and Joel A Tropp. Finding structure with randomness: probabilistic algorithms for constructing approximate matrix decompositions. SIAM review, 53(2):217–288, 2011.">HMT11</a>]</span>.</p>
 <p>Given the <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> <code class="docutils literal notranslate"><span class="pre">A</span></code>, the return value of this method is the <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>
@@ -719,6 +725,8 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </dd>
 <dt>l</dt><dd><p>The block size of the normalized power iterations.</p>
 </dd>
+<dt>return_rand</dt><dd><p>If ‘True’, the randomly sampled <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> R is returned.</p>
+</dd>
 <dt>iscomplex</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the random vectors are chosen complex.</p>
 </dd>
 </dl>
@@ -727,6 +735,127 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <p class="admonition-title">Returns</p>
 <dl class="simple">
 <dt>Q</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> which contains the basis, whose span approximates the range of A.</p>
+</dd>
+<dt>R</dt><dd><p>The randomly sampled <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a></p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.algorithms.rand_la.random_generalized_svd">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.rand_la.</span></span><span class="sig-name descname"><span class="pre">random_generalized_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_product</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_main/src/pymor/algorithms/rand_la.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.rand_la.random_generalized_svd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomized SVD of a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> or an <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<p>Saibaba AK, Hart J, van BloemenWaanders B. Randomized algorithms for
+generalized singular value decomposition with application to sensitivity analysis. Numer Linear Algebra Appl.
+2021;28:e2364.
+<a class="reference external" href="https://doi.org/10.1002/nla.2364">https://doi.org/10.1002/nla.2364</a></p>
+<p>Viewing the ‘A’ as a ‘A.dim’ x ‘len(A)’ matrix, the return value
+of this method is the randomized singular value decomposition of ‘A’, where the
+inner product on R^(‘dim(A)’) is given by ‘range_product’ and the inner product on R^(‘len(A)’)
+is given by ‘source_product’.</p>
+<blockquote>
+<div><p>A = U*Sigma*V*source_product</p>
+</div></blockquote>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>A</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> or <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> for which the randomized SVD is to be computed.</p>
+</dd>
+<dt>range_product</dt><dd><p>Range product <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> w.r.t which the randomized SVD is computed</p>
+</dd>
+<dt>source_product</dt><dd><p>Source product <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> w.r.t which the randomized SVD is computed</p>
+</dd>
+<dt>modes</dt><dd><p>The first ‘modes’ approximated singular values and vectors are returned.</p>
+</dd>
+<dt>p</dt><dd><p>If not ‘0’, adds ‘Oversampling’ colums to the randomly sampled matrix.</p>
+</dd>
+<dt>q</dt><dd><p>If not ‘0’, performs ‘q’ so called power iterations to increase the relative weight
+of the first singular values.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<dl class="simple">
+<dt>U</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of approximated left singular vectors</p>
+</dd>
+<dt>s</dt><dd><p>One-dimensional <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of the approximated singular values</p>
+</dd>
+<dt>V</dt><dd><p><a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of the approximated right singular vectors</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pymor.algorithms.rand_la.random_ghep">
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.rand_la.</span></span><span class="sig-name descname"><span class="pre">random_ghep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_pass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'LM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_pair_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_evp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_evp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_main/src/pymor/algorithms/rand_la.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.rand_la.random_ghep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Approximates a few eigenvalues of a linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> with randomized methods.</p>
+<p>Approximates <code class="docutils literal notranslate"><span class="pre">modes</span></code> eigenvalues <code class="docutils literal notranslate"><span class="pre">w</span></code> with corresponding eigenvectors <code class="docutils literal notranslate"><span class="pre">v</span></code> which solve
+the eigenvalue problem.</p>
+<p>This is an implementation of algorithm 6 and 7 in
+Saibaba AK, Lee J. and Kitanidis PK
+Randomized algorithms for generalized Hermitian eigenvalue problems with application to computing
+Karhunen Loeve expansion
+<a class="reference external" href="https://arxiv.org/abs/1307.6885">https://arxiv.org/abs/1307.6885</a></p>
+<div class="math notranslate nohighlight">
+\[A v_i = w_i v_i\]</div>
+<p>or the generalized eigenvalue problem</p>
+<div class="math notranslate nohighlight">
+\[A v_i = w_i E v_i\]</div>
+<p>if <code class="docutils literal notranslate"><span class="pre">E</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="admonition-parameters admonition">
+<p class="admonition-title">Parameters</p>
+<dl class="simple">
+<dt>A</dt><dd><p>The linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> for which the eigenvalues are to be computed.</p>
+</dd>
+<dt>E</dt><dd><p>The linear <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> which defines the generalized eigenvalue problem.</p>
+</dd>
+<dt>modes</dt><dd><p>The number of eigenvalues and eigenvectors which are to be computed.</p>
+</dd>
+<dt>p</dt><dd><p>If not ‘0’, adds ‘p’ colums to the randomly sampled matrix in the randrangefinder.rff() method.
+Often called Oversampling parameter.</p>
+</dd>
+<dt>q</dt><dd><p>If not ‘0’, performs ‘q’ PowerIterations to increase the relative weight
+of the bigger singular values.</p>
+</dd>
+<dt>single_pass</dt><dd><p>If ‘True’, computes the ghep where only one set of matvec Ax is required.
+If ‘False’ the methods requires two sets of matvecs Ax.</p>
+</dd>
+<dt>sigma</dt><dd><p>If not <code class="docutils literal notranslate"><span class="pre">None</span></code> transforms the eigenvalue problem such that the k eigenvalues
+closest to sigma are computed.</p>
+</dd>
+<dt>which</dt><dd><p>A string specifying which <code class="docutils literal notranslate"><span class="pre">k</span></code> eigenvalues and eigenvectors to compute:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'LM'</span></code>: select eigenvalues with largest magnitude</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'SM'</span></code>: select eigenvalues with smallest magnitude</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'LR'</span></code>: select eigenvalues with largest real part</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'SR'</span></code>: select eigenvalues with smallest real part</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'LI'</span></code>: select eigenvalues with largest imaginary part</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'SI'</span></code>: select eigenvalues with smallest imaginary part</p></li>
+</ul>
+</dd>
+<dt>b</dt><dd><p>Initial vector for Arnoldi iteration. Default is a random vector.</p>
+</dd>
+<dt>l</dt><dd><p>The size of the Arnoldi factorization. Default is <code class="docutils literal notranslate"><span class="pre">min(n</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">max(2*k</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">20))</span></code>.</p>
+</dd>
+<dt>maxiter</dt><dd><p>The maximum number of iterations.</p>
+</dd>
+<dt>complex_evp</dt><dd><p>Wether to consider an eigenvalue problem with complex operators. When operators
+are real setting this argument to <code class="docutils literal notranslate"><span class="pre">False</span></code> will increase stability and performance.</p>
+</dd>
+<dt>left_evp</dt><dd><p>If set to <code class="docutils literal notranslate"><span class="pre">True</span></code> compute left eigenvectors else compute right eigenvectors.</p>
+</dd>
+<dt>seed</dt><dd><p>Random seed which is used for computing the initial vector for the Arnoldi
+iteration.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-returns admonition">
+<p class="admonition-title">Returns</p>
+<dl class="simple">
+<dt>w</dt><dd><p>A 1D <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> which contains the computed eigenvalues.</p>
+</dd>
+<dt>V</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> which contains the computed eigenvectors.</p>
 </dd>
 </dl>
 </div>
@@ -782,7 +911,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
               
           </div>
             Last updated on
-              Feb 01, 2022.
+              Feb 04, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.

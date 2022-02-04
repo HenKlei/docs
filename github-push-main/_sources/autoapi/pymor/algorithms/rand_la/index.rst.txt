@@ -16,6 +16,8 @@ Functions
 
    pymor.algorithms.rand_la.adaptive_rrf
    pymor.algorithms.rand_la.rrf
+   pymor.algorithms.rand_la.random_generalized_svd
+   pymor.algorithms.rand_la.random_ghep
 
 
 
@@ -61,7 +63,7 @@ Functions
            |VectorArray| which contains the basis, whose span approximates the range of A.
            
 
-.. py:function:: rrf(A, source_product=None, range_product=None, q=2, l=8, iscomplex=False)
+.. py:function:: rrf(A, source_product=None, range_product=None, q=2, l=8, return_rand=False, iscomplex=False)
 
    Randomized range approximation of `A`.
 
@@ -82,6 +84,8 @@ Functions
            The number of power iterations.
        l
            The block size of the normalized power iterations.
+       return_rand
+           If 'True', the randomly sampled |VectorArray| R is returned.
        iscomplex
            If `True`, the random vectors are chosen complex.
            
@@ -89,5 +93,124 @@ Functions
 
        Q
            |VectorArray| which contains the basis, whose span approximates the range of A.
+       R
+           The randomly sampled |VectorArray|
+           
+
+.. py:function:: random_generalized_svd(A, range_product=None, source_product=None, modes=3, p=20, q=2)
+
+   Randomized SVD of a |VectorArray| or an |Operator|.
+
+   Saibaba AK, Hart J, van BloemenWaanders B. Randomized algorithms for
+   generalized singular value decomposition with application to sensitivity analysis. Numer Linear Algebra Appl.
+   2021;28:e2364.
+   https://doi.org/10.1002/nla.2364
+
+   Viewing the 'A' as a 'A.dim' x 'len(A)' matrix, the return value
+   of this method is the randomized singular value decomposition of 'A', where the
+   inner product on R^('dim(A)') is given by 'range_product' and the inner product on R^('len(A)')
+   is given by 'source_product'.
+
+       A = U*\Sigma*V*source_product
+
+   .. admonition:: Parameters
+
+       A
+           The |VectorArray| or |Operator| for which the randomized SVD is to be computed.
+       range_product
+           Range product |Operator| w.r.t which the randomized SVD is computed
+       source_product
+           Source product |Operator| w.r.t which the randomized SVD is computed
+       modes
+           The first 'modes' approximated singular values and vectors are returned.
+       p
+           If not '0', adds 'Oversampling' colums to the randomly sampled matrix.
+       q
+           If not '0', performs 'q' so called power iterations to increase the relative weight
+           of the first singular values.
+           
+   .. admonition:: Returns
+
+       U
+           |VectorArray| of approximated left singular vectors
+       s
+           One-dimensional |NumPy array| of the approximated singular values
+       V
+           |VectorArray| of the approximated right singular vectors
+           
+
+.. py:function:: random_ghep(A, E=None, modes=3, p=20, q=2, single_pass=False, sigma=None, which='LM', b=None, l=None, maxiter=1000, tol=1e-13, imag_tol=1e-12, complex_pair_tol=1e-12, complex_evp=False, left_evp=False, seed=0)
+
+   Approximates a few eigenvalues of a linear |Operator| with randomized methods.
+
+   Approximates `modes` eigenvalues `w` with corresponding eigenvectors `v` which solve
+   the eigenvalue problem.
+
+   This is an implementation of algorithm 6 and 7 in
+   Saibaba AK, Lee J. and Kitanidis PK
+   Randomized algorithms for generalized Hermitian eigenvalue problems with application to computing
+   Karhunen Loeve expansion
+   https://arxiv.org/abs/1307.6885
+
+   .. math::
+       A v_i = w_i v_i
+
+   or the generalized eigenvalue problem
+
+   .. math::
+       A v_i = w_i E v_i
+
+   if `E` is not `None`.
+
+   .. admonition:: Parameters
+
+       A
+           The linear |Operator| for which the eigenvalues are to be computed.
+       E
+           The linear |Operator| which defines the generalized eigenvalue problem.
+       modes
+           The number of eigenvalues and eigenvectors which are to be computed.
+       p
+           If not '0', adds 'p' colums to the randomly sampled matrix in the randrangefinder.rff() method.
+           Often called Oversampling parameter.
+       q
+           If not '0', performs 'q' PowerIterations to increase the relative weight
+           of the bigger singular values.
+       single_pass
+           If 'True', computes the ghep where only one set of matvec Ax is required.
+           If 'False' the methods requires two sets of matvecs Ax.
+       sigma
+           If not `None` transforms the eigenvalue problem such that the k eigenvalues
+           closest to sigma are computed.
+       which
+           A string specifying which `k` eigenvalues and eigenvectors to compute:
+           
+           - `'LM'`: select eigenvalues with largest magnitude
+           - `'SM'`: select eigenvalues with smallest magnitude
+           - `'LR'`: select eigenvalues with largest real part
+           - `'SR'`: select eigenvalues with smallest real part
+           - `'LI'`: select eigenvalues with largest imaginary part
+           - `'SI'`: select eigenvalues with smallest imaginary part
+       b
+           Initial vector for Arnoldi iteration. Default is a random vector.
+       l
+           The size of the Arnoldi factorization. Default is `min(n - 1, max(2*k + 1, 20))`.
+       maxiter
+           The maximum number of iterations.
+       complex_evp
+           Wether to consider an eigenvalue problem with complex operators. When operators
+           are real setting this argument to `False` will increase stability and performance.
+       left_evp
+           If set to `True` compute left eigenvectors else compute right eigenvectors.
+       seed
+           Random seed which is used for computing the initial vector for the Arnoldi
+           iteration.
+           
+   .. admonition:: Returns
+
+       w
+           A 1D |NumPy array| which contains the computed eigenvalues.
+       V
+           A |VectorArray| which contains the computed eigenvectors.
            
 
