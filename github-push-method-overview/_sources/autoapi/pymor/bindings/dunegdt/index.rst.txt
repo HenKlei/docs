@@ -1,0 +1,291 @@
+:mod:`pymor.bindings.dunegdt`
+=============================
+
+.. py:module:: pymor.bindings.dunegdt
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.bindings.dunegdt.DuneXTVector
+   pymor.bindings.dunegdt.ComplexifiedDuneXTVector
+   pymor.bindings.dunegdt.DuneXTVectorSpace
+   pymor.bindings.dunegdt.DuneXTMatrixOperator
+
+
+
+
+.. py:class:: DuneXTVector(impl)
+
+   Bases: :py:obj:`pymor.vectorarrays.list.CopyOnWriteVector`
+
+   Wraps a vector from dune-xt to make it usable with ListVectorArray.
+
+   .. admonition:: Parameters
+
+       impl
+           The actual vector from dune.xt.la, usually IstlVector.
+           
+   .. py:attribute:: __radd__
+      
+
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.bindings.dunegdt.DuneXTVector.from_instance
+      pymor.bindings.dunegdt.DuneXTVector._copy_data
+      pymor.bindings.dunegdt.DuneXTVector._scal
+      pymor.bindings.dunegdt.DuneXTVector._axpy
+      pymor.bindings.dunegdt.DuneXTVector.inner
+      pymor.bindings.dunegdt.DuneXTVector.norm
+      pymor.bindings.dunegdt.DuneXTVector.norm2
+      pymor.bindings.dunegdt.DuneXTVector.sup_norm
+      pymor.bindings.dunegdt.DuneXTVector.dofs
+      pymor.bindings.dunegdt.DuneXTVector.amax
+      pymor.bindings.dunegdt.DuneXTVector.__add__
+      pymor.bindings.dunegdt.DuneXTVector.__iadd__
+      pymor.bindings.dunegdt.DuneXTVector.__sub__
+      pymor.bindings.dunegdt.DuneXTVector.__isub__
+      pymor.bindings.dunegdt.DuneXTVector.__mul__
+      pymor.bindings.dunegdt.DuneXTVector.__imul__
+      pymor.bindings.dunegdt.DuneXTVector.__neg__
+      pymor.bindings.dunegdt.DuneXTVector.to_numpy
+
+
+   .. py:method:: from_instance(cls, instance)
+      :classmethod:
+
+
+   .. py:method:: _copy_data(self)
+
+
+   .. py:method:: _scal(self, alpha)
+
+
+   .. py:method:: _axpy(self, alpha, x)
+
+
+   .. py:method:: inner(self, other)
+
+
+   .. py:method:: norm(self)
+
+
+   .. py:method:: norm2(self)
+
+
+   .. py:method:: sup_norm(self)
+
+
+   .. py:method:: dofs(self, dof_indices)
+
+
+   .. py:method:: amax(self)
+
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __iadd__(self, other)
+
+
+   .. py:method:: __sub__(self, other)
+
+
+   .. py:method:: __isub__(self, other)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __imul__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+   .. py:method:: to_numpy(self, ensure_copy=False)
+
+
+
+.. py:class:: ComplexifiedDuneXTVector(real_part, imag_part)
+
+   Bases: :py:obj:`pymor.vectorarrays.list.ComplexifiedVector`
+
+   Required for DuneXTVectorSpace, Usually not to be used directly.
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.bindings.dunegdt.ComplexifiedDuneXTVector.amax
+
+
+   .. py:method:: amax(self)
+
+
+
+.. py:class:: DuneXTVectorSpace(dim, dune_vector_type=IstlVector, id='STATE')
+
+   Bases: :py:obj:`pymor.vectorarrays.list.ComplexifiedListVectorSpace`
+
+   A |VectorSpace| yielding DuneXTVector
+
+   .. admonition:: Parameters
+
+       dim
+           Dimension of the |VectorSpace|, i.e., length of the resulting vectors.
+       vector_type
+           Type of the actual vector from dune.xt.la, usually IstlVector.
+       id
+           Identifier of the |VectorSpace|.
+           
+   .. py:attribute:: real_vector_type
+      
+
+      
+
+   .. py:attribute:: vector_type
+      
+
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.bindings.dunegdt.DuneXTVectorSpace.__eq__
+      pymor.bindings.dunegdt.DuneXTVectorSpace.__hash__
+      pymor.bindings.dunegdt.DuneXTVectorSpace.real_zero_vector
+      pymor.bindings.dunegdt.DuneXTVectorSpace.real_full_vector
+      pymor.bindings.dunegdt.DuneXTVectorSpace.real_random_vector
+      pymor.bindings.dunegdt.DuneXTVectorSpace.real_vector_from_numpy
+      pymor.bindings.dunegdt.DuneXTVectorSpace.real_make_vector
+
+
+   .. py:method:: __eq__(self, other)
+
+      Return self==value.
+
+
+   .. py:method:: __hash__(self)
+
+      Return hash(self).
+
+
+   .. py:method:: real_zero_vector(self)
+
+
+   .. py:method:: real_full_vector(self, value)
+
+
+   .. py:method:: real_random_vector(self, distribution, random_state, **kwargs)
+
+
+   .. py:method:: real_vector_from_numpy(self, data, ensure_copy=False)
+
+
+   .. py:method:: real_make_vector(self, obj)
+
+
+
+.. py:class:: DuneXTMatrixOperator(matrix, source_id='STATE', range_id='STATE', solver_options=None, name=None)
+
+   Bases: :py:obj:`pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase`
+
+   Wraps a dune-xt matrix as an |Operator|.
+
+   .. admonition:: Parameters
+
+       matrix
+           The actual matrix from dune.xt.la, usually IstlMatrix.
+       source_id
+           Identifier of the source |VectorSpace|.
+       range_id
+           Identifier of the source |VectorSpace|.
+       solver_options
+           If specified, either a string or a dict specifying the solver used in apply_inverse. See
+           https://zivgitlab.uni-muenster.de/ag-ohlberger/dune-community/dune-xt/-/tree/master/dune/xt/la/solver
+           for available options, depending on the type of `matrix`. E.g., for
+           dune.xt.la.IstlSparseMatrix, (as can be queried from dune.xt.la.IstlSparseMatrixSolver
+           via `types()` and `options(type)`):
+           - 'bicgstab.ssor'
+           - 'bicgstab.amg.ssor'
+           - 'bicgstab.amg.ilu0'
+           - 'bicgstab.ilut'
+           - 'bicgstab'
+           - 'cg'
+       name
+           Optional name of the resulting |Operator|.
+           
+   .. py:attribute:: linear
+      :annotation: = True
+
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.bindings.dunegdt.DuneXTMatrixOperator._real_apply_one_vector
+      pymor.bindings.dunegdt.DuneXTMatrixOperator._apply_adjoint_one_vector
+      pymor.bindings.dunegdt.DuneXTMatrixOperator._real_apply_inverse_one_vector
+      pymor.bindings.dunegdt.DuneXTMatrixOperator._assemble_lincomb
+
+
+   .. py:method:: _real_apply_one_vector(self, u, mu=None, prepare_data=None)
+
+
+   .. py:method:: _apply_adjoint_one_vector(self, v, mu=None, prepare_data=None)
+
+
+   .. py:method:: _real_apply_inverse_one_vector(self, v, mu=None, initial_guess=None, least_squares=False, prepare_data=None)
+
+
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+
+      Try to assemble a linear combination of the given operators.
+
+      Returns a new |Operator| which represents the sum ::
+
+          c_1*O_1 + ... + c_N*O_N + s*I
+
+      where `O_i` are |Operators|, `c_i`, `s` scalar coefficients and `I` the identity.
+
+      This method is called in the :meth:`assemble` method of |LincombOperator| on
+      the first of its operators. If an assembly of the given linear combination
+      is possible, e.g. the linear combination of the system matrices of the
+      operators can be formed, then the assembled operator is returned.
+      Otherwise, the method returns `None` to indicate that assembly is not possible.
+
+      .. admonition:: Parameters
+
+          operators
+              List of |Operators| `O_i` whose linear combination is formed.
+          coefficients
+              List of the corresponding linear coefficients `c_i`.
+          identity_shift
+              The coefficient `s`.
+          solver_options
+              |solver_options| for the assembled operator.
+          name
+              Name of the assembled operator.
+              
+      .. admonition:: Returns
+
+          The assembled |Operator| if assembly is possible, otherwise `None`.
+              
+
+

@@ -1,0 +1,85 @@
+:mod:`pymor.tools.frozendict`
+=============================
+
+.. py:module:: pymor.tools.frozendict
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.frozendict.FrozenDict
+   pymor.tools.frozendict.SortedFrozenDict
+
+
+
+
+.. py:class:: FrozenDict(*args, **kwargs)
+
+   Bases: :py:obj:`dict`
+
+   An immutable dictionary.
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.tools.frozendict.FrozenDict._blocked_attribute
+      pymor.tools.frozendict.FrozenDict._post_init
+      pymor.tools.frozendict.FrozenDict.__repr__
+      pymor.tools.frozendict.FrozenDict.__reduce__
+
+
+   .. py:method:: _blocked_attribute(self)
+      :property:
+
+
+   .. py:method:: _post_init(self)
+
+
+   .. py:method:: __repr__(self)
+
+      Return repr(self).
+
+
+   .. py:method:: __reduce__(self)
+
+      Helper for pickle.
+
+
+
+.. py:class:: SortedFrozenDict(*args, **kwargs)
+
+   Bases: :py:obj:`FrozenDict`
+
+   A sorted immutable dictionary.
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.tools.frozendict.SortedFrozenDict.__repr__
+
+
+   .. py:method:: __repr__(self)
+
+      Return repr(self).
+
+
+

@@ -1,0 +1,437 @@
+:mod:`pymor.discretizers.builtin.grids.referenceelements`
+=========================================================
+
+.. py:module:: pymor.discretizers.builtin.grids.referenceelements
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.grids.referenceelements.Point
+   pymor.discretizers.builtin.grids.referenceelements.Line
+   pymor.discretizers.builtin.grids.referenceelements.Square
+   pymor.discretizers.builtin.grids.referenceelements.Triangle
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.grids.referenceelements.point
+   pymor.discretizers.builtin.grids.referenceelements.line
+   pymor.discretizers.builtin.grids.referenceelements.square
+   pymor.discretizers.builtin.grids.referenceelements.triangle
+
+
+.. py:class:: Point
+
+   Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.ReferenceElement`
+
+   Defines a reference element.
+
+   All reference elements have the property that all subentities of a given codimension are of the
+   same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
+   faces at the same time.
+
+   .. attribute:: dim
+
+      The dimension of the reference element
+
+   .. attribute:: volume
+
+      The volume of the reference element
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.discretizers.builtin.grids.referenceelements.Point.size
+      pymor.discretizers.builtin.grids.referenceelements.Point.subentities
+      pymor.discretizers.builtin.grids.referenceelements.Point.subentity_embedding
+      pymor.discretizers.builtin.grids.referenceelements.Point.sub_reference_element
+      pymor.discretizers.builtin.grids.referenceelements.Point.unit_outer_normals
+      pymor.discretizers.builtin.grids.referenceelements.Point.center
+      pymor.discretizers.builtin.grids.referenceelements.Point.mapped_diameter
+      pymor.discretizers.builtin.grids.referenceelements.Point.quadrature_info
+      pymor.discretizers.builtin.grids.referenceelements.Point.quadrature
+
+
+   .. py:method:: size(self, codim)
+
+      Number of subentities of codimension `codim`.
+
+
+   .. py:method:: subentities(self, codim, subentity_codim)
+
+      `subentities(c,sc)[i,j]` is, with respect to the indexing inside the
+      reference element, the index of the `j`-th codim-`subentity_codim`
+      subentity of the `i`-th codim-`codim` subentity of the reference element.
+
+
+   .. py:method:: subentity_embedding(self, subentity_codim)
+
+      Returns a tuple `(A, B)` which defines the embedding of the codim-`subentity_codim`
+      subentities into the reference element.
+
+      For `subentity_codim > 1', the embedding is by default given recursively via
+      `subentity_embedding(subentity_codim - 1)` and
+      `sub_reference_element(subentity_codim - 1).subentity_embedding(1)` choosing always
+      the superentity with smallest index.
+
+
+   .. py:method:: sub_reference_element(self, codim)
+
+      Returns the reference element of the codim-`codim` subentities.
+
+
+   .. py:method:: unit_outer_normals(self)
+
+      `retval[e]` is the unit outer-normal vector to the codim-1 subentity
+      with index `e`.
+
+
+   .. py:method:: center(self)
+
+      Coordinates of the barycenter.
+
+
+   .. py:method:: mapped_diameter(self, A)
+
+      The diameter of the reference element after transforming it with the
+      matrix `A` (vectorized).
+
+
+   .. py:method:: quadrature_info(self)
+
+      Returns a tuple of dicts `(O, N)` where `O[quadrature_type]` is a list
+      of orders which are implemented for `quadrature_type` and `N[quadrature_type]`
+      is a list of the corresponding numbers of integration points.
+
+
+   .. py:method:: quadrature(self, order=None, npoints=None, quadrature_type='default')
+
+      Returns tuple `(P, W)` where `P` is an array of quadrature points with
+      corresponding weights `W`.
+
+      The quadrature is of order `order` or has `npoints` integration points.
+
+
+
+.. py:data:: point
+   
+
+   
+
+.. py:class:: Line
+
+   Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.ReferenceElement`
+
+   Defines a reference element.
+
+   All reference elements have the property that all subentities of a given codimension are of the
+   same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
+   faces at the same time.
+
+   .. attribute:: dim
+
+      The dimension of the reference element
+
+   .. attribute:: volume
+
+      The volume of the reference element
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.discretizers.builtin.grids.referenceelements.Line.size
+      pymor.discretizers.builtin.grids.referenceelements.Line.subentities
+      pymor.discretizers.builtin.grids.referenceelements.Line.subentity_embedding
+      pymor.discretizers.builtin.grids.referenceelements.Line.sub_reference_element
+      pymor.discretizers.builtin.grids.referenceelements.Line.unit_outer_normals
+      pymor.discretizers.builtin.grids.referenceelements.Line.center
+      pymor.discretizers.builtin.grids.referenceelements.Line.mapped_diameter
+      pymor.discretizers.builtin.grids.referenceelements.Line.quadrature_info
+      pymor.discretizers.builtin.grids.referenceelements.Line.quadrature
+
+
+   .. py:method:: size(self, codim)
+
+      Number of subentities of codimension `codim`.
+
+
+   .. py:method:: subentities(self, codim, subentity_codim)
+
+      `subentities(c,sc)[i,j]` is, with respect to the indexing inside the
+      reference element, the index of the `j`-th codim-`subentity_codim`
+      subentity of the `i`-th codim-`codim` subentity of the reference element.
+
+
+   .. py:method:: subentity_embedding(self, subentity_codim)
+
+      Returns a tuple `(A, B)` which defines the embedding of the codim-`subentity_codim`
+      subentities into the reference element.
+
+      For `subentity_codim > 1', the embedding is by default given recursively via
+      `subentity_embedding(subentity_codim - 1)` and
+      `sub_reference_element(subentity_codim - 1).subentity_embedding(1)` choosing always
+      the superentity with smallest index.
+
+
+   .. py:method:: sub_reference_element(self, codim)
+
+      Returns the reference element of the codim-`codim` subentities.
+
+
+   .. py:method:: unit_outer_normals(self)
+
+      `retval[e]` is the unit outer-normal vector to the codim-1 subentity
+      with index `e`.
+
+
+   .. py:method:: center(self)
+
+      Coordinates of the barycenter.
+
+
+   .. py:method:: mapped_diameter(self, A)
+
+      The diameter of the reference element after transforming it with the
+      matrix `A` (vectorized).
+
+
+   .. py:method:: quadrature_info(self)
+
+      Returns a tuple of dicts `(O, N)` where `O[quadrature_type]` is a list
+      of orders which are implemented for `quadrature_type` and `N[quadrature_type]`
+      is a list of the corresponding numbers of integration points.
+
+
+   .. py:method:: quadrature(self, order=None, npoints=None, quadrature_type='default')
+
+      Returns tuple `(P, W)` where `P` is an array of quadrature points with
+      corresponding weights `W`.
+
+      The quadrature is of order `order` or has `npoints` integration points.
+
+
+
+.. py:data:: line
+   
+
+   
+
+.. py:class:: Square
+
+   Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.ReferenceElement`
+
+   Defines a reference element.
+
+   All reference elements have the property that all subentities of a given codimension are of the
+   same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
+   faces at the same time.
+
+   .. attribute:: dim
+
+      The dimension of the reference element
+
+   .. attribute:: volume
+
+      The volume of the reference element
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.discretizers.builtin.grids.referenceelements.Square.size
+      pymor.discretizers.builtin.grids.referenceelements.Square.subentities
+      pymor.discretizers.builtin.grids.referenceelements.Square.subentity_embedding
+      pymor.discretizers.builtin.grids.referenceelements.Square.sub_reference_element
+      pymor.discretizers.builtin.grids.referenceelements.Square.unit_outer_normals
+      pymor.discretizers.builtin.grids.referenceelements.Square.center
+      pymor.discretizers.builtin.grids.referenceelements.Square.mapped_diameter
+      pymor.discretizers.builtin.grids.referenceelements.Square.quadrature_info
+      pymor.discretizers.builtin.grids.referenceelements.Square.quadrature
+
+
+   .. py:method:: size(self, codim)
+
+      Number of subentities of codimension `codim`.
+
+
+   .. py:method:: subentities(self, codim, subentity_codim)
+
+      `subentities(c,sc)[i,j]` is, with respect to the indexing inside the
+      reference element, the index of the `j`-th codim-`subentity_codim`
+      subentity of the `i`-th codim-`codim` subentity of the reference element.
+
+
+   .. py:method:: subentity_embedding(self, subentity_codim)
+
+      Returns a tuple `(A, B)` which defines the embedding of the codim-`subentity_codim`
+      subentities into the reference element.
+
+      For `subentity_codim > 1', the embedding is by default given recursively via
+      `subentity_embedding(subentity_codim - 1)` and
+      `sub_reference_element(subentity_codim - 1).subentity_embedding(1)` choosing always
+      the superentity with smallest index.
+
+
+   .. py:method:: sub_reference_element(self, codim)
+
+      Returns the reference element of the codim-`codim` subentities.
+
+
+   .. py:method:: unit_outer_normals(self)
+
+      `retval[e]` is the unit outer-normal vector to the codim-1 subentity
+      with index `e`.
+
+
+   .. py:method:: center(self)
+
+      Coordinates of the barycenter.
+
+
+   .. py:method:: mapped_diameter(self, A)
+
+      The diameter of the reference element after transforming it with the
+      matrix `A` (vectorized).
+
+
+   .. py:method:: quadrature_info(self)
+
+      Returns a tuple of dicts `(O, N)` where `O[quadrature_type]` is a list
+      of orders which are implemented for `quadrature_type` and `N[quadrature_type]`
+      is a list of the corresponding numbers of integration points.
+
+
+   .. py:method:: quadrature(self, order=None, npoints=None, quadrature_type='default')
+
+      Returns tuple `(P, W)` where `P` is an array of quadrature points with
+      corresponding weights `W`.
+
+      The quadrature is of order `order` or has `npoints` integration points.
+
+
+
+.. py:data:: square
+   
+
+   
+
+.. py:class:: Triangle
+
+   Bases: :py:obj:`pymor.discretizers.builtin.grids.interfaces.ReferenceElement`
+
+   Defines a reference element.
+
+   All reference elements have the property that all subentities of a given codimension are of the
+   same type. I.e. a three-dimensional reference element cannot have triangles and rectangles as
+   faces at the same time.
+
+   .. attribute:: dim
+
+      The dimension of the reference element
+
+   .. attribute:: volume
+
+      The volume of the reference element
+      
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.size
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.subentities
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.subentity_embedding
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.sub_reference_element
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.unit_outer_normals
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.center
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.mapped_diameter
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature_info
+      pymor.discretizers.builtin.grids.referenceelements.Triangle.quadrature
+
+
+   .. py:method:: size(self, codim)
+
+      Number of subentities of codimension `codim`.
+
+
+   .. py:method:: subentities(self, codim, subentity_codim)
+
+      `subentities(c,sc)[i,j]` is, with respect to the indexing inside the
+      reference element, the index of the `j`-th codim-`subentity_codim`
+      subentity of the `i`-th codim-`codim` subentity of the reference element.
+
+
+   .. py:method:: subentity_embedding(self, subentity_codim)
+
+      Returns a tuple `(A, B)` which defines the embedding of the codim-`subentity_codim`
+      subentities into the reference element.
+
+      For `subentity_codim > 1', the embedding is by default given recursively via
+      `subentity_embedding(subentity_codim - 1)` and
+      `sub_reference_element(subentity_codim - 1).subentity_embedding(1)` choosing always
+      the superentity with smallest index.
+
+
+   .. py:method:: sub_reference_element(self, codim)
+
+      Returns the reference element of the codim-`codim` subentities.
+
+
+   .. py:method:: unit_outer_normals(self)
+
+      `retval[e]` is the unit outer-normal vector to the codim-1 subentity
+      with index `e`.
+
+
+   .. py:method:: center(self)
+
+      Coordinates of the barycenter.
+
+
+   .. py:method:: mapped_diameter(self, A)
+
+      The diameter of the reference element after transforming it with the
+      matrix `A` (vectorized).
+
+
+   .. py:method:: quadrature_info(self)
+
+      Returns a tuple of dicts `(O, N)` where `O[quadrature_type]` is a list
+      of orders which are implemented for `quadrature_type` and `N[quadrature_type]`
+      is a list of the corresponding numbers of integration points.
+
+
+   .. py:method:: quadrature(self, order=None, npoints=None, quadrature_type='default')
+
+      Returns tuple `(P, W)` where `P` is an array of quadrature points with
+      corresponding weights `W`.
+
+      The quadrature is of order `order` or has `npoints` integration points.
+
+
+
+.. py:data:: triangle
+   
+
+   
+

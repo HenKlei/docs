@@ -1,0 +1,138 @@
+:mod:`pymor.tools.io`
+=====================
+
+.. py:module:: pymor.tools.io
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   matrices <matrices/index.rst>
+   vtk <vtk/index.rst>
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.io.Deprecated
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.tools.io.load_matrix
+   pymor.tools.io.save_matrix
+   pymor.tools.io.read_vtkfile
+   pymor.tools.io.write_vtk_collection
+   pymor.tools.io.safe_temporary_filename
+   pymor.tools.io.change_to_directory
+   pymor.tools.io.file_owned_by_current_user
+
+
+
+.. py:function:: load_matrix(path, key=None)
+
+   Load matrix from file.
+
+   .. admonition:: Parameters
+
+       path
+           Path to the file (`str` or `pathlib.Path`).
+       key
+           Key of the matrix (only for NPY, NPZ, and MATLAB files).
+           
+   .. admonition:: Returns
+
+       matrix
+           |NumPy array| of |SciPy spmatrix|.
+           
+   .. admonition:: Raises
+
+       IOError
+           If loading fails.
+           
+
+.. py:function:: save_matrix(path, matrix, key=None)
+
+   Save matrix to file.
+
+   .. admonition:: Parameters
+
+       path
+           Path to the file (`str` or `pathlib.Path`).
+       matrix
+           Matrix to save.
+       key
+           Key of the matrix (only for NPY, NPZ, and MATLAB files).
+           
+   .. admonition:: Raises
+
+       IOError
+           If saving fails.
+           
+
+.. py:class:: Deprecated(alt='no alternative given')
+
+   Decorator for marking functions as deprecated.
+
+   It will result in a warning being emitted when the function is used.
+
+   **Methods**
+
+   .. autoapisummary::
+      :nosignatures:
+
+      pymor.tools.io.Deprecated.__call__
+      pymor.tools.io.Deprecated.__get__
+
+
+   .. py:method:: __call__(self, func)
+
+
+   .. py:method:: __get__(self, obj, ownerClass=None)
+
+      Return a wrapper that binds self as a method of obj (!)
+
+
+
+.. py:function:: read_vtkfile(*args, **kwargs)
+
+
+.. py:function:: write_vtk_collection(*args, **kwargs)
+
+
+.. py:function:: safe_temporary_filename(name=None, parent_dir=None)
+
+   Cross~platform safe equivalent of re-opening a NamedTemporaryFile.
+
+   Creates an automatically cleaned up temporary directory with a single file therein.
+
+   .. admonition:: Parameters
+
+       name
+           Filename component, defaults to 'temp_file'.
+       dir
+           The parent dir of the new temporary directory.
+           Defaults to tempfile.gettempdir().
+           
+
+.. py:function:: change_to_directory(name)
+
+   Change current working directory to `name` for the scope of the context.
+
+
+.. py:function:: file_owned_by_current_user(filename)
+
+
