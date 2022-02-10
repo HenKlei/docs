@@ -19,7 +19,7 @@ Functions
 
 
 
-.. py:function:: adaptive_rrf(A, source_product=None, range_product=None, tol=0.0001, failure_tolerance=1e-15, num_testvecs=20, lambda_min=None, iscomplex=False)
+.. py:function:: adaptive_rrf(A, source_product=None, range_product=None, tol=0.0001, failure_tolerance=1e-15, num_testvecs=20, lambda_min=None, iscomplex=False, random_state=None, seed=None)
 
    Adaptive randomized range approximation of `A`.
 
@@ -54,6 +54,13 @@ Functions
            If `None`, the smallest eigenvalue is computed using scipy.
        iscomplex
            If `True`, the random vectors are chosen complex.
+       random_state
+           :class:`~numpy.random.RandomState` to use for sampling.
+           If `None`, a new random state is generated using `seed`
+           as random seed, or the :func:`default <pymor.tools.random.default_random_state>`
+           random state is used.
+       seed
+           If not `None`, a new random state with this seed is used.
            
    .. admonition:: Returns
 
@@ -84,8 +91,13 @@ Functions
            The block size of the normalized power iterations.
        iscomplex
            If `True`, the random vectors are chosen complex.
+       random_state
+           :class:`~numpy.random.RandomState` to use for sampling.
+           If `None`, a new random state is generated using `seed`
+           as random seed, or the :func:`default <pymor.tools.random.default_random_state>`
+           random state is used.
        seed
-           The seed to use for the random samples, defaults to `None`.
+           If not `None`, a new random state with this seed is used.
            
    .. admonition:: Returns
 
