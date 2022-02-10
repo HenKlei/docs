@@ -1,0 +1,48 @@
+:mod:`pymor.models.loader`
+==========================
+
+.. py:module:: pymor.models.loader
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.models.loader.load_module
+   pymor.models.loader.construct_operator
+   pymor.models.loader.construct_model
+
+
+
+.. py:function:: load_module(path)
+
+   Creates model from configuration file.
+
+   Args:
+       path (string): Path to the configuration file relative to pymor_source.
+
+   Returns:
+       model: model as loaded from the file.
+
+
+.. py:function:: construct_operator(parameters, param_dict)
+
+   Constructs the operator specified in 'type' of the param_dict with the other key-value-pairs.
+
+   The possible operators are all subclasses of pymor.operators.
+
+
+.. py:function:: construct_model(model_parameters)
+
+   Constructs the model.model.
+
+   As specified in 'type' of the model_parameters with the other key-value-pairs.
+   The possible models are all subclasses of pymor.models.
+
+
