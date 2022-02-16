@@ -1,0 +1,102 @@
+:mod:`pymor.discretizers.builtin.quadratures`
+=============================================
+
+.. py:module:: pymor.discretizers.builtin.quadratures
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.quadratures.GaussQuadratures
+
+
+
+
+.. py:class:: GaussQuadratures
+
+   Gauss quadrature on the interval [0, 1]
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.builtin.quadratures.GaussQuadratures._determine_order
+         pymor.discretizers.builtin.quadratures.GaussQuadratures.iter_quadrature
+         pymor.discretizers.builtin.quadratures.GaussQuadratures.maxpoints
+         pymor.discretizers.builtin.quadratures.GaussQuadratures.quadrature
+
+
+
+   .. py:attribute:: order_map
+      
+
+      
+
+   .. py:attribute:: orders
+      
+
+      
+
+   .. py:attribute:: points
+      
+
+      
+
+   .. py:attribute:: weights
+      
+
+      
+
+   .. py:method:: _determine_order(cls, order=None, npoints=None)
+      :classmethod:
+
+
+   .. py:method:: iter_quadrature(cls, order=None, npoints=None)
+      :classmethod:
+
+      Iterate over a quadrature tuple-wise.
+
+      .. admonition:: Parameters
+
+          order
+              Integration order.
+          npoints
+              Number of integration points.
+              
+
+   .. py:method:: maxpoints(cls)
+      :classmethod:
+
+
+   .. py:method:: quadrature(cls, order=None, npoints=None)
+      :classmethod:
+
+      Return Gauss points with corresponding weights.
+
+      .. admonition:: Parameters
+
+          order
+              Integration order.
+          npoints
+              Number of integration points.
+              
+      .. admonition:: Returns
+
+          points
+              Array of Gauss points.
+          weights
+              Integration weights.
+              
+
+

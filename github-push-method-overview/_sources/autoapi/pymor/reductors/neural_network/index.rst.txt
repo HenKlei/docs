@@ -1,0 +1,596 @@
+:mod:`pymor.reductors.neural_network`
+=====================================
+
+.. py:module:: pymor.reductors.neural_network
+
+.. autoapi-nested-parse::
+
+   Remark on the documentation:
+
+   Due to an issue in autoapi, the classes `NeuralNetworkStatefreeOutputReductor`,
+   `NeuralNetworkInstationaryReductor`, `NeuralNetworkInstationaryStatefreeOutputReductor`,
+   `EarlyStoppingScheduler` and `CustomDataset` do not appear in the documentation,
+   see https://github.com/pymor/pymor/issues/1343.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.reductors.neural_network.CustomDataset
+   pymor.reductors.neural_network.EarlyStoppingScheduler
+   pymor.reductors.neural_network.NeuralNetworkInstationaryReductor
+   pymor.reductors.neural_network.NeuralNetworkInstationaryStatefreeOutputReductor
+   pymor.reductors.neural_network.NeuralNetworkReductor
+   pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.reductors.neural_network.multiple_restarts_training
+   pymor.reductors.neural_network.train_neural_network
+
+
+
+.. py:class:: CustomDataset(training_data)
+
+   Bases: :py:obj:`torch.utils.data.Dataset`
+
+   Class that represents the dataset to use in PyTorch.
+
+   .. admonition:: Parameters
+
+       training_data
+           Set of training parameters and the respective coefficients of the
+           solution in the reduced basis.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.reductors.neural_network.CustomDataset.__getitem__
+         pymor.reductors.neural_network.CustomDataset.__len__
+
+
+
+   .. py:method:: __getitem__(self, idx)
+
+
+   .. py:method:: __len__(self)
+
+
+
+.. py:class:: EarlyStoppingScheduler(size_training_validation_set, patience=10, delta=0.0)
+
+   Bases: :py:obj:`pymor.core.base.BasicObject`
+
+   Class for performing early stopping in training of neural networks.
+
+   If the validation loss does not decrease over a certain amount of epochs, the
+   training should be aborted to avoid overfitting the training data.
+   This class implements an early stopping scheduler that recommends to stop the
+   training process if the validation loss did not decrease by at least `delta`
+   over `patience` epochs.
+
+   .. admonition:: Parameters
+
+       size_training_validation_set
+           Size of both, training and validation set together.
+       patience
+           Number of epochs of non-decreasing validation loss allowed, before early
+           stopping the training process.
+       delta
+           Minimal amount of decrease in the validation loss that is required to reset
+           the counter of non-decreasing epochs.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.reductors.neural_network.EarlyStoppingScheduler.__call__
+
+
+
+   .. py:method:: __call__(self, losses, neural_network=None)
+
+      Returns `True` if early stopping of training is suggested.
+
+      .. admonition:: Parameters
+
+          losses
+              Dictionary of losses on the validation and the training set in
+              the current epoch.
+          neural_network
+              Neural network that produces the current validation loss.
+              
+      .. admonition:: Returns
+
+          `True` if early stopping is suggested, `False` otherwise.
+              
+
+
+.. py:class:: NeuralNetworkInstationaryReductor(fom, training_set, validation_set=None, validation_ratio=0.1, basis_size=None, rtol=0.0, atol=0.0, l2_err=0.0, pod_params=None, ann_mse='like_basis')
+
+   Bases: :py:obj:`NeuralNetworkReductor`
+
+   Reduced Basis reductor for instationary problems relying on artificial neural networks.
+
+   This is a reductor that constructs a reduced basis using proper
+   orthogonal decomposition and trains a neural network that approximates
+   the mapping from parameter and time space to coefficients of the
+   full-order solution in the reduced basis.
+   The approach is described in :cite:`WHR19`.
+
+   .. admonition:: Parameters
+
+       fom
+           The full-order |Model| to reduce.
+       training_set
+           Set of |parameter values| to use for POD and training of the
+           neural network.
+       validation_set
+           Set of |parameter values| to use for validation in the training
+           of the neural network.
+       validation_ratio
+           Fraction of the training set to use for validation in the training
+           of the neural network (only used if no validation set is provided).
+       basis_size
+           Desired size of the reduced basis. If `None`, rtol, atol or l2_err must
+           be provided.
+       rtol
+           Relative tolerance the basis should guarantee on the training set.
+       atol
+           Absolute tolerance the basis should guarantee on the training set.
+       l2_err
+           L2-approximation error the basis should not exceed on the training
+           set.
+       pod_params
+           Dict of additional parameters for the POD-method.
+       ann_mse
+           If `'like_basis'`, the mean squared error of the neural network on
+           the training set should not exceed the error of projecting onto the basis.
+           If `None`, the neural network with smallest validation error is
+           used to build the ROM.
+           If a tolerance is prescribed, the mean squared error of the neural
+           network on the training set should not exceed this threshold.
+           Training is interrupted if a neural network that undercuts the
+           error tolerance is found.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.reductors.neural_network.NeuralNetworkInstationaryReductor._build_rom
+         pymor.reductors.neural_network.NeuralNetworkInstationaryReductor._compute_layer_sizes
+         pymor.reductors.neural_network.NeuralNetworkInstationaryReductor._compute_sample
+         pymor.reductors.neural_network.NeuralNetworkInstationaryReductor.compute_training_data
+
+
+
+   .. py:method:: _build_rom(self)
+
+      Construct the reduced order model.
+
+
+   .. py:method:: _compute_layer_sizes(self, hidden_layers)
+
+      Compute the number of neurons in the layers of the neural network
+
+      (make sure to increase the input dimension to account for the time).
+
+
+   .. py:method:: _compute_sample(self, mu, u=None)
+
+      Transform parameter and corresponding solution to |NumPy arrays|.
+
+      This function takes care of including the time instances in the inputs.
+
+
+   .. py:method:: compute_training_data(self)
+
+      Compute a reduced basis using proper orthogonal decomposition.
+
+
+
+.. py:class:: NeuralNetworkInstationaryStatefreeOutputReductor(fom, nt, training_set, validation_set=None, validation_ratio=0.1, validation_loss=None)
+
+   Bases: :py:obj:`NeuralNetworkStatefreeOutputReductor`
+
+   Output reductor relying on artificial neural networks.
+
+   This is a reductor that trains a neural network that approximates
+   the mapping from parameter space to output space.
+
+   .. admonition:: Parameters
+
+       fom
+           The full-order |Model| to reduce.
+       nt
+           Number of time steps in the reduced order model (does not have to
+           coincide with the number of time steps in the full order model).
+       training_set
+           Set of |parameter values| to use for POD and training of the
+           neural network.
+       validation_set
+           Set of |parameter values| to use for validation in the training
+           of the neural network.
+       validation_ratio
+           Fraction of the training set to use for validation in the training
+           of the neural network (only used if no validation set is provided).
+       validation_loss
+           The validation loss to reach during training. If `None`, the neural
+           network with the smallest validation loss is returned.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.reductors.neural_network.NeuralNetworkInstationaryStatefreeOutputReductor._build_rom
+         pymor.reductors.neural_network.NeuralNetworkInstationaryStatefreeOutputReductor._compute_layer_sizes
+         pymor.reductors.neural_network.NeuralNetworkInstationaryStatefreeOutputReductor._compute_sample
+
+
+
+   .. py:method:: _build_rom(self)
+
+      Construct the reduced order model.
+
+
+   .. py:method:: _compute_layer_sizes(self, hidden_layers)
+
+      Compute the number of neurons in the layers of the neural network.
+
+
+   .. py:method:: _compute_sample(self, mu)
+
+      Transform parameter and corresponding output to |NumPy arrays|.
+
+      This function takes care of including the time instances in the inputs.
+
+
+
+.. py:class:: NeuralNetworkReductor(fom, training_set, validation_set=None, validation_ratio=0.1, basis_size=None, rtol=0.0, atol=0.0, l2_err=0.0, pod_params=None, ann_mse='like_basis')
+
+   Bases: :py:obj:`pymor.core.base.BasicObject`
+
+   Reduced Basis reductor relying on artificial neural networks.
+
+   This is a reductor that constructs a reduced basis using proper
+   orthogonal decomposition and trains a neural network that approximates
+   the mapping from parameter space to coefficients of the full-order
+   solution in the reduced basis.
+   The approach is described in :cite:`HU18`.
+
+   .. admonition:: Parameters
+
+       fom
+           The full-order |Model| to reduce.
+       training_set
+           Set of |parameter values| to use for POD and training of the
+           neural network.
+       validation_set
+           Set of |parameter values| to use for validation in the training
+           of the neural network.
+       validation_ratio
+           Fraction of the training set to use for validation in the training
+           of the neural network (only used if no validation set is provided).
+       basis_size
+           Desired size of the reduced basis. If `None`, rtol, atol or l2_err must
+           be provided.
+       rtol
+           Relative tolerance the basis should guarantee on the training set.
+       atol
+           Absolute tolerance the basis should guarantee on the training set.
+       l2_err
+           L2-approximation error the basis should not exceed on the training
+           set.
+       pod_params
+           Dict of additional parameters for the POD-method.
+       ann_mse
+           If `'like_basis'`, the mean squared error of the neural network on
+           the training set should not exceed the error of projecting onto the basis.
+           If `None`, the neural network with smallest validation error is
+           used to build the ROM.
+           If a tolerance is prescribed, the mean squared error of the neural
+           network on the training set should not exceed this threshold.
+           Training is interrupted if a neural network that undercuts the
+           error tolerance is found.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.reductors.neural_network.NeuralNetworkReductor._build_rom
+         pymor.reductors.neural_network.NeuralNetworkReductor._check_tolerances
+         pymor.reductors.neural_network.NeuralNetworkReductor._compute_layer_sizes
+         pymor.reductors.neural_network.NeuralNetworkReductor._compute_sample
+         pymor.reductors.neural_network.NeuralNetworkReductor._compute_target_loss
+         pymor.reductors.neural_network.NeuralNetworkReductor.compute_training_data
+         pymor.reductors.neural_network.NeuralNetworkReductor.reconstruct
+         pymor.reductors.neural_network.NeuralNetworkReductor.reduce
+
+
+
+   .. py:method:: _build_rom(self)
+
+      Construct the reduced order model.
+
+
+   .. py:method:: _check_tolerances(self)
+
+      Check if trained neural network is sufficient to guarantee certain error bounds.
+
+
+   .. py:method:: _compute_layer_sizes(self, hidden_layers)
+
+      Compute the number of neurons in the layers of the neural network.
+
+
+   .. py:method:: _compute_sample(self, mu, u=None)
+
+      Transform parameter and corresponding solution to |NumPy arrays|.
+
+
+   .. py:method:: _compute_target_loss(self)
+
+      Compute target loss depending on value of `ann_mse`.
+
+
+   .. py:method:: compute_training_data(self)
+
+      Compute a reduced basis using proper orthogonal decomposition.
+
+
+   .. py:method:: reconstruct(self, u)
+
+      Reconstruct high-dimensional vector from reduced vector `u`.
+
+
+   .. py:method:: reduce(self, hidden_layers='[(N+P)*3, (N+P)*3]', activation_function=torch.tanh, optimizer=optim.LBFGS, epochs=1000, batch_size=20, learning_rate=1.0, restarts=10, seed=0)
+
+      Reduce by training artificial neural networks.
+
+      .. admonition:: Parameters
+
+          hidden_layers
+              Number of neurons in the hidden layers. Can either be fixed or
+              a Python expression string depending on the reduced basis size
+              respectively output dimension `N` and the total dimension of
+              the |Parameters| `P`.
+          activation_function
+              Activation function to use between the hidden layers.
+          optimizer
+              Algorithm to use as optimizer during training.
+          epochs
+              Maximum number of epochs for training.
+          batch_size
+              Batch size to use if optimizer allows mini-batching.
+          learning_rate
+              Step size to use in each optimization step.
+          restarts
+              Number of restarts of the training algorithm. Since the training
+              results highly depend on the initial starting point, i.e. the
+              initial weights and biases, it is advisable to train multiple
+              neural networks by starting with different initial values and
+              choose that one performing best on the validation set.
+          seed
+              Seed to use for various functions in PyTorch. Using a fixed seed,
+              it is possible to reproduce former results.
+              
+      .. admonition:: Returns
+
+          rom
+              Reduced-order |NeuralNetworkModel|.
+              
+
+
+.. py:class:: NeuralNetworkStatefreeOutputReductor(fom, training_set, validation_set=None, validation_ratio=0.1, validation_loss=None)
+
+   Bases: :py:obj:`NeuralNetworkReductor`
+
+   Output reductor relying on artificial neural networks.
+
+   This is a reductor that trains a neural network that approximates
+   the mapping from parameter space to output space.
+
+   .. admonition:: Parameters
+
+       fom
+           The full-order |Model| to reduce.
+       training_set
+           Set of |parameter values| to use for POD and training of the
+           neural network.
+       validation_set
+           Set of |parameter values| to use for validation in the training
+           of the neural network.
+       validation_ratio
+           Fraction of the training set to use for validation in the training
+           of the neural network (only used if no validation set is provided).
+       validation_loss
+           The validation loss to reach during training. If `None`, the neural
+           network with the smallest validation loss is returned.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor._build_rom
+         pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor._check_tolerances
+         pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor._compute_layer_sizes
+         pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor._compute_sample
+         pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor._compute_target_loss
+         pymor.reductors.neural_network.NeuralNetworkStatefreeOutputReductor.compute_training_data
+
+
+
+   .. py:method:: _build_rom(self)
+
+      Construct the reduced order model.
+
+
+   .. py:method:: _check_tolerances(self)
+
+      Check if trained neural network is sufficient to guarantee certain error bounds.
+
+
+   .. py:method:: _compute_layer_sizes(self, hidden_layers)
+
+      Compute the number of neurons in the layers of the neural network.
+
+
+   .. py:method:: _compute_sample(self, mu)
+
+      Transform parameter and corresponding output to tensors.
+
+
+   .. py:method:: _compute_target_loss(self)
+
+      Compute target loss depending on value of `ann_mse`.
+
+
+   .. py:method:: compute_training_data(self)
+
+      Compute the training samples (the outputs to the parameters of the training set).
+
+
+
+.. py:function:: multiple_restarts_training(training_data, validation_data, neural_network, target_loss=None, max_restarts=10, training_parameters={}, seed=None)
+
+   Algorithm that performs multiple restarts of neural network training.
+
+   This method either performs a predefined number of restarts and returns
+   the best trained network or tries to reach a given target loss and
+   stops training when the target loss is reached.
+
+   See :func:`train_neural_network` for more information on the parameters.
+
+   .. admonition:: Parameters
+
+       training_data
+           Data to use during the training phase.
+       validation_data
+           Data to use during the validation phase.
+       target_loss
+           Loss to reach during training (if `None`, the network with the
+           smallest loss is returned).
+       max_restarts
+           Maximum number of restarts to perform.
+       neural_network
+           The neural network to train (parameters will be reset after each
+           restart).
+           
+   .. admonition:: Returns
+
+       best_neural_network
+           The best trained neural network.
+       losses
+           The corresponding losses.
+           
+   .. admonition:: Raises
+
+       NeuralNetworkTrainingFailed
+           Raised if prescribed loss can not be reached within the given number
+           of restarts.
+           
+
+.. py:function:: train_neural_network(training_data, validation_data, neural_network, training_parameters={})
+
+   Training algorithm for artificial neural networks.
+
+   Trains a single neural network using the given training and validation data.
+
+   .. admonition:: Parameters
+
+       training_data
+           Data to use during the training phase. Has to be a list of tuples,
+           where each tuple consists of two elements that are either
+           PyTorch-tensors (`torch.DoubleTensor`) or |NumPy arrays| or pyMOR data
+           structures that have `to_numpy()` implemented.
+           The first element contains the input data, the second element contains
+           the target values.
+       validation_data
+           Data to use during the validation phase. Has to be a list of tuples,
+           where each tuple consists of two elements that are either
+           PyTorch-tensors (`torch.DoubleTensor`) or |NumPy arrays| or pyMOR data
+           structures that have `to_numpy()` implemented.
+           The first element contains the input data, the second element contains
+           the target values.
+       neural_network
+           The neural network to train (can also be a pre-trained model).
+           Has to be a PyTorch-Module.
+       training_parameters
+           Dictionary with additional parameters for the training routine like
+           the type of the optimizer, the (maximum) number of epochs, the batch
+           size, the learning rate or the loss function to use.
+           Possible keys are `'optimizer'` (an optimizer from the PyTorch `optim`
+           package; if not provided, the LBFGS-optimizer is taken as default),
+           `'epochs'` (an integer that determines the number of epochs to use
+           for training the neural network (if training is not interrupted
+           prematurely due to early stopping); if not provided, 1000 is taken as
+           default value), `'batch_size'` (an integer that determines the number
+           of samples to pass to the optimizer at once; if not provided, 20 is
+           taken as default value; not used in the case of the LBFGS-optimizer
+           since LBFGS does not support mini-batching), `'learning_rate'` (a
+           positive real number used as the (initial) step size of the optimizer;
+           if not provided, 1 is taken as default value; thus far, no learning
+           rate schedulers are supported in this implementation), and
+           `'loss_function'` (a loss function from PyTorch; if not provided, the
+           MSE loss is taken as default).
+           
+   .. admonition:: Returns
+
+       best_neural_network
+           The best trained neural network with respect to validation loss.
+       losses
+           The corresponding losses as a dictionary with keys `'full'` (for the
+           full loss containing the training and the validation average loss),
+           `'train'` (for the average loss on the training set), and `'val'`
+           (for the average loss on the validation set).
+           
+

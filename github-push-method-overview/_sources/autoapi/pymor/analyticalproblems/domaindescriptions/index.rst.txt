@@ -1,0 +1,502 @@
+:mod:`pymor.analyticalproblems.domaindescriptions`
+==================================================
+
+.. py:module:: pymor.analyticalproblems.domaindescriptions
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.analyticalproblems.domaindescriptions.CircleDomain
+   pymor.analyticalproblems.domaindescriptions.CircularSectorDomain
+   pymor.analyticalproblems.domaindescriptions.CylindricalDomain
+   pymor.analyticalproblems.domaindescriptions.DiscDomain
+   pymor.analyticalproblems.domaindescriptions.DomainDescription
+   pymor.analyticalproblems.domaindescriptions.LineDomain
+   pymor.analyticalproblems.domaindescriptions.PolygonalDomain
+   pymor.analyticalproblems.domaindescriptions.RectDomain
+   pymor.analyticalproblems.domaindescriptions.TorusDomain
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.analyticalproblems.domaindescriptions.KNOWN_BOUNDARY_TYPES
+
+
+.. py:class:: CircleDomain(domain=(0, 1))
+
+   Bases: :py:obj:`DomainDescription`
+
+   Describes a domain with the topology of a circle, i.e. a line with
+   identified end points.
+
+   .. admonition:: Parameters
+
+       domain
+           List [x_l, x_r] providing the left and right endpoint.
+           
+   .. attribute:: domain
+
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.analyticalproblems.domaindescriptions.CircleDomain.width
+
+
+
+   .. py:attribute:: dim
+      :annotation: = 1
+
+      
+
+   .. py:method:: width(self)
+      :property:
+
+
+
+.. py:class:: CircularSectorDomain(angle, radius, arc='dirichlet', radii='dirichlet', num_points=100)
+
+   Bases: :py:obj:`PolygonalDomain`
+
+   Describes a circular sector domain of variable radius.
+
+   .. admonition:: Parameters
+
+       angle
+           The angle between 0 and 2*pi of the circular sector.
+       radius
+           The radius of the circular sector.
+       arc
+           The boundary type of the arc.
+       radii
+           The boundary type of the two radii.
+       num_points
+           The number of points of the polygonal chain approximating the circular
+           boundary.
+           
+   .. attribute:: angle
+
+   .. attribute:: radius
+
+   .. attribute:: arc
+
+   .. attribute:: radii
+
+   .. attribute:: num_points
+
+      
+
+
+
+
+
+
+
+.. py:class:: CylindricalDomain(domain=([0, 0], [1, 1]), top='dirichlet', bottom='dirichlet')
+
+   Bases: :py:obj:`DomainDescription`
+
+   Describes a cylindrical domain.
+
+   Boundary types can be associated edgewise.
+
+   .. admonition:: Parameters
+
+       domain
+           List of two points defining the lower-left and upper-right corner
+           of the domain. The left and right edge are identified.
+       top
+           The boundary type of the top edge.
+       bottom
+           The boundary type of the bottom edge.
+           
+   .. attribute:: domain
+
+   .. attribute:: top
+
+   .. attribute:: bottom
+
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.analyticalproblems.domaindescriptions.CylindricalDomain.diameter
+         pymor.analyticalproblems.domaindescriptions.CylindricalDomain.height
+         pymor.analyticalproblems.domaindescriptions.CylindricalDomain.lower_left
+         pymor.analyticalproblems.domaindescriptions.CylindricalDomain.upper_right
+         pymor.analyticalproblems.domaindescriptions.CylindricalDomain.volume
+         pymor.analyticalproblems.domaindescriptions.CylindricalDomain.width
+
+
+
+   .. py:attribute:: dim
+      :annotation: = 2
+
+      
+
+   .. py:method:: diameter(self)
+      :property:
+
+
+   .. py:method:: height(self)
+      :property:
+
+
+   .. py:method:: lower_left(self)
+      :property:
+
+
+   .. py:method:: upper_right(self)
+      :property:
+
+
+   .. py:method:: volume(self)
+      :property:
+
+
+   .. py:method:: width(self)
+      :property:
+
+
+
+.. py:class:: DiscDomain(radius, boundary='dirichlet', num_points=100)
+
+   Bases: :py:obj:`PolygonalDomain`
+
+   Describes a disc domain of variable radius.
+
+   .. admonition:: Parameters
+
+       radius
+           The radius of the disc.
+       boundary
+           The boundary type of the boundary.
+       num_points
+           The number of points of the polygonal chain approximating the boundary.
+           
+   .. attribute:: radius
+
+   .. attribute:: boundary
+
+   .. attribute:: num_points
+
+      
+
+
+
+
+
+
+
+.. py:class:: DomainDescription
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   Describes a geometric domain along with its boundary.
+
+   .. attribute:: dim
+
+      The dimension of the domain
+
+   .. attribute:: boundary_types
+
+      Set of boundary types the domain has.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.analyticalproblems.domaindescriptions.DomainDescription.has_dirichlet
+         pymor.analyticalproblems.domaindescriptions.DomainDescription.has_neumann
+         pymor.analyticalproblems.domaindescriptions.DomainDescription.has_robin
+
+
+
+   .. py:method:: has_dirichlet(self)
+      :property:
+
+
+   .. py:method:: has_neumann(self)
+      :property:
+
+
+   .. py:method:: has_robin(self)
+      :property:
+
+
+
+.. py:data:: KNOWN_BOUNDARY_TYPES
+   
+
+   
+
+.. py:class:: LineDomain(domain=(0, 1), left='dirichlet', right='dirichlet')
+
+   Bases: :py:obj:`DomainDescription`
+
+   Describes an interval domain.
+
+   Boundary types can be associated edgewise.
+
+   .. admonition:: Parameters
+
+       domain
+           List [x_l, x_r] providing the left and right endpoint.
+       left
+           The boundary type of the left endpoint.
+       right
+           The boundary type of the right endpoint.
+           
+   .. attribute:: domain
+
+   .. attribute:: left
+
+   .. attribute:: right
+
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.analyticalproblems.domaindescriptions.LineDomain.width
+
+
+
+   .. py:attribute:: dim
+      :annotation: = 1
+
+      
+
+   .. py:method:: width(self)
+      :property:
+
+
+
+.. py:class:: PolygonalDomain(points, boundary_types, holes=None)
+
+   Bases: :py:obj:`DomainDescription`
+
+   Describes a domain with a polygonal boundary and polygonal holes inside the domain.
+
+   .. admonition:: Parameters
+
+       points
+           List of points [x_0, x_1] that describe the polygonal chain that bounds the domain.
+       boundary_types
+           Either a dictionary `{boundary_type: [i_0, ...], boundary_type: [j_0, ...], ...}`
+           with `i_0, ...` being the ids of boundary segments for a given boundary type
+           (`0` is the line connecting point `0` to `1`, `1` is the line connecting point `1` to `2`
+           etc.), or a function that returns the boundary type for a given coordinate.
+       holes
+           List of lists of points that describe the polygonal chains that bound the holes
+           inside the domain.
+           
+   .. attribute:: points
+
+   .. attribute:: boundary_types
+
+   .. attribute:: holes
+
+      
+
+
+
+
+
+
+   .. py:attribute:: dim
+      :annotation: = 2
+
+      
+
+
+.. py:class:: RectDomain(domain=([0, 0], [1, 1]), left='dirichlet', right='dirichlet', top='dirichlet', bottom='dirichlet')
+
+   Bases: :py:obj:`DomainDescription`
+
+   Describes a rectangular domain.
+
+   Boundary types can be associated edgewise.
+
+   .. admonition:: Parameters
+
+       domain
+           List of two points defining the lower-left and upper-right corner
+           of the domain.
+       left
+           The boundary type of the left edge.
+       right
+           The boundary type of the right edge.
+       top
+           The boundary type of the top edge.
+       bottom
+           The boundary type of the bottom edge.
+           
+   .. attribute:: domain
+
+   .. attribute:: left
+
+   .. attribute:: right
+
+   .. attribute:: top
+
+   .. attribute:: bottom
+
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.analyticalproblems.domaindescriptions.RectDomain.diameter
+         pymor.analyticalproblems.domaindescriptions.RectDomain.height
+         pymor.analyticalproblems.domaindescriptions.RectDomain.lower_left
+         pymor.analyticalproblems.domaindescriptions.RectDomain.upper_right
+         pymor.analyticalproblems.domaindescriptions.RectDomain.volume
+         pymor.analyticalproblems.domaindescriptions.RectDomain.width
+
+
+
+   .. py:attribute:: dim
+      :annotation: = 2
+
+      
+
+   .. py:method:: diameter(self)
+      :property:
+
+
+   .. py:method:: height(self)
+      :property:
+
+
+   .. py:method:: lower_left(self)
+      :property:
+
+
+   .. py:method:: upper_right(self)
+      :property:
+
+
+   .. py:method:: volume(self)
+      :property:
+
+
+   .. py:method:: width(self)
+      :property:
+
+
+
+.. py:class:: TorusDomain(domain=([0, 0], [1, 1]))
+
+   Bases: :py:obj:`DomainDescription`
+
+   Describes a domain with the topology of a torus.
+
+   .. admonition:: Parameters
+
+       domain
+           List of two points defining the lower-left and upper-right corner
+           of the domain. The left and right edge are identified, as well as the
+           bottom and top edge
+           
+   .. attribute:: domain
+
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.analyticalproblems.domaindescriptions.TorusDomain.diameter
+         pymor.analyticalproblems.domaindescriptions.TorusDomain.height
+         pymor.analyticalproblems.domaindescriptions.TorusDomain.lower_left
+         pymor.analyticalproblems.domaindescriptions.TorusDomain.upper_right
+         pymor.analyticalproblems.domaindescriptions.TorusDomain.volume
+         pymor.analyticalproblems.domaindescriptions.TorusDomain.width
+
+
+
+   .. py:attribute:: dim
+      :annotation: = 2
+
+      
+
+   .. py:method:: diameter(self)
+      :property:
+
+
+   .. py:method:: height(self)
+      :property:
+
+
+   .. py:method:: lower_left(self)
+      :property:
+
+
+   .. py:method:: upper_right(self)
+      :property:
+
+
+   .. py:method:: volume(self)
+      :property:
+
+
+   .. py:method:: width(self)
+      :property:
+
+
+

@@ -1,0 +1,545 @@
+:mod:`pymor.bindings.pymess`
+============================
+
+.. py:module:: pymor.bindings.pymess
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.bindings.pymess.LyapunovEquation
+   pymor.bindings.pymess.RiccatiEquation
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.bindings.pymess._call_pymess_dense_nm_gmpare
+   pymor.bindings.pymess.dense_nm_gmpcare_solver_options
+   pymor.bindings.pymess.lradi_solver_options
+   pymor.bindings.pymess.lrnm_solver_options
+   pymor.bindings.pymess.lyap_dense_solver_options
+   pymor.bindings.pymess.lyap_lrcf_solver_options
+   pymor.bindings.pymess.pos_ricc_lrcf_solver_options
+   pymor.bindings.pymess.ricc_lrcf_solver_options
+   pymor.bindings.pymess.solve_lyap_dense
+   pymor.bindings.pymess.solve_lyap_lrcf
+   pymor.bindings.pymess.solve_pos_ricc_lrcf
+   pymor.bindings.pymess.solve_ricc_lrcf
+
+
+
+.. py:class:: LyapunovEquation(opt, A, E, B)
+
+   Bases: :py:obj:`pymess.Equation`
+
+   Lyapunov equation class for pymess
+
+   Represents a (generalized) continuous-time algebraic Lyapunov
+   equation:
+
+   - if opt.type is `pymess.MESS_OP_NONE` and E is `None`:
+
+     .. math::
+         A X + X A^T + B B^T = 0,
+
+   - if opt.type is `pymess.MESS_OP_NONE` and E is not `None`:
+
+     .. math::
+         A X E^T + E X A^T + B B^T = 0,
+
+   - if opt.type is `pymess.MESS_OP_TRANSPOSE` and E is `None`:
+
+     .. math::
+         A^T X + X A + B^T B = 0,
+
+   - if opt.type is `pymess.MESS_OP_TRANSPOSE` and E is not `None`:
+
+     .. math::
+         A^T X E + E^T X A + B^T B = 0.
+
+   .. admonition:: Parameters
+
+       opt
+           pymess Options structure.
+       A
+           The non-parametric |Operator| A.
+       E
+           The non-parametric |Operator| E or `None`.
+       B
+           The operator B as a |VectorArray| from `A.source`.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.bindings.pymess.LyapunovEquation.ainv_apply
+         pymor.bindings.pymess.LyapunovEquation.apeinv_apply
+         pymor.bindings.pymess.LyapunovEquation.apex_apply
+         pymor.bindings.pymess.LyapunovEquation.ax_apply
+         pymor.bindings.pymess.LyapunovEquation.einv_apply
+         pymor.bindings.pymess.LyapunovEquation.ex_apply
+         pymor.bindings.pymess.LyapunovEquation.parameter
+
+
+
+   .. py:method:: ainv_apply(self, op, y)
+
+      Applies the inverse of :math:`A` to a right hand side. It has to return
+      the solution of :math:`Ax =y`.
+
+
+   .. py:method:: apeinv_apply(self, op, p, idx_p, y)
+
+      Applies the inverse of :math:`A+pE` to a right hand side. It has to return
+      the solution of :math:`(A+pE)x = y`.
+
+
+   .. py:method:: apex_apply(self, op, p, idx_p, y)
+
+      Applies function the operator of :math:`A+pE`. It has to return :math:`x=(A+pE)y`.
+
+
+   .. py:method:: ax_apply(self, op, y)
+
+      Applies :math:`A` to a right hand side. It has to return
+      the result of :math:`x = Ay`.
+
+
+   .. py:method:: einv_apply(self, op, y)
+
+      Applies the inverse of :math:`E` to a right hand side. It has to return
+      the solution of :math:`Ex = y`.
+
+
+   .. py:method:: ex_apply(self, op, y)
+
+      Applies :math:`E` to a right hand side. It has to return
+      the result of :math:`x = Ey`.
+
+
+   .. py:method:: parameter(self, arp_p, arp_m, B=None, K=None)
+
+      The parmeter function has to return the shift parameters. If None
+      is returned shift paramter will be automatically determined.
+      The Shift parameter strategy is determined by the options structure.
+
+
+
+.. py:class:: RiccatiEquation(opt, A, E, B, C)
+
+   Bases: :py:obj:`pymess.Equation`
+
+   Riccati equation class for pymess
+
+   Represents a Riccati equation
+
+   - if opt.type is `pymess.MESS_OP_NONE` and E is `None`:
+
+     .. math::
+         A X + X A^T - X C^T C X + B B^T = 0,
+
+   - if opt.type is `pymess.MESS_OP_NONE` and E is not `None`:
+
+     .. math::
+         A X E^T + E X A^T - E X C^T C X E^T + B B^T = 0,
+
+   - if opt.type is `pymess.MESS_OP_TRANSPOSE` and E is `None`:
+
+     .. math::
+         A^T X + X A - X B B^T X + C^T C = 0,
+
+   - if opt.type is `pymess.MESS_OP_TRANSPOSE` and E is not `None`:
+
+     .. math::
+         A^T X E + E^T X A - E X B B^T X E^T + C^T C = 0.
+
+   .. admonition:: Parameters
+
+       opt
+           pymess Options structure.
+       A
+           The non-parametric |Operator| A.
+       E
+           The non-parametric |Operator| E or `None`.
+       B
+           The operator B as a |VectorArray| from `A.source`.
+       C
+           The operator C as a |VectorArray| from `A.source`.
+           
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.bindings.pymess.RiccatiEquation.ainv_apply
+         pymor.bindings.pymess.RiccatiEquation.apeinv_apply
+         pymor.bindings.pymess.RiccatiEquation.apex_apply
+         pymor.bindings.pymess.RiccatiEquation.ax_apply
+         pymor.bindings.pymess.RiccatiEquation.einv_apply
+         pymor.bindings.pymess.RiccatiEquation.ex_apply
+         pymor.bindings.pymess.RiccatiEquation.parameter
+
+
+
+   .. py:method:: ainv_apply(self, op, y)
+
+      Applies the inverse of :math:`A` to a right hand side. It has to return
+      the solution of :math:`Ax =y`.
+
+
+   .. py:method:: apeinv_apply(self, op, p, idx_p, y)
+
+      Applies the inverse of :math:`A+pE` to a right hand side. It has to return
+      the solution of :math:`(A+pE)x = y`.
+
+
+   .. py:method:: apex_apply(self, op, p, idx_p, y)
+
+      Applies function the operator of :math:`A+pE`. It has to return :math:`x=(A+pE)y`.
+
+
+   .. py:method:: ax_apply(self, op, y)
+
+      Applies :math:`A` to a right hand side. It has to return
+      the result of :math:`x = Ay`.
+
+
+   .. py:method:: einv_apply(self, op, y)
+
+      Applies the inverse of :math:`E` to a right hand side. It has to return
+      the solution of :math:`Ex = y`.
+
+
+   .. py:method:: ex_apply(self, op, y)
+
+      Applies :math:`E` to a right hand side. It has to return
+      the result of :math:`x = Ey`.
+
+
+   .. py:method:: parameter(self, arp_p, arp_m, B=None, K=None)
+
+      The parmeter function has to return the shift parameters. If None
+      is returned shift paramter will be automatically determined.
+      The Shift parameter strategy is determined by the options structure.
+
+
+
+.. py:function:: _call_pymess_dense_nm_gmpare(A, E, B, C, R, trans=False, options=None, plus=False, method_name='')
+
+   Return the solution from pymess.dense_nm_gmpare solver.
+
+
+.. py:function:: dense_nm_gmpcare_solver_options(linesearch=False, maxit=50, absres_tol=1e-11, relres_tol=1e-12, nrm=0)
+
+   Return available Riccati solvers with default options for the pymess backend.
+
+   Also see :func:`lradi_solver_options`.
+
+   .. admonition:: Parameters
+
+       linesearch
+           See `pymess.dense_nm_gmpcare`.
+       maxit
+           See `pymess.dense_nm_gmpcare`.
+       absres_tol
+           See `pymess.dense_nm_gmpcare`.
+       relres_tol
+           See `pymess.dense_nm_gmpcare`.
+       nrm
+           See `pymess.dense_nm_gmpcare`.
+           
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: lradi_solver_options(adi_maxit=500, adi_memory_usage=pymess.MESS_MEMORY_MID, adi_output=1, adi_rel_change_tol=1e-10, adi_res2_tol=1e-10, adi_res2c_tol=1e-11, adi_shifts_arp_m=32, adi_shifts_arp_p=48, adi_shifts_b0=None, adi_shifts_l0=16, adi_shifts_p=None, adi_shifts_paratype=pymess.MESS_LRCFADI_PARA_ADAPTIVE_Z)
+
+   Return available adi solver options with default values for the pymess backend.
+
+   .. admonition:: Parameters
+
+       adi_maxit
+           See `pymess.OptionsAdi`.
+       adi_memory_usage
+           See `pymess.OptionsAdi`.
+       adi_output
+           See `pymess.OptionsAdi`.
+       adi_rel_change_tol
+           See `pymess.OptionsAdi`.
+       adi_res2_tol
+           See `pymess.OptionsAdi`.
+       adi_res2c_tol
+           See `pymess.OptionsAdi`.
+       adi_shifts_arp_m
+           See `pymess.OptionsAdiShifts`.
+       adi_shifts_arp_p
+           See `pymess.OptionsAdiShifts`.
+       adi_shifts_b0
+           See `pymess.OptionsAdiShifts`.
+       adi_shifts_l0
+           See `pymess.OptionsAdiShifts`.
+       adi_shifts_p
+           See `pymess.OptionsAdiShifts`.
+       adi_shifts_paratype
+           See `pymess.OptionsAdiShifts`.
+           
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: lrnm_solver_options(newton_gstep=0, newton_k0=None, newton_linesearch=0, newton_maxit=30, newton_output=1, newton_res2_tol=1e-10, newton_singleshifts=0)
+
+   Return available adi solver options with default values for the pymess backend.
+
+   .. admonition:: Parameters
+
+       newton_gstep
+           See `pymess.OptionsNewton`.
+       newton_k0
+           See `pymess.OptionsNewton`.
+       newton_linesearch
+           See `pymess.OptionsNewton`.
+       newton_maxit
+           See `pymess.OptionsNewton`.
+       newton_output
+           See `pymess.OptionsNewton`.
+       newton_res2_tol
+           See `pymess.OptionsNewton`.
+       newton_singleshifts
+           See `pymess.OptionsNewton`.
+           
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: lyap_dense_solver_options()
+
+   Return available Lyapunov solvers with default options for the pymess backend.
+
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: lyap_lrcf_solver_options()
+
+   Return available Lyapunov solvers with default options for the pymess backend.
+
+   Also see :func:`lradi_solver_options`.
+
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: pos_ricc_lrcf_solver_options()
+
+   Return available positive Riccati solvers with default options for the pymess backend.
+
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: ricc_lrcf_solver_options()
+
+   Return available Riccati solvers with default options for the pymess backend.
+
+   Also see :func:`dense_nm_gmpcare_solver_options` and
+   :func:`lrnm_solver_options`.
+
+   .. admonition:: Returns
+
+       A dict of available solvers with default solver options.
+           
+
+.. py:function:: solve_lyap_dense(A, E, B, trans=False, options=None)
+
+   Compute the solution of a Lyapunov equation.
+
+   See :func:`pymor.algorithms.lyapunov.solve_lyap_dense` for a
+   general description.
+
+   This function uses `pymess.glyap`.
+
+   .. admonition:: Parameters
+
+       A
+           The matrix A as a 2D |NumPy array|.
+       E
+           The matrix E as a 2D |NumPy array| or `None`.
+       B
+           The matrix B as a 2D |NumPy array|.
+       trans
+           Whether the first operator in the Lyapunov equation is
+           transposed.
+       options
+           The solver options to use (see
+           :func:`lyap_dense_solver_options`).
+           
+   .. admonition:: Returns
+
+       X
+           Lyapunov equation solution as a |NumPy array|.
+           
+
+.. py:function:: solve_lyap_lrcf(A, E, B, trans=False, options=None, default_solver=None)
+
+   Compute an approximate low-rank solution of a Lyapunov equation.
+
+   See :func:`pymor.algorithms.lyapunov.solve_lyap_lrcf` for a
+   general description.
+
+   This function uses `pymess.glyap` and `pymess.lradi`.
+   For both methods,
+   :meth:`~pymor.vectorarrays.interface.VectorArray.to_numpy`
+   and
+   :meth:`~pymor.vectorarrays.interface.VectorSpace.from_numpy`
+   need to be implemented for `A.source`.
+   Additionally, since `glyap` is a dense solver, it expects
+   :func:`~pymor.algorithms.to_matrix.to_matrix` to work for A and
+   E.
+
+   If the solver is not specified using the options or
+   default_solver arguments, `glyap` is used for small problems
+   (smaller than defined with
+   :func:`~pymor.algorithms.lyapunov.mat_eqn_sparse_min_size`) and
+   `lradi` for large problems.
+
+   .. admonition:: Parameters
+
+       A
+           The non-parametric |Operator| A.
+       E
+           The non-parametric |Operator| E or `None`.
+       B
+           The operator B as a |VectorArray| from `A.source`.
+       trans
+           Whether the first |Operator| in the Lyapunov equation is
+           transposed.
+       options
+           The solver options to use (see
+           :func:`lyap_lrcf_solver_options`).
+       default_solver
+           Default solver to use (pymess_lradi, pymess_glyap).
+           If `None`, choose solver depending on the dimension of A.
+           
+   .. admonition:: Returns
+
+       Z
+           Low-rank Cholesky factor of the Lyapunov equation solution,
+           |VectorArray| from `A.source`.
+           
+
+.. py:function:: solve_pos_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None)
+
+   Compute an approximate low-rank solution of a positive Riccati equation.
+
+   See :func:`pymor.algorithms.riccati.solve_pos_ricc_lrcf` for a
+   general description.
+
+   This function uses `pymess.dense_nm_gmpcare`.
+
+   .. admonition:: Parameters
+
+       A
+           The non-parametric |Operator| A.
+       E
+           The non-parametric |Operator| E or `None`.
+       B
+           The operator B as a |VectorArray| from `A.source`.
+       C
+           The operator C as a |VectorArray| from `A.source`.
+       R
+           The matrix R as a 2D |NumPy array| or `None`.
+       trans
+           Whether the first |Operator| in the Riccati equation is
+           transposed.
+       options
+           The solver options to use (see
+           :func:`pos_ricc_lrcf_solver_options`).
+           
+   .. admonition:: Returns
+
+       Z
+           Low-rank Cholesky factor of the Riccati equation solution,
+           |VectorArray| from `A.source`.
+           
+
+.. py:function:: solve_ricc_lrcf(A, E, B, C, R=None, trans=False, options=None, default_solver=None)
+
+   Compute an approximate low-rank solution of a Riccati equation.
+
+   See :func:`pymor.algorithms.riccati.solve_ricc_lrcf` for a
+   general description.
+
+   This function uses `pymess.dense_nm_gmpcare` and `pymess.lrnm`.
+   For both methods,
+   :meth:`~pymor.vectorarrays.interface.VectorArray.to_numpy`
+   and
+   :meth:`~pymor.vectorarrays.interface.VectorSpace.from_numpy`
+   need to be implemented for `A.source`.
+   Additionally, since `dense_nm_gmpcare` is a dense solver, it
+   expects :func:`~pymor.algorithms.to_matrix.to_matrix` to work
+   for A and E.
+
+   If the solver is not specified using the options or
+   default_solver arguments, `dense_nm_gmpcare` is used for small
+   problems (smaller than defined with
+   :func:`~pymor.algorithms.lyapunov.mat_eqn_sparse_min_size`) and
+   `lrnm` for large problems.
+
+   .. admonition:: Parameters
+
+       A
+           The non-parametric |Operator| A.
+       E
+           The non-parametric |Operator| E or `None`.
+       B
+           The operator B as a |VectorArray| from `A.source`.
+       C
+           The operator C as a |VectorArray| from `A.source`.
+       R
+           The matrix R as a 2D |NumPy array| or `None`.
+       trans
+           Whether the first |Operator| in the Riccati equation is
+           transposed.
+       options
+           The solver options to use (see
+           :func:`ricc_lrcf_solver_options`).
+       default_solver
+           Default solver to use (pymess_lrnm,
+           pymess_dense_nm_gmpcare).
+           If `None`, chose solver depending on dimension `A`.
+           
+   .. admonition:: Returns
+
+       Z
+           Low-rank Cholesky factor of the Riccati equation solution,
+           |VectorArray| from `A.source`.
+           
+

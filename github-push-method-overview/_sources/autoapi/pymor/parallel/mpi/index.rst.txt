@@ -1,0 +1,97 @@
+:mod:`pymor.parallel.mpi`
+=========================
+
+.. py:module:: pymor.parallel.mpi
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.parallel.mpi.MPIPool
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.parallel.mpi._push_object
+   pymor.parallel.mpi._setup_worker
+   pymor.parallel.mpi._single_worker_call_function
+   pymor.parallel.mpi._worker_call_function
+   pymor.parallel.mpi._worker_map_function
+
+
+
+.. py:class:: MPIPool
+
+   Bases: :py:obj:`pymor.parallel.basic.WorkerPoolBase`
+
+   |WorkerPool| based pyMOR's MPI :mod:`event loop <pymor.tools.mpi>`.
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.parallel.mpi.MPIPool.__del__
+         pymor.parallel.mpi.MPIPool.__len__
+         pymor.parallel.mpi.MPIPool._apply
+         pymor.parallel.mpi.MPIPool._apply_only
+         pymor.parallel.mpi.MPIPool._map
+         pymor.parallel.mpi.MPIPool._push_object
+         pymor.parallel.mpi.MPIPool._remove_object
+
+
+
+   .. py:method:: __del__(self)
+
+
+   .. py:method:: __len__(self)
+
+      The number of workers in the pool.
+
+
+   .. py:method:: _apply(self, function, *args, **kwargs)
+
+
+   .. py:method:: _apply_only(self, function, worker, *args, **kwargs)
+
+
+   .. py:method:: _map(self, function, chunks, **kwargs)
+
+
+   .. py:method:: _push_object(self, obj)
+
+
+   .. py:method:: _remove_object(self, remote_id)
+
+
+
+.. py:function:: _push_object(obj)
+
+
+.. py:function:: _setup_worker()
+
+
+.. py:function:: _single_worker_call_function(payload, worker)
+
+
+.. py:function:: _worker_call_function(function, *args, **kwargs)
+
+
+.. py:function:: _worker_map_function(payload, function, **kwargs)
+
+

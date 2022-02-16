@@ -1,0 +1,102 @@
+:mod:`pymor.tools.io.matrices`
+==============================
+
+.. py:module:: pymor.tools.io.matrices
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.tools.io.matrices._get_file_extension
+   pymor.tools.io.matrices._load
+   pymor.tools.io.matrices._loadmat
+   pymor.tools.io.matrices._loadtxt
+   pymor.tools.io.matrices._mmread
+   pymor.tools.io.matrices._mmwrite
+   pymor.tools.io.matrices._save
+   pymor.tools.io.matrices._savemat
+   pymor.tools.io.matrices._savetxt
+   pymor.tools.io.matrices._savez
+   pymor.tools.io.matrices.load_matrix
+   pymor.tools.io.matrices.save_matrix
+
+
+
+.. py:function:: _get_file_extension(path)
+
+
+.. py:function:: _load(path, key=None)
+
+
+.. py:function:: _loadmat(path, key=None)
+
+
+.. py:function:: _loadtxt(path, key=None)
+
+
+.. py:function:: _mmread(path, key=None)
+
+
+.. py:function:: _mmwrite(path, matrix, key=None)
+
+
+.. py:function:: _save(path, matrix, key=None)
+
+
+.. py:function:: _savemat(path, matrix, key=None)
+
+
+.. py:function:: _savetxt(path, matrix, key=None)
+
+
+.. py:function:: _savez(path, matrix, key=None)
+
+
+.. py:function:: load_matrix(path, key=None)
+
+   Load matrix from file.
+
+   .. admonition:: Parameters
+
+       path
+           Path to the file (`str` or `pathlib.Path`).
+       key
+           Key of the matrix (only for NPY, NPZ, and MATLAB files).
+           
+   .. admonition:: Returns
+
+       matrix
+           |NumPy array| of |SciPy spmatrix|.
+           
+   .. admonition:: Raises
+
+       IOError
+           If loading fails.
+           
+
+.. py:function:: save_matrix(path, matrix, key=None)
+
+   Save matrix to file.
+
+   .. admonition:: Parameters
+
+       path
+           Path to the file (`str` or `pathlib.Path`).
+       matrix
+           Matrix to save.
+       key
+           Key of the matrix (only for NPY, NPZ, and MATLAB files).
+           
+   .. admonition:: Raises
+
+       IOError
+           If saving fails.
+           
+

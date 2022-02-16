@@ -1,0 +1,343 @@
+:mod:`pymor.discretizers.skfem.cg`
+==================================
+
+.. py:module:: pymor.discretizers.skfem.cg
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.skfem.cg.AdvectionOperator
+   pymor.discretizers.skfem.cg.BoundaryDirichletFunctional
+   pymor.discretizers.skfem.cg.DiffusionOperator
+   pymor.discretizers.skfem.cg.L2Functional
+   pymor.discretizers.skfem.cg.L2ProductOperator
+   pymor.discretizers.skfem.cg.SKFemBilinearFormOperator
+   pymor.discretizers.skfem.cg.SKFemLinearFormOperator
+   pymor.discretizers.skfem.cg.SKFemVisualizer
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.discretizers.skfem.cg._assemble_operator
+   pymor.discretizers.skfem.cg._eval_pymor_function
+   pymor.discretizers.skfem.cg.discretize_stationary_cg
+
+
+
+.. py:class:: AdvectionOperator(basis, advection_function, dirichlet_dofs=None, dirichlet_clear_diag=False, name=None)
+
+   Bases: :py:obj:`SKFemBilinearFormOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.AdvectionOperator.build_form
+
+
+
+   .. py:method:: build_form(self, mu)
+
+
+
+.. py:class:: BoundaryDirichletFunctional(basis, dirichlet_data, dirichlet_dofs=None, name=None)
+
+   Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.BoundaryDirichletFunctional._assemble
+
+
+
+   .. py:attribute:: source
+      
+
+      
+
+   .. py:method:: _assemble(self, mu=None)
+
+
+
+.. py:class:: DiffusionOperator(basis, diffusion_function, dirichlet_dofs=None, dirichlet_clear_diag=False, name=None)
+
+   Bases: :py:obj:`SKFemBilinearFormOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.DiffusionOperator.build_form
+
+
+
+   .. py:method:: build_form(self, mu)
+
+
+
+.. py:class:: L2Functional(basis, function, dirichlet_dofs=None, dirichlet_data=None, name=None)
+
+   Bases: :py:obj:`SKFemLinearFormOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.L2Functional.build_form
+
+
+
+   .. py:method:: build_form(self, mu)
+
+
+
+.. py:class:: L2ProductOperator(basis, dirichlet_dofs=None, dirichlet_clear_diag=False, coefficient_function=None, name=None)
+
+   Bases: :py:obj:`SKFemBilinearFormOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.L2ProductOperator.build_form
+
+
+
+   .. py:method:: build_form(self, mu)
+
+
+
+.. py:class:: SKFemBilinearFormOperator(basis, dirichlet_dofs=None, dirichlet_clear_diag=False, name=None)
+
+   Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.SKFemBilinearFormOperator._assemble
+         pymor.discretizers.skfem.cg.SKFemBilinearFormOperator.build_form
+
+
+
+   .. py:method:: _assemble(self, mu)
+
+
+   .. py:method:: build_form(mu)
+
+
+
+.. py:class:: SKFemLinearFormOperator(basis, dirichlet_dofs=None, name=None)
+
+   Bases: :py:obj:`pymor.operators.numpy.NumpyMatrixBasedOperator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.SKFemLinearFormOperator._assemble
+
+
+
+   .. py:attribute:: source
+      
+
+      
+
+   .. py:method:: _assemble(self, mu)
+
+
+
+.. py:class:: SKFemVisualizer(space, basis)
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   Base class for immutable objects in pyMOR.
+
+   Instances of `ImmutableObject` are immutable in the sense that
+   after execution of `__init__`, any modification of a non-private
+   attribute will raise an exception.
+
+   .. _ImmutableObjectWarning:
+   .. warning::
+          For instances of `ImmutableObject`,
+          the result of member function calls should be completely
+          determined by the function's arguments together with the
+          object's `__init__` arguments and the current state of pyMOR's
+          global |defaults|.
+
+   While, in principle, you are allowed to modify private members after
+   instance initialization, this should never affect the outcome of
+   future method calls. In particular, if you update any internal state
+   after initialization, you have to ensure that this state is not affected
+   by possible changes of the global :mod:`~pymor.core.defaults`.
+
+
+
+
+
+   .. admonition:: Methods
+      :class: admoition-methods
+
+      .. autoapisummary::
+         :nosignatures:
+
+         pymor.discretizers.skfem.cg.SKFemVisualizer.visualize
+
+
+
+   .. py:method:: visualize(self, U, **kwargs)
+
+
+
+.. py:function:: _assemble_operator(function, name, factory, ops=None, coeffs=None, negative=False)
+
+
+.. py:function:: _eval_pymor_function(f, x, mu)
+
+
+.. py:function:: discretize_stationary_cg(analytical_problem, diameter=None, mesh_type=None, element=None, preassemble=True)
+
+   Discretizes a |StationaryProblem| with finite elements using scikit-fem.
+
+   .. admonition:: Parameters
+
+       analytical_problem
+           The |StationaryProblem| to discretize.
+       diameter
+           If not `None`, `diameter` is passed as an argument to the `domain_discretizer`.
+       mesh_type
+           If not `None`, a `skfem.Mesh` to be used for discretizing the domain of
+           `analytical_problem`.
+       element
+           If not `None`, the `skfem.Element` to be used for building the finite element space.
+           If `None`, `mesh.elem()` is used.
+       preassemble
+           If `True`, preassemble all operators in the resulting |Model|.
+           
+   .. admonition:: Returns
+
+       m
+           The |Model| that has been generated.
+       data
+           Dictionary with the following entries:
+           
+               :mesh:             The generated `skfem.Mesh`.
+               :basis:            The generated `skfem.Basis`.
+               :boundary_facets:  Dict of `boundary_facets` of `mesh` per boundary type.
+               :dirichlet_dofs:   DOFs of the `skfem.Basis` associated with the Dirichlet boundary.
+               :unassembled_m:    In case `preassemble` is `True`, the generated |Model|
+                                  before preassembling operators.
+           
+
