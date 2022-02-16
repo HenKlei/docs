@@ -1,0 +1,103 @@
+:mod:`pymor.discretizers.builtin.gui.jupyter`
+=============================================
+
+.. py:module:: pymor.discretizers.builtin.gui.jupyter
+
+.. autoapi-nested-parse::
+
+   This module provides plotting support inside the Jupyter notebook.
+
+   To use these routines you first have to execute ::
+
+           %matplotlib notebook
+
+   inside the given notebook.
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   logging <logging/index.rst>
+   matplotlib <matplotlib/index.rst>
+   threejs <threejs/index.rst>
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.discretizers.builtin.gui.jupyter.defaults
+   pymor.discretizers.builtin.gui.jupyter.get_visualizer
+   pymor.discretizers.builtin.gui.jupyter.progress_bar
+   pymor.discretizers.builtin.gui.jupyter.load_ipython_extension
+   pymor.discretizers.builtin.gui.jupyter.unload_ipython_extension
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.gui.jupyter.config
+   pymor.discretizers.builtin.gui.jupyter._extension_loaded
+
+
+.. py:function:: defaults(*args)
+
+   Function decorator for marking function arguments as user-configurable defaults.
+
+   If a function decorated with :func:`defaults` is called, the values of the marked
+   default parameters are set to the values defined via :func:`load_defaults_from_file`
+   or :func:`set_defaults` in case no value has been provided by the caller of the function.
+   Moreover, if `None` is passed as a value for a default argument, the argument
+   is set to its default value, as well. If no value has been specified using
+   :func:`set_defaults` or :func:`load_defaults_from_file`, the default value provided in
+   the function signature is used.
+
+   If the argument `arg` of function `f` in sub-module `m` of package `p` is
+   marked as a default value, its value will be changeable by the aforementioned
+   methods under the path `p.m.f.arg`.
+
+   Note that the `defaults` decorator can also be used in user code.
+
+   .. admonition:: Parameters
+
+       args
+           List of strings containing the names of the arguments of the decorated
+           function to mark as pyMOR defaults. Each of these arguments has to be
+           a keyword argument (with a default value).
+           
+
+.. py:data:: config
+   
+
+   
+
+.. py:data:: _extension_loaded
+   :annotation: = False
+
+   
+
+.. py:function:: get_visualizer(backend='py3js')
+
+
+.. py:function:: progress_bar(sequence, every=None, size=None, name='Parameters')
+
+
+.. py:function:: load_ipython_extension(ipython)
+
+
+.. py:function:: unload_ipython_extension(ipython)
+
+
