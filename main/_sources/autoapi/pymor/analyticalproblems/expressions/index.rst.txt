@@ -55,6 +55,7 @@ Classes
 
 .. autoapisummary::
 
+   pymor.analyticalproblems.expressions.TransformLiterals
    pymor.analyticalproblems.expressions.Expression
    pymor.analyticalproblems.expressions.BaseConstant
    pymor.analyticalproblems.expressions.Constant
@@ -113,7 +114,6 @@ Functions
   :nosignatures:
 
    pymor.analyticalproblems.expressions.parse_expression
-   pymor.analyticalproblems.expressions._convert_to_expression
    pymor.analyticalproblems.expressions._broadcastable_shapes
 
 
@@ -135,6 +135,61 @@ Attributes
    
 
 .. py:function:: parse_expression(expression, parameters={}, values={})
+
+
+.. py:class:: TransformLiterals
+
+   Bases: :py:obj:`ast.NodeTransformer`
+
+   A :class:`NodeVisitor` subclass that walks the abstract syntax tree and
+   allows modification of nodes.
+
+   The `NodeTransformer` will walk the AST and use the return value of the
+   visitor methods to replace or remove the old node.  If the return value of
+   the visitor method is ``None``, the node will be removed from its location,
+   otherwise it is replaced with the return value.  The return value may be the
+   original node in which case no replacement takes place.
+
+   Here is an example transformer that rewrites all occurrences of name lookups
+   (``foo``) to ``data['foo']``::
+
+      class RewriteName(NodeTransformer):
+
+          def visit_Name(self, node):
+              return Subscript(
+                  value=Name(id='data', ctx=Load()),
+                  slice=Index(value=Str(s=node.id)),
+                  ctx=node.ctx
+              )
+
+   Keep in mind that if the node you're operating on has child nodes you must
+   either transform the child nodes yourself or call the :meth:`generic_visit`
+   method for the node first.
+
+   For nodes that were part of a collection of statements (that applies to all
+   statement nodes), the visitor may also return a list of nodes rather than
+   just a single node.
+
+   Usually you use the transformer like this::
+
+      node = YourTransformer().visit(node)
+
+   .. py:attribute:: in_subscript
+      :annotation: = False
+
+      
+
+   .. py:method:: visit_Constant(self, node)
+
+
+   .. py:method:: visit_Num(self, node)
+
+
+   .. py:method:: visit_Subscript(self, node)
+
+
+   .. py:method:: visit_List(self, node)
+
 
 
 .. py:class:: Expression
@@ -265,6 +320,11 @@ Attributes
 
    A constant value given by a |NumPy| array.
 
+   .. py:attribute:: shape
+      :annotation: = []
+
+      
+
    .. py:method:: __str__(self)
 
       Return str(self).
@@ -307,6 +367,9 @@ Attributes
    .. py:method:: numpy_expr(self)
 
       Called by :meth:`~Expression.to_numpy`.
+
+
+   .. py:method:: _format_repr(self, max_width, verbosity)
 
 
    .. py:method:: __str__(self)
@@ -394,6 +457,9 @@ Attributes
       Called by :meth:`~Expression.to_numpy`.
 
 
+   .. py:method:: _format_repr(self, max_width, verbosity)
+
+
    .. py:method:: __str__(self)
 
       Return str(self).
@@ -402,7 +468,7 @@ Attributes
 
 .. py:class:: UnaryReductionCall(arg, *args)
 
-   Bases: :py:obj:`Expression`
+   Bases: :py:obj:`UnaryFunctionCall`
 
    Compound :class:`Expression` of an unary function applied to a sub-expression.
 
@@ -418,16 +484,6 @@ Attributes
 
       Called by :meth:`~Expression.to_numpy`.
 
-
-   .. py:method:: __str__(self)
-
-      Return str(self).
-
-
-
-.. py:function:: _convert_to_expression(obj)
-
-   Used internally to convert literals/list constructors to an :class:`Expression`.
 
 
 .. py:function:: _broadcastable_shapes(first, second)
