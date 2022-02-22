@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.dmd &#8212; pyMOR v2021.2.0+139.g977d2b763 Manual</title>
+    <title>pymor.algorithms.dmd &#8212; pyMOR v2021.2.0+172.gcd693cb01 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -108,11 +108,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+139.g977d2b763 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+172.gcd693cb01 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+139.g977d2b763 Manual logo">
+                   alt="pyMOR v2021.2.0+172.gcd693cb01 Manual logo">
           
         </a>
       </div>
@@ -178,7 +178,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+139.g977d2b763 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+172.gcd693cb01 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+139.g977d2b763 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+172.gcd693cb01 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+139.g977d2b763 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+172.gcd693cb01 Manual">Documentation</a>
   </label>
   
 
@@ -656,7 +656,7 @@
 <dt class="sig sig-object py" id="pymor.algorithms.dmd.dmd">
 <span class="sig-prename descclassname"><span class="pre">pymor.algorithms.dmd.</span></span><span class="sig-name descname"><span class="pre">dmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cont_time_dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exact'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'magnitude'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svd_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'method_of_snapshots'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_A_approx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_A_tilde</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/lin-opt-demo-scalars/src/pymor/algorithms/dmd.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.dmd.dmd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dynamic Mode Decomposition.</p>
-<p>See Algorithm 1 and Algorithm 2 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id34" title="J. H. Tu, C. W. Rowley, D. M. Luchtenburg, S. L. Brunton, and J. N. Kutz. On dynamic mode decomposition: theory and applications. Journal of Computational Dynamics, pages 391–421, 2014.">TRL+14</a>]</span>.</p>
+<p>See Algorithm 1 and Algorithm 2 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id35" title="J. H. Tu, C. W. Rowley, D. M. Luchtenburg, S. L. Brunton, and J. N. Kutz. On dynamic mode decomposition: theory and applications. Journal of Computational Dynamics, pages 391–421, 2014.">TRL+14</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
