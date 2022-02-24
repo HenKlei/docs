@@ -1,0 +1,61 @@
+:mod:`pymor.discretizers.builtin.gui.matplotlib`
+================================================
+
+.. py:module:: pymor.discretizers.builtin.gui.matplotlib
+
+.. autoapi-nested-parse::
+
+   Visualization of grid data using matplotlib.
+
+   This module provides widgets for displaying plots of
+   scalar data assigned to one- and two-dimensional grids using
+   :mod:`matplotlib`. These widgets are not intended to be used directly.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.discretizers.builtin.gui.matplotlib.Matplotlib1DWidget
+   pymor.discretizers.builtin.gui.matplotlib.MatplotlibPatchWidget
+
+
+
+
+.. py:class:: Matplotlib1DWidget(U, parent, grid, count, vmin=None, vmax=None, legend=None, codim=1, separate_plots=False, dpi=100)
+
+   Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
+
+   The canvas the figure renders into.
+
+   .. attribute:: figure
+      :annotation: `matplotlib.figure.Figure`
+
+      A high-level figure instance.
+      
+
+   .. py:method:: set(self, U, ind)
+
+
+
+.. py:class:: MatplotlibPatchWidget(parent, grid, bounding_box=None, vmin=None, vmax=None, codim=2, dpi=100)
+
+   Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
+
+   The canvas the figure renders into.
+
+   .. attribute:: figure
+      :annotation: `matplotlib.figure.Figure`
+
+      A high-level figure instance.
+      
+
+   .. py:method:: set(self, U, vmin=None, vmax=None)
+
+
+
