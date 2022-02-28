@@ -482,7 +482,7 @@ Attributes
 
    .. py:method:: h2_norm(self, mu=None)
 
-      Compute the :math:`\mathcal{H}_\2`-norm of the |LTIModel|.
+      Compute the :math:`\mathcal{H}_2`-norm of the |LTIModel|.
 
       .. note::
           Assumes the system is asymptotically stable.
@@ -495,7 +495,7 @@ Attributes
       .. admonition:: Returns
 
           norm
-              :math:`\mathcal{H}_\2`-norm.
+              :math:`\mathcal{H}_2`-norm.
               
 
    .. py:method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
@@ -544,9 +544,9 @@ Attributes
 
    .. py:method:: l2_norm(self, ast_pole_data=None, mu=None)
 
-      Compute the :math:`\mathcal{L}_\2`-norm of the |LTIModel|.
+      Compute the :math:`\mathcal{L}_2`-norm of the |LTIModel|.
 
-      The :math:`\mathcal{L}_\2`-norm of an |LTIModel| is defined via the integral
+      The :math:`\mathcal{L}_2`-norm of an |LTIModel| is defined via the integral
 
       .. math::
           \lVert H \rVert_{\mathcal{L}_2}
@@ -574,7 +574,7 @@ Attributes
       .. admonition:: Returns
 
           norm
-              :math:`\mathcal{L}_\2`-norm.
+              :math:`\mathcal{L}_2`-norm.
               
 
    .. py:method:: linf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
@@ -1098,7 +1098,7 @@ Attributes
 
    .. py:method:: h2_norm(self, mu=None)
 
-      Compute the :math:`\mathcal{H}_\2`-norm.
+      Compute the :math:`\mathcal{H}_2`-norm.
 
       .. note::
           Assumes the system is asymptotically stable.
@@ -1111,7 +1111,7 @@ Attributes
       .. admonition:: Returns
 
           norm
-              :math:`\mathcal{H}_\2`-norm.
+              :math:`\mathcal{H}_2`-norm.
               
 
    .. py:method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
