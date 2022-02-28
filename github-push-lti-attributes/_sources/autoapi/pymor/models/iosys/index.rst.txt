@@ -90,6 +90,11 @@ Attributes
        sampling_time
            `0` if the system is continuous-time, otherwise a positive number that denotes the
            sampling time (in seconds).
+       presets
+           A `dict` of preset attributes or `None`. The dict must only contain keys that correspond to
+           attributes of |LTIModel| such as `poles`, `c_lrcf`, `o_lrcf`, `c_dense`, `o_dense`, `hsv`,
+           `h2_norm`, `hinf_norm`, `l2_norm` and `linf_norm`. Additionaly, the frequency at which the
+           :math:`\mathcal{H}_\infty/\mathcal{L}_\infty` norm is attained can be preset with `fpeak`.
        solver_options
            The solver options to use to solve the Lyapunov equations.
        error_estimator
@@ -167,6 +172,9 @@ Attributes
           sampling_time
               `0` if the system is continuous-time, otherwise a positive number that denotes the
               sampling time (in seconds).
+          presets
+              A `dict` of preset attributes or `None`.
+              See :meth:`~pymor.models.iosys.LTIModel.__init__`.
           state_id
               Id of the state space.
           solver_options
@@ -227,6 +235,9 @@ Attributes
           sampling_time
               `0` if the system is continuous-time, otherwise a positive number that denotes the
               sampling time (in seconds).
+          presets
+              A `dict` of preset attributes or `None`.
+              See :meth:`~pymor.models.iosys.LTIModel.__init__`.
           state_id
               Id of the state space.
           solver_options
@@ -281,6 +292,9 @@ Attributes
           sampling_time
               `0` if the system is continuous-time, otherwise a positive number that denotes the
               sampling time (in seconds).
+          presets
+              A `dict` of preset attributes or `None`.
+              See :meth:`~pymor.models.iosys.LTIModel.__init__`.
           state_id
               Id of the state space.
           solver_options
@@ -325,6 +339,9 @@ Attributes
           sampling_time
               `0` if the system is continuous-time, otherwise a positive number that denotes the
               sampling time (in seconds).
+          presets
+              A `dict` of preset attributes or `None`.
+              See :meth:`~pymor.models.iosys.LTIModel.__init__`.
           state_id
               Id of the state space.
           solver_options
@@ -465,7 +482,7 @@ Attributes
 
    .. py:method:: h2_norm(self, mu=None)
 
-      Compute the H2-norm of the |LTIModel|.
+      Compute the :math:`\mathcal{H}_\2`-norm of the |LTIModel|.
 
       .. note::
           Assumes the system is asymptotically stable.
@@ -478,17 +495,17 @@ Attributes
       .. admonition:: Returns
 
           norm
-              H_2-norm.
+              :math:`\mathcal{H}_\2`-norm.
               
 
    .. py:method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
 
-      Compute the H_infinity-norm of the |LTIModel|.
+      Compute the :math:`\mathcal{H}_\infty`-norm of the |LTIModel|.
 
       .. note::
-          Assumes the system is asymptotically stable. Under this is assumption
-          the H_infinity-norm is equal to the L_infinity-norm. Accordingly, this
-          method calls :meth:`~pymor.models.iosys.LTIModel.linf_norm`.
+          Assumes the system is asymptotically stable. Under this is assumption the
+          :math:`\mathcal{H}_\infty`-norm is equal to the :math:`\mathcal{H}_\infty`-norm.
+          Accordingly, this method calls :meth:`~pymor.models.iosys.LTIModel.linf_norm`.
 
       .. admonition:: Parameters
 
@@ -502,7 +519,7 @@ Attributes
       .. admonition:: Returns
 
           norm
-              H_infinity-norm.
+              :math:`\mathcal{H}_\infty`-norm.
           fpeak
               Frequency at which the maximum is achieved (if `return_fpeak` is `True`).
               
@@ -527,9 +544,9 @@ Attributes
 
    .. py:method:: l2_norm(self, ast_pole_data=None, mu=None)
 
-      Compute the L2-norm of the |LTIModel|.
+      Compute the :math:`\mathcal{L}_\2`-norm of the |LTIModel|.
 
-      The L2-norm of an |LTIModel| is defined via the integral
+      The :math:`\mathcal{L}_\2`-norm of an |LTIModel| is defined via the integral
 
       .. math::
           \lVert H \rVert_{\mathcal{L}_2}
@@ -557,14 +574,14 @@ Attributes
       .. admonition:: Returns
 
           norm
-              L_2-norm.
+              :math:`\mathcal{L}_\2`-norm.
               
 
    .. py:method:: linf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
 
-      Compute the L_infinity-norm of the |LTIModel|.
+      Compute the :math:`\mathcal{L}_\infty`-norm of the |LTIModel|.
 
-      The L-infinity norm of an |LTIModel| is defined via
+      The :math:`\mathcal{L}_\infty`-norm of an |LTIModel| is defined via
 
       .. math::
 
@@ -584,7 +601,7 @@ Attributes
       .. admonition:: Returns
 
           norm
-              L_infinity-norm.
+              :math:`\mathcal{L}_\infty`-norm.
           fpeak
               Frequency at which the maximum is achieved (if `return_fpeak` is `True`).
               
@@ -1081,7 +1098,7 @@ Attributes
 
    .. py:method:: h2_norm(self, mu=None)
 
-      Compute the H2-norm.
+      Compute the :math:`\mathcal{H}_\2`-norm.
 
       .. note::
           Assumes the system is asymptotically stable.
@@ -1094,12 +1111,12 @@ Attributes
       .. admonition:: Returns
 
           norm
-              H_2-norm.
+              :math:`\mathcal{H}_\2`-norm.
               
 
    .. py:method:: hinf_norm(self, mu=None, return_fpeak=False, ab13dd_equilibrate=False)
 
-      Compute the H_infinity-norm.
+      Compute the :math:`\mathcal{H}_\infty`-norm.
 
       .. note::
           Assumes the system is asymptotically stable.
@@ -1116,7 +1133,7 @@ Attributes
       .. admonition:: Returns
 
           norm
-              H_infinity-norm.
+              :math:`\mathcal{H}_\infty`.
           fpeak
               Frequency at which the maximum is achieved (if `return_fpeak` is `True`).
               

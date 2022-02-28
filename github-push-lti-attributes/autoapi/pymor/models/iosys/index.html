@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.iosys &#8212; pyMOR v2021.2.0+178.gd6dea9f0d Manual</title>
+    <title>pymor.models.iosys &#8212; pyMOR v2021.2.0+179.g2e776359d Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -110,11 +110,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+178.gd6dea9f0d Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+179.g2e776359d Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+178.gd6dea9f0d Manual logo">
+                   alt="pyMOR v2021.2.0+179.g2e776359d Manual logo">
           
         </a>
       </div>
@@ -180,7 +180,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+178.gd6dea9f0d Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+179.g2e776359d Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -195,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+178.gd6dea9f0d Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+179.g2e776359d Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+178.gd6dea9f0d Manual">Documentation</a>
+       title="pyMOR v2021.2.0+179.g2e776359d Manual">Documentation</a>
   </label>
   
 
@@ -568,6 +568,11 @@ are attached to the <code class="docutils literal notranslate"><span class="pre"
 <dt>sampling_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if the system is continuous-time, otherwise a positive number that denotes the
 sampling time (in seconds).</p>
 </dd>
+<dt>presets</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of preset attributes or <code class="docutils literal notranslate"><span class="pre">None</span></code>. The dict must only contain keys that correspond to
+attributes of <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> such as <code class="docutils literal notranslate"><span class="pre">poles</span></code>, <code class="docutils literal notranslate"><span class="pre">c_lrcf</span></code>, <code class="docutils literal notranslate"><span class="pre">o_lrcf</span></code>, <code class="docutils literal notranslate"><span class="pre">c_dense</span></code>, <code class="docutils literal notranslate"><span class="pre">o_dense</span></code>, <code class="docutils literal notranslate"><span class="pre">hsv</span></code>,
+<code class="docutils literal notranslate"><span class="pre">h2_norm</span></code>, <code class="docutils literal notranslate"><span class="pre">hinf_norm</span></code>, <code class="docutils literal notranslate"><span class="pre">l2_norm</span></code> and <code class="docutils literal notranslate"><span class="pre">linf_norm</span></code>. Additionaly, the frequency at which the
+<span class="math notranslate nohighlight">\(\mathcal{H}_\infty/\mathcal{L}_\infty\)</span> norm is attained can be preset with <code class="docutils literal notranslate"><span class="pre">fpeak</span></code>.</p>
+</dd>
 <dt>solver_options</dt><dd><p>The solver options to use to solve the Lyapunov equations.</p>
 </dd>
 <dt>error_estimator</dt><dd><p>An error estimator for the problem. This can be any object with an
@@ -654,6 +659,9 @@ the visualizer’s <code class="docutils literal notranslate"><span class="pre">
 <dt>sampling_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if the system is continuous-time, otherwise a positive number that denotes the
 sampling time (in seconds).</p>
 </dd>
+<dt>presets</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of preset attributes or <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+See <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+</dd>
 <dt>state_id</dt><dd><p>Id of the state space.</p>
 </dd>
 <dt>solver_options</dt><dd><p>The solver options to use to solve the Lyapunov equations.</p>
@@ -719,6 +727,9 @@ to the model which forwards its arguments to the visualizer’s <code class="doc
 <dt>sampling_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if the system is continuous-time, otherwise a positive number that denotes the
 sampling time (in seconds).</p>
 </dd>
+<dt>presets</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of preset attributes or <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+See <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+</dd>
 <dt>state_id</dt><dd><p>Id of the state space.</p>
 </dd>
 <dt>solver_options</dt><dd><p>The solver options to use to solve the Lyapunov equations.</p>
@@ -778,6 +789,9 @@ C, and optionally D and E.</p>
 <dt>sampling_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if the system is continuous-time, otherwise a positive number that denotes the
 sampling time (in seconds).</p>
 </dd>
+<dt>presets</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of preset attributes or <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+See <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+</dd>
 <dt>state_id</dt><dd><p>Id of the state space.</p>
 </dd>
 <dt>solver_options</dt><dd><p>The solver options to use to solve the Lyapunov equations.</p>
@@ -826,6 +840,9 @@ to the model which forwards its arguments to the visualizer’s <code class="doc
 </dd>
 <dt>sampling_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if the system is continuous-time, otherwise a positive number that denotes the
 sampling time (in seconds).</p>
+</dd>
+<dt>presets</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of preset attributes or <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+See <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
 </dd>
 <dt>state_id</dt><dd><p>Id of the state space.</p>
 </dd>
@@ -990,7 +1007,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'c_dense'
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.h2_norm">
 <span class="sig-name descname"><span class="pre">h2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_LTI-attributes/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.h2_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the H2-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\mathcal{H}_\2\)</span>-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Assumes the system is asymptotically stable.</p>
@@ -1005,7 +1022,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'c_dense'
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>norm</dt><dd><p>H_2-norm.</p>
+<dt>norm</dt><dd><p><span class="math notranslate nohighlight">\(\mathcal{H}_\2\)</span>-norm.</p>
 </dd>
 </dl>
 </div>
@@ -1013,12 +1030,12 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'c_dense'
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.hinf_norm">
 <span class="sig-name descname"><span class="pre">hinf_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ab13dd_equilibrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_LTI-attributes/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.hinf_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the H_infinity-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span>-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Assumes the system is asymptotically stable. Under this is assumption
-the H_infinity-norm is equal to the L_infinity-norm. Accordingly, this
-method calls <a class="reference internal" href="#pymor.models.iosys.LTIModel.linf_norm" title="pymor.models.iosys.LTIModel.linf_norm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">linf_norm</span></code></a>.</p>
+<p>Assumes the system is asymptotically stable. Under this is assumption the
+<span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span>-norm is equal to the <span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span>-norm.
+Accordingly, this method calls <a class="reference internal" href="#pymor.models.iosys.LTIModel.linf_norm" title="pymor.models.iosys.LTIModel.linf_norm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">linf_norm</span></code></a>.</p>
 </div>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
@@ -1034,7 +1051,7 @@ method calls <a class="reference internal" href="#pymor.models.iosys.LTIModel.li
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>norm</dt><dd><p>H_infinity-norm.</p>
+<dt>norm</dt><dd><p><span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span>-norm.</p>
 </dd>
 <dt>fpeak</dt><dd><p>Frequency at which the maximum is achieved (if <code class="docutils literal notranslate"><span class="pre">return_fpeak</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 </dd>
@@ -1067,8 +1084,8 @@ method calls <a class="reference internal" href="#pymor.models.iosys.LTIModel.li
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.l2_norm">
 <span class="sig-name descname"><span class="pre">l2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ast_pole_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_LTI-attributes/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.l2_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the L2-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
-<p>The L2-norm of an <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> is defined via the integral</p>
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\mathcal{L}_\2\)</span>-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
+<p>The <span class="math notranslate nohighlight">\(\mathcal{L}_\2\)</span>-norm of an <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> is defined via the integral</p>
 <div class="math notranslate nohighlight">
 \[\lVert H \rVert_{\mathcal{L}_2}
 =
@@ -1097,7 +1114,7 @@ and <code class="docutils literal notranslate"><span class="pre">lev</span></cod
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>norm</dt><dd><p>L_2-norm.</p>
+<dt>norm</dt><dd><p><span class="math notranslate nohighlight">\(\mathcal{L}_\2\)</span>-norm.</p>
 </dd>
 </dl>
 </div>
@@ -1105,8 +1122,8 @@ and <code class="docutils literal notranslate"><span class="pre">lev</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.linf_norm">
 <span class="sig-name descname"><span class="pre">linf_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ab13dd_equilibrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_LTI-attributes/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.linf_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the L_infinity-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
-<p>The L-infinity norm of an <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> is defined via</p>
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span>-norm of the <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
+<p>The <span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span>-norm of an <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> is defined via</p>
 <div class="math notranslate nohighlight">
 \[\lVert H \rVert_{\mathcal{L}_\infty}
 = \sup_{\omega \in \mathbb{R}}
@@ -1125,7 +1142,7 @@ and <code class="docutils literal notranslate"><span class="pre">lev</span></cod
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>norm</dt><dd><p>L_infinity-norm.</p>
+<dt>norm</dt><dd><p><span class="math notranslate nohighlight">\(\mathcal{L}_\infty\)</span>-norm.</p>
 </dd>
 <dt>fpeak</dt><dd><p>Frequency at which the maximum is achieved (if <code class="docutils literal notranslate"><span class="pre">return_fpeak</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 </dd>
@@ -1663,7 +1680,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'pc_dense
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.h2_norm">
 <span class="sig-name descname"><span class="pre">h2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_LTI-attributes/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.h2_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the H2-norm.</p>
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\mathcal{H}_\2\)</span>-norm.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Assumes the system is asymptotically stable.</p>
@@ -1678,7 +1695,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'pc_dense
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>norm</dt><dd><p>H_2-norm.</p>
+<dt>norm</dt><dd><p><span class="math notranslate nohighlight">\(\mathcal{H}_\2\)</span>-norm.</p>
 </dd>
 </dl>
 </div>
@@ -1686,7 +1703,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'pc_dense
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.models.iosys.SecondOrderModel.hinf_norm">
 <span class="sig-name descname"><span class="pre">hinf_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fpeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ab13dd_equilibrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_LTI-attributes/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.SecondOrderModel.hinf_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the H_infinity-norm.</p>
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span>-norm.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Assumes the system is asymptotically stable.</p>
@@ -1705,7 +1722,7 @@ If typ is <code class="docutils literal notranslate"><span class="pre">'pc_dense
 <div class="admonition-returns admonition">
 <p class="admonition-title">Returns</p>
 <dl class="simple">
-<dt>norm</dt><dd><p>H_infinity-norm.</p>
+<dt>norm</dt><dd><p><span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span>.</p>
 </dd>
 <dt>fpeak</dt><dd><p>Frequency at which the maximum is achieved (if <code class="docutils literal notranslate"><span class="pre">return_fpeak</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 </dd>
