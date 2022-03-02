@@ -75,6 +75,9 @@ Functions
       `list` of all defined |rules|.
       
 
+   .. py:method:: action_NumpyHankelOperator(self, op)
+
+
    .. py:method:: action_NumpyMatrixOperator(self, op)
 
 

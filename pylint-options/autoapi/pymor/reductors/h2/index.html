@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.reductors.h2 &#8212; pyMOR v2021.2.0+49.gdf5ef7d65 Manual</title>
+    <title>pymor.reductors.h2 &#8212; pyMOR v2021.2.0+192.gc54711d3a Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -57,12 +57,15 @@
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../../../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -110,11 +113,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+192.gc54711d3a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+49.gdf5ef7d65 Manual logo">
+                   alt="pyMOR v2021.2.0+192.gc54711d3a Manual logo">
           
         </a>
       </div>
@@ -180,7 +183,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+49.gdf5ef7d65 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+192.gc54711d3a Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.reductors</span></code></a></li>
@@ -195,13 +198,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+192.gc54711d3a Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+192.gc54711d3a Manual">Documentation</a>
   </label>
   
 
@@ -787,7 +790,7 @@ this option only if necessary.</p>
 <dt class="sig sig-object py" id="pymor.reductors.h2.TSIAReductor.reduce">
 <span class="sig-name descname"><span class="pre">reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rom0_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_prev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_crit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sigma'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/reductors/h2.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.reductors.h2.TSIAReductor.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduce using TSIA.</p>
-<p>See <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id37" title="Y. Xu and T. Zeng. Optimal $\mathcal H_2$ model reduction for large scale MIMO systems via tangential interpolation. Int. J. Numer. Anal. Model., 8(1):174–188, 2011. URL: http://www.math.ualberta.ca/ijnam/Volume-8-2011/No-1-11/2011-01-10.pdf.">XZ11</a>]</span> (Algorithm 1) and <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id10" title="P. Benner, M. Köhler, and J. Saak. Sparse-dense Sylvester equations in $H_2$-model order reduction. Preprint MPIMD/11-11, Max Planck Institute Magdeburg, December 2011. URL: https://csc.mpi-magdeburg.mpg.de/preprints/2011/11/.">BKohlerS11</a>]</span>.</p>
+<p>See <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id38" title="Y. Xu and T. Zeng. Optimal $\mathcal H_2$ model reduction for large scale MIMO systems via tangential interpolation. Int. J. Numer. Anal. Model., 8(1):174–188, 2011. URL: http://www.math.ualberta.ca/ijnam/Volume-8-2011/No-1-11/2011-01-10.pdf.">XZ11</a>]</span> (Algorithm 1) and <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id10" title="P. Benner, M. Köhler, and J. Saak. Sparse-dense Sylvester equations in $H_2$-model order reduction. Preprint MPIMD/11-11, Max Planck Institute Magdeburg, December 2011. URL: https://csc.mpi-magdeburg.mpg.de/preprints/2011/11/.">BKohlerS11</a>]</span>.</p>
 <p>In exact arithmetic, TSIA is equivalent to IRKA (under some
 assumptions on the poles of the reduced model). The main
 difference in implementation is that TSIA computes the Schur
@@ -1079,14 +1082,14 @@ respect to the E product.</p></li>
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
           <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2013-2021 pyMOR developers and contributors.
+              &#169; Copyright pyMOR developers and contributors.
               
           </div>
             Last updated on
-              Jan 26, 2022.
+              Mar 02, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

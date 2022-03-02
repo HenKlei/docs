@@ -37,7 +37,7 @@ Functions
    Return minimal sparse problem size for which to warn about converting to dense.
 
 
-.. py:class:: LTIModel(A, B, C, D=None, E=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
+.. py:class:: LTIModel(A, B, C, D=None, E=None, sampling_time=0, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -74,8 +74,9 @@ Functions
            The |Operator| D or `None` (then D is assumed to be zero).
        E
            The |Operator| E or `None` (then E is assumed to be identity).
-       cont_time
-           `True` if the system is continuous-time, otherwise `False`.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
        solver_options
            The solver options to use to solve the Lyapunov equations.
        error_estimator
@@ -133,7 +134,7 @@ Functions
       Return str(self).
 
 
-   .. py:method:: from_matrices(cls, A, B, C, D=None, E=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_matrices(cls, A, B, C, D=None, E=None, sampling_time=0, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices.
@@ -150,8 +151,9 @@ Functions
               The |NumPy array| or |SciPy spmatrix| D or `None` (then D is assumed to be zero).
           E
               The |NumPy array| or |SciPy spmatrix| E or `None` (then E is assumed to be identity).
-          cont_time
-              `True` if the system is continuous-time, otherwise `False`.
+          sampling_time
+              `0` if the system is continuous-time, otherwise a positive number that denotes the
+              sampling time (in seconds).
           state_id
               Id of the state space.
           solver_options
@@ -192,7 +194,7 @@ Functions
               The |NumPy array| or |SciPy spmatrix| E or `None` (if E is an `IdentityOperator`).
               
 
-   .. py:method:: from_files(cls, A_file, B_file, C_file, D_file=None, E_file=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_files(cls, A_file, B_file, C_file, D_file=None, E_file=None, sampling_time=0, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in separate files.
@@ -209,8 +211,9 @@ Functions
               `None` or the name of the file (with extension) containing D.
           E_file
               `None` or the name of the file (with extension) containing E.
-          cont_time
-              `True` if the system is continuous-time, otherwise `False`.
+          sampling_time
+              `0` if the system is continuous-time, otherwise a positive number that denotes the
+              sampling time (in seconds).
           state_id
               Id of the state space.
           solver_options
@@ -252,7 +255,7 @@ Functions
               `IdentityOperator`.
               
 
-   .. py:method:: from_mat_file(cls, file_name, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_mat_file(cls, file_name, sampling_time=0, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in a .mat file.
@@ -262,8 +265,9 @@ Functions
           file_name
               The name of the .mat file (extension .mat does not need to be included) containing A, B,
               C, and optionally D and E.
-          cont_time
-              `True` if the system is continuous-time, otherwise `False`.
+          sampling_time
+              `0` if the system is continuous-time, otherwise a positive number that denotes the
+              sampling time (in seconds).
           state_id
               Id of the state space.
           solver_options
@@ -296,7 +300,7 @@ Functions
               The name of the .mat file (extension .mat does not need to be included).
               
 
-   .. py:method:: from_abcde_files(cls, files_basename, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_abcde_files(cls, files_basename, sampling_time=0, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in .[ABCDE] files.
@@ -305,8 +309,9 @@ Functions
 
           files_basename
               The basename of files containing A, B, C, and optionally D and E.
-          cont_time
-              `True` if the system is continuous-time, otherwise `False`.
+          sampling_time
+              `0` if the system is continuous-time, otherwise a positive number that denotes the
+              sampling time (in seconds).
           state_id
               Id of the state space.
           solver_options
@@ -600,7 +605,7 @@ Functions
               
 
 
-.. py:class:: SecondOrderModel(M, E, K, B, Cp, Cv=None, D=None, cont_time=True, solver_options=None, error_estimator=None, visualizer=None, name=None)
+.. py:class:: SecondOrderModel(M, E, K, B, Cp, Cv=None, D=None, sampling_time=0, solver_options=None, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -657,8 +662,9 @@ Functions
            The |Operator| Cv or `None` (then Cv is assumed to be zero).
        D
            The |Operator| D or `None` (then D is assumed to be zero).
-       cont_time
-           `True` if the system is continuous-time, otherwise `False`.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
        solver_options
            The solver options to use to solve the Lyapunov equations.
        error_estimator
@@ -723,7 +729,7 @@ Functions
       Return str(self).
 
 
-   .. py:method:: from_matrices(cls, M, E, K, B, Cp, Cv=None, D=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_matrices(cls, M, E, K, B, Cp, Cv=None, D=None, sampling_time=0, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create a second order system from matrices.
@@ -744,8 +750,9 @@ Functions
               The |NumPy array| or |SciPy spmatrix| Cv or `None` (then Cv is assumed to be zero).
           D
               The |NumPy array| or |SciPy spmatrix| D or `None` (then D is assumed to be zero).
-          cont_time
-              `True` if the system is continuous-time, otherwise `False`.
+          sampling_time
+              `0` if the system is continuous-time, otherwise a positive number that denotes the
+              sampling time (in seconds).
           solver_options
               The solver options to use to solve the Lyapunov equations.
           error_estimator
@@ -788,7 +795,7 @@ Functions
               The |NumPy array| or |SciPy spmatrix| D or `None` (if D is a `ZeroOperator`).
               
 
-   .. py:method:: from_files(cls, M_file, E_file, K_file, B_file, Cp_file, Cv_file=None, D_file=None, cont_time=True, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
+   .. py:method:: from_files(cls, M_file, E_file, K_file, B_file, Cp_file, Cv_file=None, D_file=None, sampling_time=0, state_id='STATE', solver_options=None, error_estimator=None, visualizer=None, name=None)
       :classmethod:
 
       Create |LTIModel| from matrices stored in separate files.
@@ -809,8 +816,9 @@ Functions
               `None` or the name of the file (with extension) containing Cv.
           D_file
               `None` or the name of the file (with extension) containing D.
-          cont_time
-              `True` if the system is continuous-time, otherwise `False`.
+          sampling_time
+              `0` if the system is continuous-time, otherwise a positive number that denotes the
+              sampling time (in seconds).
           state_id
               Id of the state space.
           solver_options
@@ -1119,7 +1127,7 @@ Functions
               
 
 
-.. py:class:: LinearDelayModel(A, Ad, tau, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
+.. py:class:: LinearDelayModel(A, Ad, tau, B, C, D=None, E=None, sampling_time=0, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -1174,8 +1182,9 @@ Functions
            The |Operator| D or `None` (then D is assumed to be zero).
        E
            The |Operator| E or `None` (then E is assumed to be identity).
-       cont_time
-           `True` if the system is continuous-time, otherwise `False`.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
        error_estimator
            An error estimator for the problem. This can be any object with an
            `estimate_error(U, mu, model)` method. If `error_estimator` is not `None`, an
@@ -1278,7 +1287,7 @@ Functions
 
 
 
-.. py:class:: LinearStochasticModel(A, As, B, C, D=None, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
+.. py:class:: LinearStochasticModel(A, As, B, C, D=None, E=None, sampling_time=0, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -1327,8 +1336,9 @@ Functions
            The |Operator| D or `None` (then D is assumed to be zero).
        E
            The |Operator| E or `None` (then E is assumed to be identity).
-       cont_time
-           `True` if the system is continuous-time, otherwise `False`.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
        error_estimator
            An error estimator for the problem. This can be any object with an
            `estimate_error(U, mu, model)` method. If `error_estimator` is not `None`, an
@@ -1388,7 +1398,7 @@ Functions
 
 
 
-.. py:class:: BilinearModel(A, N, B, C, D, E=None, cont_time=True, error_estimator=None, visualizer=None, name=None)
+.. py:class:: BilinearModel(A, N, B, C, D, E=None, sampling_time=0, error_estimator=None, visualizer=None, name=None)
 
    Bases: :py:obj:`pymor.models.interface.Model`
 
@@ -1437,8 +1447,9 @@ Functions
            The |Operator| D or `None` (then D is assumed to be zero).
        E
            The |Operator| E or `None` (then E is assumed to be identity).
-       cont_time
-           `True` if the system is continuous-time, otherwise `False`.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
        error_estimator
            An error estimator for the problem. This can be any object with an
            `estimate_error(U, mu, model)` method. If `error_estimator` is not `None`, an

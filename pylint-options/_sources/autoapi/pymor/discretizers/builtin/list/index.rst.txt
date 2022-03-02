@@ -31,7 +31,8 @@ Functions
    Use NumpyListVectorArrayMatrixOperator instead of NumpyMatrixOperator.
 
    This simple function recursively converts |NumpyMatrixOperators| to corresponding
-   :class:`NumpyListVectorArrayMatrixOperators <pymor.operators.list.NumpyListVectorArrayMatrixOperator>`.
+   :class:`NumpyListVectorArrayMatrixOperators
+   <pymor.operators.list.NumpyListVectorArrayMatrixOperator>`.
 
    .. admonition:: Parameters
 

@@ -28,8 +28,17 @@ Functions
 .. autoapisummary::
   :nosignatures:
 
+   pymor.bindings.fenics._solver_options
    pymor.bindings.fenics.compute_parent_facet_indices
 
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.bindings.fenics._DEFAULT_SOVLER
 
 
 .. py:class:: FenicsVector(impl)
@@ -162,6 +171,15 @@ Functions
    Bases: :py:obj:`pymor.operators.list.LinearComplexifiedListVectorArrayOperatorBase`
 
    Wraps a FEniCS matrix as an |Operator|.
+
+   .. py:method:: _solver_options(self, adjoint=False)
+
+
+   .. py:method:: _create_solver(self, adjoint=False)
+
+
+   .. py:method:: _apply_inverse(self, r, v, adjoint=False)
+
 
    .. py:method:: _real_apply_one_vector(self, u, mu=None, prepare_data=None)
 
@@ -391,6 +409,14 @@ Functions
 
           Linear |Operator| representing the Jacobian.
               
+
+
+.. py:data:: _DEFAULT_SOVLER
+   
+
+   
+
+.. py:function:: _solver_options(solver=_DEFAULT_SOVLER, preconditioner=None, keep_solver=True)
 
 
 .. py:class:: FenicsVisualizer(space, mesh_refinements=0)

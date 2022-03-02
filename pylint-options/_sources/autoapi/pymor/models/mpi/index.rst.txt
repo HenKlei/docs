@@ -63,7 +63,7 @@ Attributes
 
 
 
-.. py:class:: MPIVisualizer(m_obj_id)
+.. py:class:: MPIVisualizer(m_obj_id, remove_model=False)
 
    Bases: :py:obj:`pymor.core.base.ImmutableObject`
 
@@ -88,6 +88,9 @@ Attributes
    by possible changes of the global :mod:`~pymor.core.defaults`.
 
    .. py:method:: visualize(self, U, **kwargs)
+
+
+   .. py:method:: __del__(self)
 
 
 

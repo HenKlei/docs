@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.analyticalproblems.expressions &#8212; pyMOR v2021.2.0+49.gdf5ef7d65 Manual</title>
+    <title>pymor.analyticalproblems.expressions &#8212; pyMOR v2021.2.0+192.gc54711d3a Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -57,6 +57,9 @@
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -108,11 +111,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+192.gc54711d3a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+49.gdf5ef7d65 Manual logo">
+                   alt="pyMOR v2021.2.0+192.gc54711d3a Manual logo">
           
         </a>
       </div>
@@ -178,7 +181,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+49.gdf5ef7d65 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+192.gc54711d3a Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.analyticalproblems</span></code></a></li>
@@ -193,13 +196,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+192.gc54711d3a Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+192.gc54711d3a Manual">Documentation</a>
   </label>
   
 
@@ -529,148 +532,151 @@ the usual broadcasting rules apply.</p>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Expression</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.TransformLiterals" title="pymor.analyticalproblems.expressions.TransformLiterals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TransformLiterals</span></code></a></p></td>
+<td><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">NodeVisitor</span></code> subclass that walks the abstract syntax tree and</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Expression</span></code></a></p></td>
 <td><p>A symbolic math expression</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.BaseConstant" title="pymor.analyticalproblems.expressions.BaseConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseConstant</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.BaseConstant" title="pymor.analyticalproblems.expressions.BaseConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseConstant</span></code></a></p></td>
 <td><p>A constant value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Constant" title="pymor.analyticalproblems.expressions.Constant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Constant</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Constant" title="pymor.analyticalproblems.expressions.Constant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Constant</span></code></a></p></td>
 <td><p>A constant value given by a <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a> array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Parameter" title="pymor.analyticalproblems.expressions.Parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameter</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Parameter" title="pymor.analyticalproblems.expressions.Parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameter</span></code></a></p></td>
 <td><p>A free parameter in an <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Array" title="pymor.analyticalproblems.expressions.Array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Array</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Array" title="pymor.analyticalproblems.expressions.Array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Array</span></code></a></p></td>
 <td><p>An array of scalar-valued <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expressions</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.BinaryOp" title="pymor.analyticalproblems.expressions.BinaryOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryOp</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.BinaryOp" title="pymor.analyticalproblems.expressions.BinaryOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryOp</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Neg" title="pymor.analyticalproblems.expressions.Neg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Neg</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Neg" title="pymor.analyticalproblems.expressions.Neg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Neg</span></code></a></p></td>
 <td><p>Negated <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Indexed" title="pymor.analyticalproblems.expressions.Indexed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indexed</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Indexed" title="pymor.analyticalproblems.expressions.Indexed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indexed</span></code></a></p></td>
 <td><p>Indexed <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall" title="pymor.analyticalproblems.expressions.UnaryFunctionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryFunctionCall</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall" title="pymor.analyticalproblems.expressions.UnaryFunctionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryFunctionCall</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryReductionCall" title="pymor.analyticalproblems.expressions.UnaryReductionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryReductionCall</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryReductionCall" title="pymor.analyticalproblems.expressions.UnaryReductionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryReductionCall</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Sum" title="pymor.analyticalproblems.expressions.Sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sum</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Sum" title="pymor.analyticalproblems.expressions.Sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sum</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Diff" title="pymor.analyticalproblems.expressions.Diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Diff</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Diff" title="pymor.analyticalproblems.expressions.Diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Diff</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Prod" title="pymor.analyticalproblems.expressions.Prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Prod</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Prod" title="pymor.analyticalproblems.expressions.Prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Prod</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Div" title="pymor.analyticalproblems.expressions.Div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Div</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Div" title="pymor.analyticalproblems.expressions.Div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Div</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pow" title="pymor.analyticalproblems.expressions.Pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pow</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pow" title="pymor.analyticalproblems.expressions.Pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pow</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Mod" title="pymor.analyticalproblems.expressions.Mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mod</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Mod" title="pymor.analyticalproblems.expressions.Mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mod</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LE" title="pymor.analyticalproblems.expressions.LE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LE" title="pymor.analyticalproblems.expressions.LE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LE</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GE" title="pymor.analyticalproblems.expressions.GE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GE" title="pymor.analyticalproblems.expressions.GE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GE</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LT" title="pymor.analyticalproblems.expressions.LT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LT</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.LT" title="pymor.analyticalproblems.expressions.LT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LT</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GT" title="pymor.analyticalproblems.expressions.GT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.GT" title="pymor.analyticalproblems.expressions.GT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GT</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of a binary operator acting on two sub-expressions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sin" title="pymor.analyticalproblems.expressions.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sin" title="pymor.analyticalproblems.expressions.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cos" title="pymor.analyticalproblems.expressions.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cos" title="pymor.analyticalproblems.expressions.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tan" title="pymor.analyticalproblems.expressions.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tan" title="pymor.analyticalproblems.expressions.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsin" title="pymor.analyticalproblems.expressions.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsin" title="pymor.analyticalproblems.expressions.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccos" title="pymor.analyticalproblems.expressions.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccos" title="pymor.analyticalproblems.expressions.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctan" title="pymor.analyticalproblems.expressions.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctan" title="pymor.analyticalproblems.expressions.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sinh" title="pymor.analyticalproblems.expressions.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sinh" title="pymor.analyticalproblems.expressions.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cosh" title="pymor.analyticalproblems.expressions.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.cosh" title="pymor.analyticalproblems.expressions.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tanh" title="pymor.analyticalproblems.expressions.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.tanh" title="pymor.analyticalproblems.expressions.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsinh" title="pymor.analyticalproblems.expressions.arcsinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsinh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arcsinh" title="pymor.analyticalproblems.expressions.arcsinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsinh</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccosh" title="pymor.analyticalproblems.expressions.arccosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccosh</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arccosh" title="pymor.analyticalproblems.expressions.arccosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccosh</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctanh" title="pymor.analyticalproblems.expressions.arctanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctanh</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.arctanh" title="pymor.analyticalproblems.expressions.arctanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctanh</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp" title="pymor.analyticalproblems.expressions.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp" title="pymor.analyticalproblems.expressions.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp2" title="pymor.analyticalproblems.expressions.exp2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp2</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.exp2" title="pymor.analyticalproblems.expressions.exp2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp2</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log" title="pymor.analyticalproblems.expressions.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log" title="pymor.analyticalproblems.expressions.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log2" title="pymor.analyticalproblems.expressions.log2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log2</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log2" title="pymor.analyticalproblems.expressions.log2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log2</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log10" title="pymor.analyticalproblems.expressions.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.log10" title="pymor.analyticalproblems.expressions.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sqrt" title="pymor.analyticalproblems.expressions.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sqrt" title="pymor.analyticalproblems.expressions.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.abs" title="pymor.analyticalproblems.expressions.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.abs" title="pymor.analyticalproblems.expressions.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sign" title="pymor.analyticalproblems.expressions.sign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sign" title="pymor.analyticalproblems.expressions.sign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.angle" title="pymor.analyticalproblems.expressions.angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angle</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.angle" title="pymor.analyticalproblems.expressions.angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angle</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.norm" title="pymor.analyticalproblems.expressions.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.norm" title="pymor.analyticalproblems.expressions.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.min" title="pymor.analyticalproblems.expressions.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.min" title="pymor.analyticalproblems.expressions.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.max" title="pymor.analyticalproblems.expressions.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.max" title="pymor.analyticalproblems.expressions.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sum" title="pymor.analyticalproblems.expressions.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.sum" title="pymor.analyticalproblems.expressions.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.prod" title="pymor.analyticalproblems.expressions.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.prod" title="pymor.analyticalproblems.expressions.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a></p></td>
 <td><p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pi" title="pymor.analyticalproblems.expressions.Pi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pi</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.Pi" title="pymor.analyticalproblems.expressions.Pi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pi</span></code></a></p></td>
 <td><p>A constant value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.E" title="pymor.analyticalproblems.expressions.E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.E" title="pymor.analyticalproblems.expressions.E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E</span></code></a></p></td>
 <td><p>A constant value.</p></td>
 </tr>
 </tbody>
@@ -687,10 +693,7 @@ the usual broadcasting rules apply.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions.parse_expression" title="pymor.analyticalproblems.expressions.parse_expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_expression</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions._convert_to_expression" title="pymor.analyticalproblems.expressions._convert_to_expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_convert_to_expression</span></code></a></p></td>
-<td><p>Used internally to convert literals/list constructors to an <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions._broadcastable_shapes" title="pymor.analyticalproblems.expressions._broadcastable_shapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_broadcastable_shapes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymor.analyticalproblems.expressions._broadcastable_shapes" title="pymor.analyticalproblems.expressions._broadcastable_shapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_broadcastable_shapes</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -726,6 +729,60 @@ the usual broadcasting rules apply.</p>
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.parse_expression">
 <span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">parse_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.parse_expression" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.TransformLiterals">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">TransformLiterals</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.TransformLiterals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/ast.html#ast.NodeTransformer" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ast.NodeTransformer</span></code></a></p>
+<p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">NodeVisitor</span></code> subclass that walks the abstract syntax tree and
+allows modification of nodes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">NodeTransformer</span></code> will walk the AST and use the return value of the
+visitor methods to replace or remove the old node.  If the return value of
+the visitor method is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the node will be removed from its location,
+otherwise it is replaced with the return value.  The return value may be the
+original node in which case no replacement takes place.</p>
+<p>Here is an example transformer that rewrites all occurrences of name lookups
+(<code class="docutils literal notranslate"><span class="pre">foo</span></code>) to <code class="docutils literal notranslate"><span class="pre">data['foo']</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RewriteName</span><span class="p">(</span><span class="n">NodeTransformer</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">visit_Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Subscript</span><span class="p">(</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">Name</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">'data'</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">Load</span><span class="p">()),</span>
+            <span class="nb">slice</span><span class="o">=</span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">Str</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">)),</span>
+            <span class="n">ctx</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">ctx</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p>Keep in mind that if the node you’re operating on has child nodes you must
+either transform the child nodes yourself or call the <code class="xref py py-meth docutils literal notranslate"><span class="pre">generic_visit</span></code>
+method for the node first.</p>
+<p>For nodes that were part of a collection of statements (that applies to all
+statement nodes), the visitor may also return a list of nodes rather than
+just a single node.</p>
+<p>Usually you use the transformer like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">YourTransformer</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.TransformLiterals.in_subscript">
+<span class="sig-name descname"><span class="pre">in_subscript</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.TransformLiterals.in_subscript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.TransformLiterals.visit_Constant">
+<span class="sig-name descname"><span class="pre">visit_Constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.TransformLiterals.visit_Constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.TransformLiterals.visit_Num">
+<span class="sig-name descname"><span class="pre">visit_Num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.TransformLiterals.visit_Num" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.TransformLiterals.visit_Subscript">
+<span class="sig-name descname"><span class="pre">visit_Subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.TransformLiterals.visit_Subscript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.TransformLiterals.visit_List">
+<span class="sig-name descname"><span class="pre">visit_List</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.TransformLiterals.visit_List" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Expression">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Expression" title="Permalink to this definition">¶</a></dt>
@@ -865,6 +922,10 @@ the expression which shall be treated as input variables.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">Constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Constant" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.analyticalproblems.expressions.BaseConstant" title="pymor.analyticalproblems.expressions.BaseConstant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseConstant</span></code></a></p>
 <p>A constant value given by a <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a> array.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Constant.shape">
+<span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">[]</span></em><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Constant.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Constant.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Constant.__str__" title="Permalink to this definition">¶</a></dt>
@@ -908,6 +969,10 @@ input variables. Each parameter is a vector of shape <code class="docutils liter
 <span class="sig-name descname"><span class="pre">numpy_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.numpy_expr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called by <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression.to_numpy" title="pymor.analyticalproblems.expressions.Expression.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.</p>
 </dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array._format_repr">
+<span class="sig-name descname"><span class="pre">_format_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbosity</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array._format_repr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.Array.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.Array.__str__" title="Permalink to this definition">¶</a></dt>
@@ -986,6 +1051,10 @@ input variables. Each parameter is a vector of shape <code class="docutils liter
 <dd><p>Called by <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression.to_numpy" title="pymor.analyticalproblems.expressions.Expression.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.</p>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.UnaryFunctionCall._format_repr">
+<span class="sig-name descname"><span class="pre">_format_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbosity</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall._format_repr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.UnaryFunctionCall.__str__">
 <span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
@@ -994,7 +1063,7 @@ input variables. Each parameter is a vector of shape <code class="docutils liter
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.UnaryReductionCall">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">UnaryReductionCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.UnaryReductionCall" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Expression</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#pymor.analyticalproblems.expressions.UnaryFunctionCall" title="pymor.analyticalproblems.expressions.UnaryFunctionCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryFunctionCall</span></code></a></p>
 <p>Compound <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a> of an unary function applied to a sub-expression.</p>
 <p>The function is applied to the entire vector/matrix/tensor the sub-expression evaluates to,
 returning a single number.</p>
@@ -1007,16 +1076,6 @@ returning a single number.</p>
 <span class="sig-name descname"><span class="pre">numpy_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.UnaryReductionCall.numpy_expr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called by <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression.to_numpy" title="pymor.analyticalproblems.expressions.Expression.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_numpy</span></code></a>.</p>
 </dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions.UnaryReductionCall.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions.UnaryReductionCall.__str__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return str(self).</p>
-</dd></dl>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="pymor.analyticalproblems.expressions._convert_to_expression">
-<span class="sig-prename descclassname"><span class="pre">pymor.analyticalproblems.expressions.</span></span><span class="sig-name descname"><span class="pre">_convert_to_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/pylint-options/src/pymor/analyticalproblems/expressions.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.analyticalproblems.expressions._convert_to_expression" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used internally to convert literals/list constructors to an <a class="reference internal" href="#pymor.analyticalproblems.expressions.Expression" title="pymor.analyticalproblems.expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a>.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.analyticalproblems.expressions._broadcastable_shapes">
@@ -1492,14 +1551,14 @@ returning a single number.</p>
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
           <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2013-2021 pyMOR developers and contributors.
+              &#169; Copyright pyMOR developers and contributors.
               
           </div>
             Last updated on
-              Jan 26, 2022.
+              Mar 02, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

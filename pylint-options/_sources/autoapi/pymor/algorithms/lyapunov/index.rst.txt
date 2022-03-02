@@ -148,7 +148,7 @@ Attributes
      .. math::
          A X + X A^T + B B^T = 0,
 
-   - if trans is `False` and E is an |Operator|:
+   - if trans is `False` and E is a |NumPy array|:
 
      .. math::
          A X E^T + E X A^T + B B^T = 0,
@@ -158,7 +158,7 @@ Attributes
      .. math::
          A^T X + X A + B^T B = 0,
 
-   - if trans is `True` and E is an |Operator|:
+   - if trans is `True` and E is a |NumPy array|:
 
      .. math::
          A^T X E + E^T X A + B^T B = 0.

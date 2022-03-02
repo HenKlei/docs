@@ -14,6 +14,8 @@
      which assemble into a |NumpyMatrixOperator|.
    - |NumpyGenericOperator| wraps an arbitrary Python function between
      |NumPy arrays| as an |Operator|.
+   - :class:`NumpyHankelOperator` implicitly constructs a Hankel operator from a |NumPy array| of
+     Markov parameters.
 
 
 
@@ -28,6 +30,7 @@ Classes
    pymor.operators.numpy.NumpyGenericOperator
    pymor.operators.numpy.NumpyMatrixBasedOperator
    pymor.operators.numpy.NumpyMatrixOperator
+   pymor.operators.numpy.NumpyHankelOperator
 
 
 
@@ -309,12 +312,12 @@ Classes
 
    Bases: :py:obj:`NumpyMatrixBasedOperator`
 
-   Wraps a 2D |NumPy Array| as an |Operator|.
+   Wraps a 2D |NumPy Array| or |SciPy spmatrix| as an |Operator|.
 
    .. admonition:: Parameters
 
        matrix
-           The |NumPy array| which is to be wrapped.
+           The |NumPy array| or |SciPy spmatrix| which is to be wrapped.
        source_id
            The id of the operator's `source` |VectorSpace|.
        range_id
@@ -564,6 +567,119 @@ Classes
 
 
    .. py:method:: _format_repr(self, max_width, verbosity)
+
+
+
+.. py:class:: NumpyHankelOperator(markov_parameters, source_id=None, range_id=None, name=None)
+
+   Bases: :py:obj:`NumpyGenericOperator`
+
+   Implicit representation of a Hankel operator by a |NumPy Array| of Markov parameters.
+
+   Let
+
+   .. math::
+       h =
+       \begin{pmatrix}
+           h_1 & h_2 & \dots & h_n
+       \end{pmatrix},\quad h_i\in\mathbb{C}^{p\times m},\,i=1,\,\dots,\,n,\quad n,m,p\in\mathbb{N}
+
+   be a finite sequence of (matrix-valued) Markov parameters. For an odd number :math:`n=2s-1`
+   of Markov parameters, the corresponding Hankel operator can be represented by the matrix
+
+   .. math::
+       H =
+       \begin{bmatrix}
+           h_1 & h_2 & \dots & h_s \\
+           h_2 & h_3 & \dots & h_{s+1}\\
+           \vdots & \vdots && \vdots\\
+           h_s & h_{s+1} & \dots & h_{2s-1}
+       \end{bmatrix}\in\mathbb{C}^{ms\times ps}.
+
+   For an even number :math:`n=2s` of Markov parameters, the corresponding matrix
+   representation is given by
+
+   .. math::
+       H =
+       \begin{bmatrix}
+           h_1 & h_2 & \dots & h_s & h_{s+1}\\
+           h_2 & h_3 & \dots & h_{s+1} & h_{s+2}\\
+           \vdots & \vdots && \vdots & \vdots\\
+           h_s & h_{s+1} & \dots & h_{2s-1} & h_{2s}\\
+           h_{s+1} & h_{s+2} & \dots & h_{2s} & 0
+       \end{bmatrix}\in\mathbb{C}^{m(s+1)\times p(s+1)}.
+
+   The matrix :math:`H` as seen above is not explicitly constructed, only the sequence of Markov
+   parameters is stored. Efficient matrix-vector multiplications are realized via circulant
+   matrices with DFT in the class' `apply` method
+   (see :cite:`MSKC21` Algorithm 3.1. for details).
+
+   .. admonition:: Parameters
+
+       markov_parameters
+           The |NumPy array| that contains the first :math:`n` Markov parameters that define the Hankel
+           operator. Has to be one- or three-dimensional with either::
+           
+               markov_parameters.shape = (n,)
+           
+           for scalar-valued Markov parameters or::
+           
+               markov_parameters.shape = (n, p, m)
+           
+           for matrix-valued Markov parameters of dimension :math:`p\times m`.
+       source_id
+           The id of the operator's `source` |VectorSpace|.
+       range_id
+           The id of the operator's `range` |VectorSpace|.
+       name
+           Name of the operator.
+           
+   .. py:method:: apply(self, U, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: apply_adjoint(self, V, mu=None)
+
+      Apply the adjoint operator.
+
+      For any given linear |Operator| `op`, |parameter values| `mu` and
+      |VectorArrays| `U`, `V` in the :attr:`~Operator.source`
+      resp. :attr:`~Operator.range` we have::
+
+          op.apply_adjoint(V, mu).dot(U) == V.inner(op.apply(U, mu))
+
+      Thus, when `op` is represented by a matrix `M`, `apply_adjoint` is
+      given by left-multplication of (the complex conjugate of) `M` with `V`.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the adjoint operator is applied.
+          mu
+              The |parameter values| for which to apply the adjoint operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the adjoint operator evaluations.
+              
+
+   .. py:method:: _calc_circulant(self)
+
+
+   .. py:method:: H(self)
+      :property:
 
 
 

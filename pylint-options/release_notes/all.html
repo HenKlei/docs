@@ -47,7 +47,7 @@
   
   
   
-    <title>Release Notes &#8212; pyMOR v2021.2.0+49.gdf5ef7d65 Manual</title>
+    <title>Release Notes &#8212; pyMOR v2021.2.0+192.gc54711d3a Manual</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -57,12 +57,15 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/pymor_favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -110,11 +113,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual"
+        <a href="../index.html" title="pyMOR v2021.2.0+192.gc54711d3a Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+49.gdf5ef7d65 Manual logo">
+                   alt="pyMOR v2021.2.0+192.gc54711d3a Manual logo">
           
         </a>
       </div>
@@ -180,7 +183,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.2.0+49.gdf5ef7d65 Manual</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">pyMOR v2021.2.0+192.gc54711d3a Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -192,13 +195,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual" class="md-nav__button md-logo">
+    <a href="../index.html" title="pyMOR v2021.2.0+192.gc54711d3a Manual" class="md-nav__button md-logo">
       
         <img src="../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="pyMOR v2021.2.0+49.gdf5ef7d65 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+192.gc54711d3a Manual">Documentation</a>
   </label>
   
 
@@ -1079,7 +1082,7 @@ low-rank dynamics from observational or simulation data. In contrast to
 Proper Orthogonal Decomposition (POD) where the computed modes are weighted
 by energy content, DMD modes are associated with oscillation frequency and
 decay rate. In <a class="reference external" href="https://github.com/pymor/pymor/pull/1424">[#1424]</a>, both
-the ‘standard’ and ‘exact’ versions of DMD in the sense of <span id="id3">[<a class="reference internal" href="../bibliography.html#id34" title="J. H. Tu, C. W. Rowley, D. M. Luchtenburg, S. L. Brunton, and J. N. Kutz. On dynamic mode decomposition: theory and applications. Journal of Computational Dynamics, pages 391–421, 2014.">TRL+14</a>]</span>
+the ‘standard’ and ‘exact’ versions of DMD in the sense of <span id="id3">[<a class="reference internal" href="../bibliography.html#id35" title="J. H. Tu, C. W. Rowley, D. M. Luchtenburg, S. L. Brunton, and J. N. Kutz. On dynamic mode decomposition: theory and applications. Journal of Computational Dynamics, pages 391–421, 2014.">TRL+14</a>]</span>
 have been implemented as algorithms operating on arbitrary <a class="reference internal" href="../autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a>.
 As such, <a class="reference internal" href="../autoapi/pymor/algorithms/dmd/index.html#pymor.algorithms.dmd.dmd" title="pymor.algorithms.dmd.dmd"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymor.algorithms.dmd.dmd</span></code></a> can be applied also to
 <a class="reference internal" href="../autoapi/pymor/vectorarrays/block/index.html#pymor.vectorarrays.block.BlockVectorArray" title="pymor.vectorarrays.block.BlockVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">blocked</span></code></a> or
@@ -1572,14 +1575,14 @@ the neural networks. No knowledge of PyTorch or neural networks is required to a
 <p>The new <a class="reference internal" href="../autoapi/pymor/algorithms/eigs/index.html#pymor.algorithms.eigs.eigs" title="pymor.algorithms.eigs.eigs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">eigs</span></code></a> method
 <a class="reference external" href="https://github.com/pymor/pymor/pull/880">[#880]</a> computes
 smallest/largest eigenvalues of an arbitary linear real <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>
-using the implicitly restarted Arnoldi method <span id="id60">[<a class="reference internal" href="../bibliography.html#id31" title="Richard Bruno Lehoucq. Analysis and implementation of an implicitly restarted Arnoldi iteration. PhD thesis, Rice University, Houston, USA, 1995. URL: https://scholarship.rice.edu/handle/1911/16844.">Leh95</a>]</span>. It can also
+using the implicitly restarted Arnoldi method <span id="id60">[<a class="reference internal" href="../bibliography.html#id32" title="Richard Bruno Lehoucq. Analysis and implementation of an implicitly restarted Arnoldi iteration. PhD thesis, Rice University, Houston, USA, 1995. URL: https://scholarship.rice.edu/handle/1911/16844.">Leh95</a>]</span>. It can also
 be used to solve generalized eigenvalue problems.</p>
 <p>So far, computing poles of an <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> was only supported by its
 <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.poles" title="pymor.models.iosys.LTIModel.poles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poles</span></code></a> method, which uses a dense eigenvalue
 solver and converts the operators to dense matrices.
 The new <a class="reference internal" href="../autoapi/pymor/algorithms/samdp/index.html#pymor.algorithms.samdp.samdp" title="pymor.algorithms.samdp.samdp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">samdp</span></code></a> method
 <a class="reference external" href="https://github.com/pymor/pymor/pull/834">[#834]</a> implements the
-subspace accelerated dominant pole (SAMDP) algorithm  <span id="id62">[<a class="reference internal" href="../bibliography.html#id33" title="Joost Rommes and Nelson Martins. Efficient computation of multivariable transfer function dominant poles using subspace acceleration. IEEE transactions on power systems, 21(4):1471–1483, 2006.">RM06</a>]</span>,
+subspace accelerated dominant pole (SAMDP) algorithm  <span id="id62">[<a class="reference internal" href="../bibliography.html#id34" title="Joost Rommes and Nelson Martins. Efficient computation of multivariable transfer function dominant poles using subspace acceleration. IEEE transactions on power systems, 21(4):1471–1483, 2006.">RM06</a>]</span>,
 which can be used to compute the dominant poles operators of an
 <a class="reference internal" href="../autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> with arbitrary (in particular sparse) system <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>
 without relying on dense matrix operations.</p>
@@ -2047,7 +2050,7 @@ methods, support for Lyapunov, Riccati and Sylvester equations has been added in
 <a class="reference internal" href="../autoapi/pymor/algorithms/sylvester/index.html#module-pymor.algorithms.sylvester" title="pymor.algorithms.sylvester"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms.sylvester</span></code></a>. A generic low-rank ADI (Alternating Direction
 Implicit) solver for Lyapunov equations is implemented in
 <a class="reference internal" href="../autoapi/pymor/algorithms/lradi/index.html#module-pymor.algorithms.lradi" title="pymor.algorithms.lradi"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms.lradi</span></code></a>. Furthermore, bindings to low-rank and dense
-solvers for Lyapunov and Riccati equations from <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/index.html#module-scipy" title="(in SciPy v1.7.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a>,
+solvers for Lyapunov and Riccati equations from <a class="reference external" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="(in SciPy v1.8.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a>,
 <a class="reference external" href="https://github.com/python-control/Slycot">Slycot</a> and
 <a class="reference external" href="https://www.mpi-magdeburg.mpg.de/projects/mess">Py-M.E.S.S.</a> are provided in
 <a class="reference internal" href="../autoapi/pymor/bindings/scipy/index.html#module-pymor.bindings.scipy" title="pymor.bindings.scipy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings.scipy</span></code></a>, <a class="reference internal" href="../autoapi/pymor/bindings/slycot/index.html#module-pymor.bindings.slycot" title="pymor.bindings.slycot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.bindings.slycot</span></code></a> and
@@ -2487,7 +2490,7 @@ can be used to construct such objects from data files of various formats
 <li><dl class="simple">
 <dt><a class="reference internal" href="../autoapi/pymor/vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>-based <a class="reference internal" href="../autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a> <a class="reference external" href="https://github.com/pymor/pymor/pull/164">[#164]</a>.</dt><dd><p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">playground</span></code> now contains
 <code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyListVectorArrayMatrixOperator</span></code>
-which can apply <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>/<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/index.html#module-scipy" title="(in SciPy v1.7.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a> matrices to a <a class="reference internal" href="../autoapi/pymor/vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.
+which can apply <a class="reference external" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="(in NumPy v1.22)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>/<a class="reference external" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="(in SciPy v1.8.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a> matrices to a <a class="reference internal" href="../autoapi/pymor/vectorarrays/list/index.html#pymor.vectorarrays.list.ListVectorArray" title="pymor.vectorarrays.list.ListVectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListVectorArray</span></code></a>.
 This <a class="reference internal" href="../autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> is mainly intended for performance testing purposes.
 The <code class="xref py py-mod docutils literal notranslate"><span class="pre">thermalblock</span></code> demo now has an option
 <code class="docutils literal notranslate"><span class="pre">--list-vector-array</span></code> for using this operator instead of <a class="reference internal" href="../autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperator</span></code></a>.</p>
@@ -2701,14 +2704,14 @@ all changes can be obtained under the following address:
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
           <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2013-2021 pyMOR developers and contributors.
+              &#169; Copyright pyMOR developers and contributors.
               
           </div>
             Last updated on
-              Jan 26, 2022.
+              Mar 02, 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

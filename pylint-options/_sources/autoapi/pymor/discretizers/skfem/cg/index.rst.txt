@@ -30,6 +30,8 @@ Functions
   :nosignatures:
 
    pymor.discretizers.skfem.cg.discretize_stationary_cg
+   pymor.discretizers.skfem.cg._eval_pymor_function
+   pymor.discretizers.skfem.cg._assemble_operator
 
 
 
@@ -219,4 +221,10 @@ Functions
                :unassembled_m:    In case `preassemble` is `True`, the generated |Model|
                                   before preassembling operators.
            
+
+.. py:function:: _eval_pymor_function(f, x, mu)
+
+
+.. py:function:: _assemble_operator(function, name, factory, ops=None, coeffs=None, negative=False)
+
 
