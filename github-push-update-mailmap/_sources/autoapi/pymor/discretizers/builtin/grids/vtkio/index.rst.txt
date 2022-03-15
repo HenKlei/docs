@@ -1,0 +1,25 @@
+:mod:`pymor.discretizers.builtin.grids.vtkio`
+=============================================
+
+.. py:module:: pymor.discretizers.builtin.grids.vtkio
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.discretizers.builtin.grids.vtkio.write_vtk
+
+
+
+.. py:function:: write_vtk(grid, data, filename_base, codim=2, metadata=None)
+
+   Convenience function around write_vtk_collection(to_meshio(...))
+
+
