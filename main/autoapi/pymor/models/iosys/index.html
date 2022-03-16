@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.iosys &#8212; pyMOR v2021.2.0+220.g345d34f8b Manual</title>
+    <title>pymor.models.iosys &#8212; pyMOR v2021.2.0+246.g4314e70fc Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -113,11 +113,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+220.g345d34f8b Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+246.g4314e70fc Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+220.g345d34f8b Manual logo">
+                   alt="pyMOR v2021.2.0+246.g4314e70fc Manual logo">
           
         </a>
       </div>
@@ -183,7 +183,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+220.g345d34f8b Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+246.g4314e70fc Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -198,13 +198,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+220.g345d34f8b Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+246.g4314e70fc Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+220.g345d34f8b Manual">Documentation</a>
+       title="pyMOR v2021.2.0+246.g4314e70fc Manual">Documentation</a>
   </label>
   
 
@@ -905,10 +905,11 @@ to the model which forwards its arguments to the visualizer’s <code class="doc
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">'c_lrcf'</span></code> and <code class="docutils literal notranslate"><span class="pre">'o_lrcf'</span></code> types, the method assumes the system is asymptotically
-stable.
-For <code class="docutils literal notranslate"><span class="pre">'c_dense'</span></code> and <code class="docutils literal notranslate"><span class="pre">'o_dense'</span></code> types, the method assumes there are no two system
-poles which add to zero.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">'*_lrcf'</span></code> types, the method assumes the system is asymptotically stable.
+For <code class="docutils literal notranslate"><span class="pre">'*_dense'</span></code> types, the method assumes that the underlying Lyapunov equation
+has a unique solution, i.e. no pair of system poles adds to zero in the
+continuous-time case and no pair of system poles multiplies to one in the
+discrete-time case.</p>
 </div>
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
@@ -1549,8 +1550,10 @@ y(t)
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For <code class="docutils literal notranslate"><span class="pre">'*_lrcf'</span></code> types, the method assumes the system is asymptotically stable.
-For <code class="docutils literal notranslate"><span class="pre">'*_dense'</span></code> types, the method assumes there are no two system poles which add to
-zero.</p>
+For <code class="docutils literal notranslate"><span class="pre">'*_dense'</span></code> types, the method assumes that the underlying Lyapunov equation
+has a unique solution, i.e. no pair of system poles adds to zero in the
+continuous-time case and no pair of system poles multiplies to one in the
+discrete-time case.</p>
 </div>
 </dd>
 <dt>mu</dt><dd><p><a class="reference internal" href="../../parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">values</span></code></a>.</p>
@@ -2215,7 +2218,7 @@ factors.</p>
               
           </div>
             Last updated on
-              Mar 15, 2022.
+              Mar 16, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
