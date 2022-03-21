@@ -1,0 +1,637 @@
+:mod:`pymor.vectorarrays.list`
+==============================
+
+.. py:module:: pymor.vectorarrays.list
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.vectorarrays.list.Vector
+   pymor.vectorarrays.list.CopyOnWriteVector
+   pymor.vectorarrays.list.ComplexifiedVector
+   pymor.vectorarrays.list.NumpyVector
+   pymor.vectorarrays.list.ListVectorArrayImpl
+   pymor.vectorarrays.list.ListVectorArray
+   pymor.vectorarrays.list.ListVectorSpace
+   pymor.vectorarrays.list.ComplexifiedListVectorSpace
+   pymor.vectorarrays.list.NumpyListVectorSpace
+
+
+
+
+.. py:class:: Vector
+
+   Bases: :py:obj:`pymor.core.base.BasicObject`
+
+   Interface for vectors used in conjunction with |ListVectorArray|.
+
+   This interface must be satisfied by the individual entries of the
+   vector `list` managed by |ListVectorArray|. All interface methods
+   have a direct counterpart in the |VectorArray| interface.
+
+   .. py:attribute:: __radd__
+      
+
+      
+
+   .. py:method:: copy(self, deep=False)
+      :abstractmethod:
+
+
+   .. py:method:: scal(self, alpha)
+      :abstractmethod:
+
+
+   .. py:method:: axpy(self, alpha, x)
+      :abstractmethod:
+
+
+   .. py:method:: inner(self, other)
+      :abstractmethod:
+
+
+   .. py:method:: norm(self)
+      :abstractmethod:
+
+
+   .. py:method:: norm2(self)
+      :abstractmethod:
+
+
+   .. py:method:: sup_norm(self)
+
+
+   .. py:method:: dofs(self, dof_indices)
+      :abstractmethod:
+
+
+   .. py:method:: amax(self)
+      :abstractmethod:
+
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __iadd__(self, other)
+
+
+   .. py:method:: __sub__(self, other)
+
+
+   .. py:method:: __isub__(self, other)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __imul__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+   .. py:method:: real(self)
+      :property:
+
+
+   .. py:method:: imag(self)
+      :property:
+
+
+   .. py:method:: conj(self)
+
+
+
+.. py:class:: CopyOnWriteVector
+
+   Bases: :py:obj:`Vector`
+
+   Interface for vectors used in conjunction with |ListVectorArray|.
+
+   This interface must be satisfied by the individual entries of the
+   vector `list` managed by |ListVectorArray|. All interface methods
+   have a direct counterpart in the |VectorArray| interface.
+
+   .. py:method:: from_instance(cls, instance)
+      :classmethod:
+
+
+   .. py:method:: _copy_data(self)
+      :abstractmethod:
+
+
+   .. py:method:: _scal(self, alpha)
+      :abstractmethod:
+
+
+   .. py:method:: _axpy(self, alpha, x)
+      :abstractmethod:
+
+
+   .. py:method:: copy(self, deep=False)
+
+
+   .. py:method:: scal(self, alpha)
+
+
+   .. py:method:: axpy(self, alpha, x)
+
+
+   .. py:method:: __del__(self)
+
+
+   .. py:method:: _copy_data_if_needed(self)
+
+
+
+.. py:class:: ComplexifiedVector(real_part, imag_part)
+
+   Bases: :py:obj:`Vector`
+
+   Interface for vectors used in conjunction with |ListVectorArray|.
+
+   This interface must be satisfied by the individual entries of the
+   vector `list` managed by |ListVectorArray|. All interface methods
+   have a direct counterpart in the |VectorArray| interface.
+
+   .. py:method:: copy(self, deep=False)
+
+
+   .. py:method:: scal(self, alpha)
+
+
+   .. py:method:: axpy(self, alpha, x)
+
+
+   .. py:method:: inner(self, other)
+
+
+   .. py:method:: norm(self)
+
+
+   .. py:method:: norm2(self)
+
+
+   .. py:method:: sup_norm(self)
+
+
+   .. py:method:: dofs(self, dof_indices)
+
+
+   .. py:method:: amax(self)
+
+
+   .. py:method:: to_numpy(self, ensure_copy=False)
+
+
+   .. py:method:: real(self)
+      :property:
+
+
+   .. py:method:: imag(self)
+      :property:
+
+
+   .. py:method:: conj(self)
+
+
+
+.. py:class:: NumpyVector(array)
+
+   Bases: :py:obj:`CopyOnWriteVector`
+
+   Vector stored in a NumPy 1D-array.
+
+   .. py:method:: from_instance(cls, instance)
+      :classmethod:
+
+
+   .. py:method:: to_numpy(self, ensure_copy=False)
+
+
+   .. py:method:: dim(self)
+      :property:
+
+
+   .. py:method:: _copy_data(self)
+
+
+   .. py:method:: _scal(self, alpha)
+
+
+   .. py:method:: _axpy(self, alpha, x)
+
+
+   .. py:method:: inner(self, other)
+
+
+   .. py:method:: norm(self)
+
+
+   .. py:method:: norm2(self)
+
+
+   .. py:method:: dofs(self, dof_indices)
+
+
+   .. py:method:: amax(self)
+
+
+   .. py:method:: real(self)
+      :property:
+
+
+   .. py:method:: imag(self)
+      :property:
+
+
+   .. py:method:: conj(self)
+
+
+
+.. py:class:: ListVectorArrayImpl(vectors, space)
+
+   Bases: :py:obj:`pymor.vectorarrays.interface.VectorArrayImpl`
+
+   Implementation of a |VectorArray|.
+
+   The |VectorArray| base class defers all calls to interface methods to an
+   internal `impl` object of this type. Indexing, error checking or non-standard
+   inner products are handled by |VectorArray|. Possible indices are passed
+   to the methods of :class:`VectorArrayImpl` as `ind`, `oind` or `xind`
+   parameters. These can either be `None`, in case the array has not been indexed,
+   a `slice` object, or a Python list of non-negative numbers.
+
+   .. py:attribute:: _NONE
+      :annotation: = []
+
+      
+
+   .. py:method:: _indexed(self, ind)
+
+
+   .. py:method:: to_numpy(self, ensure_copy, ind)
+
+
+   .. py:method:: __len__(self)
+
+
+   .. py:method:: delete(self, ind)
+
+
+   .. py:method:: append(self, other, remove_from_other, oind)
+
+
+   .. py:method:: copy(self, deep, ind)
+
+
+   .. py:method:: scal(self, alpha, ind)
+
+
+   .. py:method:: axpy(self, alpha, x, ind, xind)
+
+
+   .. py:method:: inner(self, other, ind, oind)
+
+
+   .. py:method:: pairwise_inner(self, other, ind, oind)
+
+
+   .. py:method:: gramian(self, ind)
+
+
+   .. py:method:: lincomb(self, coefficients, ind)
+
+
+   .. py:method:: norm(self, ind)
+
+
+   .. py:method:: norm2(self, ind)
+
+
+   .. py:method:: dofs(self, dof_indices, ind)
+
+
+   .. py:method:: amax(self, ind)
+
+
+   .. py:method:: real(self, ind)
+
+
+   .. py:method:: imag(self, ind)
+
+
+   .. py:method:: conj(self, ind)
+
+
+
+.. py:class:: ListVectorArray(space, impl, base=None, ind=None, _len=None)
+
+   Bases: :py:obj:`pymor.vectorarrays.interface.VectorArray`
+
+   |VectorArray| implemented as a Python list of vectors.
+
+   This |VectorArray| implementation is the first choice when
+   creating pyMOR wrappers for external solvers which are based
+   on single vector objects. In order to do so, a wrapping
+   subclass of :class:`Vector` has to be provided
+   on which the implementation of |ListVectorArray| will operate.
+   The associated |VectorSpace| is a subclass of
+   :class:`ListVectorSpace`.
+
+   For an example, see :class:`NumpyVector` and :class:`NumpyListVectorSpace`,
+   :class:`~pymor.bindings.fenics.FenicsVector` and
+   :class:`~pymor.bindings.fenics.FenicsVectorSpace`,
+   :class:`~pymor.bindings.dunegdt.DuneXTVector` and
+   :class:`~pymor.bindings.dunegdt.DuneXTVectorSpace`,
+   :class:`~pymor.bindings.ngsolve.NGSolveVector` and
+   :class:`~pymor.bindings.ngsolve.NGSolveVectorSpace`.
+
+   .. py:attribute:: impl_type
+      
+
+      
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+   .. py:method:: _list(self)
+      :property:
+
+
+   .. py:method:: vectors(self)
+      :property:
+
+
+
+.. py:class:: ListVectorSpace
+
+   Bases: :py:obj:`pymor.vectorarrays.interface.VectorSpace`
+
+   |VectorSpace| of |ListVectorArrays|.
+
+   .. py:attribute:: dim
+      
+
+      
+
+   .. py:attribute:: vector_type
+      
+
+      
+
+   .. py:method:: zero_vector(self)
+      :abstractmethod:
+
+
+   .. py:method:: ones_vector(self)
+
+
+   .. py:method:: full_vector(self, value)
+
+
+   .. py:method:: random_vector(self, distribution, random_state, **kwargs)
+
+
+   .. py:method:: make_vector(self, obj)
+      :abstractmethod:
+
+
+   .. py:method:: vector_from_numpy(self, data, ensure_copy=False)
+      :abstractmethod:
+
+
+   .. py:method:: space_from_vector_obj(cls, vec, id)
+      :classmethod:
+      :abstractmethod:
+
+
+   .. py:method:: space_from_dim(cls, dim, id)
+      :classmethod:
+      :abstractmethod:
+
+
+   .. py:method:: zeros(self, count=1, reserve=0)
+
+      Create a |VectorArray| of null vectors
+
+      .. admonition:: Parameters
+
+          count
+              The number of vectors.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| containing `count` vectors with each component zero.
+              
+
+   .. py:method:: ones(self, count=1, reserve=0)
+
+      Create a |VectorArray| of vectors with all DOFs set to one.
+
+      This is a shorthand for `self.full(1., count, reserve)`.
+
+      .. admonition:: Parameters
+
+          count
+              The number of vectors.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| containing `count` vectors with each DOF set to one.
+              
+
+   .. py:method:: full(self, value, count=1, reserve=0)
+
+      Create a |VectorArray| of vectors with all DOFs set to the same value.
+
+      .. admonition:: Parameters
+
+          value
+              The value each DOF should be set to.
+          count
+              The number of vectors.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| containing `count` vectors with each DOF set to `value`.
+              
+
+   .. py:method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
+
+      Create a |VectorArray| of vectors with random entries.
+
+      Supported random distributions::
+
+          'uniform': Uniform distribution in half-open interval
+                     [`low`, `high`).
+          'normal':  Normal (Gaussian) distribution with mean
+                     `loc` and standard deviation `scale`.
+
+      Note that not all random distributions are necessarily implemented
+      by all |VectorSpace| implementations.
+
+      .. admonition:: Parameters
+
+          count
+              The number of vectors.
+          distribution
+              Random distribution to use (`'uniform'`, `'normal'`).
+          low
+              Lower bound for `'uniform'` distribution (defaults to `0`).
+          high
+              Upper bound for `'uniform'` distribution (defaults to `1`).
+          loc
+              Mean for `'normal'` distribution (defaults to `0`).
+          scale
+              Standard deviation for `'normal'` distribution (defaults to `1`).
+          random_state
+              :class:`~numpy.random.RandomState` to use for sampling.
+              If `None`, a new random state is generated using `seed`
+              as random seed, or the :func:`default <pymor.tools.random.default_random_state>`
+              random state is used.
+          seed
+              If not `None`, a new random state with this seed is used.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+
+   .. py:method:: make_array(cls, obj, id=None)
+
+      Create a |VectorArray| from raw data.
+
+      This method is used in the implementation of |Operators|
+      and |Models| to create new |VectorArrays| from
+      raw data of the underlying solver backends. The ownership
+      of the data is transferred to the newly created array.
+
+      The exact signature of this method depends on the wrapped
+      solver backend.
+
+
+   .. py:method:: from_numpy(cls, data, id=None, ensure_copy=False)
+
+      Create a |VectorArray| from a |NumPy array|
+
+      Note that this method will not be supported by all vector
+      space implementations.
+
+      .. admonition:: Parameters
+
+          data
+              |NumPy| array of shape `(len, dim)` where `len` is the
+              number of vectors and `dim` their dimension.
+          ensure_copy
+              If `False`, modifying the returned |VectorArray| might alter the original
+              |NumPy array|. If `True` always a copy of the array data is made.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| with `data` as data.
+              
+
+
+.. py:class:: ComplexifiedListVectorSpace
+
+   Bases: :py:obj:`ListVectorSpace`
+
+   |VectorSpace| of |ListVectorArrays|.
+
+   .. py:attribute:: real_vector_type
+      
+
+      
+
+   .. py:attribute:: vector_type
+      
+
+      
+
+   .. py:method:: real_zero_vector(self)
+      :abstractmethod:
+
+
+   .. py:method:: zero_vector(self)
+
+
+   .. py:method:: real_full_vector(self, value)
+
+
+   .. py:method:: full_vector(self, value)
+
+
+   .. py:method:: real_random_vector(self, distribution, random_state, **kwargs)
+
+
+   .. py:method:: random_vector(self, distribution, random_state, **kwargs)
+
+
+   .. py:method:: real_make_vector(self, obj)
+      :abstractmethod:
+
+
+   .. py:method:: make_vector(self, obj)
+
+
+   .. py:method:: real_vector_from_numpy(self, data, ensure_copy=False)
+      :abstractmethod:
+
+
+   .. py:method:: vector_from_numpy(self, data, ensure_copy=False)
+
+
+
+.. py:class:: NumpyListVectorSpace(dim, id=None)
+
+   Bases: :py:obj:`ListVectorSpace`
+
+   |VectorSpace| of |ListVectorArrays|.
+
+   .. py:attribute:: vector_type
+      
+
+      
+
+   .. py:method:: __eq__(self, other)
+
+      Return self==value.
+
+
+   .. py:method:: space_from_vector_obj(cls, vec, id)
+      :classmethod:
+
+
+   .. py:method:: space_from_dim(cls, dim, id)
+      :classmethod:
+
+
+   .. py:method:: zero_vector(self)
+
+
+   .. py:method:: ones_vector(self)
+
+
+   .. py:method:: full_vector(self, value)
+
+
+   .. py:method:: make_vector(self, obj)
+
+
+   .. py:method:: vector_from_numpy(self, data, ensure_copy=False)
+
+
+
