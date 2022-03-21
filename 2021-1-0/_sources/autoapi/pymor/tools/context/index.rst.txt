@@ -1,0 +1,41 @@
+:mod:`pymor.tools.context`
+==========================
+
+.. py:module:: pymor.tools.context
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.context.NoContext
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.context.no_context
+
+
+.. py:class:: NoContext
+
+   .. py:method:: __enter__(self)
+
+
+   .. py:method:: __exit__(self, exc_type, exc_val, exc_tb)
+
+
+
+.. py:data:: no_context
+   
+
+   
+
