@@ -47,7 +47,7 @@
   
   
   
-    <title>Developer Documentation &#8212; pyMOR v2021.2.0+246.g4314e70fc Manual</title>
+    <title>Developer Documentation &#8212; pyMOR v2021.2.0+252.gd02ca1751 Manual</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/material.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
@@ -111,11 +111,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="index.html" title="pyMOR v2021.2.0+246.g4314e70fc Manual"
+        <a href="index.html" title="pyMOR v2021.2.0+252.gd02ca1751 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+246.g4314e70fc Manual logo">
+                   alt="pyMOR v2021.2.0+252.gd02ca1751 Manual logo">
           
         </a>
       </div>
@@ -181,7 +181,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">pyMOR v2021.2.0+246.g4314e70fc Manual</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">pyMOR v2021.2.0+252.gd02ca1751 Manual</a></li>
       </ul>
     </div>
   </nav>
@@ -193,13 +193,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="index.html" title="pyMOR v2021.2.0+246.g4314e70fc Manual" class="md-nav__button md-logo">
+    <a href="index.html" title="pyMOR v2021.2.0+252.gd02ca1751 Manual" class="md-nav__button md-logo">
       
         <img src="_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="index.html"
-       title="pyMOR v2021.2.0+246.g4314e70fc Manual">Documentation</a>
+       title="pyMOR v2021.2.0+252.gd02ca1751 Manual">Documentation</a>
   </label>
   
 
@@ -298,7 +298,14 @@
     
     
       <a href="#code-style" class="md-nav__link">Code style</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#how-to-check-code-style" class="md-nav__link">How to check code style</a>
       
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -500,6 +507,12 @@ This will make your code less likely to break, when the called
 function is extended.</p>
 <p>All functions and classes called or instantiated by users should
 be sufficiently well documented.</p>
+<section id="how-to-check-code-style">
+<h4 id="how-to-check-code-style">How to check code style<a class="headerlink" href="#how-to-check-code-style" title="Permalink to this headline">¶</a></h4>
+<p>Firstly, make sure that you installed the <code class="docutils literal notranslate"><span class="pre">requirements-ci.txt</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements-ci.txt</span></code>.
+Afterwards use the Makefile to check for flake8 warnings with <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">flake8</span></code>
+or directly use <code class="docutils literal notranslate"><span class="pre">flake8</span></code> on the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder.</p>
+</section>
 </section>
 <section id="github-project">
 <h3 id="github-project">GitHub project<a class="headerlink" href="#github-project" title="Permalink to this headline">¶</a></h3>
@@ -742,7 +755,7 @@ those packages will become available in the <code class="docutils literal notran
               
           </div>
             Last updated on
-              Mar 16, 2022.
+              Mar 22, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
