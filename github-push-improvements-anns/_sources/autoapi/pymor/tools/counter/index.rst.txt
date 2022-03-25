@@ -1,0 +1,25 @@
+:mod:`pymor.tools.counter`
+==========================
+
+.. py:module:: pymor.tools.counter
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.tools.counter.Counter
+
+
+
+
+.. py:class:: Counter(start=0)
+
+   .. py:method:: inc(self)
+
+
+
