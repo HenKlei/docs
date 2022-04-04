@@ -21,7 +21,7 @@ Classes
 
    Bases: :py:obj:`pymor.operators.block.BlockOperator`
 
-   An |Operator| for a canonically symplectic form.
+   |Operator| representing a canonically symplectic form.
 
    .. admonition:: Parameters
 

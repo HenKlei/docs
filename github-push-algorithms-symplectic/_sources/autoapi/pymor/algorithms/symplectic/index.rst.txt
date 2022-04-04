@@ -216,7 +216,7 @@ Functions
    .. admonition:: Parameters
 
        E, F
-           The two |VectorArray| which are to be symplectified.
+           The two |VectorArrays| which are to be symplectified.
        J
            An |Operator| describing the symplectic Form.
        return_Lambda
