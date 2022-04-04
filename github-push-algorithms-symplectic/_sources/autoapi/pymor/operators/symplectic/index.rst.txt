@@ -1,0 +1,31 @@
+:mod:`pymor.operators.symplectic`
+=================================
+
+.. py:module:: pymor.operators.symplectic
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.operators.symplectic.CanonicalSymplecticFormOperator
+
+
+
+
+.. py:class:: CanonicalSymplecticFormOperator(half_space)
+
+   Bases: :py:obj:`pymor.operators.block.BlockOperator`
+
+   An |Operator| for a canonically symplectic form.
+
+   .. admonition:: Parameters
+
+       half_space
+           Half dimension of the underlying phase space.
+           
+
