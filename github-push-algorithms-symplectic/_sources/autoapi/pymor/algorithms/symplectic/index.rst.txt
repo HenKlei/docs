@@ -30,12 +30,13 @@ Functions
 
 
 
-.. py:class:: SymplecticBasis(J, E=None, F=None)
+.. py:class:: SymplecticBasis(E=None, F=None, phase_space=None, check_symplecticity=True)
 
    Bases: :py:obj:`pymor.core.base.BasicObject`
 
    A canonically-symplectic basis based on pairs of basis vectors (e_i, f_i).
 
+   Is either initialzed (a) with a pair of |VectorArrays| E and F or (b) with a |VectorSpace|.
    The basis vectors are each contained in a |VectorArray|
 
        E = (e_i)_{i=1}^n
@@ -47,14 +48,19 @@ Functions
 
    .. admonition:: Parameters
 
-       J
-           A |CanonicalSymplecticFormOperator|.
        E
-           A |VectorArray| that represents the first half of basis vectors.
+           A |VectorArray| that represents the first half of basis vectors. May be none if phase_space
+           is specified.
        F
-           A |VectorArray| that represents the second half of basis vectors.
+           A |VectorArray| that represents the second half of basis vectors. May be none if phase_space
+           is specified.
+       phase_space
+           A |VectorSpace| that represents the phase space. May be none if E and F are specified.
+       check_symplecticity
+           Flag, wether to check symplecticity of E and F in the constructor (if these are not None).
+           Default is True.
            
-   .. py:method:: from_array(self, U, J)
+   .. py:method:: from_array(self, U, check_symplecticity=True)
       :classmethod:
 
       Generate |SymplecticBasis| from |VectorArray|.
@@ -63,6 +69,9 @@ Functions
 
           U
               The |VectorArray|.
+          check_symplecticity
+              Flag, wether to check symplecticity of E and F in the constructor (if these are not
+              None). Default is True.
               
       .. admonition:: Returns
 
@@ -93,7 +102,7 @@ Functions
    .. py:method:: __len__(self)
 
 
-   .. py:method:: append(self, other, remove_from_other=False)
+   .. py:method:: append(self, other, remove_from_other=False, check_symplecticity=True)
 
       Append another |SymplecticBasis|.
 
@@ -101,18 +110,29 @@ Functions
           The |SymplecticBasis| to append.
       remove_from_other
           Flag, wether to remove vectors from other.
+      check_symplecticity
+          Flag, wether to check symplecticity of E and F in the constructor (if these are not
+          None). Default is True.
 
 
-   .. py:method:: check_symplecticity(self, offset=0, check_tol=0.001)
+   .. py:method:: _check_symplecticity(self, offset=0, check_tol=0.001)
 
-      Check symplecticity w.r.t. a given transposed symplectic inverse.
+      Check symplecticity of the |SymplecticBasis|.
 
       .. admonition:: Parameters
 
           offset
-              Used in iterative methods. Needs to be even.
+              Can be used to offset the check of symplecicity to the basis vectors with index bigger
+              than the offset. This is useful in iterative methods to avoid checking multiple times.
+              The offset needs to be even. The default value is 0, i.e. all basis vectors are checked
+              by default.
           check_tol
-              tolerance for which method returns true.
+              tolerance for which an error is raised.
+              
+      .. admonition:: Raises
+
+          AccuracyError
+              Is raised when the symplecicity for some pair (e_i, f_i) exceeds check_tol.
               
 
    .. py:method:: __getitem__(self, ind)
@@ -139,16 +159,16 @@ Functions
               
 
 
-.. py:function:: psd_svd_like_decomp(U, J, modes, balance=True)
+.. py:function:: psd_svd_like_decomp(U, modes, balance=True)
 
    Generates a |SymplecticBasis| with the PSD SVD-like decompostion.
+
+   This is an implementation of Algorithm 1 in :cite:`BBH19`.
 
    .. admonition:: Parameters
 
        U
            The |VectorArray| for which the PSD SVD-like decompostion is to be computed.
-       J
-           A |CanonicalSymplecticFormOperator| operating on the same |VectorSpace| as U.
        modes
            Number of modes (needs to be even).
        balance
@@ -160,16 +180,16 @@ Functions
            The |SymplecticBasis|.
            
 
-.. py:function:: psd_cotengent_lift(U, J, modes)
+.. py:function:: psd_cotengent_lift(U, modes)
 
    Generates a |SymplecticBasis| with the PSD cotangent lift.
 
+   This is an implementation of Algorithm 1 in :cite:`PM16`.
+
    .. admonition:: Parameters
 
        U
            The |VectorArray| for which the PSD SVD-like decompostion is to be computed.
-       J
-           A |CanonicalSymplecticFormOperator| operating on the same |VectorSpace| as U.
        modes
            Number of modes (needs to be even).
            
@@ -179,16 +199,16 @@ Functions
            The |SymplecticBasis|.
            
 
-.. py:function:: psd_complex_svd(U, J, modes)
+.. py:function:: psd_complex_svd(U, modes)
 
    Generates a |SymplecticBasis| with the PSD complex SVD.
 
+   This is an implementation of Algorithm 2 in :cite:`PM16`.
+
    .. admonition:: Parameters
 
        U
            The |VectorArray| for which the PSD SVD-like decompostion is to be computed.
-       J
-           A |CanonicalSymplecticFormOperator| operating on the same |VectorSpace| as U.
        modes
            Number of modes (needs to be even).
            
@@ -198,14 +218,12 @@ Functions
            The |SymplecticBasis|.
            
 
-.. py:function:: symplectic_gram_schmidt(E, F, J, return_Lambda=False, atol=1e-13, rtol=1e-13, offset=0, lmax=2, check=True, check_tol=0.001, copy=True)
+.. py:function:: symplectic_gram_schmidt(E, F, return_Lambda=False, atol=1e-13, rtol=1e-13, offset=0, reiterate=True, reiteration_threshold=0.9, check=True, check_tol=0.001, copy=True)
 
    Symplectify a |VectorArray| using the modified symplectic Gram-Schmidt algorithm.
 
-   Reference::
-
-       Salam (2005), On theoretical and numerical aspects of symplectic Gram--Schmidt-like
-       algorithms
+   This is an implementation of Algorithm 3.2. in :cite:`S11` with a modified criterion for
+   reiteration.
 
    Decomposition::
 
@@ -217,8 +235,6 @@ Functions
 
        E, F
            The two |VectorArrays| which are to be symplectified.
-       J
-           An |Operator| describing the symplectic Form.
        return_Lambda
            If `True`, the matrix `Lambda` from the decomposition is returned.
        atol
@@ -229,10 +245,12 @@ Functions
        offset
            Assume that the first `offset` pairs vectors in E and F are already symplectic and start the
            algorithm at the `offset + 1`-th vector.
-       lmax
-           Number of symplectification iterations.
-               lmax = 1: modified symplectic Gram-Schmidt algorithm,
-               lmax = 2: modified symplectic Gram-Schmidt algorithm with reorthogonalization.
+       reiterate
+           If `True`, symplectify again if the symplectic product of the symplectified vectors
+           is much smaller than the symplectic product of the original vector.
+       reiteration_threshold
+           If `reiterate` is `True`, "re-orthonormalize" if the ratio between the symplectic
+           products of the symplectified vectors and the original vectors is smaller than this value.
        check
            If `True`, check if the resulting |VectorArray| is really symplectic.
        check_tol
@@ -246,7 +264,7 @@ Functions
            if `return_Lambda` is `True`.
            
 
-.. py:function:: esr(E, F, J)
+.. py:function:: esr(E, F, J=None)
 
    Elemenraty SR factorization. Transforms E and F such that
 
@@ -261,7 +279,8 @@ Functions
        F
            A |VectorArray| of dim=1 from the same |VectorSpace| as E.
        J
-           A |CanonicalSymplecticFormOperator| operating on the same |VectorSpace| as E and F.
+           A |CanonicalSymplecticFormOperator| operating on the same |VectorSpace| as E and F. Default
+           is CanonicalSymplecticFormOperator(E.space).
            
    .. admonition:: Returns
 

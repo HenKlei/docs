@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.algorithms.symplectic &#8212; pyMOR v2021.2.0+228.gb2a69a1cb Manual</title>
+    <title>pymor.algorithms.symplectic &#8212; pyMOR v2021.2.0+241.gdd8d5abdc Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -111,11 +111,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+228.gb2a69a1cb Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+241.gdd8d5abdc Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+228.gb2a69a1cb Manual logo">
+                   alt="pyMOR v2021.2.0+241.gdd8d5abdc Manual logo">
           
         </a>
       </div>
@@ -181,7 +181,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+228.gb2a69a1cb Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+241.gdd8d5abdc Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.algorithms</span></code></a></li>
@@ -196,13 +196,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+228.gb2a69a1cb Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+241.gdd8d5abdc Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+228.gb2a69a1cb Manual">Documentation</a>
+       title="pyMOR v2021.2.0+241.gdd8d5abdc Manual">Documentation</a>
   </label>
   
 
@@ -690,10 +690,11 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.SymplecticBasis">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">SymplecticBasis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">SymplecticBasis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_symplecticity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../core/base/index.html#pymor.core.base.BasicObject" title="pymor.core.base.BasicObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pymor.core.base.BasicObject</span></code></a></p>
 <p>A canonically-symplectic basis based on pairs of basis vectors (e_i, f_i).</p>
-<p>The basis vectors are each contained in a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a></p>
+<p>Is either initialzed (a) with a pair of <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> E and F or (b) with a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a>.
+The basis vectors are each contained in a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a></p>
 <blockquote>
 <div><p>E = (e_i)_{i=1}^n
 F = (f_i)_{i=1}^n</p>
@@ -705,22 +706,30 @@ F = (f_i)_{i=1}^n</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>J</dt><dd><p>A <a class="reference internal" href="../../operators/symplectic/index.html#pymor.operators.symplectic.CanonicalSymplecticFormOperator" title="pymor.operators.symplectic.CanonicalSymplecticFormOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanonicalSymplecticFormOperator</span></code></a>.</p>
+<dt>E</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> that represents the first half of basis vectors. May be none if phase_space
+is specified.</p>
 </dd>
-<dt>E</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> that represents the first half of basis vectors.</p>
+<dt>F</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> that represents the second half of basis vectors. May be none if phase_space
+is specified.</p>
 </dd>
-<dt>F</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> that represents the second half of basis vectors.</p>
+<dt>phase_space</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> that represents the phase space. May be none if E and F are specified.</p>
+</dd>
+<dt>check_symplecticity</dt><dd><p>Flag, wether to check symplecticity of E and F in the constructor (if these are not None).
+Default is True.</p>
 </dd>
 </dl>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.SymplecticBasis.from_array">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis.from_array" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_symplecticity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis.from_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a> from <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>U</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>.</p>
+</dd>
+<dt>check_symplecticity</dt><dd><p>Flag, wether to check symplecticity of E and F in the constructor (if these are not
+None). Default is True.</p>
 </dd>
 </dl>
 </div>
@@ -762,25 +771,38 @@ F = (f_i)_{i=1}^n</p>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.SymplecticBasis.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_from_other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis.append" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_from_other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_symplecticity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append another <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a>.</p>
 <dl class="simple">
 <dt>other</dt><dd><p>The <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a> to append.</p>
 </dd>
 <dt>remove_from_other</dt><dd><p>Flag, wether to remove vectors from other.</p>
 </dd>
+<dt>check_symplecticity</dt><dd><p>Flag, wether to check symplecticity of E and F in the constructor (if these are not
+None). Default is True.</p>
+</dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pymor.algorithms.symplectic.SymplecticBasis.check_symplecticity">
-<span class="sig-name descname"><span class="pre">check_symplecticity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis.check_symplecticity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check symplecticity w.r.t. a given transposed symplectic inverse.</p>
+<dt class="sig sig-object py" id="pymor.algorithms.symplectic.SymplecticBasis._check_symplecticity">
+<span class="sig-name descname"><span class="pre">_check_symplecticity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.SymplecticBasis._check_symplecticity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check symplecticity of the <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
-<dt>offset</dt><dd><p>Used in iterative methods. Needs to be even.</p>
+<dt>offset</dt><dd><p>Can be used to offset the check of symplecicity to the basis vectors with index bigger
+than the offset. This is useful in iterative methods to avoid checking multiple times.
+The offset needs to be even. The default value is 0, i.e. all basis vectors are checked
+by default.</p>
 </dd>
-<dt>check_tol</dt><dd><p>tolerance for which method returns true.</p>
+<dt>check_tol</dt><dd><p>tolerance for which an error is raised.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition-raises admonition">
+<p class="admonition-title">Raises</p>
+<dl class="simple">
+<dt>AccuracyError</dt><dd><p>Is raised when the symplecicity for some pair (e_i, f_i) exceeds check_tol.</p>
 </dd>
 </dl>
 </div>
@@ -817,14 +839,13 @@ F = (f_i)_{i=1}^n</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.psd_svd_like_decomp">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">psd_svd_like_decomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">balance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.psd_svd_like_decomp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">psd_svd_like_decomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">balance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.psd_svd_like_decomp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a> with the PSD SVD-like decompostion.</p>
+<p>This is an implementation of Algorithm 1 in <span id="id1">[<a class="reference internal" href="../../../../bibliography.html#id12" title="Patrick Buchfink, Ashish Bhatt, and Bernard Haasdonk. Symplectic model order reduction with non-orthonormal bases. Mathematical and Computational Applications, 2019. doi:10.3390/mca24020043.">BBH19</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>U</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> for which the PSD SVD-like decompostion is to be computed.</p>
-</dd>
-<dt>J</dt><dd><p>A <a class="reference internal" href="../../operators/symplectic/index.html#pymor.operators.symplectic.CanonicalSymplecticFormOperator" title="pymor.operators.symplectic.CanonicalSymplecticFormOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanonicalSymplecticFormOperator</span></code></a> operating on the same <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> as U.</p>
 </dd>
 <dt>modes</dt><dd><p>Number of modes (needs to be even).</p>
 </dd>
@@ -842,14 +863,13 @@ F = (f_i)_{i=1}^n</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.psd_cotengent_lift">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">psd_cotengent_lift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.psd_cotengent_lift" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">psd_cotengent_lift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.psd_cotengent_lift" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a> with the PSD cotangent lift.</p>
+<p>This is an implementation of Algorithm 1 in <span id="id2">[<a class="reference internal" href="../../../../bibliography.html#id33" title="L. Peng and K. Mohseni. Symplectic model reduction of hamiltonian systems. SIAM Journal on Scientific Computing, 38(1):A1–A27, 2016. doi:10.1137/140978922.">PM16</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>U</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> for which the PSD SVD-like decompostion is to be computed.</p>
-</dd>
-<dt>J</dt><dd><p>A <a class="reference internal" href="../../operators/symplectic/index.html#pymor.operators.symplectic.CanonicalSymplecticFormOperator" title="pymor.operators.symplectic.CanonicalSymplecticFormOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanonicalSymplecticFormOperator</span></code></a> operating on the same <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> as U.</p>
 </dd>
 <dt>modes</dt><dd><p>Number of modes (needs to be even).</p>
 </dd>
@@ -865,14 +885,13 @@ F = (f_i)_{i=1}^n</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.psd_complex_svd">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">psd_complex_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.psd_complex_svd" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">psd_complex_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.psd_complex_svd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a <a class="reference internal" href="#pymor.algorithms.symplectic.SymplecticBasis" title="pymor.algorithms.symplectic.SymplecticBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymplecticBasis</span></code></a> with the PSD complex SVD.</p>
+<p>This is an implementation of Algorithm 2 in <span id="id3">[<a class="reference internal" href="../../../../bibliography.html#id33" title="L. Peng and K. Mohseni. Symplectic model reduction of hamiltonian systems. SIAM Journal on Scientific Computing, 38(1):A1–A27, 2016. doi:10.1137/140978922.">PM16</a>]</span>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>U</dt><dd><p>The <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> for which the PSD SVD-like decompostion is to be computed.</p>
-</dd>
-<dt>J</dt><dd><p>A <a class="reference internal" href="../../operators/symplectic/index.html#pymor.operators.symplectic.CanonicalSymplecticFormOperator" title="pymor.operators.symplectic.CanonicalSymplecticFormOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanonicalSymplecticFormOperator</span></code></a> operating on the same <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> as U.</p>
 </dd>
 <dt>modes</dt><dd><p>Number of modes (needs to be even).</p>
 </dd>
@@ -888,13 +907,10 @@ F = (f_i)_{i=1}^n</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.symplectic_gram_schmidt">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">symplectic_gram_schmidt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_Lambda</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.symplectic_gram_schmidt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">symplectic_gram_schmidt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_Lambda</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reiterate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reiteration_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.symplectic_gram_schmidt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symplectify a <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> using the modified symplectic Gram-Schmidt algorithm.</p>
-<p>Reference:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Salam</span> <span class="p">(</span><span class="mi">2005</span><span class="p">),</span> <span class="n">On</span> <span class="n">theoretical</span> <span class="ow">and</span> <span class="n">numerical</span> <span class="n">aspects</span> <span class="n">of</span> <span class="n">symplectic</span> <span class="n">Gram</span><span class="o">--</span><span class="n">Schmidt</span><span class="o">-</span><span class="n">like</span>
-<span class="n">algorithms</span>
-</pre></div>
-</div>
+<p>This is an implementation of Algorithm 3.2. in <span id="id4">[<a class="reference internal" href="../../../../bibliography.html#id37" title="Eman Salem Al-Aidarous. Symplectic gram-schmidt algorithm with re-orthogonalization. Journal of King Abdulaziz University: Science, 23(1):11–20, 2011. doi:10.4197/Sci.23-1.2.">AA11</a>]</span> with a modified criterion for
+reiteration.</p>
 <p>Decomposition:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">E</span><span class="p">,</span> <span class="n">F</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span> <span class="o">*</span> <span class="n">Lambda</span>
 </pre></div>
@@ -904,8 +920,6 @@ F = (f_i)_{i=1}^n</p>
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>E, F</dt><dd><p>The two <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArrays</span></code></a> which are to be symplectified.</p>
-</dd>
-<dt>J</dt><dd><p>An <a class="reference internal" href="../../operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> describing the symplectic Form.</p>
 </dd>
 <dt>return_Lambda</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the matrix <code class="docutils literal notranslate"><span class="pre">Lambda</span></code> from the decomposition is returned.</p>
 </dd>
@@ -917,11 +931,11 @@ F = (f_i)_{i=1}^n</p>
 <dt>offset</dt><dd><p>Assume that the first <code class="docutils literal notranslate"><span class="pre">offset</span></code> pairs vectors in E and F are already symplectic and start the
 algorithm at the <code class="docutils literal notranslate"><span class="pre">offset</span> <span class="pre">+</span> <span class="pre">1</span></code>-th vector.</p>
 </dd>
-<dt>lmax</dt><dd><dl class="simple">
-<dt>Number of symplectification iterations.</dt><dd><p>lmax = 1: modified symplectic Gram-Schmidt algorithm,
-lmax = 2: modified symplectic Gram-Schmidt algorithm with reorthogonalization.</p>
+<dt>reiterate</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, symplectify again if the symplectic product of the symplectified vectors
+is much smaller than the symplectic product of the original vector.</p>
 </dd>
-</dl>
+<dt>reiteration_threshold</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">reiterate</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, “re-orthonormalize” if the ratio between the symplectic
+products of the symplectified vectors and the original vectors is smaller than this value.</p>
 </dd>
 <dt>check</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, check if the resulting <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> is really symplectic.</p>
 </dd>
@@ -941,7 +955,7 @@ lmax = 2: modified symplectic Gram-Schmidt algorithm with reorthogonalization.</
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="pymor.algorithms.symplectic.esr">
-<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">esr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.esr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pymor.algorithms.symplectic.</span></span><span class="sig-name descname"><span class="pre">esr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_algorithms-symplectic/src/pymor/algorithms/symplectic.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.algorithms.symplectic.esr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Elemenraty SR factorization. Transforms E and F such that</p>
 <blockquote>
 <div><p>[E, F] = S * diag(r11, r22)</p>
@@ -954,7 +968,8 @@ lmax = 2: modified symplectic Gram-Schmidt algorithm with reorthogonalization.</
 </dd>
 <dt>F</dt><dd><p>A <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a> of dim=1 from the same <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> as E.</p>
 </dd>
-<dt>J</dt><dd><p>A <a class="reference internal" href="../../operators/symplectic/index.html#pymor.operators.symplectic.CanonicalSymplecticFormOperator" title="pymor.operators.symplectic.CanonicalSymplecticFormOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanonicalSymplecticFormOperator</span></code></a> operating on the same <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> as E and F.</p>
+<dt>J</dt><dd><p>A <a class="reference internal" href="../../operators/symplectic/index.html#pymor.operators.symplectic.CanonicalSymplecticFormOperator" title="pymor.operators.symplectic.CanonicalSymplecticFormOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">CanonicalSymplecticFormOperator</span></code></a> operating on the same <a class="reference internal" href="../../vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorSpace" title="pymor.vectorarrays.interface.VectorSpace"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorSpace</span></code></a> as E and F. Default
+is CanonicalSymplecticFormOperator(E.space).</p>
 </dd>
 </dl>
 </div>
@@ -1017,7 +1032,7 @@ lmax = 2: modified symplectic Gram-Schmidt algorithm with reorthogonalization.</
               
           </div>
             Last updated on
-              Apr 04, 2022.
+              Apr 06, 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

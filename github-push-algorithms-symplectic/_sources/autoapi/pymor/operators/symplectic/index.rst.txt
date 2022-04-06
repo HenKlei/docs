@@ -17,7 +17,7 @@ Classes
 
 
 
-.. py:class:: CanonicalSymplecticFormOperator(half_space)
+.. py:class:: CanonicalSymplecticFormOperator(phase_space)
 
    Bases: :py:obj:`pymor.operators.block.BlockOperator`
 
@@ -25,7 +25,7 @@ Classes
 
    .. admonition:: Parameters
 
-       half_space
-           Half dimension of the underlying phase space.
+       phase_space
+           The phase space of a |SymplecticBasis|.
            
 
