@@ -1,0 +1,269 @@
+:mod:`pymor.vectorarrays.numpy`
+===============================
+
+.. py:module:: pymor.vectorarrays.numpy
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.vectorarrays.numpy.NumpyVectorArrayImpl
+   pymor.vectorarrays.numpy.NumpyVectorArray
+   pymor.vectorarrays.numpy.NumpyVectorSpace
+
+
+
+
+.. py:class:: NumpyVectorArrayImpl(array, l=None)
+
+   Bases: :py:obj:`pymor.vectorarrays.interface.VectorArrayImpl`
+
+   Implementation of a |VectorArray|.
+
+   The |VectorArray| base class defers all calls to interface methods to an
+   internal `impl` object of this type. Indexing, error checking or non-standard
+   inner products are handled by |VectorArray|. Possible indices are passed
+   to the methods of :class:`VectorArrayImpl` as `ind`, `oind` or `xind`
+   parameters. These can either be `None`, in case the array has not been indexed,
+   a `slice` object, or a Python list of non-negative numbers.
+
+   .. py:method:: to_numpy(self, ensure_copy, ind)
+
+
+   .. py:method:: real(self, ind)
+
+
+   .. py:method:: imag(self, ind)
+
+
+   .. py:method:: conj(self, ind)
+
+
+   .. py:method:: __len__(self)
+
+
+   .. py:method:: delete(self, ind)
+
+
+   .. py:method:: copy(self, deep, ind)
+
+
+   .. py:method:: append(self, other, remove_from_other, oind)
+
+
+   .. py:method:: scal(self, alpha, ind)
+
+
+   .. py:method:: scal_copy(self, alpha, ind)
+
+
+   .. py:method:: axpy(self, alpha, x, ind, xind)
+
+
+   .. py:method:: axpy_copy(self, alpha, x, ind, xind)
+
+
+   .. py:method:: inner(self, other, ind, oind)
+
+
+   .. py:method:: pairwise_inner(self, other, ind, oind)
+
+
+   .. py:method:: lincomb(self, coefficients, ind)
+
+
+   .. py:method:: norm(self, ind)
+
+
+   .. py:method:: norm2(self, ind)
+
+
+   .. py:method:: dofs(self, dof_indices, ind)
+
+
+   .. py:method:: amax(self, ind)
+
+
+
+.. py:class:: NumpyVectorArray(space, impl, base=None, ind=None, _len=None)
+
+   Bases: :py:obj:`pymor.vectorarrays.interface.VectorArray`
+
+   |VectorArray| implementation via |NumPy arrays|.
+
+   This is the default |VectorArray| type used by all |Operators|
+   in pyMOR's discretization toolkit. Moreover, all reduced |Operators|
+   are based on |NumpyVectorArray|.
+
+   This class is just a thin wrapper around the underlying
+   |NumPy array|. Thus, while operations like
+   :meth:`~pymor.vectorarrays.interface.VectorArray.axpy` or
+   :meth:`~pymor.vectorarrays.interface.VectorArray.inner`
+   will be quite efficient, removing or appending vectors will
+   be costly.
+
+   .. warning::
+       This class is not intended to be instantiated directly. Use
+       the associated :class:`VectorSpace <NumpyVectorSpace>` instead.
+
+   .. py:attribute:: impl_type
+      
+
+      
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+   .. py:method:: _format_repr(self, max_width, verbosity)
+
+
+
+.. py:class:: NumpyVectorSpace(dim, id=None)
+
+   Bases: :py:obj:`pymor.vectorarrays.interface.VectorSpace`
+
+   |VectorSpace| of |NumpyVectorArrays|.
+
+   .. admonition:: Parameters
+
+       dim
+           The dimension of the vectors contained in the space.
+       id
+           See :attr:`~pymor.vectorarrays.interface.VectorSpace.id`.
+           
+   .. py:method:: __eq__(self, other)
+
+      Return self==value.
+
+
+   .. py:method:: __hash__(self)
+
+      Return hash(self).
+
+
+   .. py:method:: zeros(self, count=1, reserve=0)
+
+      Create a |VectorArray| of null vectors
+
+      .. admonition:: Parameters
+
+          count
+              The number of vectors.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| containing `count` vectors with each component zero.
+              
+
+   .. py:method:: full(self, value, count=1, reserve=0)
+
+      Create a |VectorArray| of vectors with all DOFs set to the same value.
+
+      .. admonition:: Parameters
+
+          value
+              The value each DOF should be set to.
+          count
+              The number of vectors.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| containing `count` vectors with each DOF set to `value`.
+              
+
+   .. py:method:: random(self, count=1, distribution='uniform', random_state=None, seed=None, reserve=0, **kwargs)
+
+      Create a |VectorArray| of vectors with random entries.
+
+      Supported random distributions::
+
+          'uniform': Uniform distribution in half-open interval
+                     [`low`, `high`).
+          'normal':  Normal (Gaussian) distribution with mean
+                     `loc` and standard deviation `scale`.
+
+      Note that not all random distributions are necessarily implemented
+      by all |VectorSpace| implementations.
+
+      .. admonition:: Parameters
+
+          count
+              The number of vectors.
+          distribution
+              Random distribution to use (`'uniform'`, `'normal'`).
+          low
+              Lower bound for `'uniform'` distribution (defaults to `0`).
+          high
+              Upper bound for `'uniform'` distribution (defaults to `1`).
+          loc
+              Mean for `'normal'` distribution (defaults to `0`).
+          scale
+              Standard deviation for `'normal'` distribution (defaults to `1`).
+          random_state
+              :class:`~numpy.random.RandomState` to use for sampling.
+              If `None`, a new random state is generated using `seed`
+              as random seed, or the :func:`default <pymor.tools.random.default_random_state>`
+              random state is used.
+          seed
+              If not `None`, a new random state with this seed is used.
+          reserve
+              Hint for the backend to which length the array will grow.
+              
+
+   .. py:method:: make_array(cls, obj, id=None)
+
+      Create a |VectorArray| from raw data.
+
+      This method is used in the implementation of |Operators|
+      and |Models| to create new |VectorArrays| from
+      raw data of the underlying solver backends. The ownership
+      of the data is transferred to the newly created array.
+
+      The exact signature of this method depends on the wrapped
+      solver backend.
+
+
+   .. py:method:: from_numpy(cls, data, id=None, ensure_copy=False)
+
+      Create a |VectorArray| from a |NumPy array|
+
+      Note that this method will not be supported by all vector
+      space implementations.
+
+      .. admonition:: Parameters
+
+          data
+              |NumPy| array of shape `(len, dim)` where `len` is the
+              number of vectors and `dim` their dimension.
+          ensure_copy
+              If `False`, modifying the returned |VectorArray| might alter the original
+              |NumPy array|. If `True` always a copy of the array data is made.
+              
+      .. admonition:: Returns
+
+          A |VectorArray| with `data` as data.
+              
+
+   .. py:method:: from_file(cls, path, key=None, single_vector=False, transpose=False, id=None)
+
+
+   .. py:method:: _array_factory(cls, array, space=None, id=None)
+      :classmethod:
+
+
+   .. py:method:: is_scalar(self)
+      :property:
+
+
+
