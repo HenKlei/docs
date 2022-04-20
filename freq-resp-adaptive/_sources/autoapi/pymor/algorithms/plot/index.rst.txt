@@ -1,0 +1,57 @@
+:mod:`pymor.algorithms.plot`
+============================
+
+.. py:module:: pymor.algorithms.plot
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.algorithms.plot.adaptive
+   pymor.algorithms.plot._angles_and_dists
+
+
+
+.. py:function:: adaptive(f, a, b, initial_num=10, max_num=2000, tol=2, min_rel_dist=0.001, aspect_ratio=4 / 3)
+
+   Adaptive plot of an array-valued function.
+
+   .. admonition:: Parameters
+
+       f
+           The function to plot.
+       a
+           The left bound.
+       b
+           The right bound.
+       initial_num
+           Initial number of linearly spaced sampling points.
+       max_num
+           Maximum number of sampling points.
+       tol
+           Tolerance for the maximum pointwise angle in degrees away from 180°.
+       min_rel_dist
+           Minimum distance between two neighbouring points relative to the
+           width of the plot.
+       aspect_ratio
+           Ratio between width and height of the plot, used in calculating
+           angles and distances.
+           
+   .. admonition:: Returns
+
+       points
+           A 1D |NumPy array| of sampled points.
+       fvals
+           An |NumPy array| of function values.
+           
+
+.. py:function:: _angles_and_dists(x, y, aspect_ratio)
+
+

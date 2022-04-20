@@ -1,0 +1,23 @@
+:mod:`pymor.discretizers.skfem.domaindiscretizer`
+=================================================
+
+.. py:module:: pymor.discretizers.skfem.domaindiscretizer
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.discretizers.skfem.domaindiscretizer.discretize_domain
+
+
+
+.. py:function:: discretize_domain(domain_description, diameter=1 / 100, mesh_type=None)
+
+

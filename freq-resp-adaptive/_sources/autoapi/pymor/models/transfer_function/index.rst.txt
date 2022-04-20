@@ -1,0 +1,333 @@
+:mod:`pymor.models.transfer_function`
+=====================================
+
+.. py:module:: pymor.models.transfer_function
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.models.transfer_function.TransferFunction
+   pymor.models.transfer_function.FactorizedTransferFunction
+
+
+
+
+.. py:class:: TransferFunction(dim_input, dim_output, tf, dtf=None, parameters={}, sampling_time=0, name=None)
+
+   Bases: :py:obj:`pymor.core.cache.CacheableObject`, :py:obj:`pymor.parameters.base.ParametricObject`
+
+   Class for systems represented by a transfer function.
+
+   This class describes input-output systems given by a (parametrized) transfer
+   function :math:`H(s, \mu)`.
+
+   .. admonition:: Parameters
+
+       dim_input
+           The number of inputs.
+       dim_output
+           The number of outputs.
+       tf
+           The transfer function H, given by a callable that takes a complex value `s` and,
+           if parametric, a |parameter value| `mu`.
+           The result of `tf(s, mu)` is a |NumPy array| of shape `(dim_output, dim_input)`.
+       dtf
+           The complex derivative of `H` with respect to `s` (optional).
+       parameters
+           The |Parameters| of the transfer function.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
+       name
+           Name of the system.
+           
+   .. attribute:: dim_input
+
+      The number of inputs.
+
+   .. attribute:: dim_output
+
+      The number of outputs.
+
+   .. attribute:: tf
+
+      The transfer function.
+
+   .. attribute:: dtf
+
+      The complex derivative of the transfer function.
+      
+
+   .. py:attribute:: cache_region
+      :annotation: = memory
+
+      
+
+   .. py:attribute:: __radd__
+      
+
+      
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+   .. py:method:: eval_tf(self, s, mu=None)
+
+      Evaluate the transfer function.
+
+      .. admonition:: Parameters
+
+          s
+              Laplace variable as a complex number.
+          mu
+              |Parameter values|.
+              
+      .. admonition:: Returns
+
+          Transfer function value as a 2D |NumPy array|.
+              
+
+   .. py:method:: eval_dtf(self, s, mu=None)
+
+      Evaluate the derivative of the transfer function.
+
+      .. admonition:: Parameters
+
+          s
+              Laplace variable as a complex number.
+          mu
+              |Parameter values|.
+              
+      .. admonition:: Returns
+
+          Transfer function value as a 2D |NumPy array|.
+              
+
+   .. py:method:: freq_resp(self, w, mu=None)
+
+      Evaluate the transfer function on the imaginary axis.
+
+      .. admonition:: Parameters
+
+          w
+              A sequence of angular frequencies at which to compute the transfer function.
+          mu
+              |Parameter values| for which to evaluate the transfer function.
+              
+      .. admonition:: Returns
+
+          tfw
+              Transfer function values at frequencies in `w`, |NumPy array| of shape
+              `(len(w), self.dim_output, self.dim_input)`.
+              
+
+   .. py:method:: bode(self, w, mu=None)
+
+      Compute magnitudes and phases.
+
+      .. admonition:: Parameters
+
+          w
+              A sequence of angular frequencies at which to compute the transfer function.
+          mu
+              |Parameter values| for which to evaluate the transfer function.
+              
+      .. admonition:: Returns
+
+          mag
+              Transfer function magnitudes at frequencies in `w`, |NumPy array| of shape
+              `(len(w), self.dim_output, self.dim_input)`.
+          phase
+              Transfer function phases (in radians) at frequencies in `w`, |NumPy array| of shape
+              `(len(w), self.dim_output, self.dim_input)`.
+              
+
+   .. py:method:: bode_plot(self, w, mu=None, ax=None, Hz=False, dB=False, deg=True, **mpl_kwargs)
+
+      Draw the Bode plot for all input-output pairs.
+
+      .. admonition:: Parameters
+
+          w
+              A sequence of angular frequencies at which to compute the transfer function.
+          mu
+              |Parameter values| for which to evaluate the transfer function.
+          ax
+              Axis of shape (2 * `self.dim_output`, `self.dim_input`) to which to plot.
+              If not given, `matplotlib.pyplot.gcf` is used to get the figure and create axis.
+          Hz
+              Should the frequency be in Hz on the plot.
+          dB
+              Should the magnitude be in dB on the plot.
+          deg
+              Should the phase be in degrees (otherwise in radians).
+          mpl_kwargs
+              Keyword arguments used in the matplotlib plot function.
+              
+      .. admonition:: Returns
+
+          artists
+              List of matplotlib artists added.
+              
+
+   .. py:method:: mag_plot(self, w=None, w_limits=None, mu=None, ax=None, ord=None, Hz=False, dB=False, adaptive_opts=None, **mpl_kwargs)
+
+      Draw the magnitude plot.
+
+      .. admonition:: Parameters
+
+          w
+              A sequence of angular frequencies at which to compute the transfer function.
+              If given, `w_limits` has to be `None`.
+          w_limits
+              The left and right limits used for the adaptive plot.
+              If given, `w` has to be `None`.
+          mu
+              |Parameter values| for which to evaluate the transfer function.
+          ax
+              Axis to which to plot.
+              If not given, `matplotlib.pyplot.gca` is used.
+          ord
+              The order of the norm used to compute the magnitude (the default is the Frobenius norm).
+          Hz
+              Should the frequency be in Hz on the plot.
+          dB
+              Should the magnitude be in dB on the plot.
+          adaptive_opts
+              Optional arguments for `pymor.algorithms.plot.adaptive` (used if `w_limits` is given).
+          mpl_kwargs
+              Keyword arguments used in the matplotlib plot function.
+              
+      .. admonition:: Returns
+
+          out
+              List of matplotlib artists added.
+          w
+              Angular frequencies (if `w_limits` is given).
+              
+
+   .. py:method:: h2_norm(self, return_norm_only=True, **quad_kwargs)
+
+      Compute the H2-norm using quadrature.
+
+      This method uses `scipy.integrate.quad` and makes no assumptions on the form of the transfer
+      function.
+      It only assumes that `self.tf` is defined over the imaginary axis.
+
+      By default, the absolute error tolerance in `scipy.integrate.quad` is set to zero (see its
+      optional argument `epsabs`).
+      It can be changed by using the `epsabs` keyword argument.
+
+      .. admonition:: Parameters
+
+          return_norm_only
+              Whether to only return the approximate H2-norm.
+          quad_kwargs
+              Keyword arguments passed to `scipy.integrate.quad`.
+              
+      .. admonition:: Returns
+
+          norm
+              Computed H2-norm.
+          norm_relerr
+              Relative error estimate (returned if `return_norm_only` is `False`).
+          info
+              Quadrature info (returned if `return_norm_only` is `False` and `full_output` is `True`).
+              See `scipy.integrate.quad` documentation for more details.
+              
+
+   .. py:method:: h2_inner(self, lti)
+
+      Compute H2 inner product with an |LTIModel|.
+
+      Uses the inner product formula based on the pole-residue form
+      (see, e.g., Lemma 1 in :cite:`ABG10`).
+      It assumes that `self.tf` is defined on `-lti.poles()`.
+
+      .. admonition:: Parameters
+
+          lti
+              |LTIModel| consisting of |Operators| that can be converted to |NumPy arrays|.
+              The D operator is ignored.
+              
+      .. admonition:: Returns
+
+          inner
+              H2 inner product.
+              
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __sub__(self, other)
+
+
+   .. py:method:: __rsub__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __rmul__(self, other)
+
+
+
+.. py:class:: FactorizedTransferFunction(dim_input, dim_output, K, B, C, D, dK=None, dB=None, dC=None, dD=None, parameters={}, sampling_time=0, name=None)
+
+   Bases: :py:obj:`TransferFunction`
+
+   Transfer functions in generalized coprime factor form.
+
+   This class describes input-output systems given by a transfer
+   function of the form
+   :math:`H(s, \mu) = \mathcal{C}(s, \mu) \mathcal{K}(s, \mu)^{-1} \mathcal{B}(s, \mu)
+   + \mathcal{D}(s, \mu)`.
+
+   .. admonition:: Parameters
+
+       dim_input
+           The number of inputs.
+       dim_output
+           The number of outputs.
+       K, B, C, D
+           Functions that take `s` and return an |Operator|.
+       dK, dB, dC, dD
+           Functions that take `s` and return an |Operator| that is the derivative of K, B, C, D
+           (optional).
+       parameters
+           The |Parameters| of the transfer function.
+       sampling_time
+           `0` if the system is continuous-time, otherwise a positive number that denotes the
+           sampling time (in seconds).
+       name
+           Name of the system.
+           
+   .. py:attribute:: __radd__
+      
+
+      
+
+   .. py:method:: __add__(self, other)
+
+
+   .. py:method:: __neg__(self)
+
+
+   .. py:method:: __mul__(self, other)
+
+
+   .. py:method:: __rmul__(self, other)
+
+
+
