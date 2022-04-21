@@ -690,7 +690,9 @@ Classes
 
    Bases: :py:obj:`NumpyGenericOperator`
 
-   A Moebius transform operator.  Maps complex square matrices to complex square matrices.
+   A Moebius transform operator.
+
+   Maps complex square matrices to complex square matrices.
    The size is given by dim. Scalars are 1x1. The transform coefficients can be normalized.
    Contains a method for constructing an inverse mapping, as well as a constructor that takes three
    points and their images. The Moebius transforms form a group under composition, so __matmul__ is
@@ -758,7 +760,9 @@ Classes
 
    Bases: :py:obj:`MoebiusTransform`
 
-   A Moebius transform operator.  Maps complex square matrices to complex square matrices.
+   A Moebius transform operator.
+
+   Maps complex square matrices to complex square matrices.
    The size is given by dim. Scalars are 1x1. The transform coefficients can be normalized.
    Contains a method for constructing an inverse mapping, as well as a constructor that takes three
    points and their images. The Moebius transforms form a group under composition, so __matmul__ is
@@ -769,7 +773,9 @@ Classes
 
    Bases: :py:obj:`MoebiusTransform`
 
-   A Moebius transform operator.  Maps complex square matrices to complex square matrices.
+   A Moebius transform operator.
+
+   Maps complex square matrices to complex square matrices.
    The size is given by dim. Scalars are 1x1. The transform coefficients can be normalized.
    Contains a method for constructing an inverse mapping, as well as a constructor that takes three
    points and their images. The Moebius transforms form a group under composition, so __matmul__ is

@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.operators.numpy &#8212; pyMOR v2021.2.0+309.g8dcf5c019 Manual</title>
+    <title>pymor.operators.numpy &#8212; pyMOR v2021.2.0+310.g5ce615339 Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -113,11 +113,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+309.g8dcf5c019 Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+310.g5ce615339 Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+309.g8dcf5c019 Manual logo">
+                   alt="pyMOR v2021.2.0+310.g5ce615339 Manual logo">
           
         </a>
       </div>
@@ -183,7 +183,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+309.g8dcf5c019 Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+310.g5ce615339 Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.operators</span></code></a></li>
@@ -198,13 +198,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+309.g8dcf5c019 Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+310.g5ce615339 Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+309.g8dcf5c019 Manual">Documentation</a>
+       title="pyMOR v2021.2.0+310.g5ce615339 Manual">Documentation</a>
   </label>
   
 
@@ -508,13 +508,13 @@ Markov parameters.</p></li>
 <td><p>Implicit representation of a Hankel operator by a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of Markov parameters.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.operators.numpy.MoebiusTransform" title="pymor.operators.numpy.MoebiusTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MoebiusTransform</span></code></a></p></td>
-<td><p>A Moebius transform operator.  Maps complex square matrices to complex square matrices.</p></td>
+<td><p>A Moebius transform operator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pymor.operators.numpy.BilinearTransform" title="pymor.operators.numpy.BilinearTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BilinearTransform</span></code></a></p></td>
-<td><p>A Moebius transform operator.  Maps complex square matrices to complex square matrices.</p></td>
+<td><p>A Moebius transform operator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pymor.operators.numpy.CayleyTransform" title="pymor.operators.numpy.CayleyTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CayleyTransform</span></code></a></p></td>
-<td><p>A Moebius transform operator.  Maps complex square matrices to complex square matrices.</p></td>
+<td><p>A Moebius transform operator.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1208,7 +1208,8 @@ given by left-multplication of (the complex conjugate of) <code class="docutils 
 <dt class="sig sig-object py" id="pymor.operators.numpy.MoebiusTransform">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.numpy.</span></span><span class="sig-name descname"><span class="pre">MoebiusTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_moebius-transform/src/pymor/operators/numpy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.numpy.MoebiusTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.numpy.NumpyGenericOperator" title="pymor.operators.numpy.NumpyGenericOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyGenericOperator</span></code></a></p>
-<p>A Moebius transform operator.  Maps complex square matrices to complex square matrices.
+<p>A Moebius transform operator.</p>
+<p>Maps complex square matrices to complex square matrices.
 The size is given by dim. Scalars are 1x1. The transform coefficients can be normalized.
 Contains a method for constructing an inverse mapping, as well as a constructor that takes three
 points and their images. The Moebius transforms form a group under composition, so __matmul__ is
@@ -1281,7 +1282,8 @@ undesirable.</p>
 <dt class="sig sig-object py" id="pymor.operators.numpy.BilinearTransform">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.numpy.</span></span><span class="sig-name descname"><span class="pre">BilinearTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_moebius-transform/src/pymor/operators/numpy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.numpy.BilinearTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.numpy.MoebiusTransform" title="pymor.operators.numpy.MoebiusTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MoebiusTransform</span></code></a></p>
-<p>A Moebius transform operator.  Maps complex square matrices to complex square matrices.
+<p>A Moebius transform operator.</p>
+<p>Maps complex square matrices to complex square matrices.
 The size is given by dim. Scalars are 1x1. The transform coefficients can be normalized.
 Contains a method for constructing an inverse mapping, as well as a constructor that takes three
 points and their images. The Moebius transforms form a group under composition, so __matmul__ is
@@ -1291,7 +1293,8 @@ defined to yield Moebius Transforms, if both factors are Moebius Transforms.</p>
 <dt class="sig sig-object py" id="pymor.operators.numpy.CayleyTransform">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pymor.operators.numpy.</span></span><span class="sig-name descname"><span class="pre">CayleyTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/github/PUSH_moebius-transform/src/pymor/operators/numpy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.operators.numpy.CayleyTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pymor.operators.numpy.MoebiusTransform" title="pymor.operators.numpy.MoebiusTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MoebiusTransform</span></code></a></p>
-<p>A Moebius transform operator.  Maps complex square matrices to complex square matrices.
+<p>A Moebius transform operator.</p>
+<p>Maps complex square matrices to complex square matrices.
 The size is given by dim. Scalars are 1x1. The transform coefficients can be normalized.
 Contains a method for constructing an inverse mapping, as well as a constructor that takes three
 points and their images. The Moebius transforms form a group under composition, so __matmul__ is
