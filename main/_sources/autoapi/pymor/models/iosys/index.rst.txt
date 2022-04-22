@@ -260,11 +260,14 @@ Functions
 
       Create |LTIModel| from matrices stored in a .mat file.
 
+      Supports the format used in the `SLICOT benchmark collection
+      <http://slicot.org/20-site/126-benchmark-examples-for-model-reduction>`_.
+
       .. admonition:: Parameters
 
           file_name
               The name of the .mat file (extension .mat does not need to be included) containing A, B,
-              C, and optionally D and E.
+              and optionally C, D, and E.
           sampling_time
               `0` if the system is continuous-time, otherwise a positive number that denotes the
               sampling time (in seconds).

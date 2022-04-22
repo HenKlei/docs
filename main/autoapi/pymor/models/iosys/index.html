@@ -47,7 +47,7 @@
   
   
   
-    <title>pymor.models.iosys &#8212; pyMOR v2021.2.0+310.g828975d9f Manual</title>
+    <title>pymor.models.iosys &#8212; pyMOR v2021.2.0+315.g6a3c65f8d Manual</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/material.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
@@ -113,11 +113,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../../index.html" title="pyMOR v2021.2.0+310.g828975d9f Manual"
+        <a href="../../../../index.html" title="pyMOR v2021.2.0+315.g6a3c65f8d Manual"
            class="md-header-nav__button md-logo">
           
               <img src="../../../../_static/pymor_logo_white.svg" height="26"
-                   alt="pyMOR v2021.2.0+310.g828975d9f Manual logo">
+                   alt="pyMOR v2021.2.0+315.g6a3c65f8d Manual logo">
           
         </a>
       </div>
@@ -183,7 +183,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+310.g828975d9f Manual</a></li>
+          <li class="md-tabs__item"><a href="../../../../index.html" class="md-tabs__link">pyMOR v2021.2.0+315.g6a3c65f8d Manual</a></li>
           <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">API Reference</a></li>
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor.models</span></code></a></li>
@@ -198,13 +198,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../../index.html" title="pyMOR v2021.2.0+310.g828975d9f Manual" class="md-nav__button md-logo">
+    <a href="../../../../index.html" title="pyMOR v2021.2.0+315.g6a3c65f8d Manual" class="md-nav__button md-logo">
       
         <img src="../../../../_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../../../index.html"
-       title="pyMOR v2021.2.0+310.g828975d9f Manual">Documentation</a>
+       title="pyMOR v2021.2.0+315.g6a3c65f8d Manual">Documentation</a>
   </label>
   
 
@@ -754,11 +754,12 @@ to the model which forwards its arguments to the visualizer’s <code class="doc
 <dt class="sig sig-object py" id="pymor.models.iosys.LTIModel.from_mat_file">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_mat_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'STATE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_estimator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pymor/pymor/tree/main/src/pymor/models/iosys.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pymor.models.iosys.LTIModel.from_mat_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create <a class="reference internal" href="#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> from matrices stored in a .mat file.</p>
+<p>Supports the format used in the <a class="reference external" href="http://slicot.org/20-site/126-benchmark-examples-for-model-reduction">SLICOT benchmark collection</a>.</p>
 <div class="admonition-parameters admonition">
 <p class="admonition-title">Parameters</p>
 <dl class="simple">
 <dt>file_name</dt><dd><p>The name of the .mat file (extension .mat does not need to be included) containing A, B,
-C, and optionally D and E.</p>
+and optionally C, D, and E.</p>
 </dd>
 <dt>sampling_time</dt><dd><p><code class="docutils literal notranslate"><span class="pre">0</span></code> if the system is continuous-time, otherwise a positive number that denotes the
 sampling time (in seconds).</p>
