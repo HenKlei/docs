@@ -1,0 +1,688 @@
+:mod:`pymor.operators.numpy`
+============================
+
+.. py:module:: pymor.operators.numpy
+
+.. autoapi-nested-parse::
+
+   |Operators| based on |NumPy| arrays.
+
+   This module provides the following |NumPy|-based |Operators|:
+
+   - |NumpyMatrixOperator| wraps a 2D |NumPy array| as an |Operator|.
+   - |NumpyMatrixBasedOperator| should be used as base class for all |Operators|
+     which assemble into a |NumpyMatrixOperator|.
+   - |NumpyGenericOperator| wraps an arbitrary Python function between
+     |NumPy arrays| as an |Operator|.
+   - :class:`NumpyHankelOperator` implicitly constructs a Hankel operator from a |NumPy array| of
+     Markov parameters.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.operators.numpy.NumpyGenericOperator
+   pymor.operators.numpy.NumpyMatrixBasedOperator
+   pymor.operators.numpy.NumpyMatrixOperator
+   pymor.operators.numpy.NumpyHankelOperator
+
+
+
+
+.. py:class:: NumpyGenericOperator(mapping, adjoint_mapping=None, dim_source=1, dim_range=1, linear=False, parameters={}, source_id=None, range_id=None, solver_options=None, name=None)
+
+   Bases: :py:obj:`pymor.operators.interface.Operator`
+
+   Wraps an arbitrary Python function between |NumPy arrays| as an |Operator|.
+
+   .. admonition:: Parameters
+
+       mapping
+           The function to wrap. If `parameters` is `None`, the function is of
+           the form `mapping(U)` and is expected to be vectorized. In particular::
+           
+               mapping(U).shape == U.shape[:-1] + (dim_range,).
+           
+           If `parameters` is not `None`, the function has to have the signature
+           `mapping(U, mu)`.
+       adjoint_mapping
+           The adjoint function to wrap. If `parameters` is `None`, the function is of
+           the form `adjoint_mapping(U)` and is expected to be vectorized. In particular::
+           
+               adjoint_mapping(U).shape == U.shape[:-1] + (dim_source,).
+           
+           If `parameters` is not `None`, the function has to have the signature
+           `adjoint_mapping(U, mu)`.
+       dim_source
+           Dimension of the operator's source.
+       dim_range
+           Dimension of the operator's range.
+       linear
+           Set to `True` if the provided `mapping` and `adjoint_mapping` are linear.
+       parameters
+           The |Parameters| the depends on.
+       solver_options
+           The |solver_options| for the operator.
+       name
+           Name of the operator.
+           
+   .. py:method:: apply(self, U, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: apply_adjoint(self, V, mu=None)
+
+      Apply the adjoint operator.
+
+      For any given linear |Operator| `op`, |parameter values| `mu` and
+      |VectorArrays| `U`, `V` in the :attr:`~Operator.source`
+      resp. :attr:`~Operator.range` we have::
+
+          op.apply_adjoint(V, mu).dot(U) == V.inner(op.apply(U, mu))
+
+      Thus, when `op` is represented by a matrix `M`, `apply_adjoint` is
+      given by left-multplication of (the complex conjugate of) `M` with `V`.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the adjoint operator is applied.
+          mu
+              The |parameter values| for which to apply the adjoint operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the adjoint operator evaluations.
+              
+
+
+.. py:class:: NumpyMatrixBasedOperator
+
+   Bases: :py:obj:`pymor.operators.interface.Operator`
+
+   Base class for operators which assemble into a |NumpyMatrixOperator|.
+
+   .. attribute:: sparse
+
+      `True` if the operator assembles into a sparse matrix, `False` if the
+      operator assembles into a dense matrix, `None` if unknown.
+      
+
+   .. py:attribute:: linear
+      :annotation: = True
+
+      
+
+   .. py:method:: H(self)
+      :property:
+
+
+   .. py:method:: _assemble(self, mu=None)
+      :abstractmethod:
+
+
+   .. py:method:: assemble(self, mu=None)
+
+      Assemble the operator for given |parameter values|.
+
+      The result of the method strongly depends on the given operator.
+      For instance, a matrix-based operator will assemble its matrix, a |LincombOperator|
+      will try to form the linear combination of its operators, whereas an arbitrary
+      operator might simply return a
+      :class:`~pymor.operators.constructions.FixedParameterOperator`.
+      The only assured property of the assembled operator is that it no longer
+      depends on a |Parameter|.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to assemble the operator.
+              
+      .. admonition:: Returns
+
+          Parameter-independent, assembled |Operator|.
+              
+
+   .. py:method:: apply(self, U, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: apply_adjoint(self, V, mu=None)
+
+      Apply the adjoint operator.
+
+      For any given linear |Operator| `op`, |parameter values| `mu` and
+      |VectorArrays| `U`, `V` in the :attr:`~Operator.source`
+      resp. :attr:`~Operator.range` we have::
+
+          op.apply_adjoint(V, mu).dot(U) == V.inner(op.apply(U, mu))
+
+      Thus, when `op` is represented by a matrix `M`, `apply_adjoint` is
+      given by left-multplication of (the complex conjugate of) `M` with `V`.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the adjoint operator is applied.
+          mu
+              The |parameter values| for which to apply the adjoint operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the adjoint operator evaluations.
+              
+
+   .. py:method:: as_range_array(self, mu=None)
+
+      Return a |VectorArray| representation of the operator in its range space.
+
+      In the case of a linear operator with |NumpyVectorSpace| as
+      :attr:`~Operator.source`, this method returns for given |parameter values|
+      `mu` a |VectorArray| `V` in the operator's :attr:`~Operator.range`,
+      such that ::
+
+          V.lincomb(U.to_numpy()) == self.apply(U, mu)
+
+      for all |VectorArrays| `U`.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to return the |VectorArray|
+              representation.
+              
+      .. admonition:: Returns
+
+          V
+              The |VectorArray| defined above.
+              
+
+   .. py:method:: as_source_array(self, mu=None)
+
+      Return a |VectorArray| representation of the operator in its source space.
+
+      In the case of a linear operator with |NumpyVectorSpace| as
+      :attr:`~Operator.range`, this method returns for given |parameter values|
+      `mu` a |VectorArray| `V` in the operator's :attr:`~Operator.source`,
+      such that ::
+
+          self.range.make_array(V.inner(U).T) == self.apply(U, mu)
+
+      for all |VectorArrays| `U`.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to return the |VectorArray|
+              representation.
+              
+      .. admonition:: Returns
+
+          V
+              The |VectorArray| defined above.
+              
+
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False)
+
+      Apply the inverse operator.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the inverse operator is applied.
+          mu
+              The |parameter values| for which to evaluate the inverse operator.
+          initial_guess
+              |VectorArray| with the same length as `V` containing initial guesses
+              for the solution.  Some implementations of `apply_inverse` may
+              ignore this parameter.  If `None` a solver-dependent default is used.
+          least_squares
+              If `True`, solve the least squares problem::
+              
+                  u = argmin ||op(u) - v||_2.
+              
+              Since for an invertible operator the least squares solution agrees
+              with the result of the application of the inverse operator,
+              setting this option should, in general, have no effect on the result
+              for those operators. However, note that when no appropriate
+              |solver_options| are set for the operator, most implementations
+              will choose a least squares solver by default which may be
+              undesirable.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the inverse operator evaluations.
+              
+      .. admonition:: Raises
+
+          InversionError
+              The operator could not be inverted.
+              
+
+   .. py:method:: export_matrix(self, filename, matrix_name=None, output_format='matlab', mu=None)
+
+      Save the matrix of the operator to a file.
+
+      .. admonition:: Parameters
+
+          filename
+              Name of output file.
+          matrix_name
+              The name, the output matrix is given. (Comment field is used in
+              case of Matrix Market output_format.) If `None`, the |Operator|'s `name`
+              is used.
+          output_format
+              Output file format. Either `matlab` or `matrixmarket`.
+          mu
+              The |parameter values| to assemble the to be exported matrix for.
+              
+
+
+.. py:class:: NumpyMatrixOperator(matrix, source_id=None, range_id=None, solver_options=None, name=None)
+
+   Bases: :py:obj:`NumpyMatrixBasedOperator`
+
+   Wraps a 2D |NumPy Array| or |SciPy spmatrix| as an |Operator|.
+
+   .. admonition:: Parameters
+
+       matrix
+           The |NumPy array| or |SciPy spmatrix| which is to be wrapped.
+       source_id
+           The id of the operator's `source` |VectorSpace|.
+       range_id
+           The id of the operator's `range` |VectorSpace|.
+       solver_options
+           The |solver_options| for the operator.
+       name
+           Name of the operator.
+           
+   .. py:method:: from_file(cls, path, key=None, source_id=None, range_id=None, solver_options=None, name=None)
+      :classmethod:
+
+
+   .. py:method:: H(self)
+      :property:
+
+
+   .. py:method:: _assemble(self, mu=None)
+
+
+   .. py:method:: assemble(self, mu=None)
+
+      Assemble the operator for given |parameter values|.
+
+      The result of the method strongly depends on the given operator.
+      For instance, a matrix-based operator will assemble its matrix, a |LincombOperator|
+      will try to form the linear combination of its operators, whereas an arbitrary
+      operator might simply return a
+      :class:`~pymor.operators.constructions.FixedParameterOperator`.
+      The only assured property of the assembled operator is that it no longer
+      depends on a |Parameter|.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to assemble the operator.
+              
+      .. admonition:: Returns
+
+          Parameter-independent, assembled |Operator|.
+              
+
+   .. py:method:: as_range_array(self, mu=None)
+
+      Return a |VectorArray| representation of the operator in its range space.
+
+      In the case of a linear operator with |NumpyVectorSpace| as
+      :attr:`~Operator.source`, this method returns for given |parameter values|
+      `mu` a |VectorArray| `V` in the operator's :attr:`~Operator.range`,
+      such that ::
+
+          V.lincomb(U.to_numpy()) == self.apply(U, mu)
+
+      for all |VectorArrays| `U`.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to return the |VectorArray|
+              representation.
+              
+      .. admonition:: Returns
+
+          V
+              The |VectorArray| defined above.
+              
+
+   .. py:method:: as_source_array(self, mu=None)
+
+      Return a |VectorArray| representation of the operator in its source space.
+
+      In the case of a linear operator with |NumpyVectorSpace| as
+      :attr:`~Operator.range`, this method returns for given |parameter values|
+      `mu` a |VectorArray| `V` in the operator's :attr:`~Operator.source`,
+      such that ::
+
+          self.range.make_array(V.inner(U).T) == self.apply(U, mu)
+
+      for all |VectorArrays| `U`.
+
+      .. admonition:: Parameters
+
+          mu
+              The |parameter values| for which to return the |VectorArray|
+              representation.
+              
+      .. admonition:: Returns
+
+          V
+              The |VectorArray| defined above.
+              
+
+   .. py:method:: apply(self, U, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: apply_adjoint(self, V, mu=None)
+
+      Apply the adjoint operator.
+
+      For any given linear |Operator| `op`, |parameter values| `mu` and
+      |VectorArrays| `U`, `V` in the :attr:`~Operator.source`
+      resp. :attr:`~Operator.range` we have::
+
+          op.apply_adjoint(V, mu).dot(U) == V.inner(op.apply(U, mu))
+
+      Thus, when `op` is represented by a matrix `M`, `apply_adjoint` is
+      given by left-multplication of (the complex conjugate of) `M` with `V`.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the adjoint operator is applied.
+          mu
+              The |parameter values| for which to apply the adjoint operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the adjoint operator evaluations.
+              
+
+   .. py:method:: apply_inverse(self, V, mu=None, initial_guess=None, least_squares=False, check_finite=True, default_sparse_solver_backend='scipy')
+
+      Apply the inverse operator.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the inverse operator is applied.
+          mu
+              The |parameter values| for which to evaluate the inverse operator.
+          initial_guess
+              |VectorArray| with the same length as `V` containing initial guesses
+              for the solution.  Some implementations of `apply_inverse` may
+              ignore this parameter.  If `None` a solver-dependent default is used.
+          least_squares
+              If `True`, solve the least squares problem::
+              
+                  u = argmin ||op(u) - v||_2.
+              
+              Since for an invertible operator the least squares solution agrees
+              with the result of the application of the inverse operator,
+              setting this option should, in general, have no effect on the result
+              for those operators. However, note that when no appropriate
+              |solver_options| are set for the operator, most implementations
+              will choose a least squares solver by default which may be
+              undesirable.
+          check_finite
+              Test if solution only contains finite values.
+          default_sparse_solver_backend
+              Default sparse solver backend to use (scipy, generic).
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the inverse operator evaluations.
+              
+      .. admonition:: Raises
+
+          InversionError
+              The operator could not be inverted.
+              
+
+   .. py:method:: apply_inverse_adjoint(self, U, mu=None, initial_guess=None, least_squares=False)
+
+      Apply the inverse adjoint operator.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the inverse adjoint operator is applied.
+          mu
+              The |parameter values| for which to evaluate the inverse adjoint operator.
+          initial_guess
+              |VectorArray| with the same length as `U` containing initial guesses
+              for the solution.  Some implementations of `apply_inverse_adjoint` may
+              ignore this parameter.  If `None` a solver-dependent default is used.
+          least_squares
+              If `True`, solve the least squares problem::
+              
+                  v = argmin ||op^*(v) - u||_2.
+              
+              Since for an invertible operator the least squares solution agrees
+              with the result of the application of the inverse operator,
+              setting this option should, in general, have no effect on the result
+              for those operators. However, note that when no appropriate
+              |solver_options| are set for the operator, most operator
+              implementations will choose a least squares solver by default which
+              may be undesirable.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the inverse adjoint operator evaluations.
+              
+      .. admonition:: Raises
+
+          InversionError
+              The operator could not be inverted.
+              
+
+   .. py:method:: _assemble_concat(self, operators, solver_options=None, name=None)
+
+
+   .. py:method:: _assemble_lincomb(self, operators, coefficients, identity_shift=0.0, solver_options=None, name=None)
+
+      Try to assemble a linear combination of the given operators.
+
+      Returns a new |Operator| which represents the sum ::
+
+          c_1*O_1 + ... + c_N*O_N + s*I
+
+      where `O_i` are |Operators|, `c_i`, `s` scalar coefficients and `I` the identity.
+
+      This method is called in the :meth:`assemble` method of |LincombOperator| on
+      the first of its operators. If an assembly of the given linear combination
+      is possible, e.g. the linear combination of the system matrices of the
+      operators can be formed, then the assembled operator is returned.
+      Otherwise, the method returns `None` to indicate that assembly is not possible.
+
+      .. admonition:: Parameters
+
+          operators
+              List of |Operators| `O_i` whose linear combination is formed.
+          coefficients
+              List of the corresponding linear coefficients `c_i`.
+          identity_shift
+              The coefficient `s`.
+          solver_options
+              |solver_options| for the assembled operator.
+          name
+              Name of the assembled operator.
+              
+      .. admonition:: Returns
+
+          The assembled |Operator| if assembly is possible, otherwise `None`.
+              
+
+   .. py:method:: __getstate__(self)
+
+
+   .. py:method:: _format_repr(self, max_width, verbosity)
+
+
+
+.. py:class:: NumpyHankelOperator(markov_parameters, source_id=None, range_id=None, name=None)
+
+   Bases: :py:obj:`NumpyGenericOperator`
+
+   Implicit representation of a Hankel operator by a |NumPy Array| of Markov parameters.
+
+   Let
+
+   .. math::
+       h =
+       \begin{pmatrix}
+           h_1 & h_2 & \dots & h_n
+       \end{pmatrix},\quad h_i\in\mathbb{C}^{p\times m},\,i=1,\,\dots,\,n,\quad n,m,p\in\mathbb{N}
+
+   be a finite sequence of (matrix-valued) Markov parameters. For an odd number :math:`n=2s-1`
+   of Markov parameters, the corresponding Hankel operator can be represented by the matrix
+
+   .. math::
+       H =
+       \begin{bmatrix}
+           h_1 & h_2 & \dots & h_s \\
+           h_2 & h_3 & \dots & h_{s+1}\\
+           \vdots & \vdots && \vdots\\
+           h_s & h_{s+1} & \dots & h_{2s-1}
+       \end{bmatrix}\in\mathbb{C}^{ms\times ps}.
+
+   For an even number :math:`n=2s` of Markov parameters, the corresponding matrix
+   representation is given by
+
+   .. math::
+       H =
+       \begin{bmatrix}
+           h_1 & h_2 & \dots & h_s & h_{s+1}\\
+           h_2 & h_3 & \dots & h_{s+1} & h_{s+2}\\
+           \vdots & \vdots && \vdots & \vdots\\
+           h_s & h_{s+1} & \dots & h_{2s-1} & h_{2s}\\
+           h_{s+1} & h_{s+2} & \dots & h_{2s} & 0
+       \end{bmatrix}\in\mathbb{C}^{m(s+1)\times p(s+1)}.
+
+   The matrix :math:`H` as seen above is not explicitly constructed, only the sequence of Markov
+   parameters is stored. Efficient matrix-vector multiplications are realized via circulant
+   matrices with DFT in the class' `apply` method
+   (see :cite:`MSKC21` Algorithm 3.1. for details).
+
+   .. admonition:: Parameters
+
+       markov_parameters
+           The |NumPy array| that contains the first :math:`n` Markov parameters that define the Hankel
+           operator. Has to be one- or three-dimensional with either::
+           
+               markov_parameters.shape = (n,)
+           
+           for scalar-valued Markov parameters or::
+           
+               markov_parameters.shape = (n, p, m)
+           
+           for matrix-valued Markov parameters of dimension :math:`p\times m`.
+       source_id
+           The id of the operator's `source` |VectorSpace|.
+       range_id
+           The id of the operator's `range` |VectorSpace|.
+       name
+           Name of the operator.
+           
+   .. py:method:: apply(self, U, mu=None)
+
+      Apply the operator to a |VectorArray|.
+
+      .. admonition:: Parameters
+
+          U
+              |VectorArray| of vectors to which the operator is applied.
+          mu
+              The |parameter values| for which to evaluate the operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the operator evaluations.
+              
+
+   .. py:method:: apply_adjoint(self, V, mu=None)
+
+      Apply the adjoint operator.
+
+      For any given linear |Operator| `op`, |parameter values| `mu` and
+      |VectorArrays| `U`, `V` in the :attr:`~Operator.source`
+      resp. :attr:`~Operator.range` we have::
+
+          op.apply_adjoint(V, mu).dot(U) == V.inner(op.apply(U, mu))
+
+      Thus, when `op` is represented by a matrix `M`, `apply_adjoint` is
+      given by left-multplication of (the complex conjugate of) `M` with `V`.
+
+      .. admonition:: Parameters
+
+          V
+              |VectorArray| of vectors to which the adjoint operator is applied.
+          mu
+              The |parameter values| for which to apply the adjoint operator.
+              
+      .. admonition:: Returns
+
+          |VectorArray| of the adjoint operator evaluations.
+              
+
+   .. py:method:: _calc_circulant(self)
+
+
+   .. py:method:: H(self)
+      :property:
+
+
+

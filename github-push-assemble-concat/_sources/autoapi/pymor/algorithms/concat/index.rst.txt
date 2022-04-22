@@ -1,0 +1,70 @@
+:mod:`pymor.algorithms.concat`
+==============================
+
+.. py:module:: pymor.algorithms.concat
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.algorithms.concat.AssembleConcatRules
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+  :nosignatures:
+
+   pymor.algorithms.concat.assemble_concat
+
+
+
+.. py:function:: assemble_concat(operators, solver_options=None, name=None)
+
+
+.. py:class:: AssembleConcatRules(solver_options, name)
+
+   Bases: :py:obj:`pymor.algorithms.rules.RuleTable`
+
+   Define algorithm by a table of match conditions and corresponding actions.
+
+   |RuleTable| manages a table of |rules|, stored in the `rules`
+   attributes, which can be :meth:`applied <apply>` to given
+   objects.
+
+   A new table is created by subclassing |RuleTable| and defining
+   new methods which are decorated with :class:`match_class`,
+   :class:`match_generic` or another :class:`rule` subclass.
+   The order of the method definitions determines the order in
+   which the defined |rules| are applied.
+
+   .. admonition:: Parameters
+
+       use_caching
+           If `True`, cache results of :meth:`apply`.
+           
+   .. attribute:: rules
+
+      `list` of all defined |rules|.
+      
+
+   .. py:method:: action_ZeroOperator(self, ops)
+
+
+   .. py:method:: action_IdentityOperator(self, ops)
+
+
+   .. py:method:: action_call_assemble_concat_method(self, ops)
+
+
+   .. py:method:: action_return_concat(self, ops)
+
+
+

@@ -1,0 +1,16 @@
+:mod:`pymor.discretizers.skfem`
+===============================
+
+.. py:module:: pymor.discretizers.skfem
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   cg <cg/index.rst>
+   domaindiscretizer <domaindiscretizer/index.rst>
+
+
