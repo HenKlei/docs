@@ -1,0 +1,81 @@
+:mod:`pymor.models.transforms`
+==============================
+
+.. py:module:: pymor.models.transforms
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pymor.models.transforms.MoebiusTransform
+   pymor.models.transforms.BilinearTransform
+   pymor.models.transforms.CayleyTransform
+
+
+
+
+.. py:class:: MoebiusTransform(coefficients, normalize=False, name=None)
+
+   Bases: :py:obj:`pymor.core.base.ImmutableObject`
+
+   A Moebius transform operator.
+
+   Maps complex numbers to complex numbers.
+   The transform coefficients can be normalized.
+   Contains a method for constructing an inverse mapping, as well as a constructor that takes three
+   points and their images. The Moebius transforms form a group under composition, so __matmul__ is
+   defined to yield Moebius Transforms if both factors are Moebius Transforms.
+
+   .. py:method:: from_points(cls, w, z=(0, 1, np.inf), name=None)
+      :classmethod:
+
+
+   .. py:method:: inverse(self, normalize=False)
+
+
+   .. py:method:: _mapping(self, x)
+
+
+   .. py:method:: __call__(self, x)
+
+
+   .. py:method:: __matmul__(self, other)
+
+
+   .. py:method:: __str__(self)
+
+      Return str(self).
+
+
+
+.. py:class:: BilinearTransform(x, normalize=False, name=None)
+
+   Bases: :py:obj:`MoebiusTransform`
+
+   A Moebius transform operator.
+
+   Maps complex numbers to complex numbers.
+   The transform coefficients can be normalized.
+   Contains a method for constructing an inverse mapping, as well as a constructor that takes three
+   points and their images. The Moebius transforms form a group under composition, so __matmul__ is
+   defined to yield Moebius Transforms if both factors are Moebius Transforms.
+
+
+.. py:class:: CayleyTransform(normalize=False, name=None)
+
+   Bases: :py:obj:`MoebiusTransform`
+
+   A Moebius transform operator.
+
+   Maps complex numbers to complex numbers.
+   The transform coefficients can be normalized.
+   Contains a method for constructing an inverse mapping, as well as a constructor that takes three
+   points and their images. The Moebius transforms form a group under composition, so __matmul__ is
+   defined to yield Moebius Transforms if both factors are Moebius Transforms.
+
+
