@@ -1,0 +1,1051 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="indigo">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Tutorial: Linear time-invariant systems &#8212; pyMOR v2021.2.0+318.gfc5b43978 Manual</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="_static/pymor_favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial: Reducing an LTI system using balanced truncation" href="tutorial_bt.html" />
+    <link rel="prev" title="Tutorial: Projecting a Model" href="tutorial_projection.html" />
+
+
+  
+   
+
+<link rel="stylesheet" href="_static/pymor.css"/>
+
+<script language="javascript">
+    function scrollToTarget() {
+        target_position = $(":target").offset().top;
+        header_height = $('header').height();
+        $(window).scrollTop(target_position - header_height);
+    }
+
+    $(document).ready(function(){
+        window.setTimeout(function() {
+            scrollToTarget();
+        }, 15);
+    });
+
+    window.onhashchange = scrollToTarget;
+</script>
+  </head>
+  <body dir=ltr
+        data-md-color-primary=indigo data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#tutorial_lti_systems" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="pyMOR v2021.2.0+318.gfc5b43978 Manual"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/pymor_logo_white.svg" height="26"
+                   alt="pyMOR v2021.2.0+318.gfc5b43978 Manual logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Documentation</span>
+          <span class="md-header-nav__topic"> Tutorial: Linear time-invariant systems </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "/versions.json",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">pyMOR v2021.2.0+318.gfc5b43978 Manual</a></li>
+          <li class="md-tabs__item"><a href="tutorials.html" class="md-tabs__link">pyMOR Tutorials</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="pyMOR v2021.2.0+318.gfc5b43978 Manual" class="md-nav__button md-logo">
+      
+        <img src="_static/pymor_logo_white.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="index.html"
+       title="pyMOR v2021.2.0+318.gfc5b43978 Manual">Documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="getting_started.html" class="md-nav__link">Getting started</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="technical_overview.html" class="md-nav__link">Technical Overview</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="environment.html" class="md-nav__link">Environment Variables</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorials.html" class="md-nav__link">pyMOR Tutorials</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_builtin_discretizer.html" class="md-nav__link">Tutorial: Using pyMOR’s discretization toolkit</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_basis_generation.html" class="md-nav__link">Tutorial: Building a Reduced Basis</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_projection.html" class="md-nav__link">Tutorial: Projecting a Model</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Tutorial: Linear time-invariant systems </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Tutorial: Linear time-invariant systems</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#building-a-model" class="md-nav__link">Building a model</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#transfer-function-evaluation" class="md-nav__link">Transfer function evaluation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#magnitude-and-bode-plots" class="md-nav__link">Magnitude and Bode plots</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#system-poles" class="md-nav__link">System poles</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#system-gramians" class="md-nav__link">System Gramians</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#hankel-singular-values" class="md-nav__link">Hankel singular values</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#system-norms" class="md-nav__link">System norms</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_bt.html" class="md-nav__link">Tutorial: Reducing an LTI system using balanced truncation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_unstable_lti_systems.html" class="md-nav__link">Tutorial: Model order reduction for unstable LTI systems</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_mor_with_anns.html" class="md-nav__link">Tutorial: Model order reduction with artificial neural networks</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_optimization.html" class="md-nav__link">Tutorial: Model order reduction for PDE-constrained optimization problems</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial_external_solver.html" class="md-nav__link">Tutorial: Binding an external PDE solver to pyMOR</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="release_notes/all.html" class="md-nav__link">Release Notes</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="bibliography.html" class="md-nav__link">Bibliography</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="developer_docs.html" class="md-nav__link">Developer Documentation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="autoapi/index.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="autoapi/pymor/index.html" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pymor</span></code></a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<div class="admonition">
+<p class="admonition-title">Run this tutorial</p>
+<a href="https://mybinder.org/v2/gh/pymor/docs/github-push-lti-attributes?filepath=tutorial_lti_systems.ipynb">Click here</a> to run this tutorial on mybinder.org: <a href="https://mybinder.org/v2/gh/pymor/docs/github-push-lti-attributes?filepath=tutorial_lti_systems.ipynb">
+<img alt="try on mybinder.org" src="https://mybinder.org/badge_logo.svg"/>
+</a><br/>
+<emph>Please note that starting the notebook server may take a couple of minutes.</emph>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-linear-time-invariant-systems">
+<h1 id="tutorial-lti-systems--page-root">Tutorial: Linear time-invariant systems<a class="headerlink" href="#tutorial-lti-systems--page-root" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial,
+we discuss finite-dimensional, continuous-time, linear time-invariant (LTI)
+systems of the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    E \dot{x}(t) &amp; = A x(t) + B u(t), \\
+    y(t) &amp; = C x(t) + D u(t).
+\end{align}\end{split}\]</div>
+<p>where
+<span class="math notranslate nohighlight">\(u\)</span> is the input,
+<span class="math notranslate nohighlight">\(x\)</span> the state, and
+<span class="math notranslate nohighlight">\(y\)</span> the output of the system,
+and <span class="math notranslate nohighlight">\(A, B, C, D, E\)</span> are matrices of appropriate dimensions
+(more details can be found in <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="A. C. Antoulas. Approximation of Large-Scale Dynamical Systems. Volume 6 of Adv. Des. Control. SIAM Publications, Philadelphia, PA, 2005. ISBN 9780898715293. doi:10.1137/1.9780898718713.">Ant05</a>]</span>).
+In pyMOR, these models are captured by <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModels</span></code></a>,
+which contain the matrices <span class="math notranslate nohighlight">\(A, B, C, D, E\)</span> as <a class="reference internal" href="autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a>.
+We start by building an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> and then demonstrate some of its properties,
+using a discretized heat equation as the example.</p>
+<p>We focus on a non-parametric example,
+but parametric LTI systems can be handled similarly
+by constructing <span class="math notranslate nohighlight">\(A, B, C, D, E\)</span> as parametric <a class="reference internal" href="autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operators</span></code></a> and
+passing <a class="reference internal" href="autoapi/pymor/parameters/base/index.html#pymor.parameters.base.Mu" title="pymor.parameters.base.Mu"><code class="xref py py-class docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">values</span></code></a> via the <code class="docutils literal notranslate"><span class="pre">mu</span></code> argument to the methods of the
+<a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Discrete-time LTI systems can be constructed by passing positive values for the
+<code class="docutils literal notranslate"><span class="pre">sampling_time</span></code> to any constructor of an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.</p>
+</div>
+<section id="building-a-model">
+<h2 id="building-a-model">Building a model<a class="headerlink" href="#building-a-model" title="Permalink to this headline">¶</a></h2>
+<p>We consider the following one-dimensional heat equation over <span class="math notranslate nohighlight">\((0, 1)\)</span> with
+two inputs <span class="math notranslate nohighlight">\(u_1, u_2\)</span> and three outputs <span class="math notranslate nohighlight">\(y_1, y_2, y_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \partial_t T(\xi, t) &amp; = \partial_{\xi \xi} T(\xi, t) + u_1(t),
+    &amp; 0 &lt; \xi &lt; 1,\ t &gt; 0, \\
+    -\partial_\xi T(0, t) &amp; = -T(0, t) + u_2(t),
+    &amp; t &gt; 0, \\
+    \partial_\xi T(1, t) &amp; = -T(1, t),
+    &amp; t &gt; 0, \\
+    y_1(t) &amp; = T(0, t),
+    &amp; t &gt; 0, \\
+    y_2(t) &amp; = T(0.5, t),
+    &amp; t &gt; 0, \\
+    y_3(t) &amp; = T(1, t),
+    &amp; t &gt; 0.
+\end{align}\end{split}\]</div>
+<p>There are many ways of building an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>.
+Here, we show how to build one from custom matrices,
+instead of using a discretizer as in <a class="reference internal" href="tutorial_builtin_discretizer.html"><span class="doc">Tutorial: Using pyMOR’s discretization toolkit</span></a>
+(and the <a class="reference internal" href="autoapi/pymor/models/basic/index.html#pymor.models.basic.InstationaryModel.to_lti" title="pymor.models.basic.InstationaryModel.to_lti"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_lti</span></code></a> method of
+<a class="reference internal" href="autoapi/pymor/models/basic/index.html#pymor.models.basic.InstationaryModel" title="pymor.models.basic.InstationaryModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">InstationaryModel</span></code></a> to obtain an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>).
+In particular, we will use the
+<a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.from_matrices" title="pymor.models.iosys.LTIModel.from_matrices"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_matrices</span></code></a> method of <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>,
+which instantiates an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> from NumPy or SciPy matrices.</p>
+<p>First, we do the necessary imports and some matplotlib style choices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="k">as</span> <span class="nn">sps</span>
+<span class="kn">from</span> <span class="nn">pymor.models.iosys</span> <span class="kn">import</span> <span class="n">LTIModel</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.grid'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we can assemble the matrices based on a centered finite difference
+approximation using standard methods of NumPy and SciPy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'lil'</span><span class="p">)</span>
+<span class="n">E</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+
+<span class="n">d0</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">diags</span><span class="p">([</span><span class="n">d1</span><span class="p">,</span> <span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'lil'</span><span class="p">)</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">tocsc</span><span class="p">()</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">B</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can create an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> from NumPy and SciPy matrices <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>,
+<code class="docutils literal notranslate"><span class="pre">E</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span> <span class="o">=</span> <span class="n">LTIModel</span><span class="o">.</span><span class="n">from_matrices</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can take a look at the internal representation of the <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> <code class="docutils literal notranslate"><span class="pre">fom</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LTIModel(
+    NumpyMatrixOperator(&lt;101x101 sparse, 301 nnz&gt;, source_id='STATE', range_id='STATE'),
+    NumpyMatrixOperator(&lt;101x2 dense&gt;, range_id='STATE'),
+    NumpyMatrixOperator(&lt;3x101 dense&gt;, source_id='STATE'),
+    D=ZeroOperator(NumpyVectorSpace(3), NumpyVectorSpace(2)),
+    E=NumpyMatrixOperator(&lt;101x101 sparse, 101 nnz&gt;, source_id='STATE', range_id='STATE'),
+    presets={})
+</pre></div>
+</div>
+</div>
+</div>
+<p>From this, we see that the matrices were wrapped in <a class="reference internal" href="autoapi/pymor/operators/numpy/index.html#pymor.operators.numpy.NumpyMatrixOperator" title="pymor.operators.numpy.NumpyMatrixOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumpyMatrixOperators</span></code></a>,
+while the default value was chosen for the <span class="math notranslate nohighlight">\(D\)</span> matrix
+(<a class="reference internal" href="autoapi/pymor/operators/constructions/index.html#pymor.operators.constructions.ZeroOperator" title="pymor.operators.constructions.ZeroOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ZeroOperator</span></code></a>).
+The operators in an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> can be accessed via its attributes, e.g.,
+<code class="docutils literal notranslate"><span class="pre">fom.A</span></code> is the <a class="reference internal" href="autoapi/pymor/operators/interface/index.html#pymor.operators.interface.Operator" title="pymor.operators.interface.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> representing the <span class="math notranslate nohighlight">\(A\)</span> matrix.</p>
+<p>We can also see some basic information from <code class="docutils literal notranslate"><span class="pre">fom</span></code>’s string representation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LTIModel
+    class: LTIModel
+    number of equations: 101
+    number of inputs:    2
+    number of outputs:   3
+    continuous-time
+    linear time-invariant
+    solution_space:  NumpyVectorSpace(101, id='STATE')
+</pre></div>
+</div>
+</div>
+</div>
+<p>which gives the dimensions of the underlying system more directly,
+together with some of its properties.</p>
+</section>
+<section id="transfer-function-evaluation">
+<h2 id="transfer-function-evaluation">Transfer function evaluation<a class="headerlink" href="#transfer-function-evaluation" title="Permalink to this headline">¶</a></h2>
+<p>The transfer function <span class="math notranslate nohighlight">\(H\)</span> is the function such that
+<span class="math notranslate nohighlight">\(Y(s) = H(s) U(s)\)</span>,
+where <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are respectively the Laplace transforms of
+the input <span class="math notranslate nohighlight">\(u\)</span> and the output <span class="math notranslate nohighlight">\(y\)</span>,
+assuming zero initial condition (<span class="math notranslate nohighlight">\(x(0) = 0\)</span>).
+The expression for <span class="math notranslate nohighlight">\(H\)</span> can be found by applying the Laplace transform
+to the system equations to obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    s E X(s) &amp; = A X(s) + B U(s), \\
+    Y(s) &amp; = C X(s) + D U(s).
+\end{align}\end{split}\]</div>
+<p>using that <span class="math notranslate nohighlight">\(s X(s)\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>.
+Eliminating <span class="math notranslate nohighlight">\(X(s)\)</span> leads to</p>
+<div class="math notranslate nohighlight">
+\[Y(s) = \left( C (s E - A)^{-1} B + D \right) U(s),\]</div>
+<p>i.e., <span class="math notranslate nohighlight">\(H(s) = C (s E - A)^{-1} B + D\)</span>.
+Note that <span class="math notranslate nohighlight">\(H\)</span> is a matrix-valued rational function
+(each component is a rational function).</p>
+<p>The transfer function of a given <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> is stored as the attribute
+<code class="docutils literal notranslate"><span class="pre">transfer_function</span></code>.
+It can be evaluated using its
+<a class="reference internal" href="autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_tf" title="pymor.models.transfer_function.TransferFunction.eval_tf"><code class="xref py py-meth docutils literal notranslate"><span class="pre">eval_tf</span></code></a> method.
+The result is a NumPy array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">eval_tf</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">eval_tf</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">eval_tf</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.5        0.66666667]
+ [0.625      0.5       ]
+ [0.5        0.33333333]]
+[[0.31606222 0.4999973 ]
+ [0.39347047 0.30326476]
+ [0.31606222 0.18394049]]
+[[0.37281526-0.21715839j 0.55742226-0.1956196j ]
+ [0.46483929-0.27336178j 0.36331911-0.23241964j]
+ [0.37281526-0.21715839j 0.22541935-0.17719566j]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, the derivative of the transfer function can be computed using the
+<a class="reference internal" href="autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction.eval_dtf" title="pymor.models.transfer_function.TransferFunction.eval_dtf"><code class="xref py py-meth docutils literal notranslate"><span class="pre">eval_dtf</span></code></a> method.
+The result is again a NumPy array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">eval_dtf</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">eval_dtf</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">eval_dtf</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.2916625  -0.25926111]
+ [-0.36718437 -0.3125    ]
+ [-0.2916625  -0.24073889]]
+[[-0.11600655 -0.10808607]
+ [-0.14598636 -0.12374206]
+ [-0.11600655 -0.09196959]]
+[[-0.10621989+0.18938184j -0.10083093+0.16301232j]
+ [-0.13365757+0.23848281j -0.11317824+0.20350967j]
+ [-0.10621989+0.18938184j -0.08260248+0.16036596j]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To evaluate the transfer function over a sequence of points on the imaginary
+axis,
+the <a class="reference internal" href="autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction.freq_resp" title="pymor.models.transfer_function.TransferFunction.freq_resp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">freq_resp</span></code></a> method
+can be used.
+A typical use case is plotting the transfer function,
+which is discussed in the next section.</p>
+</section>
+<section id="magnitude-and-bode-plots">
+<h2 id="magnitude-and-bode-plots">Magnitude and Bode plots<a class="headerlink" href="#magnitude-and-bode-plots" title="Permalink to this headline">¶</a></h2>
+<p>It is known that if the input is chosen as
+<span class="math notranslate nohighlight">\(u(t) = a e^{\xi t} \sin(\omega t + \varphi) e_j\)</span>
+(where <span class="math notranslate nohighlight">\(e_j\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th canonical vector),
+then</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to \infty}
+\left(
+  y_i(t)
+  - a \lvert H_{ij}(\xi + \boldsymbol{\imath} \omega) \rvert e^{\xi t}
+  \sin(\omega t + \varphi + \arg(H_{ij}(\xi + \boldsymbol{\imath} \omega)))
+\right)
+= 0.\]</div>
+<p>In words, if the input is a pure exponential,
+the frequency is preserved in the output,
+the amplitude is multiplied by the amplitude of the transfer function, and
+the phase is shifted by the argument of the transfer function.
+In particular, if the input is sinusiodal, i.e., <span class="math notranslate nohighlight">\(\xi = 0\)</span>,
+then the output is also sinusiodal.</p>
+<p>It is of interest to plot the transfer function over the imaginary axis to
+visualize how the LTI system responds to each frequency in the input.
+Since the transfer function is complex-valued (and matrix-valued),
+there are multiple ways to plot it.</p>
+<p>One way is the “magnitude plot”, a visualization of the mapping
+<span class="math notranslate nohighlight">\(\omega \mapsto \lVert H(\boldsymbol{\imath} \omega) \rVert\)</span>,
+using the <a class="reference internal" href="autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction.mag_plot" title="pymor.models.transfer_function.TransferFunction.mag_plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mag_plot</span></code></a>
+method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">mag_plot</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/tutorial_lti_systems_17_0.png" src="_images/tutorial_lti_systems_17_0.png">
+</img></div>
+</div>
+<p>Note that <a class="reference internal" href="autoapi/pymor/models/transfer_function/index.html#pymor.models.transfer_function.TransferFunction.mag_plot" title="pymor.models.transfer_function.TransferFunction.mag_plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mag_plot</span></code></a>
+computes the Frobenius norm of <span class="math notranslate nohighlight">\(H(\boldsymbol{\imath} \omega)\)</span> by default,
+just as <code class="docutils literal notranslate"><span class="pre">scipy.linalg.norm</span></code>.
+Likewise, the choice of the norm <span class="math notranslate nohighlight">\(\lVert \cdot \rVert\)</span> can be controlled
+using the <code class="docutils literal notranslate"><span class="pre">ord</span></code> parameter.</p>
+<p>Another visualization is the Bode plot,
+which shows the magnitude and phase of each component of the transfer function.
+More specifically,
+<span class="math notranslate nohighlight">\(\omega \mapsto \lvert H_{ij}(\boldsymbol{\imath} \omega) \rvert\)</span>
+is in subplot <span class="math notranslate nohighlight">\((2 i - 1, j)\)</span> and
+<span class="math notranslate nohighlight">\(\omega \mapsto \arg(H_{ij}(\boldsymbol{\imath} \omega))\)</span>
+is in subplot <span class="math notranslate nohighlight">\((2 i, j)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">fom</span><span class="o">.</span><span class="n">transfer_function</span><span class="o">.</span><span class="n">bode_plot</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/tutorial_lti_systems_19_0.png" src="_images/tutorial_lti_systems_19_0.png"/>
+</div>
+</div>
+</section>
+<section id="system-poles">
+<h2 id="system-poles">System poles<a class="headerlink" href="#system-poles" title="Permalink to this headline">¶</a></h2>
+<p>The poles of an LTI system are the poles of its transfer function.
+From the form of the transfer function
+it follows that the poles are eigenvalues of <span class="math notranslate nohighlight">\(E^{-1} A\)</span>,
+assuming that <span class="math notranslate nohighlight">\(E\)</span> is invertible.
+Conversely, the eigenvalues of <span class="math notranslate nohighlight">\(E^{-1} A\)</span> are the poles of the system
+in the generic case
+(more precisely, if the system is minimal, i.e., controllable and observable;
+see <span id="id2">[<a class="reference internal" href="bibliography.html#id2" title="A. C. Antoulas. Approximation of Large-Scale Dynamical Systems. Volume 6 of Adv. Des. Control. SIAM Publications, Philadelphia, PA, 2005. ISBN 9780898715293. doi:10.1137/1.9780898718713.">Ant05</a>]</span>).</p>
+<p>The poles of an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> can be obtained using its
+<a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.poles" title="pymor.models.iosys.LTIModel.poles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poles</span></code></a> method
+(assuming the system is minimal).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poles</span> <span class="o">=</span> <span class="n">fom</span><span class="o">.</span><span class="n">poles</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poles</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">poles</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Poles'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/tutorial_lti_systems_21_0.png" src="_images/tutorial_lti_systems_21_0.png"/>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.poles" title="pymor.models.iosys.LTIModel.poles"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poles</span></code></a> method uses a dense
+eigenvalue solver,
+which is applicable only up to medium-sized problems.</p>
+</div>
+</section>
+<section id="system-gramians">
+<h2 id="system-gramians">System Gramians<a class="headerlink" href="#system-gramians" title="Permalink to this headline">¶</a></h2>
+<p>The controllability and observability Gramians of an asymptotically stable
+system with invertible <span class="math notranslate nohighlight">\(E\)</span> are respectively</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    P &amp; =
+    \int_0^\infty
+    e^{t E^{-1} A} E^{-1} B
+    B^{\operatorname{T}} E^{-\!\operatorname{T}}
+    e^{t A^{\operatorname{T}} E^{-\!\operatorname{T}}}
+    \operatorname{d}\!t, \text{ and} \\
+    E^{\operatorname{T}} Q E &amp; =
+    \int_0^\infty
+    e^{t A^{\operatorname{T}} E^{-\!\operatorname{T}}}
+    C^{\operatorname{T}} C
+    e^{t E^{-1} A}
+    \operatorname{d}\!t.
+\end{align*}\end{split}\]</div>
+<p>From this,
+it is clear that <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are symmetric positive semidefinite.
+Furthermore,
+it can be shown that <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> are solutions to Lyapunov equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    A P E^{\operatorname{T}}
+    + E P A^{\operatorname{T}}
+    + B B^{\operatorname{T}}
+    &amp; = 0, \\
+    A^{\operatorname{T}} Q E
+    + E^{\operatorname{T}} Q A
+    + C^{\operatorname{T}} C
+    &amp; = 0.
+\end{align*}\end{split}\]</div>
+<p>The Gramians can be used to quantify how much does the input influence the state
+(controllability) and state the output (observability).
+This is used to motivate the balanced truncation method
+(see <a class="reference internal" href="tutorial_bt.html"><span class="doc">Tutorial: Reducing an LTI system using balanced truncation</span></a>).
+Also, they can be used to compute the <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span> norm (see below).</p>
+<p>To find the “Gramians” <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> of an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a>,
+the <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.gramian" title="pymor.models.iosys.LTIModel.gramian"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gramian</span></code></a> method can be used.
+Although solutions to Lyapunov equations are generally dense matrices,
+they can be often be very well approximated by a low-rank matrix.
+With <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.gramian" title="pymor.models.iosys.LTIModel.gramian"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gramian</span></code></a>,
+it is possible to compute the dense solution or only the low-rank Cholesky
+factor.
+For example, the following computes the low-rank Cholesky factor of the
+controllability Gramian as a <a class="reference internal" href="autoapi/pymor/vectorarrays/interface/index.html#pymor.vectorarrays.interface.VectorArray" title="pymor.vectorarrays.interface.VectorArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorArray</span></code></a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span><span class="o">.</span><span class="n">gramian</span><span class="p">(</span><span class="s1">'c_lrcf'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NumpyVectorArray(
+    NumpyVectorSpace(101, id='STATE'),
+    [[-9.67050759e-01 -9.49603788e-01 -9.37818152e-01 ... -5.08356138e-01
+      -5.03442167e-01 -4.98481264e-01]
+     [-1.13133419e+00 -9.59580542e-01 -8.43810516e-01 ...  1.94699113e-01
+       1.92880555e-01  1.91000976e-01]
+     [ 9.08538963e-01  4.58145972e-01  2.24375612e-01 ...  9.25753046e-02
+       9.17614570e-02  9.08841977e-02]
+     ...
+     [-4.48720858e-17  1.95466800e-15 -3.87392910e-14 ... -1.84179333e-10
+       3.10420349e-11 -2.87160762e-12]
+     [ 3.97648476e-18 -1.92190365e-16  4.26024322e-15 ... -2.24465928e-11
+       1.75879252e-12 -8.24288506e-14]
+     [-1.85127015e-17  7.70480426e-16 -1.45373940e-14 ...  1.65200046e-10
+      -3.71100064e-11  4.41382006e-12]],
+    _len=101)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hankel-singular-values">
+<h2 id="hankel-singular-values">Hankel singular values<a class="headerlink" href="#hankel-singular-values" title="Permalink to this headline">¶</a></h2>
+<p>The Hankel singular values of an LTI system are
+<span class="math notranslate nohighlight">\(\sigma_i = \sqrt{\lambda_i(E^{\operatorname{T}} Q E P)}\)</span>,
+where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>-th eigenvalue.</p>
+<p>Plotting the Hankel singular values shows us how well an LTI system can be
+approximated by a reduced-order model.
+The <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.hsv" title="pymor.models.iosys.LTIModel.hsv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hsv</span></code></a> method can be used to compute them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hsv</span> <span class="o">=</span> <span class="n">fom</span><span class="o">.</span><span class="n">hsv</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hsv</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">hsv</span><span class="p">,</span> <span class="s1">'.-'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Hankel singular values'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/tutorial_lti_systems_25_0.png" src="_images/tutorial_lti_systems_25_0.png"/>
+</div>
+</div>
+<p>As expected for a heat equation, the Hankel singular values decay rapidly.</p>
+</section>
+<section id="system-norms">
+<h2 id="system-norms">System norms<a class="headerlink" href="#system-norms" title="Permalink to this headline">¶</a></h2>
+<p>There are various system norms,
+used for quantifying the sensitivity of system’s outputs to its inputs.
+pyMOR currently has methods for computing:
+the <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span> norm,
+the <span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span> norm, and
+the Hankel (semi)norm.</p>
+<p>The <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span> norm is
+(if <span class="math notranslate nohighlight">\(E\)</span> is invertible,
+<span class="math notranslate nohighlight">\(E^{-1} A\)</span> has eigenvalues in the open left half plane, and
+<span class="math notranslate nohighlight">\(D\)</span> is zero)</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\mathcal{H}_2}
+=
+\left(
+  \frac{1}{2 \pi}
+  \int_{-\infty}^{\infty}
+  \lVert H(\boldsymbol{\imath} \omega) \rVert_{\operatorname{F}}^2
+  \operatorname{d}\!\omega
+\right)^{\frac{1}{2}}.\]</div>
+<p>It can be shown that</p>
+<div class="math notranslate nohighlight">
+\[\lVert y \rVert_{\mathcal{L}_\infty}
+\leqslant
+\lVert H \rVert_{\mathcal{H}_2}
+\lVert u \rVert_{\mathcal{L}_2}.\]</div>
+<p>Additionally, for systems with a single input or a single output
+(i.e., <span class="math notranslate nohighlight">\(u(t) \in \mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(y(t) \in \mathbb{R}\)</span>),</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\mathcal{H}_2}
+=
+\sup_{u \neq 0}
+\frac{\lVert y \rVert_{\mathcal{L}_\infty}}{\lVert u \rVert_{\mathcal{L}_2}}.\]</div>
+<p>The computation of the <span class="math notranslate nohighlight">\(\mathcal{H}_2\)</span> norm is based on the system
+Gramians</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\mathcal{H}_2}^2
+= \operatorname{tr}\!\left(C P C^{\operatorname{T}}\right)
+= \operatorname{tr}\!\left(B^{\operatorname{T}} Q B\right).\]</div>
+<p>The <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.h2_norm" title="pymor.models.iosys.LTIModel.h2_norm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">h2_norm</span></code></a> method of an <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel" title="pymor.models.iosys.LTIModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">LTIModel</span></code></a> can be
+used to compute it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span><span class="o">.</span><span class="n">h2_norm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0377751533822073
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span> norm is
+(if <span class="math notranslate nohighlight">\(E\)</span> is invertible and
+<span class="math notranslate nohighlight">\(E^{-1} A\)</span> has eigenvalues in the open left half plane)</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\mathcal{H}_\infty}
+= \sup_{\omega \in \mathbb{R}}
+\lVert H(\boldsymbol{\imath} \omega) \rVert_2.\]</div>
+<p>It is always true that</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\mathcal{H}_\infty}
+=
+\sup_{u \neq 0}
+\frac{\lVert y \rVert_{\mathcal{L}_2}}{\lVert u \rVert_{\mathcal{L}_2}},\]</div>
+<p>and, in particular,</p>
+<div class="math notranslate nohighlight">
+\[\lVert y \rVert_{\mathcal{L}_2}
+\leqslant
+\lVert H \rVert_{\mathcal{H}_\infty}
+\lVert u \rVert_{\mathcal{L}_2}.\]</div>
+<p>The <a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.hinf_norm" title="pymor.models.iosys.LTIModel.hinf_norm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hinf_norm</span></code></a> method uses a dense solver
+from <a class="reference external" href="https://github.com/python-control/Slycot">Slycot</a> to compute the
+<span class="math notranslate nohighlight">\(\mathcal{H}_\infty\)</span> norm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span><span class="o">.</span><span class="n">hinf_norm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2890705455704852
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Hankel norm is
+(if <span class="math notranslate nohighlight">\(E\)</span> is invertible and
+<span class="math notranslate nohighlight">\(E^{-1} A\)</span> has eigenvalues in the open left half plane)</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\operatorname{H}}
+= \sigma_1,\]</div>
+<p>i.e., the largest Hankel singular value.
+Since it is independent of <span class="math notranslate nohighlight">\(D\)</span>,
+the “Hankel norm” is only a seminorm in general.</p>
+<p>It can be shown that the Hankel norm is the norm of the Hankel operator
+<span class="math notranslate nohighlight">\(\mathcal{H} \colon \mathcal{L}_2(-\infty, 0) \to \mathcal{L}_2(0, \infty)\)</span>
+mapping past inputs <span class="math notranslate nohighlight">\(u_-\)</span> to future outputs <span class="math notranslate nohighlight">\(y_+\)</span></p>
+<div class="math notranslate nohighlight">
+\[y_+(t)
+= \mathcal{H}(u_-)(t)
+= \int_{-\infty}^0 h(t - \tau) u_-(\tau) \operatorname{d}\!\tau,\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is the impulse response
+<span class="math notranslate nohighlight">\(h(t) = C e^{t E^{-1} A} E^{-1} B + D \delta(t)\)</span>
+(i.e., <span class="math notranslate nohighlight">\(H\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(h\)</span>).
+Thus,</p>
+<div class="math notranslate nohighlight">
+\[\lVert H \rVert_{\operatorname{H}}
+=
+\sup_{u_- \neq 0}
+\frac{\lVert y_+ \rVert_{\mathcal{L}_2}}{\lVert u_- \rVert_{\mathcal{L}_2}},\]</div>
+<p>The computation of the Hankel norm in
+<a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.hankel_norm" title="pymor.models.iosys.LTIModel.hankel_norm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hankel_norm</span></code></a> relies on the
+<a class="reference internal" href="autoapi/pymor/models/iosys/index.html#pymor.models.iosys.LTIModel.hsv" title="pymor.models.iosys.LTIModel.hsv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hsv</span></code></a> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fom</span><span class="o">.</span><span class="n">hankel_norm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6221361786735345
+</pre></div>
+</div>
+</div>
+</div>
+<p>Download the code:
+<a class="reference download internal" download="" href="_downloads/602b625fcdd73435829fd2374385dffa/tutorial_lti_systems.md"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_lti_systems.md</span></code></a>,
+<a class="reference download internal" download="" href="_downloads/9457b171c152971cf5260fa1be5262db/tutorial_lti_systems.ipynb"><code class="xref download myst-nb docutils literal notranslate"><span class="pre">tutorial_lti_systems.ipynb</span></code></a>.</p>
+</section>
+</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"00b634d1d0d1430ea3e9775c8e891c6d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_eb2db41647614c18ac0092ce1c4d4c98"], "layout": "IPY_MODEL_4f6a0b40cddc482380c5acbb12c2a0a9", "selected_index": null}}, "0269e671eb8f4d37b8dd1a4b6f48ed32": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "033b3f99acf34276bf185e0cb14099f2": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "04cd32c7c2094eedbb240d8d377380ce": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "060831ad927e477880b59e4b840152e6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "07e8de7446af4240832b5c62bd6df582": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "0a276440269645b7b95812e2b91e047c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_07e8de7446af4240832b5c62bd6df582", "placeholder": "\u200b", "style": "IPY_MODEL_bf2eff28f51847979fa2debb24ce538a", "value": ""}}, "0bea1cca805449fd8a819c9bffe0d7ed": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_888b9a55871947598f24920faa482858"], "layout": "IPY_MODEL_467382d5017345fbad28af68baa52f4b", "selected_index": null}}, "0f1c689d36a4452daeb01264c015b59d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0fd57fcdc3f44cebbc676607599c7e56": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_eee712b62523430abc7256cd49b59c9a"], "layout": "IPY_MODEL_b6d1ff98196441f5b6397f24d50ba248", "selected_index": null}}, "13cbeecdcd9a484e90e1e5bad1dc23dc": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "153c043ddf0a4d618322963267adbda9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "158248ba97544b65884941898c1df3dd": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "160ed4664e7141718e776f81c48b688d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "17d2ce58494a492eb34d7f38f6a35ebf": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "17de47ada95d41ec9166af67ac2de909": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "1bacc5b5b4464027ab6002f7bfc633ba": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2828de2cb9fc483e914f3ae53f218779": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "2a7926ceacc0441d92ab9b06f4b094d8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_79bf28ed6e784bd78cd728927383a661"], "layout": "IPY_MODEL_ff28c971b3f54ad7857600a4ae7ba33a", "selected_index": null}}, "2d41e656570347eb9e436eb5ccc937a8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "2dea59cae88d423baf016afd4643fa75": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_6ff0dafef21d4220ab7b5628b02cd267", "placeholder": "\u200b", "style": "IPY_MODEL_b47bc778eab7455789d69f00a554008a", "value": ""}}, "2ec030eb17294700bc6fadacd2dfbc94": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3c73d5ad6cc0428a9ceb667d88db8051", "placeholder": "\u200b", "style": "IPY_MODEL_8d320e856bcf42198057225a19b9c9c0", "value": ""}}, "31edc6c8259744b2bd30b8ae932b8aea": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3253ee8cc7504ddbaf46e84ec644e595": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d767b54c853f4225a523b2700ba451d9", "placeholder": "\u200b", "style": "IPY_MODEL_adc0ce7bb8a84669b8748eaf5ce8ee8e", "value": ""}}, "33e78655f8be4f0fa7f5598eacd585c7": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "36701b769b7c460a8f58840f8d56cd55": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "3af8921b88904371b3c8908151367eca": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_0a276440269645b7b95812e2b91e047c"], "layout": "IPY_MODEL_1bacc5b5b4464027ab6002f7bfc633ba", "selected_index": null}}, "3bd04de8981847eda1313b178ecb52bb": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_2ec030eb17294700bc6fadacd2dfbc94"], "layout": "IPY_MODEL_f891581b25c44bf79f93daee0748bdae", "selected_index": null}}, "3c73d5ad6cc0428a9ceb667d88db8051": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "3fdca9f2793c40e895cf365976984f5d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "45810e24e44a4d53856de15839327f18": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_75e1f5c222574d33a4d8f05de76be10d", "placeholder": "\u200b", "style": "IPY_MODEL_b745ff34a07c4efb8472518dce271409", "value": ""}}, "467382d5017345fbad28af68baa52f4b": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4801c042527648deb3a648f5641b44fb": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_7813138479e145348ad961ec8bd85f51"], "layout": "IPY_MODEL_90c73f6bab414272846052a72d6f0e14", "selected_index": null}}, "4f6a0b40cddc482380c5acbb12c2a0a9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "51ef51968ec441ca9b26eeb802c9b0b0": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5c6f589f03e64e6b992b447749aff950": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "6741c127415e437aadc54c38b5684731": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "688f172a1ab74313b1e202abe18f311c": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "68a68cc635594033b1ca321e49f03036": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_78dc689a6029449799f16bd499a010c6"], "layout": "IPY_MODEL_688f172a1ab74313b1e202abe18f311c", "selected_index": null}}, "696cc5008c9b4facb7b598a0218690e8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_db8e594d97be497a918e6c4bf44f82a4"], "layout": "IPY_MODEL_0269e671eb8f4d37b8dd1a4b6f48ed32", "selected_index": null}}, "6ff0dafef21d4220ab7b5628b02cd267": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "70d452cb917646ed974268a110d29916": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_e1efb71cdbef473bbe4a33c84863fbb5"], "layout": "IPY_MODEL_158248ba97544b65884941898c1df3dd", "selected_index": null}}, "75e1f5c222574d33a4d8f05de76be10d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "7813138479e145348ad961ec8bd85f51": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_36701b769b7c460a8f58840f8d56cd55", "placeholder": "\u200b", "style": "IPY_MODEL_9b08b8add480465e8303c21b967e1465", "value": ""}}, "78dc689a6029449799f16bd499a010c6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_923c6f75e9ca494eaaf53971671e6eb0", "placeholder": "\u200b", "style": "IPY_MODEL_0f1c689d36a4452daeb01264c015b59d", "value": ""}}, "79bf28ed6e784bd78cd728927383a661": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_033b3f99acf34276bf185e0cb14099f2", "placeholder": "\u200b", "style": "IPY_MODEL_17d2ce58494a492eb34d7f38f6a35ebf", "value": ""}}, "888b9a55871947598f24920faa482858": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c0458ee6b3494e9b861907ee6c59f2a9", "placeholder": "\u200b", "style": "IPY_MODEL_3fdca9f2793c40e895cf365976984f5d", "value": ""}}, "8d320e856bcf42198057225a19b9c9c0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "90c73f6bab414272846052a72d6f0e14": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "923c6f75e9ca494eaaf53971671e6eb0": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "9a977f2af51a4e8ead8be7a0039d8476": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2d41e656570347eb9e436eb5ccc937a8", "placeholder": "\u200b", "style": "IPY_MODEL_31edc6c8259744b2bd30b8ae932b8aea", "value": ""}}, "9b08b8add480465e8303c21b967e1465": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "9c2372a10a0a4f8f9967161558d1660a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_b5f7d36e91cf4a3aaf7a062b9163bb66"], "layout": "IPY_MODEL_04cd32c7c2094eedbb240d8d377380ce", "selected_index": null}}, "a9669f5600e045bea7b2c24cf734e655": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_3253ee8cc7504ddbaf46e84ec644e595"], "layout": "IPY_MODEL_33e78655f8be4f0fa7f5598eacd585c7", "selected_index": null}}, "aa7c0fb6f77e46fa9e7c37241c3bbfa6": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "abfbb0518dde4ffb91e035f1121b84ef": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ad27070bd79942fd830d41da5c2b63fa": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "adc0ce7bb8a84669b8748eaf5ce8ee8e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b47bc778eab7455789d69f00a554008a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b5f7d36e91cf4a3aaf7a062b9163bb66": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_aa7c0fb6f77e46fa9e7c37241c3bbfa6", "placeholder": "\u200b", "style": "IPY_MODEL_5c6f589f03e64e6b992b447749aff950", "value": ""}}, "b6d1ff98196441f5b6397f24d50ba248": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b745ff34a07c4efb8472518dce271409": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bd52a7c23d00407bbef4e05554d067ca": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bf2eff28f51847979fa2debb24ce538a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "c0458ee6b3494e9b861907ee6c59f2a9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "c313e0f016174beb81598790c9174479": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_2dea59cae88d423baf016afd4643fa75"], "layout": "IPY_MODEL_abfbb0518dde4ffb91e035f1121b84ef", "selected_index": null}}, "cb421d1e56e449f59c8d62e079402364": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_f44d5e7a21c649b294cface546c5ba28", "placeholder": "\u200b", "style": "IPY_MODEL_ce0abf7699a244858df011fb5263a57b", "value": ""}}, "ce0abf7699a244858df011fb5263a57b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d50754e3d8d248a29455085bcc05121a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_9a977f2af51a4e8ead8be7a0039d8476"], "layout": "IPY_MODEL_160ed4664e7141718e776f81c48b688d", "selected_index": null}}, "d767b54c853f4225a523b2700ba451d9": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "da3ce0739a6745fda37ed94f0757a385": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_45810e24e44a4d53856de15839327f18"], "layout": "IPY_MODEL_51ef51968ec441ca9b26eeb802c9b0b0", "selected_index": null}}, "db8e594d97be497a918e6c4bf44f82a4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ad27070bd79942fd830d41da5c2b63fa", "placeholder": "\u200b", "style": "IPY_MODEL_bd52a7c23d00407bbef4e05554d067ca", "value": ""}}, "e1efb71cdbef473bbe4a33c84863fbb5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ea872b73fc914c0999c4a0ff308b1e57", "placeholder": "\u200b", "style": "IPY_MODEL_6741c127415e437aadc54c38b5684731", "value": ""}}, "e88e59709aaf45f28704d899b1928a17": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Log Output"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_cb421d1e56e449f59c8d62e079402364"], "layout": "IPY_MODEL_13cbeecdcd9a484e90e1e5bad1dc23dc", "selected_index": null}}, "ea872b73fc914c0999c4a0ff308b1e57": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "eb2db41647614c18ac0092ce1c4d4c98": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_153c043ddf0a4d618322963267adbda9", "placeholder": "\u200b", "style": "IPY_MODEL_060831ad927e477880b59e4b840152e6", "value": ""}}, "eee712b62523430abc7256cd49b59c9a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2828de2cb9fc483e914f3ae53f218779", "placeholder": "\u200b", "style": "IPY_MODEL_17de47ada95d41ec9166af67ac2de909", "value": ""}}, "f44d5e7a21c649b294cface546c5ba28": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "16em", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": "auto", "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "f891581b25c44bf79f93daee0748bdae": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ff28c971b3f54ad7857600a4ae7ba33a": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="tutorial_projection.html" title="Tutorial: Projecting a Model"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Tutorial: Projecting a Model </span>
+              </div>
+            </a>
+          
+          
+            <a href="tutorial_bt.html" title="Tutorial: Reducing an LTI system using balanced truncation"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Tutorial: Reducing an LTI system using balanced truncation </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright pyMOR developers and contributors.
+              
+          </div>
+            Last updated on
+              May 02, 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
